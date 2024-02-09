@@ -244,6 +244,7 @@ class PropsUIPageDonation:
     platform: str
     header: PropsUIHeader
     body: PropsUIPromptRadioInput | PropsUIPromptConsentForm | PropsUIPromptFileInput | PropsUIPromptConfirm
+    footer: PropsUIFooter
 
     def toDict(self):
         dict = {}
@@ -251,6 +252,7 @@ class PropsUIPageDonation:
         dict["platform"] = self.platform
         dict["header"] = self.header.toDict()
         dict["body"] = self.body.toDict()
+        dict["footer"] = self.footer.toDict()
         return dict
 
 
