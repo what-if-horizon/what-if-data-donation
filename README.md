@@ -107,7 +107,9 @@ For detailed installation instructions see the [wiki](https://github.com/d3i-inf
 ## Feldspar and Next
 
 The data donation task is primarily created to be used in conjunction with [Next](https://github.com/eyra/mono). Next is a software as a service platform developed by [Eyra](https://eyra.co/) to facilitate scientific research.
-The data donation task is a fork of [Feldspar](https://github.com/eyra/feldspar) with some extra functionalities added to it. Feldspar is a framework which can be used to build applications specifically for Next. An example of such an application is the data donation task which you can find in this repository. For more information on deployment see the [wiki](https://github.com/d3i-infra/data-donation-task/wiki).
+The data donation task is a fork of [Feldspar](https://github.com/eyra/feldspar) with some extra functionalities added to it. Feldspar is a framework which can be used to build applications specifically for Next. An example of such an application is the data donation task which you can find in this repository. 
+
+For detailed information on how to deploy the data donation task with Next check the [wiki](https://github.com/d3i-infra/data-donation-task/wiki).
 
 _Note_: The data donation task is only a *front end* to be used with Next. In order for it to be used in a live study it needs to be hosted with Next.
 The wiki will discuss the options you have for using the data donation task in an actual study.
