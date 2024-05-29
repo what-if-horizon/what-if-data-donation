@@ -148,12 +148,7 @@ def generate_file_prompt(platform, extensions) -> props.PropsUIPromptFileInput:
     return props.PropsUIPromptFileInput(description, extensions)
 
 
-def generate_consent_prompt(df: pd.DataFrame) -> props.PropsUIPromptConsentForm:
-    table_title = props.Translatable({
-        "en": "The contents of your zipfile contents",
-        "nl": "De inhoud van uw zip bestand"
-    })
-
+def generate_consent_prompt(*dfs: pd.DataFrame) -> props.PropsUIPromptConsentForm:
     description = props.Translatable({
        "en": "Below you will find meta data about the contents of the zip file you submitted. Please review the data carefully and remove any information you do not wish to share. If you would like to share this data, click on the 'Yes, share for research' button at the bottom of this page. By sharing this data, you contribute to research <insert short explanation about your research here>.",
        "nl": "Hieronder ziet u gegevens over de zip die u heeft ingediend. Bekijk de gegevens zorgvuldig, en verwijder de gegevens die u niet wilt delen. Als u deze gegevens wilt delen, klik dan op de knop 'Ja, deel voor onderzoek' onderaan deze pagina. Door deze gegevens te delen draagt u bij aan onderzoek over <korte zin over het onderzoek>."
@@ -169,9 +164,16 @@ def generate_consent_prompt(df: pd.DataFrame) -> props.PropsUIPromptConsentForm:
        "nl": "Ja, deel voor onderzoek"
     })
 
-    table = props.PropsUIPromptConsentFormTable("zip_contents", table_title, df)
+    tables = [] 
+    for index, df in enumerate(dfs):
+        table_title = props.Translatable({
+            "en": f"The contents of your zipfile contents (Table {index + 1}/{len(dfs)})",
+            "nl": "De inhoud van uw zip bestand"
+        })
+        tables.append(props.PropsUIPromptConsentFormTable(f"zip_contents_{index}", table_title, df))
+
     return props.PropsUIPromptConsentForm(
-       [table], 
+       tables,
        [],
        description = description,
        donate_question = donate_question,
@@ -185,3 +187,135 @@ def donate(key, json_string):
 
 def exit_port(code, info):
     return CommandSystemExit(code, info)
+
+
+##################################################################################
+# Exercise for the reader
+
+# Add an extra table to the consent form
+# This table should calculate contain 2 aggegrate statistics about your zipfiles
+
+# 1. it should give the total number of files in the zipfile
+# 2. it should give the total number of bytes of all files in the zipfile
+# 3. As a bonus: count the number of times the letter a occurs in all text files in the zipfile. By all means use AI to find out how to do this
+
+# Depending on your data the table could look like this:
+# | Statistic | Value |
+# -----------------------------
+# | Total number of files | 12 | 
+# | Total number of bytes | 762376 | 
+# | Total occurrences of 'a' in text files | 2378 | 
+
+
+##################################################################################
+# Hints
+
+# Hint 1: Write a function that extracts the statistics and put them in a dataframe. 
+#  In order to do that, you can copy extract_the_data_you_are_interested_in() and then modify it so it extracts the total number of files and bytes
+
+# Hint 2: If you wrote that function, then
+# Changes these lines:
+# extracted_data = extract_the_data_you_are_interested_in(file_prompt_result.value)
+# consent_prompt = generate_consent_prompt(extracted_data)
+
+# to:
+# extracted_data = extract_the_data_you_are_interested_in(file_prompt_result.value)
+# extracted_data_statistics = extract_statistics_you_are_interested_in(file_prompt_result.value)
+# consent_prompt = generate_consent_prompt(extracted_data, extracted_data_statistics)
+
+##################################################################################
+# Answer:
+
+# Uncomment all these lines to see the answer in action
+
+#def extract_statistics_you_are_interested_in(zip_file: str) -> pd.DataFrame:
+#    """
+#    Function that extracts the desired statistics
+#    """
+#    out = pd.DataFrame()
+#    count = 0 
+#    total_number_of_bytes = 0
+#    total_a_count = 0
+#
+#    try:
+#        file = zipfile.ZipFile(zip_file)
+#        for name in file.namelist():
+#            info = file.getinfo(name)
+#            count += 1
+#            total_number_of_bytes += info.file_size
+#
+#            # Check if the file is a text file
+#            # if so, open it and count the letter a
+#            if name.endswith('.txt'):
+#                with file.open(name) as txt_file:
+#                    content = txt_file.read().decode('utf-8')
+#                    total_a_count += content.count('a')
+#
+#        data = [
+#            ("Total number of files", count),
+#            ("Total number of bytes", total_number_of_bytes),
+#            ("Total occurrences of 'a' in text files", total_a_count),
+#        ]
+#
+#        out = pd.DataFrame(data, columns=["Statistic", "Value"])
+#
+#    except Exception as e:
+#        print(f"Something went wrong: {e}")
+#
+#    return out
+#
+#
+#def process(session_id: str):
+#    platform = "Platform of interest"
+#
+#    # Start of the data donation flow
+#    while True:
+#        # Ask the participant to submit a file
+#        file_prompt = generate_file_prompt(platform, "application/zip, text/plain")
+#        file_prompt_result = yield render_page(platform, file_prompt)
+#
+#        # If the participant submitted a file: continue
+#        if file_prompt_result.__type__ == 'PayloadString':
+#
+#            # Validate the file the participant submitted
+#            # In general this is wise to do 
+#            is_data_valid = validate_the_participants_input(file_prompt_result.value)
+#
+#            # Happy flow:
+#            # The file the participant submitted is valid
+#            if is_data_valid == True:
+#
+#                # Extract the data you as a researcher are interested in, and put it in a pandas DataFrame
+#                # Show this data to the participant in a table on screen
+#                # The participant can now decide to donate
+#                extracted_data = extract_the_data_you_are_interested_in(file_prompt_result.value)
+#                extracted_data_statistics = extract_statistics_you_are_interested_in(file_prompt_result.value)
+#                consent_prompt = generate_consent_prompt(extracted_data, extracted_data_statistics)
+#                consent_prompt_result = yield render_page(platform, consent_prompt)
+#
+#                # If the participant wants to donate the data gets donated
+#                if consent_prompt_result.__type__ == "PayloadJSON":
+#                    yield donate(f"{session_id}-{platform}", consent_prompt_result.value)
+#
+#                break
+#
+#            # Sad flow:
+#            # The data was not valid, ask the participant to retry
+#            if is_data_valid == False:
+#                retry_prompt = generate_retry_prompt(platform)
+#                retry_prompt_result = yield render_page(platform, retry_prompt)
+#
+#                # The participant wants to retry: start from the beginning
+#                if retry_prompt_result.__type__ == 'PayloadTrue':
+#                    continue
+#                # The participant does not want to retry or pressed skip
+#                else:
+#                    break
+#
+#        # The participant did not submit a file and pressed skip
+#        else:
+#            break
+#
+#    yield exit_port(0, "Success")
+#    yield render_end_page()
+#
