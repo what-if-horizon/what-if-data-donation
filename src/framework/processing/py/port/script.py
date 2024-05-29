@@ -69,14 +69,12 @@ def extract_the_data_you_are_interested_in(zip_file: str) -> pd.DataFrame:
 
     You could extract anything here
     """
-    names = []
     out = pd.DataFrame()
 
     try:
         file = zipfile.ZipFile(zip_file)
         data = []
         for name in file.namelist():
-            names.append(name)
             info = file.getinfo(name)
             data.append((name, info.compress_size, info.file_size))
 
@@ -148,7 +146,7 @@ def generate_file_prompt(platform, extensions) -> props.PropsUIPromptFileInput:
     return props.PropsUIPromptFileInput(description, extensions)
 
 
-def generate_consent_prompt(*dfs: pd.DataFrame) -> props.PropsUIPromptConsentForm:
+def generate_consent_prompt(*args: pd.DataFrame) -> props.PropsUIPromptConsentForm:
     description = props.Translatable({
        "en": "Below you will find meta data about the contents of the zip file you submitted. Please review the data carefully and remove any information you do not wish to share. If you would like to share this data, click on the 'Yes, share for research' button at the bottom of this page. By sharing this data, you contribute to research <insert short explanation about your research here>.",
        "nl": "Hieronder ziet u gegevens over de zip die u heeft ingediend. Bekijk de gegevens zorgvuldig, en verwijder de gegevens die u niet wilt delen. Als u deze gegevens wilt delen, klik dan op de knop 'Ja, deel voor onderzoek' onderaan deze pagina. Door deze gegevens te delen draagt u bij aan onderzoek over <korte zin over het onderzoek>."
@@ -165,9 +163,9 @@ def generate_consent_prompt(*dfs: pd.DataFrame) -> props.PropsUIPromptConsentFor
     })
 
     tables = [] 
-    for index, df in enumerate(dfs):
+    for index, df in enumerate(args):
         table_title = props.Translatable({
-            "en": f"The contents of your zipfile contents (Table {index + 1}/{len(dfs)})",
+            "en": f"The contents of your zipfile contents (Table {index + 1}/{len(args)})",
             "nl": "De inhoud van uw zip bestand"
         })
         tables.append(props.PropsUIPromptConsentFormTable(f"zip_contents_{index}", table_title, df))
@@ -192,8 +190,8 @@ def exit_port(code, info):
 ##################################################################################
 # Exercise for the reader
 
-# Add an extra table to the consent form
-# This table should calculate contain 2 aggegrate statistics about your zipfiles
+# Add an extra table to the output
+# This table should calculate 2 aggegrate statistics about your the files in your zipfile
 
 # 1. it should give the total number of files in the zipfile
 # 2. it should give the total number of bytes of all files in the zipfile
@@ -211,7 +209,7 @@ def exit_port(code, info):
 # Hints
 
 # Hint 1: Write a function that extracts the statistics and put them in a dataframe. 
-#  In order to do that, you can copy extract_the_data_you_are_interested_in() and then modify it so it extracts the total number of files and bytes
+#  In order to do that you can copy extract_the_data_you_are_interested_in() and then modify it so it extracts the total number of files and bytes
 
 # Hint 2: If you wrote that function, then
 # Changes these lines:
