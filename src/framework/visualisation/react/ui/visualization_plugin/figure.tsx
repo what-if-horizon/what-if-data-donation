@@ -109,7 +109,7 @@ export const FigureComponent = ({
   return (
     <div className=' max-w overflow-hidden  bg-grey6 rounded-md border-[0.2rem] border-grey4'>
       <div className='flex justify-between'>
-        <h6 className='p-3'>{translate(visualization.title, locale)}</h6>
+        <div className='font-bold p-3'>{translate(visualization.title, locale)}</div>
         <button onClick={toggleDouble} className={showStatus !== 'hidden' && canDouble ? 'text-primary' : 'hidden'}>
           {showStatus === 'double' ? zoomOutIcon : zoomInIcon}
         </button>
