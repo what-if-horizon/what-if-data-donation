@@ -1,16 +1,23 @@
-import React from 'react'
 import { Weak } from '../../../../helpers'
 import TextBundle from '../../../../text_bundle'
 import { Translator } from '../../../../translator'
 import { Translatable } from '../../../../types/elements'
 import { PropsUIPageDonation } from '../../../../types/pages'
-import { isPropsUIPromptConfirm, isPropsUIPromptConsentForm, isPropsUIPromptFileInput, isPropsUIPromptProgress, isPropsUIPromptRadioInput } from '../../../../types/prompts'
+import { 
+    isPropsUIPromptProgress,
+    isPropsUIPromptConfirm, 
+    isPropsUIPromptConsentForm,
+    isPropsUIPromptFileInput,
+    isPropsUIPromptRadioInput,
+    isPropsUIPromptQuestionnaire 
+} from '../../../../types/prompts'
 import { ReactFactoryContext } from '../../factory'
 import { Title1 } from '../elements/text'
 import { Confirm } from '../prompts/confirm'
 import { ConsentForm } from '../prompts/consent_form'
 import { FileInput } from '../prompts/file_input'
 import { Progress } from '../prompts/progress'
+import { Questionnaire } from '../prompts/questionnaire'
 import { RadioInput } from '../prompts/radio_input'
 import { Page } from './templates/page'
 
@@ -37,6 +44,9 @@ export const DonationPage = (props: Props): JSX.Element => {
     }
     if (isPropsUIPromptRadioInput(body)) {
       return <RadioInput {...body} {...context} />
+    }
+    if (isPropsUIPromptQuestionnaire(body)) {
+      return <Questionnaire {...body} {...context} />
     }
     throw new TypeError('Unknown body type')
   }
