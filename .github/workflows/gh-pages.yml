@@ -25,7 +25,9 @@ jobs:
         run: npm run release
 
       - name: Unpack release
-        run: unzip -o release.zip -d build
+        run: |
+          RELEASE_FILE=$(ls releases/*.zip | head -n 1)
+          unzip -o "$RELEASE_FILE" -d build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
