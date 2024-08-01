@@ -168,7 +168,16 @@ def generate_consent_prompt(*args: pd.DataFrame) -> props.PropsUIPromptConsentFo
             "en": f"The contents of your zipfile contents (Table {index + 1}/{len(args)})",
             "nl": "De inhoud van uw zip bestand"
         })
-        tables.append(props.PropsUIPromptConsentFormTable(f"zip_contents_{index}", table_title, df))
+        wordcloud = {
+            "title": {
+                "en": "You can also add visualizations", 
+                "nl": "You can also add visualizations"
+            },
+            "type": "wordcloud",
+            "textColumn": "File name",
+            "tokenize": True,
+        }
+        tables.append(props.PropsUIPromptConsentFormTable(f"zip_contents_{index}", table_title, df, visualizations=[wordcloud]))
 
     return props.PropsUIPromptConsentForm(
        tables,

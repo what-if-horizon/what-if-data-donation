@@ -211,26 +211,26 @@ function prepareCopy({ donateQuestion, donateButton, description, locale }: Prop
     description: Translator.translate(description ?? defaultDescription, locale),
     donateQuestion: Translator.translate(donateQuestion ?? defaultDonateQuestionLabel, locale),
     donateButton: Translator.translate(donateButton ?? defaultDonateButtonLabel, locale),
-    cancelButton: Translator.translate(cancelButtonLabel, locale),
+    cancelButton: Translator.translate(defaultCancelButtonLabel, locale),
   }
 }
 
-const donateQuestionLabel = new TextBundle()
+const defaultDonateQuestionLabel = new TextBundle()
   .add('en', 'Do you want to donate the above data?')
   .add('de', 'Möchten Sie die oben genannten Daten spenden?')
   .add('nl', 'Wilt u de bovenstaande gegevens doneren?')
 
-const donateButtonLabel = new TextBundle()
+const defaultDonateButtonLabel = new TextBundle()
   .add('en', 'Yes, donate')
   .add('de', 'Ja, spenden')
   .add('nl', 'Ja, doneer')
 
-const cancelButtonLabel = new TextBundle()
+const defaultCancelButtonLabel = new TextBundle()
   .add('en', 'No')
   .add('de', 'Nein')
   .add('nl', 'Nee')
 
-const description = new TextBundle()
+const defaultDescription = new TextBundle()
   .add('en', 'Determine whether you would like to donate the data below. Carefully check the data and adjust when required. With your donation you contribute to the previously described research. Thank you in advance.')
   .add('de', 'Legen Sie fest, ob Sie die untenstehenden Daten spenden möchten. Überprüfen Sie die Daten sorgfältig und passen Sie sie bei Bedarf an. Mit Ihrer Spende tragen Sie zur zuvor beschriebenen Forschung bei. Vielen Dank im Voraus.')
   .add('nl', 'Bepaal of u de onderstaande gegevens wilt doneren. Bekijk de gegevens zorgvuldig en pas zo nodig aan. Met uw donatie draagt u bij aan het eerder beschreven onderzoek. Alvast hartelijk dank.')
