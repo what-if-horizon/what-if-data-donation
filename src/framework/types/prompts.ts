@@ -2,6 +2,7 @@ import { isInstanceOf } from '../helpers'
 import { PropsUIRadioItem, Text } from './elements'
 
 export type PropsUIPrompt =
+<<<<<<< HEAD
   PropsUIPromptFileInput |
   PropsUIPromptProgress |
   PropsUIPromptRadioInput |
@@ -12,6 +13,15 @@ export function isPropsUIPrompt (arg: any): arg is PropsUIPrompt {
   return isPropsUIPromptFileInput(arg) ||
     isPropsUIPromptRadioInput(arg) ||
     isPropsUIPromptConsentForm(arg)
+=======
+  | PropsUIPromptFileInput
+  | PropsUIPromptRadioInput
+  | PropsUIPromptConsentForm
+  | PropsUIPromptConfirm
+
+export function isPropsUIPrompt (arg: any): arg is PropsUIPrompt {
+  return isPropsUIPromptFileInput(arg) || isPropsUIPromptRadioInput(arg) || isPropsUIPromptConsentForm(arg)
+>>>>>>> 86317f3 (fixing tsstandard stuff)
 }
 
 export interface PropsUIPromptConfirm {
@@ -31,6 +41,7 @@ export interface PropsUIPromptFileInput {
 }
 export function isPropsUIPromptFileInput (arg: any): arg is PropsUIPromptFileInput {
   return isInstanceOf<PropsUIPromptFileInput>(arg, 'PropsUIPromptFileInput', ['description', 'extensions'])
+<<<<<<< HEAD
 }
 
 export interface PropsUIPromptProgress {
@@ -41,6 +52,8 @@ export interface PropsUIPromptProgress {
 }
 export function isPropsUIPromptProgress (arg: any): arg is PropsUIPromptProgress {
   return isInstanceOf<PropsUIPromptProgress>(arg, 'PropsUIPromptProgress', ['description', 'message'])
+=======
+>>>>>>> 86317f3 (fixing tsstandard stuff)
 }
 
 export interface PropsUIPromptRadioInput {
@@ -70,7 +83,19 @@ export interface PropsUIPromptConsentFormTable {
   title: Text
   description: Text
   data_frame: any
+<<<<<<< HEAD
 }
 export function isPropsUIPromptConsentFormTable (arg: any): arg is PropsUIPromptConsentFormTable {
   return isInstanceOf<PropsUIPromptConsentFormTable>(arg, 'PropsUIPromptConsentFormTable', ['id', 'title', 'description', 'data_frame'])
+=======
+  visualizations: any
+}
+export function isPropsUIPromptConsentFormTable (arg: any): arg is PropsUIPromptConsentFormTable {
+  return isInstanceOf<PropsUIPromptConsentFormTable>(arg, 'PropsUIPromptConsentFormTable', [
+    'id',
+    'title',
+    'description',
+    'data_frame'
+  ])
+>>>>>>> 86317f3 (fixing tsstandard stuff)
 }
