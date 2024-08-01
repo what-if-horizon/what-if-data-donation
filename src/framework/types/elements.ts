@@ -1,45 +1,46 @@
 import { isInstanceOf, isLike } from '../helpers'
-import { } from './commands'
+import {} from './commands'
 import { isPropsUIPage, PropsUIPage } from './pages'
 import { isPropsUIPrompt, PropsUIPrompt } from './prompts'
 
 export type PropsUI =
-  PropsUIText |
-  PropsUIButton |
-  PropsUICheckBox |
-  PropsUIRadioItem |
-  PropsUISpinner |
-  PropsUIProgressBar |
-  PropsUIHeader |
-  PropsUITable |
-  PropsUISearchBar |
-  PropsUIPage |
-  PropsUIPrompt
+  | PropsUIText
+  | PropsUIButton
+  | PropsUICheckBox
+  | PropsUIRadioItem
+  | PropsUISpinner
+  | PropsUIProgress
+  | PropsUIHeader
+  | PropsUITable
+  | PropsUISearchBar
+  | PropsUIPage
+  | PropsUIPrompt
 
 export type PropsUIText =
-  PropsUITextTitle0 |
-  PropsUITextTitle1 |
-  PropsUITextTitle2 |
-  PropsUITextTitle3 |
-  PropsUITextTitle6 |
-  PropsUITextBodyLarge |
-  PropsUITextLabel
+  | PropsUITextTitle0
+  | PropsUITextTitle1
+  | PropsUITextTitle2
+  | PropsUITextTitle3
+  | PropsUITextTitle6
+  | PropsUITextBodyLarge
+  | PropsUITextLabel
 
 export type PropsUIButton =
-  PropsUIButtonPrimary |
-  PropsUIButtonSecundary |
-  PropsUIButtonBack |
-  PropsUIButtonForward |
-  PropsUIButtonIconBack |
-  PropsUIButtonIconForward |
-  PropsUIButtonIcon |
-  PropsUIButtonLabel |
-  PropsUIButtonIconLabel
+  | PropsUIButtonPrimary
+  | PropsUIButtonSecundary
+  | PropsUIButtonBack
+  | PropsUIButtonForward
+  | PropsUIButtonIconBack
+  | PropsUIButtonIconForward
+  | PropsUIButtonIcon
+  | PropsUIButtonLabel
+  | PropsUIButtonIconLabel
 
 // UI
 
 export function isPropsUI (arg: any): arg is PropsUI {
-  return isPropsUIText(arg) ||
+  return (
+    isPropsUIText(arg) ||
     isPropsUIButton(arg) ||
     isPropsUISpinner(arg) ||
     isPropsUIProgress(arg) ||
@@ -47,12 +48,14 @@ export function isPropsUI (arg: any): arg is PropsUI {
     isPropsUITable(arg) ||
     isPropsUIPage(arg) ||
     isPropsUIPrompt(arg)
+  )
 }
 
 // TEXTS
 
 export function isPropsUIText (arg: any): arg is PropsUIText {
-  return isPropsUITextTitle0(arg) ||
+  return (
+    isPropsUITextTitle0(arg) ||
     isPropsUITextTitle0(arg) ||
     isPropsUITextTitle1(arg) ||
     isPropsUITextTitle2(arg) ||
@@ -63,6 +66,7 @@ export function isPropsUIText (arg: any): arg is PropsUIText {
     isPropsUITextBodyMedium(arg) ||
     isPropsUITextLabel(arg) ||
     isPropsUITextCaption(arg)
+  )
 }
 
 export interface PropsUITextLabel {
@@ -178,7 +182,8 @@ export function isPropsUITextTitle6 (arg: any): arg is PropsUITextTitle6 {
 // BUTTONS
 
 export function isPropsUIButton (arg: any): arg is PropsUIButton {
-  return isPropsUIButtonPrimary(arg) ||
+  return (
+    isPropsUIButtonPrimary(arg) ||
     isPropsUIButtonSecundary(arg) ||
     isPropsUIButtonBack(arg) ||
     isPropsUIButtonForward(arg) ||
@@ -187,6 +192,7 @@ export function isPropsUIButton (arg: any): arg is PropsUIButton {
     isPropsUIButtonIcon(arg) ||
     isPropsUIButtonLabel(arg) ||
     isPropsUIButtonIconLabel(arg)
+  )
 }
 
 export interface PropsUIButtonPrimary {
@@ -263,7 +269,13 @@ export interface PropsUIButtonIconLabel {
   onClick: () => void
 }
 export function isPropsUIButtonIconLabel (arg: any): arg is PropsUIButtonIconLabel {
-  return isInstanceOf<PropsUIButtonIconLabel>(arg, 'PropsUIButtonIconLabel', ['icon', 'label', 'color', 'alignment', 'onClick'])
+  return isInstanceOf<PropsUIButtonIconLabel>(arg, 'PropsUIButtonIconLabel', [
+    'icon',
+    'label',
+    'color',
+    'alignment',
+    'onClick'
+  ])
 }
 
 export interface PropsUIButtonLabel {
@@ -293,6 +305,7 @@ export function isPropsUIRadioItem (arg: any): arg is PropsUIRadioItem {
 export interface PropsUICheckBox {
   id: string
   selected: boolean
+  size: string
   onSelect: () => void
 }
 export function isPropsUICheckBox (arg: any): arg is PropsUICheckBox {
@@ -310,17 +323,17 @@ export function isPropsUISpinner (arg: any): arg is PropsUISpinner {
   return isInstanceOf<PropsUISpinner>(arg, 'PropsUISpinner', ['color', 'spinning'])
 }
 
-// PROGRESS BAR
+// PROGRESS
 
-export interface PropsUIProgressBar {
-  __type__: 'PropsUIProgressBar'
+export interface PropsUIProgress {
+  __type__: 'PropsUIProgress'
   percentage: number
 }
-export function isPropsUIProgress (arg: any): arg is PropsUIProgressBar {
-  return isInstanceOf<PropsUIProgressBar>(arg, 'PropsUIProgressBar', ['percentage'])
+export function isPropsUIProgress (arg: any): arg is PropsUIProgress {
+  return isInstanceOf<PropsUIProgress>(arg, 'PropsUIProgress', ['percentage'])
 }
 
-// HEADER
+// Header
 
 export interface PropsUIHeader {
   __type__: 'PropsUIHeader'
@@ -337,16 +350,15 @@ export interface PropsUITable {
   id: string
   head: PropsUITableHead
   body: PropsUITableBody
-  readOnly?: boolean
   pageSize?: number
 }
 export function isPropsUITable (arg: any): arg is PropsUITable {
-  return isInstanceOf<PropsUITable>(arg, 'PropsUITable', ['readOnly', 'pageSize', 'id', 'head', 'body'])
+  return isInstanceOf<PropsUITable>(arg, 'PropsUITable', ['pageSize', 'id', 'head', 'body'])
 }
 
 export interface PropsUITableHead {
   __type__: 'PropsUITableHead'
-  cells: PropsUITableCell[]
+  cells: string[]
 }
 export function isPropsUITableHead (arg: any): arg is PropsUITableHead {
   return isInstanceOf<PropsUITableHead>(arg, 'PropsUITableHead', ['cells'])
@@ -360,30 +372,39 @@ export function isPropsUITableBody (arg: any): arg is PropsUITableBody {
   return isInstanceOf<PropsUITableBody>(arg, 'PropsUITableBody', ['rows'])
 }
 
+// KW: removed __type__ for rows and cells, because it inflates the table memory size
 export interface PropsUITableRow {
-  __type__: 'PropsUITableRow'
   id: string
-  cells: PropsUITableCell[]
+  cells: string[]
 }
 export function isPropsUITableRow (arg: any): arg is PropsUITableRow {
   return isInstanceOf<PropsUITableRow>(arg, 'PropsUITableRow', ['id', 'cells'])
 }
 
-export interface PropsUITableCell {
-  __type__: 'PropsUITableCell'
-  text: string
-}
-export function isPropsUITableCell (arg: any): arg is PropsUITableCell {
-  return isInstanceOf<PropsUITableCell>(arg, 'PropsUITableCell', ['text'])
+export interface TableContext {
+  title: string
+  description: string
+  deletedRowCount: number
+  annotations: Annotation[]
+  originalBody: PropsUITableBody
+  deletedRows: string[][]
+  visualizations?: any[]
 }
 
+export type TableWithContext = TableContext & PropsUITable
+
+export interface Annotation {
+  row_id: string
+  [key: string]: any
+}
 // SEARCH BAR
 
 export interface PropsUISearchBar {
   __type__: 'PropsUISearchBar'
-  placeholder: string
+  search: string
+  onSearch: (search: string) => void
+  placeholder?: string
   debounce?: number
-  onSearch: (words: string[]) => void
 }
 export function isPropsUISearchBar (arg: any): arg is PropsUISearchBar {
   return isInstanceOf<PropsUISearchBar>(arg, 'PropsUISearchBar', ['placeholder'])
