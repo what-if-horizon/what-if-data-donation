@@ -47,10 +47,23 @@ function runCycle(payload) {
 
 function unwrap(response) {
   console.log('[ProcessingWorker] unwrap response: ' + JSON.stringify(response.payload))
+  const directoryName = "/file-input"
   return new Promise((resolve) => {
     switch (response.payload.__type__) {
       case 'PayloadFile':
-        copyFileToPyFS(response.payload.value, resolve)
+        const file = response.payload.value
+        copyFileToPyFS([file], directoryName)
+        resolve({ __type__: 'PayloadString', value: `${directoryName}/${file.name}`})
+        break
+
+      case 'PayloadFileArray':
+        const filePaths = []
+        const files = response.payload.value
+        for (const file of files) {
+          filePaths.push(`${directoryName}/${file.name}`)
+        }
+        copyFileToPyFS(files, directoryName)
+        resolve({ __type__: 'PayloadStringArray', value: filePaths })
         break
 
       default:
@@ -59,9 +72,8 @@ function unwrap(response) {
   })
 }
 
-function copyFileToPyFS(file, resolve) {
-  directoryName = `/file-input`
-  pathStats = self.pyodide.FS.analyzePath(directoryName)
+function copyFileToPyFS(files, directoryName) {
+  const pathStats = self.pyodide.FS.analyzePath(directoryName)
   if (!pathStats.exists) {
     self.pyodide.FS.mkdir(directoryName)
   } else {
@@ -70,11 +82,10 @@ function copyFileToPyFS(file, resolve) {
   self.pyodide.FS.mount(
     self.pyodide.FS.filesystems.WORKERFS,
     {
-      files: [file]
+      files: files
     },
     directoryName
   )
-  resolve({ __type__: 'PayloadString', value: directoryName + '/' + file.name })
 }
 
 function initialise() {

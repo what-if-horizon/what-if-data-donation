@@ -5,6 +5,7 @@ import {
 } from './elements'
 import { 
     PropsUIPromptFileInput, 
+    PropsUIPromptFileInputMultiple, 
     PropsUIPromptConfirm,
     PropsUIPromptConsentForm,
     PropsUIPromptRadioInput,
@@ -34,7 +35,7 @@ export interface PropsUIPageDonation {
   __type__: 'PropsUIPageDonation'
   platform: string
   header: PropsUIHeader
-  body: PropsUIPromptFileInput | PropsUIPromptConfirm | PropsUIPromptProgress | PropsUIPromptConsentForm | PropsUIPromptRadioInput | PropsUIPromptQuestionnaire
+  body: PropsUIPromptFileInput | PropsUIPromptConfirm | PropsUIPromptProgress | PropsUIPromptConsentForm | PropsUIPromptRadioInput | PropsUIPromptQuestionnaire | PropsUIPromptFileInputMultiple
   footer: PropsUIFooter
 }
 export function isPropsUIPageDonation (arg: any): arg is PropsUIPageDonation {

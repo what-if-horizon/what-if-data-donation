@@ -8,6 +8,7 @@ import {
     isPropsUIPromptConfirm, 
     isPropsUIPromptConsentForm,
     isPropsUIPromptFileInput,
+    isPropsUIPromptFileInputMultiple,
     isPropsUIPromptRadioInput,
     isPropsUIPromptQuestionnaire 
 } from '../../../../types/prompts'
@@ -17,6 +18,7 @@ import { Title1 } from '../elements/text'
 import { Confirm } from '../prompts/confirm'
 import { ConsentForm } from '../prompts/consent_form'
 import { FileInput } from '../prompts/file_input'
+import { FileInputMultiple } from '../prompts/file_input_multiple'
 import { Progress } from '../prompts/progress'
 import { Questionnaire } from '../prompts/questionnaire'
 import { RadioInput } from '../prompts/radio_input'
@@ -34,6 +36,9 @@ export const DonationPage = (props: Props): JSX.Element => {
     const body = props.body
     if (isPropsUIPromptFileInput(body)) {
       return <FileInput {...body} {...context} />
+    }
+    if (isPropsUIPromptFileInputMultiple(body)) {
+      return <FileInputMultiple {...body} {...context} />
     }
     if (isPropsUIPromptProgress(body)) {
       return <Progress {...body} {...context} />
