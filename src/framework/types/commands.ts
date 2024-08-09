@@ -43,6 +43,7 @@ export type PayloadResolved =
   PayloadTrue |
   PayloadString |
   PayloadFile |
+  PayloadFileArray |
   PayloadJSON
 
 export interface PayloadVoid {
@@ -63,6 +64,11 @@ export interface PayloadString {
 export interface PayloadFile {
   __type__: 'PayloadFile'
   value: File
+}
+
+export interface PayloadFileArray {
+  __type__: 'PayloadFileArray'
+  value: File[]
 }
 
 export interface PayloadJSON {

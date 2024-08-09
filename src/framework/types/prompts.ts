@@ -39,6 +39,15 @@ export function isPropsUIPromptFileInput (arg: any): arg is PropsUIPromptFileInp
   return isInstanceOf<PropsUIPromptFileInput>(arg, 'PropsUIPromptFileInput', ['description', 'extensions'])
 }
 
+export interface PropsUIPromptFileInputMultiple {
+  __type__: "PropsUIPromptFileInputMultiple"
+  description: Text
+  extensions: string
+}
+export function isPropsUIPromptFileInputMultiple (arg: any): arg is PropsUIPromptFileInputMultiple {
+  return isInstanceOf<PropsUIPromptFileInputMultiple>(arg, 'PropsUIPromptFileInputMultiple', ['description', 'extensions'])
+}
+
 export interface PropsUIPromptProgress {
   __type__: 'PropsUIPromptProgress'
   description: Text

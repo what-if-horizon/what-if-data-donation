@@ -172,6 +172,26 @@ class PropsUIPromptFileInput:
 
 
 @dataclass
+class PropsUIPromptFileInputMultiple:
+    """Prompt the user to submit multiple files 
+
+    Attributes:
+        description: text with an explanation
+        extensions: accepted mime types, example: "application/zip, text/plain"
+    """
+
+    description: Translatable
+    extensions: str
+
+    def toDict(self):
+        dict = {}
+        dict["__type__"] = "PropsUIPromptFileInputMultiple"
+        dict["description"] = self.description.toDict()
+        dict["extensions"] = self.extensions
+        return dict
+
+
+@dataclass
 class PropsUIPromptProgress:
     """Prompt the user information during the extraction 
 
@@ -315,6 +335,7 @@ class PropsUIPageDonation:
         PropsUIPromptRadioInput
         | PropsUIPromptConsentForm
         | PropsUIPromptFileInput
+        | PropsUIPromptFileInputMultiple
         | PropsUIPromptConfirm
         | PropsUIPromptQuestionnaire
     )
