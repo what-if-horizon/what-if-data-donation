@@ -335,6 +335,7 @@ class PropsUIPageDonation:
         PropsUIPromptRadioInput
         | PropsUIPromptConsentForm
         | PropsUIPromptFileInput
+        | PropsUIPromptFileInputMultiple
         | PropsUIPromptConfirm
         | PropsUIPromptQuestionnaire
     )
