@@ -119,14 +119,18 @@ export const Table = ({
     }
     return (
       <tr key={item.id} className='border-b-2 border-grey4 border-solid'>
-        <td key='select'>
-          <CheckBox
-            id={item.id}
-            size='w-6 h-6'
-            selected={selected.has(item.id)}
-            onSelect={() => toggleSelected(item.id)}
-          />
-        </td>
+        {table.deleteOption &&
+          (
+            <td key='select'>
+              <CheckBox
+                id={item.id}
+                size='w-6 h-6'
+                selected={selected.has(item.id)}
+                onSelect={() => toggleSelected(item.id)}
+              />
+            </td>
+          )
+        }
 
         {item.cells.map((cell, j) => (
           <td key={j}>
@@ -165,14 +169,18 @@ export const Table = ({
             <table className='table-fixed min-w-full '>
               <thead className=''>
                 <tr className='border-b-2 border-grey4 border-solid'>
-                  <td className='w-8'>
-                    <CheckBox
-                      id='selectAll'
-                      size='w-6 h-6'
-                      selected={table.body.rows.length > 0 && selected.size === table.body.rows.length}
-                      onSelect={toggleSelectAll}
-                    />
-                  </td>
+                  {table.deleteOption &&
+                    (
+                      <td className='w-8'>
+                        <CheckBox
+                          id='selectAll'
+                          size='w-6 h-6'
+                          selected={table.body.rows.length > 0 && selected.size === table.body.rows.length}
+                          onSelect={toggleSelectAll}
+                        />
+                      </td>
+                    )
+                  }
                   {columnNames.map(renderHeaderCell)}
                 </tr>
               </thead>
@@ -188,6 +196,7 @@ export const Table = ({
                     label={`${text.delete} ${selected.size > 0 ? selectedLabel : ''}`}
                     color='text-delete'
                     disabled={selected.size === 0}
+                    hidden={!table.deleteOption}
                     onClick={() => handleDelete?.(Array.from(selected))}
                   />
                   )

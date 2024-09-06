@@ -177,7 +177,7 @@ def generate_consent_prompt(*args: pd.DataFrame) -> props.PropsUIPromptConsentFo
             "textColumn": "File name",
             "tokenize": True,
         }
-        tables.append(props.PropsUIPromptConsentFormTable(f"zip_contents_{index}", table_title, df, visualizations=[wordcloud]))
+        tables.append(props.PropsUIPromptConsentFormTable(f"zip_contents_{index}", table_title, df, visualizations=[wordcloud], delete_option=True))
 
     return props.PropsUIPromptConsentForm(
        tables,

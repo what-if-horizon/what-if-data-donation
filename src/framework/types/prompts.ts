@@ -87,6 +87,7 @@ export interface PropsUIPromptConsentFormTable {
   data_frame: any
   visualizations: any
   folded: boolean
+  delete_option: boolean
 }
 export function isPropsUIPromptConsentFormTable(arg: any): arg is PropsUIPromptConsentFormTable {
   return isInstanceOf<PropsUIPromptConsentFormTable>(arg, "PropsUIPromptConsentFormTable", [
