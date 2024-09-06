@@ -100,6 +100,7 @@ class PropsUIPromptConsentFormTable:
     description: Optional[Translatable] = None
     visualizations: Optional[list] = None
     folded: Optional[bool] = False
+    delete_option: Optional[bool] = True
 
     def toDict(self):
         dict = {}
@@ -110,6 +111,7 @@ class PropsUIPromptConsentFormTable:
         dict["description"] = self.description.toDict() if self.description else None
         dict["visualizations"] = self.visualizations if self.visualizations else None
         dict["folded"] = self.folded
+        dict["delete_option"] = self.delete_option
         return dict
 
 
