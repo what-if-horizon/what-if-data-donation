@@ -126,3 +126,23 @@ We want to make contributing to this project as easy and transparent as possible
 
 If you have any questions, find any bugs, or have any ideas, read how to contribute [here](https://github.com/eyra/port/blob/master/CONTRIBUTING.md).
 
+## Citation
+
+If you use this repository in your research, please cite it as follows:
+
+```
+@article{Boeschoten2023,
+  doi = {10.21105/joss.05596},
+  url = {https://doi.org/10.21105/joss.05596},
+  year = {2023},
+  publisher = {The Open Journal},
+  volume = {8},
+  number = {90},
+  pages = {5596},
+  author = {Laura Boeschoten and Niek C. de Schipper and Adriënne M. Mendrik and Emiel van der Veen and Bella Struminskaya and Heleen Janssen and Theo Araujo},
+  title = {Port: A software tool for digital data donation},
+  journal = {Journal of Open Source Software}
+}
+```
+
+You can find the full citation details in the [`CITATION.cff`](CITATION.cff) file.
