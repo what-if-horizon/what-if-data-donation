@@ -4,39 +4,46 @@ from typing import Optional, TypedDict
 import pandas as pd
 
 
-class Translations(TypedDict):
-    """Typed dict containing text that is  display in a speficic language
-
-    Attributes:
-        en: English string to display
-        nl: Dutch string to display
+@dataclass
+class Translations:
     """
-
+    Typed dict containing text that is displayed in a specific language.
+    """
     en: str
     nl: str
 
 
 @dataclass
 class Translatable:
-    """Wrapper class for Translations"""
-
+    """
+    Wrapper class for Translations.
+    """
     translations: Translations
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         return self.__dict__.copy()
 
 
 @dataclass
 class PropsUIHeader:
-    """Page header
-
-    Attributes:
-        title: title of the page
     """
-
+    Page header.
+    """
     title: Translatable
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIHeader"
         dict["title"] = self.title.toDict()
@@ -45,13 +52,16 @@ class PropsUIHeader:
 
 @dataclass
 class PropsUIFooter:
-    """Page footer
-
-    Attributes:
-        progressPercentage: float indicating the progress in the flow
     """
-
+    Page footer.
+    """
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIFooter"
         return dict
@@ -59,22 +69,28 @@ class PropsUIFooter:
 
 @dataclass
 class PropsUIPromptConfirm:
-    """Retry submitting a file page
+    """
+    Retry submitting a file page.
 
     Prompt the user if they want to submit a new file.
     This can be used in case a file could not be processed.
 
     Attributes:
-        text: message to display
-        ok: message to display if the user wants to try again
-        cancel: message to display if the user wants to continue regardless
+        text (Translatable): Message to display.
+        ok (Translatable): Message to display if the user wants to try again.
+        cancel (Translatable): Message to display if the user wants to continue regardless.
     """
-
     text: Translatable
     ok: Translatable
     cancel: Translatable
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptConfirm"
         dict["text"] = self.text.toDict()
@@ -85,15 +101,18 @@ class PropsUIPromptConfirm:
 
 @dataclass
 class PropsUIPromptConsentFormTable:
-    """Table to be shown to the participant prior to donation
+    """
+    Table to be shown to the participant prior to donation.
 
     Attributes:
-        id: a unique string to itentify the table after donation
-        title: title of the table
-        data_frame: table to be shown
-        visualizations: optional visualizations to be shown. (see TODO for input format)
+        id (str): A unique string to identify the table after donation.
+        title (Translatable): Title of the table.
+        data_frame (pd.DataFrame): Table to be shown.
+        description (Optional[Translatable]): Optional description of the table.
+        visualizations (Optional[list]): Optional visualizations to be shown.
+        folded (Optional[bool]): Whether the table should be initially folded.
+        delete_option (Optional[bool]): Whether to show a delete option for the table.
     """
-
     id: str
     title: Translatable
     data_frame: pd.DataFrame
@@ -103,6 +122,12 @@ class PropsUIPromptConsentFormTable:
     delete_option: Optional[bool] = True
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptConsentFormTable"
         dict["id"] = self.id
@@ -117,13 +142,16 @@ class PropsUIPromptConsentFormTable:
 
 @dataclass
 class PropsUIPromptConsentForm:
-    """Tables to be shown to the participant prior to donation
+    """
+    Tables to be shown to the participant prior to donation.
 
     Attributes:
-        tables: a list of tables
-        meta_tables: a list of optional tables, for example for logging data
+        tables (list[PropsUIPromptConsentFormTable]): A list of tables.
+        meta_tables (list[PropsUIPromptConsentFormTable]): A list of optional tables, for example for logging data.
+        description (Optional[Translatable]): Optional description of the consent form.
+        donate_question (Optional[Translatable]): Optional donation question.
+        donate_button (Optional[Translatable]): Optional text for the donate button.
     """
-
     tables: list[PropsUIPromptConsentFormTable]
     meta_tables: list[PropsUIPromptConsentFormTable]
     description: Optional[Translatable] = None
@@ -131,18 +159,36 @@ class PropsUIPromptConsentForm:
     donate_button: Optional[Translatable] = None
 
     def translate_tables(self):
+        """
+        Translate the tables to a list of dictionaries.
+
+        Returns:
+            list: A list of dictionaries representing the tables.
+        """
         output = []
         for table in self.tables:
             output.append(table.toDict())
         return output
 
     def translate_meta_tables(self):
+        """
+        Translate the meta tables to a list of dictionaries.
+
+        Returns:
+            list: A list of dictionaries representing the meta tables.
+        """
         output = []
         for table in self.meta_tables:
             output.append(table.toDict())
         return output
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptConsentForm"
         dict["tables"] = self.translate_tables()
@@ -155,17 +201,23 @@ class PropsUIPromptConsentForm:
 
 @dataclass
 class PropsUIPromptFileInput:
-    """Prompt the user to submit a file
+    """
+    Prompt the user to submit a file.
 
     Attributes:
-        description: text with an explanation
-        extensions: accepted mime types, example: "application/zip, text/plain"
+        description (Translatable): Text with an explanation.
+        extensions (str): Accepted mime types, example: "application/zip, text/plain".
     """
-
     description: Translatable
     extensions: str
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptFileInput"
         dict["description"] = self.description.toDict()
@@ -175,17 +227,23 @@ class PropsUIPromptFileInput:
 
 @dataclass
 class PropsUIPromptFileInputMultiple:
-    """Prompt the user to submit multiple files 
+    """
+    Prompt the user to submit multiple files.
 
     Attributes:
-        description: text with an explanation
-        extensions: accepted mime types, example: "application/zip, text/plain"
+        description (Translatable): Text with an explanation.
+        extensions (str): Accepted mime types, example: "application/zip, text/plain".
     """
-
     description: Translatable
     extensions: str
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptFileInputMultiple"
         dict["description"] = self.description.toDict()
@@ -195,56 +253,68 @@ class PropsUIPromptFileInputMultiple:
 
 @dataclass
 class PropsUIPromptProgress:
-    """Prompt the user information during the extraction 
+    """
+    Prompt the user information during the extraction.
 
     Attributes:
-        description: text with an explanation
-        message: can be used to show extraction progress
+        description (Translatable): Text with an explanation.
+        message (str): Can be used to show extraction progress.
+        percentage (Optional[int]): Optional percentage of progress.
     """
-
     description: Translatable
     message: str
     percentage: Optional[int] = None
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptProgress"
         dict["description"] = self.description.toDict()
         dict["message"] = self.message
         dict["percentage"] = self.percentage
-        
         return dict
 
 
 class RadioItem(TypedDict):
-    """Radio button
+    """
+    Radio button.
 
     Attributes:
-        id: id of radio button
-        value: text to be displayed
+        id (int): ID of radio button.
+        value (str): Text to be displayed.
     """
-
     id: int
     value: str
 
 
 @dataclass
 class PropsUIPromptRadioInput:
-    """Radio group
+    """
+    Radio group.
 
-    This radio group can be used get a mutiple choice answer from a user
+    This radio group can be used to get a multiple choice answer from a user.
 
     Attributes:
-        title: title of the radio group
-        description: short description of the radio group
-        items: a list of radio buttons
+        title (Translatable): Title of the radio group.
+        description (Translatable): Short description of the radio group.
+        items (list[RadioItem]): A list of radio buttons.
     """
-
     title: Translatable
     description: Translatable
     items: list[RadioItem]
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptRadioInput"
         dict["title"] = self.title.toDict()
@@ -256,12 +326,22 @@ class PropsUIPromptRadioInput:
 @dataclass
 class PropsUIQuestionOpen:
     """
-    NO DOCS YET
+    Open-ended question.
+
+    Attributes:
+        id (int): Question ID.
+        question (Translatable): The question text.
     """
     id: int
     question: Translatable
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIQuestionOpen"
         dict["id"] = self.id
@@ -272,13 +352,24 @@ class PropsUIQuestionOpen:
 @dataclass
 class PropsUIQuestionMultipleChoiceCheckbox:
     """
-    NO DOCS YET
+    Multiple choice question with checkboxes.
+
+    Attributes:
+        id (int): Question ID.
+        question (Translatable): The question text.
+        choices (list[Translatable]): List of choices.
     """
     id: int
     question: Translatable
     choices: list[Translatable]
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIQuestionMultipleChoiceCheckbox"
         dict["id"] = self.id
@@ -290,13 +381,24 @@ class PropsUIQuestionMultipleChoiceCheckbox:
 @dataclass
 class PropsUIQuestionMultipleChoice:
     """
-    NO DOCS YET
+    Multiple choice question with radio buttons.
+
+    Attributes:
+        id (int): Question ID.
+        question (Translatable): The question text.
+        choices (list[Translatable]): List of choices.
     """
     id: int
     question: Translatable
     choices: list[Translatable]
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIQuestionMultipleChoice"
         dict["id"] = self.id
@@ -308,12 +410,23 @@ class PropsUIQuestionMultipleChoice:
 @dataclass
 class PropsUIPromptQuestionnaire:
     """
-    NO DOCS YET
+    Questionnaire containing multiple questions.
+
+    Attributes:
+        description (Translatable): Description of the questionnaire.
+        questions (list[PropsUIQuestionMultipleChoice | PropsUIQuestionMultipleChoiceCheckbox | PropsUIQuestionOpen]):
+            List of questions in the questionnaire.
     """
     description: Translatable
     questions: list[PropsUIQuestionMultipleChoice | PropsUIQuestionMultipleChoiceCheckbox | PropsUIQuestionOpen]
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPromptQuestionnaire"
         dict["description"] = self.description.toDict()
@@ -323,14 +436,17 @@ class PropsUIPromptQuestionnaire:
 
 @dataclass
 class PropsUIPageDonation:
-    """A multi-purpose page that gets shown to the user
+    """
+    A multi-purpose page that gets shown to the user.
 
     Attributes:
-        platform: the platform name the user is curently in the process of donating data from
-        header: page header
-        body: main body of the page, see the individual classes for an explanation
+        platform (str): The platform name the user is currently in the process of donating data from.
+        header (PropsUIHeader): Page header.
+        body (PropsUIPromptRadioInput | PropsUIPromptConsentForm | PropsUIPromptFileInput |
+              PropsUIPromptFileInputMultiple | PropsUIPromptConfirm | PropsUIPromptQuestionnaire):
+            Main body of the page.
+        footer (Optional[PropsUIFooter]): Optional page footer.
     """
-
     platform: str
     header: PropsUIHeader
     body: (
@@ -344,6 +460,12 @@ class PropsUIPageDonation:
     footer: Optional[PropsUIFooter] = None
 
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPageDonation"
         dict["platform"] = self.platform
@@ -354,9 +476,16 @@ class PropsUIPageDonation:
 
 
 class PropsUIPageEnd:
-    """An ending page to show the user they are done"""
-
+    """
+    An ending page to show the user they are done.
+    """
     def toDict(self):
+        """
+        Convert the object to a dictionary.
+
+        Returns:
+            dict: A dictionary representation of the object.
+        """
         dict = {}
         dict["__type__"] = "PropsUIPageEnd"
         return dict
