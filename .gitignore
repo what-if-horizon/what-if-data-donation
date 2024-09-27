@@ -11,6 +11,7 @@
 /coverage
 /_build
 /.venv
+**/**/__pycache__
 
 # production
 /build

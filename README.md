@@ -72,7 +72,7 @@ A typical script includes the following steps:
 A example such a script is included in this repo: [`script.py`](src/framework/processing/py/port/script.py).
 We recommend you use that script as starting point for your own data donation study.
 
-Check out the [wiki](https://github.com/d3i-infra/data-donation-task/wiki) for a tutorial on how to start writing your own `script.py`.
+Check out the [documentation](https://d3i-infra.github.io/data-donation-task/) for a tutorial on how to start writing your own `script.py`.
 
 
 ## Installation of the data donation task
@@ -101,7 +101,7 @@ In order to start a local instance of the data donation task go through the foll
 3. You can now go to the browser: [`http://localhost:3000`](http://localhost:3000).
 
 If the installation went correctly you should be greeted with a mock data donation study. 
-For detailed installation instructions see the [wiki](https://github.com/d3i-infra/data-donation-task/wiki).
+For detailed installation instructions see the [documentation](https://d3i-infra.github.io/data-donation-task/).
 
 
 ## Feldspar and Next
@@ -109,10 +109,15 @@ For detailed installation instructions see the [wiki](https://github.com/d3i-inf
 The data donation task is primarily created to be used in conjunction with [Next](https://github.com/eyra/mono). Next is a software as a service platform developed by [Eyra](https://eyra.co/) to facilitate scientific research.
 The data donation task is a fork of [Feldspar](https://github.com/eyra/feldspar) with some extra functionalities added to it. Feldspar is a framework which can be used to build applications specifically for Next. An example of such an application is the data donation task which you can find in this repository. 
 
-For detailed information on how to deploy the data donation task with Next check the [wiki](https://github.com/d3i-infra/data-donation-task/wiki).
+For detailed information on how to deploy the data donation task with Next check the [documentation](https://d3i-infra.github.io/data-donation-task/).
 
 _Note_: The data donation task is only a *front end* to be used with Next. In order for it to be used in a live study it needs to be hosted with Next.
 The wiki will discuss the options you have for using the data donation task in an actual study.
+
+
+## Documentation
+
+Here you can find the [documentation](https://d3i-infra.github.io/data-donation-task/)
 
 
 ## Contributing
