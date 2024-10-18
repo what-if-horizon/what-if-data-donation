@@ -9,4 +9,5 @@ Articles
    creating-your-own-data-donation-task.md
    data-donation-checklist.md
    deployment.md
+   next-in-docker.md
    visualizations.md
