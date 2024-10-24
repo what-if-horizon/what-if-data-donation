@@ -2,17 +2,17 @@
 
 This tutorial outlines how you can run Next in a docker container. 
 
-This is great for trying out the Next platform and will show you the necessary settings so you could use in production.
+This is great for trying out the Next platform and will show you the necessary settings so you could use it in production.
 
 ## Prerequisites
 
-In order for you to try out Next you need to setup some prerequisites.
+In order for you to try out Next you need to set up some prerequisites.
 
 ### Unsplash
 
 Configure a developer account at [unsplash](https://unsplash.com/) and get an API key. You can do this for free. 
 
-Unsplash is used as the source for banner images used to customized studies.
+Unsplash is used as the source for banner images used to customize studies.
 
 
 ### Google OIDC
@@ -110,7 +110,7 @@ http {
 }
 ```
 
-This Nginx configuration works with websocket connections which Next (Phoenix webapplication) uses.
+This Nginx configuration works with websocket connections which Next (Phoenix web application) uses.
 
 
 ### Docker compose yaml
@@ -181,7 +181,7 @@ GOOGLE_SIGN_IN_CLIENT_ID: "<your-google-oidc-client-id>"
 GOOGLE_SIGN_IN_CLIENT_SECRET: "<your-google-oidc-client-secret>"
 ```
 
-If you want to learn more about the variables you can set read the [documentation](https://github.com/eyra/mono/blob/master/SELFHOSTING.md).
+If you want to learn more about the variables you can read the [documentation](https://github.com/eyra/mono/blob/master/SELFHOSTING.md).
 
 Now you are ready to start the containers with:
 
@@ -189,7 +189,7 @@ Now you are ready to start the containers with:
 docker compose up
 ```
 
-Go to `https://localhost:80` and if everything went succesful you should see next.
+Go to `https://localhost:80` and if everything went well you should see Next.
 
 Note: because you self-signed your TLS certificates your browser will complain: accept all the risks and continue.
 
