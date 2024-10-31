@@ -26,7 +26,7 @@ export const ConsentForm = (props: Props): JSX.Element => {
   useUnloadWarning()
   const [tables, setTables] = useState<TableWithContext[]>(() => parseTables(props.tables))
   const [metaTables, setMetaTables] = useState<TableWithContext[]>(() => parseTables(props.metaTables))
-  const { locale, resolve } = props
+  const { locale, resolve, id } = props
   const { description, donateQuestion, donateButton, cancelButton } = prepareCopy(props)
   const [isDonating, setIsDonating] = useState(false)
 
@@ -119,7 +119,7 @@ export const ConsentForm = (props: Props): JSX.Element => {
   function handleDonate(): void {
     setIsDonating(true)
     const value = serializeConsentData()
-    resolve?.({ __type__: "PayloadJSON", value })
+    resolve?.({ __type__: "PayloadDonate", "value": value, "key": id })
   }
 
   function handleCancel(): void {
