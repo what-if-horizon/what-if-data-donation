@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, TypedDict
+from typing import Optional, TypedDict, Dict, Any
 
 import pandas as pd
 
@@ -107,19 +107,51 @@ class PropsUIPromptConsentFormTable:
     Attributes:
         id (str): A unique string to identify the table after donation.
         title (Translatable): Title of the table.
-        data_frame (pd.DataFrame): Table to be shown.
+        data_frame (pd.DataFrame | Dict[str, Dict[str, Any]]): Table to be shown can be a pandas data frame or a dictionary
         description (Optional[Translatable]): Optional description of the table.
         visualizations (Optional[list]): Optional visualizations to be shown.
         folded (Optional[bool]): Whether the table should be initially folded.
         delete_option (Optional[bool]): Whether to show a delete option for the table.
+
+    Examples:
+        # Using a pandas DataFrame for data_frame
+        data_frame_df = pd.DataFrame([
+            {"column1": 1, "column2": 4},
+            {"column1": 2, "column2": 5},
+            {"column1": 3, "column2": 6}
+        ])
+        
+        example1 = PropsUIPromptConsentFormTable(
+            id="example1",
+            title=Translatable("Table as DataFrame"),
+            data_frame=data_frame_df,
+        )
+
+        # Using a dictionary for data_frame
+        data_frame_dict = {
+            "column1": {"0": 1, "1": 4},
+            "column2": {"0": 2, "1": 5},
+            "column3": {"0": 3, "1": 6}
+        }
+        example2 = PropsUIPromptConsentFormTable(
+            id="example2",
+            title=Translatable("Table as Dictionary"),
+            data_frame=data_frame_dict,
+        )
     """
     id: str
     title: Translatable
-    data_frame: pd.DataFrame
+    data_frame: pd.DataFrame | Dict[str, Dict[str, Any]]
     description: Optional[Translatable] = None
     visualizations: Optional[list] = None
     folded: Optional[bool] = False
     delete_option: Optional[bool] = True
+
+    def translate_data_frame(self):
+        if isinstance(self.data_frame, pd.DataFrame):
+            return self.data_frame.to_json()
+        else:
+            return self.data_frame
 
     def toDict(self):
         """
@@ -132,7 +164,7 @@ class PropsUIPromptConsentFormTable:
         dict["__type__"] = "PropsUIPromptConsentFormTable"
         dict["id"] = self.id
         dict["title"] = self.title.toDict()
-        dict["data_frame"] = self.data_frame.to_json()
+        dict["data_frame"] = self.translate_data_frame()
         dict["description"] = self.description.toDict() if self.description else None
         dict["visualizations"] = self.visualizations if self.visualizations else None
         dict["folded"] = self.folded
