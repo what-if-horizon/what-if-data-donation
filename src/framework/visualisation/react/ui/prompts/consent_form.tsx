@@ -89,7 +89,7 @@ export const ConsentForm = (props: Props): JSX.Element => {
     const description =
       tableData.description !== undefined ? Translator.translate(tableData.description, props.locale) : ""
     const deletedRowCount = 0
-    const dataFrame = JSON.parse(tableData.data_frame)
+    const dataFrame = loadDataFrame(tableData.data_frame)
     const headCells = columnNames(dataFrame).map((column: string) => column)
     const head: PropsUITableHead = {
       __type__: "PropsUITableHead",
@@ -214,6 +214,13 @@ function prepareCopy({ donateQuestion, donateButton, description, locale }: Prop
     donateButton: Translator.translate(donateButton ?? defaultDonateButtonLabel, locale),
     cancelButton: Translator.translate(defaultCancelButtonLabel, locale),
   }
+}
+
+function loadDataFrame(dataFrame: any) {
+  if (typeof dataFrame === "string") {
+      return JSON.parse(dataFrame)
+  } 
+  return dataFrame;
 }
 
 const defaultDonateQuestionLabel = new TextBundle()
