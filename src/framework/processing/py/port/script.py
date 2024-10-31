@@ -51,12 +51,12 @@ def process(session_id: str):
                 # Show this data to the participant in a table on screen
                 # The participant can now decide to donate
                 extracted_data = extract_the_data_you_are_interested_in(file_prompt_result.value)
-                consent_prompt = ph.generate_review_data_prompt(REVIEW_DATA_DESCRIPTION, extracted_data)
-                consent_prompt_result = yield ph.render_page(REVIEW_DATA_HEADER, consent_prompt)
-
-                # If the participant wants to donate the data gets donated
-                if consent_prompt_result.__type__ == "PayloadJSON":
-                    yield ph.donate(f"{session_id}-{platform_name}", consent_prompt_result.value)
+                consent_prompt = ph.generate_review_data_prompt(
+                    id=f"{session_id}", # will be used as part of the file name when the data is stored
+                    description=REVIEW_DATA_DESCRIPTION, 
+                    table_list=extracted_data
+                )
+                yield ph.render_page(REVIEW_DATA_HEADER, consent_prompt)
 
                 break
 

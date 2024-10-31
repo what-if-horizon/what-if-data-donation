@@ -99,12 +99,18 @@ def generate_file_prompt(extensions: str) -> props.PropsUIPromptFileInput:
     return props.PropsUIPromptFileInput(description, extensions)
 
 
-def generate_review_data_prompt(description: props.Translatable, table_list: list[props.PropsUIPromptConsentFormTable]) -> props.PropsUIPromptConsentForm:
+def generate_review_data_prompt(
+        id: str,
+        description: props.Translatable,
+        table_list: list[props.PropsUIPromptConsentFormTable]
+) -> props.PropsUIPromptConsentForm:
     """
     Generates a data review form with a list of tables and a description, including default donate question and button.
-    The participant can review these tables before they will be send to the researcher.
+    The participant can review these tables before they will be send to the researcher. If the participant consents to sharing the data
+    the data will be stored at the configured storage location.
 
     Args:
+        id (str): will be used as part of the filename when the data is stored
         table_list (list[props.PropsUIPromptConsentFormTable]): A list of consent form tables to be included in the prompt.
         description (props.Translatable): A translatable description text for the consent prompt.
 
@@ -123,7 +129,8 @@ def generate_review_data_prompt(description: props.Translatable, table_list: lis
     })
 
     return props.PropsUIPromptConsentForm(
-       table_list, 
+       id=id,
+       tables=table_list, 
        meta_tables=[],
        description=description,
        donate_question=donate_question,
