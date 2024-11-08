@@ -164,7 +164,7 @@ def process(session_id: int):
 
     if table_list is not None:
         logger.info("Prompt consent; %s", platform_name)
-        review_data_prompt = ph.generate_review_data_prompt(f"{session_id}-chatpt", REVIEW_DATA_DESCRIPTION, table_list)
+        review_data_prompt = ph.generate_review_data_prompt(f"{session_id}-chatgpt", REVIEW_DATA_DESCRIPTION, table_list)
         yield ph.render_page(REVIEW_DATA_HEADER, review_data_prompt)
 
     yield ph.exit(0, "Success")
