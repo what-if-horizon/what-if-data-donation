@@ -4,8 +4,7 @@ from typing import Optional, TypedDict, Dict, Any
 import pandas as pd
 
 
-@dataclass
-class Translations:
+class Translations(TypedDict):
     """
     Typed dict containing text that is displayed in a specific language.
     """
