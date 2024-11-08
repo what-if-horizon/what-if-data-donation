@@ -32,7 +32,8 @@ def dict_denester(inp: dict[Any, Any] | list[Any], new: dict[Any, Any] | None = 
     Returns:
         dict[Any, Any]: A new denested dictionary.
 
-    Examples:
+    Examples::
+
         >>> nested_dict = {"a": {"b": {"c": 1}}, "d": [2, 3]}
         >>> dict_denester(nested_dict)
         {"a-b-c": 1, "d-0": 2, "d-1": 3}
@@ -73,7 +74,8 @@ def find_item(d: dict[Any, Any], key_to_match: str) -> str:
     Raises:
         Exception: Logs an error message if an exception occurs during the search.
 
-    Examples:
+    Examples::
+
         >>> d = {"asd-asd-asd": 1, "asd-asd": 2, "qwe": 3}
         >>> find_item(d, "asd")
         "2"
@@ -109,7 +111,8 @@ def find_items(d: dict[Any, Any], key_to_match: str) -> list:
     Raises:
         Exception: Logs an error message if an exception occurs during the search.
 
-    Examples:
+    Examples::
+
         >>> d = {"asd-1": "a", "asd-2": "b", "qwe": "c"}
         >>> find_items(d, "asd")
         ["a", "b"]
@@ -140,7 +143,8 @@ def json_dumper(zfile: str) -> pd.DataFrame:
     Raises:
         Exception: Logs an error message if an exception occurs during the process.
 
-    Examples:
+    Examples::
+
         >>> df = json_dumper("data.zip")
         >>> print(df.head())
     """
@@ -180,7 +184,8 @@ def fix_ascii_string(input: str) -> str:
     Returns:
         str: The fixed string with only ASCII characters, or the original string if an exception occurs.
 
-    Examples:
+    Examples::
+
         >>> fix_ascii_string("Hello, 世界!")
         "Hello, !"
     """
@@ -201,7 +206,8 @@ def replace_months(input_string: str) -> str:
     Returns:
         str: The input string with Dutch month abbreviations replaced by English equivalents.
 
-    Examples:
+    Examples::
+
         >>> replace_months("15 mei 2023")
         "15 may 2023"
     """
@@ -233,7 +239,8 @@ def epoch_to_iso(epoch_timestamp: str | int | float) -> str:
     Raises:
         Exception: Logs an error message if conversion fails.
 
-    Examples:
+    Examples::
+
         >>> epoch_to_iso(1632139200)
         "2021-09-20T12:00:00+00:00"
     """
@@ -257,7 +264,8 @@ def sort_isotimestamp_empty_timestamp_last(timestamp_series: pd.Series) -> pd.Se
     Returns:
         pd.Series: A Series of sorting keys, with -timestamp for valid dates and infinity for invalid/empty dates.
 
-    Examples:
+    Examples::
+
         >>> df = df.sort_values(by="Date", key=sort_isotimestamp_empty_timestamp_last)
     """
     def convert_timestamp(timestamp):
@@ -285,7 +293,8 @@ def fix_latin1_string(input: str) -> str:
     Returns:
         str: The fixed string after encoding and decoding, or the original string if an exception occurs.
 
-    Examples:
+    Examples::
+
         >>> fix_latin1_string("café")
         "café"
     """
@@ -319,7 +328,8 @@ def extract_file_from_zip(zfile: str, file_to_extract: str) -> io.BytesIO:
         zipfile.BadZipFile: Logs an error if the zip file is invalid.
         Exception: Logs any other unexpected errors.
 
-    Examples:
+    Examples::
+
         >>> extracted_file = extract_file_from_zip("archive.zip", "data.txt")
         >>> content = extracted_file.getvalue().decode('utf-8')
     """
@@ -385,7 +395,8 @@ def _json_reader_file(json_file: str, encoding: str) -> Any:
     Returns:
         Any: The parsed JSON data.
 
-    Examples:
+    Examples::
+
         >>> data = _json_reader_file("data.json", "utf-8")
         >>> print(data)
         {'key': 'value'}
@@ -413,7 +424,8 @@ def _read_json(json_input: Any, json_reader: Callable[[Any, str], Any]) -> dict[
         json.JSONDecodeError: Logs an error if JSON decoding fails.
         Exception: Logs any other unexpected errors.
 
-    Examples:
+    Examples::
+
         >>> data = _read_json(b'{"key": "value"}', _json_reader_bytes)
         >>> print(data)
         {'key': 'value'}
@@ -456,7 +468,8 @@ def read_json_from_bytes(json_bytes: io.BytesIO) -> dict[Any, Any] | list[Any]:
         dict[Any, Any] | list[Any]: The parsed JSON data as a dictionary or list.
                                     Returns an empty dictionary if parsing fails.
 
-    Examples:
+    Examples::
+
         >>> buffer = io.BytesIO(b'{"key": "value"}')
         >>> data = read_json_from_bytes(buffer)
         >>> print(data)
@@ -483,7 +496,8 @@ def read_json_from_file(json_file: str) -> dict[Any, Any] | list[Any]:
         dict[Any, Any] | list[Any]: The parsed JSON data as a dictionary or list.
                                     Returns an empty dictionary if parsing fails.
 
-    Examples:
+    Examples::
+
         >>> data = read_json_from_file("data.json")
         >>> print(data)
         {'key': 'value'}
@@ -504,6 +518,7 @@ def read_csv_from_bytes(json_bytes: io.BytesIO) -> list[dict[Any, Any]]:
                               Returns an empty list if parsing fails.
 
     Examples:
+
         >>> buffer = io.BytesIO(b'name,age\\nAlice,30\\nBob,25')
         >>> data = read_csv_from_bytes(buffer)
         >>> print(data)
@@ -536,6 +551,7 @@ def read_csv_from_bytes_to_df(json_bytes: io.BytesIO) -> pd.DataFrame:
         pd.DataFrame: A pandas DataFrame containing the CSV data.
 
     Examples:
+
         >>> buffer = io.BytesIO(b'name,age\\nAlice,30\\nBob,25')
         >>> df = read_csv_from_bytes_to_df(buffer)
         >>> print(df)

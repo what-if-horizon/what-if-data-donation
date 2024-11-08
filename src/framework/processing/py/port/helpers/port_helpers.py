@@ -167,7 +167,8 @@ def exit(code: int, info: str) -> CommandSystemExit:
     Returns:
         CommandSystemExit: A system command that initiates the exit process in Next.
 
-    Examples:
+    Examples::
+    
         yield exit(0, "Success")
     """
     return CommandSystemExit(code, info)
