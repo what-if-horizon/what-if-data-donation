@@ -164,10 +164,8 @@ def process(session_id: int):
 
     if table_list is not None:
         logger.info("Prompt consent; %s", platform_name)
-        review_data_prompt = ph.generate_review_data_prompt(REVIEW_DATA_DESCRIPTION, table_list)
-        review_data_result = yield ph.render_page(REVIEW_DATA_HEADER, review_data_prompt)
-        if review_data_result.__type__ == "PayloadJSON":
-            yield ph.donate(f"{session_id}-questionnaire-donation", review_data_result.value)
+        review_data_prompt = ph.generate_review_data_prompt(f"{session_id}-chatpt", REVIEW_DATA_DESCRIPTION, table_list)
+        yield ph.render_page(REVIEW_DATA_HEADER, review_data_prompt)
 
     yield ph.exit(0, "Success")
     yield ph.render_end_page()
