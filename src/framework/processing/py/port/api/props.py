@@ -106,18 +106,18 @@ class PropsUIPromptConsentFormTable:
     Attributes:
         id (str): A unique string to identify the table after donation.
         title (Translatable): Title of the table.
-        data_frame (pd.DataFrame | Dict[str, Dict[str, Any]]): Table to be shown can be a pandas data frame or a dictionary
+        data_frame (pd.DataFrame | Dict[str, Dict[str, Any]]): Table to be shown can be a pandas DataFrame or a dictionary.
         description (Optional[Translatable]): Optional description of the table.
         visualizations (Optional[list]): Optional visualizations to be shown.
         folded (Optional[bool]): Whether the table should be initially folded.
         delete_option (Optional[bool]): Whether to show a delete option for the table.
 
-    Examples:
-        # Using a pandas DataFrame for data_frame
+    Examples::
+
         data_frame_df = pd.DataFrame([
             {"column1": 1, "column2": 4},
             {"column1": 2, "column2": 5},
-            {"column1": 3, "column2": 6}
+            {"column1": 3, "column2": 6},
         ])
         
         example1 = PropsUIPromptConsentFormTable(
@@ -126,12 +126,12 @@ class PropsUIPromptConsentFormTable:
             data_frame=data_frame_df,
         )
 
-        # Using a dictionary for data_frame
         data_frame_dict = {
             "column1": {"0": 1, "1": 4},
             "column2": {"0": 2, "1": 5},
-            "column3": {"0": 3, "1": 6}
+            "column3": {"0": 3, "1": 6},
         }
+        
         example2 = PropsUIPromptConsentFormTable(
             id="example2",
             title=Translatable("Table as Dictionary"),
@@ -474,10 +474,12 @@ class PropsUIPageDonation:
     A multi-purpose page that gets shown to the user.
 
     Attributes:
-        platform (str): The platform name the user is currently in the process of donating data from.
+        platform (str): 
+            The platform name the user is currently in the process of donating data from.
         header (PropsUIHeader): Page header.
-        body (PropsUIPromptRadioInput | PropsUIPromptConsentForm | PropsUIPromptFileInput |
-              PropsUIPromptFileInputMultiple | PropsUIPromptConfirm | PropsUIPromptQuestionnaire):
+        body (PropsUIPromptRadioInput | PropsUIPromptConsentForm |
+            PropsUIPromptFileInput | PropsUIPromptFileInputMultiple | 
+            PropsUIPromptConfirm | PropsUIPromptQuestionnaire):
             Main body of the page.
         footer (Optional[PropsUIFooter]): Optional page footer.
     """

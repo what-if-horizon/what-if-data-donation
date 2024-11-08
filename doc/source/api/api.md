@@ -1,4 +1,4 @@
-# API reference
+# API Reference
 
 ## Props
 
@@ -25,14 +25,5 @@
 
 ```{eval-rst}
 .. automodule:: port.helpers.validate
-   :members:
-```
-
-## Platforms
-
-### ChatGPT
-
-```{eval-rst}
-.. automodule:: port.platforms.chatgpt
    :members:
 ```
