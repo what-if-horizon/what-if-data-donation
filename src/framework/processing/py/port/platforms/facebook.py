@@ -1,7 +1,7 @@
 """
-Instagram
+Facebook
 
-This module contains an example flow of a Instagram data donation study
+This module contains an example flow of a Facebook data donation study
 """
 import logging
 
@@ -489,7 +489,11 @@ def extraction(facebook_zip : str) -> list[props.PropsUIPromptConsentFormTable]:
             "en": "Likes and Reactions",
             "nl": "Likes en reacties",
         })
-        table = props.PropsUIPromptConsentFormTable("likes_and_reactions", table_title, df)
+        table_description = props.Translatable({
+           "en": "This table shows the likes and reactions you yourself have given to posts and comments.",
+           "nl": "Deze tabel toont de likes en reacties die je hebt gegeven aan berichten en reacties."
+        })
+        table = props.PropsUIPromptConsentFormTable("likes_and_reactions", table_title, df, table_description)
         tables_to_render.append(table)
 
     # df = your_badges_to_df(facebook_zip)
@@ -503,6 +507,10 @@ def extraction(facebook_zip : str) -> list[props.PropsUIPromptConsentFormTable]:
         table_title = props.Translatable({
             "en": "Search History",
             "nl": "Zoekgeschiedenis"
+        })
+        table_description = props.Translatable({
+            "en": "This table shows your search history on Facebook, including the search terms and the dates they were searched.",
+            "nl": "Deze tabel toont uw zoekgeschiedenis op Facebook, inclusief de zoektermen en de datums waarop ze zijn gezocht."
         })
         table = props.PropsUIPromptConsentFormTable("search_history", table_title, df)
         tables_to_render.append(table)
@@ -536,13 +544,13 @@ def extraction(facebook_zip : str) -> list[props.PropsUIPromptConsentFormTable]:
 
 # TEXTS
 SUBMIT_FILE_HEADER = props.Translatable({
-    "en": "Select your Instagram file",
-    "nl": "Selecteer uw Instagram bestand"
+    "en": "Select your Facebook file",
+    "nl": "Selecteer uw Facebook bestand"
 })
 
 REVIEW_DATA_HEADER = props.Translatable({
-    "en": "Your Instagram data",
-    "nl": "Uw Instagram gegevens"
+    "en": "Your Facebook data",
+    "nl": "Uw Facebook gegevens"
 })
 
 RETRY_HEADER = props.Translatable({
@@ -551,13 +559,13 @@ RETRY_HEADER = props.Translatable({
 })
 
 REVIEW_DATA_DESCRIPTION = props.Translatable({
-   "en": "Below you will find a currated selection of Instagram data.",
-   "nl": "Below you will find a currated selection of Instagram data.",
+   "en": "This is a demo for what the donation interface looks like. We extract data from the zip file, and participants first get to see all the data we extracted. Only the data that is visible to them will be donated, and they can optionally delete data they do not want to donate.",
+   "nl": "Dit is een demo voor hoe de donatie-interface eruit ziet. We extraheren gegevens uit het zip-bestand en deelnemers krijgen eerst alle gegevens te zien die we hebben geëxtraheerd. Alleen de gegevens die voor hen zichtbaar zijn, worden gedoneerd en ze kunnen optioneel gegevens verwijderen die ze niet willen doneren."
 })
 
 
 def process(session_id: int):
-    platform_name = "Instagram"
+    platform_name = "Facebook"
 
     table_list = None
     while True:
@@ -576,7 +584,7 @@ def process(session_id: int):
                 table_list = extraction_result
                 break
 
-            # Enter retry flow, reason: if DDP was not a Instagram DDP
+            # Enter retry flow, reason: if DDP was not a Facebook DDP
             if validation.get_status_code_id() != 0:
                 logger.info("Not a valid %s zip; No payload; prompt retry_confirmation", platform_name)
                 retry_prompt = ph.generate_retry_prompt(platform_name)
@@ -594,7 +602,7 @@ def process(session_id: int):
 
     if table_list is not None:
         logger.info("Prompt consent; %s", platform_name)
-        review_data_prompt = ph.generate_review_data_prompt(f"{session_id}-instagram", REVIEW_DATA_DESCRIPTION, table_list)
+        review_data_prompt = ph.generate_review_data_prompt(f"{session_id}-facebook", REVIEW_DATA_DESCRIPTION, table_list)
         yield ph.render_page(REVIEW_DATA_HEADER, review_data_prompt)
 
     yield ph.exit(0, "Success")
