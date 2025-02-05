@@ -1,29 +1,16 @@
-let pyScript;
+let initialized = false;
 
 onmessage = (event) => {
   const { type } = event.data;
   switch (type) {
     case "initialise":
-      initialise().then(() => {
-        self.postMessage({ type: "initialiseDone" });
-      });
+      if (!initialized) initialise();
+      initialized = true;
       break;
 
     case "import":
-      const { script, id, file } = event.data;
-
-      try {
-        self.pyodide.runPython(`
-         import js
-         from js import file
-          ${script}
-      `);
-
-        const tables = self.pyodide.globals.get("tables");
-        self.postMessage({ type: "importDone", id, tables });
-      } catch (error) {
-        self.postMessage({ type: "importFailed", id, error });
-      }
+      const { script, id, fileList } = event.data;
+      runImport(id, script, fileList);
       break;
 
     default:
@@ -31,37 +18,90 @@ onmessage = (event) => {
   }
 };
 
-function initialise() {
-  console.log("[ProcessingWorker] initialise");
-  return startPyodide()
-    .then((pyodide) => {
-      self.pyodide = pyodide;
-      return loadPackages();
-    })
-    .then(() => {
-      return installPortPackage();
-    });
+async function initialise() {
+  await loadPyodide();
+  await loadPackages();
+  await installPortPackage();
+  self.postMessage({ type: "initialiseDone" });
 }
 
-function startPyodide() {
-  importScripts("https://cdn.jsdelivr.net/pyodide/v0.24.0/full/pyodide.js");
+async function runImport(id, script, fileList) {
+  const dir = `/data_${id}`;
 
-  console.log("[ProcessingWorker] loading Pyodide");
-  return loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.24.0/full/",
-  });
+  writeToWORKERFS(dir, fileList);
+
+  try {
+    const scriptWithIO = `import os\nos.chdir("${dir}")\n${script}`;
+    pyodide.runPython(scriptWithIO);
+    const tables = self.pyodide.globals.get("tables");
+    self.postMessage({ type: "importDone", id, tables });
+  } catch (e) {
+    self.postMessage({ type: "importFailed", id, error: e.message });
+  } finally {
+    rmFromWORKERFS(dir);
+  }
 }
 
-function loadPackages() {
+async function runScript(script) {
+  console.log("kutpyghon");
+  pyodide.runPython("x = 5");
+  pyodide.runPython("print(x)");
+
+  const scriptWithIO = `import os\nos.chdir("${dir}")\n${script}`;
+  pyodide.runPython(scriptWithIO);
+
+  const tables = self.pyodide.globals.get("tables");
+}
+
+function writeToWORKERFS(dir, fileList) {
+  const path = self.pyodide.FS.analyzePath(dir);
+
+  pyodide.runPython(`import os; print(os.listdir('/'))`);
+
+  if (!path.exists) self.pyodide.FS.mkdir(dir);
+
+  self.pyodide.FS.mount(
+    self.pyodide.FS.filesystems.WORKERFS,
+    { files: fileList },
+    dir,
+  );
+
+  pyodide.runPython(`import os; print(os.listdir('/${dir}'))`);
+}
+function rmFromWORKERFS(dir) {
+  try {
+    self.pyodide.FS.unmount(dir);
+    // self.pyodide.FS.unlink(dir);
+    pyodide.runPython(`import os; print(os.listdir('/'))`);
+    pyodide.runPython(`import os; print(os.listdir('/${dir}'))`);
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+async function loadPyodide() {
+  const pyodideModule = await import(
+    "https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.mjs"
+  );
+  self.pyodide = await pyodideModule.loadPyodide();
+}
+
+async function loadPackages() {
   console.log("[ProcessingWorker] loading packages");
-  return self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
+  await self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
+
+  // can also install anything on pypi with wheels
+  return await self.pyodide.runPythonAsync(`
+     import micropip
+     await micropip.install("jsonpath-ng")
+  `);
 }
 
-function installPortPackage() {
+async function installPortPackage() {
   console.log("[ProcessingWorker] load port package");
-  return self.pyodide.runPythonAsync(`
+  return await self.pyodide.runPythonAsync(`
     import micropip
-    await micropip.install("../../port-0.0.0-py3-none-any.whl", deps=False)
+    await micropip.install("/port-0.0.0-py3-none-any.whl", deps=False)
     import port
   `);
 }
