@@ -5,7 +5,7 @@ import { Bridge } from "./framework/types/modules";
 import LiveBridge from "./live_bridge";
 import FakeBridge from "./fake_bridge";
 import { createRoot } from "react-dom/client";
-import APP from "./devApp";
+import DevApp from "./dev/App";
 
 const rootElement = document.getElementById("root") as HTMLElement;
 
@@ -34,7 +34,7 @@ if (
   if (import.meta.env.VITE_IMPORT_SCRIPT === "facebook") {
     console.log("dev facebook mode");
     const root = createRoot(rootElement);
-    root.render(<APP />);
+    root.render(<DevApp />);
   } else {
     console.log("Running with fake bridge");
     run(new FakeBridge(), "en");

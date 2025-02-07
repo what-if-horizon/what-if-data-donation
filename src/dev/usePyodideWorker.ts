@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
-const worker = new Worker("/src/devPyodideWorker.js");
+const worker = new Worker("/src/pyodideWorker.js");
 
 const initializedWorker = new Promise<Worker>((resolve) => {
   worker.onmessage = (event) => {
@@ -15,18 +15,19 @@ window.addEventListener("beforeunload", () => {
 });
 
 export default function usePyodideWorker() {
-  const messageId = useRef(0);
+  const activeIds = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     worker.postMessage({ type: "initialise" });
   }, []);
 
   const runImportScript = useCallback(
-    async (script: string, fileList: FileList) => {
+    async (id: string, script: string, fileList: FileList) => {
       const w = await initializedWorker;
-      const id = messageId.current++;
-
-      w.postMessage({ type: "import", id, script, fileList });
+      if (!activeIds.current.has(id)) {
+        w.postMessage({ type: "import", id, script, fileList });
+        activeIds.current.add(id);
+      }
 
       return new Promise((resolve, reject) => {
         w.addEventListener("message", function listener(event) {
@@ -34,7 +35,7 @@ export default function usePyodideWorker() {
           w.removeEventListener("message", listener);
           if (event.data.type === "importDone") resolve(event.data.table);
           if (event.data.type === "importFailed") reject(event.data.error);
-          reject("invalid response type: " + event.data.type);
+          activeIds.current.delete(id);
         });
       });
     },

@@ -26,16 +26,19 @@ async function initialise() {
 }
 
 async function runImport(id, script, fileList) {
-  const dir = `/data_${id}`;
-
+  const dir = `/${id}`;
   writeToWORKERFS(dir, fileList);
 
   try {
-    const scriptWithIO = `import os\nos.chdir("${dir}")\n${script}`;
-    pyodide.runPython(scriptWithIO);
-    const tables = self.pyodide.globals.get("tables");
+    files = Array.from(fileList).map((file) => `${dir}/${file}`);
+    pyodide.runPython(`
+      ${script}
+      TABLES_OUTPUT = create_tables(${files})
+    `);
+    const tables = self.pyodide.globals.get("TABLES_OUTPUT");
     self.postMessage({ type: "importDone", id, tables });
   } catch (e) {
+    console.log(e);
     self.postMessage({ type: "importFailed", id, error: e.message });
   } finally {
     rmFromWORKERFS(dir);
@@ -43,10 +46,6 @@ async function runImport(id, script, fileList) {
 }
 
 async function runScript(script) {
-  console.log("kutpyghon");
-  pyodide.runPython("x = 5");
-  pyodide.runPython("print(x)");
-
   const scriptWithIO = `import os\nos.chdir("${dir}")\n${script}`;
   pyodide.runPython(scriptWithIO);
 

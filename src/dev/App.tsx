@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import usePyodideWorker from "./usePyodideWorker";
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
-import script from "./framework/processing/py/port/platform_tables/facebook.py?raw";
+import script from "../framework/processing/py/port/platform_tables/facebook.py?raw";
+import { FileTree } from "./DataViewer";
 
 type Table = Record<string, string | number | boolean>[];
 
@@ -14,7 +15,7 @@ export default function APP() {
 
   useEffect(() => {
     if (!fileInput) return;
-    runImportScript(script, fileInput)
+    runImportScript("data", script, fileInput)
       .then((tables) => setTables(tables as Table[]))
       .catch(setError);
   }, [fileInput, runImportScript]);
@@ -22,7 +23,8 @@ export default function APP() {
   return (
     <div>
       <FileInputForm fileInput={fileInput} setFileInput={setFileInput} />
-      {error && <div>{error}</div>}
+      {error && <pre className="text-delete mt-10">{error}</pre>}
+      <FileTree files={fileInput} />
     </div>
   );
 }
