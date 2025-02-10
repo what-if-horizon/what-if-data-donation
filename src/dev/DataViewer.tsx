@@ -1,40 +1,100 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { OK } from "zod";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import JSZip from "jszip";
 
-interface File {
+export interface PreviewFile {
   content: any;
-  type: string;
+  name: string;
   message?: string;
 }
 
 interface Props {
-  files: FileList | null;
+  files: File | File[];
+  selectedFile: PreviewFile | null;
+  setSelectedFile: (file: PreviewFile) => void;
 }
 
-export function FileTree({ files }: Props) {
-  if (!files) return null;
+export function FileTree({ files, selectedFile, setSelectedFile }: Props) {
   const [fileTree, setFileTree] = useState<FileTree[] | null>(null);
+  const [search, setSearch] = useState("");
+  const fileCache = useRef<Record<string, PreviewFile>>({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    createFileTree(files).then((fileTree) => {
+    const f = Array.isArray(files) ? files : [files];
+    fileCache.current = {};
+    createFileTree(f).then((fileTree) => {
       setFileTree(fileTree);
+      if (fileTree.length === 1) onSelect(fileTree[0].fullname);
     });
   }, [files]);
+
+  async function onSelect(fullname: string) {
+    // currently only supports single file upload
+    const file = Array.isArray(files) ? files[0] : files;
+    if (!fileCache.current[fullname]) {
+      const content = await readFile(file, fullname);
+      fileCache.current[fullname] = { content, name: fullname };
+    }
+    setSelectedFile(fileCache.current[fullname]);
+  }
 
   if (!fileTree) return null;
 
   return (
-    <div className="border">
-      {fileTree.map((file) => {
-        return (
-          <div key={file.fullname} style={{ marginLeft: file.level * 30 }}>
-            {file.name}
-          </div>
-        );
-      })}
+    <div>
+      <div className="p-3 rounded w-max mx-auto mt-6 w-[800px] mx-w-full">
+        <div className="flex items-center gap-1      ">
+          <input
+            type="text"
+            placeholder="search"
+            className="border  rounded  p-1  w-full"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          {search ? (
+            <button
+              onClick={() => setSearch("")}
+              className="border bg-primary text-white rounded px-3 p-1 ml-auto mr-6 items-center flex gap-1"
+            >
+              {"Clear"}
+            </button>
+          ) : null}
+        </div>
+        <div className="h-3" />
+        {fileTree.map((file) => {
+          if (file.name.startsWith(".")) return null;
+          if (search && !file.fullname.includes(search)) return null;
+          const cl = file.isFile
+            ? "underline font-bold cursor-pointer"
+            : " text-primary mt-2 cursor-zoom-in ";
+          return (
+            <div
+              key={file.fullname}
+              style={{ marginLeft: (file.level - 1) * 20 }}
+              className={`${cl}`}
+              onClick={() => {
+                if (!file.isFile) {
+                  setSearch(file.dir);
+                } else {
+                  setLoading(true);
+                  onSelect(file.fullname).finally(() => setLoading(false));
+                }
+              }}
+            >
+              <span>{file.name + (file.isFile ? "" : "/")}</span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
+}
+
+function inferFileType(filename: string) {
+  if (filename.endsWith(".json")) return "json";
+  if (filename.endsWith(".html")) return "html";
+  if (filename.endsWith(".csv")) return "csv";
+  return "raw";
 }
 
 interface FileTree {
@@ -45,7 +105,7 @@ interface FileTree {
   isFile: boolean;
 }
 
-async function createFileTree(files: FileList) {
+async function createFileTree(files: File[]) {
   const fileTree: FileTree[] = [];
 
   for (let i = 0; i < files.length; i++) {
@@ -55,38 +115,40 @@ async function createFileTree(files: FileList) {
     if (type === "application/zip") {
       const zip = new JSZip();
       const zipFile = await zip.loadAsync(file);
-      const orderedFiles = Object.keys(zipFile.files).sort((a, b) => {
-        const aLevel = a.split("/").length;
-        const bLevel = b.split("/").length;
-        return aLevel - bLevel || a.localeCompare(b);
-      });
-      console.log(zipFile.files);
-
-      let lastDir = "";
-      for (const relativePath of orderedFiles) {
-        const paths = relativePath.split("/");
-        const folders = paths.slice(1, paths.length - 1);
-        const dir = folders.join("/");
-        const file = paths[paths.length - 1];
-
-        if (dir !== lastDir) {
-          fileTree.push({
-            name: dir,
-            level: folders.length,
-            dir,
-            fullname: dir,
-            isFile: false,
-          });
-          lastDir = dir;
-        }
-
-        fileTree.push({
-          name: file,
-          level: folders.length + 1,
-          dir: dir,
-          fullname: relativePath,
-          isFile: true,
+      const filesArray = Object.entries(zipFile.files)
+        .map(([name, file]) => ({
+          name,
+          file,
+        }))
+        .sort((a, b) => {
+          const aLevel = a.name.split("/").length;
+          const bLevel = b.name.split("/").length;
+          return a.name.localeCompare(b.name) || aLevel - bLevel;
         });
+
+      let seenPath = new Set<string>();
+      for (const { file, name } of filesArray) {
+        const relativePath = name;
+        const paths = relativePath.split("/");
+
+        for (let i = 1; i < paths.length; i++) {
+          const path = paths.slice(1, i + 1).join("/");
+
+          const isLast = i === paths.length - 1;
+          const isDir = file.dir;
+          const isFile = isLast && !isDir;
+
+          if (!seenPath.has(path)) {
+            fileTree.push({
+              name: paths[i],
+              level: i + 1,
+              dir: path,
+              fullname: isFile ? name : path,
+              isFile,
+            });
+            seenPath.add(path);
+          }
+        }
       }
     } else {
       fileTree.push({
@@ -101,69 +163,107 @@ async function createFileTree(files: FileList) {
   return fileTree;
 }
 
-function recursiveFileTree(
-  parentMap: Record<string, FileTree[]>,
-  dir: string,
-): FileTree[] {
-  const files = parentMap[dir].sort((a, b) => a.name.localeCompare(b.name));
-  if (!files) return [];
-  return files.map((file) => {
-    return {
-      ...file,
-      children: recursiveFileTree(parentMap, file.dir),
-    };
-  });
-}
+export function RenderRaw({ file }: { file: PreviewFile }) {
+  const typeDict = useRef<Record<string, string | null>>({});
+  const [type, setType] = useState<string | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
-const DataViewer = (file: File) => {
-  const [showRaw, setShowRaw] = useState(false);
+  useEffect(() => {
+    if (typeDict.current[file.name] === undefined) {
+      typeDict.current[file.name] = inferFileType(file.name);
+    }
+    changeType(typeDict.current?.[file.name] || "raw");
+  }, [file]);
 
   if (!file?.content) return null;
+
+  function changeType(type: string) {
+    typeDict.current[file.name] = type;
+    setType(type);
+  }
+
+  function shorten(text: string) {
+    const n = 100000;
+    if (text.length > n && !showAll) {
+      return text.slice(0, n) + "...";
+    }
+    return text;
+  }
+
+  function renderType() {
+    if (type === "json") {
+      return (
+        <pre>{shorten(JSON.stringify(JSON.parse(file.content), null, 2))}</pre>
+      );
+    }
+    if (type === "html") {
+      return <pre>{shorten(file.content)}</pre>;
+    }
+    if (type === "csv") {
+      return <pre>{file.content}</pre>;
+    }
+    return <pre>{shorten(file.content)}</pre>;
+  }
+
+  const fileWithoutRoot = file.name.split("/").slice(1).join("/");
 
   return (
-    <div>
-      <div className="flex">
-        <button
-          content={showRaw ? "Hide raw data" : "Show raw data"}
-          onClick={() => setShowRaw(!showRaw)}
-        />
-        {file.message ? file.message : null}
+    <div className="flex flex-col gap-6">
+      <div className="mx-auto text-primary font-bold">{fileWithoutRoot}</div>
+      <div className="mx-auto flex gap-3 select-none">
+        <div>File parser:</div>
+        <RadioTypeItem type="json" currentType={type} onChange={changeType} />
+        <RadioTypeItem type="html" currentType={type} onChange={changeType} />
+        <RadioTypeItem type="csv" currentType={type} onChange={changeType} />
+        <RadioTypeItem type="raw" currentType={type} onChange={changeType} />
       </div>
-
-      {showRaw ? (
-        <div>
-          <RenderRaw {...file} />
-        </div>
-      ) : null}
-      <br />
+      <div className="max-w-full overflow-auto">
+        <div className="p-3">{renderType()}</div>
+      </div>
     </div>
   );
-};
+}
 
-const RenderRaw = (file: File) => {
-  if (!file?.content) return null;
-  switch (file.type) {
-    case "json":
-      return (
-        <>
-          <pre>{JSON.stringify(file.content, null, 2)}</pre>
-        </>
-      );
-    case "html":
-      return (
-        <>
-          <pre>{file.content}</pre>
-        </>
-      );
-    case "csv":
-      return (
-        <>
-          <pre>{file.content}</pre>
-        </>
-      );
-    default:
-      return null;
+function RadioTypeItem({
+  type,
+  currentType,
+  onChange,
+}: {
+  type: string;
+  currentType: string | null;
+  onChange: (type: string) => void;
+}) {
+  const cl = currentType === type ? "bg-primary text-white" : "bg-white";
+  return (
+    <button
+      onClick={() => onChange(type)}
+      className={`${cl} w-20 rounded border`}
+    >
+      {type}
+    </button>
+  );
+}
+
+async function readFile(file: File, path: string) {
+  if (file.type === "application/zip") {
+    const zip = new JSZip();
+    return zip.loadAsync(file).then((zf) => {
+      return zf.file(path)?.async("text");
+    });
   }
-};
 
-export default DataViewer;
+  // If file is not zipped, use FileReader API, but return as promise
+  // for consistency
+  var reader = new FileReader();
+  return new Promise((resolve, reject) => {
+    reader.onerror = () => {
+      reader.abort();
+      reject(new DOMException("Problem parsing input file."));
+    };
+
+    reader.onload = () => {
+      resolve(reader.result);
+    };
+    reader.readAsText(file);
+  });
+}

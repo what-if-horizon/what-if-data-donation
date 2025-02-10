@@ -3,14 +3,71 @@ import usePyodideWorker from "./usePyodideWorker";
 
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import script from "../framework/processing/py/port/platform_tables/facebook.py?raw";
-import { FileTree } from "./DataViewer";
+import { FileTree, PreviewFile, RenderRaw } from "./DataViewer";
+import { FileInputMultiple } from "../framework/visualisation/react/ui/prompts/file_input_multiple";
+import { FileInput } from "../framework/visualisation/react/ui/prompts/file_input";
+import { Page } from "../framework/visualisation/react/ui/pages/templates/page";
+import { Payload } from "../framework/types/commands";
 
 type Table = Record<string, string | number | boolean>[];
 
-export default function APP() {
+export default function App() {
+  const [fileInput, setFileInput] = useState<File | null>(null);
+  const [tab, setTab] = useState<"Raw data" | "Parsed data">("Raw data");
+
+  if (!fileInput)
+    return <FileInputForm fileInput={fileInput} setFileInput={setFileInput} />;
+
+  function render() {
+    if (!fileInput) return null;
+    if (tab === "Raw data") return <RawData fileInput={fileInput} />;
+    if (tab === "Parsed data") return <ParsedData fileInput={fileInput} />;
+  }
+
+  return (
+    <div>
+      <div className="flex flex gap-3 mt-6 w-full items-center px-6 ">
+        <button
+          onClick={() => setTab("Raw data")}
+          className={`${tab === "Raw data" ? "bg-primary text-white" : ""} border rounded p-1 px-3`}
+        >
+          Raw data
+        </button>
+        <button
+          onClick={() => setTab("Parsed data")}
+          className={`${tab === "Parsed data" ? "bg-primary text-white" : ""} border rounded p-1 px-3`}
+        >
+          Parsed Data
+        </button>
+        <button
+          onClick={() => setFileInput(null)}
+          className="border bg-primary text-white rounded px-3 p-1 ml-auto  items-center flex gap-1"
+        >
+          {" Go back to file upload"}
+        </button>
+      </div>
+      {render()}
+    </div>
+  );
+}
+
+function RawData({ fileInput }: { fileInput: File }) {
+  const [selected, setSelected] = useState<PreviewFile | null>(null);
+
+  if (selected) return <ShowFile file={selected} setSelected={setSelected} />;
+
+  return (
+    <FileTree
+      files={fileInput}
+      selectedFile={selected}
+      setSelectedFile={setSelected}
+    />
+  );
+}
+
+function ParsedData({ fileInput }: { fileInput: File }) {
   const [tables, setTables] = useState<Table[] | null>(null);
   const [error, setError] = useState<string>("");
-  const [fileInput, setFileInput] = useState<FileList | null>(null);
   const { runImportScript } = usePyodideWorker();
 
   useEffect(() => {
@@ -20,11 +77,36 @@ export default function APP() {
       .catch(setError);
   }, [fileInput, runImportScript]);
 
+  console.log(tables);
+  console.log(error);
+
+  if (error)
+    return (
+      <div>
+        <pre>{error}</pre>
+      </div>
+    );
+
+  return null;
+}
+
+function ShowFile({
+  file,
+  setSelected,
+}: {
+  file: PreviewFile;
+  setSelected: (file: PreviewFile | null) => void;
+}) {
+  const [type, setType] = useState<string | null>(null);
   return (
-    <div>
-      <FileInputForm fileInput={fileInput} setFileInput={setFileInput} />
-      {error && <pre className="text-delete mt-10">{error}</pre>}
-      <FileTree files={fileInput} />
+    <div className="flex flex-col gap-6 mt-6">
+      <button
+        onClick={() => setSelected(null)}
+        className="border bg-primary text-white rounded px-3 p-1 mx-auto items-center flex gap-1"
+      >
+        {" Go back to files"}
+      </button>
+      <RenderRaw file={file} />
     </div>
   );
 }
@@ -33,29 +115,31 @@ function FileInputForm({
   fileInput,
   setFileInput,
 }: {
-  fileInput: FileList | null;
-  setFileInput: (fileInput: FileList) => void;
+  fileInput: File | File[] | null;
+  setFileInput: (fileInput: File) => void;
 }) {
-  return (
-    <form
-      onSubmit={(e) => {
-        e.preventDefault();
-        if (fileInput) {
-          setFileInput(fileInput);
-        }
-      }}
-    >
-      <input
-        type="file"
-        onChange={(e) => {
-          if (e.target.files) {
-            setFileInput(e.target.files);
+  function resolve(payload: Payload) {
+    if (payload.__type__ === "PayloadFile") setFileInput(payload.value);
+  }
+
+  if (!fileInput) {
+    return (
+      <div className={"mx-auto w-[1000px] max-w-full p-6"}>
+        <Page
+          body={
+            <FileInput
+              resolve={resolve}
+              description={""}
+              extensions={""}
+              locale={"en"}
+            />
           }
-        }}
-      />
-      <button type="submit">Upload</button>
-    </form>
-  );
+        />
+      </div>
+    );
+  }
+
+  return null;
 }
 
 // function usePyodideWorker() {

@@ -22,10 +22,15 @@ export default function usePyodideWorker() {
   }, []);
 
   const runImportScript = useCallback(
-    async (id: string, script: string, fileList: FileList) => {
+    async (id: string, script: string, fileList: File[] | File) => {
       const w = await initializedWorker;
       if (!activeIds.current.has(id)) {
-        w.postMessage({ type: "import", id, script, fileList });
+        w.postMessage({
+          type: "import",
+          id,
+          script,
+          fileList: Array.isArray(fileList) ? fileList : [fileList],
+        });
         activeIds.current.add(id);
       }
 
