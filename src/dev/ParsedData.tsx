@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { Payload, PayloadDonate } from "../framework/types/commands";
+import {
+  PropsUIPromptConsentForm,
+  PropsUIPromptConsentFormTable,
+} from "../framework/types/prompts";
+import { ConsentForm } from "../framework/visualisation/react/ui/prompts/consent_form";
 import { Loader } from "../framework/visualisation/react/ui/visualization_plugin/ui/loader";
-import usePyodideWorker, {
-  ImportResult,
-  ParsedTable,
-} from "./usePyodideWorker";
+import usePyodideWorker, { ImportResult } from "./usePyodideWorker";
 
 export function ParsedData({
   fileInput,
@@ -14,8 +17,8 @@ export function ParsedData({
 }) {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ImportResult>({
-    tables: [] as ParsedTable[],
-    prints: [] as string[],
+    consentForm: null,
+    prints: [],
     error: null,
   });
   const { runImportScript } = usePyodideWorker();
@@ -31,13 +34,37 @@ export function ParsedData({
   function render() {
     if (loading) return <Loader />;
     if (result.error) return <pre className="text-delete">{result.error}</pre>;
-    return <div>tables here</div>;
+    if (!result.consentForm)
+      return <pre className="text-delete">No data generated</pre>;
+    return <MockConsentForm {...result.consentForm} />;
   }
 
   return (
-    <div className="mt-9 p-6 flex flex-col gap-12">
+    <div className="mt-9 p-6 grid grid-cols-1 gap-12 lg:grid-cols-[1fr,2fr] lg:gap-6">
       <PrintLines prints={result.prints} />
       {render()}
+    </div>
+  );
+}
+
+function MockConsentForm(consentFormProps: PropsUIPromptConsentForm) {
+  const locale = "en";
+
+  function fakeResolve(payload: Payload) {
+    if (payload.__type__ === "PayloadDonate") {
+      alert("You donated!!! jeeeyy!!! (add more usefull stats here)");
+    } else {
+      alert("Y u no donate :(");
+    }
+  }
+
+  return (
+    <div className="flex flex-col w-full">
+      <ConsentForm
+        {...consentFormProps}
+        locale={locale}
+        resolve={fakeResolve}
+      />
     </div>
   );
 }
@@ -46,18 +73,19 @@ function PrintLines({ prints }: { prints: string[] }) {
   const lines = prints.map((line) => {
     if (line.trim().length === 0) return null;
     return (
-      <li key={line} className="list-item">
+      <pre
+        key={line}
+        className="list-item p-1 my-1 rounded text-tertiary whitespace-pre-wrap break-words max-w-full  bg-white/5"
+      >
         {line}
-      </li>
+      </pre>
     );
   });
 
   return (
-    <div className="bg-black text-white p-3 rounded">
-      <h4 className="text-lg font-bold mb-4">
-        You can use print() for debugging
-      </h4>
-      <ul className="list-disc list-inside">{lines}</ul>
+    <div className="bg-grey1 text-white p-3 rounded overflow-auto  ">
+      <h4 className="text-lg font-bold mb-4">Print console</h4>
+      <div className=" flex flex-col">{lines}</div>
     </div>
   );
 }

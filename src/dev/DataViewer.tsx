@@ -92,8 +92,8 @@ export function FileTree({ files, selectedFile, setSelectedFile }: Props) {
 
 function inferFileType(filename: string) {
   if (filename.endsWith(".json")) return "json";
-  if (filename.endsWith(".html")) return "html";
-  if (filename.endsWith(".csv")) return "csv";
+  // if (filename.endsWith(".html")) return "html";
+  // if (filename.endsWith(".csv")) return "csv";
   return "txt";
 }
 
@@ -215,8 +215,8 @@ export function RenderRaw({ file }: { file: PreviewFile }) {
       <div className="mx-auto text-primary font-bold">{fileWithoutRoot}</div>
       <div className="mx-auto flex gap-3 select-none">
         <RadioTypeItem type="json" currentType={type} onChange={changeType} />
-        <RadioTypeItem type="html" currentType={type} onChange={changeType} />
-        <RadioTypeItem type="csv" currentType={type} onChange={changeType} />
+        {/* <RadioTypeItem type="html" currentType={type} onChange={changeType} />
+        <RadioTypeItem type="csv" currentType={type} onChange={changeType} /> */}
         <RadioTypeItem type="txt" currentType={type} onChange={changeType} />
       </div>
       <div className="max-w-full overflow-auto">

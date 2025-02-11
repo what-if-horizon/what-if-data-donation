@@ -30,20 +30,24 @@ async function runImport(id, script, fileInput) {
   files = Array.isArray(fileInput) ? fileInput : [fileInput];
   writeToWORKERFS(dir, files);
 
-  const { error, tables, prints } = runImportScript(dir, script, files);
+  const { error, consentForm, prints } = await runImportScript(
+    dir,
+    script,
+    files,
+  );
 
   self.postMessage({
     type: "import",
     status: "done",
     id,
     error,
-    tables,
+    consentForm,
     prints,
   });
   rmFromWORKERFS(dir);
 }
 
-function runImportScript(dir, script, fileInput) {
+async function runImportScript(dir, script, fileInput) {
   const prints = [];
   try {
     // pass print function and filenames to python
@@ -53,18 +57,26 @@ function runImportScript(dir, script, fileInput) {
 
     scriptLines = [
       "from sys import stdout",
+      "import json",
       "from os import chdir",
       "stdout.write = PRINTFUN",
       `chdir("${dir}")`,
       script,
-      "TABLES_OUTPUT = create_tables(FILENAMES)",
+      "DONATION_FLOW = create_donation_flow(FILENAMES)",
+      "DONATION_FLOW_DICT = DONATION_FLOW.toDict()",
     ];
-    pyodide.runPython(scriptLines.join("\n\n"), { globals: namespace });
+    await pyodide.runPythonAsync(scriptLines.join("\n\n"), {
+      globals: namespace,
+    });
 
-    tables = namespace.get("TABLES_OUTPUT");
-    return { error: null, tables, prints };
+    const consentForm = namespace.get("DONATION_FLOW_DICT").toJs({
+      create_proxies: false,
+      dict_converter: Object.fromEntries,
+    });
+
+    return { error: null, consentForm, prints };
   } catch (e) {
-    return { error: e.message, tables: [], prints };
+    return { error: e.message, consentForm: null, prints };
   }
 }
 

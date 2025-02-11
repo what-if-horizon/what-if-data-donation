@@ -1,12 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import hash from "object-hash";
+import { PropsUIPromptConsentForm } from "../framework/types/prompts";
 
 const worker = new Worker("/src/dev/pyodideWorker.js");
 
 export type ParsedTable = Record<string, string | number | boolean>[];
 export type ImportResult = {
   error: string | null;
-  tables: ParsedTable[];
+  consentForm: PropsUIPromptConsentForm | null;
   prints: string[];
 };
 
@@ -33,8 +34,6 @@ export default function usePyodideWorker() {
 
   const runImportScript = useCallback(
     async (script: string, fileInput: File[] | File): Promise<ImportResult> => {
-      console.log(fileInput);
-
       const id = hash({ script, fileInput });
       const w = await initializedWorker;
       if (!activeIds.current.has(id)) {
@@ -54,7 +53,7 @@ export default function usePyodideWorker() {
 
           w.removeEventListener("message", listener);
           resolve({
-            tables: event.data.table,
+            consentForm: event.data.consentForm,
             prints: event.data.prints,
             error: event.data.error,
           });

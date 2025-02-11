@@ -4,6 +4,7 @@ from typing import Any
 import zipfile
 import logging
 import json
+import io
 import fnmatch
 
 
@@ -111,5 +112,6 @@ def read_csv(file_input: list[str], file_paths: list[str], encoding: str = 'utf-
     Raises:
     ValueError: If no file is found with the provided paths or if the file content cannot be decoded.
     """
-    text_content = read_binary(file_input, file_paths)
-    return pd.read_csv(pd.compat.StringIO(text_content), **kwargs)
+    bin_content = read_binary(file_input, file_paths)
+    bin_io = io.BytesIO(bin_content)
+    return pd.read_csv(bin_io, **kwargs)

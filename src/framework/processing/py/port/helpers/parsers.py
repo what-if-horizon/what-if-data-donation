@@ -11,14 +11,12 @@ logger = logging.getLogger(__name__)
 type JSON = dict[Any, Any] | list[Any]
 type Translatable = dict[str, str]
 
-
-
 def extract_rows_from_json(json: JSON, row_path: list[str]) -> JSON:
     for rp in row_path:
         row_expr = parse(rp)
         match = row_expr.find(json)
         if match:
-            return [m.value for m in match]
+            return match[0].value
     return []
 
 def extract_columns_from_json(row: dict[str, Any], col_paths: dict[str, list[str]]) -> dict[str, Any]:

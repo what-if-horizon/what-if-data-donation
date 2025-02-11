@@ -1,58 +1,67 @@
-from port.helpers.tables import create_table, parse_json, extract_json
+from port.helpers.donation_flow import donation_table, donation_flow
+from port.helpers.parsers import parse_json
+from port.helpers.readers import read_json
+
 import port.api.props as props
 from port.api.props import Translations
 
 import pandas as pd
+import json
 
 
-def parse_table1(zip_file: str) -> pd.DataFrame:
+def followers_df(file_input: list[str]) -> pd.DataFrame:
     """
     For every table, you need to define a function that reads the data from the zip file
-    and returns a pandas DataFrame. Where possible use the helper functions (parse_json, parse_csv, etc.)
-    to standardize the data extraction process, and make it easy to add aliases for different languages
-    or when DDPs change.
-
-    After parsing the data we can clean it a bit, like date parsing and sorting.
-    But let's not overdo it!! The only benefit of parsing the data at this
-    point is that it looks nicer for the participant. Note that in the example I also
-    create a separate column for date, so that in case the to_datetime parsing goes wrong
-    the researcher can still see the original timestamp.
+    and returns a pandas DataFrame.
     """
-    json = extract_json(zip_file, ["connections/followers/who_you_ve_followed.json"])
 
-    df = parse_json(json,
+    ## file_input is a list of file names, that you can read as you would normally
+    ## read files in python. But we also have helper functions to make it easy to
+    ## read files, even if they're inside zip files.', and provide 'aliases' (e.g., for different languages)
+    ## - read_json(zip_file, file_path)
+    ## - read_csv(zip_file, file_path, [optional arguments to pd.read_csv])
+    ## - read_binary(file_input, file_paths)
+    ## - read_text(file_input, file_paths, encoding = 'utf-8')
+    data = read_json(file_input, ["*/who_you_ve_followed.json"])
+
+    ## You can print, and the result will show on the dev page (when using "npm run dev:facebook")
+    print(json.dumps(data, indent=2))
+
+    ## For some file types we can make parsers to standardize the data extraction process,
+    ## and make it easy to add aliases for different languages or when DDPs change.
+    df = parse_json(data,
         row_path=["$.following_v3"],
         col_paths=dict(
-           name = ["$.name"],
-           time = ["$.timestamp"]
+           name = ["name"],
+           time = ["timestamp"]
         )
     )
 
+    ## Here we can clean the data a bit. For What If we shouldn't do this too much,
+    ## because cleaning is mostly to make it nicer for users. We can always parse
+    ## the data afterwards, but if we mess up the parsing here we lose it.
+    ## So here when parsing the data, I make sure to keep the original time column
     df["date"] = pd.to_datetime(df["time"], unit="s")
     df = df.sort_values("date")
 
     return df
 
 
-def create_tables(files: list[str]) -> list[props.PropsUIPromptConsentFormTable]:
+def create_donation_flow(file_input: list[str]) -> props.PropsUIPromptConsentForm:
     """
-    In this function you create the tables. THIS FUNCTION NEEDS TO BE CALLED create_tables,
-    and needs to return a list of tables, created with the create_table function.
+    In this function you create the donation tables with the "donation_table" function,
+    and return a donation flow created with the "donation_flow" function.
 
-    Here we specify everything about the table EXCEPT for the data (see parse_example).
-    For now let's do the name and title, with title translations for en and nl
-    (you can leave nl empty, but just specify it for the type checking)
+    !! THIS FUNCTION NEEDS TO BE CALLED "create_donation_flow",
     """
 
-    ## input is always a list of file names, that you can read as you would normally
-    ## read files in python. For FB it's a zip file.
-    print(files)
-    zip_file = files[0]
+    followers_table = donation_table(
+        name = "followers",
+        df = followers_df(file_input),
+        title = Translations(en= "Example", nl = "Voorbeeld")
+    )
 
-    ## we have special extract_ helper functions for zip files
-    print(extract_json(zip_file, "connections/followers/who_you_ve_followed.json"))
-
-    example = create_table("example_name", df = parse_table1(file_input),
-        title = Translations(en= "Example", nl = "Voorbeeld"))
-
-    return [example]
+    return donation_flow(
+        id = "facebook",
+        tables = [followers_table],
+    )

@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, TypedDict, Dict, Any
+from typing import Optional, TypedDict, Dict, Any, NotRequired
 
 import pandas as pd
 
@@ -9,7 +9,7 @@ class Translations(TypedDict):
     Typed dict containing text that is displayed in a specific language.
     """
     en: str
-    nl: str
+    nl: NotRequired[str]
 
 
 @dataclass
@@ -119,7 +119,7 @@ class PropsUIPromptConsentFormTable:
             {"column1": 2, "column2": 5},
             {"column1": 3, "column2": 6},
         ])
-        
+
         example1 = PropsUIPromptConsentFormTable(
             id="example1",
             title=Translatable("Table as DataFrame"),
@@ -131,7 +131,7 @@ class PropsUIPromptConsentFormTable:
             "column2": {"0": 2, "1": 5},
             "column3": {"0": 3, "1": 6},
         }
-        
+
         example2 = PropsUIPromptConsentFormTable(
             id="example2",
             title=Translatable("Table as Dictionary"),
@@ -474,11 +474,11 @@ class PropsUIPageDonation:
     A multi-purpose page that gets shown to the user.
 
     Attributes:
-        platform (str): 
+        platform (str):
             The platform name the user is currently in the process of donating data from.
         header (PropsUIHeader): Page header.
         body (PropsUIPromptRadioInput | PropsUIPromptConsentForm |
-            PropsUIPromptFileInput | PropsUIPromptFileInputMultiple | 
+            PropsUIPromptFileInput | PropsUIPromptFileInputMultiple |
             PropsUIPromptConfirm | PropsUIPromptQuestionnaire):
             Main body of the page.
         footer (Optional[PropsUIFooter]): Optional page footer.
