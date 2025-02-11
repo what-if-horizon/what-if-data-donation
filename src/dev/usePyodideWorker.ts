@@ -1,10 +1,18 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import hash from "object-hash";
 
-const worker = new Worker("/src/pyodideWorker.js");
+const worker = new Worker("/src/dev/pyodideWorker.js");
+
+export type ParsedTable = Record<string, string | number | boolean>[];
+export type ImportResult = {
+  error: string | null;
+  tables: ParsedTable[];
+  prints: string[];
+};
 
 const initializedWorker = new Promise<Worker>((resolve) => {
   worker.onmessage = (event) => {
-    if (event.data.type === "initialiseDone") {
+    if (event.data.type === "initialise" && event.data.status === "done") {
       resolve(worker);
     }
   };
@@ -16,30 +24,40 @@ window.addEventListener("beforeunload", () => {
 
 export default function usePyodideWorker() {
   const activeIds = useRef<Set<string>>(new Set());
+  const [initializing, setInitializing] = useState(true);
 
   useEffect(() => {
     worker.postMessage({ type: "initialise" });
+    initializedWorker.then(() => setInitializing(false));
   }, []);
 
   const runImportScript = useCallback(
-    async (id: string, script: string, fileList: File[] | File) => {
+    async (script: string, fileInput: File[] | File): Promise<ImportResult> => {
+      console.log(fileInput);
+
+      const id = hash({ script, fileInput });
       const w = await initializedWorker;
       if (!activeIds.current.has(id)) {
         w.postMessage({
           type: "import",
           id,
           script,
-          fileList: Array.isArray(fileList) ? fileList : [fileList],
+          fileInput,
         });
         activeIds.current.add(id);
       }
 
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         w.addEventListener("message", function listener(event) {
           if (event.data.id !== id) return;
+          if (event.data.type !== "import") return;
+
           w.removeEventListener("message", listener);
-          if (event.data.type === "importDone") resolve(event.data.table);
-          if (event.data.type === "importFailed") reject(event.data.error);
+          resolve({
+            tables: event.data.table,
+            prints: event.data.prints,
+            error: event.data.error,
+          });
           activeIds.current.delete(id);
         });
       });
@@ -47,5 +65,5 @@ export default function usePyodideWorker() {
     [],
   );
 
-  return { runImportScript };
+  return { runImportScript, initializing };
 }

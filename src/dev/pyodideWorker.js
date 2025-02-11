@@ -9,8 +9,8 @@ onmessage = (event) => {
       break;
 
     case "import":
-      const { script, id, fileList } = event.data;
-      runImport(id, script, fileList);
+      const { script, id, fileInput } = event.data;
+      runImport(id, script, fileInput);
       break;
 
     default:
@@ -22,60 +22,61 @@ async function initialise() {
   await loadPyodide();
   await loadPackages();
   await installPortPackage();
-  self.postMessage({ type: "initialiseDone" });
+  self.postMessage({ type: "initialise", status: "done" });
 }
 
-async function runImport(id, script, fileList) {
+async function runImport(id, script, fileInput) {
   const dir = `/${id}`;
-  writeToWORKERFS(dir, fileList);
+  files = Array.isArray(fileInput) ? fileInput : [fileInput];
+  writeToWORKERFS(dir, files);
 
+  const { error, tables, prints } = runImportScript(dir, script, files);
+
+  self.postMessage({
+    type: "import",
+    status: "done",
+    id,
+    error,
+    tables,
+    prints,
+  });
+  rmFromWORKERFS(dir);
+}
+
+function runImportScript(dir, script, fileInput) {
+  const prints = [];
   try {
-    files = Array.from(fileList).map((file) => `${dir}/${file}`);
-    pyodide.runPython(`
-      ${script}
-      TABLES_OUTPUT = create_tables(${files})
-    `);
-    const tables = self.pyodide.globals.get("TABLES_OUTPUT");
-    self.postMessage({ type: "importDone", id, tables });
+    // pass print function and filenames to python
+    PRINTFUN = (text) => prints.push(text);
+    FILENAMES = files.map((f) => `${f.name}`);
+    namespace = pyodide.toPy({ FILENAMES, PRINTFUN });
+
+    scriptLines = [
+      "from sys import stdout",
+      "from os import chdir",
+      "stdout.write = PRINTFUN",
+      `chdir("${dir}")`,
+      script,
+      "TABLES_OUTPUT = create_tables(FILENAMES)",
+    ];
+    pyodide.runPython(scriptLines.join("\n\n"), { globals: namespace });
+
+    tables = namespace.get("TABLES_OUTPUT");
+    return { error: null, tables, prints };
   } catch (e) {
-    console.log(e);
-    self.postMessage({ type: "importFailed", id, error: e.message });
-  } finally {
-    rmFromWORKERFS(dir);
+    return { error: e.message, tables: [], prints };
   }
 }
 
-async function runScript(script) {
-  const scriptWithIO = `import os\nos.chdir("${dir}")\n${script}`;
-  pyodide.runPython(scriptWithIO);
-
-  const tables = self.pyodide.globals.get("tables");
-}
-
-function writeToWORKERFS(dir, fileList) {
+function writeToWORKERFS(dir, files) {
   const path = self.pyodide.FS.analyzePath(dir);
-
-  pyodide.runPython(`import os; print(os.listdir('/'))`);
-
   if (!path.exists) self.pyodide.FS.mkdir(dir);
 
-  self.pyodide.FS.mount(
-    self.pyodide.FS.filesystems.WORKERFS,
-    { files: fileList },
-    dir,
-  );
-
-  pyodide.runPython(`import os; print(os.listdir('/${dir}'))`);
+  self.pyodide.FS.mount(self.pyodide.FS.filesystems.WORKERFS, { files }, dir);
 }
+
 function rmFromWORKERFS(dir) {
-  try {
-    self.pyodide.FS.unmount(dir);
-    // self.pyodide.FS.unlink(dir);
-    pyodide.runPython(`import os; print(os.listdir('/'))`);
-    pyodide.runPython(`import os; print(os.listdir('/${dir}'))`);
-  } catch (e) {
-    console.log(e);
-  }
+  self.pyodide.FS.unmount(dir);
 }
 
 async function loadPyodide() {

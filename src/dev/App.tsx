@@ -8,12 +8,11 @@ import { FileInputMultiple } from "../framework/visualisation/react/ui/prompts/f
 import { FileInput } from "../framework/visualisation/react/ui/prompts/file_input";
 import { Page } from "../framework/visualisation/react/ui/pages/templates/page";
 import { Payload } from "../framework/types/commands";
-
-type Table = Record<string, string | number | boolean>[];
+import { ParsedData } from "./ParsedData";
 
 export default function App() {
   const [fileInput, setFileInput] = useState<File | null>(null);
-  const [tab, setTab] = useState<"Raw data" | "Parsed data">("Raw data");
+  const [tab, setTab] = useState<"Raw data" | "Parsed data">("Parsed data");
 
   if (!fileInput)
     return <FileInputForm fileInput={fileInput} setFileInput={setFileInput} />;
@@ -21,12 +20,13 @@ export default function App() {
   function render() {
     if (!fileInput) return null;
     if (tab === "Raw data") return <RawData fileInput={fileInput} />;
-    if (tab === "Parsed data") return <ParsedData fileInput={fileInput} />;
+    if (tab === "Parsed data")
+      return <ParsedData script={script} fileInput={fileInput} />;
   }
 
   return (
     <div>
-      <div className="flex flex gap-3 mt-6 w-full items-center px-6 ">
+      <div className="flex  gap-3 mt-6 w-full items-center px-6 ">
         <button
           onClick={() => setTab("Raw data")}
           className={`${tab === "Raw data" ? "bg-primary text-white" : ""} border rounded p-1 px-3`}
@@ -63,31 +63,6 @@ function RawData({ fileInput }: { fileInput: File }) {
       setSelectedFile={setSelected}
     />
   );
-}
-
-function ParsedData({ fileInput }: { fileInput: File }) {
-  const [tables, setTables] = useState<Table[] | null>(null);
-  const [error, setError] = useState<string>("");
-  const { runImportScript } = usePyodideWorker();
-
-  useEffect(() => {
-    if (!fileInput) return;
-    runImportScript("data", script, fileInput)
-      .then((tables) => setTables(tables as Table[]))
-      .catch(setError);
-  }, [fileInput, runImportScript]);
-
-  console.log(tables);
-  console.log(error);
-
-  if (error)
-    return (
-      <div>
-        <pre>{error}</pre>
-      </div>
-    );
-
-  return null;
 }
 
 function ShowFile({

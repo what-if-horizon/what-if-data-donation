@@ -1,7 +1,6 @@
-from port.helpers.table_templates import create_table, parse_json
+from port.helpers.tables import create_table, parse_json, extract_json
 import port.api.props as props
 from port.api.props import Translations
-from typing import Callable
 
 import pandas as pd
 
@@ -19,14 +18,15 @@ def parse_table1(zip_file: str) -> pd.DataFrame:
     create a separate column for date, so that in case the to_datetime parsing goes wrong
     the researcher can still see the original timestamp.
     """
+    json = extract_json(zip_file, ["connections/followers/who_you_ve_followed.json"])
 
-    df = parse_json(zip_file,
-        filename=["likes_and_reactions.json"],
-        row_path=["$.data", "$.gegevens"],
-        col_paths={
-            "time": ["$.timestamp"],
-            "label_values": ["$.label_values"]
-        })
+    df = parse_json(json,
+        row_path=["$.following_v3"],
+        col_paths=dict(
+           name = ["$.name"],
+           time = ["$.timestamp"]
+        )
+    )
 
     df["date"] = pd.to_datetime(df["time"], unit="s")
     df = df.sort_values("date")
@@ -36,18 +36,23 @@ def parse_table1(zip_file: str) -> pd.DataFrame:
 
 def create_tables(files: list[str]) -> list[props.PropsUIPromptConsentFormTable]:
     """
-    In this function you create the tables.
+    In this function you create the tables. THIS FUNCTION NEEDS TO BE CALLED create_tables,
+    and needs to return a list of tables, created with the create_table function.
 
     Here we specify everything about the table EXCEPT for the data (see parse_example).
     For now let's do the name and title, with title translations for en and nl
     (you can leave nl empty, but just specify it for the type checking)
     """
 
-    ## files is the FileList: https://developer.mozilla.org/en-US/docs/Web/API/FileList
-    ## usually this is just one file, like a zip file (e.g. Facebook) or json (e.g. Tiktok)
+    ## input is always a list of file names, that you can read as you would normally
+    ## read files in python. For FB it's a zip file.
+    print(files)
     zip_file = files[0]
 
-    example = create_table("example_name", df = parse_table1(zip_file),
+    ## we have special extract_ helper functions for zip files
+    print(extract_json(zip_file, "connections/followers/who_you_ve_followed.json"))
+
+    example = create_table("example_name", df = parse_table1(file_input),
         title = Translations(en= "Example", nl = "Voorbeeld"))
 
     return [example]

@@ -42,7 +42,7 @@ export function FileTree({ files, selectedFile, setSelectedFile }: Props) {
 
   return (
     <div>
-      <div className="p-3 rounded w-max mx-auto mt-6 w-[800px] mx-w-full">
+      <div className="p-3 rounded mx-auto mt-6 w-[800px] mx-w-full">
         <div className="flex items-center gap-1      ">
           <input
             type="text"
@@ -94,7 +94,7 @@ function inferFileType(filename: string) {
   if (filename.endsWith(".json")) return "json";
   if (filename.endsWith(".html")) return "html";
   if (filename.endsWith(".csv")) return "csv";
-  return "raw";
+  return "txt";
 }
 
 interface FileTree {
@@ -167,12 +167,14 @@ export function RenderRaw({ file }: { file: PreviewFile }) {
   const typeDict = useRef<Record<string, string | null>>({});
   const [type, setType] = useState<string | null>(null);
   const [showAll, setShowAll] = useState(false);
+  let abbreviated = false;
 
   useEffect(() => {
     if (typeDict.current[file.name] === undefined) {
       typeDict.current[file.name] = inferFileType(file.name);
     }
-    changeType(typeDict.current?.[file.name] || "raw");
+    setShowAll(false);
+    changeType(typeDict.current?.[file.name] || "txt");
   }, [file]);
 
   if (!file?.content) return null;
@@ -183,8 +185,9 @@ export function RenderRaw({ file }: { file: PreviewFile }) {
   }
 
   function shorten(text: string) {
-    const n = 100000;
+    const n = 10000;
     if (text.length > n && !showAll) {
+      abbreviated = true;
       return text.slice(0, n) + "...";
     }
     return text;
@@ -211,15 +214,22 @@ export function RenderRaw({ file }: { file: PreviewFile }) {
     <div className="flex flex-col gap-6">
       <div className="mx-auto text-primary font-bold">{fileWithoutRoot}</div>
       <div className="mx-auto flex gap-3 select-none">
-        <div>File parser:</div>
         <RadioTypeItem type="json" currentType={type} onChange={changeType} />
         <RadioTypeItem type="html" currentType={type} onChange={changeType} />
         <RadioTypeItem type="csv" currentType={type} onChange={changeType} />
-        <RadioTypeItem type="raw" currentType={type} onChange={changeType} />
+        <RadioTypeItem type="txt" currentType={type} onChange={changeType} />
       </div>
       <div className="max-w-full overflow-auto">
         <div className="p-3">{renderType()}</div>
       </div>
+      {abbreviated ? (
+        <button
+          onClick={() => setShowAll(true)}
+          className="bg-primary text-white py-1 px-2 w-max rounded mx-auto"
+        >
+          Show full document
+        </button>
+      ) : null}
     </div>
   );
 }
