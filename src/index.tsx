@@ -31,10 +31,10 @@ if (
   LiveBridge.create(window, run);
 } else {
   // Setup local development mode
-  if (import.meta.env.VITE_IMPORT_SCRIPT === "facebook") {
-    console.log("dev facebook mode");
+  const devScript = import.meta.env.VITE_IMPORT_SCRIPT;
+  if (devScript) {
     const root = createRoot(rootElement);
-    root.render(<DevApp />);
+    root.render(<DevApp devScript={devScript} />);
   } else {
     console.log("Running with fake bridge");
     run(new FakeBridge(), "en");

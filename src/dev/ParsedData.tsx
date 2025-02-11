@@ -15,7 +15,7 @@ export function ParsedData({
   fileInput: File;
   script: string;
 }) {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [result, setResult] = useState<ImportResult>({
     consentForm: null,
     prints: [],
@@ -33,7 +33,8 @@ export function ParsedData({
 
   function render() {
     if (loading) return <Loader />;
-    if (result.error) return <pre className="text-delete">{result.error}</pre>;
+    if (result.error)
+      return <pre className="text-delete overflow-auto">{result.error}</pre>;
     if (!result.consentForm)
       return <pre className="text-delete">No data generated</pre>;
     return <MockConsentForm {...result.consentForm} />;
@@ -59,7 +60,7 @@ function MockConsentForm(consentFormProps: PropsUIPromptConsentForm) {
   }
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full ">
       <ConsentForm
         {...consentFormProps}
         locale={locale}
@@ -70,12 +71,16 @@ function MockConsentForm(consentFormProps: PropsUIPromptConsentForm) {
 }
 
 function PrintLines({ prints }: { prints: string[] }) {
+  const [wrap, setWrap] = useState(false);
+
+  const wrapStyle = wrap ? "whitespace-pre-wrap break-words" : "";
+
   const lines = prints.map((line) => {
     if (line.trim().length === 0) return null;
     return (
       <pre
         key={line}
-        className="list-item p-1 my-1 rounded text-tertiary whitespace-pre-wrap break-words max-w-full  bg-white/5"
+        className={`${wrapStyle} list-item p-1 my-1 rounded text-tertiary  max-w-full  bg-white/5 overflow-auto`}
       >
         {line}
       </pre>
@@ -84,7 +89,15 @@ function PrintLines({ prints }: { prints: string[] }) {
 
   return (
     <div className="bg-grey1 text-white p-3 rounded overflow-auto  ">
-      <h4 className="text-lg font-bold mb-4">Print console</h4>
+      <div className="flex items-center justify-between mb-4">
+        <h4 className="text-lg font-bold">Print console</h4>
+        <button
+          onClick={() => setWrap(!wrap)}
+          className={`${wrap ? "bg-white text-black" : ""} border px-2 py-1 border rounded`}
+        >
+          text wrap
+        </button>
+      </div>
       <div className=" flex flex-col">{lines}</div>
     </div>
   );
