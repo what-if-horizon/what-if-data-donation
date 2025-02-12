@@ -41,7 +41,7 @@
     "start:py": "nodemon --ext py --exec \"npm run build:py\"",
     "start:app": "vite",
     "start": "concurrently 'npm run start:py' 'npm run start:app'",
-    "devmode": "npm run build:py && cross-env VITE_IMPORT_SCRIPT=facebook_flow vite",
+    "devmode": "npm run build:py && cross-env VITE_DEVMODE=true vite",
     "build": "npm run build:py && npm run build:app && npm run build:css",
     "release": "npm run build && ./release.sh $npm_package_name",
     "lint": "npm run fix:ts"

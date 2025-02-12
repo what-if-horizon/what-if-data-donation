@@ -114,9 +114,15 @@ function startPyodide() {
   });
 }
 
-function loadPackages() {
+async function loadPackages() {
   console.log("[ProcessingWorker] loading packages");
-  return self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
+  await self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
+
+  // can also install anything on pypi with wheels
+  return await self.pyodide.runPythonAsync(`
+      import micropip
+      await micropip.install("jsonpath-ng")
+  `);
 }
 
 function installPortPackage() {

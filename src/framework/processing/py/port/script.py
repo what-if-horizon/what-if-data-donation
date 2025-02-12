@@ -1,4 +1,5 @@
 import zipfile
+import logging
 
 import pandas as pd
 from typing import Any, Generator, TypedDict
@@ -6,10 +7,10 @@ from typing import Any, Generator, TypedDict
 import port.api.props as props
 import port.helpers.port_helpers as ph
 
-import port.platforms.instagram as instagram
-import port.platforms.tiktok as tiktok
-import port.platforms.facebook as facebook
+import port.donation_flows.facebook as facebook
+import port.donation_flows.instagram as instagram
 
+logger = logging.getLogger(__name__)
 
 def process(session_id: int):
     platform = "Facebook"
@@ -17,16 +18,42 @@ def process(session_id: int):
         p = yield ask_platform()
         platform = p.value
 
-    if platform == 'Instagram':
-        yield from instagram.process(session_id)
-    if platform == 'Tiktok':
-        yield from tiktok.process(session_id)
-    if platform == 'Facebook':
-        yield from facebook.process(session_id)
+    while True:
+        logger.info("Prompt for file for %s", platform)
+
+        file_prompt = ph.generate_file_prompt("application/zip")
+        file_result = yield ph.render_page(platform_file_header(platform), file_prompt)
+
+        if file_result.__type__ == "PayloadString":
+            review_data_prompt = donation_flow([file_result.value], platform)
+            yield ph.render_page(platform_data_header(platform), review_data_prompt)
+
+        else:
+            logger.info("Skipped at file selection ending flow")
+            break
 
     yield ph.exit(0, "Success")
     yield ph.render_end_page()
 
+
+def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptConsentForm:
+    if platform == 'Instagram':
+        return instagram.create_donation_flow(file_input)
+    if platform == 'Facebook':
+        return facebook.create_donation_flow(file_input)
+    raise ValueError(f"Unknown platform: {platform}")
+
+def platform_file_header(platform: str):
+    return props.Translatable({
+        "en": f"Select the {platform} data file",
+        "nl": f"Selecteer het {platform} databestand"
+    })
+
+def platform_data_header(platform: str):
+    return props.Translatable({
+        "en": f"Review the {platform} data",
+        "nl": f"Controleer de {platform} data"
+    })
 
 def ask_platform():
     title = props.Translatable({

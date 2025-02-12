@@ -8,8 +8,8 @@ import port.api.props as props
 
 logger = logging.getLogger(__name__)
 
-type JSON = dict[Any, Any] | list[Any]
-type Translatable = dict[str, str]
+JSON = dict[Any, Any] | list[Any]
+Translatable = dict[str, str]
 
 def extract_rows_from_json(json: JSON, row_path: list[str]) -> JSON:
     for rp in row_path:

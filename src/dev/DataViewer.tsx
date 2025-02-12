@@ -128,7 +128,7 @@ async function createFileTree(files: File[]) {
 
       let seenPath = new Set<string>();
       for (const { file, name } of filesArray) {
-        const relativePath = name;
+        const relativePath = name.replace(/\/$/, "");
         const paths = relativePath.split("/");
 
         for (let i = 1; i < paths.length; i++) {

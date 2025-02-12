@@ -8,6 +8,7 @@ include = [{ path = "port/assets", format = ["sdist", "wheel"] }]
 [tool.poetry.dependencies]
 python = "^3.10"
 pandas = "^1.5"
+jsonpath_ng = "^1.7"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.2"

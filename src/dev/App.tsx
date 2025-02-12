@@ -14,12 +14,11 @@ import {
 import BackSvg from "../assets/images/back.svg";
 
 // TODO: try to get these dynamicaly with import.meta.glob but without reloading the page
-import fb_script from "../framework/processing/py/port/donation_flows/facebook_flow.py?raw";
-import insta_script from "../framework/processing/py/port/donation_flows/instagram_flow.py?raw";
+import fb_script from "../framework/processing/py/port/donation_flows/facebook.py?raw";
+import insta_script from "../framework/processing/py/port/donation_flows/instagram.py?raw";
 const scripts: Record<string, string> = {
-  "../framework/processing/py/port/donation_flows/facebook_flow.py": fb_script,
-  "../framework/processing/py/port/donation_flows/instagram_flow.py":
-    insta_script,
+  "../framework/processing/py/port/donation_flows/facebook.py": fb_script,
+  "../framework/processing/py/port/donation_flows/instagram.py": insta_script,
 };
 
 // const scripts = import.meta.glob(
@@ -32,7 +31,7 @@ interface Script {
   content: string;
 }
 
-export default function App({ devScript }: { devScript: string }) {
+export default function App() {
   const [fileInput, setFileInput] = useState<File | null>(null);
   const [tab, setTab] = useState<"Raw data" | "Parsed data">("Parsed data");
   const [script, setScript] = useState<Script | null>(null);

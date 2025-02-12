@@ -26,7 +26,6 @@ def followers_df(file_input: list[str]) -> pd.DataFrame:
     ## The file_paths argument is an array of possible paths. The first path that matches will be used.
     ## This way we can add paths for different languages without having to know what language the user's data is in.
     data = read_json(file_input, ["*/who_you_ve_followed.json"])
-
     ## For debugging you can print, and it will show on the dev page (when using "npm run dev:facebook")
     print(json.dumps(data, indent=2))
 
@@ -44,8 +43,20 @@ def followers_df(file_input: list[str]) -> pd.DataFrame:
     ## because cleaning is mostly to make it nicer for users. We can always parse
     ## the data afterwards, but if we mess up the parsing here we lose it.
     ## So here when parsing the data, I make sure to keep the original time column
-    df["date"] = pd.to_datetime(df["time"), unit="s")
+    df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
     df = df.sort_values("date")
+
+    return df
+
+def ad_preferences_df(file_input: list[str]) -> pd.DataFrame:
+    data = read_json(file_input, ["*/ad_preferences.json"])
+
+    df = parse_json(data,
+        row_path = ["$.label_values"],
+        col_paths = dict(
+           label = ["label"],
+        )
+    )
 
     return df
 
@@ -64,7 +75,13 @@ def create_donation_flow(file_input: list[str]) -> props.PropsUIPromptConsentFor
         title = Translations(en= "Example", nl = "Voorbeeld")
     )
 
+    ad_preferences = donation_table(
+                name = "add_preferences",
+                df = ad_preferences_df(file_input),
+                title = {"en": "Example", "nl": "Voorbeeld"}
+            )
+
     return donation_flow(
         id = "facebook",
-        tables = [followers_table],
+        tables = [followers_table, ad_preferences],
     )

@@ -41,9 +41,9 @@ export function ParsedData({
   }
 
   return (
-    <div className="mt-9 p-6 grid grid-cols-1 gap-12 lg:grid-cols-[1fr,2fr] lg:gap-6">
-      <PrintLines prints={result.prints} />
+    <div className="mt-9 p-6 grid grid-cols-1 gap-12 lg:grid-cols-[2fr,1fr] lg:gap-6">
       {render()}
+      <PrintLines prints={result.prints} />
     </div>
   );
 }

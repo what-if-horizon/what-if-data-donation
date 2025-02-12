@@ -14,6 +14,7 @@ import port.api.props as props
 import port.helpers.extraction_helpers as eh
 import port.helpers.port_helpers as ph
 import port.helpers.validate as validate
+from port.donation_flows.facebook import create_donation_flow
 
 from port.helpers.validate import (
     DDPCategory,
@@ -567,7 +568,7 @@ REVIEW_DATA_DESCRIPTION = props.Translatable({
 def process(session_id: int):
     platform_name = "Facebook"
 
-    table_list = None
+    review_data_prompt = None
     while True:
         logger.info("Prompt for file for %s", platform_name)
 
@@ -575,35 +576,13 @@ def process(session_id: int):
         file_result = yield ph.render_page(SUBMIT_FILE_HEADER, file_prompt)
 
         if file_result.__type__ == "PayloadString":
-            validation = validate.validate_zip(DDP_CATEGORIES, file_result.value)
-
-            # Happy flow: Valid DDP
-            if validation.get_status_code_id() == 0:
-                logger.info("Payload for %s", platform_name)
-                extraction_result = extraction(file_result.value)
-                table_list = extraction_result
-                break
-
-            # Enter retry flow, reason: if DDP was not a Facebook DDP
-            if validation.get_status_code_id() != 0:
-                logger.info("Not a valid %s zip; No payload; prompt retry_confirmation", platform_name)
-                retry_prompt = ph.generate_retry_prompt(platform_name)
-                retry_result = yield ph.render_page(RETRY_HEADER, retry_prompt)
-
-                if retry_result.__type__ == "PayloadTrue":
-                    continue
-                else:
-                    logger.info("Skipped during retry flow")
-                    break
+            review_data_prompt = create_donation_flow([file_result.value])
+            yield ph.render_page(REVIEW_DATA_HEADER, review_data_prompt)
 
         else:
             logger.info("Skipped at file selection ending flow")
             break
 
-    if table_list is not None:
-        logger.info("Prompt consent; %s", platform_name)
-        review_data_prompt = ph.generate_review_data_prompt(f"{session_id}-facebook", REVIEW_DATA_DESCRIPTION, table_list)
-        yield ph.render_page(REVIEW_DATA_HEADER, review_data_prompt)
 
     yield ph.exit(0, "Success")
     yield ph.render_end_page()

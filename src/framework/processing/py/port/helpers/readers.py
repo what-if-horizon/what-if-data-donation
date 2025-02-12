@@ -6,12 +6,13 @@ import logging
 import json
 import io
 import fnmatch
+import os
 
 
 logger = logging.getLogger(__name__)
 
-type JSON = dict[Any, Any] | list[Any]
-type Translatable = dict[str, str]
+JSON = dict[Any, Any] | list[Any]
+Translatable = dict[str, str]
 
 def match_filename(file_paths: list[str], lookup: list[str]):
     for file_path in file_paths:
@@ -43,6 +44,7 @@ def read_binary(file_input: list[str], file_paths: list[str]):
     Raises:
     ValueError: If no file is found with the provided paths.
     """
+
     match = match_filename(file_input, file_paths)
     if match is not None:
         with open(match, 'rb') as file:
