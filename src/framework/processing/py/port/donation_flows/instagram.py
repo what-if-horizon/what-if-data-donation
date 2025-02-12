@@ -41,13 +41,8 @@ def create_donation_flow(file_input: list[str]):
         title = {"en": "Example", "nl": "Voorbeeld"}
     )
 
-    ad_preferences = donation_table(
-            name = "add_preferences",
-            df = ad_preferences_df(file_input),
-            title = {"en": "Example", "nl": "Voorbeeld"}
-        )
 
     return donation_flow(
         id = "facebook",
-        tables = [posts_viewed_table, ad_preferences],
+        tables = [posts_viewed_table],
     )
