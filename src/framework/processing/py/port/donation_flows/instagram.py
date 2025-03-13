@@ -80,6 +80,8 @@ def ads_viewed_df(file_input: list[str]) -> pd.DataFrame:
 
     return df
 
+
+
 # level03: posts_viewed
 def posts_viewed_df(file_input: list[str]) -> pd.DataFrame:
     data = read_json(file_input, ["*/posts_viewed.json"])
@@ -454,7 +456,7 @@ def stories_df(file_input: list[str]) -> pd.DataFrame:
            camera_position=["media_metadata.video_metadata.exif_data.camera_position"],
            date_time_original=["media_metadata.video_metadata.exif_data.date_time_original"],
            type_stories= ["media_metadata.video_metadata.exif_data.source_type"],
-           camera_metadata=["camera_metadata.has_camera_metadata"]
+           camera_metadata=["camera_metadata.has_camera_metadata"],
            title=["title"],
            post_shared_on_another_platform=["source_app"],
            dubbing_info=["dubbing_info"],
@@ -619,7 +621,7 @@ def story_likes_df(file_input: list[str]) -> pd.DataFrame:
 ############################################################################################
 
 
-
+"""
 
 def create_donation_flow(file_input: list[str]):
     ads_viewed_table = donation_table(
@@ -632,4 +634,18 @@ def create_donation_flow(file_input: list[str]):
     return donation_flow(
         id = "facebook",
         tables = [ads_clicked_table],
+    )
+"""
+
+def create_donation_flow(file_input: list[str]):
+    posts_viewed_table = donation_table(
+        name = " posts_viewed",
+        df =  posts_viewed_df(file_input),
+        title = {"en": "Posts you have viewed", "nl": "Posts die je hebt bekeken"}
+    )
+
+
+    return donation_flow(
+        id = "instagram",
+        tables = [posts_viewed_table],
     )
