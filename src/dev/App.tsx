@@ -16,9 +16,11 @@ import BackSvg from "../assets/images/back.svg";
 // TODO: try to get these dynamicaly with import.meta.glob but without reloading the page
 import fb_script from "../framework/processing/py/port/donation_flows/facebook.py?raw";
 import insta_script from "../framework/processing/py/port/donation_flows/instagram.py?raw";
+import twitter_script from "../framework/processing/py/port/donation_flows/twitter.py?raw";
 const scripts: Record<string, string> = {
   "../framework/processing/py/port/donation_flows/facebook.py": fb_script,
   "../framework/processing/py/port/donation_flows/instagram.py": insta_script,
+  "../framework/processing/py/port/donation_flows/twitter.py": twitter_script,
 };
 
 // const scripts = import.meta.glob(
