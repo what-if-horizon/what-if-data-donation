@@ -58,6 +58,7 @@ async function runImportScript(dir, script, fileInput) {
     scriptLines = [
       "from sys import stdout",
       "import json",
+      "import requests",
       "from os import chdir",
       "stdout.write = PRINTFUN",
       `chdir("${dir}")`,
@@ -100,7 +101,7 @@ async function loadPyodide() {
 
 async function loadPackages() {
   console.log("[ProcessingWorker] loading packages");
-  await self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
+  await self.pyodide.loadPackage(["micropip", "numpy", "pandas","requests"]);
 
   // can also install anything on pypi with wheels
   return await self.pyodide.runPythonAsync(`

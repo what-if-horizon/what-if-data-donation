@@ -116,6 +116,7 @@ function startPyodide() {
 
 async function loadPackages() {
   console.log("[ProcessingWorker] loading packages");
+  console.log('hola')
   await self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
 
   // can also install anything on pypi with wheels

@@ -40,6 +40,7 @@ export const FileInput = (props: Props): JSX.Element => {
 
   function handleConfirm(): void {
     if (selectedFile !== undefined && !waiting) {
+      console.log("DEBUG: Uploaded file ->", selectedFile);
       setWaiting(true);
       resolve?.({ __type__: "PayloadFile", value: selectedFile });
     }
