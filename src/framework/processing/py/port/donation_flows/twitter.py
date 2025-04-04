@@ -14,6 +14,7 @@ import io
 import re
 import zipfile
 import os
+import asyncio
 import logging
 import requests
 from io import StringIO
@@ -43,7 +44,6 @@ schema_df = await load_csv_from_github(url)
 
 schema_df.columns = schema_df.columns.str.replace(r'\(.*\)', '', regex=True)
 schema_df.columns = schema_df.columns.str.strip()
-
 #==================================================================================================================
 # Reader
 #==================================================================================================================
