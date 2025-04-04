@@ -14,6 +14,7 @@ import TextBundle from "../../../../text_bundle"
 import { Translator } from "../../../../translator"
 import { ReactFactoryContext } from "../../factory"
 import { useCallback, useEffect, useState } from "react"
+import { Table } from "antd";
 import _ from "lodash"
 
 import useUnloadWarning from "../hooks/useUnloadWarning"
@@ -176,6 +177,7 @@ export const ConsentForm = (props: Props): JSX.Element => {
       </div>
       <div className="flex flex-col gap-16 w-full">
         <div className="grid gap-8 max-w-full">
+        <Table columns={[{ title: 'Table name', dataIndex: 'id', key: 'id'}]} dataSource={tables} />
           {tables.map((table) => {
             return (
               <TableContainer key={table.id} id={table.id} table={table} updateTable={updateTable} locale={locale} />

@@ -13,6 +13,7 @@
     "@visx/text": "^3.3.0",
     "@visx/wordcloud": "^3.3.0",
     "@vitejs/plugin-react-swc": "^3.7.2",
+    "antd": "^5.24.5",
     "concurrently": "^8.2.1",
     "jszip": "^3.10.1",
     "lodash": "^4.17.21",

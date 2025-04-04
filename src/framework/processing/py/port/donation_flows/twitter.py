@@ -128,7 +128,7 @@ def generate_extraction_functions(schema_df):
             try:
                 with zipfile.ZipFile(file_input, "r") as zip_ref:
                     zip_file_list = zip_ref.namelist()
-                    print("DEBUG: Files inside ZIP ->", zip_file_list)  # Debugging log
+                    #print("DEBUG: Files inside ZIP ->", zip_file_list)  # Debugging log
 
                     # Check if the expected file is inside the ZIP
                     if expected_file not in zip_file_list:
@@ -155,14 +155,14 @@ def generate_extraction_functions(schema_df):
 #==================================================================================================================
 
 extraction_functions = generate_extraction_functions(schema_df)
-print(extraction_functions)
+#print(extraction_functions)
 #==================================================================================================================
 # Generate donation flow
 #==================================================================================================================
 def create_donation_flow(file_input: list[str]):
     """Creates a donation flow dynamically using extracted data from multiple .js files."""
     
-    print(file_input)
+    #print(file_input)
 
     tables = []
     
