@@ -14,7 +14,6 @@ import io
 import re
 import zipfile
 import os
-import asyncio
 import logging
 import requests
 from io import StringIO
@@ -44,6 +43,7 @@ schema_df = await load_csv_from_github(url)
 
 schema_df.columns = schema_df.columns.str.replace(r'\(.*\)', '', regex=True)
 schema_df.columns = schema_df.columns.str.strip()
+
 #==================================================================================================================
 # Reader
 #==================================================================================================================
@@ -128,7 +128,7 @@ def generate_extraction_functions(schema_df):
             try:
                 with zipfile.ZipFile(file_input, "r") as zip_ref:
                     zip_file_list = zip_ref.namelist()
-                    print("DEBUG: Files inside ZIP ->", zip_file_list)  # Debugging log
+                    #print("DEBUG: Files inside ZIP ->", zip_file_list)  # Debugging log
 
                     # Check if the expected file is inside the ZIP
                     if expected_file not in zip_file_list:
@@ -153,16 +153,16 @@ def generate_extraction_functions(schema_df):
 #==================================================================================================================
 # Generate functions using the existing schema
 #==================================================================================================================
-
 extraction_functions = generate_extraction_functions(schema_df)
-print(extraction_functions)
+#print(extraction_functions)
+
 #==================================================================================================================
 # Generate donation flow
 #==================================================================================================================
 def create_donation_flow(file_input: list[str]):
     """Creates a donation flow dynamically using extracted data from multiple .js files."""
     
-    print(file_input)
+    #print(file_input)
 
     tables = []
     
@@ -176,21 +176,10 @@ def create_donation_flow(file_input: list[str]):
                     title={"en": file_name.capitalize()}
                 )
             )
-    #    else:
-    #        fake_table_added = True  # If any table is empty, set the flag to True
-
-    # If no valid tables were added, create a fake table
-    #if not tables and fake_table_added:
-    #    print("No valid data was found. Adding a fake table...")
-    #    fake_table = donation_table(
-    #        name="Fake Table",
-    #        df=pd.DataFrame([{"Fake Column": "No data available"}]),
-    #        title={"en": "Fake Table"}
-    #    )
-    #    tables.append(fake_table)
 
     return donation_flow(
         id="Twitter",
         tables=tables
     )
+
 
