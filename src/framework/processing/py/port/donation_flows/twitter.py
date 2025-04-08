@@ -39,10 +39,12 @@ async def load_csv_from_github(url):
 
 
 url = "https://raw.githubusercontent.com/what-if-horizon/what-if-data-donation/refs/heads/master/json_structure_donations/schema.csv"
-schema_df = await load_csv_from_github(url)
 
-schema_df.columns = schema_df.columns.str.replace(r'\(.*\)', '', regex=True)
-schema_df.columns = schema_df.columns.str.strip()
+import asyncio
+asyncio.run(load_csv_from_github(url))
+
+#schema_df.columns = schema_df.columns.str.replace(r'\(.*\)', '', regex=True)
+#schema_df.columns = schema_df.columns.str.strip()
 
 #==================================================================================================================
 # Reader
@@ -154,7 +156,11 @@ def generate_extraction_functions(schema_df):
 # Generate functions using the existing schema
 #==================================================================================================================
 extraction_functions = generate_extraction_functions(schema_df)
+<<<<<<< HEAD
 #print(extraction_functions)
+=======
+print(extraction_functions)
+>>>>>>> 0c0c122df0c96ced159865a8b1522d6dcacb4a6e
 
 #==================================================================================================================
 # Generate donation flow
