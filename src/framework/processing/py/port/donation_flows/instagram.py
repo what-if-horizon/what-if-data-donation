@@ -1,35 +1,8 @@
-<<<<<<< Updated upstream
-#==================================================================================================================
-# Imports from other scripts
-#==================================================================================================================
-from port.helpers.donation_flow import donation_table, donation_flow
-from port.helpers.parsers import parse_json
-from port.helpers.readers import read_json
-=======
-# Auto-generated Instagram extractors
->>>>>>> Stashed changes
 
 #==================================================================================================================
 # Imports from Pyodide
 #==================================================================================================================
 import pandas as pd
-<<<<<<< Updated upstream
-import json
-import io
-import re
-import zipfile
-import os
-import logging
-import requests
-from io import StringIO
-
-import pyodide.http
-
-#==================================================================================================================
-# Logeer
-#==================================================================================================================
-logger = logging.getLogger(__name__)
-=======
 import logging
 from port.helpers.donation_flow import donation_table, donation_flow
 from port.helpers.readers import read_json
