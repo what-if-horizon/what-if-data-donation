@@ -18,7 +18,7 @@ import logging
 import requests
 from io import StringIO
 
-import pyodide.http
+##import pyodide.http
 
 #==================================================================================================================
 # Logeer
@@ -28,23 +28,8 @@ logger = logging.getLogger(__name__)
 #==================================================================================================================
 # Import Schema data
 #==================================================================================================================
-async def load_csv_from_github(url):
-    response = await pyodide.http.pyfetch(url)
-    csv_data = await response.text()
-    
-    # Convert CSV to DataFrame
-    from io import StringIO
-    df = pd.read_csv(StringIO(csv_data))
-    return df
 
-
-url = "https://raw.githubusercontent.com/what-if-horizon/what-if-data-donation/refs/heads/master/json_structure_donations/schema.csv"
-
-import asyncio
-asyncio.run(load_csv_from_github(url))
-
-#schema_df.columns = schema_df.columns.str.replace(r'\(.*\)', '', regex=True)
-#schema_df.columns = schema_df.columns.str.strip()
+###
 
 #==================================================================================================================
 # Reader
