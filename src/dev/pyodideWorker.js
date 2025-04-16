@@ -47,7 +47,7 @@ async function runImport(id, script, fileInput) {
   rmFromWORKERFS(dir);
 }
 
-async function runImportScript(dir, script, fileInput) {
+async function runImportScript(dir, script, fileInput) { 
   const prints = [];
   try {
     // pass print function and filenames to python
@@ -69,13 +69,18 @@ async function runImportScript(dir, script, fileInput) {
     await pyodide.runPythonAsync(scriptLines.join("\n\n"), {
       globals: namespace,
     });
-
-    const consentForm = namespace.get("DONATION_FLOW_DICT").toJs({
-      create_proxies: false,
-      dict_converter: Object.fromEntries,
-    });
-
-    return { error: null, consentForm, prints };
+    
+    // Modification because of error toJs()
+    const donationFlowDict = namespace.get("DONATION_FLOW_DICT");
+    if (donationFlowDict) {
+      const consentForm = donationFlowDict.toJs({
+        create_proxies: false,
+        dict_converter: Object.fromEntries,
+      });
+      return { error: null, consentForm, prints };
+    } else {
+      throw new Error("DONATION_FLOW_DICT is undefined");
+    }
   } catch (e) {
     return { error: e.message, consentForm: null, prints };
   }
