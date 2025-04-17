@@ -326,6 +326,7 @@ class RadioItem(TypedDict):
     value: str
 
 
+
 @dataclass
 class PropsUIPromptRadioInput:
     """
@@ -354,13 +355,16 @@ class PropsUIPromptRadioInput:
         dict["title"] = self.title.toDict()
         dict["description"] = self.description.toDict()
         dict["items"] = self.items
+
+    
         return dict
 
 
 @dataclass
 class PropsUIQuestionOpen:
     """
-    Open-ended question.
+    Openlogger.info(f"PropsUIPromptRadioInput items: {[item['value'] for item in self.items]}")
+-ended question.
 
     Attributes:
         id (int): Question ID.
