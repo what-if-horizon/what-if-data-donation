@@ -172,6 +172,8 @@ def _6798433430245173_df(file_input: list[str]) -> pd.DataFrame:
 def account_activity_df(file_input: list[str]) -> pd.DataFrame:
     data = read_json(file_input, ["*/account_activity.json"])
 
+    print(data)
+
     df = parse_json(data,
         row_path=["$.account_activity_v2"],
         col_paths=dict(
