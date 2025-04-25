@@ -1,408 +1,410 @@
-# Auto-generated TikTok extractors
-
+from typing import List
+import json
 import pandas as pd
 import logging
-import json
 from port.helpers.donation_flow import donation_table, donation_flow
-from port.helpers.parsers import parse_json
 
 logger = logging.getLogger(__name__)
 
-def Ads_and_data_df(file_input: list[str]) -> pd.DataFrame:
+def get_in(data_dict, *keys):
+    for k in keys:
+        if isinstance(data_dict, dict):
+            data_dict = data_dict.get(k, None)
+        else:
+            return None
+        if data_dict is None:
+            return None
+    return data_dict
+def ads_and_data_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Ads and data"],
-        col_paths=dict(
-            AdInterestCategories = ['Ad Interests.AdInterestCategories'],
-            ResponsesList = ['Instant Form Ads Responses.ResponsesList'],
-            OffTikTokActivityDataList = ['Off TikTok Activity.OffTikTokActivityDataList'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Ads and data')
+    if not root_data:
+        print('No data found at path: Ads and data')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Ad Interests', {})
+    row['AdInterestCategories'] = sub.get('AdInterestCategories', '')
+    sub = root_data.get('Instant Form Ads Responses', {})
+    row['ResponsesList'] = sub.get('ResponsesList', '')
+    sub = root_data.get('Off TikTok Activity', {})
+    row['OffTikTokActivityDataList'] = sub.get('OffTikTokActivityDataList', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def App_Settings_df(file_input: list[str]) -> pd.DataFrame:
+def app_settings_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.App Settings"],
-        col_paths=dict(
-            App = ['Settings.App'],
-            BlockList = ['Block List.BlockList'],
-            Allow_DownLoad = ['Settings.SettingsMap.Allow DownLoad'],
-            Allow_Others_to_Find_Me = ['Settings.SettingsMap.Allow Others to Find Me'],
-            App_Language = ['Settings.SettingsMap.App Language'],
-            Keyword_filters_for_videos_in_Following_feed = ['Settings.SettingsMap.Content Preferences.Keyword filters for videos in Following feed'],
-            Keyword_filters_for_videos_in_For_You_feed = ['Settings.SettingsMap.Content Preferences.Keyword filters for videos in For You feed'],
-            Video_Languages_Preferences = ['Settings.SettingsMap.Content Preferences.Video Languages Preferences'],
-            Family_Content_Preferences = ['Settings.SettingsMap.Family Content Preferences'],
-            Filter_Comments = ['Settings.SettingsMap.Filter Comments'],
-            Interests = ['Settings.SettingsMap.Interests'],
-            Private_Account = ['Settings.SettingsMap.Private Account'],
-            Desktop_notification = ['Settings.SettingsMap.Push Notification.Desktop notification'],
-            New_Comments_on_My_Video = ['Settings.SettingsMap.Push Notification.New Comments on My Video'],
-            New_Fans = ['Settings.SettingsMap.Push Notification.New Fans'],
-            New_Likes_on_My_Video = ['Settings.SettingsMap.Push Notification.New Likes on My Video'],
-            Suggest_your_account_to_Facebook_friends = ['Settings.SettingsMap.Suggest your account to Facebook friends'],
-            Suggest_your_account_to_contacts = ['Settings.SettingsMap.Suggest your account to contacts'],
-            Suggest_your_account_to_people_who_open_or_send_links_to_you = ['Settings.SettingsMap.Suggest your account to people who open or send links to you'],
-            Web_Language = ['Settings.SettingsMap.Web Language'],
-            Who_Can_Duet_With_Me = ['Settings.SettingsMap.Who Can Duet With Me'],
-            Who_Can_Post_Comments = ['Settings.SettingsMap.Who Can Post Comments'],
-            Who_Can_Send_Me_Message = ['Settings.SettingsMap.Who Can Send Me Message'],
-            Who_Can_Stitch_with_your_videos = ['Settings.SettingsMap.Who Can Stitch with your videos'],
-            Who_Can_View_Videos_I_Liked = ['Settings.SettingsMap.Who Can View Videos I Liked'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'App Settings')
+    if not root_data:
+        print('No data found at path: App Settings')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Block List', {})
+    row['App'] = sub.get('App', '')
+    row['BlockList'] = sub.get('BlockList', '')
+    sub = root_data.get('Settings', {})
+    row['App'] = sub.get('App', '')
+    row['SettingsMap'] = sub.get('SettingsMap', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Comment_df(file_input: list[str]) -> pd.DataFrame:
+def comment_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Comment"],
-        col_paths=dict(
-            App = ['Comments.App'],
-            CommentsList = ['Comments.CommentsList'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Comment')
+    if not root_data:
+        print('No data found at path: Comment')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Comments', {})
+    row['App'] = sub.get('App', '')
+    row['CommentsList'] = sub.get('CommentsList', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Direct_Message_df(file_input: list[str]) -> pd.DataFrame:
+def direct_message_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Direct Message"],
-        col_paths=dict(
-            ChatHistory = ['Direct Messages.ChatHistory'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Direct Message')
+    if not root_data:
+        print('No data found at path: Direct Message')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Direct Messages', {})
+    row['ChatHistory'] = sub.get('ChatHistory', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Income_Plus_Wallet_Transactions_df(file_input: list[str]) -> pd.DataFrame:
+def income_plus_wallet_transactions_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Income Plus Wallet Transactions"],
-        col_paths=dict(
-            TransactionsList = ['Transaction History.TransactionsList'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Income Plus Wallet Transactions')
+    if not root_data:
+        print('No data found at path: Income Plus Wallet Transactions')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Transaction History', {})
+    row['TransactionsList'] = sub.get('TransactionsList', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Location_Review_df(file_input: list[str]) -> pd.DataFrame:
+def location_review_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Location Review"],
-        col_paths=dict(
-            ReviewsList = ['Location Reviews.ReviewsList'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Location Review')
+    if not root_data:
+        print('No data found at path: Location Review')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Location Reviews', {})
+    row['ReviewsList'] = sub.get('ReviewsList', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Post_df(file_input: list[str]) -> pd.DataFrame:
+def post_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Post"],
-        col_paths=dict(
-            VideoList = ['Posts.VideoList'],
-            PostList = ['Recently Deleted Posts.PostList'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Post')
+    if not root_data:
+        print('No data found at path: Post')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Posts', {})
+    row['VideoList'] = sub.get('VideoList', '')
+    sub = root_data.get('Recently Deleted Posts', {})
+    row['PostList'] = sub.get('PostList', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Profile_df(file_input: list[str]) -> pd.DataFrame:
+def profile_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Profile"],
-        col_paths=dict(
-            CreateDate = ['AI-Moji.CreateDate'],
-            AIMojiList = ['AI-Moji.AIMojiList'],
-            PhoneNumber = ['Autofill.PhoneNumber'],
-            Email = ['Autofill.Email'],
-            FirstName = ['Autofill.FirstName'],
-            LastName = ['Autofill.LastName'],
-            Address = ['Autofill.Address'],
-            ZipCode = ['Autofill.ZipCode'],
-            Unit = ['Autofill.Unit'],
-            City = ['Autofill.City'],
-            State = ['Autofill.State'],
-            Country = ['Autofill.Country'],
-            App = ['Profile Info.App'],
-            Description = ['Profile Info.ProfileMap.PlatformInfo.Description'],
-            Name = ['Profile Info.ProfileMap.PlatformInfo.Name'],
-            Platform = ['Profile Info.ProfileMap.PlatformInfo.Platform'],
-            Profile_Photo = ['Profile Info.ProfileMap.PlatformInfo.Profile Photo'],
-            bioDescription = ['Profile Info.ProfileMap.bioDescription'],
-            birthDate = ['Profile Info.ProfileMap.birthDate'],
-            emailAddress = ['Profile Info.ProfileMap.emailAddress'],
-            likesReceived = ['Profile Info.ProfileMap.likesReceived'],
-            profilePhoto = ['Profile Info.ProfileMap.profilePhoto'],
-            profileVideo = ['Profile Info.ProfileMap.profileVideo'],
-            telephoneNumber = ['Profile Info.ProfileMap.telephoneNumber'],
-            userName = ['Profile Info.ProfileMap.userName'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Profile')
+    if not root_data:
+        print('No data found at path: Profile')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('AI-Moji', {})
+    row['CreateDate'] = sub.get('CreateDate', '')
+    row['AIMojiList'] = sub.get('AIMojiList', '')
+    sub = root_data.get('Autofill', {})
+    row['PhoneNumber'] = sub.get('PhoneNumber', '')
+    row['Email'] = sub.get('Email', '')
+    row['FirstName'] = sub.get('FirstName', '')
+    row['LastName'] = sub.get('LastName', '')
+    row['Address'] = sub.get('Address', '')
+    row['ZipCode'] = sub.get('ZipCode', '')
+    row['Unit'] = sub.get('Unit', '')
+    row['City'] = sub.get('City', '')
+    row['State'] = sub.get('State', '')
+    row['Country'] = sub.get('Country', '')
+    sub = root_data.get('Profile Info', {})
+    row['App'] = sub.get('App', '')
+    row['ProfileMap'] = sub.get('ProfileMap', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def TikTok_Shop_df(file_input: list[str]) -> pd.DataFrame:
+def tiktok_shop_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.TikTok Shop"],
-        col_paths=dict(
-            CommunicationHistories = ['Communication With Shops.CommunicationHistories'],
-            PayCard = ['Current Payment Information.PayCard'],
-            CustomerSupportHistories = ['Customer Support History.CustomerSupportHistories'],
-            OrderDisputeHistories = ['Order Dispute History.OrderDisputeHistories'],
-            OrderHistories = ['Order History.OrderHistories'],
-            ProductBrowsingHistories = ['Product Browsing History.ProductBrowsingHistories'],
-            ProductReviewHistories = ['Product Reviews.ProductReviewHistories'],
-            ReturnAndRefundHistories = ['Returns and Refunds History.ReturnAndRefundHistories'],
-            SavedAddress = ['Saved Address Information.SavedAddress'],
-            ShoppingCart = ['Shopping Cart List.ShoppingCart'],
-            Vouchers = ['Vouchers.Vouchers'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'TikTok Shop')
+    if not root_data:
+        print('No data found at path: TikTok Shop')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Communication With Shops', {})
+    row['CommunicationHistories'] = sub.get('CommunicationHistories', '')
+    sub = root_data.get('Current Payment Information', {})
+    row['PayCard'] = sub.get('PayCard', '')
+    sub = root_data.get('Customer Support History', {})
+    row['CustomerSupportHistories'] = sub.get('CustomerSupportHistories', '')
+    sub = root_data.get('Order Dispute History', {})
+    row['OrderDisputeHistories'] = sub.get('OrderDisputeHistories', '')
+    sub = root_data.get('Order History', {})
+    row['OrderHistories'] = sub.get('OrderHistories', '')
+    sub = root_data.get('Product Browsing History', {})
+    row['ProductBrowsingHistories'] = sub.get('ProductBrowsingHistories', '')
+    sub = root_data.get('Product Reviews', {})
+    row['ProductReviewHistories'] = sub.get('ProductReviewHistories', '')
+    sub = root_data.get('Returns and Refunds History', {})
+    row['ReturnAndRefundHistories'] = sub.get('ReturnAndRefundHistories', '')
+    sub = root_data.get('Saved Address Information', {})
+    row['SavedAddress'] = sub.get('SavedAddress', '')
+    sub = root_data.get('Shopping Cart List', {})
+    row['ShoppingCart'] = sub.get('ShoppingCart', '')
+    sub = root_data.get('Vouchers', {})
+    row['Vouchers'] = sub.get('Vouchers', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Tiktok_Live_df(file_input: list[str]) -> pd.DataFrame:
+def tiktok_live_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Tiktok Live"],
-        col_paths=dict(
-            GoLiveList = ['Go Live History.GoLiveList'],
-            Allow_agencies_to_find_and_invite_you = ['Go Live Settings.SettingsMap.Allow agencies to find and invite you'],
-            Allow_others_to_invite_you_to_co_host_in_LIVE = ['Go Live Settings.SettingsMap.Allow others to invite you to co-host in LIVE'],
-            Allow_people_to_send_and_receive_comments_during_your_LIVE = ['Go Live Settings.SettingsMap.Allow people to send and receive comments during your LIVE'],
-            Allow_suggested_LIVE_hosts_to_invite_you_to_co_host_in_LIVE = ['Go Live Settings.SettingsMap.Allow suggested LIVE hosts to invite you to co-host in LIVE'],
-            Allow_viewers_to_request_to_go_LIVE_with_you = ['Go Live Settings.SettingsMap.Allow viewers to request to go LIVE with you'],
-            Allow_viewers_to_see_and_send_questions_and_answers_in_your_LIVE = ['Go Live Settings.SettingsMap.Allow viewers to see and send questions and answers in your LIVE'],
-            Allow_viewers_to_send_you_gifts_during_your_LIVE = ['Go Live Settings.SettingsMap.Allow viewers to send you gifts during your LIVE'],
-            Hide_comments_that_contain_the_following_keywords_from_your_LIVE = ['Go Live Settings.SettingsMap.Hide comments that contain the following keywords from your LIVE'],
-            Hide_potential_spam_or_offensive_comments_from_your_LIVE = ['Go Live Settings.SettingsMap.Hide potential spam or offensive comments from your LIVE'],
-            People_you_assigned_to_moderate_your_LIVE = ['Go Live Settings.SettingsMap.People you assigned to moderate your LIVE'],
-            Show_your_username_and_gift_information_in_features_with_ranking_lists = ['Go Live Settings.SettingsMap.Show your username and gift information in features with ranking lists'],
-            WatchLiveMap = ['Watch Live History.WatchLiveMap'],
-            app = ['Watch Live Settings.WatchLiveSettingsMap.app'],
-            web = ['Watch Live Settings.WatchLiveSettingsMap.web'],
-            MostRecentModificationTimeInApp = ['Watch Live Settings.MostRecentModificationTimeInApp'],
-            MostRecentModificationTimeInWeb = ['Watch Live Settings.MostRecentModificationTimeInWeb'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Tiktok Live')
+    if not root_data:
+        print('No data found at path: Tiktok Live')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Go Live History', {})
+    row['GoLiveList'] = sub.get('GoLiveList', '')
+    sub = root_data.get('Go Live Settings', {})
+    row['SettingsMap'] = sub.get('SettingsMap', '')
+    sub = root_data.get('Watch Live History', {})
+    row['WatchLiveMap'] = sub.get('WatchLiveMap', '')
+    sub = root_data.get('Watch Live Settings', {})
+    row['WatchLiveSettingsMap'] = sub.get('WatchLiveSettingsMap', '')
+    row['MostRecentModificationTimeInApp'] = sub.get('MostRecentModificationTimeInApp', '')
+    row['MostRecentModificationTimeInWeb'] = sub.get('MostRecentModificationTimeInWeb', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def Your_Activity_df(file_input: list[str]) -> pd.DataFrame:
+def your_activity_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
-        full_data = json.load(f)
-    df = parse_json(full_data,
-        row_path=["$.Your Activity"],
-        col_paths=dict(
-            note = ['Activity Summary.ActivitySummaryMap.note'],
-            videosCommentedOnSinceAccountRegistration = ['Activity Summary.ActivitySummaryMap.videosCommentedOnSinceAccountRegistration'],
-            videosSharedSinceAccountRegistration = ['Activity Summary.ActivitySummaryMap.videosSharedSinceAccountRegistration'],
-            videosWatchedToTheEndSinceAccountRegistration = ['Activity Summary.ActivitySummaryMap.videosWatchedToTheEndSinceAccountRegistration'],
-            FavoriteEffectsList = ['Favorite Effects.FavoriteEffectsList'],
-            FavoriteHashtagList = ['Favorite Hashtags.FavoriteHashtagList'],
-            FavoriteSoundList = ['Favorite Sounds.FavoriteSoundList'],
-            App = ['Like List.App'],
-            FavoriteVideoList = ['Favorite Videos.FavoriteVideoList'],
-            IsFastLane = ['Following.IsFastLane'],
-            FansList = ['Follower.FansList'],
-            Following = ['Following.Following'],
-            HashtagList = ['Hashtag.HashtagList'],
-            ItemFavoriteList = ['Like List.ItemFavoriteList'],
-            LoginHistoryList = ['Login History.LoginHistoryList'],
-            Date = ['Watch History.VideoList.Date'],
-            GpsData = ['Most Recent Location Data.LocationData.GpsData'],
-            LastRegion = ['Most Recent Location Data.LocationData.LastRegion'],
-            SendGifts = ['Purchases.SendGifts.SendGifts'],
-            BuyGifts = ['Purchases.BuyGifts.BuyGifts'],
-            SearchTerm = ['Searches.SearchList.SearchTerm'],
-            ShareHistoryList = ['Share History.ShareHistoryList'],
-            Resolution = ['Status.Status List.Resolution'],
-            App_Version = ['Status.Status List.App Version'],
-            IDFA = ['Status.Status List.IDFA'],
-            GAID = ['Status.Status List.GAID'],
-            Android_ID = ['Status.Status List.Android ID'],
-            IDFV = ['Status.Status List.IDFV'],
-            Web_ID = ['Status.Status List.Web ID'],
-            Link = ['Watch History.VideoList.Link'],
-        )
-    )
-    if 'time' in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
+        data = json.load(f)
+    root_data = get_in(data, 'Your Activity')
+    if not root_data:
+        print('No data found at path: Your Activity')
+        return pd.DataFrame()
+
+    row = {}
+    sub = root_data.get('Activity Summary', {})
+    row['ActivitySummaryMap'] = sub.get('ActivitySummaryMap', '')
+    sub = root_data.get('Favorite Effects', {})
+    row['FavoriteEffectsList'] = sub.get('FavoriteEffectsList', '')
+    sub = root_data.get('Favorite Hashtags', {})
+    row['FavoriteHashtagList'] = sub.get('FavoriteHashtagList', '')
+    sub = root_data.get('Favorite Sounds', {})
+    row['FavoriteSoundList'] = sub.get('FavoriteSoundList', '')
+    sub = root_data.get('Favorite Videos', {})
+    row['App'] = sub.get('App', '')
+    row['FavoriteVideoList'] = sub.get('FavoriteVideoList', '')
+    sub = root_data.get('Follower', {})
+    row['App'] = sub.get('App', '')
+    row['IsFastLane'] = sub.get('IsFastLane', '')
+    row['FansList'] = sub.get('FansList', '')
+    sub = root_data.get('Following', {})
+    row['App'] = sub.get('App', '')
+    row['IsFastLane'] = sub.get('IsFastLane', '')
+    row['Following'] = sub.get('Following', '')
+    sub = root_data.get('Hashtag', {})
+    row['HashtagList'] = sub.get('HashtagList', '')
+    sub = root_data.get('Like List', {})
+    row['App'] = sub.get('App', '')
+    row['ItemFavoriteList'] = sub.get('ItemFavoriteList', '')
+    sub = root_data.get('Login History', {})
+    row['LoginHistoryList'] = sub.get('LoginHistoryList', '')
+    sub = root_data.get('Most Recent Location Data', {})
+    row['LocationData'] = sub.get('LocationData', '')
+    sub = root_data.get('Purchases', {})
+    row['SendGifts'] = sub.get('SendGifts', '')
+    row['BuyGifts'] = sub.get('BuyGifts', '')
+    sub = root_data.get('Searches', {})
+    row['SearchList'] = sub.get('SearchList', '')
+    sub = root_data.get('Share History', {})
+    row['ShareHistoryList'] = sub.get('ShareHistoryList', '')
+    sub = root_data.get('Status', {})
+    row['Status List'] = sub.get('Status List', '')
+    sub = root_data.get('Watch History', {})
+    row['VideoList'] = sub.get('VideoList', '')
+    flattened_data = [row]
+    df = pd.DataFrame(flattened_data)
     return df
 
 
-def create_donation_flow(file_input: list[str]):
+def create_donation_flow(file_input: List[str]):
     """Creates a donation flow for TikTok data."""
     tables = []
 
     try:
-        Ads_and_data_table = donation_table(
-            name="Ads_and_data",
-            df=Ads_and_data_df(file_input),
-            title={"en": "Ads_and_data", "nl": "Ads_and_data"},
+        ads_and_data_table = donation_table(
+            name="Ads and data",
+            df=ads_and_data_df(file_input),
+            title={"en": "Ads and data", "nl": "Ads and data"},
         )
-        tables.append(Ads_and_data_table)
+        tables.append(ads_and_data_table)
     except Exception as e:
-        # print(f"Skipping Ads_and_data: {e}")
+        logger.warning(f"Skipping Ads and data: {e}")
         pass
 
     try:
-        App_Settings_table = donation_table(
-            name="App_Settings",
-            df=App_Settings_df(file_input),
-            title={"en": "App_Settings", "nl": "App_Settings"},
+        app_settings_table = donation_table(
+            name="App Settings",
+            df=app_settings_df(file_input),
+            title={"en": "App Settings", "nl": "App Settings"},
         )
-        tables.append(App_Settings_table)
+        tables.append(app_settings_table)
     except Exception as e:
-        # print(f"Skipping App_Settings: {e}")
+        logger.warning(f"Skipping App Settings: {e}")
         pass
 
     try:
-        Comment_table = donation_table(
+        comment_table = donation_table(
             name="Comment",
-            df=Comment_df(file_input),
+            df=comment_df(file_input),
             title={"en": "Comment", "nl": "Comment"},
         )
-        tables.append(Comment_table)
+        tables.append(comment_table)
     except Exception as e:
-        # print(f"Skipping Comment: {e}")
+        logger.warning(f"Skipping Comment: {e}")
         pass
 
     try:
-        Direct_Message_table = donation_table(
-            name="Direct_Message",
-            df=Direct_Message_df(file_input),
-            title={"en": "Direct_Message", "nl": "Direct_Message"},
+        direct_message_table = donation_table(
+            name="Direct Message",
+            df=direct_message_df(file_input),
+            title={"en": "Direct Message", "nl": "Direct Message"},
         )
-        tables.append(Direct_Message_table)
+        tables.append(direct_message_table)
     except Exception as e:
-        # print(f"Skipping Direct_Message: {e}")
+        logger.warning(f"Skipping Direct Message: {e}")
         pass
 
     try:
-        Income_Plus_Wallet_Transactions_table = donation_table(
-            name="Income_Plus_Wallet_Transactions",
-            df=Income_Plus_Wallet_Transactions_df(file_input),
-            title={"en": "Income_Plus_Wallet_Transactions", "nl": "Income_Plus_Wallet_Transactions"},
+        income_plus_wallet_transactions_table = donation_table(
+            name="Income Plus Wallet Transactions",
+            df=income_plus_wallet_transactions_df(file_input),
+            title={"en": "Income Plus Wallet Transactions", "nl": "Income Plus Wallet Transactions"},
         )
-        tables.append(Income_Plus_Wallet_Transactions_table)
+        tables.append(income_plus_wallet_transactions_table)
     except Exception as e:
-        # print(f"Skipping Income_Plus_Wallet_Transactions: {e}")
+        logger.warning(f"Skipping Income Plus Wallet Transactions: {e}")
         pass
 
     try:
-        Location_Review_table = donation_table(
-            name="Location_Review",
-            df=Location_Review_df(file_input),
-            title={"en": "Location_Review", "nl": "Location_Review"},
+        location_review_table = donation_table(
+            name="Location Review",
+            df=location_review_df(file_input),
+            title={"en": "Location Review", "nl": "Location Review"},
         )
-        tables.append(Location_Review_table)
+        tables.append(location_review_table)
     except Exception as e:
-        # print(f"Skipping Location_Review: {e}")
+        logger.warning(f"Skipping Location Review: {e}")
         pass
 
     try:
-        Post_table = donation_table(
+        post_table = donation_table(
             name="Post",
-            df=Post_df(file_input),
+            df=post_df(file_input),
             title={"en": "Post", "nl": "Post"},
         )
-        tables.append(Post_table)
+        tables.append(post_table)
     except Exception as e:
-        # print(f"Skipping Post: {e}")
+        logger.warning(f"Skipping Post: {e}")
         pass
 
     try:
-        Profile_table = donation_table(
+        profile_table = donation_table(
             name="Profile",
-            df=Profile_df(file_input),
+            df=profile_df(file_input),
             title={"en": "Profile", "nl": "Profile"},
         )
-        tables.append(Profile_table)
+        tables.append(profile_table)
     except Exception as e:
-        # print(f"Skipping Profile: {e}")
+        logger.warning(f"Skipping Profile: {e}")
         pass
 
     try:
-        TikTok_Shop_table = donation_table(
-            name="TikTok_Shop",
-            df=TikTok_Shop_df(file_input),
-            title={"en": "TikTok_Shop", "nl": "TikTok_Shop"},
+        tiktok_shop_table = donation_table(
+            name="TikTok Shop",
+            df=tiktok_shop_df(file_input),
+            title={"en": "TikTok Shop", "nl": "TikTok Shop"},
         )
-        tables.append(TikTok_Shop_table)
+        tables.append(tiktok_shop_table)
     except Exception as e:
-        # print(f"Skipping TikTok_Shop: {e}")
+        logger.warning(f"Skipping TikTok Shop: {e}")
         pass
 
     try:
-        Tiktok_Live_table = donation_table(
-            name="Tiktok_Live",
-            df=Tiktok_Live_df(file_input),
-            title={"en": "Tiktok_Live", "nl": "Tiktok_Live"},
+        tiktok_live_table = donation_table(
+            name="Tiktok Live",
+            df=tiktok_live_df(file_input),
+            title={"en": "Tiktok Live", "nl": "Tiktok Live"},
         )
-        tables.append(Tiktok_Live_table)
+        tables.append(tiktok_live_table)
     except Exception as e:
-        # print(f"Skipping Tiktok_Live: {e}")
+        logger.warning(f"Skipping Tiktok Live: {e}")
         pass
 
     try:
-        Your_Activity_table = donation_table(
-            name="Your_Activity",
-            df=Your_Activity_df(file_input),
-            title={"en": "Your_Activity", "nl": "Your_Activity"},
+        your_activity_table = donation_table(
+            name="Your Activity",
+            df=your_activity_df(file_input),
+            title={"en": "Your Activity", "nl": "Your Activity"},
         )
-        tables.append(Your_Activity_table)
+        tables.append(your_activity_table)
     except Exception as e:
-        # print(f"Skipping Your_Activity: {e}")
+        logger.warning(f"Skipping Your Activity: {e}")
         pass
 
     if tables:
