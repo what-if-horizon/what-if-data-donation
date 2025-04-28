@@ -25,11 +25,11 @@ def ads_and_data_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Ad Interests', {})
-    row['AdInterestCategories'] = sub.get('AdInterestCategories', '')
+    row['AdInterestCategories'] = sub.get('AdInterestCategories', '.*?')
     sub = root_data.get('Instant Form Ads Responses', {})
-    row['ResponsesList'] = sub.get('ResponsesList', '')
+    row['ResponsesList'] = sub.get('ResponsesList', '.*?')
     sub = root_data.get('Off TikTok Activity', {})
-    row['OffTikTokActivityDataList'] = sub.get('OffTikTokActivityDataList', '')
+    row['OffTikTokActivityDataList'] = sub.get('OffTikTokActivityDataList', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -45,11 +45,11 @@ def app_settings_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Block List', {})
-    row['App'] = sub.get('App', '')
-    row['BlockList'] = sub.get('BlockList', '')
+    row['App'] = sub.get('App', '.*?')
+    row['BlockList'] = sub.get('BlockList', '.*?')
     sub = root_data.get('Settings', {})
-    row['App'] = sub.get('App', '')
-    row['SettingsMap'] = sub.get('SettingsMap', '')
+    row['App'] = sub.get('App', '.*?')
+    row['SettingsMap'] = sub.get('SettingsMap', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -65,8 +65,8 @@ def comment_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Comments', {})
-    row['App'] = sub.get('App', '')
-    row['CommentsList'] = sub.get('CommentsList', '')
+    row['App'] = sub.get('App', '.*?')
+    row['CommentsList'] = sub.get('CommentsList', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -82,7 +82,7 @@ def direct_message_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Direct Messages', {})
-    row['ChatHistory'] = sub.get('ChatHistory', '')
+    row['ChatHistory'] = sub.get('ChatHistory', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -98,7 +98,7 @@ def income_plus_wallet_transactions_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Transaction History', {})
-    row['TransactionsList'] = sub.get('TransactionsList', '')
+    row['TransactionsList'] = sub.get('TransactionsList', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -114,7 +114,7 @@ def location_review_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Location Reviews', {})
-    row['ReviewsList'] = sub.get('ReviewsList', '')
+    row['ReviewsList'] = sub.get('ReviewsList', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -130,9 +130,9 @@ def post_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Posts', {})
-    row['VideoList'] = sub.get('VideoList', '')
+    row['VideoList'] = sub.get('VideoList', '.*?')
     sub = root_data.get('Recently Deleted Posts', {})
-    row['PostList'] = sub.get('PostList', '')
+    row['PostList'] = sub.get('PostList', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -148,22 +148,22 @@ def profile_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('AI-Moji', {})
-    row['CreateDate'] = sub.get('CreateDate', '')
-    row['AIMojiList'] = sub.get('AIMojiList', '')
+    row['CreateDate'] = sub.get('CreateDate', '.*?')
+    row['AIMojiList'] = sub.get('AIMojiList', '.*?')
     sub = root_data.get('Autofill', {})
-    row['PhoneNumber'] = sub.get('PhoneNumber', '')
-    row['Email'] = sub.get('Email', '')
-    row['FirstName'] = sub.get('FirstName', '')
-    row['LastName'] = sub.get('LastName', '')
-    row['Address'] = sub.get('Address', '')
-    row['ZipCode'] = sub.get('ZipCode', '')
-    row['Unit'] = sub.get('Unit', '')
-    row['City'] = sub.get('City', '')
-    row['State'] = sub.get('State', '')
-    row['Country'] = sub.get('Country', '')
+    row['PhoneNumber'] = sub.get('PhoneNumber', '.*?')
+    row['Email'] = sub.get('Email', '.*?')
+    row['FirstName'] = sub.get('FirstName', '.*?')
+    row['LastName'] = sub.get('LastName', '.*?')
+    row['Address'] = sub.get('Address', '.*?')
+    row['ZipCode'] = sub.get('ZipCode', '.*?')
+    row['Unit'] = sub.get('Unit', '.*?')
+    row['City'] = sub.get('City', '.*?')
+    row['State'] = sub.get('State', '.*?')
+    row['Country'] = sub.get('Country', '.*?')
     sub = root_data.get('Profile Info', {})
-    row['App'] = sub.get('App', '')
-    row['ProfileMap'] = sub.get('ProfileMap', '')
+    row['App'] = sub.get('App', '.*?')
+    row['ProfileMap'] = sub.get('ProfileMap', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -179,27 +179,27 @@ def tiktok_shop_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Communication With Shops', {})
-    row['CommunicationHistories'] = sub.get('CommunicationHistories', '')
+    row['CommunicationHistories'] = sub.get('CommunicationHistories', '.*?')
     sub = root_data.get('Current Payment Information', {})
-    row['PayCard'] = sub.get('PayCard', '')
+    row['PayCard'] = sub.get('PayCard', '.*?')
     sub = root_data.get('Customer Support History', {})
-    row['CustomerSupportHistories'] = sub.get('CustomerSupportHistories', '')
+    row['CustomerSupportHistories'] = sub.get('CustomerSupportHistories', '.*?')
     sub = root_data.get('Order Dispute History', {})
-    row['OrderDisputeHistories'] = sub.get('OrderDisputeHistories', '')
+    row['OrderDisputeHistories'] = sub.get('OrderDisputeHistories', '.*?')
     sub = root_data.get('Order History', {})
-    row['OrderHistories'] = sub.get('OrderHistories', '')
+    row['OrderHistories'] = sub.get('OrderHistories', '.*?')
     sub = root_data.get('Product Browsing History', {})
-    row['ProductBrowsingHistories'] = sub.get('ProductBrowsingHistories', '')
+    row['ProductBrowsingHistories'] = sub.get('ProductBrowsingHistories', '.*?')
     sub = root_data.get('Product Reviews', {})
-    row['ProductReviewHistories'] = sub.get('ProductReviewHistories', '')
+    row['ProductReviewHistories'] = sub.get('ProductReviewHistories', '.*?')
     sub = root_data.get('Returns and Refunds History', {})
-    row['ReturnAndRefundHistories'] = sub.get('ReturnAndRefundHistories', '')
+    row['ReturnAndRefundHistories'] = sub.get('ReturnAndRefundHistories', '.*?')
     sub = root_data.get('Saved Address Information', {})
-    row['SavedAddress'] = sub.get('SavedAddress', '')
+    row['SavedAddress'] = sub.get('SavedAddress', '.*?')
     sub = root_data.get('Shopping Cart List', {})
-    row['ShoppingCart'] = sub.get('ShoppingCart', '')
+    row['ShoppingCart'] = sub.get('ShoppingCart', '.*?')
     sub = root_data.get('Vouchers', {})
-    row['Vouchers'] = sub.get('Vouchers', '')
+    row['Vouchers'] = sub.get('Vouchers', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -215,15 +215,15 @@ def tiktok_live_df(file_input: List[str]) -> pd.DataFrame:
 
     row = {}
     sub = root_data.get('Go Live History', {})
-    row['GoLiveList'] = sub.get('GoLiveList', '')
+    row['GoLiveList'] = sub.get('GoLiveList', '.*?')
     sub = root_data.get('Go Live Settings', {})
-    row['SettingsMap'] = sub.get('SettingsMap', '')
+    row['SettingsMap'] = sub.get('SettingsMap', '.*?')
     sub = root_data.get('Watch Live History', {})
-    row['WatchLiveMap'] = sub.get('WatchLiveMap', '')
+    row['WatchLiveMap'] = sub.get('WatchLiveMap', '.*?')
     sub = root_data.get('Watch Live Settings', {})
-    row['WatchLiveSettingsMap'] = sub.get('WatchLiveSettingsMap', '')
-    row['MostRecentModificationTimeInApp'] = sub.get('MostRecentModificationTimeInApp', '')
-    row['MostRecentModificationTimeInWeb'] = sub.get('MostRecentModificationTimeInWeb', '')
+    row['WatchLiveSettingsMap'] = sub.get('WatchLiveSettingsMap', '.*?')
+    row['MostRecentModificationTimeInApp'] = sub.get('MostRecentModificationTimeInApp', '.*?')
+    row['MostRecentModificationTimeInWeb'] = sub.get('MostRecentModificationTimeInWeb', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
@@ -232,51 +232,51 @@ def tiktok_live_df(file_input: List[str]) -> pd.DataFrame:
 def your_activity_df(file_input: List[str]) -> pd.DataFrame:
     with open(file_input[0], 'r', encoding='utf-8') as f:
         data = json.load(f)
-    root_data = get_in(data, 'Your Activity')
+    root_data = get_in(data, 'Activity')
     if not root_data:
         print('No data found at path: Your Activity')
         return pd.DataFrame()
 
     row = {}
     sub = root_data.get('Activity Summary', {})
-    row['ActivitySummaryMap'] = sub.get('ActivitySummaryMap', '')
+    row['ActivitySummaryMap'] = sub.get('ActivitySummaryMap', '.*?')
     sub = root_data.get('Favorite Effects', {})
-    row['FavoriteEffectsList'] = sub.get('FavoriteEffectsList', '')
+    row['FavoriteEffectsList'] = sub.get('FavoriteEffectsList', '.*?')
     sub = root_data.get('Favorite Hashtags', {})
-    row['FavoriteHashtagList'] = sub.get('FavoriteHashtagList', '')
+    row['FavoriteHashtagList'] = sub.get('FavoriteHashtagList', '.*?')
     sub = root_data.get('Favorite Sounds', {})
-    row['FavoriteSoundList'] = sub.get('FavoriteSoundList', '')
+    row['FavoriteSoundList'] = sub.get('FavoriteSoundList', '.*?')
     sub = root_data.get('Favorite Videos', {})
-    row['App'] = sub.get('App', '')
-    row['FavoriteVideoList'] = sub.get('FavoriteVideoList', '')
+    row['App'] = sub.get('App', '.*?')
+    row['FavoriteVideoList'] = sub.get('FavoriteVideoList', '.*?')
     sub = root_data.get('Follower', {})
-    row['App'] = sub.get('App', '')
-    row['IsFastLane'] = sub.get('IsFastLane', '')
-    row['FansList'] = sub.get('FansList', '')
+    row['App'] = sub.get('App', '.*?')
+    row['IsFastLane'] = sub.get('IsFastLane', '.*?')
+    row['FansList'] = sub.get('FansList', '.*?')
     sub = root_data.get('Following', {})
-    row['App'] = sub.get('App', '')
-    row['IsFastLane'] = sub.get('IsFastLane', '')
-    row['Following'] = sub.get('Following', '')
+    row['App'] = sub.get('App', '.*?')
+    row['IsFastLane'] = sub.get('IsFastLane', '.*?')
+    row['Following'] = sub.get('Following', '.*?')
     sub = root_data.get('Hashtag', {})
-    row['HashtagList'] = sub.get('HashtagList', '')
+    row['HashtagList'] = sub.get('HashtagList', '.*?')
     sub = root_data.get('Like List', {})
-    row['App'] = sub.get('App', '')
-    row['ItemFavoriteList'] = sub.get('ItemFavoriteList', '')
+    row['App'] = sub.get('App', '.*?')
+    row['ItemFavoriteList'] = sub.get('ItemFavoriteList', '.*?')
     sub = root_data.get('Login History', {})
-    row['LoginHistoryList'] = sub.get('LoginHistoryList', '')
+    row['LoginHistoryList'] = sub.get('LoginHistoryList', '.*?')
     sub = root_data.get('Most Recent Location Data', {})
-    row['LocationData'] = sub.get('LocationData', '')
+    row['LocationData'] = sub.get('LocationData', '.*?')
     sub = root_data.get('Purchases', {})
-    row['SendGifts'] = sub.get('SendGifts', '')
-    row['BuyGifts'] = sub.get('BuyGifts', '')
+    row['SendGifts'] = sub.get('SendGifts', '.*?')
+    row['BuyGifts'] = sub.get('BuyGifts', '.*?')
     sub = root_data.get('Searches', {})
-    row['SearchList'] = sub.get('SearchList', '')
+    row['SearchList'] = sub.get('SearchList', '.*?')
     sub = root_data.get('Share History', {})
-    row['ShareHistoryList'] = sub.get('ShareHistoryList', '')
+    row['ShareHistoryList'] = sub.get('ShareHistoryList', '.*?')
     sub = root_data.get('Status', {})
-    row['Status List'] = sub.get('Status List', '')
-    sub = root_data.get('Watch History', {})
-    row['VideoList'] = sub.get('VideoList', '')
+    row['Status List'] = sub.get('Status List', '.*?')
+    sub = root_data.get('Video Browsing History', {})
+    row['VideoList'] = sub.get('VideoList', '.*?')
     flattened_data = [row]
     df = pd.DataFrame(flattened_data)
     return df
