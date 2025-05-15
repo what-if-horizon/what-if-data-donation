@@ -7,7 +7,6 @@ import io
 import zipfile
 import re
 from port.helpers.donation_flow import donation_table, donation_flow
-from port.helpers.parsers import parse_json
 
 logger = logging.getLogger(__name__)
 
@@ -121,36 +120,31 @@ def account_df(file_input: list[str]) -> pd.DataFrame:
     return df
 
 
-
-
-    data = read_json(file_input, ["*/cities_you_have_checked_into.json"])
-
-    df = parse_json(data,
-        row_path=["$.media"],
-        col_paths=dict(
-        )
-    )
-
-    if "time" in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
-
-
 def ad_engagements_df(file_input: list[str]) -> pd.DataFrame:
     data = read_js(file_input, ['ad-engagements.js'])
 
-    df = parse_json(data,
-        row_path=["$.ad"],
-        col_paths=dict(
-        )
-    )
+    records = []
+    for item in data:
+        record = {}
+        ad_engagements = item.get('ad_engagements', {})
+        record['ad'] = ad_engagements.get('ad', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['deviceInfo'] = ad_engagements.get('deviceInfo', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['displayLocation'] = ad_engagements.get('displayLocation', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['promotedTweetInfo'] = ad_engagements.get('promotedTweetInfo', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['advertiserInfo'] = ad_engagements.get('advertiserInfo', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['matchedTargetingCriteria'] = ad_engagements.get('matchedTargetingCriteria', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['impressionTime'] = ad_engagements.get('impressionTime', '.*?')
+        ad_engagements = item.get('ad_engagements', {})
+        record['engagementAttributes'] = ad_engagements.get('engagementAttributes', '.*?')
+        records.append(record)
 
-    print(df)
-
-    if "time" in df.columns:
-        df["date"] = pd.to_datetime(df["time"], unit="s").dt.strftime("%Y-%m-%d %H:%M:%S")
-        df = df.sort_values("date")
-
+    df = pd.DataFrame(records)
     return df
 
 
@@ -950,13 +944,13 @@ def ip_audit_df(file_input: list[str]) -> pd.DataFrame:
     records = []
     for item in data:
         record = {}
-        ip_audit = item.get('ipAudit', {})
+        ip_audit = item.get('ip_audit', {})
         record['accountId'] = ip_audit.get('accountId', '.*?')
-        ip_audit = item.get('ipAudit', {})
+        ip_audit = item.get('ip_audit', {})
         record['createdAt'] = ip_audit.get('createdAt', '.*?')
-        ip_audit = item.get('ipAudit', {})
+        ip_audit = item.get('ip_audit', {})
         record['loginIp'] = ip_audit.get('loginIp', '.*?')
-        ip_audit = item.get('ipAudit', {})
+        ip_audit = item.get('ip_audit', {})
         record['loginPortNumber'] = ip_audit.get('loginPortNumber', '.*?')
         records.append(record)
 
