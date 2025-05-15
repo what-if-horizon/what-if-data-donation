@@ -1,416 +1,523 @@
-from typing import List
-import json
+# Auto-generated TikTok extractors
+
 import pandas as pd
+import json
 import logging
 from port.helpers.donation_flow import donation_table, donation_flow
+from typing import List
 
-logger = logging.getLogger(__name__)
-
-def get_in(data_dict, *keys):
-    for k in keys:
-        if isinstance(data_dict, dict):
-            data_dict = data_dict.get(k, None)
+def get_in(d: dict, *keys):
+    for key in keys:
+        if isinstance(d, dict):
+            d = d.get(key)
         else:
             return None
-        if data_dict is None:
-            return None
-    return data_dict
-def ads_and_data_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Ads and data')
-    if not root_data:
-        print('No data found at path: Ads and data')
+    return d
+
+def get_list(d: dict, *keys):
+    val = get_in(d, *keys)
+    return val if isinstance(val, list) else []
+
+def get_dict(d: dict, *keys):
+    val = get_in(d, *keys)
+    return val if isinstance(val, dict) else {}
+
+
+def activity_df(file_input: List[str]) -> pd.DataFrame:
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Activity')
+        if not root_data:
+            print(f'⚠️ No data found at path: Activity')
+            return pd.DataFrame()
+
+        base_row = {}
+        base_row['note'] = get_in(root_data, 'Activity Summary', 'ActivitySummaryMap', 'note')
+        base_row['videosCommentedOnSinceAccountRegistration'] = get_in(root_data, 'Activity Summary', 'ActivitySummaryMap', 'videosCommentedOnSinceAccountRegistration')
+        base_row['videosSharedSinceAccountRegistration'] = get_in(root_data, 'Activity Summary', 'ActivitySummaryMap', 'videosSharedSinceAccountRegistration')
+        base_row['videosWatchedToTheEndSinceAccountRegistration'] = get_in(root_data, 'Activity Summary', 'ActivitySummaryMap', 'videosWatchedToTheEndSinceAccountRegistration')
+        base_row['FavoriteEffectsList'] = get_in(root_data, 'Favorite Effects', 'FavoriteEffectsList')
+        base_row['FavoriteHashtagList'] = get_in(root_data, 'Favorite Hashtags', 'FavoriteHashtagList')
+        base_row['FavoriteSoundList'] = get_in(root_data, 'Favorite Sounds', 'FavoriteSoundList')
+        base_row['App'] = get_in(root_data, 'Favorite Videos', 'App')
+        base_row['IsFastLane'] = get_in(root_data, 'Follower List', 'IsFastLane')
+        base_row['Date'] = get_in(root_data, 'Most Recent Location Data', 'LocationData', 'Date')
+        base_row['GpsData'] = get_in(root_data, 'Most Recent Location Data', 'LocationData', 'GpsData')
+        base_row['LastRegion'] = get_in(root_data, 'Most Recent Location Data', 'LocationData', 'LastRegion')
+        base_row['SendGifts'] = get_in(root_data, 'Purchase History', 'SendGifts', 'SendGifts')
+        base_row['BuyGifts'] = get_in(root_data, 'Purchase History', 'BuyGifts', 'BuyGifts')
+        all_records = []
+        items = get_list(root_data, 'Favorite Videos', 'FavoriteVideoList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'FavoriteVideoList'
+            row['Date'] = item.get('Date', '.*?')
+            row['Link'] = item.get('Link', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Follower List', 'FansList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'FansList'
+            row['Date'] = item.get('Date', '.*?')
+            row['UserName'] = item.get('UserName', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Following List', 'Following')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'Following'
+            row['Date'] = item.get('Date', '.*?')
+            row['UserName'] = item.get('UserName', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Hashtag', 'HashtagList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'HashtagList'
+            row['HashtagLink'] = item.get('HashtagLink', '.*?')
+            row['HashtagName'] = item.get('HashtagName', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Like List', 'ItemFavoriteList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'ItemFavoriteList'
+            row['date'] = item.get('date', '.*?')
+            row['link'] = item.get('link', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Login History', 'LoginHistoryList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'LoginHistoryList'
+            row['Carrier'] = item.get('Carrier', '.*?')
+            row['Date'] = item.get('Date', '.*?')
+            row['DeviceModel'] = item.get('DeviceModel', '.*?')
+            row['DeviceSystem'] = item.get('DeviceSystem', '.*?')
+            row['IP'] = item.get('IP', '.*?')
+            row['NetworkType'] = item.get('NetworkType', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Search History', 'SearchList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'SearchList'
+            row['Date'] = item.get('Date', '.*?')
+            row['SearchTerm'] = item.get('SearchTerm', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Share History', 'ShareHistoryList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'ShareHistoryList'
+            row['Date'] = item.get('Date', '.*?')
+            row['Link'] = item.get('Link', '.*?')
+            row['Method'] = item.get('Method', '.*?')
+            row['SharedContent'] = item.get('SharedContent', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Status', 'Status List')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'Status List'
+            row['Android ID'] = item.get('Android ID', '.*?')
+            row['App Version'] = item.get('App Version', '.*?')
+            row['GAID'] = item.get('GAID', '.*?')
+            row['IDFA'] = item.get('IDFA', '.*?')
+            row['IDFV'] = item.get('IDFV', '.*?')
+            row['Resolution'] = item.get('Resolution', '.*?')
+            row['Web ID'] = item.get('Web ID', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Video Browsing History', 'VideoList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'VideoList'
+            row['Date'] = item.get('Date', '.*?')
+            row['Link'] = item.get('Link', '.*?')
+            all_records.append(row)
+        return pd.DataFrame(all_records)
+    except Exception as e:
+        print(f'❌ Error in activity_df:', e)
         return pd.DataFrame()
 
-    row = {}
-    sub = root_data.get('Ad Interests', {})
-    row['AdInterestCategories'] = sub.get('AdInterestCategories', '.*?')
-    sub = root_data.get('Instant Form Ads Responses', {})
-    row['ResponsesList'] = sub.get('ResponsesList', '.*?')
-    sub = root_data.get('Off TikTok Activity', {})
-    row['OffTikTokActivityDataList'] = sub.get('OffTikTokActivityDataList', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
+
+def ads_and_data_df(file_input: List[str]) -> pd.DataFrame:
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Ads and data')
+        if not root_data:
+            print(f'⚠️ No data found at path: Ads and data')
+            return pd.DataFrame()
+
+        base_row = {}
+        base_row['AdInterestCategories'] = get_in(root_data, 'Ad Interests', 'AdInterestCategories')
+        base_row['ResponsesList'] = get_in(root_data, 'Instant Form Ads Responses', 'ResponsesList')
+        base_row['OffTikTokActivityDataList'] = get_in(root_data, 'Off TikTok Activity', 'OffTikTokActivityDataList')
+        return pd.DataFrame([base_row])
+    except Exception as e:
+        print(f'❌ Error in ads_and_data_df:', e)
+        return pd.DataFrame()
 
 
 def app_settings_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'App Settings')
-    if not root_data:
-        print('No data found at path: App Settings')
-        return pd.DataFrame()
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'App Settings')
+        if not root_data:
+            print(f'⚠️ No data found at path: App Settings')
+            return pd.DataFrame()
 
-    row = {}
-    sub = root_data.get('Block List', {})
-    row['App'] = sub.get('App', '.*?')
-    row['BlockList'] = sub.get('BlockList', '.*?')
-    sub = root_data.get('Settings', {})
-    row['App'] = sub.get('App', '.*?')
-    row['SettingsMap'] = sub.get('SettingsMap', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
+        base_row = {}
+        base_row['App'] = get_in(root_data, 'Block', 'App')
+        base_row['BlockList'] = get_in(root_data, 'Block', 'BlockList')
+        base_row['Allow DownLoad'] = get_in(root_data, 'Settings', 'SettingsMap', 'Allow DownLoad')
+        base_row['Allow Others to Find Me'] = get_in(root_data, 'Settings', 'SettingsMap', 'Allow Others to Find Me')
+        base_row['App Language'] = get_in(root_data, 'Settings', 'SettingsMap', 'App Language')
+        base_row['Keyword filters for videos in Following feed'] = get_in(root_data, 'Settings', 'SettingsMap', 'Content Preferences', 'Keyword filters for videos in Following feed')
+        base_row['Keyword filters for videos in For You feed'] = get_in(root_data, 'Settings', 'SettingsMap', 'Content Preferences', 'Keyword filters for videos in For You feed')
+        base_row['Video Languages Preferences'] = get_in(root_data, 'Settings', 'SettingsMap', 'Content Preferences', 'Video Languages Preferences')
+        base_row['Filter Comments'] = get_in(root_data, 'Settings', 'SettingsMap', 'Filter Comments')
+        base_row['Interests'] = get_in(root_data, 'Settings', 'SettingsMap', 'Interests')
+        base_row['Personalized Ads'] = get_in(root_data, 'Settings', 'SettingsMap', 'Personalized Ads')
+        base_row['Private Account'] = get_in(root_data, 'Settings', 'SettingsMap', 'Private Account')
+        base_row['Desktop notification'] = get_in(root_data, 'Settings', 'SettingsMap', 'Push Notification', 'Desktop notification')
+        base_row['New Comments on My Video'] = get_in(root_data, 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video')
+        base_row['New Fans'] = get_in(root_data, 'Settings', 'SettingsMap', 'Push Notification', 'New Fans')
+        base_row['New Likes on My Video'] = get_in(root_data, 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video')
+        base_row['Suggest your account to Facebook friends'] = get_in(root_data, 'Settings', 'SettingsMap', 'Suggest your account to Facebook friends')
+        base_row['Suggest your account to contacts'] = get_in(root_data, 'Settings', 'SettingsMap', 'Suggest your account to contacts')
+        base_row['Suggest your account to people who open or send links to you'] = get_in(root_data, 'Settings', 'SettingsMap', 'Suggest your account to people who open or send links to you')
+        base_row['Web Language'] = get_in(root_data, 'Settings', 'SettingsMap', 'Web Language')
+        base_row['Who Can Duet With Me'] = get_in(root_data, 'Settings', 'SettingsMap', 'Who Can Duet With Me')
+        base_row['Who Can Post Comments'] = get_in(root_data, 'Settings', 'SettingsMap', 'Who Can Post Comments')
+        base_row['Who Can Send Me Message'] = get_in(root_data, 'Settings', 'SettingsMap', 'Who Can Send Me Message')
+        base_row['Who Can Stitch with your videos'] = get_in(root_data, 'Settings', 'SettingsMap', 'Who Can Stitch with your videos')
+        base_row['Who Can View Videos I Liked'] = get_in(root_data, 'Settings', 'SettingsMap', 'Who Can View Videos I Liked')
+        return pd.DataFrame([base_row])
+    except Exception as e:
+        print(f'❌ Error in app_settings_df:', e)
+        return pd.DataFrame()
 
 
 def comment_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Comment')
-    if not root_data:
-        print('No data found at path: Comment')
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Comment')
+        if not root_data:
+            print(f'⚠️ No data found at path: Comment')
+            return pd.DataFrame()
+
+        base_row = {}
+        base_row['App'] = get_in(root_data, 'Comments', 'App')
+        all_records = []
+        items = get_list(root_data, 'Comments', 'CommentsList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'CommentsList'
+            row['comment'] = item.get('comment', '.*?')
+            row['date'] = item.get('date', '.*?')
+            row['photo'] = item.get('photo', '.*?')
+            row['url'] = item.get('url', '.*?')
+            all_records.append(row)
+        return pd.DataFrame(all_records)
+    except Exception as e:
+        print(f'❌ Error in comment_df:', e)
         return pd.DataFrame()
-
-    row = {}
-    sub = root_data.get('Comments', {})
-    row['App'] = sub.get('App', '.*?')
-    row['CommentsList'] = sub.get('CommentsList', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
-
-
-def direct_message_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Direct Message')
-    if not root_data:
-        print('No data found at path: Direct Message')
-        return pd.DataFrame()
-
-    row = {}
-    sub = root_data.get('Direct Messages', {})
-    row['ChatHistory'] = sub.get('ChatHistory', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
 
 
 def income_plus_wallet_transactions_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Income Plus Wallet Transactions')
-    if not root_data:
-        print('No data found at path: Income Plus Wallet Transactions')
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Income Plus Wallet Transactions')
+        if not root_data:
+            print(f'⚠️ No data found at path: Income Plus Wallet Transactions')
+            return pd.DataFrame()
+
+        base_row = {}
+        base_row['TransactionsList'] = get_in(root_data, 'Income Plus Wallet Transaction', 'TransactionsList')
+        return pd.DataFrame([base_row])
+    except Exception as e:
+        print(f'❌ Error in income_plus_wallet_transactions_df:', e)
         return pd.DataFrame()
 
-    row = {}
-    sub = root_data.get('Transaction History', {})
-    row['TransactionsList'] = sub.get('TransactionsList', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
 
+def poi_review_df(file_input: List[str]) -> pd.DataFrame:
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Poi Review')
+        if not root_data:
+            print(f'⚠️ No data found at path: Poi Review')
+            return pd.DataFrame()
 
-def location_review_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Location Review')
-    if not root_data:
-        print('No data found at path: Location Review')
+        base_row = {}
+        all_records = []
+        items = get_list(root_data, 'POI Review', 'ReviewsList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'ReviewsList'
+            row['Date'] = item.get('Date', '.*?')
+            row['Likes'] = item.get('Likes', '.*?')
+            row['PlaceName'] = item.get('PlaceName', '.*?')
+            row['Rating'] = item.get('Rating', '.*?')
+            row['ReviewText'] = item.get('ReviewText', '.*?')
+            row['Status'] = item.get('Status', '.*?')
+            all_records.append(row)
+        return pd.DataFrame(all_records)
+    except Exception as e:
+        print(f'❌ Error in poi_review_df:', e)
         return pd.DataFrame()
-
-    row = {}
-    sub = root_data.get('Location Reviews', {})
-    row['ReviewsList'] = sub.get('ReviewsList', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
-
-
-def post_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Post')
-    if not root_data:
-        print('No data found at path: Post')
-        return pd.DataFrame()
-
-    row = {}
-    sub = root_data.get('Posts', {})
-    row['VideoList'] = sub.get('VideoList', '.*?')
-    sub = root_data.get('Recently Deleted Posts', {})
-    row['PostList'] = sub.get('PostList', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
 
 
 def profile_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Profile')
-    if not root_data:
-        print('No data found at path: Profile')
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Profile')
+        if not root_data:
+            print(f'⚠️ No data found at path: Profile')
+            return pd.DataFrame()
+
+        base_row = {}
+        base_row['CreateDate'] = get_in(root_data, 'AIMoji', 'CreateDate')
+        base_row['AIMojiList'] = get_in(root_data, 'AIMoji', 'AIMojiList')
+        base_row['PhoneNumber'] = get_in(root_data, 'Auto Fill', 'PhoneNumber')
+        base_row['Email'] = get_in(root_data, 'Auto Fill', 'Email')
+        base_row['FirstName'] = get_in(root_data, 'Auto Fill', 'FirstName')
+        base_row['LastName'] = get_in(root_data, 'Auto Fill', 'LastName')
+        base_row['Address'] = get_in(root_data, 'Auto Fill', 'Address')
+        base_row['ZipCode'] = get_in(root_data, 'Auto Fill', 'ZipCode')
+        base_row['Unit'] = get_in(root_data, 'Auto Fill', 'Unit')
+        base_row['City'] = get_in(root_data, 'Auto Fill', 'City')
+        base_row['State'] = get_in(root_data, 'Auto Fill', 'State')
+        base_row['Country'] = get_in(root_data, 'Auto Fill', 'Country')
+        base_row['App'] = get_in(root_data, 'Profile Information', 'App')
+        base_row['bioDescription'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'bioDescription')
+        base_row['birthDate'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'birthDate')
+        base_row['emailAddress'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'emailAddress')
+        base_row['likesReceived'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'likesReceived')
+        base_row['profilePhoto'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'profilePhoto')
+        base_row['profileVideo'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'profileVideo')
+        base_row['telephoneNumber'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'telephoneNumber')
+        base_row['userName'] = get_in(root_data, 'Profile Information', 'ProfileMap', 'userName')
+        all_records = []
+        items = get_list(root_data, 'Profile Information', 'ProfileMap', 'PlatformInfo')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'PlatformInfo'
+            row['Description'] = item.get('Description', '.*?')
+            row['Name'] = item.get('Name', '.*?')
+            row['Platform'] = item.get('Platform', '.*?')
+            row['Profile Photo'] = item.get('Profile Photo', '.*?')
+            all_records.append(row)
+        return pd.DataFrame(all_records)
+    except Exception as e:
+        print(f'❌ Error in profile_df:', e)
         return pd.DataFrame()
-
-    row = {}
-    sub = root_data.get('AI-Moji', {})
-    row['CreateDate'] = sub.get('CreateDate', '.*?')
-    row['AIMojiList'] = sub.get('AIMojiList', '.*?')
-    sub = root_data.get('Autofill', {})
-    row['PhoneNumber'] = sub.get('PhoneNumber', '.*?')
-    row['Email'] = sub.get('Email', '.*?')
-    row['FirstName'] = sub.get('FirstName', '.*?')
-    row['LastName'] = sub.get('LastName', '.*?')
-    row['Address'] = sub.get('Address', '.*?')
-    row['ZipCode'] = sub.get('ZipCode', '.*?')
-    row['Unit'] = sub.get('Unit', '.*?')
-    row['City'] = sub.get('City', '.*?')
-    row['State'] = sub.get('State', '.*?')
-    row['Country'] = sub.get('Country', '.*?')
-    sub = root_data.get('Profile Info', {})
-    row['App'] = sub.get('App', '.*?')
-    row['ProfileMap'] = sub.get('ProfileMap', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
-
-
-def tiktok_shop_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'TikTok Shop')
-    if not root_data:
-        print('No data found at path: TikTok Shop')
-        return pd.DataFrame()
-
-    row = {}
-    sub = root_data.get('Communication With Shops', {})
-    row['CommunicationHistories'] = sub.get('CommunicationHistories', '.*?')
-    sub = root_data.get('Current Payment Information', {})
-    row['PayCard'] = sub.get('PayCard', '.*?')
-    sub = root_data.get('Customer Support History', {})
-    row['CustomerSupportHistories'] = sub.get('CustomerSupportHistories', '.*?')
-    sub = root_data.get('Order Dispute History', {})
-    row['OrderDisputeHistories'] = sub.get('OrderDisputeHistories', '.*?')
-    sub = root_data.get('Order History', {})
-    row['OrderHistories'] = sub.get('OrderHistories', '.*?')
-    sub = root_data.get('Product Browsing History', {})
-    row['ProductBrowsingHistories'] = sub.get('ProductBrowsingHistories', '.*?')
-    sub = root_data.get('Product Reviews', {})
-    row['ProductReviewHistories'] = sub.get('ProductReviewHistories', '.*?')
-    sub = root_data.get('Returns and Refunds History', {})
-    row['ReturnAndRefundHistories'] = sub.get('ReturnAndRefundHistories', '.*?')
-    sub = root_data.get('Saved Address Information', {})
-    row['SavedAddress'] = sub.get('SavedAddress', '.*?')
-    sub = root_data.get('Shopping Cart List', {})
-    row['ShoppingCart'] = sub.get('ShoppingCart', '.*?')
-    sub = root_data.get('Vouchers', {})
-    row['Vouchers'] = sub.get('Vouchers', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
 
 
 def tiktok_live_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Tiktok Live')
-    if not root_data:
-        print('No data found at path: Tiktok Live')
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Tiktok Live')
+        if not root_data:
+            print(f'⚠️ No data found at path: Tiktok Live')
+            return pd.DataFrame()
+
+        base_row = {}
+        base_row['GoLiveList'] = get_in(root_data, 'Go Live History', 'GoLiveList')
+        base_row['Allow agencies to find and invite you'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow agencies to find and invite you')
+        base_row['Allow others to invite you to co-host in LIVE'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow others to invite you to co-host in LIVE')
+        base_row['Allow people to send and receive comments during your LIVE'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow people to send and receive comments during your LIVE')
+        base_row['Allow suggested LIVE hosts to invite you to co-host in LIVE'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow suggested LIVE hosts to invite you to co-host in LIVE')
+        base_row['Allow viewers to request to go LIVE with you'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow viewers to request to go LIVE with you')
+        base_row['Allow viewers to see and send questions and answers in your LIVE'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow viewers to see and send questions and answers in your LIVE')
+        base_row['Allow viewers to send you gifts during your LIVE'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Allow viewers to send you gifts during your LIVE')
+        base_row['Hide potential spam or offensive comments from your LIVE'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Hide potential spam or offensive comments from your LIVE')
+        base_row['Show your username and gift information in features with ranking lists'] = get_in(root_data, 'Go Live Settings', 'SettingsMap', 'Show your username and gift information in features with ranking lists')
+        base_row['app'] = get_in(root_data, 'Watch Live Settings', 'WatchLiveSettingsMap', 'app')
+        base_row['web'] = get_in(root_data, 'Watch Live Settings', 'WatchLiveSettingsMap', 'web')
+        base_row['MostRecentModificationTimeInApp'] = get_in(root_data, 'Watch Live Settings', 'MostRecentModificationTimeInApp')
+        base_row['MostRecentModificationTimeInWeb'] = get_in(root_data, 'Watch Live Settings', 'MostRecentModificationTimeInWeb')
+        return pd.DataFrame([base_row])
+    except Exception as e:
+        print(f'❌ Error in tiktok_live_df:', e)
         return pd.DataFrame()
 
-    row = {}
-    sub = root_data.get('Go Live History', {})
-    row['GoLiveList'] = sub.get('GoLiveList', '.*?')
-    sub = root_data.get('Go Live Settings', {})
-    row['SettingsMap'] = sub.get('SettingsMap', '.*?')
-    sub = root_data.get('Watch Live History', {})
-    row['WatchLiveMap'] = sub.get('WatchLiveMap', '.*?')
-    sub = root_data.get('Watch Live Settings', {})
-    row['WatchLiveSettingsMap'] = sub.get('WatchLiveSettingsMap', '.*?')
-    row['MostRecentModificationTimeInApp'] = sub.get('MostRecentModificationTimeInApp', '.*?')
-    row['MostRecentModificationTimeInWeb'] = sub.get('MostRecentModificationTimeInWeb', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
 
+def tiktok_shopping_df(file_input: List[str]) -> pd.DataFrame:
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Tiktok Shopping')
+        if not root_data:
+            print(f'⚠️ No data found at path: Tiktok Shopping')
+            return pd.DataFrame()
 
-def your_activity_df(file_input: List[str]) -> pd.DataFrame:
-    with open(file_input[0], 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    root_data = get_in(data, 'Your Activity')
-    if not root_data:
-        print('No data found at path: Your Activity')
+        base_row = {}
+        base_row['CommunicationHistories'] = get_in(root_data, 'Communication History', 'CommunicationHistories')
+        base_row['PayCard'] = get_in(root_data, 'Current Payment Information', 'PayCard')
+        base_row['CustomerSupportHistories'] = get_in(root_data, 'Customer Support History', 'CustomerSupportHistories')
+        base_row['OrderDisputeHistories'] = get_in(root_data, 'Order Dispute History', 'OrderDisputeHistories')
+        base_row['OrderHistories'] = get_in(root_data, 'Order History', 'OrderHistories')
+        base_row['ProductBrowsingHistories'] = get_in(root_data, 'Product Browsing History', 'ProductBrowsingHistories')
+        base_row['ProductReviewHistories'] = get_in(root_data, 'Product Review History', 'ProductReviewHistories')
+        base_row['ReturnAndRefundHistories'] = get_in(root_data, 'Return and Refund History', 'ReturnAndRefundHistories')
+        base_row['SavedAddress'] = get_in(root_data, 'Saved Address Information', 'SavedAddress')
+        base_row['ShoppingCart'] = get_in(root_data, 'Shopping Cart List', 'ShoppingCart')
+        base_row['Vouchers'] = get_in(root_data, 'Vouchers', 'Vouchers')
+        return pd.DataFrame([base_row])
+    except Exception as e:
+        print(f'❌ Error in tiktok_shopping_df:', e)
         return pd.DataFrame()
 
-    row = {}
-    sub = root_data.get('Activity Summary', {})
-    row['ActivitySummaryMap'] = sub.get('ActivitySummaryMap', '.*?')
-    sub = root_data.get('Favorite Effects', {})
-    row['FavoriteEffectsList'] = sub.get('FavoriteEffectsList', '.*?')
-    sub = root_data.get('Favorite Hashtags', {})
-    row['FavoriteHashtagList'] = sub.get('FavoriteHashtagList', '.*?')
-    sub = root_data.get('Favorite Sounds', {})
-    row['FavoriteSoundList'] = sub.get('FavoriteSoundList', '.*?')
-    sub = root_data.get('Favorite Videos', {})
-    row['App'] = sub.get('App', '.*?')
-    row['FavoriteVideoList'] = sub.get('FavoriteVideoList', '.*?')
-    sub = root_data.get('Follower', {})
-    row['App'] = sub.get('App', '.*?')
-    row['IsFastLane'] = sub.get('IsFastLane', '.*?')
-    row['FansList'] = sub.get('FansList', '.*?')
-    sub = root_data.get('Following', {})
-    row['App'] = sub.get('App', '.*?')
-    row['IsFastLane'] = sub.get('IsFastLane', '.*?')
-    row['Following'] = sub.get('Following', '.*?')
-    sub = root_data.get('Hashtag', {})
-    row['HashtagList'] = sub.get('HashtagList', '.*?')
-    sub = root_data.get('Like List', {})
-    row['App'] = sub.get('App', '.*?')
-    row['ItemFavoriteList'] = sub.get('ItemFavoriteList', '.*?')
-    sub = root_data.get('Login History', {})
-    row['LoginHistoryList'] = sub.get('LoginHistoryList', '.*?')
-    sub = root_data.get('Most Recent Location Data', {})
-    row['LocationData'] = sub.get('LocationData', '.*?')
-    sub = root_data.get('Purchases', {})
-    row['SendGifts'] = sub.get('SendGifts', '.*?')
-    row['BuyGifts'] = sub.get('BuyGifts', '.*?')
-    sub = root_data.get('Searches', {})
-    row['SearchList'] = sub.get('SearchList', '.*?')
-    sub = root_data.get('Share History', {})
-    row['ShareHistoryList'] = sub.get('ShareHistoryList', '.*?')
-    sub = root_data.get('Status', {})
-    row['Status List'] = sub.get('Status List', '.*?')
-    sub = root_data.get('Watch History', {})
-    row['VideoList'] = sub.get('VideoList', '.*?')
-    flattened_data = [row]
-    df = pd.DataFrame(flattened_data)
-    return df
+
+def video_df(file_input: List[str]) -> pd.DataFrame:
+    try:
+        with open(file_input[0], 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        root_data = get_in(data, 'Video')
+        if not root_data:
+            print(f'⚠️ No data found at path: Video')
+            return pd.DataFrame()
+
+        base_row = {}
+        all_records = []
+        items = get_list(root_data, 'RecentlyDeletedPosts', 'PostList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'PostList'
+            row['AIGeneratedContent'] = item.get('AIGeneratedContent', '.*?')
+            row['AddYoursText'] = item.get('AddYoursText', '.*?')
+            row['ContentDisclosure'] = item.get('ContentDisclosure', '.*?')
+            row['Date'] = item.get('Date', '.*?')
+            row['DateDeleted'] = item.get('DateDeleted', '.*?')
+            row['Likes'] = item.get('Likes', '.*?')
+            row['Link'] = item.get('Link', '.*?')
+            row['Location'] = item.get('Location', '.*?')
+            row['Sound'] = item.get('Sound', '.*?')
+            row['Title'] = item.get('Title', '.*?')
+            all_records.append(row)
+        items = get_list(root_data, 'Videos', 'VideoList')
+        for item in items:
+            row = base_row.copy()
+            row['__source_list__'] = 'VideoList'
+            row['AIGeneratedContent'] = item.get('AIGeneratedContent', '.*?')
+            row['AddYoursText'] = item.get('AddYoursText', '.*?')
+            row['AllowComments'] = item.get('AllowComments', '.*?')
+            row['AllowDuets'] = item.get('AllowDuets', '.*?')
+            row['AllowSharingToStory'] = item.get('AllowSharingToStory', '.*?')
+            row['AllowStickers'] = item.get('AllowStickers', '.*?')
+            row['AllowStitches'] = item.get('AllowStitches', '.*?')
+            row['ContentDisclosure'] = item.get('ContentDisclosure', '.*?')
+            row['Date'] = item.get('Date', '.*?')
+            row['Likes'] = item.get('Likes', '.*?')
+            row['Link'] = item.get('Link', '.*?')
+            row['Location'] = item.get('Location', '.*?')
+            row['Sound'] = item.get('Sound', '.*?')
+            row['Title'] = item.get('Title', '.*?')
+            row['WhoCanView'] = item.get('WhoCanView', '.*?')
+            all_records.append(row)
+        return pd.DataFrame(all_records)
+    except Exception as e:
+        print(f'❌ Error in video_df:', e)
+        return pd.DataFrame()
 
 
 def create_donation_flow(file_input: List[str]):
-    """Creates a donation flow for TikTok data."""
+    """Create donation flow from TikTok JSON."""
     tables = []
 
     try:
-        ads_and_data_table = donation_table(
-            name="Ads and data",
-            df=ads_and_data_df(file_input),
-            title={"en": "Ads and data", "nl": "Ads and data"},
-        )
-        tables.append(ads_and_data_table)
+        df = activity_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='activity', df=df, title={'en': 'activity'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Ads and data: {e}")
-        pass
+        print(f'Error in activity_df:', e)
 
     try:
-        app_settings_table = donation_table(
-            name="App Settings",
-            df=app_settings_df(file_input),
-            title={"en": "App Settings", "nl": "App Settings"},
-        )
-        tables.append(app_settings_table)
+        df = ads_and_data_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='ads_and_data', df=df, title={'en': 'ads_and_data'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping App Settings: {e}")
-        pass
+        print(f'Error in ads_and_data_df:', e)
 
     try:
-        comment_table = donation_table(
-            name="Comment",
-            df=comment_df(file_input),
-            title={"en": "Comment", "nl": "Comment"},
-        )
-        tables.append(comment_table)
+        df = app_settings_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='app_settings', df=df, title={'en': 'app_settings'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Comment: {e}")
-        pass
+        print(f'Error in app_settings_df:', e)
 
     try:
-        direct_message_table = donation_table(
-            name="Direct Message",
-            df=direct_message_df(file_input),
-            title={"en": "Direct Message", "nl": "Direct Message"},
-        )
-        tables.append(direct_message_table)
+        df = comment_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='comment', df=df, title={'en': 'comment'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Direct Message: {e}")
-        pass
+        print(f'Error in comment_df:', e)
 
     try:
-        income_plus_wallet_transactions_table = donation_table(
-            name="Income Plus Wallet Transactions",
-            df=income_plus_wallet_transactions_df(file_input),
-            title={"en": "Income Plus Wallet Transactions", "nl": "Income Plus Wallet Transactions"},
-        )
-        tables.append(income_plus_wallet_transactions_table)
+        df = income_plus_wallet_transactions_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='income_plus_wallet_transactions', df=df, title={'en': 'income_plus_wallet_transactions'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Income Plus Wallet Transactions: {e}")
-        pass
+        print(f'Error in income_plus_wallet_transactions_df:', e)
 
     try:
-        location_review_table = donation_table(
-            name="Location Review",
-            df=location_review_df(file_input),
-            title={"en": "Location Review", "nl": "Location Review"},
-        )
-        tables.append(location_review_table)
+        df = poi_review_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='poi_review', df=df, title={'en': 'poi_review'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Location Review: {e}")
-        pass
+        print(f'Error in poi_review_df:', e)
 
     try:
-        post_table = donation_table(
-            name="Post",
-            df=post_df(file_input),
-            title={"en": "Post", "nl": "Post"},
-        )
-        tables.append(post_table)
+        df = profile_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='profile', df=df, title={'en': 'profile'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Post: {e}")
-        pass
+        print(f'Error in profile_df:', e)
 
     try:
-        profile_table = donation_table(
-            name="Profile",
-            df=profile_df(file_input),
-            title={"en": "Profile", "nl": "Profile"},
-        )
-        tables.append(profile_table)
+        df = tiktok_live_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='tiktok_live', df=df, title={'en': 'tiktok_live'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Profile: {e}")
-        pass
+        print(f'Error in tiktok_live_df:', e)
 
     try:
-        tiktok_shop_table = donation_table(
-            name="TikTok Shop",
-            df=tiktok_shop_df(file_input),
-            title={"en": "TikTok Shop", "nl": "TikTok Shop"},
-        )
-        tables.append(tiktok_shop_table)
+        df = tiktok_shopping_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='tiktok_shopping', df=df, title={'en': 'tiktok_shopping'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping TikTok Shop: {e}")
-        pass
+        print(f'Error in tiktok_shopping_df:', e)
 
     try:
-        tiktok_live_table = donation_table(
-            name="Tiktok Live",
-            df=tiktok_live_df(file_input),
-            title={"en": "Tiktok Live", "nl": "Tiktok Live"},
-        )
-        tables.append(tiktok_live_table)
+        df = video_df(file_input)
+        if not df.empty:
+            tables.append(
+                donation_table(name='video', df=df, title={'en': 'video'})
+            )
     except Exception as e:
-        logger.warning(f"Skipping Tiktok Live: {e}")
-        pass
-
-    try:
-        your_activity_table = donation_table(
-            name="Your Activity",
-            df=your_activity_df(file_input),
-            title={"en": "Your Activity", "nl": "Your Activity"},
-        )
-        tables.append(your_activity_table)
-    except Exception as e:
-        logger.warning(f"Skipping Your Activity: {e}")
-        pass
+        print(f'Error in video_df:', e)
 
     if tables:
-        return donation_flow(
-            id="tiktok",
-            tables=tables
-        )
+        return donation_flow(id='tiktok', tables=tables)
     else:
         return None
