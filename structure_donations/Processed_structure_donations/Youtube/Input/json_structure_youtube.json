@@ -1,0 +1,22 @@
+{
+  "Takeout/YouTube and YouTube Music/history/watch-history.json": [
+    {
+      "header": "string",
+      "title": "string",
+      "titleUrl": "string",
+      "subtitles": [
+        {
+          "name": "string",
+          "url": "string"
+        }
+      ],
+      "time": "string",
+      "products": [
+        "string"
+      ],
+      "activityControls": [
+        "string"
+      ]
+    }
+  ]
+}
