@@ -1,9 +1,6 @@
 import sys
 import os
 
-import os
-import sys
-
 # Automatically add the project root (3 levels up from this file) to sys.path
 current_file = os.path.abspath(__file__)
 project_root = os.path.abspath(os.path.join(current_file, "../../.."))

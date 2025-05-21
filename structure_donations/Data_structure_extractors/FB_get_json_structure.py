@@ -32,10 +32,10 @@ def simplify_json_structure(data):
 def structure_from_zip(zip_path):
     output_structure = {}
 
-    # --- Your hardcoded output folder here ---
+    
     output_folder = "structure_donations/Processed_structure_donations/Facebook/Input_test"
 
-    # ----------------------------------------
+    
 
     with zipfile.ZipFile(zip_path, 'r') as z:
         for file_info in z.infolist():

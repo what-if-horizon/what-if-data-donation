@@ -29,7 +29,7 @@ def simplify_json_structure(data):
         return infer_placeholder(data)
 
 def structure_from_json_file(json_path):
-    # 🧱 Define the hardcoded output directory
+    
     output_dir = "structure_donations/Processed_structure_donations/TikTok/Input_test"
 
     json_path = json_path.strip()
