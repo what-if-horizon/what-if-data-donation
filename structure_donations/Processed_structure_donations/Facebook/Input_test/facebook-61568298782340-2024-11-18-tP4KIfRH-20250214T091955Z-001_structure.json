@@ -1,0 +1,1502 @@
+{
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/two-factor_authentication.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/browser_cookies.json": {
+    "datr_stats_v2": {
+      "rTtF********************": [
+        "number"
+      ],
+      "u1Mm********************": [
+        "number"
+      ]
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/apps_and_websites_off_of_facebook/your_activity_off_meta_technologies_settings.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "dict": [
+          "array"
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/ip_address_activity.json": {
+    "used_ip_address_v2": [
+      {
+        "ip": "string",
+        "action": "string",
+        "timestamp": "number",
+        "user_agent": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/account_activity.json": {
+    "account_activity_v2": [
+      {
+        "action": "string",
+        "timestamp": "number",
+        "ip_address": "string",
+        "user_agent": "string",
+        "datr_cookie": "string",
+        "city": "string",
+        "region": "string",
+        "country": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/email_address_verifications.json": {
+    "contact_verifications_v2": [
+      {
+        "contact": "string",
+        "contact_type": "number",
+        "verification_time": "number"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/ads_information/your_recent_reported_conversions.json": [
+    {
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "timestamp_value": "number"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/profile_information/predicted_languages.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/facebook_accounts_center/you_account_password.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/avatars/avatar_data.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/profile_information/the_ways_we_can_send_you_notifications.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/information_about_your_last_login.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/device_login_cookies.json": [
+    {
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "timestamp_value": "number"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/profile_information/profile_update_history.json": {
+    "profile_updates_v2": [
+      {
+        "timestamp": "number",
+        "attachments": [
+          {
+            "data": [
+              {
+                "life_event": {
+                  "title": "string",
+                  "start_date": {
+                    "year": "number",
+                    "month": "number",
+                    "day": "number"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "data": [
+          {
+            "backdated_timestamp": "number"
+          }
+        ],
+        "title": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/login_protection_data.json": {
+    "login_protection_data_v2": [
+      {
+        "name": "string",
+        "session": {
+          "created_timestamp": "number"
+        }
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/connections/followers/who_you_ve_followed.json": {
+    "following_v3": [
+      {
+        "name": "string",
+        "timestamp": "number"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/record_details.json": {
+    "admin_records_v2": [
+      {
+        "event": "string",
+        "session": {
+          "created_timestamp": "number",
+          "ip_address": "string",
+          "user_agent": "string",
+          "datr_cookie": "string"
+        }
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/profile_information/your_devices.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/logins_and_logouts.json": {
+    "account_accesses_v2": [
+      {
+        "action": "string",
+        "timestamp": "number",
+        "site": "string",
+        "ip_address": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/where_you_re_logged_in.json": {
+    "active_sessions_v2": [
+      {
+        "created_timestamp": "number",
+        "ip_address": "string",
+        "user_agent": "string",
+        "datr_cookie": "string",
+        "device": "string",
+        "location": "string",
+        "app": "string",
+        "session_type": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/ads_information/other_categories_used_to_reach_you.json": {
+    "bcts": [
+      "string"
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/registration_information.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/profile_information/profile_information.json": {
+    "profile_v2": {
+      "name": {
+        "full_name": "string",
+        "first_name": "string",
+        "middle_name": "string",
+        "last_name": "string"
+      },
+      "emails": {
+        "emails": [
+          "string"
+        ],
+        "previous_emails": [
+          "array"
+        ],
+        "pending_emails": [
+          "array"
+        ],
+        "ad_account_emails": [
+          "array"
+        ]
+      },
+      "birthday": {
+        "year": "number",
+        "month": "number",
+        "day": "number"
+      },
+      "gender": {
+        "gender_option": "string",
+        "pronoun": "string"
+      },
+      "previous_names": [
+        {
+          "name": "string",
+          "timestamp": "number"
+        }
+      ],
+      "other_names": [
+        "array"
+      ],
+      "education_experiences": [
+        "array"
+      ],
+      "work_experiences": [
+        "array"
+      ],
+      "websites": [
+        "array"
+      ],
+      "phone_numbers": [
+        "array"
+      ],
+      "registration_timestamp": "number",
+      "profile_uri": "string"
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/mobile_devices.json": {
+    "devices_v2": [
+      {
+        "type": "string",
+        "os": "string",
+        "update_time": "number",
+        "advertiser_id": "string",
+        "redact_tokens": [
+          "string"
+        ],
+        "push_tokens": [
+          {
+            "disabled": "boolean",
+            "client_update_time": "number",
+            "creation_time": "number",
+            "app_version": "string",
+            "locale": "string",
+            "os_version": "string",
+            "token": "string",
+            "device_id": "string"
+          }
+        ],
+        "family_device_id": "string",
+        "device_locale": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/ads_information/ads_personalization_consent.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/other_personal_information/emails_we_sent_you.json": [
+    {
+      "title": "string",
+      "timestamp": "number",
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/ads_information/ad_preferences.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/comments_and_reactions/likes_and_reactions.json": [
+    {
+      "timestamp": "number",
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/facebook_news/your_locations.json": {
+    "news_your_locations_v2": [
+      "string"
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_gaming/your_page_or_groups_badges.json": [
+    {
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/posts/your_posts__check_ins__photos_and_videos_1.json": [
+    {
+      "timestamp": "number",
+      "attachments": [
+        {
+          "data": [
+            {
+              "external_context": {
+                "name": "string",
+                "source": "string",
+                "url": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "data": [
+        {
+          "update_timestamp": "number"
+        }
+      ],
+      "title": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/feed/reduce.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/voting/voting_location.json": {
+    "voting_location_v2": {
+      "voting_location": "string"
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/comments_and_reactions/likes_and_reactions_1.json": [
+    {
+      "timestamp": "number",
+      "data": [
+        {
+          "reaction": {
+            "reaction": "string",
+            "actor": "string"
+          }
+        }
+      ],
+      "title": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/your_interactions_on_facebook/recently_visited.json": {
+    "visited_things_v2": [
+      {
+        "name": "string",
+        "description": "string",
+        "entries": [
+          {
+            "timestamp": "number",
+            "data": {
+              "name": "string",
+              "uri": "string"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/in-app_messages/your_in-app_messages_interactions.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/groups/groups_and_pages_that_you_may_find_engaging.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "vec": [
+          {
+            "value": "string"
+          }
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/groups/your_group_membership_activity.json": {
+    "groups_joined_v2": [
+      {
+        "timestamp": "number",
+        "data": [
+          {
+            "name": "string"
+          }
+        ],
+        "title": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/groups/your_contributions.json": [
+    {
+      "title": "string",
+      "timestamp": "number",
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/notifications/notifications.json": {
+    "notifications_v2": [
+      {
+        "timestamp": "number",
+        "unread": "boolean",
+        "href": "string",
+        "text": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/posts/content_sharing_links_you_have_created.json": [
+    {
+      "timestamp": "number",
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string",
+          "href": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/avatars_store/avatar_items.json": {
+    "avatar_marketplace_avatar_items": [
+      {
+        "item": "string",
+        "type": "string",
+        "acquisition_time": "number"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/other_personal_information/your_avatar.json": {
+    "avatars_v2": {
+      "uri": "string",
+      "creation_timestamp": "number"
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json": [
+    {
+      "timestamp": "number",
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "vec": [
+            {
+              "dict": [
+                {
+                  "label": "string",
+                  "value": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/fundraisers/your_fundraiser_donations_information.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/saved_items_and_collections/your_saved_items.json": {
+    "saves_v2": [
+      {
+        "timestamp": "number",
+        "title": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/location/your_privacy_jurisdiction.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "vec": [
+          {
+            "ent_field_name": "string",
+            "value": "string"
+          }
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_payments/payment_history.json": {
+    "payments_v2": {
+      "preferred_currency": "string",
+      "payments": [
+        "array"
+      ]
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/feed/controls.json": {
+    "controls": [
+      {
+        "name": "string",
+        "description": "string",
+        "entries": [
+          "array"
+        ]
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/personal_information/facebook_accounts_center/accounts_center.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/location/primary_location.json": {
+    "primary_location_v2": {
+      "city_region_pairs": [
+        [
+          "string"
+        ]
+      ],
+      "zipcode": [
+        "string"
+      ]
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/pages/pages_you_ve_liked.json": {
+    "page_likes_v2": [
+      {
+        "name": "string",
+        "timestamp": "number",
+        "url": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/security_and_login_information/your_facebook_activity_history.json": {
+    "last_activity_v2": {
+      "last_activity_time": {
+        "Website": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook app": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Graph API": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "iPhone": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "iPad": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Android": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook Lite for Android": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Windows PC": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook for Every Phone": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Mobile Web": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Free Basics": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook messenger for iPhone": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook messenger for Android": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook Messenger for Windows Phone": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook Messenger for BlackBerry": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Workplace for Android": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Workplace for iPhone": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Workplace Chat for Android": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Workplace Chat for iPhone": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Messenger Lite for Android": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook Lite for iOS": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "KaiOS": {
+          "activity_by_day": [
+            "number"
+          ]
+        },
+        "Facebook Lite": {
+          "activity_by_day": [
+            "number"
+          ]
+        }
+      }
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/voting/voting_reminders.json": {
+    "voting_reminders_v2": {
+      "voting_reminders": "string"
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/location/timezone.json": {
+    "timezone_v2": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/pages/pages_and_profiles_you_follow.json": {
+    "pages_followed_v2": [
+      {
+        "timestamp": "number",
+        "data": [
+          {
+            "name": "string"
+          }
+        ],
+        "title": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/your_device_push_settings.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/search/your_search_history.json": {
+    "searches_v2": [
+      {
+        "timestamp": "number",
+        "attachments": [
+          {
+            "data": [
+              {
+                "text": "string"
+              }
+            ]
+          }
+        ],
+        "data": [
+          {
+            "text": "string"
+          }
+        ],
+        "title": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/your_facebook_story_preferences.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/stories/story_reactions.json": {
+    "stories_feedback_v2": [
+      {
+        "title": "string"
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/your_preferred_categories.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "vec": [
+          {
+            "ent_field_name": "string",
+            "dict": [
+              {
+                "ent_field_name": "string",
+                "label": "string",
+                "value": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/fundraisers/fundraiser_posts_you_likely_viewed.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/events/your_event_invitation_links.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/browser_push_notifications.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/other_logged_information/your_facebook_watch_activity_in_the_last_28_days.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/other_logged_information/facebook_reels_usage_information.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "dict": [
+          {
+            "label": "string",
+            "value": "string"
+          }
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/other_logged_information/consents.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/reels_preferences.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/language_settings_history.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "vec": [
+          {
+            "dict": [
+              {
+                "label": "string",
+                "timestamp_value": "number"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/other_activity/your_information_download_requests.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/other_logged_information/your_ownership_of_digital_items.json": [
+    {
+      "timestamp": "number",
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/other_activity/your_mentions_settings.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/other_activity/facebook_new_user_guide.json": [
+    {
+      "media": [
+        "array"
+      ],
+      "label_values": [
+        {
+          "ent_field_name": "string",
+          "label": "string"
+        }
+      ],
+      "fbid": "string",
+      "ent_name": "string"
+    }
+  ],
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/other_logged_information/detected_hardware.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_marketplace/your_marketplace_device_history.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_marketplace/settings.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/events/your_event_responses.json": {
+    "event_responses_v2": {
+      "events_joined": [
+        {
+          "name": "string",
+          "start_timestamp": "number",
+          "end_timestamp": "number"
+        }
+      ],
+      "events_interested": [
+        {
+          "name": "string",
+          "start_timestamp": "number",
+          "end_timestamp": "number"
+        }
+      ]
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/messages/autofill_information.json": {
+    "autofill_information_v2": {
+      "EMAIL": [
+        "string"
+      ],
+      "GENDER": [
+        "string"
+      ],
+      "SLIDER": [
+        "string"
+      ],
+      "FIRST_NAME": [
+        "string"
+      ],
+      "LAST_NAME": [
+        "string"
+      ],
+      "FULL_NAME": [
+        "string"
+      ],
+      "WORK_EMAIL": [
+        "string"
+      ]
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/messages/messaging_settings.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/logged_information/your_interactions_on_facebook/recently_viewed.json": {
+    "recently_viewed": [
+      {
+        "name": "string",
+        "description": "string",
+        "entries": [
+          {
+            "timestamp": "number",
+            "data": {
+              "name": "string",
+              "uri": "string"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/other_activity/your_recently_followed_history.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "vec": [
+          {
+            "dict": [
+              {
+                "label": "string",
+                "value": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_marketplace/how_active_we_think_you_are_on_marketplace.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/your_watch_settings.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/posts/album/0.json": {
+    "name": "string",
+    "photos": [
+      {
+        "uri": "string",
+        "creation_timestamp": "number",
+        "media_metadata": {
+          "photo_metadata": {
+            "exif_data": [
+              {
+                "upload_ip": "string",
+                "taken_timestamp": "number"
+              }
+            ]
+          }
+        },
+        "title": "string",
+        "backup_uri": "string"
+      }
+    ],
+    "cover_photo": {
+      "uri": "string",
+      "creation_timestamp": "number",
+      "media_metadata": {
+        "photo_metadata": {
+          "exif_data": [
+            {
+              "upload_ip": "string",
+              "taken_timestamp": "number"
+            }
+          ]
+        }
+      },
+      "title": "string",
+      "backup_uri": "string"
+    },
+    "last_modified_timestamp": "number",
+    "description": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_marketplace/your_notification_status.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/messages/messenger_active_status_platform_settings.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/messages/your_messenger_app_install_information.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/facebook_marketplace/your_transaction_survey_information.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/messages/secret_conversations.json": {
+    "secret_conversations_v2": {
+      "tincan_devices": [
+        "array"
+      ],
+      "armadillo_devices": [
+        {
+          "device_type": "string",
+          "device_manufacturer": "string",
+          "device_model": "string",
+          "device_os_version": "string",
+          "last_connected_ip": "string",
+          "last_active_time": "number"
+        }
+      ],
+      "calls": [
+        "array"
+      ]
+    }
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/your_facebook_activity/messages/messenger_active_status_settings.json": {
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "facebook-61568298782340-2024-11-18-tP4KIfRH/preferences/preferences/language_and_locale.json": {
+    "language_and_locale_v2": [
+      {
+        "name": "string",
+        "description": "string",
+        "children": [
+          {
+            "name": "string",
+            "description": "string",
+            "entries": [
+              {
+                "data": {
+                  "value": "string"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
