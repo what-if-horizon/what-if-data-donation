@@ -9,7 +9,7 @@ import re
 from port.helpers.donation_flow import donation_table, donation_flow
 from port.helpers.parsers import parse_json
 
-from port.structure_extractor_libraries.X_get_json_structure import structure_from_zip
+#from port.structure_extractor_libraries.X_get_json_structure import structure_from_zip
 
 logger = logging.getLogger(__name__)
 
