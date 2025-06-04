@@ -29,27 +29,15 @@ def simplify_json_structure(data):
         return infer_placeholder(data)
 
 def structure_from_json_file(json_path):
-    
-    output_dir = "structure_donations/Processed_structure_donations/TikTok/Input_test"
-
     json_path = json_path.strip()
-    
-    with open(json_path, 'r') as f:
-        try:
+
+    try:
+        with open(json_path, 'r') as f:
             content = json.load(f)
             placeholder_content = simplify_json_structure(content)
-        except json.JSONDecodeError:
-            print(f"Error: Could not decode JSON from {json_path}")
-            return None
+    except json.JSONDecodeError:
+        print(f"Error: Could not decode JSON from {json_path}")
+        return None
 
-    json_base_name = os.path.splitext(os.path.basename(json_path))[0]
-    output_filename = f"{json_base_name}_structure.json"
-
-    
-    output_path = os.path.join(output_dir, output_filename)
-
-    with open(output_path, 'w') as f:
-        json.dump(placeholder_content, f, indent=2)
-
-    print(f"Structure saved to {output_path}")
-    return placeholder_content
+    # Return the result as a pretty-printed JSON string
+    return json.dumps(placeholder_content, indent=2)
