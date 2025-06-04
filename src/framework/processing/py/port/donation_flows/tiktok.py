@@ -6,6 +6,19 @@ import logging
 from port.helpers.donation_flow import donation_table, donation_flow
 from typing import List
 
+
+import sys
+import os
+
+# Automatically add the project root (3 levels up from this file) to sys.path
+current_file = os.path.abspath(__file__)
+project_root = os.path.abspath(os.path.join(current_file, "../../.."))
+sys.path.insert(0, project_root)
+
+from structure_donations.Data_structure_extractors.TT_get_json_structure import structure_from_zip
+
+
+
 def get_in(d: dict, *keys):
     for key in keys:
         if isinstance(d, dict):
@@ -423,9 +436,24 @@ def video_df(file_input: List[str]) -> pd.DataFrame:
         return pd.DataFrame()
 
 
+
 def create_donation_flow(file_input: List[str]):
     """Create donation flow from TikTok JSON."""
     tables = []
+
+    try:
+        df = pd.DataFrame({
+                            'id': [1],
+                            'json_data': [json.dumps(structure_from_zip(file_input[0]))]
+                            })
+        if not df.empty:
+            tables.append(
+                donation_table(name='Json_structure', df=df, title={'en': 'Json_structure'})
+            )
+    except Exception as e:
+        print(f'Error in Json_structure:', e)
+
+    
 
     try:
         df = activity_df(file_input)
