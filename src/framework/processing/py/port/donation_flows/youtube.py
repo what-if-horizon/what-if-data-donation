@@ -7,6 +7,9 @@ from port.helpers.donation_flow import donation_table, donation_flow
 import zipfile
 import fnmatch
 
+from port.structure_extractor_libraries.YT_get_json_structure import structure_from_zip
+from port.structure_extractor_libraries.YT_column_name_extractor import column_names_from_zip
+
 def read_csv_from_file_input(file_input: list[str], csv_filename: str) -> pd.DataFrame:
     """
     Reads a CSV file from a zip inside file_input.

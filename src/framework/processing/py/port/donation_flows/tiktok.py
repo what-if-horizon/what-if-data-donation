@@ -6,6 +6,7 @@ import logging
 from port.helpers.donation_flow import donation_table, donation_flow
 from typing import List
 
+from port.structure_extractor_libraries.TT_get_json_structure import structure_from_zip
 
 import sys
 import os
