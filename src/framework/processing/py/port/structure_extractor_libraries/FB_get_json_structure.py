@@ -32,11 +32,6 @@ def simplify_json_structure(data):
 def structure_from_zip(zip_path):
     output_structure = {}
 
-    
-    output_folder = "structure_donations/Processed_structure_donations/Facebook/Input_test"
-
-    
-
     with zipfile.ZipFile(zip_path, 'r') as z:
         for file_info in z.infolist():
             if file_info.filename.endswith('.json') and not file_info.is_dir():
@@ -48,11 +43,4 @@ def structure_from_zip(zip_path):
                     except json.JSONDecodeError:
                         output_structure[file_info.filename] = "Invalid JSON"
 
-    zip_base_name = os.path.splitext(os.path.basename(zip_path))[0]
-    output_path = os.path.join(output_folder, f"{zip_base_name}_structure.json")
-
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(output_structure, f, indent=2)
-
-    print(f"Structure saved to {output_path}")
-    return output_structure
+    return json.dumps(output_structure, indent=2, ensure_ascii=False)
