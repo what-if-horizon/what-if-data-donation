@@ -23,13 +23,13 @@ def get_dict(d: dict, *keys):
     return val if isinstance(val, dict) else {}
 
 
-def activity_df(file_input: List[str]) -> pd.DataFrame:
+def activity_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Activity')
         if not root_data:
-            print(f'⚠️ No data found at path: Activity')
+            print(f'No data found at path: Activity')
             return pd.DataFrame()
 
         base_row = {}
@@ -131,17 +131,17 @@ def activity_df(file_input: List[str]) -> pd.DataFrame:
             all_records.append(row)
         return pd.DataFrame(all_records)
     except Exception as e:
-        print(f'❌ Error in activity_df:', e)
+        print(f'Error in activity_df:', e)
         return pd.DataFrame()
 
 
-def ads_and_data_df(file_input: List[str]) -> pd.DataFrame:
+def ads_and_data_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Ads and data')
         if not root_data:
-            print(f'⚠️ No data found at path: Ads and data')
+            print(f'No data found at path: Ads and data')
             return pd.DataFrame()
 
         base_row = {}
@@ -150,17 +150,17 @@ def ads_and_data_df(file_input: List[str]) -> pd.DataFrame:
         base_row['OffTikTokActivityDataList'] = get_in(root_data, 'Off TikTok Activity', 'OffTikTokActivityDataList')
         return pd.DataFrame([base_row])
     except Exception as e:
-        print(f'❌ Error in ads_and_data_df:', e)
+        print(f'Error in ads_and_data_df:', e)
         return pd.DataFrame()
 
 
-def app_settings_df(file_input: List[str]) -> pd.DataFrame:
+def app_settings_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'App Settings')
         if not root_data:
-            print(f'⚠️ No data found at path: App Settings')
+            print(f'No data found at path: App Settings')
             return pd.DataFrame()
 
         base_row = {}
@@ -191,17 +191,17 @@ def app_settings_df(file_input: List[str]) -> pd.DataFrame:
         base_row['Who Can View Videos I Liked'] = get_in(root_data, 'Settings', 'SettingsMap', 'Who Can View Videos I Liked')
         return pd.DataFrame([base_row])
     except Exception as e:
-        print(f'❌ Error in app_settings_df:', e)
+        print(f'Error in app_settings_df:', e)
         return pd.DataFrame()
 
 
-def comment_df(file_input: List[str]) -> pd.DataFrame:
+def comment_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Comment')
         if not root_data:
-            print(f'⚠️ No data found at path: Comment')
+            print(f'No data found at path: Comment')
             return pd.DataFrame()
 
         base_row = {}
@@ -218,34 +218,34 @@ def comment_df(file_input: List[str]) -> pd.DataFrame:
             all_records.append(row)
         return pd.DataFrame(all_records)
     except Exception as e:
-        print(f'❌ Error in comment_df:', e)
+        print(f'Error in comment_df:', e)
         return pd.DataFrame()
 
 
-def income_plus_wallet_transactions_df(file_input: List[str]) -> pd.DataFrame:
+def income_plus_wallet_transactions_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Income Plus Wallet Transactions')
         if not root_data:
-            print(f'⚠️ No data found at path: Income Plus Wallet Transactions')
+            print(f'No data found at path: Income Plus Wallet Transactions')
             return pd.DataFrame()
 
         base_row = {}
         base_row['TransactionsList'] = get_in(root_data, 'Income Plus Wallet Transaction', 'TransactionsList')
         return pd.DataFrame([base_row])
     except Exception as e:
-        print(f'❌ Error in income_plus_wallet_transactions_df:', e)
+        print(f'Error in income_plus_wallet_transactions_df:', e)
         return pd.DataFrame()
 
 
-def poi_review_df(file_input: List[str]) -> pd.DataFrame:
+def poi_review_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Poi Review')
         if not root_data:
-            print(f'⚠️ No data found at path: Poi Review')
+            print(f'No data found at path: Poi Review')
             return pd.DataFrame()
 
         base_row = {}
@@ -263,17 +263,17 @@ def poi_review_df(file_input: List[str]) -> pd.DataFrame:
             all_records.append(row)
         return pd.DataFrame(all_records)
     except Exception as e:
-        print(f'❌ Error in poi_review_df:', e)
+        print(f'Error in poi_review_df:', e)
         return pd.DataFrame()
 
 
-def profile_df(file_input: List[str]) -> pd.DataFrame:
+def profile_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Profile')
         if not root_data:
-            print(f'⚠️ No data found at path: Profile')
+            print(f'No data found at path: Profile')
             return pd.DataFrame()
 
         base_row = {}
@@ -310,17 +310,17 @@ def profile_df(file_input: List[str]) -> pd.DataFrame:
             all_records.append(row)
         return pd.DataFrame(all_records)
     except Exception as e:
-        print(f'❌ Error in profile_df:', e)
+        print(f'Error in profile_df:', e)
         return pd.DataFrame()
 
 
-def tiktok_live_df(file_input: List[str]) -> pd.DataFrame:
+def tiktok_live_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Tiktok Live')
         if not root_data:
-            print(f'⚠️ No data found at path: Tiktok Live')
+            print(f'No data found at path: Tiktok Live')
             return pd.DataFrame()
 
         base_row = {}
@@ -340,17 +340,17 @@ def tiktok_live_df(file_input: List[str]) -> pd.DataFrame:
         base_row['MostRecentModificationTimeInWeb'] = get_in(root_data, 'Watch Live Settings', 'MostRecentModificationTimeInWeb')
         return pd.DataFrame([base_row])
     except Exception as e:
-        print(f'❌ Error in tiktok_live_df:', e)
+        print(f'Error in tiktok_live_df:', e)
         return pd.DataFrame()
 
 
-def tiktok_shopping_df(file_input: List[str]) -> pd.DataFrame:
+def tiktok_shopping_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Tiktok Shopping')
         if not root_data:
-            print(f'⚠️ No data found at path: Tiktok Shopping')
+            print(f'No data found at path: Tiktok Shopping')
             return pd.DataFrame()
 
         base_row = {}
@@ -367,17 +367,17 @@ def tiktok_shopping_df(file_input: List[str]) -> pd.DataFrame:
         base_row['Vouchers'] = get_in(root_data, 'Vouchers', 'Vouchers')
         return pd.DataFrame([base_row])
     except Exception as e:
-        print(f'❌ Error in tiktok_shopping_df:', e)
+        print(f'Error in tiktok_shopping_df:', e)
         return pd.DataFrame()
 
 
-def video_df(file_input: List[str]) -> pd.DataFrame:
+def video_df(file_input: list[str]) -> pd.DataFrame:
     try:
         with open(file_input[0], 'r', encoding='utf-8') as f:
             data = json.load(f)
         root_data = get_in(data, 'Video')
         if not root_data:
-            print(f'⚠️ No data found at path: Video')
+            print(f'No data found at path: Video')
             return pd.DataFrame()
 
         base_row = {}
@@ -419,11 +419,11 @@ def video_df(file_input: List[str]) -> pd.DataFrame:
             all_records.append(row)
         return pd.DataFrame(all_records)
     except Exception as e:
-        print(f'❌ Error in video_df:', e)
+        print(f'Error in video_df:', e)
         return pd.DataFrame()
 
 
-def create_donation_flow(file_input: List[str]):
+def create_donation_flow(file_input: list[str]):
     """Create donation flow from TikTok JSON."""
     tables = []
 
