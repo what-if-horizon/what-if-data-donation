@@ -32,3 +32,11 @@ yarn-debug.log*
 yarn-error.log*
 /public/port-0.0.0-py3-none-any.whl
 /src/framework/processing/py/dist/port-0.0.0-py3-none-any.whl
+
+
+structure_donations/Processed_structure_donations/TikTok/Raw
+structure_donations/Processed_structure_donations/Facebook/Raw
+structure_donations/Processed_structure_donations/Instagram/Raw
+structure_donations/Processed_structure_donations/Youtube/Raw
+tructure_donations/Processed_structure_donations/Twitter/Raw
+
