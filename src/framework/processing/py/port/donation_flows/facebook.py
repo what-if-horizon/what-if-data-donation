@@ -7,6 +7,10 @@ from port.helpers.donation_flow import donation_table, donation_flow
 from port.helpers.readers import read_json
 from port.helpers.parsers import parse_json
 
+<<<<<<< HEAD
+=======
+#from port.structure_extractor_libraries.FB_get_json_structure import structure_from_zip
+>>>>>>> 25603eab493806c5cf7add24002c9d16f332766a
 
 logger = logging.getLogger(__name__)
 
