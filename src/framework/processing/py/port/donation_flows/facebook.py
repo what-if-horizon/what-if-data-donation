@@ -2812,7 +2812,7 @@ def primary_public_location_df(file_input: list[str]) -> pd.DataFrame:
     data = read_json(file_input, ["*/primary_public_location.json"])
 
     df = parse_json(data,
-        row_path=["$.primary_public_location_v2"],
+        row_path=["primary_public_location_v2"],
         col_paths=dict(
         city = ['city'],
         country = ['country'],

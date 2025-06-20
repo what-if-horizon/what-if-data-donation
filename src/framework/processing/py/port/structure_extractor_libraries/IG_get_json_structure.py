@@ -1,6 +1,9 @@
 import zipfile
 import json
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 def infer_placeholder(value):
     if isinstance(value, str):

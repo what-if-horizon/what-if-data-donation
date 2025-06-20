@@ -6,19 +6,6 @@ import logging
 from port.helpers.donation_flow import donation_table, donation_flow
 from typing import List
 
-#from port.structure_extractor_libraries.TT_get_json_structure import structure_from_zip
-
-import sys
-import os
-
-# Automatically add the project root (3 levels up from this file) to sys.path
-current_file = os.path.abspath(__file__)
-project_root = os.path.abspath(os.path.join(current_file, "../../.."))
-sys.path.insert(0, project_root)
-
-from structure_donations.Data_structure_extractors.TT_get_json_structure import structure_from_zip
-
-
 
 def get_in(d: dict, *keys):
     for key in keys:
