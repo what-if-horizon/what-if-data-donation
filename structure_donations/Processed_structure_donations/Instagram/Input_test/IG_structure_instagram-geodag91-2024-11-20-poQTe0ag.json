@@ -1,0 +1,520 @@
+{
+  "your_instagram_activity/content/profile_photos.json": {
+    "ig_profile_picture": [
+      {
+        "uri": "string",
+        "creation_timestamp": "number",
+        "media_metadata": {
+          "camera_metadata": {
+            "has_camera_metadata": "boolean"
+          }
+        },
+        "title": "string",
+        "cross_post_source": {
+          "source_app": "string"
+        },
+        "backup_uri": "string"
+      }
+    ]
+  },
+  "your_instagram_activity/likes/liked_posts.json": {
+    "likes_media_likes": [
+      {
+        "title": "string",
+        "string_list_data": [
+          {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        ]
+      }
+    ]
+  },
+  "your_instagram_activity/messages/secret_conversations.json": {
+    "ig_secret_conversations": {
+      "armadillo_devices": [
+        {
+          "device_type": "string",
+          "device_manufacturer": "string",
+          "device_model": "string",
+          "device_os_version": "string",
+          "last_connected_ip": "string",
+          "last_active_time": "number"
+        }
+      ],
+      "calls": [
+        "array"
+      ]
+    }
+  },
+  "your_instagram_activity/monetization/eligibility.json": {
+    "monetization_eligibility": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Product Name": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Decision": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Reason": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "your_instagram_activity/saved/saved_posts.json": {
+    "saved_saved_media": [
+      {
+        "title": "string",
+        "string_map_data": {
+          "Saved on": {
+            "href": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "your_instagram_activity/subscriptions/show_exclusive_story_promo_setting.json": {
+    "subscriptions_show_story_teaser_setting": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Exclusive Story Promo Setting": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "your_instagram_activity/subscriptions/your_muted_story_teaser_creators.json": {
+    "subscriptions_muted_story_teaser_creators": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Muted Creators": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "security_and_login_information/login_and_profile_creation/instagram_signup_details.json": {
+    "account_history_registration_info": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Username": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "IP Address": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Email": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Phone Number": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Device": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "security_and_login_information/login_and_profile_creation/last_known_location.json": {
+    "account_history_imprecise_last_known_location": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Imprecise Latitude": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Imprecise Longitude": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Precise Latitude": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Precise Longitude": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "GPS Time Uploaded": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "security_and_login_information/login_and_profile_creation/login_activity.json": {
+    "account_history_login_history": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Cookie Name": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "IP Address": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Language Code": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "User Agent": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "security_and_login_information/login_and_profile_creation/profile_privacy_changes.json": {
+    "account_history_account_privacy_history": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "preferences/media_settings/comments_allowed_from.json": {
+    "settings_allow_comments_from": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Comments Allowed From": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "preferences/media_settings/consents.json": {
+    "timestamp": "number",
+    "media": [
+      "array"
+    ],
+    "label_values": [
+      {
+        "ent_field_name": "string",
+        "label": "string"
+      }
+    ],
+    "fbid": "string",
+    "ent_name": "string"
+  },
+  "preferences/media_settings/use_cross-app_messaging.json": {
+    "settings_upgraded_to_cross_app_messaging": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Upgraded To Cross-App Messaging": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Time Upgraded": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "personal_information/personal_information/instagram_profile_information.json": {
+    "profile_account_insights": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Contact Syncing": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Has Shared Live Video": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Last Login": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Last Logout": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "First Story Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Last Story Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "First Close Friends Story Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "personal_information/personal_information/personal_information.json": {
+    "profile_user": [
+      {
+        "title": "string",
+        "media_map_data": {
+          "Profile Photo": {
+            "uri": "string",
+            "creation_timestamp": "number",
+            "media_metadata": {
+              "camera_metadata": {
+                "has_camera_metadata": "boolean"
+              }
+            },
+            "title": "string",
+            "cross_post_source": {
+              "source_app": "string"
+            },
+            "backup_uri": "string"
+          }
+        },
+        "string_map_data": {
+          "Email": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Phone Confirmed": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Username": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Name": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Gender": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Date of birth": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Private Account": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Emoji Pong High Score": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "personal_information/personal_information/professional_information.json": {
+    "profile_business": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {}
+      }
+    ]
+  },
+  "personal_information/personal_information/profile_changes.json": {
+    "profile_profile_change": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Changed": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Previous Value": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "New Value": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Change Date": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "logged_information/recent_searches/profile_searches.json": {
+    "searches_user": [
+      {
+        "title": "string",
+        "media_map_data": {},
+        "string_map_data": {
+          "Search": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          },
+          "Time": {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "connections/followers_and_following/followers_1.json": {
+    "title": "string",
+    "media_list_data": [
+      "array"
+    ],
+    "string_list_data": [
+      {
+        "href": "string",
+        "value": "string",
+        "timestamp": "number"
+      }
+    ]
+  },
+  "connections/followers_and_following/following.json": {
+    "relationships_following": [
+      {
+        "title": "string",
+        "media_list_data": [
+          "array"
+        ],
+        "string_list_data": [
+          {
+            "href": "string",
+            "value": "string",
+            "timestamp": "number"
+          }
+        ]
+      }
+    ]
+  },
+  "ads_information/ads_and_topics/posts_viewed.json": {
+    "impressions_history_posts_seen": [
+      {
+        "string_map_data": {
+          "Author": {
+            "value": "string"
+          },
+          "Time": {
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  },
+  "ads_information/ads_and_topics/videos_watched.json": {
+    "impressions_history_videos_watched": [
+      {
+        "string_map_data": {
+          "Author": {
+            "value": "string"
+          },
+          "Time": {
+            "timestamp": "number"
+          }
+        }
+      }
+    ]
+  }
+}
