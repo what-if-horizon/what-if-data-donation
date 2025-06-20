@@ -128,184 +128,230 @@ def create_donation_flow(file_input: List[str]):
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'HPC-videos.csv')
-        df = df[['Video ID', 'Playlist Video Creation Timestamp']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/HPC-videos.csv')
+        expected_columns = ['Video ID', 'Playlist Video Creation Timestamp']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='HPC-videos', df=df, title={'en': 'HPC-videos'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'Tryal-videos.csv')
-        df = df[['Video ID', 'Playlist Video Creation Timestamp']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/Tryal-videos.csv')
+        expected_columns = ['Video ID', 'Playlist Video Creation Timestamp']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='Tryal-videos', df=df, title={'en': 'Tryal-videos'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'URL-configuraties van kanaal.csv')
-        df = df[['Kanaal-ID', 'Naam van vanity-URL 1 voor kanaal', 'Naam van vanity-URL 2 voor kanaal']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/URL-configuraties van kanaal.csv')
+        expected_columns = ['Kanaal-ID', 'Naam van vanity-URL 1 voor kanaal', 'Naam van vanity-URL 2 voor kanaal']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='URL-configuraties van kanaal', df=df, title={'en': 'URL-configuraties van kanaal'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'Video_s in Music.csv')
-        df = df[['Video-ID', 'Tijdstempel voor het maken van een playlistvideo']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/Video_s in Music.csv')
+        expected_columns = ['Video-ID', 'Tijdstempel voor het maken van een playlistvideo']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='Video_s in Music', df=df, title={'en': 'Video_s in Music'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'Video_s in TFL.csv')
-        df = df[['Video-ID', 'Tijdstempel voor het maken van een playlistvideo']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/Video_s in TFL.csv')
+        expected_columns = ['Video-ID', 'Tijdstempel voor het maken van een playlistvideo']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='Video_s in TFL', df=df, title={'en': 'Video_s in TFL'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'Video_s in Watch later.csv')
-        df = df[['Video-ID', 'Tijdstempel voor het maken van een playlistvideo']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/Video_s in Watch later.csv')
+        expected_columns = ['Video-ID', 'Tijdstempel voor het maken van een playlistvideo']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='Video_s in Watch later', df=df, title={'en': 'Video_s in Watch later'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'Watch later-videos.csv')
-        df = df[['Video ID', 'Playlist Video Creation Timestamp']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/Watch later-videos.csv')
+        expected_columns = ['Video ID', 'Playlist Video Creation Timestamp']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='Watch later-videos', df=df, title={'en': 'Watch later-videos'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'abonnementen.csv')
-        df = df[['Kanaal-ID', 'Kanaal-URL', 'Kanaaltitel']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/abonnementen.csv')
+        expected_columns = ['Kanaal-ID', 'Kanaal-URL', 'Kanaaltitel']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='abonnementen', df=df, title={'en': 'abonnementen'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'channel URL configs.csv')
-        df = df[['Channel ID', 'Channel Vanity URL 1 Name']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/channel URL configs.csv')
+        expected_columns = ['Channel ID', 'Channel Vanity URL 1 Name']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='channel URL configs', df=df, title={'en': 'channel URL configs'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'channel community moderation settings.csv')
-        df = df[['Channel ID']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/channel community moderation settings.csv')
+        expected_columns = ['Channel ID']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='channel community moderation settings', df=df, title={'en': 'channel community moderation settings'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'channel feature data.csv')
-        df = df[['Channel ID', 'Channel Auto Moderation in Live Chat', 'Video Default Allowed Comments Type', 'Video Default Targeted Audience', 'Video Default License', 'Video Default Location Latitude', 'Video Default Location Longitude']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/channel feature data.csv')
+        expected_columns = ['Channel ID', 'Channel Auto Moderation in Live Chat', 'Video Default Allowed Comments Type', 'Video Default Targeted Audience', 'Video Default License', 'Video Default Location Latitude', 'Video Default Location Longitude']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='channel feature data', df=df, title={'en': 'channel feature data'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'channel page settings.csv')
-        df = df[['Channel ID']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/channel page settings.csv')
+        expected_columns = ['Channel ID']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='channel page settings', df=df, title={'en': 'channel page settings'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'channel.csv')
-        df = df[['Channel ID', 'Channel Title (Original)', 'Channel Visibility']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/channel.csv')
+        expected_columns = ['Channel ID', 'Channel Title (Original)', 'Channel Visibility']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='channel', df=df, title={'en': 'channel'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'comments.csv')
-        df = df[['Comment ID', 'Channel ID', 'Comment Create Timestamp', 'Price', 'Video ID', 'Comment Text']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/comments.csv')
+        expected_columns = ['Comment ID', 'Channel ID', 'Comment Create Timestamp', 'Price', 'Video ID', 'Comment Text']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='comments', df=df, title={'en': 'comments'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'gegevens voor kanaalfunctie.csv')
-        df = df[['Kanaal-ID', 'Automatische moderatie in live chat van kanaal', 'Standaard toegestane reactietype van video', 'Standaard doelgroep van video', 'Standaardlicentie van video', 'Standaardbreedtegraad van videolocatie', 'Standaardlengtegraad van videolocatie']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/gegevens voor kanaalfunctie.csv')
+        expected_columns = ['Kanaal-ID', 'Automatische moderatie in live chat van kanaal', 'Standaard toegestane reactietype van video', 'Standaard doelgroep van video', 'Standaardlicentie van video', 'Standaardbreedtegraad van videolocatie', 'Standaardlengtegraad van videolocatie']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='gegevens voor kanaalfunctie', df=df, title={'en': 'gegevens voor kanaalfunctie'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'instellingen voor het beheer van je kanaalcommu.csv')
-        df = df[['Kanaal-ID']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/instellingen voor het beheer van je kanaalcommu.csv')
+        expected_columns = ['Kanaal-ID']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='instellingen voor het beheer van je kanaalcommu', df=df, title={'en': 'instellingen voor het beheer van je kanaalcommu'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'instellingen voor kanaalpagina.csv')
-        df = df[['Kanaal-ID']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/instellingen voor kanaalpagina.csv')
+        expected_columns = ['Kanaal-ID']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='instellingen voor kanaalpagina', df=df, title={'en': 'instellingen voor kanaalpagina'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'kanaal.csv')
-        df = df[['Kanaal-ID', '(Originele) kanaaltitel', 'Kanaalzichtbaarheid']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/kanaal.csv')
+        expected_columns = ['Kanaal-ID', '(Originele) kanaaltitel', 'Kanaalzichtbaarheid']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='kanaal', df=df, title={'en': 'kanaal'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'playlists.csv')
-        df = df[['Playlist ID', 'Add new videos to top', 'Playlist Title (Original)', 'Playlist Title (Original) Language', 'Playlist Create Timestamp', 'Playlist Update Timestamp', 'Playlist Video Order', 'Playlist Visibility', 'Playlist-ID', "Nieuwe video's bovenaan toevoegen", 'Playlist-titel (Origineel)', '(Originele) taal van playlist-titel', 'Playlist tijdstempel maken', 'Playlist tijdstempel updaten', 'Videovolgorde playlist', 'Zichtbaarheid van playlist']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/playlists.csv')
+        expected_columns = ['Playlist ID', 'Add new videos to top', 'Playlist Title (Original)', 'Playlist Title (Original) Language', 'Playlist Create Timestamp', 'Playlist Update Timestamp', 'Playlist Video Order', 'Playlist Visibility', 'Playlist-ID', "Nieuwe video's bovenaan toevoegen", 'Playlist-titel (Origineel)', '(Originele) taal van playlist-titel', 'Playlist tijdstempel maken', 'Playlist tijdstempel updaten', 'Videovolgorde playlist', 'Zichtbaarheid van playlist']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='playlists', df=df, title={'en': 'playlists'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'reacties.csv')
-        df = df[['Reactie-ID', 'Kanaal-ID', 'Aanmaaktijdstempel reactie', 'Prijs', 'Video-ID', 'Reactietekst']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/reacties.csv')
+        expected_columns = ['Reactie-ID', 'Kanaal-ID', 'Aanmaaktijdstempel reactie', 'Prijs', 'Video-ID', 'Reactietekst']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='reacties', df=df, title={'en': 'reacties'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'subscriptions.csv')
-        df = df[['Channel Id', 'Channel Url', 'Channel Title']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/subscriptions.csv')
+        expected_columns = ['Channel Id', 'Channel Url', 'Channel Title']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='subscriptions', df=df, title={'en': 'subscriptions'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'video-opnamen.csv')
-        df = df[['Video-ID', 'Hoogte van video-opname', 'Latitude van video-opname', 'Longitude van video-opname']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/video-opnamen.csv')
+        expected_columns = ['Video-ID', 'Hoogte van video-opname', 'Latitude van video-opname', 'Longitude van video-opname']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='video-opnamen', df=df, title={'en': 'video-opnamen'}))
     except Exception:
         pass
 
     try:
-        df = read_csv_from_file_input(file_input, 'video_s.csv')
-        df = df[['Video-ID', 'Geschatte duur (ms)', 'Videocategorie', 'Videobeschrijving (origineel)', 'Kanaal-ID', 'Tag 1', 'Videotitel (origineel)', 'Privacy', 'Videostatus', 'Tijdstempel aanmaaktijd video', 'Tijdstempel publicatietijd video']]  # select expected columns
+        df = read_csv_from_file_input(file_input, '/video_s.csv')
+        expected_columns = ['Video-ID', 'Geschatte duur (ms)', 'Videocategorie', 'Videobeschrijving (origineel)', 'Kanaal-ID', 'Tag 1', 'Videotitel (origineel)', 'Privacy', 'Videostatus', 'Tijdstempel aanmaaktijd video', 'Tijdstempel publicatietijd video']
+        existing_columns = [col for col in expected_columns if col in df.columns]
+        df = df[existing_columns]
         if not df.empty:
             tables.append(donation_table(name='video_s', df=df, title={'en': 'video_s'}))
     except Exception:

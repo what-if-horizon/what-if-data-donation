@@ -68,7 +68,7 @@ def read_js(file_input: list[str], target_files: list[str]) -> list[dict]:
     return extracted_data
 
 def account_creation_ip_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['account-creation-ip.js'])
+    data = read_js(file_input, ['/account-creation-ip.js'])
     records = []
     for item in data:
         base_row = {}
@@ -79,7 +79,7 @@ def account_creation_ip_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def account_timezone_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['account-timezone.js'])
+    data = read_js(file_input, ['/account-timezone.js'])
     records = []
     for item in data:
         base_row = {}
@@ -89,7 +89,7 @@ def account_timezone_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def account_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['account.js'])
+    data = read_js(file_input, ['/account.js'])
     records = []
     for item in data:
         base_row = {}
@@ -104,7 +104,7 @@ def account_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def ads_revenue_sharing_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['ads-revenue-sharing.js'])
+    data = read_js(file_input, ['/ads-revenue-sharing.js'])
     records = []
     for item in data:
         base_row = {}
@@ -113,7 +113,7 @@ def ads_revenue_sharing_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def ageinfo_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['ageinfo.js'])
+    data = read_js(file_input, ['/ageinfo.js'])
     records = []
     for item in data:
         base_row = {}
@@ -123,7 +123,7 @@ def ageinfo_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def connected_application_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['connected-application.js'])
+    data = read_js(file_input, ['/connected-application.js'])
     records = []
     for item in data:
         base_row = {}
@@ -137,7 +137,7 @@ def connected_application_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def device_token_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['device-token.js'])
+    data = read_js(file_input, ['/device-token.js'])
     records = []
     for item in data:
         base_row = {}
@@ -151,7 +151,7 @@ def device_token_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def direct_message_group_headers_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['direct-message-group-headers.js'])
+    data = read_js(file_input, ['/direct-message-group-headers.js'])
     records = []
     for item in data:
         base_row = {}
@@ -159,13 +159,15 @@ def direct_message_group_headers_df(file_input: list[str]) -> pd.DataFrame:
         for entry in get_list(item, 'dmConversation', 'messages'):
             row = base_row.copy()
             row['__source_list__'] = 'messages'
-            row['messageCreate'] = entry.get('messageCreate', None)
+            row['createdAt'] = get_in(entry, 'messageCreate', 'createdAt')
+            row['id'] = get_in(entry, 'messageCreate', 'id')
+            row['senderId'] = get_in(entry, 'messageCreate', 'senderId')
             records.append(row)
     return pd.DataFrame(records)
 
 
 def direct_messages_group_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['direct-messages-group.js'])
+    data = read_js(file_input, ['/direct-messages-group.js'])
     records = []
     for item in data:
         base_row = {}
@@ -173,13 +175,22 @@ def direct_messages_group_df(file_input: list[str]) -> pd.DataFrame:
         for entry in get_list(item, 'dmConversation', 'messages'):
             row = base_row.copy()
             row['__source_list__'] = 'messages'
-            row['messageCreate'] = entry.get('messageCreate', None)
+            row['createdAt'] = get_in(entry, 'messageCreate', 'createdAt')
+            row['editHistory'] = get_in(entry, 'messageCreate', 'editHistory')
+            row['id'] = get_in(entry, 'messageCreate', 'id')
+            row['mediaUrls'] = get_in(entry, 'messageCreate', 'mediaUrls')
+            row['reactions'] = get_in(entry, 'messageCreate', 'reactions')
+            row['senderId'] = get_in(entry, 'messageCreate', 'senderId')
+            row['text'] = get_in(entry, 'messageCreate', 'text')
+            row['display'] = get_in(entry, 'messageCreate', 'urls', 'display')
+            row['expanded'] = get_in(entry, 'messageCreate', 'urls', 'expanded')
+            row['url'] = get_in(entry, 'messageCreate', 'urls', 'url')
             records.append(row)
     return pd.DataFrame(records)
 
 
 def email_address_change_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['email-address-change.js'])
+    data = read_js(file_input, ['/email-address-change.js'])
     records = []
     for item in data:
         base_row = {}
@@ -191,7 +202,7 @@ def email_address_change_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def key_registry_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['key-registry.js'])
+    data = read_js(file_input, ['/key-registry.js'])
     records = []
     for item in data:
         base_row = {}
@@ -199,17 +210,17 @@ def key_registry_df(file_input: list[str]) -> pd.DataFrame:
         for entry in get_list(item, 'keyRegistryData', 'registeredDevices', 'deviceMetadataList'):
             row = base_row.copy()
             row['__source_list__'] = 'deviceMetadataList'
-            row['createdAt'] = entry.get('createdAt', None)
-            row['deviceId'] = entry.get('deviceId', None)
-            row['identityKey'] = entry.get('identityKey', None)
-            row['registrationToken'] = entry.get('registrationToken', None)
-            row['userAgent'] = entry.get('userAgent', None)
+            row['createdAt'] = get_in(entry, 'createdAt')
+            row['deviceId'] = get_in(entry, 'deviceId')
+            row['identityKey'] = get_in(entry, 'identityKey')
+            row['registrationToken'] = get_in(entry, 'registrationToken')
+            row['userAgent'] = get_in(entry, 'userAgent')
             records.append(row)
     return pd.DataFrame(records)
 
 
 def manifest_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['manifest.js'])
+    data = read_js(file_input, ['/manifest.js'])
     records = []
     for item in data:
         base_row = {}
@@ -227,582 +238,582 @@ def manifest_df(file_input: list[str]) -> pd.DataFrame:
         for entry in get_list(item, 'dataTypes', 'account', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'accountCreationIp', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'accountLabel', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'accountSuspension', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'accountTimezone', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adEngagements', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adImpressions', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adMobileConversionsAttributed', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adMobileConversionsUnattributed', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adOnlineConversionsAttributed', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adOnlineConversionsUnattributed', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'adsRevenueSharing', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'ageinfo', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'app', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'article', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'articleMetadata', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'audioVideoCallsInDm', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'block', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'branchLinks', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'catalogItem', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'commerceCatalog', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'communityNote', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'communityNoteBatsignal', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'communityNoteRating', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'communityNoteTombstone', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'communityTweet', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'connectedApplication', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'contact', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'deletedNoteTweet', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'deletedTweetHeaders', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'deletedTweets', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'deviceToken', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'directMessageGroupHeaders', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'directMessageHeaders', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'directMessageMute', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'directMessages', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'directMessagesGroup', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'emailAddressChange', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'expandedProfile', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'follower', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'following', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'grokChatItem', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'ipAudit', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'keyRegistry', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'like', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'listsCreated', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'listsMember', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'listsSubscribed', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'moment', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'mute', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'niDevices', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'noteTweet', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeAccountInformation', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeBanInformation', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeBroadcastMetadata', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeCommentsMadeByUser', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeExpiredBroadcasts', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeFollowers', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'periscopeProfileDescription', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'personalization', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'phoneNumber', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'productDrop', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'productSet', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'professionalData', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'profile', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'protectedHistory', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'replyPrompt', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'savedSearch', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'screenNameChange', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'shopModule', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'shopifyAccount', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'smartblock', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'spacesMetadata', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'sso', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'tweetHeaders', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'tweetdeck', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'tweets', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'twitterShop', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'userLinkClicks', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'verified', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
         for entry in get_list(item, 'dataTypes', 'verifiedOrganization', 'files'):
             row = base_row.copy()
             row['__source_list__'] = 'files'
-            row['count'] = entry.get('count', None)
-            row['fileName'] = entry.get('fileName', None)
-            row['globalName'] = entry.get('globalName', None)
+            row['count'] = get_in(entry, 'count')
+            row['fileName'] = get_in(entry, 'fileName')
+            row['globalName'] = get_in(entry, 'globalName')
             records.append(row)
     return pd.DataFrame(records)
 
 
 def periscope_account_information_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['periscope-account-information.js'])
+    data = read_js(file_input, ['/periscope-account-information.js'])
     records = []
     for item in data:
         base_row = {}
@@ -819,7 +830,7 @@ def periscope_account_information_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def periscope_profile_description_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['periscope-profile-description.js'])
+    data = read_js(file_input, ['/periscope-profile-description.js'])
     records = []
     for item in data:
         base_row = {}
@@ -829,7 +840,7 @@ def periscope_profile_description_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def personalization_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['personalization.js'])
+    data = read_js(file_input, ['/personalization.js'])
     records = []
     for item in data:
         base_row = {}
@@ -839,20 +850,20 @@ def personalization_df(file_input: list[str]) -> pd.DataFrame:
         for entry in get_list(item, 'p13nData', 'demographics', 'languages'):
             row = base_row.copy()
             row['__source_list__'] = 'languages'
-            row['isDisabled'] = entry.get('isDisabled', None)
-            row['language'] = entry.get('language', None)
+            row['isDisabled'] = get_in(entry, 'isDisabled')
+            row['language'] = get_in(entry, 'language')
             records.append(row)
         for entry in get_list(item, 'p13nData', 'interests', 'interests'):
             row = base_row.copy()
             row['__source_list__'] = 'interests'
-            row['isDisabled'] = entry.get('isDisabled', None)
-            row['name'] = entry.get('name', None)
+            row['isDisabled'] = get_in(entry, 'isDisabled')
+            row['name'] = get_in(entry, 'name')
             records.append(row)
     return pd.DataFrame(records)
 
 
 def profile_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['profile.js'])
+    data = read_js(file_input, ['/profile.js'])
     records = []
     for item in data:
         base_row = {}
@@ -866,7 +877,7 @@ def profile_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def screen_name_change_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['screen-name-change.js'])
+    data = read_js(file_input, ['/screen-name-change.js'])
     records = []
     for item in data:
         base_row = {}
@@ -879,7 +890,7 @@ def screen_name_change_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def tweet_headers_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['tweet-headers.js'])
+    data = read_js(file_input, ['/tweet-headers.js'])
     records = []
     for item in data:
         base_row = {}
@@ -891,7 +902,7 @@ def tweet_headers_df(file_input: list[str]) -> pd.DataFrame:
 
 
 def tweets_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['tweets.js'])
+    data = read_js(file_input, ['/tweets.js'])
     records = []
     for item in data:
         base_row = {}
@@ -912,17 +923,17 @@ def tweets_df(file_input: list[str]) -> pd.DataFrame:
         for entry in get_list(item, 'tweet', 'entities', 'user_mentions'):
             row = base_row.copy()
             row['__source_list__'] = 'user_mentions'
-            row['id'] = entry.get('id', None)
-            row['id_str'] = entry.get('id_str', None)
-            row['indices'] = entry.get('indices', None)
-            row['name'] = entry.get('name', None)
-            row['screen_name'] = entry.get('screen_name', None)
+            row['id'] = get_in(entry, 'id')
+            row['id_str'] = get_in(entry, 'id_str')
+            row['indices'] = get_in(entry, 'indices')
+            row['name'] = get_in(entry, 'name')
+            row['screen_name'] = get_in(entry, 'screen_name')
             records.append(row)
     return pd.DataFrame(records)
 
 
 def verified_df(file_input: list[str]) -> pd.DataFrame:
-    data = read_js(file_input, ['verified.js'])
+    data = read_js(file_input, ['/verified.js'])
     records = []
     for item in data:
         base_row = {}
