@@ -5,6 +5,8 @@ import os
 from pathlib import Path  
 import zipfile
 
+main_path = "/home/rvissche/Documents/Data_takeout_Nienke_PRIVATE/YT_takeout_MvdV.zip"
+
 def column_names_from_zip(main_path):
 
     #main_path = "/home/rvissche/Documents/Data_takeout_Nienke_PRIVATE/takeout-20250604T082845Z-1-001.zip"
