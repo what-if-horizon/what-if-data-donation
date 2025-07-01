@@ -9,12 +9,12 @@ import port.helpers.port_helpers as ph
 
 
 SUBMIT_FILE_HEADER = props.Translatable({
-    "en": "Select a random zipfile of choice", 
+    "en": "Select a random zipfile of choice",
     "nl": "Selecteer een willekeurige zipfile",
 })
 
 REVIEW_DATA_HEADER = props.Translatable({
-    "en": "Your random zip contents", 
+    "en": "Your random zip contents",
     "nl": "De gegevens in uw zip"
 })
 
@@ -24,7 +24,7 @@ REVIEW_DATA_DESCRIPTION = props.Translatable({
 })
 
 RETRY_HEADER = props.Translatable({
-    "en": "Try again", 
+    "en": "Try again",
     "nl": "Probeer opnieuw"
 })
 
@@ -42,7 +42,7 @@ def process(session_id: str):
         if file_prompt_result.__type__ == 'PayloadString':
 
             # Validate the file the participant submitted
-            # In general this is wise to do 
+            # In general this is wise to do
             is_data_valid = validate_the_participants_input(file_prompt_result.value)
 
             # Happy flow:
@@ -54,7 +54,7 @@ def process(session_id: str):
                 # The participant can now decide to donate
                 extracted_data = extract_the_data_you_are_interested_in(file_prompt_result.value)
                 consent_prompt = ph.generate_review_data_prompt(
-                    description=REVIEW_DATA_DESCRIPTION, 
+                    description=REVIEW_DATA_DESCRIPTION,
                     table_list=extracted_data
                 )
                 result = yield ph.render_page(REVIEW_DATA_HEADER, consent_prompt)
@@ -115,7 +115,7 @@ def extract_the_data_you_are_interested_in(zip_file: str) -> list[d3i_props.Prop
         })
         wordcloud = {
             "title": {
-                "en": "You can also add visualizations", 
+                "en": "You can also add visualizations",
                 "nl": "You can also add visualizations"
             },
             "type": "wordcloud",
@@ -124,10 +124,10 @@ def extract_the_data_you_are_interested_in(zip_file: str) -> list[d3i_props.Prop
         }
         tables.append(
             d3i_props.PropsUIPromptConsentFormTableViz(
-                id="zip_contents", 
-                title=table_title, 
-                data_frame=df, 
-                visualizations=[wordcloud], 
+                id="zip_contents",
+                title=table_title,
+                data_frame=df,
+                visualizations=[wordcloud],
                 delete_option=True
             )
         )
@@ -154,5 +154,3 @@ def validate_the_participants_input(zip_file: str) -> bool:
             return True
     except zipfile.BadZipFile:
         return False
-
-

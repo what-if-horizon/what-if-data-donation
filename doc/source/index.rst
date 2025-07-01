@@ -29,7 +29,7 @@ Below you can find an architecture diagram outlining the relationships between N
 .. figure:: _static/arch.png
    :alt: Alternative text
    :align: center
-   
+
    The relationship between the Data Donation Task and Next
 
 
@@ -40,7 +40,7 @@ How does the data donation task work?
 The idea behind the data donation task
 --------------------------------------
 
-This data donation task repository contains in essence a toolkit with which you can build your own data donation flow. The donation flow is at the heart of the data donation task, and is at the core of a data donation study. 
+This data donation task repository contains in essence a toolkit with which you can build your own data donation flow. The donation flow is at the heart of the data donation task, and is at the core of a data donation study.
 It is the step where the participant is actually going to donate their data.
 
 The data donation flow goes as follows:
@@ -49,7 +49,7 @@ The data donation flow goes as follows:
 2. The participant is prompted to submit their data download package (DDP)
 3. A Python script you wrote, extracts the data you need for your research
 4. That data gets presented to the participant on screen. (The participant gets to interact with their data)
-5. The participants decides to donate and you receive the data 
+5. The participants decides to donate and you receive the data
 
 We opted for a toolkit approach because it offers several benefits:
 
@@ -73,7 +73,7 @@ On a high level the script works as follows:
 The architecture of the data donation task
 ------------------------------------------
 
-The data donation task is a web application (build with React_ and Pyodide_) that completely runs in the browser of the participant. 
+The data donation task is a web application (build with React_ and Pyodide_) that completely runs in the browser of the participant.
 The Python script and the UI components will run completely in the browser of the participant.
 Data is only sent to the server upon the participant clicking a consent button.
 
@@ -84,7 +84,7 @@ Creating your own study
 A researcher can implement their own data donation flow by altering a Python script included in the repository called script.py_.
 ``script.py`` has 2 different purposes:
 
-1. It determines the data donation flow. i.e. what screens (for example a file prompt) does the participant gets to see and when. 
+1. It determines the data donation flow. i.e. what screens (for example a file prompt) does the participant gets to see and when.
 2. You can place functions here that extract the data you are interested in from the participants submission. Here is were Python really shines, you can use most data extraction methods you are familiar with! (As long as it's available in Pyodide_.
 
 A typical script includes the following steps:
@@ -100,7 +100,7 @@ Check the getting started section for a detailed tutorial.
 
 
 
-Getting started 
+Getting started
 ===============
 
 Checkout the following articles to get started:
@@ -132,7 +132,7 @@ We provide standard extraction scripts for a various platforms which you can fin
    standard_scripts/index
 
 
-    
+
 .. _Next: https://github.com/eyra/mono/
 .. _Eyra: https://eyra.co/
 .. _script.py: https://github.com/d3i-infra/data-donation-task/blob/master/src/framework/processing/py/port/script.py

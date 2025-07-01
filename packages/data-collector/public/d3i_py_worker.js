@@ -109,9 +109,13 @@ function startPyodide() {
   })
 }
 
-function loadPackages() {
+async function loadPackages() {
   console.log('[ProcessingWorker] loading packages')
-  return self.pyodide.loadPackage(['micropip', 'numpy', 'pandas'])
+  await self.pyodide.loadPackage(['micropip', 'numpy', 'pandas'])
+  return await self.pyodide.runPythonAsync(`
+    import micropip
+    await micropip.install("jsonpath-ng")
+  `);
 }
 
 function installPortPackage() {
@@ -120,7 +124,7 @@ function installPortPackage() {
     import micropip
     await micropip.install("./port-0.0.0-py3-none-any.whl", deps=False)
     import port
-  `);  
+  `);
 }
 
 function generateErrorMessage(stacktrace) {
