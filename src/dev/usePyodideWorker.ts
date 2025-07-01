@@ -28,7 +28,7 @@ export default function usePyodideWorker() {
   const [initializing, setInitializing] = useState(true);
 
   useEffect(() => {
-    worker.postMessage({ type: "initialise" });
+    worker.postMessage({ type: "initialise", path: import.meta.env.BASE_URL });
     initializedWorker.then(() => setInitializing(false));
   }, []);
 

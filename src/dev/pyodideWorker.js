@@ -1,10 +1,10 @@
 let initialized = false;
 
 onmessage = (event) => {
-  const { type } = event.data;
+  const { type, path } = event.data;
   switch (type) {
     case "initialise":
-      if (!initialized) initialise();
+      if (!initialized) initialise(path);
       initialized = true;
       break;
 
@@ -18,10 +18,10 @@ onmessage = (event) => {
   }
 };
 
-async function initialise() {
+async function initialise(path) {
   await loadPyodide();
   await loadPackages();
-  await installPortPackage();
+  await installPortPackage(path);
   self.postMessage({ type: "initialise", status: "done" });
 }
 
@@ -47,7 +47,7 @@ async function runImport(id, script, fileInput) {
   rmFromWORKERFS(dir);
 }
 
-async function runImportScript(dir, script, fileInput) { 
+async function runImportScript(dir, script, fileInput) {
   const prints = [];
   try {
     // pass print function and filenames to python
@@ -69,7 +69,7 @@ async function runImportScript(dir, script, fileInput) {
     await pyodide.runPythonAsync(scriptLines.join("\n\n"), {
       globals: namespace,
     });
-    
+
     // Modification because of error toJs()
     const donationFlowDict = namespace.get("DONATION_FLOW_DICT");
     if (donationFlowDict) {
@@ -106,7 +106,7 @@ async function loadPyodide() {
 
 async function loadPackages() {
   console.log("[ProcessingWorker] loading packages");
-  await self.pyodide.loadPackage(["micropip", "numpy", "pandas","requests"]);
+  await self.pyodide.loadPackage(["micropip", "numpy", "pandas", "requests"]);
 
   // can also install anything on pypi with wheels
   return await self.pyodide.runPythonAsync(`
@@ -115,11 +115,11 @@ async function loadPackages() {
   `);
 }
 
-async function installPortPackage() {
+async function installPortPackage(path) {
   console.log("[ProcessingWorker] load port package");
   return await self.pyodide.runPythonAsync(`
     import micropip
-    await micropip.install("/port-0.0.0-py3-none-any.whl", deps=False)
+    await micropip.install("${path}port-0.0.0-py3-none-any.whl", deps=False)
     import port
   `);
 }

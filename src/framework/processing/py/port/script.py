@@ -10,14 +10,13 @@ import port.helpers.port_helpers as ph
 import port.donation_flows.facebook as facebook
 import port.donation_flows.instagram as instagram
 import port.donation_flows.twitter as twitter
-
-
+import port.donation_flows.tiktok as tiktok
+import port.donation_flows.youtube as youtube
 
 logger = logging.getLogger(__name__)
 
-def process(session_id: int):
-    platform = "Facebook"
-    if platform is None:
+def process(session_id: int, platform: str):
+    if platform == '':
         p = yield ask_platform()
         platform = p.value
 
@@ -46,6 +45,10 @@ def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptCo
         return facebook.create_donation_flow(file_input)
     if platform == 'Twitter':
         return twitter.create_donation_flow(file_input)
+    if platform == 'Tiktok':
+        return tiktok.create_donation_flow(file_input)
+    if platform == 'Youtube':
+        return youtube.create_donation_flow(file_input)
     raise ValueError(f"Unknown platform: {platform}")
 
 def platform_file_header(platform: str):
@@ -70,10 +73,11 @@ def ask_platform():
         title= props.Translatable({"en": "Platform", "nl": "Platform"}),
         description= props.Translatable({"en": "", "nl": ""}),
         items= [
-           props.RadioItem(id=4, value='Instagram'),
+           props.RadioItem(id=1, value='Instagram'),
            props.RadioItem(id=2, value='Tiktok'),
            props.RadioItem(id=3, value='Facebook'),
-           props.RadioItem(id=1, value='Twitter')
+           props.RadioItem(id=4, value='Twitter'),
+           props.RadioItem(id=5, value='Youtube')
         ])
 
 

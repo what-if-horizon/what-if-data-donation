@@ -272,9 +272,7 @@
           "array"
         ],
         "Hide potential spam or offensive comments from your LIVE": "string",
-        "People you assigned to moderate your LIVE": [
-          "array"
-        ],
+        "People you assigned to moderate your LIVE": ["array"],
         "Show your username and gift information in features with ranking lists": "string"
       }
     },

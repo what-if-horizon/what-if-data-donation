@@ -1,16 +1,18 @@
 let pyScript;
 
 onmessage = (event) => {
-  const { eventType } = event.data;
+  const { eventType, path } = event.data;
   switch (eventType) {
     case "initialise":
-      initialise().then(() => {
+      initialise(path).then(() => {
         self.postMessage({ eventType: "initialiseDone" });
       });
       break;
 
     case "firstRunCycle":
-      pyScript = self.pyodide.runPython(`port.start(${event.data.sessionId})`);
+      pyScript = self.pyodide.runPython(
+        `port.start(${event.data.sessionId}, "${event.data.platform || ""}")`,
+      );
       runCycle(null);
       break;
 
@@ -93,7 +95,7 @@ function copyFileToPyFS(files, directoryName) {
   );
 }
 
-function initialise() {
+function initialise(path) {
   console.log("[ProcessingWorker] initialise");
   return startPyodide()
     .then((pyodide) => {
@@ -101,7 +103,7 @@ function initialise() {
       return loadPackages();
     })
     .then(() => {
-      return installPortPackage();
+      return installPortPackage(path);
     });
 }
 
@@ -116,7 +118,6 @@ function startPyodide() {
 
 async function loadPackages() {
   console.log("[ProcessingWorker] loading packages");
-  console.log('hola')
   await self.pyodide.loadPackage(["micropip", "numpy", "pandas"]);
 
   // can also install anything on pypi with wheels
@@ -126,11 +127,11 @@ async function loadPackages() {
   `);
 }
 
-function installPortPackage() {
+function installPortPackage(path) {
   console.log("[ProcessingWorker] load port package");
   return self.pyodide.runPythonAsync(`
     import micropip
-    await micropip.install("/port-0.0.0-py3-none-any.whl", deps=False)
+    await micropip.install("${path}port-0.0.0-py3-none-any.whl", deps=False)
     import port
   `);
 }

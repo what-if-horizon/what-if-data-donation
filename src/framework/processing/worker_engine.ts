@@ -1,119 +1,138 @@
-import { CommandHandler, ProcessingEngine } from '../types/modules'
-import { CommandSystemEvent, CommandSystemDonate, isCommand, Response, PayloadDonate } from '../types/commands'
+import { CommandHandler, ProcessingEngine } from "../types/modules";
+import {
+  CommandSystemEvent,
+  CommandSystemDonate,
+  isCommand,
+  Response,
+  PayloadDonate,
+} from "../types/commands";
 
 export default class WorkerProcessingEngine implements ProcessingEngine {
-  sessionId: String
-  worker: Worker
-  commandHandler: CommandHandler
+  sessionId: String;
+  worker: Worker;
+  commandHandler: CommandHandler;
 
-  resolveInitialized!: () => void
-  resolveContinue!: () => void
+  resolveInitialized!: () => void;
+  resolveContinue!: () => void;
 
-  constructor (sessionId: string, worker: Worker, commandHandler: CommandHandler) {
-    this.sessionId = sessionId
-    this.commandHandler = commandHandler
-    this.worker = worker
-    this.worker.onerror = console.log
+  constructor(
+    sessionId: string,
+    worker: Worker,
+    commandHandler: CommandHandler,
+  ) {
+    this.sessionId = sessionId;
+    this.commandHandler = commandHandler;
+    this.worker = worker;
+    this.worker.onerror = console.log;
     this.worker.onmessage = (event) => {
       console.log(
-        '[WorkerProcessingEngine] Received event from worker: ',
-        event.data.eventType
-      )
-      this.handleEvent(event)
-    }
+        "[WorkerProcessingEngine] Received event from worker: ",
+        event.data.eventType,
+      );
+      this.handleEvent(event);
+    };
   }
 
-  sendSystemEvent (name: string): void {
-    const command: CommandSystemEvent = { __type__: 'CommandSystemEvent', name }
+  sendSystemEvent(name: string): void {
+    const command: CommandSystemEvent = {
+      __type__: "CommandSystemEvent",
+      name,
+    };
     this.commandHandler.onCommand(command).then(
       () => {},
-      () => {}
-    )
+      () => {},
+    );
   }
 
-  handleEvent (event: any): void {
-    const { eventType } = event.data
-    console.log('[ReactEngine] received eventType: ', eventType)
+  handleEvent(event: any): void {
+    const { eventType } = event.data;
+    console.log("[ReactEngine] received eventType: ", eventType);
     switch (eventType) {
-      case 'initialiseDone':
-        console.log('[ReactEngine] received: initialiseDone')
-        this.resolveInitialized()
-        break
+      case "initialiseDone":
+        console.log("[ReactEngine] received: initialiseDone");
+        this.resolveInitialized();
+        break;
 
-      case 'runCycleDone':
-        console.log('[ReactEngine] received: event', event.data.scriptEvent)
-        this.handleRunCycle(event.data.scriptEvent)
-        break
+      case "runCycleDone":
+        console.log("[ReactEngine] received: event", event.data.scriptEvent);
+        this.handleRunCycle(event.data.scriptEvent);
+        break;
       default:
         console.log(
-          '[ReactEngine] received unsupported flow event: ',
-          eventType
-        )
+          "[ReactEngine] received unsupported flow event: ",
+          eventType,
+        );
     }
   }
 
-  start (): void {
-    console.log('[WorkerProcessingEngine] started')
+  start(): void {
+    console.log("[WorkerProcessingEngine] started");
 
-    const waitForInitialization: Promise<void> = this.waitForInitialization()
+    const waitForInitialization: Promise<void> = this.waitForInitialization();
 
     waitForInitialization.then(
       () => {
-        this.sendSystemEvent('initialized')
-        this.firstRunCycle()
+        this.sendSystemEvent("initialized");
+        this.firstRunCycle();
       },
-      () => {}
-    )
+      () => {},
+    );
   }
 
-  async waitForInitialization (): Promise<void> {
+  async waitForInitialization(): Promise<void> {
     return await new Promise<void>((resolve) => {
-      this.resolveInitialized = resolve
-      this.worker.postMessage({ eventType: 'initialise' })
-    })
+      this.resolveInitialized = resolve;
+      this.worker.postMessage({
+        eventType: "initialise",
+        path: import.meta.env.BASE_URL,
+      });
+    });
   }
 
-  firstRunCycle (): void {
-    this.worker.postMessage({ eventType: 'firstRunCycle', sessionId: this.sessionId })
+  firstRunCycle(): void {
+    this.worker.postMessage({
+      eventType: "firstRunCycle",
+      sessionId: this.sessionId,
+      platform: process.env.VITE_PLATFORM,
+    });
   }
 
-  nextRunCycle (response: Response): void {
-    this.worker.postMessage({ eventType: 'nextRunCycle', response })
+  nextRunCycle(response: Response): void {
+    this.worker.postMessage({ eventType: "nextRunCycle", response });
   }
 
-  terminate (): void {
-    this.worker.terminate()
+  terminate(): void {
+    this.worker.terminate();
   }
 
-  handleRunCycle (command: any): void {
+  handleRunCycle(command: any): void {
     if (isCommand(command)) {
+      console.log(command);
       this.commandHandler.onCommand(command).then(
         (response) => {
-          switch(response.payload.__type__) {
+          switch (response.payload.__type__) {
             case "PayloadDonate":
-              const donateCommand = constructDonateCommand(response.payload)
-              this.commandHandler.onCommand(donateCommand).then(
-                (response) => {
-                  this.nextRunCycle(response)
-                }
-              )
-              break
+              const donateCommand = constructDonateCommand(response.payload);
+              this.commandHandler.onCommand(donateCommand).then((response) => {
+                this.nextRunCycle(response);
+              });
+              break;
 
             default:
-              this.nextRunCycle(response)
+              this.nextRunCycle(response);
           }
         },
-        () => {}
-      )
+        () => {},
+      );
     }
   }
 }
 
 function constructDonateCommand(payload: PayloadDonate) {
   const donateCommand: CommandSystemDonate = {
-    "__type__": "CommandSystemDonate",
-    "key": payload.key,
-    "json_string": payload.value,
-  }
-  return donateCommand
+    __type__: "CommandSystemDonate",
+    key: payload.key,
+    json_string: payload.value,
+  };
+  return donateCommand;
 }

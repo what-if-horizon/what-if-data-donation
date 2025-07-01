@@ -2,12 +2,15 @@ import "./fonts.css";
 import "./framework/styles.css";
 import Assembly from "./framework/assembly";
 import { Bridge } from "./framework/types/modules";
-import LiveBridge from "./live_bridge";
+import { LiveBridge } from "./live_bridge";
 import FakeBridge from "./fake_bridge";
 import { createRoot } from "react-dom/client";
 import DevApp from "./dev/App";
 
 const rootElement = document.getElementById("root") as HTMLElement;
+
+let standalone = process.env?.REACT_APP_BUILD === "standalone" ?? false;
+let production = process.env?.NODE_ENV === "production" ?? false;
 
 const workerFile = new URL(
   "./framework/processing/py_worker.js",
@@ -20,12 +23,10 @@ const run = (bridge: Bridge, locale: string): void => {
   assembly = new Assembly(worker, bridge);
   assembly.visualisationEngine.start(rootElement, locale);
   assembly.processingEngine.start();
+  console.log(assembly);
 };
 
-if (
-  import.meta.env.REACT_APP_BUILD !== "standalone" &&
-  import.meta.env.NODE_ENV === "production"
-) {
+if (production && !standalone) {
   // Setup embedded mode (requires to be embedded in iFrame)
   console.log("Initializing bridge system");
   LiveBridge.create(window, run);
@@ -36,6 +37,7 @@ if (
     const root = createRoot(rootElement);
     root.render(<DevApp />);
   } else {
+    console.log(import.meta.env);
     console.log("Running with fake bridge");
     run(new FakeBridge(), "en");
   }
