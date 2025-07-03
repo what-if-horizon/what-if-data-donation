@@ -124,6 +124,18 @@
         "content": "string",
         "is_geoblocked_for_viewer": "boolean",
         "is_unsent_image_by_messenger_kid_parent": "boolean"
+      },
+      {
+        "sender_name": "string",
+        "timestamp_ms": "number",
+        "content": "string",
+        "share": {
+          "link": "string",
+          "profile_share_username": "string",
+          "profile_share_name": "string"
+        },
+        "is_geoblocked_for_viewer": "boolean",
+        "is_unsent_image_by_messenger_kid_parent": "boolean"
       }
     ],
     "title": "string",
@@ -145,6 +157,18 @@
         "sender_name": "string",
         "timestamp_ms": "number",
         "content": "string",
+        "is_geoblocked_for_viewer": "boolean",
+        "is_unsent_image_by_messenger_kid_parent": "boolean"
+      },
+      {
+        "sender_name": "string",
+        "timestamp_ms": "number",
+        "content": "string",
+        "share": {
+          "link": "string",
+          "profile_share_username": "string",
+          "profile_share_name": "string"
+        },
         "is_geoblocked_for_viewer": "boolean",
         "is_unsent_image_by_messenger_kid_parent": "boolean"
       }
@@ -191,6 +215,18 @@
         "sender_name": "string",
         "timestamp_ms": "number",
         "content": "string",
+        "is_geoblocked_for_viewer": "boolean",
+        "is_unsent_image_by_messenger_kid_parent": "boolean"
+      },
+      {
+        "sender_name": "string",
+        "timestamp_ms": "number",
+        "content": "string",
+        "share": {
+          "link": "string",
+          "profile_share_username": "string",
+          "profile_share_name": "string"
+        },
         "is_geoblocked_for_viewer": "boolean",
         "is_unsent_image_by_messenger_kid_parent": "boolean"
       }
@@ -279,6 +315,52 @@
           "ent_field_name": "string",
           "label": "string",
           "timestamp_value": "number"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "timestamp_value": "number"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "timestamp_value": "number"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "vec": [
+            "array"
+          ]
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string",
+          "value": "string"
+        },
+        {
+          "ent_field_name": "string",
+          "label": "string"
         }
       ],
       "fbid": "string",
@@ -489,6 +571,11 @@
       {
         "ent_field_name": "string",
         "label": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
       }
     ],
     "fbid": "string",
@@ -544,6 +631,11 @@
             "value": "string"
           }
         ]
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
       }
     ],
     "fbid": "string",
@@ -772,6 +864,38 @@
         "ent_field_name": "string",
         "label": "string",
         "value": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "value": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "dict": [
+          "array"
+        ]
       }
     ],
     "fbid": "string",
@@ -786,6 +910,11 @@
         "ent_field_name": "string",
         "label": "string",
         "value": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
       }
     ],
     "fbid": "string",

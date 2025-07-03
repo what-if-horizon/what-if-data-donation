@@ -161,6 +161,11 @@
       {
         "ent_field_name": "string",
         "label": "string"
+      },
+      {
+        "ent_field_name": "string",
+        "label": "string",
+        "timestamp_value": "number"
       }
     ],
     "fbid": "string",
