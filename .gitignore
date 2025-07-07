@@ -50,3 +50,5 @@ __pycache__/
 *.py[cod]
 *$py.class
 release-for-website.sh
+
+/.venv
