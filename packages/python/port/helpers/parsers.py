@@ -1,15 +1,18 @@
-import pandas as pd
-from jsonpath_ng import jsonpath, parse
-from typing import Any
-import logging
 import argparse
+import logging
+import sys
+import time
+from typing import Any, Iterable
 
+import pandas as pd
 import port.api.props as props
+from jsonpath_ng import jsonpath, parse
 
 logger = logging.getLogger(__name__)
 
 JSON = dict[Any, Any] | list[Any]
 Translatable = dict[str, str]
+
 
 def extract_rows_from_json(json: JSON, row_path: list[str]) -> JSON:
     for rp in row_path:
@@ -19,21 +22,23 @@ def extract_rows_from_json(json: JSON, row_path: list[str]) -> JSON:
             return match[0].value
     return []
 
-def extract_columns_from_json(row: dict[str, Any], col_paths: dict[str, list[str]]) -> dict[str, Any]:
-    columns = {}
-    for col, cp in col_paths.items():
-        for c in cp:
-            col_expr = parse(c)
-            value = col_expr.find(row)
-            if value:
-                columns[col] = value[0].value
-                break
-    return columns
+
+def extract_columns_from_json_rows(
+    rows: Iterable[dict[str, Any]], col_paths: dict[str, list[str]]
+) -> Iterable[dict[str, Any]]:
+    col_paths = {key: [parse(c) for c in value] for key, value in col_paths.items()}
+    for row in rows:
+        columns = {}
+        for col, cp in col_paths.items():
+            for col_expr in cp:
+                value = col_expr.find(row)
+                if value:
+                    columns[col] = value[0].value
+                    break
+        yield columns
 
 
-def parse_json(json: JSON,
-               row_path: list[str],
-               col_paths: dict[str, list[str]]):
+def parse_json(json: JSON, row_path: list[str], col_paths: dict[str, list[str]]):
     """
     Parses a JSON file from a zip archive and extracts data into a DataFrame.
 
@@ -55,8 +60,9 @@ def parse_json(json: JSON,
 
     try:
         rows = extract_rows_from_json(json, row_path)
-        row_data = [extract_columns_from_json(row, col_paths) for row in rows]
-        return pd.DataFrame.from_records(row_data)
+        row_data = extract_columns_from_json_rows(rows, col_paths)
+        result = pd.DataFrame.from_records(row_data)
+        return result
 
     except Exception as e:
         logger.error("exception caught: %s", e)

@@ -1,18 +1,17 @@
-import zipfile
 import logging
-
-import pandas as pd
+import zipfile
 from typing import Any, Generator, TypedDict
 
+import pandas as pd
 import port.api.props as props
-import port.helpers.port_helpers as ph
-
 import port.donation_flows.facebook as facebook
 import port.donation_flows.instagram as instagram
+import port.donation_flows.tiktok as tiktok
 import port.donation_flows.twitter as twitter
-
+import port.helpers.port_helpers as ph
 
 logger = logging.getLogger(__name__)
+
 
 def process(session_id: int):
     platform = None
@@ -40,41 +39,39 @@ def process(session_id: int):
 
 
 def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptConsentForm:
-    if platform == 'Instagram':
+    if platform == "Instagram":
         return instagram.create_donation_flow(file_input)
-    if platform == 'Facebook':
+    if platform == "Facebook":
         return facebook.create_donation_flow(file_input)
-    if platform == 'Twitter':
+    if platform == "Twitter":
         return twitter.create_donation_flow(file_input)
+    if platform == "Tiktok":
+        return tiktok.create_donation_flow(file_input)
     raise ValueError(f"Unknown platform: {platform}")
 
+
 def platform_file_header(platform: str):
-    return props.Translatable({
-        "en": f"Select the {platform} data file",
-        "nl": f"Selecteer het {platform} databestand"
-    })
+    return props.Translatable({"en": f"Select the {platform} data file", "nl": f"Selecteer het {platform} databestand"})
+
 
 def platform_data_header(platform: str):
-    return props.Translatable({
-        "en": f"Review the {platform} data",
-        "nl": f"Controleer de {platform} data"
-    })
+    return props.Translatable({"en": f"Review the {platform} data", "nl": f"Controleer de {platform} data"})
+
 
 def ask_platform():
-    title = props.Translatable({
-       "en": "Select import script to test",
-       "nl": "Selecteer het import script dat je wilt testen"
-    })
+    title = props.Translatable(
+        {"en": "Select import script to test", "nl": "Selecteer het import script dat je wilt testen"}
+    )
 
     platform_buttons = props.PropsUIPromptRadioInput(
-        title= props.Translatable({"en": "Platform", "nl": "Platform"}),
-        description= props.Translatable({"en": "", "nl": ""}),
-        items= [
-           props.RadioItem(id=4, value='Instagram'),
-           props.RadioItem(id=2, value='Tiktok'),
-           props.RadioItem(id=3, value='Facebook'),
-           props.RadioItem(id=1, value='Twitter')
-        ])
-
+        title=props.Translatable({"en": "Platform", "nl": "Platform"}),
+        description=props.Translatable({"en": "", "nl": ""}),
+        items=[
+            props.RadioItem(id=4, value="Instagram"),
+            props.RadioItem(id=2, value="Tiktok"),
+            props.RadioItem(id=3, value="Facebook"),
+            props.RadioItem(id=1, value="Twitter"),
+        ],
+    )
 
     return ph.render_page(title, platform_buttons)

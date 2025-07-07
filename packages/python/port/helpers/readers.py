@@ -1,3 +1,4 @@
+import time
 import pandas as pd
 from jsonpath_ng import jsonpath, parse
 from typing import Any
@@ -14,6 +15,7 @@ logger = logging.getLogger(__name__)
 JSON = dict[Any, Any] | list[Any]
 Translatable = dict[str, str]
 
+
 def match_filename(file_paths: list[str], lookup: list[str]):
     for file_path in file_paths:
         for lookup_str in lookup:
@@ -21,14 +23,16 @@ def match_filename(file_paths: list[str], lookup: list[str]):
                 return file_path
     return None
 
+
 def find_file_in_zip(zip_filepath: str, file_paths: list[str]):
-    with zipfile.ZipFile(zip_filepath, 'r') as zip_ref:
+    with zipfile.ZipFile(zip_filepath, "r") as zip_ref:
         match = match_filename(zip_ref.namelist(), file_paths)
         if match is None:
             return None
         with zip_ref.open(match) as file:
             file_content = file.read()
             return file_content
+
 
 def read_binary(file_input: list[str], file_paths: list[str]):
     """
@@ -47,19 +51,19 @@ def read_binary(file_input: list[str], file_paths: list[str]):
 
     match = match_filename(file_input, file_paths)
     if match is not None:
-        with open(match, 'rb') as file:
+        with open(match, "rb") as file:
             return file.read()
-
     for filename in file_input:
-        type = filename.split('.')[-1]
-        if type == 'zip':
+        type = filename.split(".")[-1]
+        if type == "zip":
             file_content = find_file_in_zip(filename, file_paths)
             if file_content is not None:
                 return file_content
 
     raise ValueError("No file found with paths: " + str(file_paths))
 
-def read_text(file_input: list[str], file_paths: list[str], encoding: str = 'utf-8') -> str:
+
+def read_text(file_input: list[str], file_paths: list[str], encoding: str = "utf-8") -> str:
     """
     Reads a text file from a list of file paths.
 
@@ -95,10 +99,14 @@ def read_json(file_input: list[str], file_paths: list[str]) -> JSON:
     Raises:
     ValueError: If no file is found with the provided paths or if the file content cannot be decoded.
     """
+    t = time.time()
     text_content = read_text(file_input, file_paths)
-    return json.loads(text_content)
+    result = json.loads(text_content)
+    print(f"Parsed {file_paths} in {time.time() - t:1.2f}s")
+    return result
 
-def read_csv(file_input: list[str], file_paths: list[str], encoding: str = 'utf-8', **kwargs) -> pd.DataFrame:
+
+def read_csv(file_input: list[str], file_paths: list[str], encoding: str = "utf-8", **kwargs) -> pd.DataFrame:
     """
     Reads a CSV file from a list of file paths.
 
