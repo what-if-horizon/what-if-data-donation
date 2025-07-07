@@ -1,178 +1,196 @@
 {
   "data/sso.js": "No data",
-  "data/verified.js": {
-    "verified": {
-      "accountId": "string",
-      "verified": "boolean"
+  "data/verified.js": [
+    {
+      "verified": {
+        "accountId": "string",
+        "verified": "boolean"
+      }
     }
-  },
+  ],
   "data/smartblock.js": "No data",
   "data/periscope-profile-description.js": "No data",
   "data/spaces-metadata.js": "No data",
   "data/periscope-expired-broadcasts.js": "No data",
-  "data/verified-organization.js": {
-    "verifiedOrganization": {}
-  },
+  "data/verified-organization.js": [
+    {
+      "verifiedOrganization": {}
+    }
+  ],
   "data/saved-search.js": "No data",
   "data/reply-prompt.js": "No data",
   "data/periscope-followers.js": "No data",
   "data/user-link-clicks.js": "No data",
   "data/professional-data.js": "No data",
-  "data/profile.js": {
-    "profile": {
-      "description": {
-        "bio": "string",
-        "website": "string",
-        "location": "string"
-      },
-      "avatarMediaUrl": "string"
+  "data/profile.js": [
+    {
+      "profile": {
+        "description": {
+          "bio": "string",
+          "website": "string",
+          "location": "string"
+        },
+        "avatarMediaUrl": "string"
+      }
     }
-  },
+  ],
   "data/product-drop.js": "No data",
   "data/product-set.js": "No data",
-  "data/tweet-headers.js": {
-    "tweet": {
-      "tweet_id": "string",
-      "user_id": "string",
-      "created_at": "string"
-    }
-  },
-  "data/personalization.js": {
-    "p13nData": {
-      "demographics": {
-        "languages": [
-          {
-            "language": "string",
-            "isDisabled": "boolean"
-          }
-        ],
-        "genderInfo": {
-          "gender": "string"
-        }
-      },
-      "interests": {
-        "interests": [
-          {
-            "name": "string",
-            "isDisabled": "boolean"
-          }
-        ],
-        "partnerInterests": [
-          "array"
-        ],
-        "audienceAndAdvertisers": {
-          "lookalikeAdvertisers": [
-            "array"
-          ],
-          "advertisers": [
-            "array"
-          ],
-          "doNotReachAdvertisers": [
-            "array"
-          ],
-          "catalogAudienceAdvertisers": [
-            "array"
-          ],
-          "numAudiences": "string"
-        },
-        "shows": [
-          "array"
-        ]
-      },
-      "locationHistory": [
-        "array"
-      ],
-      "inferredAgeInfo": {
-        "age": [
-          "array"
-        ],
-        "birthDate": "string"
+  "data/tweet-headers.js": [
+    {
+      "tweet": {
+        "tweet_id": "string",
+        "user_id": "string",
+        "created_at": "string"
       }
     }
-  },
-  "data/tweets.js": {
-    "tweet": {
-      "edit_info": {
-        "initial": {
-          "editTweetIds": [
-            "string"
+  ],
+  "data/personalization.js": [
+    {
+      "p13nData": {
+        "demographics": {
+          "languages": [
+            {
+              "language": "string",
+              "isDisabled": "boolean"
+            }
           ],
-          "editableUntil": "string",
-          "editsRemaining": "string",
-          "isEditEligible": "boolean"
+          "genderInfo": {
+            "gender": "string"
+          }
+        },
+        "interests": {
+          "interests": [
+            {
+              "name": "string",
+              "isDisabled": "boolean"
+            }
+          ],
+          "partnerInterests": [
+            "array"
+          ],
+          "audienceAndAdvertisers": {
+            "lookalikeAdvertisers": [
+              "array"
+            ],
+            "advertisers": [
+              "array"
+            ],
+            "doNotReachAdvertisers": [
+              "array"
+            ],
+            "catalogAudienceAdvertisers": [
+              "array"
+            ],
+            "numAudiences": "string"
+          },
+          "shows": [
+            "array"
+          ]
+        },
+        "locationHistory": [
+          "array"
+        ],
+        "inferredAgeInfo": {
+          "age": [
+            "array"
+          ],
+          "birthDate": "string"
         }
-      },
-      "retweeted": "boolean",
-      "source": "string",
-      "entities": {
-        "hashtags": [
-          "array"
-        ],
-        "symbols": [
-          "array"
-        ],
-        "user_mentions": [
-          {
-            "name": "string",
-            "screen_name": "string",
-            "indices": [
+      }
+    }
+  ],
+  "data/tweets.js": [
+    {
+      "tweet": {
+        "edit_info": {
+          "initial": {
+            "editTweetIds": [
               "string"
             ],
-            "id_str": "string",
-            "id": "string"
+            "editableUntil": "string",
+            "editsRemaining": "string",
+            "isEditEligible": "boolean"
           }
-        ],
-        "urls": [
-          "array"
-        ]
-      },
-      "display_text_range": [
-        "string"
-      ],
-      "favorite_count": "string",
-      "id_str": "string",
-      "truncated": "boolean",
-      "retweet_count": "string",
-      "id": "string",
-      "created_at": "string",
-      "favorited": "boolean",
-      "full_text": "string",
-      "lang": "string"
-    }
-  },
-  "data/ageinfo.js": {
-    "ageMeta": {
-      "ageInfo": {
-        "age": [
+        },
+        "retweeted": "boolean",
+        "source": "string",
+        "entities": {
+          "hashtags": [
+            "array"
+          ],
+          "symbols": [
+            "array"
+          ],
+          "user_mentions": [
+            {
+              "name": "string",
+              "screen_name": "string",
+              "indices": [
+                "string"
+              ],
+              "id_str": "string",
+              "id": "string"
+            }
+          ],
+          "urls": [
+            "array"
+          ]
+        },
+        "display_text_range": [
           "string"
         ],
-        "birthDate": "string"
+        "favorite_count": "string",
+        "id_str": "string",
+        "truncated": "boolean",
+        "retweet_count": "string",
+        "id": "string",
+        "created_at": "string",
+        "favorited": "boolean",
+        "full_text": "string",
+        "lang": "string"
       }
     }
-  },
+  ],
+  "data/ageinfo.js": [
+    {
+      "ageMeta": {
+        "ageInfo": {
+          "age": [
+            "string"
+          ],
+          "birthDate": "string"
+        }
+      }
+    }
+  ],
   "data/shopify-account.js": "No data",
   "data/article.js": "No data",
   "data/community-note-tombstone.js": "No data",
   "data/shop-module.js": "No data",
-  "data/screen-name-change.js": {
-    "screenNameChange": {
-      "accountId": "string",
+  "data/screen-name-change.js": [
+    {
       "screenNameChange": {
-        "changedAt": "string",
-        "changedFrom": "string",
-        "changedTo": "string"
+        "accountId": "string",
+        "screenNameChange": {
+          "changedAt": "string",
+          "changedFrom": "string",
+          "changedTo": "string"
+        }
       }
     }
-  },
-  "data/email-address-change.js": {
-    "emailAddressChange": {
-      "accountId": "string",
-      "emailChange": {
-        "changedAt": "string",
-        "changedTo": "string"
+  ],
+  "data/email-address-change.js": [
+    {
+      "emailAddressChange": {
+        "accountId": "string",
+        "emailChange": {
+          "changedAt": "string",
+          "changedTo": "string"
+        }
       }
     }
-  },
+  ],
   "data/twitter-shop.js": "No data",
   "data/community-note-rating.js": "No data",
   "data/audio-video-calls-in-dm.js": "No data",
@@ -188,22 +206,33 @@
   "data/mute.js": "No data",
   "data/deleted-note-tweet.js": "No data",
   "data/direct-message-group-headers.js": "No data",
-  "data/following.js": "No data",
-  "data/tweetdeck.js": "No data",
-  "data/ads-revenue-sharing.js": {
-    "adsRevenueSharing": {
-      "payoutHistory": [
-        "array"
-      ]
+  "data/following.js": [
+    {
+      "following": {
+        "accountId": "string",
+        "userLink": "string"
+      }
     }
-  },
+  ],
+  "data/tweetdeck.js": "No data",
+  "data/ads-revenue-sharing.js": [
+    {
+      "adsRevenueSharing": {
+        "payoutHistory": [
+          "array"
+        ]
+      }
+    }
+  ],
   "data/app.js": "No data",
   "data/direct-message-mute.js": "No data",
   "data/ad-impressions.js": "No data",
   "data/community-note.js": "No data",
-  "data/expanded-profile.js": {
-    "expandedProfile": {}
-  },
+  "data/expanded-profile.js": [
+    {
+      "expandedProfile": {}
+    }
+  ],
   "data/manifest.js": {
     "userInfo": {
       "accountId": "string",
@@ -985,76 +1014,112 @@
     }
   },
   "data/lists-member.js": "No data",
-  "data/ip-audit.js": "No data",
+  "data/ip-audit.js": [
+    {
+      "ipAudit": {
+        "accountId": "string",
+        "createdAt": "string",
+        "loginIp": "string",
+        "loginPortNumber": "string"
+      }
+    }
+  ],
   "data/periscope-account-information.js": "No data",
   "data/note-tweet.js": "No data",
   "data/direct-messages.js": "No data",
-  "data/account-creation-ip.js": {
-    "accountCreationIp": {
-      "accountId": "string",
-      "userCreationIp": "string"
+  "data/account-creation-ip.js": [
+    {
+      "accountCreationIp": {
+        "accountId": "string",
+        "userCreationIp": "string"
+      }
     }
-  },
+  ],
   "data/connected-application.js": "No data",
   "data/article-metadata.js": "No data",
   "data/periscope-ban-information.js": "No data",
   "data/account-suspension.js": "No data",
   "data/ad-mobile-conversions-attributed.js": "No data",
   "data/block.js": "No data",
-  "data/account.js": {
-    "account": {
-      "email": "string",
-      "createdVia": "string",
-      "username": "string",
-      "accountId": "string",
-      "createdAt": "string",
-      "accountDisplayName": "string"
-    }
-  },
-  "data/direct-messages-group.js": "No data",
-  "data/like.js": "No data",
-  "data/ad-online-conversions-attributed.js": "No data",
-  "data/account-label.js": {
-    "accountLabel": {}
-  },
-  "data/device-token.js": {
-    "deviceToken": {
-      "clientApplicationId": "string",
-      "token": "string",
-      "createdAt": "string",
-      "lastSeenAt": "string",
-      "clientApplicationName": "string"
-    }
-  },
-  "data/commerce-catalog.js": "No data",
-  "data/account-timezone.js": {
-    "accountTimezone": {
-      "accountId": "string"
-    }
-  },
-  "data/key-registry.js": {
-    "keyRegistryData": {
-      "userId": "string",
-      "registeredDevices": {
-        "deviceMetadataList": [
-          {
-            "userAgent": "string",
-            "registrationToken": "string",
-            "identityKey": "string",
-            "createdAt": "string",
-            "deviceId": "string"
-          }
-        ]
-      },
-      "deregisteredDevices": {
-        "deRegisteredDeviceMetadataList": [
-          "array"
-        ]
+  "data/account.js": [
+    {
+      "account": {
+        "email": "string",
+        "createdVia": "string",
+        "username": "string",
+        "accountId": "string",
+        "createdAt": "string",
+        "accountDisplayName": "string"
       }
     }
-  },
+  ],
+  "data/direct-messages-group.js": "No data",
+  "data/like.js": [
+    {
+      "like": {
+        "tweetId": "string",
+        "fullText": "string",
+        "expandedUrl": "string"
+      }
+    }
+  ],
+  "data/ad-online-conversions-attributed.js": "No data",
+  "data/account-label.js": [
+    {
+      "accountLabel": {}
+    }
+  ],
+  "data/device-token.js": [
+    {
+      "deviceToken": {
+        "clientApplicationId": "string",
+        "token": "string",
+        "createdAt": "string",
+        "lastSeenAt": "string",
+        "clientApplicationName": "string"
+      }
+    }
+  ],
+  "data/commerce-catalog.js": "No data",
+  "data/account-timezone.js": [
+    {
+      "accountTimezone": {
+        "accountId": "string"
+      }
+    }
+  ],
+  "data/key-registry.js": [
+    {
+      "keyRegistryData": {
+        "userId": "string",
+        "registeredDevices": {
+          "deviceMetadataList": [
+            {
+              "userAgent": "string",
+              "registrationToken": "string",
+              "identityKey": "string",
+              "createdAt": "string",
+              "deviceId": "string"
+            }
+          ]
+        },
+        "deregisteredDevices": {
+          "deRegisteredDeviceMetadataList": [
+            "array"
+          ]
+        }
+      }
+    }
+  ],
   "data/direct-message-headers.js": "No data",
-  "data/follower.js": "No data",
+  "data/follower.js": [
+    {
+      "follower": {
+        "accountId": "string",
+        "userLink": "string"
+      }
+    }
+  ],
   "data/moment.js": "No data",
   "data/ad-mobile-conversions-unattributed.js": "No data",
   "data/deleted-tweet-headers.js": "No data",
