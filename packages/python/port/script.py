@@ -13,9 +13,8 @@ import port.helpers.port_helpers as ph
 logger = logging.getLogger(__name__)
 
 
-def process(session_id: int):
-    platform = None
-    if platform is None:
+def process(session_id: int, platform: str | None):
+    if platform is None or platform == '':
         p = yield ask_platform()
         platform = p.value
 

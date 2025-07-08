@@ -74,7 +74,8 @@ export default class WorkerProcessingEngine  {
   }
 
   firstRunCycle (): void {
-    this.worker.postMessage({ eventType: 'firstRunCycle', sessionId: this.sessionId })
+    const platform: string = process.env.REACT_APP_PLATFORM || ""
+    this.worker.postMessage({ eventType: 'firstRunCycle', sessionId: this.sessionId, platform })
   }
 
   nextRunCycle (response: Response): void {
@@ -92,6 +93,6 @@ export default class WorkerProcessingEngine  {
         (response) => this.nextRunCycle(response),
         () => {}
       )
-    } 
+    }
   }
 }
