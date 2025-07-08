@@ -45,6 +45,7 @@ _build
 __pycache__/
 */__pycache__/
 **/__pycache__/
+*.egg-info
 
 # Also ignore Python compiled files
 *.py[cod]

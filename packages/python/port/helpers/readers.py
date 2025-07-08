@@ -1,14 +1,14 @@
+import fnmatch
+import io
+import json
+import logging
+import re
 import time
+import zipfile
+from typing import Any
+
 import pandas as pd
 from jsonpath_ng import jsonpath, parse
-from typing import Any
-import zipfile
-import logging
-import json
-import io
-import fnmatch
-import os
-
 
 logger = logging.getLogger(__name__)
 
@@ -125,3 +125,27 @@ def read_csv(file_input: list[str], file_paths: list[str], encoding: str = "utf-
     bin_content = read_binary(file_input, file_paths)
     bin_io = io.BytesIO(bin_content)
     return pd.read_csv(bin_io, **kwargs)
+
+
+def read_js(file_input: list[str], target_files: list[str]) -> list[dict]:
+    extracted_data = []
+    for zip_path in file_input:
+        with zipfile.ZipFile(zip_path, "r") as z:
+            for target_file in target_files:
+                js_files = [f for f in z.namelist() if target_file in f]
+                if js_files:
+                    with z.open(js_files[0]) as raw_file:
+                        with io.TextIOWrapper(raw_file, encoding="utf8") as text_file:
+                            lines = text_file.readlines()
+                        lines[0] = re.sub(r"^.*? = ", "", lines[0])
+                        try:
+                            data = json.loads("".join(lines))
+
+                            if isinstance(data, list):
+                                extracted_data.extend(data)
+                            else:
+                                extracted_data.append(data)
+
+                        except json.JSONDecodeError as e:
+                            logger.error(f"Error decoding {target_file} in {zip_path}: {e}")
+    return extracted_data
