@@ -1,70 +1,53 @@
-import argparse
-import logging
-import sys
-import time
-from typing import Any, Iterable
-
+import json
 import pandas as pd
-import port.api.props as props
-from jsonpath_ng import jsonpath, parse
 
-logger = logging.getLogger(__name__)
-
-JSON = dict[Any, Any] | list[Any]
-Translatable = dict[str, str]
-
-
-def extract_rows_from_json(json: JSON, row_path: list[str]) -> JSON:
-    for rp in row_path:
-        row_expr = parse(rp)
-        match = row_expr.find(json)
-        if match:
-            return match[0].value
-    return []
+def get_in(d: dict, *keys):
+    for key in keys:
+        if isinstance(d, dict):
+            d = d.get(key)
+        else:
+            return None
+    return d
 
 
-def extract_columns_from_json_rows(
-    rows: Iterable[dict[str, Any]], col_paths: dict[str, list[str]]
-) -> Iterable[dict[str, Any]]:
-    col_paths = {key: [parse(c) for c in value] for key, value in col_paths.items()}
-    for row in rows:
-        columns = {}
-        for col, cp in col_paths.items():
-            for col_expr in cp:
-                value = col_expr.find(row)
-                if value:
-                    columns[col] = value[0].value
-                    break
-        yield columns
+def get_list(d: dict, *keys):
+    val = get_in(d, *keys)
+    return val if isinstance(val, list) else []
 
 
-def parse_json(json: JSON, row_path: list[str], col_paths: dict[str, list[str]]):
-    """
-    Parses a JSON file from a zip archive and extracts data into a DataFrame.
+def snake_case(name: str) -> str:
+    return name.lower().replace("-", "_").replace(".json", "").replace(".js", "").replace(" ", "_")
 
-    This function reads a JSON file from a zip archive, extracts rows based on
-    JSONPath expressions, and then extracts columns from those rows based on
-    additional JSONPath expressions. The extracted data is returned as a pandas
-    DataFrame.
 
-    Parameters:
-    zip (str): Path to the zip archive.
-    filename (list[str]): List of possible filenames to read from the zip archive.
-    row_path (list[str]): List of JSONPath expressions to extract rows.
-    col_paths (dict[str, list[str]]): Dictionary of column names and JSONPath expressions
-                                      to extract column values from each row.
-
-    Returns:
-    pd.DataFrame: DataFrame containing the extracted data.
-    """
+def create_tt_df(
+    file_input: list[str], file_folder_name: str, static_fields: list[list[str]], list_blocks: dict[str, str]
+) -> pd.DataFrame:
 
     try:
-        rows = extract_rows_from_json(json, row_path)
-        row_data = extract_columns_from_json_rows(rows, col_paths)
-        result = pd.DataFrame.from_records(row_data)
-        return result
+        with open(file_input[0], "r", encoding="utf-8") as f:
+            data = json.load(f)
+        root_data = get_in(data, "Activity", file_folder_name)
+        if not root_data:
+            print(f"⚠️ No data found at path: {file_folder_name}")
+            return pd.DataFrame()
 
+        base_row = {}
+        for path in static_fields:
+            base_row[path[-1]] = get_in(root_data, *path[1:])
+        if not list_blocks:
+            # WvA: Should we not also return base_row if no entries found for list_blocks?
+            return pd.DataFrame([base_row])
+
+        all_records = []
+        for list_path, fields in list_blocks.items():
+            items = get_list(root_data, *list_path[1:])
+            for item in items:
+                row = base_row.copy()
+                row["__source_list__"] = list_path[-1]
+                for field in sorted(fields):
+                    row[field] = item.get(field, ".*?")
+                all_records.append(row)
+        return pd.DataFrame(all_records)
     except Exception as e:
-        logger.error("exception caught: %s", e)
-
-    return pd.DataFrame()
+        print(f"❌ Error in {file_folder_name}: {e}")
+        return pd.DataFrame()
