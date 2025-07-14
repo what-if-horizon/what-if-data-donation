@@ -8,7 +8,9 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pandas-stubs"
+    "pandas-stubs",
+    "pytest",
+    "gdown",
 ]
 
 [tool.setuptools]

@@ -1,0 +1,19 @@
+{
+  "input_file": "user_data_tiktok.json",
+  "google_file_id": "https://drive.google.com/file/d/12h_YmB-dQ6xzno-NXGWx4Sw9Z_10J2qW/view?usp=sharing",
+  "platform": "tiktok",
+  "expected_output": [
+    {
+      "id": "activity_summary",
+      "data_frame": {
+        "columns": [
+          "note",
+          "videosSharedSinceAccountRegistration",
+          "videosCommentedOnSinceAccountRegistration",
+          "videosWatchedToTheEndSinceAccountRegistration"
+        ],
+        "data": [["data may have delays of up to several days", 5, 8, 22]]
+      }
+    }
+  ]
+}

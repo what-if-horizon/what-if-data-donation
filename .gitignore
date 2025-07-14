@@ -53,3 +53,5 @@ __pycache__/
 release-for-website.sh
 
 /.venv
+
+/pytests/testfiles/tmp_inputfiles
