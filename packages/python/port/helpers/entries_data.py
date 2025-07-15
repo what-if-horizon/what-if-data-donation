@@ -4,7 +4,7 @@ Donation file structure data for takeout flows
 This file contains a list of Entries for each platform.
 Each Entry represents a table to be generated from the appropriate file.
 
-To generate this file, please run structure/flow_generation/generate_entries.py
+To generate this file, please run flow_generation/generate_entries.py
 which will use the Merged_structures_*.csv to determine the required entries.
 """
 
