@@ -1,0 +1,91 @@
+Key,Values
+subscriptions.csv,Channel Id
+subscriptions.csv,Channel Url
+subscriptions.csv,Channel Title
+HPC-videos.csv,Video ID
+HPC-videos.csv,Playlist Video Creation Timestamp
+Watch later-videos.csv,Video ID
+Watch later-videos.csv,Playlist Video Creation Timestamp
+Tryal-videos.csv,Video ID
+Tryal-videos.csv,Playlist Video Creation Timestamp
+comments.csv,Comment ID
+comments.csv,Channel ID
+comments.csv,Comment Create Timestamp
+comments.csv,Price
+comments.csv,Video ID
+comments.csv,Comment Text
+playlists.csv,Playlist ID
+playlists.csv,Add new videos to top
+playlists.csv,Playlist Title (Original)
+playlists.csv,Playlist Title (Original) Language
+playlists.csv,Playlist Create Timestamp
+playlists.csv,Playlist Update Timestamp
+playlists.csv,Playlist Video Order
+playlists.csv,Playlist Visibility
+channel page settings.csv,Channel ID
+channel feature data.csv,Channel ID
+channel feature data.csv,Channel Auto Moderation in Live Chat
+channel feature data.csv,Video Default Allowed Comments Type
+channel feature data.csv,Video Default Targeted Audience
+channel feature data.csv,Video Default License
+channel feature data.csv,Video Default Location Latitude
+channel feature data.csv,Video Default Location Longitude
+channel.csv,Channel ID
+channel.csv,Channel Title (Original)
+channel.csv,Channel Visibility
+channel community moderation settings.csv,Channel ID
+channel URL configs.csv,Channel ID
+channel URL configs.csv,Channel Vanity URL 1 Name
+abonnementen.csv,Kanaal-ID
+abonnementen.csv,Kanaal-URL
+abonnementen.csv,Kanaaltitel
+URL-configuraties van kanaal.csv,Kanaal-ID
+URL-configuraties van kanaal.csv,Naam van vanity-URL 1 voor kanaal
+URL-configuraties van kanaal.csv,Naam van vanity-URL 2 voor kanaal
+kanaal.csv,Kanaal-ID
+kanaal.csv,(Originele) kanaaltitel
+kanaal.csv,Kanaalzichtbaarheid
+Video_s in Watch later.csv,Video-ID
+Video_s in Watch later.csv,Tijdstempel voor het maken van een playlistvideo
+playlists.csv,Playlist-ID
+playlists.csv,Nieuwe video's bovenaan toevoegen
+playlists.csv,Playlist-titel (Origineel)
+playlists.csv,(Originele) taal van playlist-titel
+playlists.csv,Playlist tijdstempel maken
+playlists.csv,Playlist tijdstempel updaten
+playlists.csv,Videovolgorde playlist
+playlists.csv,Zichtbaarheid van playlist
+Video_s in TFL.csv,Video-ID
+Video_s in TFL.csv,Tijdstempel voor het maken van een playlistvideo
+instellingen voor kanaalpagina.csv,Kanaal-ID
+reacties.csv,Reactie-ID
+reacties.csv,Kanaal-ID
+reacties.csv,Aanmaaktijdstempel reactie
+reacties.csv,Prijs
+reacties.csv,Video-ID
+reacties.csv,Reactietekst
+video_s.csv,Video-ID
+video_s.csv,Geschatte duur (ms)
+video_s.csv,Videocategorie
+video_s.csv,Videobeschrijving (origineel)
+video_s.csv,Kanaal-ID
+video_s.csv,Tag 1
+video_s.csv,Videotitel (origineel)
+video_s.csv,Privacy
+video_s.csv,Videostatus
+video_s.csv,Tijdstempel aanmaaktijd video
+video_s.csv,Tijdstempel publicatietijd video
+video-opnamen.csv,Video-ID
+video-opnamen.csv,Hoogte van video-opname
+video-opnamen.csv,Latitude van video-opname
+video-opnamen.csv,Longitude van video-opname
+instellingen voor het beheer van je kanaalcommu.csv,Kanaal-ID
+Video_s in Music.csv,Video-ID
+Video_s in Music.csv,Tijdstempel voor het maken van een playlistvideo
+gegevens voor kanaalfunctie.csv,Kanaal-ID
+gegevens voor kanaalfunctie.csv,Automatische moderatie in live chat van kanaal
+gegevens voor kanaalfunctie.csv,Standaard toegestane reactietype van video
+gegevens voor kanaalfunctie.csv,Standaard doelgroep van video
+gegevens voor kanaalfunctie.csv,Standaardlicentie van video
+gegevens voor kanaalfunctie.csv,Standaardbreedtegraad van videolocatie
+gegevens voor kanaalfunctie.csv,Standaardlengtegraad van videolocatie
