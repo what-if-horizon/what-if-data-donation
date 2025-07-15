@@ -1,12 +1,9 @@
 import json
-import logging
 from pathlib import Path
 from typing import NamedTuple
 
-import gdown
-
-BASE_FOLDER = Path.cwd() / "pytests" / "testfiles"
-INPUTFILES = BASE_FOLDER / "tmp_inputfiles"
+FOLDER_SCENARIOS = Path.cwd() / "pytests" / "scenarios"
+TESTFILES = Path.cwd() / "pytests" / "testfiles"
 
 
 class Scenario(NamedTuple):
@@ -17,8 +14,8 @@ class Scenario(NamedTuple):
     data: list[list[str | int | float]]
 
 
-def get_inputfiles():
-    for f in BASE_FOLDER.glob("*.json"):
+def get_scenario_files():
+    for f in FOLDER_SCENARIOS.glob("*.json"):
         with f.open() as jf:
             yield f.name, json.load(jf)
 
@@ -47,12 +44,10 @@ def get_scenarios():
     Then, each tables in the "expected_output" key will generate one scenario
     specifying a table with columns and rows (values)
     """
-    if not INPUTFILES.exists():
-        INPUTFILES.mkdir(parents=True, exist_ok=True)
-    for fname, d in get_inputfiles():
-        fn = INPUTFILES / d["input_file"]
+    for fname, d in get_scenario_files():
+        fn = TESTFILES / d["input_file"]
         if not fn.exists():
-            gdown.download(d["google_file_id"], str(fn), fuzzy=True)
+            raise FileNotFoundError(f"Cannot find input file {fn}")
         for output in d["expected_output"]:
             id = output["id"]
             df = output["data_frame"]
