@@ -55,3 +55,9 @@ release-for-website.sh
 /.venv
 
 /pytests/testfiles/tmp_inputfiles
+
+structure_donations/Processed_structure_donations/TikTok/Raw
+structure_donations/Processed_structure_donations/Facebook/Raw
+structure_donations/Processed_structure_donations/Instagram/Raw
+structure_donations/Processed_structure_donations/Youtube/Raw
+structure_donations/Processed_structure_donations/Twitter/Raw
