@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 from venv import create
 
-from port.api.d3i_props import PropsUIPromptConsentFormViz
+from port.api.d3i_props import PropsUIPromptConsentFormViz  # type: ignore
 
 
 def extract_tables(flow: PropsUIPromptConsentFormViz, tables: list[str] | None):
