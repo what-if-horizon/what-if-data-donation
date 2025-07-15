@@ -1,0 +1,269 @@
+{
+  "input_file": "pytests/private_testfiles/twitter_takeout_en.zip",
+  "platform": "twitter",
+  "expected_output": [
+    {
+      "id": "account_label",
+      "data_frame": {
+        "columns": ["accountLabel"],
+        "data": [[{}]]
+      }
+    },
+    {
+      "id": "follower",
+      "data_frame": {
+        "columns": ["accountId", "userLink"],
+        "data": [
+          ["1683143088221331459", "https://twitter.com/intent/user?user_id=1683143088221331459"],
+          ["1728991662834159616", "https://twitter.com/intent/user?user_id=1728991662834159616"],
+          ["1663836951634677760", "https://twitter.com/intent/user?user_id=1663836951634677760"],
+          ["1705561859972022272", "https://twitter.com/intent/user?user_id=1705561859972022272"],
+          ["1683229899279024130", "https://twitter.com/intent/user?user_id=1683229899279024130"],
+          ["1726921668621385728", "https://twitter.com/intent/user?user_id=1726921668621385728"],
+          ["1696861534650077185", "https://twitter.com/intent/user?user_id=1696861534650077185"],
+          ["1714459100996567040", "https://twitter.com/intent/user?user_id=1714459100996567040"],
+          ["1697428871417659392", "https://twitter.com/intent/user?user_id=1697428871417659392"],
+          ["1849719716102762497", "https://twitter.com/intent/user?user_id=1849719716102762497"],
+          ["1698538524243283968", "https://twitter.com/intent/user?user_id=1698538524243283968"],
+          ["1717426057966411776", "https://twitter.com/intent/user?user_id=1717426057966411776"],
+          ["1685652108438360064", "https://twitter.com/intent/user?user_id=1685652108438360064"],
+          ["1719822524563984384", "https://twitter.com/intent/user?user_id=1719822524563984384"],
+          ["1683599214016593921", "https://twitter.com/intent/user?user_id=1683599214016593921"],
+          ["1719326761614196736", "https://twitter.com/intent/user?user_id=1719326761614196736"],
+          ["1705026407875698688", "https://twitter.com/intent/user?user_id=1705026407875698688"],
+          ["1811120335573368832", "https://twitter.com/intent/user?user_id=1811120335573368832"],
+          ["1732392597979561984", "https://twitter.com/intent/user?user_id=1732392597979561984"],
+          ["1698506782522408960", "https://twitter.com/intent/user?user_id=1698506782522408960"],
+          ["1695987798644338689", "https://twitter.com/intent/user?user_id=1695987798644338689"],
+          ["1728731718268383232", "https://twitter.com/intent/user?user_id=1728731718268383232"],
+          ["1703806885730902016", "https://twitter.com/intent/user?user_id=1703806885730902016"],
+          ["1706274577934884864", "https://twitter.com/intent/user?user_id=1706274577934884864"],
+          ["1685944182614220800", "https://twitter.com/intent/user?user_id=1685944182614220800"],
+          ["1733861551608655872", "https://twitter.com/intent/user?user_id=1733861551608655872"],
+          ["1742325332668190720", "https://twitter.com/intent/user?user_id=1742325332668190720"],
+          ["1705750106287341568", "https://twitter.com/intent/user?user_id=1705750106287341568"],
+          ["1728882287721209856", "https://twitter.com/intent/user?user_id=1728882287721209856"],
+          ["1678225605605638145", "https://twitter.com/intent/user?user_id=1678225605605638145"],
+          ["1688191547807039488", "https://twitter.com/intent/user?user_id=1688191547807039488"],
+          ["1684455569912909824", "https://twitter.com/intent/user?user_id=1684455569912909824"],
+          ["1705635380802813953", "https://twitter.com/intent/user?user_id=1705635380802813953"]
+        ]
+      }
+    },
+    {
+      "id": "following",
+      "data_frame": {
+        "columns": ["accountId", "userLink"],
+        "data": [
+          ["1410758193286950912", "https://twitter.com/intent/user?user_id=1410758193286950912"],
+          ["34743251", "https://twitter.com/intent/user?user_id=34743251"],
+          ["17919972", "https://twitter.com/intent/user?user_id=17919972"],
+          ["4429003533", "https://twitter.com/intent/user?user_id=4429003533"],
+          ["1314159555127971840", "https://twitter.com/intent/user?user_id=1314159555127971840"],
+          ["1339619325578240000", "https://twitter.com/intent/user?user_id=1339619325578240000"],
+          ["2276698777", "https://twitter.com/intent/user?user_id=2276698777"],
+          ["25073877", "https://twitter.com/intent/user?user_id=25073877"],
+          ["17469289", "https://twitter.com/intent/user?user_id=17469289"],
+          ["1650863136424230912", "https://twitter.com/intent/user?user_id=1650863136424230912"],
+          ["1408480800438374406", "https://twitter.com/intent/user?user_id=1408480800438374406"],
+          ["628253959", "https://twitter.com/intent/user?user_id=628253959"],
+          ["1720891078516375552", "https://twitter.com/intent/user?user_id=1720891078516375552"],
+          ["1138458175663988738", "https://twitter.com/intent/user?user_id=1138458175663988738"],
+          ["759251", "https://twitter.com/intent/user?user_id=759251"],
+          ["1791489495453388800", "https://twitter.com/intent/user?user_id=1791489495453388800"],
+          ["28785486", "https://twitter.com/intent/user?user_id=28785486"],
+          ["1367531", "https://twitter.com/intent/user?user_id=1367531"],
+          ["15012486", "https://twitter.com/intent/user?user_id=15012486"],
+          ["1917731", "https://twitter.com/intent/user?user_id=1917731"],
+          ["1652541", "https://twitter.com/intent/user?user_id=1652541"],
+          ["152656121", "https://twitter.com/intent/user?user_id=152656121"],
+          ["19644592", "https://twitter.com/intent/user?user_id=19644592"],
+          ["95092020", "https://twitter.com/intent/user?user_id=95092020"],
+          ["2425571623", "https://twitter.com/intent/user?user_id=2425571623"],
+          ["44196397", "https://twitter.com/intent/user?user_id=44196397"],
+          ["216299334", "https://twitter.com/intent/user?user_id=216299334"]
+        ]
+      }
+    },
+    {
+      "id": "like",
+      "data_frame": {
+        "columns": ["tweetId", "fullText", "expandedUrl"],
+        "data": [
+          ["1856360821170835967", "https://t.co/2YaXwPEA3W", "https://twitter.com/i/web/status/1856360821170835967"],
+          [
+            "1855988966727500255",
+            "On Veterans Day, we owe our veterans and their families our thanks, our respect, and our freedom. To all those who bravely served, thank you for your service to our country. https://t.co/IlWKtEYqTi",
+            "https://twitter.com/i/web/status/1855988966727500255"
+          ],
+          [
+            "1854201929519247803",
+            "It is morning in America again https://t.co/GNTE0cUWoc",
+            "https://twitter.com/i/web/status/1854201929519247803"
+          ],
+          [
+            "1854419015503925638",
+            "My hunting dog is on high alert https://t.co/XPGkmoWMRF",
+            "https://twitter.com/i/web/status/1854419015503925638"
+          ],
+          [
+            "1854065606137376835",
+            "Memecoin Super cycle \ud83d\udcb0\ud83d\ude80 \n\n$DOGE https://t.co/Rs0WcJVZVN",
+            "https://twitter.com/i/web/status/1854065606137376835"
+          ],
+          [
+            "1854431364906369071",
+            "@PopBase remove \u201care you a convicted felon\u201d from All job applications moving forward.",
+            "https://twitter.com/i/web/status/1854431364906369071"
+          ],
+          [
+            "1854298119241904632",
+            "Every person tomorrow who pre ordered their ps5 pro \n\n#PS5Pro https://t.co/l5U3bAO9kL",
+            "https://twitter.com/i/web/status/1854298119241904632"
+          ],
+          [
+            "1854499228447633458",
+            "LIVE: US presidential election 2024 results https://t.co/4s3oRQxUv6",
+            "https://twitter.com/i/web/status/1854499228447633458"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "manifest",
+      "data_frame": {
+        "columns": [
+          "accountId",
+          "userName",
+          "displayName",
+          "sizeBytes",
+          "generationDate",
+          "isPartialArchive",
+          "maxPartSizeBytes",
+          "fileName",
+          "directory",
+          "name",
+          "mediaDirectory",
+          "__source_list__",
+          "count",
+          "globalName"
+        ],
+        "data": [
+          [
+            "1854507704154497024",
+            "daggeo91",
+            "geo dag",
+            "63184",
+            "2024-11-21T13:27:48.017Z",
+            false,
+            "53687091200",
+            "data/account.js",
+            "data/",
+            "README.txt",
+            "data/community_tweet_media",
+            "files",
+            "1",
+            "YTD.account.part0"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "personalization",
+      "data_frame": {
+        "columns": ["gender", "numAudiences", "birthDate", "__source_list__", "isDisabled", "language"],
+        "data": [
+          ["male", "0", "", "languages", false, "English"],
+          ["male", "0", "", "languages", false, "French"],
+          ["male", "0", "", "languages", false, "art (Private-Use: emoji)"]
+        ]
+      }
+    },
+    {
+      "id": "profile",
+      "data_frame": {
+        "columns": ["bio", "website", "location", "avatarMediaUrl", "headerMediaUrl"],
+        "data": [
+          ["", "", "United Kingdom", "https://pbs.twimg.com/profile_images/1854508604444782604/maJh3zim.jpg", null]
+        ]
+      }
+    },
+    {
+      "id": "screen_name_change",
+      "data_frame": {
+        "columns": ["accountId", "changedAt", "changedFrom", "changedTo"],
+        "data": [["1854507704154497024", "2024-11-19T13:27:30.000Z", "geo_cooper53221", "daggeo91"]]
+      }
+    },
+    {
+      "id": "tweet_headers",
+      "data_frame": {
+        "columns": ["tweet_id", "user_id", "created_at"],
+        "data": [["1858865773487247535", "1854507704154497024", "Tue Nov 19 13:31:51 +0000 2024"]]
+      }
+    },
+    {
+      "id": "tweets",
+      "data_frame": {
+        "columns": [
+          "editableUntil",
+          "editsRemaining",
+          "isEditEligible",
+          "retweeted",
+          "source",
+          "favorite_count",
+          "id_str",
+          "truncated",
+          "retweet_count",
+          "id",
+          "possibly_sensitive",
+          "created_at",
+          "favorited",
+          "full_text",
+          "lang",
+          "__source_list__",
+          "indices",
+          "name",
+          "screen_name"
+        ],
+        "data": [
+          [
+            "2024-11-19T14:31:51.112Z",
+            "5",
+            false,
+            false,
+            "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+            "0",
+            "44196397",
+            false,
+            "0",
+            "44196397",
+            null,
+            "Tue Nov 19 13:31:51 +0000 2024",
+            false,
+            "RT @elonmusk: If you look closely, you can see a human walking around the base of the rocket. \n\nEach Raptor rocket engine produces twice as\u2026",
+            "en",
+            "user_mentions",
+            ["3", "12"],
+            "Elon Musk",
+            "elonmusk"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "verified_organization",
+      "data_frame": {
+        "columns": ["verifiedOrganization"],
+        "data": [[{}]]
+      }
+    },
+    {
+      "id": "verified",
+      "data_frame": {
+        "columns": ["accountId", "verified"],
+        "data": [["1854507704154497024", false]]
+      }
+    }
+  ]
+}

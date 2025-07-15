@@ -1,4 +1,5 @@
 import json
+import logging
 from pathlib import Path
 from typing import NamedTuple
 
@@ -45,14 +46,11 @@ def get_scenarios():
     specifying a table with columns and rows (values)
     """
     for fname, d in get_scenario_files():
-        fn = TESTFILES / d["input_file"]
-        if not fn.exists():
-            raise FileNotFoundError(f"Cannot find input file {fn}")
         for output in d["expected_output"]:
             id = output["id"]
             df = output["data_frame"]
             yield f"{fname}::{id}", Scenario(
-                input=fn, platform=d["platform"], id=id, columns=df["columns"], data=df["data"]
+                input=Path(d["input_file"]), platform=d["platform"], id=id, columns=df["columns"], data=df["data"]
             )
 
 

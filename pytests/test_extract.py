@@ -1,5 +1,7 @@
 import functools
 import importlib
+import logging
+import warnings
 
 from conftest import Scenario
 from pandas import DataFrame
@@ -13,6 +15,9 @@ def get_tables(platform, input):
 
 
 def test_extract_table(scenario: Scenario):
+    if not scenario.input.exists():
+        warnings.warn(f"Cannot find file {scenario.input}, skipping test")
+        return
     tables = get_tables(scenario.platform, scenario.input)
     assert scenario.id in tables, f"No table {scenario.id} (tables: {list(tables.keys())})"
     df: DataFrame = tables[scenario.id].data_frame
