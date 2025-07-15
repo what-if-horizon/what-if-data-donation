@@ -3,7 +3,7 @@
   "platform": "twitter",
   "expected_output": [
     {
-      "id": "account_label",
+      "id": "account-label",
       "data_frame": {
         "columns": ["accountLabel"],
         "data": [[{}]]
@@ -189,14 +189,14 @@
       }
     },
     {
-      "id": "screen_name_change",
+      "id": "screen-name-change",
       "data_frame": {
         "columns": ["accountId", "changedAt", "changedFrom", "changedTo"],
         "data": [["1854507704154497024", "2024-11-19T13:27:30.000Z", "geo_cooper53221", "daggeo91"]]
       }
     },
     {
-      "id": "tweet_headers",
+      "id": "tweet-headers",
       "data_frame": {
         "columns": ["tweet_id", "user_id", "created_at"],
         "data": [["1858865773487247535", "1854507704154497024", "Tue Nov 19 13:31:51 +0000 2024"]]
@@ -221,6 +221,11 @@
           "favorited",
           "full_text",
           "lang",
+          "in_reply_to_status_id_str",
+          "in_reply_to_user_id",
+          "in_reply_to_status_id",
+          "in_reply_to_screen_name",
+          "in_reply_to_user_id_str",
           "__source_list__",
           "indices",
           "name",
@@ -243,6 +248,11 @@
             false,
             "RT @elonmusk: If you look closely, you can see a human walking around the base of the rocket. \n\nEach Raptor rocket engine produces twice as\u2026",
             "en",
+            null,
+            null,
+            null,
+            null,
+            null,
             "user_mentions",
             ["3", "12"],
             "Elon Musk",
@@ -251,8 +261,9 @@
         ]
       }
     },
+
     {
-      "id": "verified_organization",
+      "id": "verified-organization",
       "data_frame": {
         "columns": ["verifiedOrganization"],
         "data": [[{}]]

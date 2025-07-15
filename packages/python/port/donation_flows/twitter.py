@@ -1,12 +1,14 @@
 # Auto-generated TikTok extractors
 
 from port.helpers.donation_flow import donation_flow, donation_table
-from port.helpers.entries_data import X_ENTRIES
 from port.helpers.parsers import create_entry_df
 
 
 def create_donation_flow(file_input: list[str]):
     """Create donation flow from TikTok JSON."""
+    # Do a lazy import to avoid importerror while entries are being generated
+    from port.helpers.entries_data import X_ENTRIES
+
     tables = []
     for entry in X_ENTRIES:
         try:

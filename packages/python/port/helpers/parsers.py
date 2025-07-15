@@ -1,21 +1,26 @@
 import json
-from typing import Annotated, NamedTuple
+from typing import Annotated, NamedTuple, TypeAlias
 
 import pandas as pd
 from port.helpers.readers import read_js
+
+Columns: TypeAlias = Annotated[
+    dict[str, tuple[str, ...]],
+    "A collection of columns, where each columns maps a column name to a json path to find the values for that column",
+]
 
 
 class Entry(NamedTuple):
     table: Annotated[str, "Name of the table to generate"]
     filename: Annotated[str | None, "Filename from which to get information (or None for single-file donations)"]
     static_fields: Annotated[
-        list[tuple[str, ...]],
+        Columns,
         "A list of paths within the file that each gives a single values for each file."
         "Will be repeated in the resulting table if needed",
     ]
     list_blocks: Annotated[
-        dict[tuple[str, ...], set[tuple[str, ...]]],
-        "A dict of path: column items that define a list of objects and the element to extract from each object"
+        dict[tuple[str, ...], Columns],
+        "A dict of rowpath: columns items that define a list of objects and the element to extract from each object"
         "This will result in one row for each entry in the list, and one column for each item in the values",
     ]
 
@@ -46,19 +51,19 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
     all_records = []
     for item in data:
         base_row = {}
-        for path in entry.static_fields:
-            base_row[path[-1]] = get_in(item, *path)
+        for colname, path in entry.static_fields.items():
+            base_row[colname] = get_in(item, *path)
         if not entry.list_blocks:
             # WvA: Should we not also return base_row if no entries found for list_blocks?
             all_records.append(base_row)
             continue
 
-        for list_path, paths in entry.list_blocks.items():
+        for list_path, columns in entry.list_blocks.items():
             items = get_list(item, *list_path)
             for item in items:
                 row = base_row.copy()
                 row["__source_list__"] = list_path[-1]
-                for path in sorted(paths):
-                    row[path[-1]] = get_in(item, *path)
+                for colname, path in sorted(columns.items()):
+                    row[colname] = get_in(item, *path)
                 all_records.append(row)
     return pd.DataFrame(all_records)

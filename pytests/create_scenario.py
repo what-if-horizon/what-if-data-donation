@@ -1,3 +1,13 @@
+"""Create scenario json files for takeout unit tests
+
+You can use this helper script to create a json file with some or all tables from an input file.
+This json file can then be edited and/or placed in pytests/scenarios to be included as a unit test.
+
+If the input file is not included in the repository, it will be skiped with a warning if it doesn't exist.
+If also adding the test file to the repo, please be **very careful** to check it for personal data
+(IP addresses, usernames, email addresses, phone numbers etc) before committing!
+"""
+
 import argparse
 import importlib
 import json
@@ -33,7 +43,7 @@ def create_scenario(platform: str, inputfile: Path, tables: list[str] | None):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("platform", choices=["tiktok", "facebook", "tiktok", "twitter", "youtube"])
     parser.add_argument("inputfile", help="The path or name of the donation file (i.e. .zip or .json)", type=Path)
     parser.add_argument("tables", nargs="*", help="Specify table ids to extract (default extracts all tables)")
