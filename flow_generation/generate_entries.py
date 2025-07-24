@@ -19,23 +19,6 @@ To generate this file, please run structure/flow_generation/generate_entries.py
 which will use the Merged_structures_*.csv to determine the required entries.
 """
 
-# %%
-# Helper functions
-
-
-def snake_case(name: str) -> str:
-    return name.lower().replace("-", "_").replace(".json", "").replace(".js", "").replace(" ", "_")
-
-
-def extract_path(row) -> tuple[str, ...]:
-    path = []
-    for col in ["row_path"] + [f"col_path_{i}" for i in range(1, 6)]:
-        val = row.get(col)
-        if pd.notna(val) and str(val).strip().upper() != "MISSING":
-            path.append(str(val).strip())
-    return tuple(path)
-
-
 def extract_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entry:
     """Generate an Entry for a group of rows from the structure csv file
 
@@ -50,34 +33,17 @@ def extract_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entr
     Returns:
         Entry: a single Entry object
     """
-
-    # WvA: Note: One difference between the field mappings in TT and X
-    #      was that in TT a field is ignored if followed by an empty LIST column
-    #      E.g. for {'adsRevenueSharing': {'payoutHistory': ['array']}}
-    #      The X structure creates a static field, but TT does not.
-    #      Was this intentional?
-    #      Resolution: a leaf node ['array'] should be ignored, a leaf node ['string'] should lead to a list
-
     entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
     seen_static = set()
 
     for _, row in schema_group.iterrows():
-        path = extract_path(row)
-
-        # IF we encounter a LIST, create a list_block from that list. Otherwise, create a static_field
-        for i in range(len(path)):
-            if str(row.get(f"col_path_{i+1}_LIST", "")).strip().upper() == "LIST":
-                list_path = tuple(path[: i + 1])
-                subfield_path = tuple(path[i + 1 :])
-                if subfield_path:
-                    entry.list_blocks.setdefault(list_path, {})[subfield_path[-1]] = subfield_path
-                break
+        colname = row["column_name"]
+        subfield_path = tuple(row["subfield_path"].split("."))
+        if row["var_type"] == "static":
+            entry.static_fields[colname] = subfield_path
         else:
-            field = path[-1]
-            if field not in seen_static:
-                entry.static_fields[path[-1]] = path
-                seen_static.add(field)
-
+            list_path = tuple(row["list_path"].split("."))
+            entry.list_blocks.setdefault(list_path, {})[colname] = subfield_path
     return entry
 
 
@@ -103,7 +69,8 @@ def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
 # %%
 BASE_PATH = Path.cwd() / "structure_donations" / "Processed_structure_donations"
 infiles = dict(
-    TIKTOK=BASE_PATH / "TikTok/Final/Merged_structures_TT.csv", X=BASE_PATH / "Twitter/Final/Merged_structures_X.csv"
+    #TIKTOK=BASE_PATH / "TikTok/Final/Merged_structures_TT.csv",
+    X=BASE_PATH / "Twitter/Final/Merged_structures_X.csv",
 )
 
 

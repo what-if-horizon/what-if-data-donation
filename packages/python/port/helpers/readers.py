@@ -8,7 +8,6 @@ import zipfile
 from typing import Any
 
 import pandas as pd
-from jsonpath_ng import jsonpath, parse
 
 logger = logging.getLogger(__name__)
 
