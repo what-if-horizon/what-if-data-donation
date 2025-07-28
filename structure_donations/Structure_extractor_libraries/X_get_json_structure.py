@@ -72,14 +72,27 @@ def simplify_json_structure(data):
 # Extract the json from the JavaScript wrapper #
 ################################################
 def extract_json_from_js(js_content):
-    """
-    Extract JSON from JavaScript by removing variable assignment like: window.YT_DATA = {...};
-    """
+ 
+   
+    index = js_content.find('=')
+    data =  js_content[index + 1:]
+    
     try:
-        # Remove anything before the first `{` and anything after the last `}`
-        json_str = re.search(r'{.*}', js_content, re.DOTALL).group()
-        return json.loads(json_str)
-    except Exception as e:
+        data = json.loads(data)
+    except:
+        print('Not loaded:', data)
+    #print(data)
+    if isinstance(data, list):
+        if len(data) == 1 and isinstance(data[0], dict):
+            return data[0]  # single dictionary in a list
+        
+        elif all(isinstance(item, dict) for item in data):
+            return data  # list of dictionaries
+        else:
+            raise ValueError("List contains non-dictionary items")
+    elif isinstance(data, dict):
+        return data  # already a dictionary
+    else:
         return None
     
 
@@ -102,7 +115,7 @@ def extract_json_from_js(js_content):
 ##############################################################################
 def structure_from_zip(zip_path):
     output_structure = {}
-   
+
     with zipfile.ZipFile(zip_path, 'r') as z:
         for file_info in z.infolist():
             # Split the path into parts
@@ -132,13 +145,16 @@ def structure_from_zip(zip_path):
 
                 if file_info.filename.endswith('.js'):
                     content = extract_json_from_js(content_str)
-                    if content is None:
-                        output_structure[file_info.filename] = "No data"
-                        continue
                 else:
                     continue  # Skip unknown file types
 
                 placeholder_content = simplify_json_structure(content)
-                output_structure[file_info.filename] = placeholder_content
 
-    return output_structure
+                if placeholder_content == ["array"]:
+                     output_structure[file_info.filename] = "No data"
+                        
+                else:
+                    output_structure[file_info.filename] = placeholder_content
+
+   
+    return json.dumps(output_structure, indent=2, ensure_ascii=False)
