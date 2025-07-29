@@ -11,6 +11,13 @@ pip install -e .[dev]   # if needed, this will install pytest based on the dev
 pytest
 ```
 
+or
+
+```{sh}
+pip install -e '.[dev]'  
+pytest
+```
+
 ### Details:
 
 The setup is a bit non-standard as we're not really testing code paths, but rather expected input-output pairs. 
