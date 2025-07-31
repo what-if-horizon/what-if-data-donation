@@ -1,50 +1,143 @@
-variable,value,row_path,col_path_1,col_path_2,col_path_2_LIST,col_path_3,col_path_3_LIST,col_path_4,col_path_4_LIST,col_path_5,col_path_5_LIST,col_path_6,col_path_6_LIST,data_type
-Activity Summary,"{'ActivitySummaryMap': {'note': 'string', 'videosCommentedOnSinceAccountRegistration': 'number', 'videosSharedSinceAccountRegistration': 'number', 'videosWatchedToTheEndSinceAccountRegistration': 'number'}}",Activity Summary,ActivitySummaryMap,note,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Activity Summary,"{'ActivitySummaryMap': {'note': 'string', 'videosCommentedOnSinceAccountRegistration': 'number', 'videosSharedSinceAccountRegistration': 'number', 'videosWatchedToTheEndSinceAccountRegistration': 'number'}}",Activity Summary,ActivitySummaryMap,videosCommentedOnSinceAccountRegistration,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Activity Summary,"{'ActivitySummaryMap': {'note': 'string', 'videosCommentedOnSinceAccountRegistration': 'number', 'videosSharedSinceAccountRegistration': 'number', 'videosWatchedToTheEndSinceAccountRegistration': 'number'}}",Activity Summary,ActivitySummaryMap,videosSharedSinceAccountRegistration,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Activity Summary,"{'ActivitySummaryMap': {'note': 'string', 'videosCommentedOnSinceAccountRegistration': 'number', 'videosSharedSinceAccountRegistration': 'number', 'videosWatchedToTheEndSinceAccountRegistration': 'number'}}",Activity Summary,ActivitySummaryMap,videosWatchedToTheEndSinceAccountRegistration,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Favorite Effects,{'FavoriteEffectsList': None},Favorite Effects,FavoriteEffectsList,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,
-Favorite Hashtags,{'FavoriteHashtagList': None},Favorite Hashtags,FavoriteHashtagList,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,
-Favorite Sounds,{'FavoriteSoundList': None},Favorite Sounds,FavoriteSoundList,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,
-Favorite Videos,"{'App': 'number', 'FavoriteVideoList': [{'Date': 'string', 'Link': 'string'}]}",Favorite Videos,App,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Favorite Videos,"{'App': 'number', 'FavoriteVideoList': [{'Date': 'string', 'Link': 'string'}]}",Favorite Videos,FavoriteVideoList,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Favorite Videos,"{'App': 'number', 'FavoriteVideoList': [{'Date': 'string', 'Link': 'string'}]}",Favorite Videos,FavoriteVideoList,Link,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Follower List,"{'App': 'number', 'IsFastLane': 'boolean', 'FansList': [{'Date': 'string', 'UserName': 'string'}]}",Follower List,App,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Follower List,"{'App': 'number', 'IsFastLane': 'boolean', 'FansList': [{'Date': 'string', 'UserName': 'string'}]}",Follower List,IsFastLane,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,boolean
-Follower List,"{'App': 'number', 'IsFastLane': 'boolean', 'FansList': [{'Date': 'string', 'UserName': 'string'}]}",Follower List,FansList,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Follower List,"{'App': 'number', 'IsFastLane': 'boolean', 'FansList': [{'Date': 'string', 'UserName': 'string'}]}",Follower List,FansList,UserName,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Following List,"{'App': 'number', 'IsFastLane': 'boolean', 'Following': [{'Date': 'string', 'UserName': 'string'}]}",Following List,App,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Following List,"{'App': 'number', 'IsFastLane': 'boolean', 'Following': [{'Date': 'string', 'UserName': 'string'}]}",Following List,IsFastLane,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,boolean
-Following List,"{'App': 'number', 'IsFastLane': 'boolean', 'Following': [{'Date': 'string', 'UserName': 'string'}]}",Following List,Following,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Following List,"{'App': 'number', 'IsFastLane': 'boolean', 'Following': [{'Date': 'string', 'UserName': 'string'}]}",Following List,Following,UserName,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Hashtag,"{'HashtagList': [{'HashtagName': 'string', 'HashtagLink': 'string'}]}",Hashtag,HashtagList,HashtagName,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Hashtag,"{'HashtagList': [{'HashtagName': 'string', 'HashtagLink': 'string'}]}",Hashtag,HashtagList,HashtagLink,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Like List,"{'App': 'number', 'ItemFavoriteList': [{'date': 'string', 'link': 'string'}]}",Like List,App,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,number
-Like List,"{'App': 'number', 'ItemFavoriteList': [{'date': 'string', 'link': 'string'}]}",Like List,ItemFavoriteList,date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Like List,"{'App': 'number', 'ItemFavoriteList': [{'date': 'string', 'link': 'string'}]}",Like List,ItemFavoriteList,link,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Login History,"{'LoginHistoryList': [{'Date': 'string', 'IP': 'string', 'DeviceModel': 'string', 'DeviceSystem': 'string', 'NetworkType': 'string', 'Carrier': 'string'}]}",Login History,LoginHistoryList,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Login History,"{'LoginHistoryList': [{'Date': 'string', 'IP': 'string', 'DeviceModel': 'string', 'DeviceSystem': 'string', 'NetworkType': 'string', 'Carrier': 'string'}]}",Login History,LoginHistoryList,IP,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Login History,"{'LoginHistoryList': [{'Date': 'string', 'IP': 'string', 'DeviceModel': 'string', 'DeviceSystem': 'string', 'NetworkType': 'string', 'Carrier': 'string'}]}",Login History,LoginHistoryList,DeviceModel,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Login History,"{'LoginHistoryList': [{'Date': 'string', 'IP': 'string', 'DeviceModel': 'string', 'DeviceSystem': 'string', 'NetworkType': 'string', 'Carrier': 'string'}]}",Login History,LoginHistoryList,DeviceSystem,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Login History,"{'LoginHistoryList': [{'Date': 'string', 'IP': 'string', 'DeviceModel': 'string', 'DeviceSystem': 'string', 'NetworkType': 'string', 'Carrier': 'string'}]}",Login History,LoginHistoryList,NetworkType,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Login History,"{'LoginHistoryList': [{'Date': 'string', 'IP': 'string', 'DeviceModel': 'string', 'DeviceSystem': 'string', 'NetworkType': 'string', 'Carrier': 'string'}]}",Login History,LoginHistoryList,Carrier,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Most Recent Location Data,"{'LocationData': {'Date': 'string', 'GpsData': 'string', 'LastRegion': 'string'}}",Most Recent Location Data,LocationData,Date,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Most Recent Location Data,"{'LocationData': {'Date': 'string', 'GpsData': 'string', 'LastRegion': 'string'}}",Most Recent Location Data,LocationData,GpsData,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Most Recent Location Data,"{'LocationData': {'Date': 'string', 'GpsData': 'string', 'LastRegion': 'string'}}",Most Recent Location Data,LocationData,LastRegion,NO LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Purchase History,"{'SendGifts': {'SendGifts': None}, 'BuyGifts': {'BuyGifts': None}}",Purchase History,SendGifts,SendGifts,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,
-Purchase History,"{'SendGifts': {'SendGifts': None}, 'BuyGifts': {'BuyGifts': None}}",Purchase History,BuyGifts,BuyGifts,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,Missing,MISSING,
-Search History,"{'SearchList': [{'Date': 'string', 'SearchTerm': 'string'}]}",Search History,SearchList,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Search History,"{'SearchList': [{'Date': 'string', 'SearchTerm': 'string'}]}",Search History,SearchList,SearchTerm,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Share History,"{'ShareHistoryList': [{'Date': 'string', 'SharedContent': 'string', 'Link': 'string', 'Method': 'string'}]}",Share History,ShareHistoryList,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Share History,"{'ShareHistoryList': [{'Date': 'string', 'SharedContent': 'string', 'Link': 'string', 'Method': 'string'}]}",Share History,ShareHistoryList,SharedContent,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Share History,"{'ShareHistoryList': [{'Date': 'string', 'SharedContent': 'string', 'Link': 'string', 'Method': 'string'}]}",Share History,ShareHistoryList,Link,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Share History,"{'ShareHistoryList': [{'Date': 'string', 'SharedContent': 'string', 'Link': 'string', 'Method': 'string'}]}",Share History,ShareHistoryList,Method,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,Resolution,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,App Version,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,IDFA,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,GAID,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,Android ID,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,IDFV,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Status,"{'Status List': [{'Resolution': 'string', 'App Version': 'string', 'IDFA': 'string', 'GAID': 'string', 'Android ID': 'string', 'IDFV': 'string', 'Web ID': 'string'}]}",Status,Status List,Web ID,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Video Browsing History,"{'VideoList': [{'Date': 'string', 'Link': 'string'}]}",Video Browsing History,VideoList,Date,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
-Video Browsing History,"{'VideoList': [{'Date': 'string', 'Link': 'string'}]}",Video Browsing History,VideoList,Link,LIST,Missing,NO LIST,Missing,MISSING,Missing,MISSING,Missing,MISSING,string
+column_name,path,list_path,subfield_path,var_type,data_type
+App,"['Favorite Videos', 'App']",,"[""Favorite Videos"", ""App""]",static,number
+App,"['Follower List', 'App']",,"[""Follower List"", ""App""]",static,number
+IsFastLane,"['Follower List', 'IsFastLane']",,"[""Follower List"", ""IsFastLane""]",static,boolean
+App,"['Following List', 'App']",,"[""Following List"", ""App""]",static,number
+IsFastLane,"['Following List', 'IsFastLane']",,"[""Following List"", ""IsFastLane""]",static,boolean
+App,"['Like List', 'App']",,"[""Like List"", ""App""]",static,number
+AdInterestCategories,"['Ad Interests', 'AdInterestCategories']",,"[""Ad Interests"", ""AdInterestCategories""]",static,string
+App,"['Block', 'App']",,"[""Block"", ""App""]",static,number
+App,"['Settings', 'App']",,"[""Settings"", ""App""]",static,number
+App,"['Comments', 'App']",,"[""Comments"", ""App""]",static,number
+CreateDate,"['AIMoji', 'CreateDate']",,"[""AIMoji"", ""CreateDate""]",static,string
+PhoneNumber,"['Auto Fill', 'PhoneNumber']",,"[""Auto Fill"", ""PhoneNumber""]",static,string
+Email,"['Auto Fill', 'Email']",,"[""Auto Fill"", ""Email""]",static,string
+FirstName,"['Auto Fill', 'FirstName']",,"[""Auto Fill"", ""FirstName""]",static,string
+LastName,"['Auto Fill', 'LastName']",,"[""Auto Fill"", ""LastName""]",static,string
+Address,"['Auto Fill', 'Address']",,"[""Auto Fill"", ""Address""]",static,string
+ZipCode,"['Auto Fill', 'ZipCode']",,"[""Auto Fill"", ""ZipCode""]",static,string
+Unit,"['Auto Fill', 'Unit']",,"[""Auto Fill"", ""Unit""]",static,string
+City,"['Auto Fill', 'City']",,"[""Auto Fill"", ""City""]",static,string
+State,"['Auto Fill', 'State']",,"[""Auto Fill"", ""State""]",static,string
+Country,"['Auto Fill', 'Country']",,"[""Auto Fill"", ""Country""]",static,string
+App,"['Profile Information', 'App']",,"[""Profile Information"", ""App""]",static,number
+MostRecentModificationTimeInApp,"['Watch Live Settings', 'MostRecentModificationTimeInApp']",,"[""Watch Live Settings"", ""MostRecentModificationTimeInApp""]",static,string
+MostRecentModificationTimeInWeb,"['Watch Live Settings', 'MostRecentModificationTimeInWeb']",,"[""Watch Live Settings"", ""MostRecentModificationTimeInWeb""]",static,string
+note,"['Activity Summary', 'ActivitySummaryMap', 'note']",,"[""Activity Summary"", ""ActivitySummaryMap"", ""note""]",static,string
+videosCommentedOnSinceAccountRegistration,"['Activity Summary', 'ActivitySummaryMap', 'videosCommentedOnSinceAccountRegistration']",,"[""Activity Summary"", ""ActivitySummaryMap"", ""videosCommentedOnSinceAccountRegistration""]",static,number
+videosSharedSinceAccountRegistration,"['Activity Summary', 'ActivitySummaryMap', 'videosSharedSinceAccountRegistration']",,"[""Activity Summary"", ""ActivitySummaryMap"", ""videosSharedSinceAccountRegistration""]",static,number
+videosWatchedToTheEndSinceAccountRegistration,"['Activity Summary', 'ActivitySummaryMap', 'videosWatchedToTheEndSinceAccountRegistration']",,"[""Activity Summary"", ""ActivitySummaryMap"", ""videosWatchedToTheEndSinceAccountRegistration""]",static,number
+Date,"['Favorite Videos', 'FavoriteVideoList', 'Date']","[""Favorite Videos"", ""FavoriteVideoList""]","""Date""",list,string
+Link,"['Favorite Videos', 'FavoriteVideoList', 'Link']","[""Favorite Videos"", ""FavoriteVideoList""]","""Link""",list,string
+Date,"['Follower List', 'FansList', 'Date']","[""Follower List"", ""FansList""]","""Date""",list,string
+UserName,"['Follower List', 'FansList', 'UserName']","[""Follower List"", ""FansList""]","""UserName""",list,string
+Date,"['Following List', 'Following', 'Date']","[""Following List"", ""Following""]","""Date""",list,string
+UserName,"['Following List', 'Following', 'UserName']","[""Following List"", ""Following""]","""UserName""",list,string
+HashtagName,"['Hashtag', 'HashtagList', 'HashtagName']","[""Hashtag"", ""HashtagList""]","""HashtagName""",list,string
+HashtagLink,"['Hashtag', 'HashtagList', 'HashtagLink']","[""Hashtag"", ""HashtagList""]","""HashtagLink""",list,string
+date,"['Like List', 'ItemFavoriteList', 'date']","[""Like List"", ""ItemFavoriteList""]","""date""",list,string
+link,"['Like List', 'ItemFavoriteList', 'link']","[""Like List"", ""ItemFavoriteList""]","""link""",list,string
+Date,"['Login History', 'LoginHistoryList', 'Date']","[""Login History"", ""LoginHistoryList""]","""Date""",list,string
+IP,"['Login History', 'LoginHistoryList', 'IP']","[""Login History"", ""LoginHistoryList""]","""IP""",list,string
+DeviceModel,"['Login History', 'LoginHistoryList', 'DeviceModel']","[""Login History"", ""LoginHistoryList""]","""DeviceModel""",list,string
+DeviceSystem,"['Login History', 'LoginHistoryList', 'DeviceSystem']","[""Login History"", ""LoginHistoryList""]","""DeviceSystem""",list,string
+NetworkType,"['Login History', 'LoginHistoryList', 'NetworkType']","[""Login History"", ""LoginHistoryList""]","""NetworkType""",list,string
+Carrier,"['Login History', 'LoginHistoryList', 'Carrier']","[""Login History"", ""LoginHistoryList""]","""Carrier""",list,string
+Date,"['Most Recent Location Data', 'LocationData', 'Date']",,"[""Most Recent Location Data"", ""LocationData"", ""Date""]",static,string
+GpsData,"['Most Recent Location Data', 'LocationData', 'GpsData']",,"[""Most Recent Location Data"", ""LocationData"", ""GpsData""]",static,string
+LastRegion,"['Most Recent Location Data', 'LocationData', 'LastRegion']",,"[""Most Recent Location Data"", ""LocationData"", ""LastRegion""]",static,string
+Date,"['Search History', 'SearchList', 'Date']","[""Search History"", ""SearchList""]","""Date""",list,string
+SearchTerm,"['Search History', 'SearchList', 'SearchTerm']","[""Search History"", ""SearchList""]","""SearchTerm""",list,string
+Date,"['Share History', 'ShareHistoryList', 'Date']","[""Share History"", ""ShareHistoryList""]","""Date""",list,string
+SharedContent,"['Share History', 'ShareHistoryList', 'SharedContent']","[""Share History"", ""ShareHistoryList""]","""SharedContent""",list,string
+Link,"['Share History', 'ShareHistoryList', 'Link']","[""Share History"", ""ShareHistoryList""]","""Link""",list,string
+Method,"['Share History', 'ShareHistoryList', 'Method']","[""Share History"", ""ShareHistoryList""]","""Method""",list,string
+Resolution,"['Status', 'Status List', 'Resolution']","[""Status"", ""Status List""]","""Resolution""",list,string
+App Version,"['Status', 'Status List', 'App Version']","[""Status"", ""Status List""]","""App Version""",list,string
+IDFA,"['Status', 'Status List', 'IDFA']","[""Status"", ""Status List""]","""IDFA""",list,string
+GAID,"['Status', 'Status List', 'GAID']","[""Status"", ""Status List""]","""GAID""",list,string
+Android ID,"['Status', 'Status List', 'Android ID']","[""Status"", ""Status List""]","""Android ID""",list,string
+IDFV,"['Status', 'Status List', 'IDFV']","[""Status"", ""Status List""]","""IDFV""",list,string
+Web ID,"['Status', 'Status List', 'Web ID']","[""Status"", ""Status List""]","""Web ID""",list,string
+Date,"['Video Browsing History', 'VideoList', 'Date']","[""Video Browsing History"", ""VideoList""]","""Date""",list,string
+Link,"['Video Browsing History', 'VideoList', 'Link']","[""Video Browsing History"", ""VideoList""]","""Link""",list,string
+Allow DownLoad,"['Settings', 'SettingsMap', 'Allow DownLoad']",,"[""Settings"", ""SettingsMap"", ""Allow DownLoad""]",static,string
+Allow Others to Find Me,"['Settings', 'SettingsMap', 'Allow Others to Find Me']",,"[""Settings"", ""SettingsMap"", ""Allow Others to Find Me""]",static,string
+App Language,"['Settings', 'SettingsMap', 'App Language']",,"[""Settings"", ""SettingsMap"", ""App Language""]",static,string
+Filter Comments,"['Settings', 'SettingsMap', 'Filter Comments']",,"[""Settings"", ""SettingsMap"", ""Filter Comments""]",static,string
+Interests,"['Settings', 'SettingsMap', 'Interests']",,"[""Settings"", ""SettingsMap"", ""Interests""]",static,string
+Personalized Ads,"['Settings', 'SettingsMap', 'Personalized Ads']",,"[""Settings"", ""SettingsMap"", ""Personalized Ads""]",static,string
+Private Account,"['Settings', 'SettingsMap', 'Private Account']",,"[""Settings"", ""SettingsMap"", ""Private Account""]",static,string
+Suggest your account to Facebook friends,"['Settings', 'SettingsMap', 'Suggest your account to Facebook friends']",,"[""Settings"", ""SettingsMap"", ""Suggest your account to Facebook friends""]",static,string
+Suggest your account to contacts,"['Settings', 'SettingsMap', 'Suggest your account to contacts']",,"[""Settings"", ""SettingsMap"", ""Suggest your account to contacts""]",static,string
+Suggest your account to people who open or send links to you,"['Settings', 'SettingsMap', 'Suggest your account to people who open or send links to you']",,"[""Settings"", ""SettingsMap"", ""Suggest your account to people who open or send links to you""]",static,string
+Web Language,"['Settings', 'SettingsMap', 'Web Language']",,"[""Settings"", ""SettingsMap"", ""Web Language""]",static,string
+Who Can Duet With Me,"['Settings', 'SettingsMap', 'Who Can Duet With Me']",,"[""Settings"", ""SettingsMap"", ""Who Can Duet With Me""]",static,string
+Who Can Post Comments,"['Settings', 'SettingsMap', 'Who Can Post Comments']",,"[""Settings"", ""SettingsMap"", ""Who Can Post Comments""]",static,string
+Who Can Send Me Message,"['Settings', 'SettingsMap', 'Who Can Send Me Message']",,"[""Settings"", ""SettingsMap"", ""Who Can Send Me Message""]",static,string
+Who Can Stitch with your videos,"['Settings', 'SettingsMap', 'Who Can Stitch with your videos']",,"[""Settings"", ""SettingsMap"", ""Who Can Stitch with your videos""]",static,string
+Who Can View Videos I Liked,"['Settings', 'SettingsMap', 'Who Can View Videos I Liked']",,"[""Settings"", ""SettingsMap"", ""Who Can View Videos I Liked""]",static,string
+date,"['Comments', 'CommentsList', 'date']","[""Comments"", ""CommentsList""]","""date""",list,string
+comment,"['Comments', 'CommentsList', 'comment']","[""Comments"", ""CommentsList""]","""comment""",list,string
+photo,"['Comments', 'CommentsList', 'photo']","[""Comments"", ""CommentsList""]","""photo""",list,string
+url,"['Comments', 'CommentsList', 'url']","[""Comments"", ""CommentsList""]","""url""",list,string
+PlaceName,"['POI Review', 'ReviewsList', 'PlaceName']","[""POI Review"", ""ReviewsList""]","""PlaceName""",list,string
+Date,"['POI Review', 'ReviewsList', 'Date']","[""POI Review"", ""ReviewsList""]","""Date""",list,string
+Rating,"['POI Review', 'ReviewsList', 'Rating']","[""POI Review"", ""ReviewsList""]","""Rating""",list,string
+Status,"['POI Review', 'ReviewsList', 'Status']","[""POI Review"", ""ReviewsList""]","""Status""",list,string
+Likes,"['POI Review', 'ReviewsList', 'Likes']","[""POI Review"", ""ReviewsList""]","""Likes""",list,string
+ReviewText,"['POI Review', 'ReviewsList', 'ReviewText']","[""POI Review"", ""ReviewsList""]","""ReviewText""",list,string
+bioDescription,"['Profile Information', 'ProfileMap', 'bioDescription']",,"[""Profile Information"", ""ProfileMap"", ""bioDescription""]",static,string
+birthDate,"['Profile Information', 'ProfileMap', 'birthDate']",,"[""Profile Information"", ""ProfileMap"", ""birthDate""]",static,string
+emailAddress,"['Profile Information', 'ProfileMap', 'emailAddress']",,"[""Profile Information"", ""ProfileMap"", ""emailAddress""]",static,string
+likesReceived,"['Profile Information', 'ProfileMap', 'likesReceived']",,"[""Profile Information"", ""ProfileMap"", ""likesReceived""]",static,string
+profilePhoto,"['Profile Information', 'ProfileMap', 'profilePhoto']",,"[""Profile Information"", ""ProfileMap"", ""profilePhoto""]",static,string
+profileVideo,"['Profile Information', 'ProfileMap', 'profileVideo']",,"[""Profile Information"", ""ProfileMap"", ""profileVideo""]",static,string
+telephoneNumber,"['Profile Information', 'ProfileMap', 'telephoneNumber']",,"[""Profile Information"", ""ProfileMap"", ""telephoneNumber""]",static,string
+userName,"['Profile Information', 'ProfileMap', 'userName']",,"[""Profile Information"", ""ProfileMap"", ""userName""]",static,string
+Allow agencies to find and invite you,"['Go Live Settings', 'SettingsMap', 'Allow agencies to find and invite you']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow agencies to find and invite you""]",static,string
+Allow others to invite you to co-host in LIVE,"['Go Live Settings', 'SettingsMap', 'Allow others to invite you to co-host in LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow others to invite you to co-host in LIVE""]",static,string
+Allow people to send and receive comments during your LIVE,"['Go Live Settings', 'SettingsMap', 'Allow people to send and receive comments during your LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow people to send and receive comments during your LIVE""]",static,string
+Allow suggested LIVE hosts to invite you to co-host in LIVE,"['Go Live Settings', 'SettingsMap', 'Allow suggested LIVE hosts to invite you to co-host in LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow suggested LIVE hosts to invite you to co-host in LIVE""]",static,string
+Allow viewers to request to go LIVE with you,"['Go Live Settings', 'SettingsMap', 'Allow viewers to request to go LIVE with you']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow viewers to request to go LIVE with you""]",static,string
+Allow viewers to see and send questions and answers in your LIVE,"['Go Live Settings', 'SettingsMap', 'Allow viewers to see and send questions and answers in your LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow viewers to see and send questions and answers in your LIVE""]",static,string
+Allow viewers to send you gifts during your LIVE,"['Go Live Settings', 'SettingsMap', 'Allow viewers to send you gifts during your LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Allow viewers to send you gifts during your LIVE""]",static,string
+Hide comments that contain the following keywords from your LIVE,"['Go Live Settings', 'SettingsMap', 'Hide comments that contain the following keywords from your LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Hide comments that contain the following keywords from your LIVE""]",static,array
+Hide potential spam or offensive comments from your LIVE,"['Go Live Settings', 'SettingsMap', 'Hide potential spam or offensive comments from your LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""Hide potential spam or offensive comments from your LIVE""]",static,string
+People you assigned to moderate your LIVE,"['Go Live Settings', 'SettingsMap', 'People you assigned to moderate your LIVE']",,"[""Go Live Settings"", ""SettingsMap"", ""People you assigned to moderate your LIVE""]",static,array
+Show your username and gift information in features with ranking lists,"['Go Live Settings', 'SettingsMap', 'Show your username and gift information in features with ranking lists']",,"[""Go Live Settings"", ""SettingsMap"", ""Show your username and gift information in features with ranking lists""]",static,string
+app,"['Watch Live Settings', 'WatchLiveSettingsMap', 'app']",,"[""Watch Live Settings"", ""WatchLiveSettingsMap"", ""app""]",static,string
+web,"['Watch Live Settings', 'WatchLiveSettingsMap', 'web']",,"[""Watch Live Settings"", ""WatchLiveSettingsMap"", ""web""]",static,string
+Date,"['RecentlyDeletedPosts', 'PostList', 'Date']","[""RecentlyDeletedPosts"", ""PostList""]","""Date""",list,string
+DateDeleted,"['RecentlyDeletedPosts', 'PostList', 'DateDeleted']","[""RecentlyDeletedPosts"", ""PostList""]","""DateDeleted""",list,string
+Link,"['RecentlyDeletedPosts', 'PostList', 'Link']","[""RecentlyDeletedPosts"", ""PostList""]","""Link""",list,string
+Likes,"['RecentlyDeletedPosts', 'PostList', 'Likes']","[""RecentlyDeletedPosts"", ""PostList""]","""Likes""",list,string
+ContentDisclosure,"['RecentlyDeletedPosts', 'PostList', 'ContentDisclosure']","[""RecentlyDeletedPosts"", ""PostList""]","""ContentDisclosure""",list,string
+AIGeneratedContent,"['RecentlyDeletedPosts', 'PostList', 'AIGeneratedContent']","[""RecentlyDeletedPosts"", ""PostList""]","""AIGeneratedContent""",list,string
+Sound,"['RecentlyDeletedPosts', 'PostList', 'Sound']","[""RecentlyDeletedPosts"", ""PostList""]","""Sound""",list,string
+Location,"['RecentlyDeletedPosts', 'PostList', 'Location']","[""RecentlyDeletedPosts"", ""PostList""]","""Location""",list,string
+Title,"['RecentlyDeletedPosts', 'PostList', 'Title']","[""RecentlyDeletedPosts"", ""PostList""]","""Title""",list,string
+AddYoursText,"['RecentlyDeletedPosts', 'PostList', 'AddYoursText']","[""RecentlyDeletedPosts"", ""PostList""]","""AddYoursText""",list,string
+Date,"['Videos', 'VideoList', 'Date']","[""Videos"", ""VideoList""]","""Date""",list,string
+Link,"['Videos', 'VideoList', 'Link']","[""Videos"", ""VideoList""]","""Link""",list,string
+Likes,"['Videos', 'VideoList', 'Likes']","[""Videos"", ""VideoList""]","""Likes""",list,string
+WhoCanView,"['Videos', 'VideoList', 'WhoCanView']","[""Videos"", ""VideoList""]","""WhoCanView""",list,string
+AllowComments,"['Videos', 'VideoList', 'AllowComments']","[""Videos"", ""VideoList""]","""AllowComments""",list,string
+AllowStitches,"['Videos', 'VideoList', 'AllowStitches']","[""Videos"", ""VideoList""]","""AllowStitches""",list,string
+AllowDuets,"['Videos', 'VideoList', 'AllowDuets']","[""Videos"", ""VideoList""]","""AllowDuets""",list,string
+AllowStickers,"['Videos', 'VideoList', 'AllowStickers']","[""Videos"", ""VideoList""]","""AllowStickers""",list,string
+AllowSharingToStory,"['Videos', 'VideoList', 'AllowSharingToStory']","[""Videos"", ""VideoList""]","""AllowSharingToStory""",list,string
+ContentDisclosure,"['Videos', 'VideoList', 'ContentDisclosure']","[""Videos"", ""VideoList""]","""ContentDisclosure""",list,string
+AIGeneratedContent,"['Videos', 'VideoList', 'AIGeneratedContent']","[""Videos"", ""VideoList""]","""AIGeneratedContent""",list,string
+Sound,"['Videos', 'VideoList', 'Sound']","[""Videos"", ""VideoList""]","""Sound""",list,string
+Location,"['Videos', 'VideoList', 'Location']","[""Videos"", ""VideoList""]","""Location""",list,string
+Title,"['Videos', 'VideoList', 'Title']","[""Videos"", ""VideoList""]","""Title""",list,string
+AddYoursText,"['Videos', 'VideoList', 'AddYoursText']","[""Videos"", ""VideoList""]","""AddYoursText""",list,string
+Desktop notification,"['Settings', 'SettingsMap', 'Push Notification', 'Desktop notification']",,"[""Settings"", ""SettingsMap"", ""Push Notification"", ""Desktop notification""]",static,string
+New Comments on My Video,"['Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",,"[""Settings"", ""SettingsMap"", ""Push Notification"", ""New Comments on My Video""]",static,string
+New Fans,"['Settings', 'SettingsMap', 'Push Notification', 'New Fans']",,"[""Settings"", ""SettingsMap"", ""Push Notification"", ""New Fans""]",static,string
+New Likes on My Video,"['Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",,"[""Settings"", ""SettingsMap"", ""Push Notification"", ""New Likes on My Video""]",static,string
+Description,"['Profile Information', 'ProfileMap', 'PlatformInfo', 'Description']","[""Profile Information"", ""ProfileMap"", ""PlatformInfo""]","""Description""",list,string
+Name,"['Profile Information', 'ProfileMap', 'PlatformInfo', 'Name']","[""Profile Information"", ""ProfileMap"", ""PlatformInfo""]","""Name""",list,string
+Platform,"['Profile Information', 'ProfileMap', 'PlatformInfo', 'Platform']","[""Profile Information"", ""ProfileMap"", ""PlatformInfo""]","""Platform""",list,string
+Profile Photo,"['Profile Information', 'ProfileMap', 'PlatformInfo', 'Profile Photo']","[""Profile Information"", ""ProfileMap"", ""PlatformInfo""]","""Profile Photo""",list,string
