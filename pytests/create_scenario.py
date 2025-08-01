@@ -108,7 +108,7 @@ if __name__ == "__main__":
             print(f"{id} - {shape[0]} rows x {shape[1]} cols")
     else:
         scenario = create_scenario(args.platform, inputfile, tables=args.tables)
-        logging.info(f"Writing output to {args.output or 'stdout'}")
+        logging.info(f"Writing output to {outputfile.name}")
         json.dump(scenario, outputfile, indent=4)
     print(args.print_tables)
     if args.print_tables:
