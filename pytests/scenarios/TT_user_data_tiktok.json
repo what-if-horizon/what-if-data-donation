@@ -1,0 +1,51 @@
+{
+  "input_file": "pytests/public_testfiles/user_data_tiktok.json",
+  "platform": "tiktok",
+  "expected_output": [
+    {
+      "id": "activity_summary",
+      "data_frame": {
+        "columns": [
+          "note",
+          "videosSharedSinceAccountRegistration",
+          "videosCommentedOnSinceAccountRegistration",
+          "videosWatchedToTheEndSinceAccountRegistration"
+        ],
+        "data": [["data may have delays of up to several days", 5, 8, 22]]
+      }
+    },
+    {
+      "id": "favorite_videos",
+      "data_frame": {
+        "columns": ["App", "__source_list__", "Date", "Link"],
+        "data": [
+          [1, "FavoriteVideoList", "2024-12-04 08:44:34", "https://www.tiktokv.com/share/video/7442044192852839713/"],
+          [1, "FavoriteVideoList", "2024-11-26 07:50:29", "https://www.tiktokv.com/share/video/7412759851861806369/"],
+          [1, "FavoriteVideoList", "2024-11-20 15:23:30", "https://www.tiktokv.com/share/video/7413806429255126304/"],
+          [1, "FavoriteVideoList", "2024-11-20 15:21:49", "https://www.tiktokv.com/share/video/7424596895051386155/"]
+        ]
+      }
+    },
+    {
+      "id": "follower_list",
+      "data_frame": {
+        "columns": ["App", "IsFastLane", "FansList", "__source_list__", "Date", "UserName"],
+        "data": [
+          [
+            1,
+            false,
+            [
+              {
+                "Date": "2024-11-27 07:12:41",
+                "UserName": "username1"
+              }
+            ],
+            "FansList",
+            "2024-11-27 07:12:41",
+            "username1"
+          ]
+        ]
+      }
+    }
+  ]
+}
