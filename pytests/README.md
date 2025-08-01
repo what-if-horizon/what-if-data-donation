@@ -70,7 +70,7 @@ options:
 ```
 
 Example usage:
-List all table ids in the user_datapytests/scenarios/**/*PRIVATE.json_tiktok.json input file:
+List all table ids in the user_data_tiktok.json input file:
 ```{sh}
 $ python pytests/create_scenario.py tiktok pytests/public_testfiles/user_data_tiktok.json --list-tables
 ```
@@ -156,6 +156,9 @@ pytest --html=pytests/output/report_public_files.html
 
 ```
 
+#### Compare with data takeouts
+Compare the scenario tables with the raw data takeouts to check if the data is formatted correctly
+
 ### Private unit tests
 #### Creating private test files
 1. Create the folder /pytests/private_testfiles. This folder is included in .gitignore to avoid accidentally pushing the private test files to GIT
@@ -232,3 +235,6 @@ To generate an HTML including the results of the pytest run:
 pytest --html=pytests/output/report_private_files.html
 
 ```
+
+#### Compare with data takeouts
+Compare the scenario tables with the raw data takeouts to check if the data is formatted correctly
