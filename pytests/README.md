@@ -152,7 +152,7 @@ pytest -v
 ##### Create HTML
 To generate an HTML including the results of the pytest run:
 ```{sh}
-pytest --html=report_public_files.html
+pytest --html=pytests/output/report_public_files.html
 
 ```
 
@@ -229,6 +229,6 @@ pytest -v
 ##### Create HTML
 To generate an HTML including the results of the pytest run:
 ```{sh}
-pytest --html=report_private_files.html
+pytest --html=pytests/output/report_private_files.html
 
 ```
