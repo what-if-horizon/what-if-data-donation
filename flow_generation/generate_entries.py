@@ -3,6 +3,8 @@
 # Note: to make sure vscode finds the port package, install with
 #       pip install -e .[dev]
 
+import argparse
+import json
 from pathlib import Path
 from typing import Iterable
 
@@ -74,22 +76,38 @@ infiles = dict(
 )
 
 
+# % Generate single entry
+def write_entries(outfile):
+    lines = []
+    lines.append(f'"""\n{DOCSTRING.strip()}\n"""\n\n')
+    lines.append("from port.helpers.parsers import Entry\n\n")
+
+    for name, infile in infiles.items():
+        lines.append(f"{name}_ENTRIES: list[Entry] = [\n")
+        for entry in extract_entries_from_csv(infile):
+            lines.append(f"    {repr(entry)},\n")
+        lines.append("]\n\n")
+
+    print(f"Writing output to {outfile}")
+    with open(outfile, "w") as f:
+        f.writelines(lines)
+
+
 # %%
 # Generate entries data file
-
-
-lines = []
-lines.append(f'"""\n{DOCSTRING.strip()}\n"""\n\n')
-lines.append("from port.helpers.parsers import Entry\n\n")
-
-for name, infile in infiles.items():
-    lines.append(f"{name}_ENTRIES: list[Entry] = [\n")
-    for entry in extract_entries_from_csv(infile):
-        lines.append(f"    {repr(entry)},\n")
-    lines.append("]\n\n")
-
-outfile = "packages/python/port/helpers/entries_data.py"
-print(f"Writing output to {outfile}")
-with open(outfile, "w") as f:
-    f.writelines(lines)
-# %%
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "entry",
+        nargs="?",
+        help="Print a single platform:id entry to stdout rather than generating the entries file (for testing purposes)",
+    )
+    args = parser.parse_args()
+    if args.entry:
+        platform, table_id = args.entry.split(":")
+        entries = {e.table: e for e in extract_entries_from_csv(infiles[platform])}
+        print(json.dumps(entries[table_id]._asdict(), indent=2))
+        print()
+        print(entries[table_id])
+    else:
+        write_entries(outfile="packages/python/port/helpers/entries_data.py")

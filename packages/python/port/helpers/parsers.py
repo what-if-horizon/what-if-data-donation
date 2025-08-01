@@ -11,7 +11,7 @@ Columns: TypeAlias = Annotated[
 
 
 class Entry(NamedTuple):
-    table: Annotated[str, "Name of the table to generate"]
+    table: Annotated[str, "ID of the table to generate"]
     filename: Annotated[str | None, "Filename from which to get information (or None for single-file donations)"]
     static_fields: Annotated[
         Columns,
