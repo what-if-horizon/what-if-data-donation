@@ -1,0 +1,720 @@
+{
+    "input_file": "pytests/public_testfiles/X_public_test_files.zip",
+    "platform": "twitter",
+    "expected_output": [
+        {
+            "id": "account",
+            "data_frame": {
+                "columns": [
+                    "email",
+                    "createdVia",
+                    "username",
+                    "accountId",
+                    "createdAt",
+                    "accountDisplayName"
+                ],
+                "data": [
+                    [
+                        "testfile@gmail.com",
+                        "oauth:303300",
+                        "TestFile0",
+                        "1348977538437120",
+                        "2020-10-02T15:17:21.455Z",
+                        "TF"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "account-creation-ip",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "userCreationIp"
+                ],
+                "data": [
+                    [
+                        "131977538437120",
+                        "261.106.121.10"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "account-label",
+            "data_frame": {
+                "columns": [
+                    "accountLabel"
+                ],
+                "data": [
+                    [
+                        {}
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "account-timezone",
+            "data_frame": {
+                "columns": [
+                    "accountId"
+                ],
+                "data": [
+                    [
+                        "1312048977437120"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "device-token",
+            "data_frame": {
+                "columns": [
+                    "clientApplicationId",
+                    "token",
+                    "createdAt",
+                    "lastSeenAt",
+                    "clientApplicationName"
+                ],
+                "data": [
+                    [
+                        "30330",
+                        "oQQHR0GSNdRFHadMQZN0BM7eqJHBlI",
+                        "2023-10-26T09:41:09.754Z",
+                        "2023-10-26T09:41:09.756Z",
+                        "Twitter Web App (Twitter. Inc)"
+                    ],
+                    [
+                        "30333",
+                        "EMAvJ9wYBkbB7bbLiDW02nSeNzxGN1K3",
+                        "2024-05-06T10:10:16.610Z",
+                        "2024-05-06T10:10:16.611Z",
+                        "Twitter Web App (Twitter. Inc)"
+                    ],
+                    [
+                        "3030",
+                        "t0qlmM2LPOCJWPG53tfna3qRPCZwxuz5",
+                        "2024-10-24T14:24:56.332Z",
+                        "2024-10-24T14:34:28.468Z",
+                        "Twitter Web App (Twitter. Inc)"
+                    ],
+                    [
+                        "258",
+                        "Jx11s6pOFe4M3KClohxqsSy4k1my",
+                        "2024-10-24T15:27:38.392Z",
+                        "2024-10-24T15:27:38.395Z",
+                        "Twitter for Android (Twitter, Inc.)"
+                    ],
+                    [
+                        "3300",
+                        "2Ym2rikljh48FSBnWqbo4pPKnPZmG",
+                        "2025-02-09T20:13:39.983Z",
+                        "2025-02-09T20:13:39.985Z",
+                        "Twitter Web App (Twitter. Inc)"
+                    ],
+                    [
+                        "3300",
+                        "RLvlq4sZ7xNZpTghCLywVGsAZ1OqWGGd",
+                        "2024-10-24T14:19:05.792Z",
+                        "2025-02-20T12:32:21.265Z",
+                        "Twitter Web App (Twitter. Inc)"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "direct-message-headers",
+            "data_frame": {
+                "columns": [
+                    "conversationId",
+                    "id",
+                    "senderId",
+                    "recipientId",
+                    "createdAt"
+                ],
+                "data": [
+                    [
+                        "7849082-1377538437120",
+                        null,
+                        null,
+                        null,
+                        null
+                    ],
+                    [
+                        "171421468-48977538437120",
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "expanded-profile",
+            "data_frame": {
+                "columns": [
+                    "expandedProfile"
+                ],
+                "data": [
+                    [
+                        {}
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "follower",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "userLink"
+                ],
+                "data": [
+                    [
+                        "275019",
+                        "https://twitter.com/intent/user?user_id=blabla"
+                    ],
+                    [
+                        "1332646",
+                        "https://twitter.com/intent/user?user_id=133962146"
+                    ],
+                    [
+                        "1793",
+                        "https://twitter.com/intent/user?user_id=173073"
+                    ],
+                    [
+                        "1793",
+                        "https://twitter.com/intent/user?user_id=17882"
+                    ],
+                    [
+                        "10511008",
+                        "https://twitter.com/intent/user?user_id=1052931008"
+                    ],
+                    [
+                        "67649",
+                        "https://twitter.com/intent/user?user_id=1467649"
+                    ],
+                    [
+                        "92",
+                        "https://twitter.com/intent/user?user_id=92"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "following",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "userLink"
+                ],
+                "data": [
+                    [
+                        "41676",
+                        "https://twitter.com/intent/user?user_id=41676"
+                    ],
+                    [
+                        "1096",
+                        "https://twitter.com/intent/user?user_id=10996"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "ip-audit",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "createdAt",
+                    "loginIp",
+                    "loginPortNumber"
+                ],
+                "data": [
+                    [
+                        "1312037120",
+                        "2025-01-21T10:12:52.000Z",
+                        "7.0.3.17",
+                        "0"
+                    ],
+                    [
+                        "1312048437120",
+                        "2025-01-20T09:38:20.000Z",
+                        "47.60",
+                        "0"
+                    ],
+                    [
+                        "13127538437120",
+                        "2025-01-19T17:01:51.000Z",
+                        "47.60",
+                        "0"
+                    ],
+                    [
+                        "1312048437120",
+                        "2025-01-18T21:33:00.000Z",
+                        "47..127",
+                        "0"
+                    ],
+                    [
+                        "1312048120",
+                        "2025-01-18T06:00:21.000Z",
+                        "47.60",
+                        "0"
+                    ],
+                    [
+                        "1312037120",
+                        "2025-01-17T23:27:59.000Z",
+                        "47.60",
+                        "0"
+                    ],
+                    [
+                        "1312037120",
+                        "2025-01-16T23:54:50.000Z",
+                        "47.60",
+                        "0"
+                    ],
+                    [
+                        "131204837120",
+                        "2025-01-15T23:11:44.000Z",
+                        "47.10",
+                        "0"
+                    ],
+                    [
+                        "131204437120",
+                        "2025-01-15T14:51:42.000Z",
+                        "84.69",
+                        "0"
+                    ],
+                    [
+                        "131204837120",
+                        "2025-01-15T11:53:56.000Z",
+                        "47.224",
+                        "0"
+                    ],
+                    [
+                        "13120437120",
+                        "2025-01-14T17:18:29.000Z",
+                        "31.41",
+                        "0"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "key-registry",
+            "data_frame": {
+                "columns": [
+                    "userId",
+                    "userAgent",
+                    "registrationToken",
+                    "identityKey",
+                    "createdAt",
+                    "deviceId"
+                ],
+                "data": [
+                    [
+                        "1312048977538437120",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "like",
+            "data_frame": {
+                "columns": [
+                    "tweetId",
+                    "fullText",
+                    "expandedUrl"
+                ],
+                "data": [
+                    [
+                        "189877387",
+                        "blablabla",
+                        "https://twitter.com/i/web/status/181077387"
+                    ],
+                    [
+                        "187878645949",
+                        "blabla",
+                        "https://twitter.com/i/web/status/18749"
+                    ],
+                    [
+                        "13611265",
+                        "blablabla",
+                        "https://twitter.com/i/web/status/16165"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "manifest",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "userName",
+                    "displayName",
+                    "sizeBytes",
+                    "generationDate",
+                    "isPartialArchive",
+                    "maxPartSizeBytes",
+                    "fileName",
+                    "directory",
+                    "name",
+                    "globalName",
+                    "count",
+                    "mediaDirectory"
+                ],
+                "data": [
+                    [
+                        "13128437120",
+                        "testfi",
+                        "test",
+                        "1986",
+                        "2025-03-15T10:44:34.672Z",
+                        false,
+                        "53200",
+                        null,
+                        "data/",
+                        "README.txt",
+                        null,
+                        null,
+                        "data/tweets_media"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "periscope-account-information",
+            "data_frame": {
+                "columns": [
+                    "displayName",
+                    "digitsId",
+                    "username",
+                    "twitterId",
+                    "id",
+                    "twitterScreenName",
+                    "isTwitterUser",
+                    "createdAt"
+                ],
+                "data": [
+                    [
+                        "Tes",
+                        "",
+                        "test",
+                        "13538437120",
+                        "1PmKqGjo",
+                        "Test",
+                        true,
+                        "2022-03-29T20:35:10.756797706Z"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "periscope-ban-information",
+            "data_frame": {
+                "columns": [
+                    "periscopeBanInformation"
+                ],
+                "data": [
+                    [
+                        {}
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "periscope-profile-description",
+            "data_frame": {
+                "columns": [
+                    "bio"
+                ],
+                "data": [
+                    [
+                        ""
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "profile",
+            "data_frame": {
+                "columns": [
+                    "bio",
+                    "website",
+                    "location",
+                    "avatarMediaUrl",
+                    "headerMediaUrl"
+                ],
+                "data": [
+                    [
+                        "",
+                        "",
+                        "",
+                        "https://pbs.twimg.com/profile_images/17022968/Utlf.jpg",
+                        "https://pbs.twimg.com/profile_banners/18437120/16128"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "screen-name-change",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "changedAt",
+                    "changedFrom",
+                    "changedTo"
+                ],
+                "data": [
+                    [
+                        "13437120",
+                        "2021-09-15T14:46:35.000Z",
+                        "test",
+                        "test2"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "tweet-headers",
+            "data_frame": {
+                "columns": [
+                    "tweet_id",
+                    "user_id",
+                    "created_at"
+                ],
+                "data": [
+                    [
+                        "bal",
+                        "bla",
+                        "Thu Feb 20 12:35:53 +0000 2025"
+                    ],
+                    [
+                        "18672670214210",
+                        "18977538437120",
+                        "Thu Dec 12 16:52:18 +0000 2024"
+                    ],
+                    [
+                        "bla",
+                        "bla",
+                        "Thu Nov 14 15:08:36 +0000 2024"
+                    ],
+                    [
+                        "bla",
+                        "bla",
+                        "Wed Aug 24 19:47:29 +0000 2022"
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "tweets",
+            "data_frame": {
+                "columns": [
+                    "editableUntil",
+                    "editsRemaining",
+                    "isEditEligible",
+                    "retweeted",
+                    "source",
+                    "url",
+                    "expanded_url",
+                    "display_url",
+                    "favorite_count",
+                    "id_str",
+                    "truncated",
+                    "retweet_count",
+                    "id",
+                    "possibly_sensitive",
+                    "created_at",
+                    "favorited",
+                    "full_text",
+                    "lang",
+                    "name",
+                    "screen_name",
+                    "in_reply_to_status_id_str",
+                    "in_reply_to_user_id",
+                    "in_reply_to_status_id",
+                    "in_reply_to_screen_name",
+                    "in_reply_to_user_id_str",
+                    "text",
+                    "media_url",
+                    "media_url_https",
+                    "w",
+                    "h",
+                    "resize",
+                    "type",
+                    "source_status_id",
+                    "source_user_id",
+                    "source_user_id_str",
+                    "source_status_id_str",
+                    "__source_list__",
+                    "indices"
+                ],
+                "data": [
+                    [
+                        "2025-02-20T13:35:53.000Z",
+                        "5",
+                        true,
+                        false,
+                        "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+                        null,
+                        null,
+                        null,
+                        "0",
+                        null,
+                        false,
+                        "1",
+                        null,
+                        false,
+                        "Thu Feb 20 12:35:53 +0000 2025",
+                        false,
+                        "blabla",
+                        "en",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "urls",
+                        [
+                            "243",
+                            "266"
+                        ]
+                    ],
+                    [
+                        "2022-08-24T20:17:29.308Z",
+                        "5",
+                        false,
+                        false,
+                        "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+                        null,
+                        null,
+                        null,
+                        "0",
+                        null,
+                        false,
+                        "0",
+                        null,
+                        null,
+                        "Wed Aug 24 19:47:29 +0000 2022",
+                        false,
+                        "",
+                        "en",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "user_mentions",
+                        [
+                            "3",
+                            "19"
+                        ]
+                    ],
+                    [
+                        "2022-08-24T20:17:29.308Z",
+                        "5",
+                        false,
+                        false,
+                        "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+                        null,
+                        null,
+                        null,
+                        "0",
+                        null,
+                        false,
+                        "0",
+                        null,
+                        null,
+                        "Wed Aug 24 19:47:29 +0000 2022",
+                        false,
+                        "",
+                        "en",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "user_mentions",
+                        [
+                            "115",
+                            "120"
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "verified",
+            "data_frame": {
+                "columns": [
+                    "accountId",
+                    "verified"
+                ],
+                "data": [
+                    [
+                        "1538437120",
+                        false
+                    ]
+                ]
+            }
+        },
+        {
+            "id": "verified-organization",
+            "data_frame": {
+                "columns": [
+                    "verifiedOrganization"
+                ],
+                "data": [
+                    [
+                        {}
+                    ]
+                ]
+            }
+        }
+    ]
+}
