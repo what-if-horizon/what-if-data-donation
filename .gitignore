@@ -61,3 +61,5 @@ structure_donations/Processed_structure_donations/Youtube/Raw
 structure_donations/Processed_structure_donations/Twitter/Raw
 
 /pytests/private_testfiles
+pytests/scenarios/*PRIVATE.json
+
