@@ -10,7 +10,8 @@ dependencies = [
 dev = [
     "pandas-stubs",
     "pytest",
-    "pytest-html"
+    "pytest-html",
+    "tabulate",
 ]
 
 [tool.setuptools]

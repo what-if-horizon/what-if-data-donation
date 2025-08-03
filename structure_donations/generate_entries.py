@@ -21,7 +21,8 @@ To generate this file, please run structure/flow_generation/generate_entries.py
 which will use the Merged_structures_*.csv to determine the required entries.
 """
 
-def extract_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entry:
+
+def extract_entry(filename: str | None, table: str, schema_group: pd.DataFrame) -> Entry:
     """Generate an Entry for a group of rows from the structure csv file
 
     Each entry represents a table that should be generated in the donation flow,
@@ -36,43 +37,51 @@ def extract_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entr
         Entry: a single Entry object
     """
     entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
-    seen_static = set()
+
+    def get_path(value):
+        # This can be removed if {list,subfield}_path is guaranteed to be a tuple
+        value = json.loads(value)
+        if isinstance(value, list):
+            return tuple(value)
+        return value
 
     for _, row in schema_group.iterrows():
         colname = row["column_name"]
-        subfield_path = tuple(row["subfield_path"].split("."))
-        if row["var_type"] == "static":
-            entry.static_fields[colname] = subfield_path
-        else:
-            list_path = tuple(row["list_path"].split("."))
-            entry.list_blocks.setdefault(list_path, {})[colname] = subfield_path
+        subfield_path = get_path(row["subfield_path"])
+        match row["var_type"]:
+            case "skip":
+                continue
+            case "static":
+                entry.static_fields[colname] = subfield_path
+            case "list":
+                list_path = get_path(row["list_path"])
+                entry.list_blocks.setdefault(list_path, {})[colname] = subfield_path
+            case _:
+                raise ValueError(f"Unknown var_type: {row['var_type']}")
     return entry
 
 
 def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
     schema_df = pd.read_csv(infile)
     schema_df.columns = schema_df.columns.str.strip()
-    if "json_name" in schema_df.columns:
-        schema_df = schema_df.dropna(subset=["json_name"])
-    else:
-        schema_df["json_name"] = None
-    if "id" in schema_df:
-        schema_df["table_id"] = schema_df["id"].str.split(":").str[0]
-    else:
-        schema_df["table_id"] = schema_df["variable"].apply(snake_case)
+    schema_df["table_id"] = schema_df["id"].str.split(":").str[0]
 
-    schema_df = schema_df.dropna(subset=["row_path"])
-    schema_df = schema_df[schema_df["row_path"] != "No data"]
     for table_id, group in schema_df.groupby("table_id"):
-        (filename,) = set(group["json_name"])
+        assert isinstance(table_id, str)
+        if "variable" not in group:
+            filename = None
+        else:
+            print(table_id, set(group["variable"]))
+            (filename,) = set(group["variable"])
         yield extract_entry(filename, table_id, group)
 
 
 # %%
 BASE_PATH = Path.cwd() / "structure_donations" / "Processed_structure_donations"
 infiles = dict(
-    #TIKTOK=BASE_PATH / "TikTok/Final/Merged_structures_TT.csv",
+    TIKTOK=BASE_PATH / "TikTok/Final/Merged_structures_TT.csv",
     X=BASE_PATH / "Twitter/Final/Merged_structures_X.csv",
+    IG=BASE_PATH / "Instagram/Final/Merged_structures_IG.csv",
 )
 
 

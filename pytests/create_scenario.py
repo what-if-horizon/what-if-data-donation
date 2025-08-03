@@ -31,7 +31,7 @@ def extract_tables(flow: PropsUIPromptConsentFormViz, tables: list[str] | None):
 
 def get_flow(platform: str, inputfile: Path) -> PropsUIPromptConsentFormViz:
     flow_module = importlib.import_module(f"port.donation_flows.{platform}")
-    return flow_module.create_donation_flow([inputfile])
+    return flow_module.create_donation_flow([str(inputfile)])
 
 
 def list_tables(platform: str, inputfile: Path):
@@ -50,7 +50,7 @@ class Renderers:
     def json(scenario, file):
         json.dump(scenario, file, indent=4)
 
-    def html(tables, file):
+    def html(scenario, file):
         print(
             """<html><head>
     <meta charset="utf-8">
@@ -74,7 +74,7 @@ class Renderers:
             )
         print("</div></body></html>", file=file)
 
-    def md(tables, file):
+    def md(scenario, file):
         for table in scenario["expected_output"]:
             print(f"\n# Table '{table['id']}'\n", file=file)
             df = pd.DataFrame(data=table["data_frame"]["data"], columns=table["data_frame"]["columns"])
@@ -83,7 +83,7 @@ class Renderers:
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("platform", choices=["tiktok", "facebook", "tiktok", "twitter", "youtube"])
+    parser.add_argument("platform", choices=["tiktok", "facebook", "instagram", "twitter", "youtube"])
     parser.add_argument("inputfile", help="The path or name of the donation file (i.e. .zip or .json)", type=Path)
     parser.add_argument(
         "outputfile",
@@ -103,10 +103,26 @@ if __name__ == "__main__":
     logging.basicConfig(format="[%(levelname)-7s:%(name)-15s] %(message)s", level=logging.INFO)
 
     # Make inputfile relative to project root
-    inputfile: Path = args.inputfile.resolve().relative_to(Path.cwd())
+    try:
+        inputfile: Path = args.inputfile.resolve().relative_to(Path.cwd())
+    except ValueError as e:
+        logging.warning(f"Could not make relative path, so scenario contains an absolute path: {e}")
+        inputfile = args.inputfile.resolve()
     if not inputfile.exists():
         raise FileNotFoundError(f"Cannot find input file {inputfile}")
 
     if args.list_tables:
         for id, shape in list_tables(args.platform, inputfile):
             print(f"{id} - {shape[0]} rows x {shape[1]} cols")
+    else:
+        if args.format:
+            format = args.format
+        elif args.outputfile == "-":
+            format = "json"
+        else:
+            format = Path(args.outputfile).suffix.lstrip(".")
+        outputfile = sys.stdout if args.outputfile == "-" else open(args.outputfile, "w")
+        scenario = create_scenario(args.platform, inputfile, tables=args.tables)
+        if not scenario["expected_output"]:
+            logging.warning("No tables generated!")
+        getattr(Renderers, format)(scenario, outputfile)

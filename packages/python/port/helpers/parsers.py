@@ -2,7 +2,7 @@ import json
 from typing import Annotated, NamedTuple, TypeAlias
 
 import pandas as pd
-from port.helpers.readers import read_js
+from port.helpers.readers import read_js, read_json
 
 Columns: TypeAlias = Annotated[
     dict[str, tuple[str, ...]],
@@ -41,8 +41,10 @@ def get_list(d: dict, *keys):
 
 def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None = None) -> pd.DataFrame:
     if entry.filename:
-        # TODO: (create a function to) dynamically use the right read_* function depending on extension
-        data = read_js(file_input, ["/" + entry.filename])
+        if entry.filename.endswith(".js"):
+            data = read_js(file_input, ["/" + entry.filename])
+        else:
+            data = read_json(file_input, ["/" + str(entry.filename)])
     else:
         with open(file_input[0], "r", encoding="utf-8") as f:
             data = [json.load(f)]

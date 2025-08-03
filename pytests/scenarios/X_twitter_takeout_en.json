@@ -3,13 +3,6 @@
   "platform": "twitter",
   "expected_output": [
     {
-      "id": "account-label",
-      "data_frame": {
-        "columns": ["accountLabel"],
-        "data": [[{}]]
-      }
-    },
-    {
       "id": "follower",
       "data_frame": {
         "columns": ["accountId", "userLink"],
