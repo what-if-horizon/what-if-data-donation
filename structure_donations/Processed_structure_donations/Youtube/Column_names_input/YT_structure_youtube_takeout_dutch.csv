@@ -1,0 +1,18 @@
+File_name,Column_names
+URL-configuraties van kanaal.csv,Kanaal-ID
+URL-configuraties van kanaal.csv,Naam van vanity-URL 1 voor kanaal
+gegevens voor kanaalfunctie.csv,Kanaal-ID
+gegevens voor kanaalfunctie.csv,Automatische moderatie in live chat van kanaal
+gegevens voor kanaalfunctie.csv,Standaard toegestane reactietype van video
+gegevens voor kanaalfunctie.csv,Standaard doelgroep van video
+gegevens voor kanaalfunctie.csv,Standaardlicentie van video
+gegevens voor kanaalfunctie.csv,Standaardbreedtegraad van videolocatie
+gegevens voor kanaalfunctie.csv,Standaardlengtegraad van videolocatie
+instellingen voor het beheer van je kanaalcommu.csv,Kanaal-ID
+instellingen voor kanaalpagina.csv,Kanaal-ID
+kanaal.csv,Kanaal-ID
+kanaal.csv,(Originele) kanaaltitel
+kanaal.csv,Kanaalzichtbaarheid
+abonnementen.csv,Kanaal-ID
+abonnementen.csv,Kanaal-URL
+abonnementen.csv,Kanaaltitel

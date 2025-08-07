@@ -1,0 +1,18 @@
+File_name,Column_names
+suscripciones.csv,ID del canal
+suscripciones.csv,URL del canal
+suscripciones.csv,Título del canal
+Ajustes de moderación de la comunidad del canal.csv,ID de canal
+canal.csv,ID de canal
+canal.csv,Título del canal (original)
+canal.csv,Visibilidad del canal
+configuraciones de la URL del canal.csv,ID de canal
+configuraciones de la URL del canal.csv,Nombre de la URL mnemónica del canal (1)
+configuración de la página del canal.csv,ID de canal
+datos de la función del canal.csv,ID de canal
+datos de la función del canal.csv,Moderación automática del canal en el chat en directo
+datos de la función del canal.csv,Tipo de comentarios permitidos de forma predeterminada en el vídeo
+datos de la función del canal.csv,Audiencia objetivo predeterminada del vídeo
+datos de la función del canal.csv,Licencia del vídeo predeterminada
+datos de la función del canal.csv,Latitud de la ubicación predeterminada del vídeo
+datos de la función del canal.csv,Longitud de la ubicación predeterminada del vídeo
