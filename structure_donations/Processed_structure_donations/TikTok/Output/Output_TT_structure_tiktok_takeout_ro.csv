@@ -68,65 +68,65 @@ Desktop notification,"['App Settings', 'Settings', 'SettingsMap', 'Push Notifica
 New Comments on My Video,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",static,string
 New Fans,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Fans']",,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Fans']",static,string
 New Likes on My Video,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",static,string
-Date,"['Activity', 'Favorite Videos', 'FavoriteVideoList', 'Date']","['Activity', 'Favorite Videos']","['FavoriteVideoList', 'Date']",list,string
-Link,"['Activity', 'Favorite Videos', 'FavoriteVideoList', 'Link']","['Activity', 'Favorite Videos']","['FavoriteVideoList', 'Link']",list,string
-Date,"['Activity', 'Follower List', 'FansList', 'Date']","['Activity', 'Follower List']","['FansList', 'Date']",list,string
-UserName,"['Activity', 'Follower List', 'FansList', 'UserName']","['Activity', 'Follower List']","['FansList', 'UserName']",list,string
-Date,"['Activity', 'Following List', 'Following', 'Date']","['Activity', 'Following List']","['Following', 'Date']",list,string
-UserName,"['Activity', 'Following List', 'Following', 'UserName']","['Activity', 'Following List']","['Following', 'UserName']",list,string
-HashtagName,"['Activity', 'Hashtag', 'HashtagList', 'HashtagName']","['Activity', 'Hashtag']","['HashtagList', 'HashtagName']",list,string
-HashtagLink,"['Activity', 'Hashtag', 'HashtagList', 'HashtagLink']","['Activity', 'Hashtag']","['HashtagList', 'HashtagLink']",list,string
-date,"['Activity', 'Like List', 'ItemFavoriteList', 'date']","['Activity', 'Like List']","['ItemFavoriteList', 'date']",list,string
-link,"['Activity', 'Like List', 'ItemFavoriteList', 'link']","['Activity', 'Like List']","['ItemFavoriteList', 'link']",list,string
-Date,"['Activity', 'Login History', 'LoginHistoryList', 'Date']","['Activity', 'Login History']","['LoginHistoryList', 'Date']",list,string
-IP,"['Activity', 'Login History', 'LoginHistoryList', 'IP']","['Activity', 'Login History']","['LoginHistoryList', 'IP']",list,string
-DeviceModel,"['Activity', 'Login History', 'LoginHistoryList', 'DeviceModel']","['Activity', 'Login History']","['LoginHistoryList', 'DeviceModel']",list,string
-DeviceSystem,"['Activity', 'Login History', 'LoginHistoryList', 'DeviceSystem']","['Activity', 'Login History']","['LoginHistoryList', 'DeviceSystem']",list,string
-NetworkType,"['Activity', 'Login History', 'LoginHistoryList', 'NetworkType']","['Activity', 'Login History']","['LoginHistoryList', 'NetworkType']",list,string
-Carrier,"['Activity', 'Login History', 'LoginHistoryList', 'Carrier']","['Activity', 'Login History']","['LoginHistoryList', 'Carrier']",list,string
-Date,"['Activity', 'Search History', 'SearchList', 'Date']","['Activity', 'Search History']","['SearchList', 'Date']",list,string
-SearchTerm,"['Activity', 'Search History', 'SearchList', 'SearchTerm']","['Activity', 'Search History']","['SearchList', 'SearchTerm']",list,string
-Date,"['Activity', 'Share History', 'ShareHistoryList', 'Date']","['Activity', 'Share History']","['ShareHistoryList', 'Date']",list,string
-SharedContent,"['Activity', 'Share History', 'ShareHistoryList', 'SharedContent']","['Activity', 'Share History']","['ShareHistoryList', 'SharedContent']",list,string
-Link,"['Activity', 'Share History', 'ShareHistoryList', 'Link']","['Activity', 'Share History']","['ShareHistoryList', 'Link']",list,string
-Method,"['Activity', 'Share History', 'ShareHistoryList', 'Method']","['Activity', 'Share History']","['ShareHistoryList', 'Method']",list,string
-Resolution,"['Activity', 'Status', 'Status List', 'Resolution']","['Activity', 'Status']","['Status List', 'Resolution']",list,string
-App Version,"['Activity', 'Status', 'Status List', 'App Version']","['Activity', 'Status']","['Status List', 'App Version']",list,string
-IDFA,"['Activity', 'Status', 'Status List', 'IDFA']","['Activity', 'Status']","['Status List', 'IDFA']",list,string
-GAID,"['Activity', 'Status', 'Status List', 'GAID']","['Activity', 'Status']","['Status List', 'GAID']",list,string
-Android ID,"['Activity', 'Status', 'Status List', 'Android ID']","['Activity', 'Status']","['Status List', 'Android ID']",list,string
-IDFV,"['Activity', 'Status', 'Status List', 'IDFV']","['Activity', 'Status']","['Status List', 'IDFV']",list,string
-Web ID,"['Activity', 'Status', 'Status List', 'Web ID']","['Activity', 'Status']","['Status List', 'Web ID']",list,string
-Date,"['Activity', 'Video Browsing History', 'VideoList', 'Date']","['Activity', 'Video Browsing History']","['VideoList', 'Date']",list,string
-Link,"['Activity', 'Video Browsing History', 'VideoList', 'Link']","['Activity', 'Video Browsing History']","['VideoList', 'Link']",list,string
-date,"['Comment', 'Comments', 'CommentsList', 'date']","['Comment', 'Comments']","['CommentsList', 'date']",list,string
-comment,"['Comment', 'Comments', 'CommentsList', 'comment']","['Comment', 'Comments']","['CommentsList', 'comment']",list,string
-photo,"['Comment', 'Comments', 'CommentsList', 'photo']","['Comment', 'Comments']","['CommentsList', 'photo']",list,string
-url,"['Comment', 'Comments', 'CommentsList', 'url']","['Comment', 'Comments']","['CommentsList', 'url']",list,string
-PlaceName,"['Poi Review', 'POI Review', 'ReviewsList', 'PlaceName']","['Poi Review', 'POI Review']","['ReviewsList', 'PlaceName']",list,string
-Date,"['Poi Review', 'POI Review', 'ReviewsList', 'Date']","['Poi Review', 'POI Review']","['ReviewsList', 'Date']",list,string
-Rating,"['Poi Review', 'POI Review', 'ReviewsList', 'Rating']","['Poi Review', 'POI Review']","['ReviewsList', 'Rating']",list,string
-Status,"['Poi Review', 'POI Review', 'ReviewsList', 'Status']","['Poi Review', 'POI Review']","['ReviewsList', 'Status']",list,string
-Likes,"['Poi Review', 'POI Review', 'ReviewsList', 'Likes']","['Poi Review', 'POI Review']","['ReviewsList', 'Likes']",list,string
-ReviewText,"['Poi Review', 'POI Review', 'ReviewsList', 'ReviewText']","['Poi Review', 'POI Review']","['ReviewsList', 'ReviewText']",list,string
-Hide comments that contain the following keywords from your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide comments that contain the following keywords from your LIVE']","['Tiktok Live', 'Go Live Settings', 'SettingsMap']",['Hide comments that contain the following keywords from your LIVE'],list,array
-People you assigned to moderate your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'People you assigned to moderate your LIVE']","['Tiktok Live', 'Go Live Settings', 'SettingsMap']",['People you assigned to moderate your LIVE'],list,array
-Date,"['Video', 'Videos', 'VideoList', 'Date']","['Video', 'Videos']","['VideoList', 'Date']",list,string
-Link,"['Video', 'Videos', 'VideoList', 'Link']","['Video', 'Videos']","['VideoList', 'Link']",list,string
-Likes,"['Video', 'Videos', 'VideoList', 'Likes']","['Video', 'Videos']","['VideoList', 'Likes']",list,string
-WhoCanView,"['Video', 'Videos', 'VideoList', 'WhoCanView']","['Video', 'Videos']","['VideoList', 'WhoCanView']",list,string
-AllowComments,"['Video', 'Videos', 'VideoList', 'AllowComments']","['Video', 'Videos']","['VideoList', 'AllowComments']",list,string
-AllowStitches,"['Video', 'Videos', 'VideoList', 'AllowStitches']","['Video', 'Videos']","['VideoList', 'AllowStitches']",list,string
-AllowDuets,"['Video', 'Videos', 'VideoList', 'AllowDuets']","['Video', 'Videos']","['VideoList', 'AllowDuets']",list,string
-AllowStickers,"['Video', 'Videos', 'VideoList', 'AllowStickers']","['Video', 'Videos']","['VideoList', 'AllowStickers']",list,string
-AllowSharingToStory,"['Video', 'Videos', 'VideoList', 'AllowSharingToStory']","['Video', 'Videos']","['VideoList', 'AllowSharingToStory']",list,string
-ContentDisclosure,"['Video', 'Videos', 'VideoList', 'ContentDisclosure']","['Video', 'Videos']","['VideoList', 'ContentDisclosure']",list,string
-AIGeneratedContent,"['Video', 'Videos', 'VideoList', 'AIGeneratedContent']","['Video', 'Videos']","['VideoList', 'AIGeneratedContent']",list,string
-Sound,"['Video', 'Videos', 'VideoList', 'Sound']","['Video', 'Videos']","['VideoList', 'Sound']",list,string
-Location,"['Video', 'Videos', 'VideoList', 'Location']","['Video', 'Videos']","['VideoList', 'Location']",list,string
-Title,"['Video', 'Videos', 'VideoList', 'Title']","['Video', 'Videos']","['VideoList', 'Title']",list,string
-AddYoursText,"['Video', 'Videos', 'VideoList', 'AddYoursText']","['Video', 'Videos']","['VideoList', 'AddYoursText']",list,string
-Description,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Description']","['Profile', 'Profile Information', 'ProfileMap']","['PlatformInfo', 'Description']",list,string
-Name,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Name']","['Profile', 'Profile Information', 'ProfileMap']","['PlatformInfo', 'Name']",list,string
-Platform,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Platform']","['Profile', 'Profile Information', 'ProfileMap']","['PlatformInfo', 'Platform']",list,string
-Profile Photo,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Profile Photo']","['Profile', 'Profile Information', 'ProfileMap']","['PlatformInfo', 'Profile Photo']",list,string
+Date,"['Activity', 'Favorite Videos', 'FavoriteVideoList', 'Date']","['Activity', 'Favorite Videos', 'FavoriteVideoList']",['Date'],list,string
+Link,"['Activity', 'Favorite Videos', 'FavoriteVideoList', 'Link']","['Activity', 'Favorite Videos', 'FavoriteVideoList']",['Link'],list,string
+Date,"['Activity', 'Follower List', 'FansList', 'Date']","['Activity', 'Follower List', 'FansList']",['Date'],list,string
+UserName,"['Activity', 'Follower List', 'FansList', 'UserName']","['Activity', 'Follower List', 'FansList']",['UserName'],list,string
+Date,"['Activity', 'Following List', 'Following', 'Date']","['Activity', 'Following List', 'Following']",['Date'],list,string
+UserName,"['Activity', 'Following List', 'Following', 'UserName']","['Activity', 'Following List', 'Following']",['UserName'],list,string
+HashtagName,"['Activity', 'Hashtag', 'HashtagList', 'HashtagName']","['Activity', 'Hashtag', 'HashtagList']",['HashtagName'],list,string
+HashtagLink,"['Activity', 'Hashtag', 'HashtagList', 'HashtagLink']","['Activity', 'Hashtag', 'HashtagList']",['HashtagLink'],list,string
+date,"['Activity', 'Like List', 'ItemFavoriteList', 'date']","['Activity', 'Like List', 'ItemFavoriteList']",['date'],list,string
+link,"['Activity', 'Like List', 'ItemFavoriteList', 'link']","['Activity', 'Like List', 'ItemFavoriteList']",['link'],list,string
+Date,"['Activity', 'Login History', 'LoginHistoryList', 'Date']","['Activity', 'Login History', 'LoginHistoryList']",['Date'],list,string
+IP,"['Activity', 'Login History', 'LoginHistoryList', 'IP']","['Activity', 'Login History', 'LoginHistoryList']",['IP'],list,string
+DeviceModel,"['Activity', 'Login History', 'LoginHistoryList', 'DeviceModel']","['Activity', 'Login History', 'LoginHistoryList']",['DeviceModel'],list,string
+DeviceSystem,"['Activity', 'Login History', 'LoginHistoryList', 'DeviceSystem']","['Activity', 'Login History', 'LoginHistoryList']",['DeviceSystem'],list,string
+NetworkType,"['Activity', 'Login History', 'LoginHistoryList', 'NetworkType']","['Activity', 'Login History', 'LoginHistoryList']",['NetworkType'],list,string
+Carrier,"['Activity', 'Login History', 'LoginHistoryList', 'Carrier']","['Activity', 'Login History', 'LoginHistoryList']",['Carrier'],list,string
+Date,"['Activity', 'Search History', 'SearchList', 'Date']","['Activity', 'Search History', 'SearchList']",['Date'],list,string
+SearchTerm,"['Activity', 'Search History', 'SearchList', 'SearchTerm']","['Activity', 'Search History', 'SearchList']",['SearchTerm'],list,string
+Date,"['Activity', 'Share History', 'ShareHistoryList', 'Date']","['Activity', 'Share History', 'ShareHistoryList']",['Date'],list,string
+SharedContent,"['Activity', 'Share History', 'ShareHistoryList', 'SharedContent']","['Activity', 'Share History', 'ShareHistoryList']",['SharedContent'],list,string
+Link,"['Activity', 'Share History', 'ShareHistoryList', 'Link']","['Activity', 'Share History', 'ShareHistoryList']",['Link'],list,string
+Method,"['Activity', 'Share History', 'ShareHistoryList', 'Method']","['Activity', 'Share History', 'ShareHistoryList']",['Method'],list,string
+Resolution,"['Activity', 'Status', 'Status List', 'Resolution']","['Activity', 'Status', 'Status List']",['Resolution'],list,string
+App Version,"['Activity', 'Status', 'Status List', 'App Version']","['Activity', 'Status', 'Status List']",['App Version'],list,string
+IDFA,"['Activity', 'Status', 'Status List', 'IDFA']","['Activity', 'Status', 'Status List']",['IDFA'],list,string
+GAID,"['Activity', 'Status', 'Status List', 'GAID']","['Activity', 'Status', 'Status List']",['GAID'],list,string
+Android ID,"['Activity', 'Status', 'Status List', 'Android ID']","['Activity', 'Status', 'Status List']",['Android ID'],list,string
+IDFV,"['Activity', 'Status', 'Status List', 'IDFV']","['Activity', 'Status', 'Status List']",['IDFV'],list,string
+Web ID,"['Activity', 'Status', 'Status List', 'Web ID']","['Activity', 'Status', 'Status List']",['Web ID'],list,string
+Date,"['Activity', 'Video Browsing History', 'VideoList', 'Date']","['Activity', 'Video Browsing History', 'VideoList']",['Date'],list,string
+Link,"['Activity', 'Video Browsing History', 'VideoList', 'Link']","['Activity', 'Video Browsing History', 'VideoList']",['Link'],list,string
+date,"['Comment', 'Comments', 'CommentsList', 'date']","['Comment', 'Comments', 'CommentsList']",['date'],list,string
+comment,"['Comment', 'Comments', 'CommentsList', 'comment']","['Comment', 'Comments', 'CommentsList']",['comment'],list,string
+photo,"['Comment', 'Comments', 'CommentsList', 'photo']","['Comment', 'Comments', 'CommentsList']",['photo'],list,string
+url,"['Comment', 'Comments', 'CommentsList', 'url']","['Comment', 'Comments', 'CommentsList']",['url'],list,string
+PlaceName,"['Poi Review', 'POI Review', 'ReviewsList', 'PlaceName']","['Poi Review', 'POI Review', 'ReviewsList']",['PlaceName'],list,string
+Date,"['Poi Review', 'POI Review', 'ReviewsList', 'Date']","['Poi Review', 'POI Review', 'ReviewsList']",['Date'],list,string
+Rating,"['Poi Review', 'POI Review', 'ReviewsList', 'Rating']","['Poi Review', 'POI Review', 'ReviewsList']",['Rating'],list,string
+Status,"['Poi Review', 'POI Review', 'ReviewsList', 'Status']","['Poi Review', 'POI Review', 'ReviewsList']",['Status'],list,string
+Likes,"['Poi Review', 'POI Review', 'ReviewsList', 'Likes']","['Poi Review', 'POI Review', 'ReviewsList']",['Likes'],list,string
+ReviewText,"['Poi Review', 'POI Review', 'ReviewsList', 'ReviewText']","['Poi Review', 'POI Review', 'ReviewsList']",['ReviewText'],list,string
+Hide comments that contain the following keywords from your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide comments that contain the following keywords from your LIVE']","['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide comments that contain the following keywords from your LIVE']",[],list,array
+People you assigned to moderate your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'People you assigned to moderate your LIVE']","['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'People you assigned to moderate your LIVE']",[],list,array
+Date,"['Video', 'Videos', 'VideoList', 'Date']","['Video', 'Videos', 'VideoList']",['Date'],list,string
+Link,"['Video', 'Videos', 'VideoList', 'Link']","['Video', 'Videos', 'VideoList']",['Link'],list,string
+Likes,"['Video', 'Videos', 'VideoList', 'Likes']","['Video', 'Videos', 'VideoList']",['Likes'],list,string
+WhoCanView,"['Video', 'Videos', 'VideoList', 'WhoCanView']","['Video', 'Videos', 'VideoList']",['WhoCanView'],list,string
+AllowComments,"['Video', 'Videos', 'VideoList', 'AllowComments']","['Video', 'Videos', 'VideoList']",['AllowComments'],list,string
+AllowStitches,"['Video', 'Videos', 'VideoList', 'AllowStitches']","['Video', 'Videos', 'VideoList']",['AllowStitches'],list,string
+AllowDuets,"['Video', 'Videos', 'VideoList', 'AllowDuets']","['Video', 'Videos', 'VideoList']",['AllowDuets'],list,string
+AllowStickers,"['Video', 'Videos', 'VideoList', 'AllowStickers']","['Video', 'Videos', 'VideoList']",['AllowStickers'],list,string
+AllowSharingToStory,"['Video', 'Videos', 'VideoList', 'AllowSharingToStory']","['Video', 'Videos', 'VideoList']",['AllowSharingToStory'],list,string
+ContentDisclosure,"['Video', 'Videos', 'VideoList', 'ContentDisclosure']","['Video', 'Videos', 'VideoList']",['ContentDisclosure'],list,string
+AIGeneratedContent,"['Video', 'Videos', 'VideoList', 'AIGeneratedContent']","['Video', 'Videos', 'VideoList']",['AIGeneratedContent'],list,string
+Sound,"['Video', 'Videos', 'VideoList', 'Sound']","['Video', 'Videos', 'VideoList']",['Sound'],list,string
+Location,"['Video', 'Videos', 'VideoList', 'Location']","['Video', 'Videos', 'VideoList']",['Location'],list,string
+Title,"['Video', 'Videos', 'VideoList', 'Title']","['Video', 'Videos', 'VideoList']",['Title'],list,string
+AddYoursText,"['Video', 'Videos', 'VideoList', 'AddYoursText']","['Video', 'Videos', 'VideoList']",['AddYoursText'],list,string
+Description,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Description']","['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo']",['Description'],list,string
+Name,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Name']","['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo']",['Name'],list,string
+Platform,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Platform']","['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo']",['Platform'],list,string
+Profile Photo,"['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo', 'Profile Photo']","['Profile', 'Profile Information', 'ProfileMap', 'PlatformInfo']",['Profile Photo'],list,string

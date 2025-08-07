@@ -106,18 +106,18 @@ Desktop notification,"['App Settings', 'Settings', 'SettingsMap', 'Push Notifica
 New Comments on My Video,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",static,string
 New Fans,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Fans']",,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Fans']",static,string
 New Likes on My Video,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",static,string
-Date,"['Your Activity', 'Searches', 'SearchList', 'Date']","['Your Activity', 'Searches']","['SearchList', 'Date']",list,string
-SearchTerm,"['Your Activity', 'Searches', 'SearchList', 'SearchTerm']","['Your Activity', 'Searches']","['SearchList', 'SearchTerm']",list,string
-Resolution,"['Your Activity', 'Status', 'Status List', 'Resolution']","['Your Activity', 'Status']","['Status List', 'Resolution']",list,string
-App Version,"['Your Activity', 'Status', 'Status List', 'App Version']","['Your Activity', 'Status']","['Status List', 'App Version']",list,string
-IDFA,"['Your Activity', 'Status', 'Status List', 'IDFA']","['Your Activity', 'Status']","['Status List', 'IDFA']",list,string
-GAID,"['Your Activity', 'Status', 'Status List', 'GAID']","['Your Activity', 'Status']","['Status List', 'GAID']",list,string
-Android ID,"['Your Activity', 'Status', 'Status List', 'Android ID']","['Your Activity', 'Status']","['Status List', 'Android ID']",list,string
-IDFV,"['Your Activity', 'Status', 'Status List', 'IDFV']","['Your Activity', 'Status']","['Status List', 'IDFV']",list,string
-Web ID,"['Your Activity', 'Status', 'Status List', 'Web ID']","['Your Activity', 'Status']","['Status List', 'Web ID']",list,string
-Date,"['Your Activity', 'Watch History', 'VideoList', 'Date']","['Your Activity', 'Watch History']","['VideoList', 'Date']",list,string
-Link,"['Your Activity', 'Watch History', 'VideoList', 'Link']","['Your Activity', 'Watch History']","['VideoList', 'Link']",list,string
-Description,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Description']","['Profile', 'Profile Info', 'ProfileMap']","['PlatformInfo', 'Description']",list,string
-Name,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Name']","['Profile', 'Profile Info', 'ProfileMap']","['PlatformInfo', 'Name']",list,string
-Platform,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Platform']","['Profile', 'Profile Info', 'ProfileMap']","['PlatformInfo', 'Platform']",list,string
-Profile Photo,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Profile Photo']","['Profile', 'Profile Info', 'ProfileMap']","['PlatformInfo', 'Profile Photo']",list,string
+Date,"['Your Activity', 'Searches', 'SearchList', 'Date']","['Your Activity', 'Searches', 'SearchList']",['Date'],list,string
+SearchTerm,"['Your Activity', 'Searches', 'SearchList', 'SearchTerm']","['Your Activity', 'Searches', 'SearchList']",['SearchTerm'],list,string
+Resolution,"['Your Activity', 'Status', 'Status List', 'Resolution']","['Your Activity', 'Status', 'Status List']",['Resolution'],list,string
+App Version,"['Your Activity', 'Status', 'Status List', 'App Version']","['Your Activity', 'Status', 'Status List']",['App Version'],list,string
+IDFA,"['Your Activity', 'Status', 'Status List', 'IDFA']","['Your Activity', 'Status', 'Status List']",['IDFA'],list,string
+GAID,"['Your Activity', 'Status', 'Status List', 'GAID']","['Your Activity', 'Status', 'Status List']",['GAID'],list,string
+Android ID,"['Your Activity', 'Status', 'Status List', 'Android ID']","['Your Activity', 'Status', 'Status List']",['Android ID'],list,string
+IDFV,"['Your Activity', 'Status', 'Status List', 'IDFV']","['Your Activity', 'Status', 'Status List']",['IDFV'],list,string
+Web ID,"['Your Activity', 'Status', 'Status List', 'Web ID']","['Your Activity', 'Status', 'Status List']",['Web ID'],list,string
+Date,"['Your Activity', 'Watch History', 'VideoList', 'Date']","['Your Activity', 'Watch History', 'VideoList']",['Date'],list,string
+Link,"['Your Activity', 'Watch History', 'VideoList', 'Link']","['Your Activity', 'Watch History', 'VideoList']",['Link'],list,string
+Description,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Description']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Description'],list,string
+Name,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Name']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Name'],list,string
+Platform,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Platform']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Platform'],list,string
+Profile Photo,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Profile Photo']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Profile Photo'],list,string
