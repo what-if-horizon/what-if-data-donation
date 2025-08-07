@@ -1,0 +1,18 @@
+File_name,Column_names
+prenumeratos.csv,Kanalo ID
+prenumeratos.csv,Kanalo URL
+prenumeratos.csv,Kanalo pavadinimas
+kanalas.csv,Kanalo ID
+kanalas.csv,Kanalo pavadinimas (pradinis)
+kanalas.csv,Kanalo matomumas
+kanalo URL konfigūracijos.csv,Kanalo ID
+kanalo URL konfigūracijos.csv,1 kanalo reklaminio URL pavadinimas
+kanalo bendruomenės moderavimo nustatymai.csv,Kanalo ID
+kanalo funkcijų duomenys.csv,Kanalo ID
+kanalo funkcijų duomenys.csv,Automatinis kanalo moderavimas tiesioginiame pokalbyje
+kanalo funkcijų duomenys.csv,Numatytasis vaizdo įrašo leidžiamų komentarų tipas
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo tikslinė auditorija
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo licencija
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo vietovės platuma
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo vietovės ilguma
+kanalo puslapio nustatymai.csv,Kanalo ID

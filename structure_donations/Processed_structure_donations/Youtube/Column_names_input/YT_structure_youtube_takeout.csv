@@ -1,0 +1,18 @@
+File_name,Column_names
+subscriptions.csv,Channel Id
+subscriptions.csv,Channel Url
+subscriptions.csv,Channel Title
+channel URL configs.csv,Channel ID
+channel URL configs.csv,Channel Vanity URL 1 Name
+channel community moderation settings.csv,Channel ID
+channel feature data.csv,Channel ID
+channel feature data.csv,Channel Auto Moderation in Live Chat
+channel feature data.csv,Video Default Allowed Comments Type
+channel feature data.csv,Video Default Targeted Audience
+channel feature data.csv,Video Default License
+channel feature data.csv,Video Default Location Latitude
+channel feature data.csv,Video Default Location Longitude
+channel page settings.csv,Channel ID
+channel.csv,Channel ID
+channel.csv,Channel Title (Original)
+channel.csv,Channel Visibility

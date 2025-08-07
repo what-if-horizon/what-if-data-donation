@@ -1,27 +1,13 @@
 File_name,Column_names,id
+channel URL configs.csv,Channel ID,channel_URL_configs:Channel_ID
+channel URL configs.csv,Channel Vanity URL 1 Name,channel_URL_configs:Channel_Vanity_URL_1_Name
 subscriptions.csv,Channel Id,subscriptions:Channel_Id
 subscriptions.csv,Channel Url,subscriptions:Channel_Url
 subscriptions.csv,Channel Title,subscriptions:Channel_Title
-HPC-videos.csv,Video ID,HPC-videos:Video_ID
-HPC-videos.csv,Playlist Video Creation Timestamp,HPC-videos:Playlist_Video_Creation_Timestamp
-Watch later-videos.csv,Video ID,Watch_later-videos:Video_ID
-Watch later-videos.csv,Playlist Video Creation Timestamp,Watch_later-videos:Playlist_Video_Creation_Timestamp
-Tryal-videos.csv,Video ID,Tryal-videos:Video_ID
-Tryal-videos.csv,Playlist Video Creation Timestamp,Tryal-videos:Playlist_Video_Creation_Timestamp
-comments.csv,Comment ID,comments:Comment_ID
-comments.csv,Channel ID,comments:Channel_ID
-comments.csv,Comment Create Timestamp,comments:Comment_Create_Timestamp
-comments.csv,Price,comments:Price
-comments.csv,Video ID,comments:Video_ID
-comments.csv,Comment Text,comments:Comment_Text
-playlists.csv,Playlist ID,playlists:Playlist_ID
-playlists.csv,Add new videos to top,playlists:Add_new_videos_to_top
-playlists.csv,Playlist Title (Original),playlists:Playlist_Title_(Original)
-playlists.csv,Playlist Title (Original) Language,playlists:Playlist_Title_(Original)_Language
-playlists.csv,Playlist Create Timestamp,playlists:Playlist_Create_Timestamp
-playlists.csv,Playlist Update Timestamp,playlists:Playlist_Update_Timestamp
-playlists.csv,Playlist Video Order,playlists:Playlist_Video_Order
-playlists.csv,Playlist Visibility,playlists:Playlist_Visibility
+channel community moderation settings.csv,Channel ID,channel_community_moderation_settings:Channel_ID
+channel.csv,Channel ID,channel:Channel_ID
+channel.csv,Channel Title (Original),channel:Channel_Title_(Original)
+channel.csv,Channel Visibility,channel:Channel_Visibility
 channel page settings.csv,Channel ID,channel_page_settings:Channel_ID
 channel feature data.csv,Channel ID,channel_feature_data:Channel_ID
 channel feature data.csv,Channel Auto Moderation in Live Chat,channel_feature_data:Channel_Auto_Moderation_in_Live_Chat
@@ -30,58 +16,59 @@ channel feature data.csv,Video Default Targeted Audience,channel_feature_data:Vi
 channel feature data.csv,Video Default License,channel_feature_data:Video_Default_License
 channel feature data.csv,Video Default Location Latitude,channel_feature_data:Video_Default_Location_Latitude
 channel feature data.csv,Video Default Location Longitude,channel_feature_data:Video_Default_Location_Longitude
-channel.csv,Channel ID,channel:Channel_ID
-channel.csv,Channel Title (Original),channel:Channel_Title_(Original)
-channel.csv,Channel Visibility,channel:Channel_Visibility
-channel community moderation settings.csv,Channel ID,channel_community_moderation_settings:Channel_ID
-channel URL configs.csv,Channel ID,channel_URL_configs:Channel_ID
-channel URL configs.csv,Channel Vanity URL 1 Name,channel_URL_configs:Channel_Vanity_URL_1_Name
-abonnementen.csv,Kanaal-ID,abonnementen:Kanaal-ID
-abonnementen.csv,Kanaal-URL,abonnementen:Kanaal-URL
-abonnementen.csv,Kanaaltitel,abonnementen:Kanaaltitel
+canal.csv,ID-ul canalului,canal:ID-ul_canalului
+canal.csv,Titlul canalului (original),canal:Titlul_canalului_(original)
+canal.csv,Vizibilitatea canalului,canal:Vizibilitatea_canalului
+configurații pentru adresa URL a canalului.csv,ID-ul canalului,configurații_pentru_adresa_URL_a_canalului:ID-ul_canalului
+configurații pentru adresa URL a canalului.csv,Numele adresei URL personalizate a canalului 1,configurații_pentru_adresa_URL_a_canalului:Numele_adresei_URL_personalizate_a_canalului_1
+date despre funcțiile canalului.csv,ID-ul canalului,date_despre_funcțiile_canalului:ID-ul_canalului
+date despre funcțiile canalului.csv,Moderare automată a canalului în chatul live,date_despre_funcțiile_canalului:Moderare_automată_a_canalului_în_chatul_live
+date despre funcțiile canalului.csv,Tipul prestabilit de comentarii permise ale videoclipului,date_despre_funcțiile_canalului:Tipul_prestabilit_de_comentarii_permise_ale_videoclipului
+date despre funcțiile canalului.csv,Publicul vizat prestabilit al videoclipului,date_despre_funcțiile_canalului:Publicul_vizat_prestabilit_al_videoclipului
+date despre funcțiile canalului.csv,Licența prestabilită a videoclipului,date_despre_funcțiile_canalului:Licența_prestabilită_a_videoclipului
+date despre funcțiile canalului.csv,Latitudinea prestabilită a videoclipului,date_despre_funcțiile_canalului:Latitudinea_prestabilită_a_videoclipului
+date despre funcțiile canalului.csv,Longitudinea prestabilită a videoclipului,date_despre_funcțiile_canalului:Longitudinea_prestabilită_a_videoclipului
+setări de moderare a comunității canalului.csv,ID-ul canalului,setări_de_moderare_a_comunității_canalului:ID-ul_canalului
+setările paginii de canal.csv,ID-ul canalului,setările_paginii_de_canal:ID-ul_canalului
+abonamente.csv,ID-ul canalului,abonamente:ID-ul_canalului
+abonamente.csv,Adresa URL a canalului,abonamente:Adresa_URL_a_canalului
+abonamente.csv,Titlul canalului,abonamente:Titlul_canalului
+prenumeratos.csv,Kanalo ID,prenumeratos:Kanalo_ID
+prenumeratos.csv,Kanalo URL,prenumeratos:Kanalo_URL
+prenumeratos.csv,Kanalo pavadinimas,prenumeratos:Kanalo_pavadinimas
+kanalas.csv,Kanalo ID,kanalas:Kanalo_ID
+kanalas.csv,Kanalo pavadinimas (pradinis),kanalas:Kanalo_pavadinimas_(pradinis)
+kanalas.csv,Kanalo matomumas,kanalas:Kanalo_matomumas
+kanalo URL konfigūracijos.csv,Kanalo ID,kanalo_URL_konfigūracijos:Kanalo_ID
+kanalo URL konfigūracijos.csv,1 kanalo reklaminio URL pavadinimas,kanalo_URL_konfigūracijos:1_kanalo_reklaminio_URL_pavadinimas
+kanalo bendruomenės moderavimo nustatymai.csv,Kanalo ID,kanalo_bendruomenės_moderavimo_nustatymai:Kanalo_ID
+kanalo funkcijų duomenys.csv,Kanalo ID,kanalo_funkcijų_duomenys:Kanalo_ID
+kanalo funkcijų duomenys.csv,Automatinis kanalo moderavimas tiesioginiame pokalbyje,kanalo_funkcijų_duomenys:Automatinis_kanalo_moderavimas_tiesioginiame_pokalbyje
+kanalo funkcijų duomenys.csv,Numatytasis vaizdo įrašo leidžiamų komentarų tipas,kanalo_funkcijų_duomenys:Numatytasis_vaizdo_įrašo_leidžiamų_komentarų_tipas
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo tikslinė auditorija,kanalo_funkcijų_duomenys:Numatytoji_vaizdo_įrašo_tikslinė_auditorija
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo licencija,kanalo_funkcijų_duomenys:Numatytoji_vaizdo_įrašo_licencija
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo vietovės platuma,kanalo_funkcijų_duomenys:Numatytoji_vaizdo_įrašo_vietovės_platuma
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo vietovės ilguma,kanalo_funkcijų_duomenys:Numatytoji_vaizdo_įrašo_vietovės_ilguma
+kanalo puslapio nustatymai.csv,Kanalo ID,kanalo_puslapio_nustatymai:Kanalo_ID
+suscripciones.csv,ID del canal,suscripciones:ID_del_canal
+suscripciones.csv,URL del canal,suscripciones:URL_del_canal
+suscripciones.csv,Título del canal,suscripciones:Título_del_canal
+Ajustes de moderación de la comunidad del canal.csv,ID de canal,Ajustes_de_moderación_de_la_comunidad_del_canal:ID_de_canal
+canal.csv,ID de canal,canal:ID_de_canal
+canal.csv,Título del canal (original),canal:Título_del_canal_(original)
+canal.csv,Visibilidad del canal,canal:Visibilidad_del_canal
+configuraciones de la URL del canal.csv,ID de canal,configuraciones_de_la_URL_del_canal:ID_de_canal
+configuraciones de la URL del canal.csv,Nombre de la URL mnemónica del canal (1),configuraciones_de_la_URL_del_canal:Nombre_de_la_URL_mnemónica_del_canal_(1)
+configuración de la página del canal.csv,ID de canal,configuración_de_la_página_del_canal:ID_de_canal
+datos de la función del canal.csv,ID de canal,datos_de_la_función_del_canal:ID_de_canal
+datos de la función del canal.csv,Moderación automática del canal en el chat en directo,datos_de_la_función_del_canal:Moderación_automática_del_canal_en_el_chat_en_directo
+datos de la función del canal.csv,Tipo de comentarios permitidos de forma predeterminada en el vídeo,datos_de_la_función_del_canal:Tipo_de_comentarios_permitidos_de_forma_predeterminada_en_el_vídeo
+datos de la función del canal.csv,Audiencia objetivo predeterminada del vídeo,datos_de_la_función_del_canal:Audiencia_objetivo_predeterminada_del_vídeo
+datos de la función del canal.csv,Licencia del vídeo predeterminada,datos_de_la_función_del_canal:Licencia_del_vídeo_predeterminada
+datos de la función del canal.csv,Latitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Latitud_de_la_ubicación_predeterminada_del_vídeo
+datos de la función del canal.csv,Longitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Longitud_de_la_ubicación_predeterminada_del_vídeo
 URL-configuraties van kanaal.csv,Kanaal-ID,URL-configuraties_van_kanaal:Kanaal-ID
 URL-configuraties van kanaal.csv,Naam van vanity-URL 1 voor kanaal,URL-configuraties_van_kanaal:Naam_van_vanity-URL_1_voor_kanaal
-URL-configuraties van kanaal.csv,Naam van vanity-URL 2 voor kanaal,URL-configuraties_van_kanaal:Naam_van_vanity-URL_2_voor_kanaal
-kanaal.csv,Kanaal-ID,kanaal:Kanaal-ID
-kanaal.csv,(Originele) kanaaltitel,kanaal:(Originele)_kanaaltitel
-kanaal.csv,Kanaalzichtbaarheid,kanaal:Kanaalzichtbaarheid
-Video_s in Watch later.csv,Video-ID,Video_s_in_Watch_later:Video-ID
-Video_s in Watch later.csv,Tijdstempel voor het maken van een playlistvideo,Video_s_in_Watch_later:Tijdstempel_voor_het_maken_van_een_playlistvideo
-playlists.csv,Playlist-ID,playlists:Playlist-ID
-playlists.csv,Nieuwe video's bovenaan toevoegen,playlists:Nieuwe_video's_bovenaan_toevoegen
-playlists.csv,Playlist-titel (Origineel),playlists:Playlist-titel_(Origineel)
-playlists.csv,(Originele) taal van playlist-titel,playlists:(Originele)_taal_van_playlist-titel
-playlists.csv,Playlist tijdstempel maken,playlists:Playlist_tijdstempel_maken
-playlists.csv,Playlist tijdstempel updaten,playlists:Playlist_tijdstempel_updaten
-playlists.csv,Videovolgorde playlist,playlists:Videovolgorde_playlist
-playlists.csv,Zichtbaarheid van playlist,playlists:Zichtbaarheid_van_playlist
-Video_s in TFL.csv,Video-ID,Video_s_in_TFL:Video-ID
-Video_s in TFL.csv,Tijdstempel voor het maken van een playlistvideo,Video_s_in_TFL:Tijdstempel_voor_het_maken_van_een_playlistvideo
-instellingen voor kanaalpagina.csv,Kanaal-ID,instellingen_voor_kanaalpagina:Kanaal-ID
-reacties.csv,Reactie-ID,reacties:Reactie-ID
-reacties.csv,Kanaal-ID,reacties:Kanaal-ID
-reacties.csv,Aanmaaktijdstempel reactie,reacties:Aanmaaktijdstempel_reactie
-reacties.csv,Prijs,reacties:Prijs
-reacties.csv,Video-ID,reacties:Video-ID
-reacties.csv,Reactietekst,reacties:Reactietekst
-video_s.csv,Video-ID,video_s:Video-ID
-video_s.csv,Geschatte duur (ms),video_s:Geschatte_duur_(ms)
-video_s.csv,Videocategorie,video_s:Videocategorie
-video_s.csv,Videobeschrijving (origineel),video_s:Videobeschrijving_(origineel)
-video_s.csv,Kanaal-ID,video_s:Kanaal-ID
-video_s.csv,Tag 1,video_s:Tag_1
-video_s.csv,Videotitel (origineel),video_s:Videotitel_(origineel)
-video_s.csv,Privacy,video_s:Privacy
-video_s.csv,Videostatus,video_s:Videostatus
-video_s.csv,Tijdstempel aanmaaktijd video,video_s:Tijdstempel_aanmaaktijd_video
-video_s.csv,Tijdstempel publicatietijd video,video_s:Tijdstempel_publicatietijd_video
-video-opnamen.csv,Video-ID,video-opnamen:Video-ID
-video-opnamen.csv,Hoogte van video-opname,video-opnamen:Hoogte_van_video-opname
-video-opnamen.csv,Latitude van video-opname,video-opnamen:Latitude_van_video-opname
-video-opnamen.csv,Longitude van video-opname,video-opnamen:Longitude_van_video-opname
-instellingen voor het beheer van je kanaalcommu.csv,Kanaal-ID,instellingen_voor_het_beheer_van_je_kanaalcommu:Kanaal-ID
-Video_s in Music.csv,Video-ID,Video_s_in_Music:Video-ID
-Video_s in Music.csv,Tijdstempel voor het maken van een playlistvideo,Video_s_in_Music:Tijdstempel_voor_het_maken_van_een_playlistvideo
 gegevens voor kanaalfunctie.csv,Kanaal-ID,gegevens_voor_kanaalfunctie:Kanaal-ID
 gegevens voor kanaalfunctie.csv,Automatische moderatie in live chat van kanaal,gegevens_voor_kanaalfunctie:Automatische_moderatie_in_live_chat_van_kanaal
 gegevens voor kanaalfunctie.csv,Standaard toegestane reactietype van video,gegevens_voor_kanaalfunctie:Standaard_toegestane_reactietype_van_video
@@ -89,3 +76,11 @@ gegevens voor kanaalfunctie.csv,Standaard doelgroep van video,gegevens_voor_kana
 gegevens voor kanaalfunctie.csv,Standaardlicentie van video,gegevens_voor_kanaalfunctie:Standaardlicentie_van_video
 gegevens voor kanaalfunctie.csv,Standaardbreedtegraad van videolocatie,gegevens_voor_kanaalfunctie:Standaardbreedtegraad_van_videolocatie
 gegevens voor kanaalfunctie.csv,Standaardlengtegraad van videolocatie,gegevens_voor_kanaalfunctie:Standaardlengtegraad_van_videolocatie
+instellingen voor het beheer van je kanaalcommu.csv,Kanaal-ID,instellingen_voor_het_beheer_van_je_kanaalcommu:Kanaal-ID
+instellingen voor kanaalpagina.csv,Kanaal-ID,instellingen_voor_kanaalpagina:Kanaal-ID
+kanaal.csv,Kanaal-ID,kanaal:Kanaal-ID
+kanaal.csv,(Originele) kanaaltitel,kanaal:(Originele)_kanaaltitel
+kanaal.csv,Kanaalzichtbaarheid,kanaal:Kanaalzichtbaarheid
+abonnementen.csv,Kanaal-ID,abonnementen:Kanaal-ID
+abonnementen.csv,Kanaal-URL,abonnementen:Kanaal-URL
+abonnementen.csv,Kanaaltitel,abonnementen:Kanaaltitel
