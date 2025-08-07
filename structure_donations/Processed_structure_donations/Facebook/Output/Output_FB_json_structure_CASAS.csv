@@ -1,0 +1,465 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+message_1.json,title,['title'],,['title'],static,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,title,['title'],,['title'],static,string,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,title,['title'],,['title'],static,string,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+0.json,name,['name'],,['name'],static,string,your_activity_across_facebook/posts/album/0.json
+0.json,last_modified_timestamp,['last_modified_timestamp'],,['last_modified_timestamp'],static,number,your_activity_across_facebook/posts/album/0.json
+0.json,description,['description'],,['description'],static,string,your_activity_across_facebook/posts/album/0.json
+1.json,name,['name'],,['name'],static,string,your_activity_across_facebook/posts/album/1.json
+1.json,last_modified_timestamp,['last_modified_timestamp'],,['last_modified_timestamp'],static,number,your_activity_across_facebook/posts/album/1.json
+1.json,description,['description'],,['description'],static,string,your_activity_across_facebook/posts/album/1.json
+2.json,name,['name'],,['name'],static,string,your_activity_across_facebook/posts/album/2.json
+2.json,last_modified_timestamp,['last_modified_timestamp'],,['last_modified_timestamp'],static,number,your_activity_across_facebook/posts/album/2.json
+2.json,description,['description'],,['description'],static,string,your_activity_across_facebook/posts/album/2.json
+3.json,name,['name'],,['name'],static,string,your_activity_across_facebook/posts/album/3.json
+3.json,last_modified_timestamp,['last_modified_timestamp'],,['last_modified_timestamp'],static,number,your_activity_across_facebook/posts/album/3.json
+3.json,description,['description'],,['description'],static,string,your_activity_across_facebook/posts/album/3.json
+your_fundraiser_donations_information.json,media,['media'],,['media'],static,array,your_activity_across_facebook/fundraisers/your_fundraiser_donations_information.json
+your_recently_followed_history.json,media,['media'],,['media'],static,array,your_activity_across_facebook/other_activity/your_recently_followed_history.json
+bookmark_and_app_settings.json,timestamp,['timestamp'],,['timestamp'],static,number,your_activity_across_facebook/facebook_gaming/bookmark_and_app_settings.json
+bookmark_and_app_settings.json,media,['media'],,['media'],static,array,your_activity_across_facebook/facebook_gaming/bookmark_and_app_settings.json
+your_transaction_survey_information.json,media,['media'],,['media'],static,array,your_activity_across_facebook/facebook_marketplace/your_transaction_survey_information.json
+other_categories_used_to_reach_you.json,bcts,['bcts'],,['bcts'],static,string,ads_information/other_categories_used_to_reach_you.json
+ad_preferences.json,media,['media'],,['media'],static,array,ads_information/ad_preferences.json
+your_sampled_locations.json,timestamp,['timestamp'],,['timestamp'],static,number,ads_information/your_sampled_locations.json
+your_sampled_locations.json,media,['media'],,['media'],static,array,ads_information/your_sampled_locations.json
+your_recent_reported_conversions.json,media,['media'],,['media'],static,array,ads_information/your_recent_reported_conversions.json
+meta_ad_library_accounts.json,timestamp,['timestamp'],,['timestamp'],static,number,ads_information/meta_ad_library_accounts.json
+meta_ad_library_accounts.json,media,['media'],,['media'],static,array,ads_information/meta_ad_library_accounts.json
+subscription_for_no_ads.json,media,['media'],,['media'],static,array,ads_information/subscription_for_no_ads.json
+your_activity_off_meta_technologies_settings.json,timestamp,['timestamp'],,['timestamp'],static,number,apps_and_websites_off_of_facebook/your_activity_off_meta_technologies_settings.json
+your_activity_off_meta_technologies_settings.json,media,['media'],,['media'],static,array,apps_and_websites_off_of_facebook/your_activity_off_meta_technologies_settings.json
+reels_preferences.json,media,['media'],,['media'],static,array,preferences/preferences/reels_preferences.json
+your_story_highlights.json,media,['media'],,['media'],static,array,preferences/preferences/your_story_highlights.json
+your_inferred_language_preferences_for_videos.json,media,['media'],,['media'],static,array,preferences/preferences/your_inferred_language_preferences_for_videos.json
+your_watch_settings.json,media,['media'],,['media'],static,array,preferences/preferences/your_watch_settings.json
+login_alerts_settings.json,media,['media'],,['media'],static,array,preferences/preferences/login_alerts_settings.json
+your_fundraiser_settings.json,media,['media'],,['media'],static,array,preferences/preferences/your_fundraiser_settings.json
+your_activity.json,media,['media'],,['media'],static,array,preferences/memories/your_activity.json
+timezone.json,media,['media'],,['media'],static,array,personal_information/profile_information/timezone.json
+your_recent_account_recovery_successes.json,media,['media'],,['media'],static,array,security_and_login_information/your_recent_account_recovery_successes.json
+information_about_your_last_login.json,media,['media'],,['media'],static,array,security_and_login_information/information_about_your_last_login.json
+account_recoveries_without_password_changes.json,media,['media'],,['media'],static,array,security_and_login_information/account_recoveries_without_password_changes.json
+people_you_may_know.json,media,['media'],,['media'],static,array,connections/friends/people_you_may_know.json
+people_we_think_you_should_follow.json,timestamp,['timestamp'],,['timestamp'],static,number,logged_information/your_topics/people_we_think_you_should_follow.json
+people_we_think_you_should_follow.json,media,['media'],,['media'],static,array,logged_information/your_topics/people_we_think_you_should_follow.json
+timezone.json,timezone_v2,['timezone_v2'],,['timezone_v2'],static,string,logged_information/location/timezone.json
+consents.json,timestamp,['timestamp'],,['timestamp'],static,number,logged_information/other_logged_information/consents.json
+consents.json,media,['media'],,['media'],static,array,logged_information/other_logged_information/consents.json
+message_2.json,title,['title'],,['title'],static,string,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,thread_path,['thread_path'],,['thread_path'],static,string,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,magic_words,['magic_words'],,['magic_words'],static,array,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+0.json,uri,"['cover_photo', 'uri']",,"['cover_photo', 'uri']",static,string,your_activity_across_facebook/posts/album/0.json
+0.json,creation_timestamp,"['cover_photo', 'creation_timestamp']",,"['cover_photo', 'creation_timestamp']",static,number,your_activity_across_facebook/posts/album/0.json
+0.json,title,"['cover_photo', 'title']",,"['cover_photo', 'title']",static,string,your_activity_across_facebook/posts/album/0.json
+1.json,uri,"['cover_photo', 'uri']",,"['cover_photo', 'uri']",static,string,your_activity_across_facebook/posts/album/1.json
+1.json,creation_timestamp,"['cover_photo', 'creation_timestamp']",,"['cover_photo', 'creation_timestamp']",static,number,your_activity_across_facebook/posts/album/1.json
+1.json,title,"['cover_photo', 'title']",,"['cover_photo', 'title']",static,string,your_activity_across_facebook/posts/album/1.json
+1.json,description,"['cover_photo', 'description']",,"['cover_photo', 'description']",static,string,your_activity_across_facebook/posts/album/1.json
+2.json,uri,"['cover_photo', 'uri']",,"['cover_photo', 'uri']",static,string,your_activity_across_facebook/posts/album/2.json
+2.json,creation_timestamp,"['cover_photo', 'creation_timestamp']",,"['cover_photo', 'creation_timestamp']",static,number,your_activity_across_facebook/posts/album/2.json
+2.json,title,"['cover_photo', 'title']",,"['cover_photo', 'title']",static,string,your_activity_across_facebook/posts/album/2.json
+3.json,uri,"['cover_photo', 'uri']",,"['cover_photo', 'uri']",static,string,your_activity_across_facebook/posts/album/3.json
+3.json,creation_timestamp,"['cover_photo', 'creation_timestamp']",,"['cover_photo', 'creation_timestamp']",static,number,your_activity_across_facebook/posts/album/3.json
+3.json,title,"['cover_photo', 'title']",,"['cover_photo', 'title']",static,string,your_activity_across_facebook/posts/album/3.json
+3.json,description,"['cover_photo', 'description']",,"['cover_photo', 'description']",static,string,your_activity_across_facebook/posts/album/3.json
+autofill_information.json,CITY,"['autofill_information_v2', 'CITY']",,"['autofill_information_v2', 'CITY']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,STATE,"['autofill_information_v2', 'STATE']",,"['autofill_information_v2', 'STATE']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,COUNTRY,"['autofill_information_v2', 'COUNTRY']",,"['autofill_information_v2', 'COUNTRY']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,EMAIL,"['autofill_information_v2', 'EMAIL']",,"['autofill_information_v2', 'EMAIL']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,COMPANY_NAME,"['autofill_information_v2', 'COMPANY_NAME']",,"['autofill_information_v2', 'COMPANY_NAME']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,GENDER,"['autofill_information_v2', 'GENDER']",,"['autofill_information_v2', 'GENDER']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,SLIDER,"['autofill_information_v2', 'SLIDER']",,"['autofill_information_v2', 'SLIDER']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,FIRST_NAME,"['autofill_information_v2', 'FIRST_NAME']",,"['autofill_information_v2', 'FIRST_NAME']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,LAST_NAME,"['autofill_information_v2', 'LAST_NAME']",,"['autofill_information_v2', 'LAST_NAME']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,FULL_NAME,"['autofill_information_v2', 'FULL_NAME']",,"['autofill_information_v2', 'FULL_NAME']",static,string,your_activity_across_facebook/messages/autofill_information.json
+autofill_information.json,WORK_EMAIL,"['autofill_information_v2', 'WORK_EMAIL']",,"['autofill_information_v2', 'WORK_EMAIL']",static,string,your_activity_across_facebook/messages/autofill_information.json
+secret_conversations.json,tincan_devices,"['secret_conversations_v2', 'tincan_devices']",,"['secret_conversations_v2', 'tincan_devices']",static,array,your_activity_across_facebook/messages/secret_conversations.json
+secret_conversations.json,calls,"['secret_conversations_v2', 'calls']",,"['secret_conversations_v2', 'calls']",static,array,your_activity_across_facebook/messages/secret_conversations.json
+your_badges.json,Cap d'Any Girona 2013-2014,"['group_badges_v2', ""Cap d'Any Girona 2013-2014""]",,"['group_badges_v2', ""Cap d'Any Girona 2013-2014""]",static,string,your_activity_across_facebook/groups/your_badges.json
+payment_history.json,preferred_currency,"['payments_v2', 'preferred_currency']",,"['payments_v2', 'preferred_currency']",static,string,your_activity_across_facebook/facebook_payments/payment_history.json
+payment_history.json,payments,"['payments_v2', 'payments']",,"['payments_v2', 'payments']",static,array,your_activity_across_facebook/facebook_payments/payment_history.json
+voting_location.json,voting_location,"['voting_location_v2', 'voting_location']",,"['voting_location_v2', 'voting_location']",static,string,your_activity_across_facebook/voting/voting_location.json
+voting_reminders.json,voting_reminders,"['voting_reminders_v2', 'voting_reminders']",,"['voting_reminders_v2', 'voting_reminders']",static,string,your_activity_across_facebook/voting/voting_reminders.json
+profile_information.json,previous_names,"['profile_v2', 'previous_names']",,"['profile_v2', 'previous_names']",static,array,personal_information/profile_information/profile_information.json
+profile_information.json,other_names,"['profile_v2', 'other_names']",,"['profile_v2', 'other_names']",static,array,personal_information/profile_information/profile_information.json
+profile_information.json,websites,"['profile_v2', 'websites']",,"['profile_v2', 'websites']",static,array,personal_information/profile_information/profile_information.json
+profile_information.json,phone_numbers,"['profile_v2', 'phone_numbers']",,"['profile_v2', 'phone_numbers']",static,array,personal_information/profile_information/profile_information.json
+profile_information.json,registration_timestamp,"['profile_v2', 'registration_timestamp']",,"['profile_v2', 'registration_timestamp']",static,number,personal_information/profile_information/profile_information.json
+profile_information.json,profile_uri,"['profile_v2', 'profile_uri']",,"['profile_v2', 'profile_uri']",static,string,personal_information/profile_information/profile_information.json
+browser_cookies.json,azOd********************,"['datr_stats_v2', 'azOd********************']",,"['datr_stats_v2', 'azOd********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,hQ8P********************,"['datr_stats_v2', 'hQ8P********************']",,"['datr_stats_v2', 'hQ8P********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,_bA3********************,"['datr_stats_v2', '_bA3********************']",,"['datr_stats_v2', '_bA3********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,6YCp********************,"['datr_stats_v2', '6YCp********************']",,"['datr_stats_v2', '6YCp********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,J8ju********************,"['datr_stats_v2', 'J8ju********************']",,"['datr_stats_v2', 'J8ju********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,JePr********************,"['datr_stats_v2', 'JePr********************']",,"['datr_stats_v2', 'JePr********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,kQrh********************,"['datr_stats_v2', 'kQrh********************']",,"['datr_stats_v2', 'kQrh********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,LM9M********************,"['datr_stats_v2', 'LM9M********************']",,"['datr_stats_v2', 'LM9M********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,lI36********************,"['datr_stats_v2', 'lI36********************']",,"['datr_stats_v2', 'lI36********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,TG04********************,"['datr_stats_v2', 'TG04********************']",,"['datr_stats_v2', 'TG04********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,9c8d********************,"['datr_stats_v2', '9c8d********************']",,"['datr_stats_v2', '9c8d********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,_-a7********************,"['datr_stats_v2', '_-a7********************']",,"['datr_stats_v2', '_-a7********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,6k-e********************,"['datr_stats_v2', '6k-e********************']",,"['datr_stats_v2', '6k-e********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,ebWd********************,"['datr_stats_v2', 'ebWd********************']",,"['datr_stats_v2', 'ebWd********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,18Z_********************,"['datr_stats_v2', '18Z_********************']",,"['datr_stats_v2', '18Z_********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,CAZd********************,"['datr_stats_v2', 'CAZd********************']",,"['datr_stats_v2', 'CAZd********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,5DJY********************,"['datr_stats_v2', '5DJY********************']",,"['datr_stats_v2', '5DJY********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,S1FX********************,"['datr_stats_v2', 'S1FX********************']",,"['datr_stats_v2', 'S1FX********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,TfVW********************,"['datr_stats_v2', 'TfVW********************']",,"['datr_stats_v2', 'TfVW********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,CX1V********************,"['datr_stats_v2', 'CX1V********************']",,"['datr_stats_v2', 'CX1V********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,RUJV********************,"['datr_stats_v2', 'RUJV********************']",,"['datr_stats_v2', 'RUJV********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,7AFV********************,"['datr_stats_v2', '7AFV********************']",,"['datr_stats_v2', '7AFV********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,Z_xU********************,"['datr_stats_v2', 'Z_xU********************']",,"['datr_stats_v2', 'Z_xU********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,UetU********************,"['datr_stats_v2', 'UetU********************']",,"['datr_stats_v2', 'UetU********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,pORU********************,"['datr_stats_v2', 'pORU********************']",,"['datr_stats_v2', 'pORU********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,7ehR********************,"['datr_stats_v2', '7ehR********************']",,"['datr_stats_v2', '7ehR********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,EyxH********************,"['datr_stats_v2', 'EyxH********************']",,"['datr_stats_v2', 'EyxH********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,lzVQ********************,"['datr_stats_v2', 'lzVQ********************']",,"['datr_stats_v2', 'lzVQ********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,sBFO********************,"['datr_stats_v2', 'sBFO********************']",,"['datr_stats_v2', 'sBFO********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,zCJo********************,"['datr_stats_v2', 'zCJo********************']",,"['datr_stats_v2', 'zCJo********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,gZ__********************,"['datr_stats_v2', 'gZ__********************']",,"['datr_stats_v2', 'gZ__********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,dxFh********************,"['datr_stats_v2', 'dxFh********************']",,"['datr_stats_v2', 'dxFh********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,W6Zg********************,"['datr_stats_v2', 'W6Zg********************']",,"['datr_stats_v2', 'W6Zg********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,O2JW********************,"['datr_stats_v2', 'O2JW********************']",,"['datr_stats_v2', 'O2JW********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,asU-********************,"['datr_stats_v2', 'asU-********************']",,"['datr_stats_v2', 'asU-********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,HvPC********************,"['datr_stats_v2', 'HvPC********************']",,"['datr_stats_v2', 'HvPC********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,TNor********************,"['datr_stats_v2', 'TNor********************']",,"['datr_stats_v2', 'TNor********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,RNYF********************,"['datr_stats_v2', 'RNYF********************']",,"['datr_stats_v2', 'RNYF********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,7YnB********************,"['datr_stats_v2', '7YnB********************']",,"['datr_stats_v2', '7YnB********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,G6cZ********************,"['datr_stats_v2', 'G6cZ********************']",,"['datr_stats_v2', 'G6cZ********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,i1AE********************,"['datr_stats_v2', 'i1AE********************']",,"['datr_stats_v2', 'i1AE********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,zTff********************,"['datr_stats_v2', 'zTff********************']",,"['datr_stats_v2', 'zTff********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,u5Se********************,"['datr_stats_v2', 'u5Se********************']",,"['datr_stats_v2', 'u5Se********************']",static,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,XjHL********************,"['datr_stats_v2', 'XjHL********************']",,"['datr_stats_v2', 'XjHL********************']",static,number,security_and_login_information/browser_cookies.json
+primary_location.json,zipcode,"['primary_location_v2', 'zipcode']",,"['primary_location_v2', 'zipcode']",static,string,logged_information/location/primary_location.json
+profile_information.json,full_name,"['profile_v2', 'name', 'full_name']",,"['profile_v2', 'name', 'full_name']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,first_name,"['profile_v2', 'name', 'first_name']",,"['profile_v2', 'name', 'first_name']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,middle_name,"['profile_v2', 'name', 'middle_name']",,"['profile_v2', 'name', 'middle_name']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,last_name,"['profile_v2', 'name', 'last_name']",,"['profile_v2', 'name', 'last_name']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,emails,"['profile_v2', 'emails', 'emails']",,"['profile_v2', 'emails', 'emails']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,previous_emails,"['profile_v2', 'emails', 'previous_emails']",,"['profile_v2', 'emails', 'previous_emails']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,pending_emails,"['profile_v2', 'emails', 'pending_emails']",,"['profile_v2', 'emails', 'pending_emails']",static,array,personal_information/profile_information/profile_information.json
+profile_information.json,ad_account_emails,"['profile_v2', 'emails', 'ad_account_emails']",,"['profile_v2', 'emails', 'ad_account_emails']",static,array,personal_information/profile_information/profile_information.json
+profile_information.json,year,"['profile_v2', 'birthday', 'year']",,"['profile_v2', 'birthday', 'year']",static,number,personal_information/profile_information/profile_information.json
+profile_information.json,month,"['profile_v2', 'birthday', 'month']",,"['profile_v2', 'birthday', 'month']",static,number,personal_information/profile_information/profile_information.json
+profile_information.json,day,"['profile_v2', 'birthday', 'day']",,"['profile_v2', 'birthday', 'day']",static,number,personal_information/profile_information/profile_information.json
+profile_information.json,gender_option,"['profile_v2', 'gender', 'gender_option']",,"['profile_v2', 'gender', 'gender_option']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,pronoun,"['profile_v2', 'gender', 'pronoun']",,"['profile_v2', 'gender', 'pronoun']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,name,"['profile_v2', 'current_city', 'name']",,"['profile_v2', 'current_city', 'name']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,timestamp,"['profile_v2', 'current_city', 'timestamp']",,"['profile_v2', 'current_city', 'timestamp']",static,number,personal_information/profile_information/profile_information.json
+profile_information.json,name,"['profile_v2', 'hometown', 'name']",,"['profile_v2', 'hometown', 'name']",static,string,personal_information/profile_information/profile_information.json
+profile_information.json,timestamp,"['profile_v2', 'hometown', 'timestamp']",,"['profile_v2', 'hometown', 'timestamp']",static,number,personal_information/profile_information/profile_information.json
+profile_information.json,blood_donor_status,"['profile_v2', 'blood_info', 'blood_donor_status']",,"['profile_v2', 'blood_info', 'blood_donor_status']",static,string,personal_information/profile_information/profile_information.json
+your_facebook_activity_history.json,activity_by_day,"['last_activity_v2', 'last_activity_time', 'Website', 'activity_by_day']",,"['last_activity_v2', 'last_activity_time', 'Website', 'activity_by_day']",static,number,security_and_login_information/your_facebook_activity_history.json
+navigation_bar_activity.json,media,['media'],[],['media'],list,array,your_activity_across_facebook/navigation_bar/navigation_bar_activity.json
+your_device_push_settings.json,media,['media'],[],['media'],list,array,preferences/preferences/your_device_push_settings.json
+your_posts__check_ins__photos_and_videos_1.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
+your_posts__check_ins__photos_and_videos_1.json,title,['title'],[],['title'],list,string,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
+likes_and_reactions_1.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
+likes_and_reactions_1.json,title,['title'],[],['title'],list,string,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_activity_across_facebook/messages/archived_threads/username/message_1.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_activity_across_facebook/messages/filtered_threads/username/message_1.json
+0.json,uri,"['photos', 'uri']",['photos'],['uri'],list,string,your_activity_across_facebook/posts/album/0.json
+0.json,creation_timestamp,"['photos', 'creation_timestamp']",['photos'],['creation_timestamp'],list,number,your_activity_across_facebook/posts/album/0.json
+0.json,title,"['photos', 'title']",['photos'],['title'],list,string,your_activity_across_facebook/posts/album/0.json
+1.json,uri,"['photos', 'uri']",['photos'],['uri'],list,string,your_activity_across_facebook/posts/album/1.json
+1.json,creation_timestamp,"['photos', 'creation_timestamp']",['photos'],['creation_timestamp'],list,number,your_activity_across_facebook/posts/album/1.json
+1.json,title,"['photos', 'title']",['photos'],['title'],list,string,your_activity_across_facebook/posts/album/1.json
+1.json,description,"['photos', 'description']",['photos'],['description'],list,string,your_activity_across_facebook/posts/album/1.json
+2.json,uri,"['photos', 'uri']",['photos'],['uri'],list,string,your_activity_across_facebook/posts/album/2.json
+2.json,creation_timestamp,"['photos', 'creation_timestamp']",['photos'],['creation_timestamp'],list,number,your_activity_across_facebook/posts/album/2.json
+2.json,title,"['photos', 'title']",['photos'],['title'],list,string,your_activity_across_facebook/posts/album/2.json
+3.json,uri,"['photos', 'uri']",['photos'],['uri'],list,string,your_activity_across_facebook/posts/album/3.json
+3.json,creation_timestamp,"['photos', 'creation_timestamp']",['photos'],['creation_timestamp'],list,number,your_activity_across_facebook/posts/album/3.json
+3.json,title,"['photos', 'title']",['photos'],['title'],list,string,your_activity_across_facebook/posts/album/3.json
+3.json,description,"['photos', 'description']",['photos'],['description'],list,string,your_activity_across_facebook/posts/album/3.json
+your_uncategorized_photos.json,uri,"['other_photos_v2', 'uri']",['other_photos_v2'],['uri'],list,string,your_activity_across_facebook/posts/your_uncategorized_photos.json
+your_uncategorized_photos.json,creation_timestamp,"['other_photos_v2', 'creation_timestamp']",['other_photos_v2'],['creation_timestamp'],list,number,your_activity_across_facebook/posts/your_uncategorized_photos.json
+your_uncategorized_photos.json,description,"['other_photos_v2', 'description']",['other_photos_v2'],['description'],list,string,your_activity_across_facebook/posts/your_uncategorized_photos.json
+your_events.json,name,"['your_events_v2', 'name']",['your_events_v2'],['name'],list,string,your_activity_across_facebook/events/your_events.json
+your_events.json,start_timestamp,"['your_events_v2', 'start_timestamp']",['your_events_v2'],['start_timestamp'],list,number,your_activity_across_facebook/events/your_events.json
+your_events.json,end_timestamp,"['your_events_v2', 'end_timestamp']",['your_events_v2'],['end_timestamp'],list,number,your_activity_across_facebook/events/your_events.json
+your_events.json,description,"['your_events_v2', 'description']",['your_events_v2'],['description'],list,string,your_activity_across_facebook/events/your_events.json
+your_events.json,create_timestamp,"['your_events_v2', 'create_timestamp']",['your_events_v2'],['create_timestamp'],list,number,your_activity_across_facebook/events/your_events.json
+group_posts_and_comments.json,timestamp,"['group_posts_v2', 'timestamp']",['group_posts_v2'],['timestamp'],list,number,your_activity_across_facebook/groups/group_posts_and_comments.json
+group_posts_and_comments.json,title,"['group_posts_v2', 'title']",['group_posts_v2'],['title'],list,string,your_activity_across_facebook/groups/group_posts_and_comments.json
+your_group_membership_activity.json,timestamp,"['groups_joined_v2', 'timestamp']",['groups_joined_v2'],['timestamp'],list,number,your_activity_across_facebook/groups/your_group_membership_activity.json
+your_group_membership_activity.json,title,"['groups_joined_v2', 'title']",['groups_joined_v2'],['title'],list,string,your_activity_across_facebook/groups/your_group_membership_activity.json
+your_groups.json,name,"['groups_admined_v2', 'name']",['groups_admined_v2'],['name'],list,string,your_activity_across_facebook/groups/your_groups.json
+your_groups.json,timestamp,"['groups_admined_v2', 'timestamp']",['groups_admined_v2'],['timestamp'],list,number,your_activity_across_facebook/groups/your_groups.json
+your_fundraiser_donations_information.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_activity_across_facebook/fundraisers/your_fundraiser_donations_information.json
+your_fundraiser_donations_information.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_activity_across_facebook/fundraisers/your_fundraiser_donations_information.json
+pages_and_profiles_you_follow.json,timestamp,"['pages_followed_v2', 'timestamp']",['pages_followed_v2'],['timestamp'],list,number,your_activity_across_facebook/pages/pages_and_profiles_you_follow.json
+pages_and_profiles_you_follow.json,title,"['pages_followed_v2', 'title']",['pages_followed_v2'],['title'],list,string,your_activity_across_facebook/pages/pages_and_profiles_you_follow.json
+pages_you've_liked.json,name,"['page_likes_v2', 'name']",['page_likes_v2'],['name'],list,string,your_activity_across_facebook/pages/pages_you've_liked.json
+pages_you've_liked.json,timestamp,"['page_likes_v2', 'timestamp']",['page_likes_v2'],['timestamp'],list,number,your_activity_across_facebook/pages/pages_you've_liked.json
+pages_you've_liked.json,url,"['page_likes_v2', 'url']",['page_likes_v2'],['url'],list,string,your_activity_across_facebook/pages/pages_you've_liked.json
+polls_you_voted_on.json,timestamp,"['poll_votes_v2', 'timestamp']",['poll_votes_v2'],['timestamp'],list,number,your_activity_across_facebook/polls/polls_you_voted_on.json
+polls_you_voted_on.json,title,"['poll_votes_v2', 'title']",['poll_votes_v2'],['title'],list,string,your_activity_across_facebook/polls/polls_you_voted_on.json
+your_recently_followed_history.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_activity_across_facebook/other_activity/your_recently_followed_history.json
+pokes.json,poker,"['pokes_v2', 'poker']",['pokes_v2'],['poker'],list,string,your_activity_across_facebook/other_activity/pokes.json
+pokes.json,pokee,"['pokes_v2', 'pokee']",['pokes_v2'],['pokee'],list,string,your_activity_across_facebook/other_activity/pokes.json
+pokes.json,rank,"['pokes_v2', 'rank']",['pokes_v2'],['rank'],list,number,your_activity_across_facebook/other_activity/pokes.json
+pokes.json,timestamp,"['pokes_v2', 'timestamp']",['pokes_v2'],['timestamp'],list,number,your_activity_across_facebook/other_activity/pokes.json
+bookmark_and_app_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_activity_across_facebook/facebook_gaming/bookmark_and_app_settings.json
+your_transaction_survey_information.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_activity_across_facebook/facebook_marketplace/your_transaction_survey_information.json
+your_transaction_survey_information.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_activity_across_facebook/facebook_marketplace/your_transaction_survey_information.json
+ad_preferences.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,ads_information/ad_preferences.json
+ad_preferences.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,ads_information/ad_preferences.json
+your_sampled_locations.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,ads_information/your_sampled_locations.json
+your_sampled_locations.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,ads_information/your_sampled_locations.json
+your_recent_reported_conversions.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,ads_information/your_recent_reported_conversions.json
+your_recent_reported_conversions.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,ads_information/your_recent_reported_conversions.json
+meta_ad_library_accounts.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,ads_information/meta_ad_library_accounts.json
+meta_ad_library_accounts.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,ads_information/meta_ad_library_accounts.json
+subscription_for_no_ads.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,ads_information/subscription_for_no_ads.json
+subscription_for_no_ads.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,ads_information/subscription_for_no_ads.json
+connected_apps_and_websites.json,name,"['installed_apps_v2', 'name']",['installed_apps_v2'],['name'],list,string,apps_and_websites_off_of_facebook/connected_apps_and_websites.json
+connected_apps_and_websites.json,added_timestamp,"['installed_apps_v2', 'added_timestamp']",['installed_apps_v2'],['added_timestamp'],list,number,apps_and_websites_off_of_facebook/connected_apps_and_websites.json
+connected_apps_and_websites.json,user_app_scoped_id,"['installed_apps_v2', 'user_app_scoped_id']",['installed_apps_v2'],['user_app_scoped_id'],list,number,apps_and_websites_off_of_facebook/connected_apps_and_websites.json
+connected_apps_and_websites.json,category,"['installed_apps_v2', 'category']",['installed_apps_v2'],['category'],list,string,apps_and_websites_off_of_facebook/connected_apps_and_websites.json
+connected_apps_and_websites.json,removed_timestamp,"['installed_apps_v2', 'removed_timestamp']",['installed_apps_v2'],['removed_timestamp'],list,number,apps_and_websites_off_of_facebook/connected_apps_and_websites.json
+your_apps.json,name,"['admined_apps_v2', 'name']",['admined_apps_v2'],['name'],list,string,apps_and_websites_off_of_facebook/your_apps.json
+your_apps.json,added_timestamp,"['admined_apps_v2', 'added_timestamp']",['admined_apps_v2'],['added_timestamp'],list,number,apps_and_websites_off_of_facebook/your_apps.json
+your_activity_off_meta_technologies_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,apps_and_websites_off_of_facebook/your_activity_off_meta_technologies_settings.json
+controls.json,name,"['controls', 'name']",['controls'],['name'],list,string,preferences/feed/controls.json
+controls.json,description,"['controls', 'description']",['controls'],['description'],list,string,preferences/feed/controls.json
+controls.json,entries,"['controls', 'entries']",['controls'],['entries'],list,array,preferences/feed/controls.json
+language_and_locale.json,name,"['language_and_locale_v2', 'name']",['language_and_locale_v2'],['name'],list,string,preferences/preferences/language_and_locale.json
+language_and_locale.json,description,"['language_and_locale_v2', 'description']",['language_and_locale_v2'],['description'],list,string,preferences/preferences/language_and_locale.json
+reels_preferences.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/reels_preferences.json
+reels_preferences.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,preferences/preferences/reels_preferences.json
+your_story_highlights.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/your_story_highlights.json
+your_story_highlights.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,preferences/preferences/your_story_highlights.json
+your_inferred_language_preferences_for_videos.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/your_inferred_language_preferences_for_videos.json
+your_watch_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/your_watch_settings.json
+your_watch_settings.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,preferences/preferences/your_watch_settings.json
+login_alerts_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/login_alerts_settings.json
+login_alerts_settings.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,preferences/preferences/login_alerts_settings.json
+your_fundraiser_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/your_fundraiser_settings.json
+your_activity.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/memories/your_activity.json
+your_activity.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,preferences/memories/your_activity.json
+timezone.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,personal_information/profile_information/timezone.json
+timezone.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,personal_information/profile_information/timezone.json
+your_recent_account_recovery_successes.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,security_and_login_information/your_recent_account_recovery_successes.json
+your_recent_account_recovery_successes.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,security_and_login_information/your_recent_account_recovery_successes.json
+information_about_your_last_login.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,security_and_login_information/information_about_your_last_login.json
+information_about_your_last_login.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,security_and_login_information/information_about_your_last_login.json
+account_recoveries_without_password_changes.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,security_and_login_information/account_recoveries_without_password_changes.json
+account_recoveries_without_password_changes.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,security_and_login_information/account_recoveries_without_password_changes.json
+account_activity.json,action,"['account_activity_v2', 'action']",['account_activity_v2'],['action'],list,string,security_and_login_information/account_activity.json
+account_activity.json,timestamp,"['account_activity_v2', 'timestamp']",['account_activity_v2'],['timestamp'],list,number,security_and_login_information/account_activity.json
+account_activity.json,ip_address,"['account_activity_v2', 'ip_address']",['account_activity_v2'],['ip_address'],list,string,security_and_login_information/account_activity.json
+account_activity.json,user_agent,"['account_activity_v2', 'user_agent']",['account_activity_v2'],['user_agent'],list,string,security_and_login_information/account_activity.json
+account_activity.json,datr_cookie,"['account_activity_v2', 'datr_cookie']",['account_activity_v2'],['datr_cookie'],list,string,security_and_login_information/account_activity.json
+account_activity.json,city,"['account_activity_v2', 'city']",['account_activity_v2'],['city'],list,string,security_and_login_information/account_activity.json
+account_activity.json,region,"['account_activity_v2', 'region']",['account_activity_v2'],['region'],list,string,security_and_login_information/account_activity.json
+account_activity.json,country,"['account_activity_v2', 'country']",['account_activity_v2'],['country'],list,string,security_and_login_information/account_activity.json
+account_activity.json,site_name,"['account_activity_v2', 'site_name']",['account_activity_v2'],['site_name'],list,string,security_and_login_information/account_activity.json
+email_address_verifications.json,contact,"['contact_verifications_v2', 'contact']",['contact_verifications_v2'],['contact'],list,string,security_and_login_information/email_address_verifications.json
+email_address_verifications.json,contact_type,"['contact_verifications_v2', 'contact_type']",['contact_verifications_v2'],['contact_type'],list,number,security_and_login_information/email_address_verifications.json
+email_address_verifications.json,verification_time,"['contact_verifications_v2', 'verification_time']",['contact_verifications_v2'],['verification_time'],list,number,security_and_login_information/email_address_verifications.json
+ip_address_activity.json,ip,"['used_ip_address_v2', 'ip']",['used_ip_address_v2'],['ip'],list,string,security_and_login_information/ip_address_activity.json
+ip_address_activity.json,action,"['used_ip_address_v2', 'action']",['used_ip_address_v2'],['action'],list,string,security_and_login_information/ip_address_activity.json
+ip_address_activity.json,timestamp,"['used_ip_address_v2', 'timestamp']",['used_ip_address_v2'],['timestamp'],list,number,security_and_login_information/ip_address_activity.json
+ip_address_activity.json,user_agent,"['used_ip_address_v2', 'user_agent']",['used_ip_address_v2'],['user_agent'],list,string,security_and_login_information/ip_address_activity.json
+login_protection_data.json,name,"['login_protection_data_v2', 'name']",['login_protection_data_v2'],['name'],list,string,security_and_login_information/login_protection_data.json
+logins_and_logouts.json,action,"['account_accesses_v2', 'action']",['account_accesses_v2'],['action'],list,string,security_and_login_information/logins_and_logouts.json
+logins_and_logouts.json,timestamp,"['account_accesses_v2', 'timestamp']",['account_accesses_v2'],['timestamp'],list,number,security_and_login_information/logins_and_logouts.json
+logins_and_logouts.json,site,"['account_accesses_v2', 'site']",['account_accesses_v2'],['site'],list,string,security_and_login_information/logins_and_logouts.json
+logins_and_logouts.json,ip_address,"['account_accesses_v2', 'ip_address']",['account_accesses_v2'],['ip_address'],list,string,security_and_login_information/logins_and_logouts.json
+mobile_devices.json,type,"['devices_v2', 'type']",['devices_v2'],['type'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,os,"['devices_v2', 'os']",['devices_v2'],['os'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,update_time,"['devices_v2', 'update_time']",['devices_v2'],['update_time'],list,number,security_and_login_information/mobile_devices.json
+mobile_devices.json,advertiser_id,"['devices_v2', 'advertiser_id']",['devices_v2'],['advertiser_id'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,udid,"['devices_v2', 'udid']",['devices_v2'],['udid'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,redact_tokens,"['devices_v2', 'redact_tokens']",['devices_v2'],['redact_tokens'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,family_device_id,"['devices_v2', 'family_device_id']",['devices_v2'],['family_device_id'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,device_locale,"['devices_v2', 'device_locale']",['devices_v2'],['device_locale'],list,string,security_and_login_information/mobile_devices.json
+recognized_devices.json,name,"['recognized_devices_v2', 'name']",['recognized_devices_v2'],['name'],list,string,security_and_login_information/recognized_devices.json
+recognized_devices.json,created_timestamp,"['recognized_devices_v2', 'created_timestamp']",['recognized_devices_v2'],['created_timestamp'],list,number,security_and_login_information/recognized_devices.json
+recognized_devices.json,ip_address,"['recognized_devices_v2', 'ip_address']",['recognized_devices_v2'],['ip_address'],list,string,security_and_login_information/recognized_devices.json
+recognized_devices.json,user_agent,"['recognized_devices_v2', 'user_agent']",['recognized_devices_v2'],['user_agent'],list,string,security_and_login_information/recognized_devices.json
+recognized_devices.json,datr_cookie,"['recognized_devices_v2', 'datr_cookie']",['recognized_devices_v2'],['datr_cookie'],list,string,security_and_login_information/recognized_devices.json
+record_details.json,event,"['admin_records_v2', 'event']",['admin_records_v2'],['event'],list,string,security_and_login_information/record_details.json
+where_you're_logged_in.json,created_timestamp,"['active_sessions_v2', 'created_timestamp']",['active_sessions_v2'],['created_timestamp'],list,number,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,updated_timestamp,"['active_sessions_v2', 'updated_timestamp']",['active_sessions_v2'],['updated_timestamp'],list,number,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,ip_address,"['active_sessions_v2', 'ip_address']",['active_sessions_v2'],['ip_address'],list,string,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,user_agent,"['active_sessions_v2', 'user_agent']",['active_sessions_v2'],['user_agent'],list,string,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,datr_cookie,"['active_sessions_v2', 'datr_cookie']",['active_sessions_v2'],['datr_cookie'],list,string,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,device,"['active_sessions_v2', 'device']",['active_sessions_v2'],['device'],list,string,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,location,"['active_sessions_v2', 'location']",['active_sessions_v2'],['location'],list,string,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,app,"['active_sessions_v2', 'app']",['active_sessions_v2'],['app'],list,string,security_and_login_information/where_you're_logged_in.json
+where_you're_logged_in.json,session_type,"['active_sessions_v2', 'session_type']",['active_sessions_v2'],['session_type'],list,string,security_and_login_information/where_you're_logged_in.json
+who_you've_followed.json,name,"['following_v3', 'name']",['following_v3'],['name'],list,string,connections/followers/who_you've_followed.json
+who_you've_followed.json,timestamp,"['following_v3', 'timestamp']",['following_v3'],['timestamp'],list,number,connections/followers/who_you've_followed.json
+people_you_may_know.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,connections/friends/people_you_may_know.json
+received_friend_requests.json,name,"['received_requests_v2', 'name']",['received_requests_v2'],['name'],list,string,connections/friends/received_friend_requests.json
+received_friend_requests.json,timestamp,"['received_requests_v2', 'timestamp']",['received_requests_v2'],['timestamp'],list,number,connections/friends/received_friend_requests.json
+rejected_friend_requests.json,name,"['rejected_requests_v2', 'name']",['rejected_requests_v2'],['name'],list,string,connections/friends/rejected_friend_requests.json
+rejected_friend_requests.json,timestamp,"['rejected_requests_v2', 'timestamp']",['rejected_requests_v2'],['timestamp'],list,number,connections/friends/rejected_friend_requests.json
+removed_friends.json,name,"['deleted_friends_v2', 'name']",['deleted_friends_v2'],['name'],list,string,connections/friends/removed_friends.json
+removed_friends.json,timestamp,"['deleted_friends_v2', 'timestamp']",['deleted_friends_v2'],['timestamp'],list,number,connections/friends/removed_friends.json
+sent_friend_requests.json,name,"['sent_requests_v2', 'name']",['sent_requests_v2'],['name'],list,string,connections/friends/sent_friend_requests.json
+sent_friend_requests.json,timestamp,"['sent_requests_v2', 'timestamp']",['sent_requests_v2'],['timestamp'],list,number,connections/friends/sent_friend_requests.json
+people_we_think_you_should_follow.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,logged_information/your_topics/people_we_think_you_should_follow.json
+people_we_think_you_should_follow.json,vec,"['label_values', 'vec']",['label_values'],['vec'],list,array,logged_information/your_topics/people_we_think_you_should_follow.json
+your_search_history.json,timestamp,"['searches_v2', 'timestamp']",['searches_v2'],['timestamp'],list,number,logged_information/search/your_search_history.json
+your_search_history.json,title,"['searches_v2', 'title']",['searches_v2'],['title'],list,string,logged_information/search/your_search_history.json
+people_and_friends.json,name,"['people_interactions_v2', 'name']",['people_interactions_v2'],['name'],list,string,logged_information/activity_messages/people_and_friends.json
+people_and_friends.json,description,"['people_interactions_v2', 'description']",['people_interactions_v2'],['description'],list,string,logged_information/activity_messages/people_and_friends.json
+consents.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,logged_information/other_logged_information/consents.json
+your_comments_in_groups.json,timestamp,"['group_comments_v2', 'timestamp']",['group_comments_v2'],['timestamp'],list,number,your_activity_across_facebook/groups/your_comments_in_groups.json
+your_comments_in_groups.json,title,"['group_comments_v2', 'title']",['group_comments_v2'],['title'],list,string,your_activity_across_facebook/groups/your_comments_in_groups.json
+profile_update_history.json,timestamp,"['profile_updates_v2', 'timestamp']",['profile_updates_v2'],['timestamp'],list,number,personal_information/profile_information/profile_update_history.json
+profile_update_history.json,title,"['profile_updates_v2', 'title']",['profile_updates_v2'],['title'],list,string,personal_information/profile_information/profile_update_history.json
+notifications.json,timestamp,"['notifications_v2', 'timestamp']",['notifications_v2'],['timestamp'],list,number,logged_information/notifications/notifications.json
+notifications.json,unread,"['notifications_v2', 'unread']",['notifications_v2'],['unread'],list,boolean,logged_information/notifications/notifications.json
+notifications.json,href,"['notifications_v2', 'href']",['notifications_v2'],['href'],list,string,logged_information/notifications/notifications.json
+notifications.json,text,"['notifications_v2', 'text']",['notifications_v2'],['text'],list,string,logged_information/notifications/notifications.json
+your_friends.json,name,"['friends_v2', 'name']",['friends_v2'],['name'],list,string,connections/friends/your_friends.json
+your_friends.json,timestamp,"['friends_v2', 'timestamp']",['friends_v2'],['timestamp'],list,number,connections/friends/your_friends.json
+recently_viewed.json,name,"['recently_viewed', 'name']",['recently_viewed'],['name'],list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+recently_viewed.json,description,"['recently_viewed', 'description']",['recently_viewed'],['description'],list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+event_invitations.json,name,"['events_invited_v2', 'name']",['events_invited_v2'],['name'],list,string,your_activity_across_facebook/events/event_invitations.json
+event_invitations.json,start_timestamp,"['events_invited_v2', 'start_timestamp']",['events_invited_v2'],['start_timestamp'],list,number,your_activity_across_facebook/events/event_invitations.json
+event_invitations.json,end_timestamp,"['events_invited_v2', 'end_timestamp']",['events_invited_v2'],['end_timestamp'],list,number,your_activity_across_facebook/events/event_invitations.json
+recently_visited.json,name,"['visited_things_v2', 'name']",['visited_things_v2'],['name'],list,string,logged_information/your_interactions_on_facebook/recently_visited.json
+recently_visited.json,description,"['visited_things_v2', 'description']",['visited_things_v2'],['description'],list,string,logged_information/your_interactions_on_facebook/recently_visited.json
+comments.json,timestamp,"['comments_v2', 'timestamp']",['comments_v2'],['timestamp'],list,number,your_activity_across_facebook/comments_and_reactions/comments.json
+comments.json,title,"['comments_v2', 'title']",['comments_v2'],['title'],list,string,your_activity_across_facebook/comments_and_reactions/comments.json
+message_2.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+message_2.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+navigation_bar_activity.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_activity_across_facebook/navigation_bar/navigation_bar_activity.json
+navigation_bar_activity.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_activity_across_facebook/navigation_bar/navigation_bar_activity.json
+your_device_push_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,preferences/preferences/your_device_push_settings.json
+your_device_push_settings.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,preferences/preferences/your_device_push_settings.json
+your_posts__check_ins__photos_and_videos_1.json,post,"['data', 'post']",['data'],['post'],list,string,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
+message_1.json,uri,"['messages', 'sticker', 'uri']",['messages'],"['sticker', 'uri']",list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,ai_stickers,"['messages', 'sticker', 'ai_stickers']",['messages'],"['sticker', 'ai_stickers']",list,array,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
+secret_conversations.json,device_type,"['secret_conversations_v2', 'armadillo_devices', 'device_type']","['secret_conversations_v2', 'armadillo_devices']",['device_type'],list,string,your_activity_across_facebook/messages/secret_conversations.json
+secret_conversations.json,device_manufacturer,"['secret_conversations_v2', 'armadillo_devices', 'device_manufacturer']","['secret_conversations_v2', 'armadillo_devices']",['device_manufacturer'],list,string,your_activity_across_facebook/messages/secret_conversations.json
+secret_conversations.json,device_model,"['secret_conversations_v2', 'armadillo_devices', 'device_model']","['secret_conversations_v2', 'armadillo_devices']",['device_model'],list,string,your_activity_across_facebook/messages/secret_conversations.json
+secret_conversations.json,device_os_version,"['secret_conversations_v2', 'armadillo_devices', 'device_os_version']","['secret_conversations_v2', 'armadillo_devices']",['device_os_version'],list,string,your_activity_across_facebook/messages/secret_conversations.json
+secret_conversations.json,last_connected_ip,"['secret_conversations_v2', 'armadillo_devices', 'last_connected_ip']","['secret_conversations_v2', 'armadillo_devices']",['last_connected_ip'],list,string,your_activity_across_facebook/messages/secret_conversations.json
+secret_conversations.json,last_active_time,"['secret_conversations_v2', 'armadillo_devices', 'last_active_time']","['secret_conversations_v2', 'armadillo_devices']",['last_active_time'],list,number,your_activity_across_facebook/messages/secret_conversations.json
+your_event_responses.json,name,"['event_responses_v2', 'events_joined', 'name']","['event_responses_v2', 'events_joined']",['name'],list,string,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,start_timestamp,"['event_responses_v2', 'events_joined', 'start_timestamp']","['event_responses_v2', 'events_joined']",['start_timestamp'],list,number,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,end_timestamp,"['event_responses_v2', 'events_joined', 'end_timestamp']","['event_responses_v2', 'events_joined']",['end_timestamp'],list,number,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,name,"['event_responses_v2', 'events_declined', 'name']","['event_responses_v2', 'events_declined']",['name'],list,string,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,start_timestamp,"['event_responses_v2', 'events_declined', 'start_timestamp']","['event_responses_v2', 'events_declined']",['start_timestamp'],list,number,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,end_timestamp,"['event_responses_v2', 'events_declined', 'end_timestamp']","['event_responses_v2', 'events_declined']",['end_timestamp'],list,number,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,name,"['event_responses_v2', 'events_interested', 'name']","['event_responses_v2', 'events_interested']",['name'],list,string,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,start_timestamp,"['event_responses_v2', 'events_interested', 'start_timestamp']","['event_responses_v2', 'events_interested']",['start_timestamp'],list,number,your_activity_across_facebook/events/your_event_responses.json
+your_event_responses.json,end_timestamp,"['event_responses_v2', 'events_interested', 'end_timestamp']","['event_responses_v2', 'events_interested']",['end_timestamp'],list,number,your_activity_across_facebook/events/your_event_responses.json
+group_posts_and_comments.json,post,"['group_posts_v2', 'data', 'post']","['group_posts_v2', 'data']",['post'],list,string,your_activity_across_facebook/groups/group_posts_and_comments.json
+your_group_membership_activity.json,name,"['groups_joined_v2', 'data', 'name']","['groups_joined_v2', 'data']",['name'],list,string,your_activity_across_facebook/groups/your_group_membership_activity.json
+pages_and_profiles_you_follow.json,name,"['pages_followed_v2', 'data', 'name']","['pages_followed_v2', 'data']",['name'],list,string,your_activity_across_facebook/pages/pages_and_profiles_you_follow.json
+language_and_locale.json,name,"['language_and_locale_v2', 'children', 'name']","['language_and_locale_v2', 'children']",['name'],list,string,preferences/preferences/language_and_locale.json
+language_and_locale.json,description,"['language_and_locale_v2', 'children', 'description']","['language_and_locale_v2', 'children']",['description'],list,string,preferences/preferences/language_and_locale.json
+your_inferred_language_preferences_for_videos.json,label,"['label_values', 'dict', 'label']","['label_values', 'dict']",['label'],list,string,preferences/preferences/your_inferred_language_preferences_for_videos.json
+your_inferred_language_preferences_for_videos.json,value,"['label_values', 'dict', 'value']","['label_values', 'dict']",['value'],list,string,preferences/preferences/your_inferred_language_preferences_for_videos.json
+profile_information.json,name,"['profile_v2', 'education_experiences', 'name']","['profile_v2', 'education_experiences']",['name'],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,graduated,"['profile_v2', 'education_experiences', 'graduated']","['profile_v2', 'education_experiences']",['graduated'],list,boolean,personal_information/profile_information/profile_information.json
+profile_information.json,concentrations,"['profile_v2', 'education_experiences', 'concentrations']","['profile_v2', 'education_experiences']",['concentrations'],list,array,personal_information/profile_information/profile_information.json
+profile_information.json,school_type,"['profile_v2', 'education_experiences', 'school_type']","['profile_v2', 'education_experiences']",['school_type'],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,timestamp,"['profile_v2', 'education_experiences', 'timestamp']","['profile_v2', 'education_experiences']",['timestamp'],list,number,personal_information/profile_information/profile_information.json
+profile_information.json,employer,"['profile_v2', 'work_experiences', 'employer']","['profile_v2', 'work_experiences']",['employer'],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,location,"['profile_v2', 'work_experiences', 'location']","['profile_v2', 'work_experiences']",['location'],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,description,"['profile_v2', 'work_experiences', 'description']","['profile_v2', 'work_experiences']",['description'],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,start_timestamp,"['profile_v2', 'work_experiences', 'start_timestamp']","['profile_v2', 'work_experiences']",['start_timestamp'],list,number,personal_information/profile_information/profile_information.json
+profile_information.json,timestamp,"['profile_v2', 'work_experiences', 'timestamp']","['profile_v2', 'work_experiences']",['timestamp'],list,number,personal_information/profile_information/profile_information.json
+profile_information.json,place,"['profile_v2', 'places_lived', 'place']","['profile_v2', 'places_lived']",['place'],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,start_timestamp,"['profile_v2', 'places_lived', 'start_timestamp']","['profile_v2', 'places_lived']",['start_timestamp'],list,number,personal_information/profile_information/profile_information.json
+profile_information.json,timestamp,"['profile_v2', 'places_lived', 'timestamp']","['profile_v2', 'places_lived']",['timestamp'],list,number,personal_information/profile_information/profile_information.json
+login_protection_data.json,created_timestamp,"['login_protection_data_v2', 'session', 'created_timestamp']",['login_protection_data_v2'],"['session', 'created_timestamp']",list,number,security_and_login_information/login_protection_data.json
+login_protection_data.json,updated_timestamp,"['login_protection_data_v2', 'session', 'updated_timestamp']",['login_protection_data_v2'],"['session', 'updated_timestamp']",list,number,security_and_login_information/login_protection_data.json
+mobile_devices.json,disabled,"['devices_v2', 'push_tokens', 'disabled']","['devices_v2', 'push_tokens']",['disabled'],list,boolean,security_and_login_information/mobile_devices.json
+mobile_devices.json,client_update_time,"['devices_v2', 'push_tokens', 'client_update_time']","['devices_v2', 'push_tokens']",['client_update_time'],list,number,security_and_login_information/mobile_devices.json
+mobile_devices.json,creation_time,"['devices_v2', 'push_tokens', 'creation_time']","['devices_v2', 'push_tokens']",['creation_time'],list,number,security_and_login_information/mobile_devices.json
+mobile_devices.json,app_version,"['devices_v2', 'push_tokens', 'app_version']","['devices_v2', 'push_tokens']",['app_version'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,locale,"['devices_v2', 'push_tokens', 'locale']","['devices_v2', 'push_tokens']",['locale'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,os_version,"['devices_v2', 'push_tokens', 'os_version']","['devices_v2', 'push_tokens']",['os_version'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,token,"['devices_v2', 'push_tokens', 'token']","['devices_v2', 'push_tokens']",['token'],list,string,security_and_login_information/mobile_devices.json
+mobile_devices.json,device_id,"['devices_v2', 'push_tokens', 'device_id']","['devices_v2', 'push_tokens']",['device_id'],list,string,security_and_login_information/mobile_devices.json
+record_details.json,created_timestamp,"['admin_records_v2', 'session', 'created_timestamp']",['admin_records_v2'],"['session', 'created_timestamp']",list,number,security_and_login_information/record_details.json
+record_details.json,ip_address,"['admin_records_v2', 'session', 'ip_address']",['admin_records_v2'],"['session', 'ip_address']",list,string,security_and_login_information/record_details.json
+record_details.json,user_agent,"['admin_records_v2', 'session', 'user_agent']",['admin_records_v2'],"['session', 'user_agent']",list,string,security_and_login_information/record_details.json
+record_details.json,datr_cookie,"['admin_records_v2', 'session', 'datr_cookie']",['admin_records_v2'],"['session', 'datr_cookie']",list,string,security_and_login_information/record_details.json
+people_you_may_know.json,value,"['label_values', 'vec', 'value']","['label_values', 'vec']",['value'],list,string,connections/friends/people_you_may_know.json
+your_search_history.json,text,"['searches_v2', 'data', 'text']","['searches_v2', 'data']",['text'],list,string,logged_information/search/your_search_history.json
+people_and_friends.json,timestamp,"['people_interactions_v2', 'entries', 'timestamp']","['people_interactions_v2', 'entries']",['timestamp'],list,number,logged_information/activity_messages/people_and_friends.json
+recently_viewed.json,name,"['recently_viewed', 'children', 'name']","['recently_viewed', 'children']",['name'],list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+recently_viewed.json,description,"['recently_viewed', 'children', 'description']","['recently_viewed', 'children']",['description'],list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+recently_visited.json,timestamp,"['visited_things_v2', 'entries', 'timestamp']","['visited_things_v2', 'entries']",['timestamp'],list,number,logged_information/your_interactions_on_facebook/recently_visited.json
+likes_and_reactions_1.json,reaction,"['data', 'reaction', 'reaction']",['data'],"['reaction', 'reaction']",list,string,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
+likes_and_reactions_1.json,actor,"['data', 'reaction', 'actor']",['data'],"['reaction', 'actor']",list,string,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
+your_recently_followed_history.json,label,"['label_values', 'vec', 'dict', 'label']","['label_values', 'vec', 'dict']",['label'],list,string,your_activity_across_facebook/other_activity/your_recently_followed_history.json
+your_recently_followed_history.json,value,"['label_values', 'vec', 'dict', 'value']","['label_values', 'vec', 'dict']",['value'],list,string,your_activity_across_facebook/other_activity/your_recently_followed_history.json
+your_fundraiser_settings.json,label,"['label_values', 'vec', 'dict', 'label']","['label_values', 'vec', 'dict']",['label'],list,string,preferences/preferences/your_fundraiser_settings.json
+your_fundraiser_settings.json,value,"['label_values', 'vec', 'dict', 'value']","['label_values', 'vec', 'dict']",['value'],list,string,preferences/preferences/your_fundraiser_settings.json
+your_search_history.json,text,"['searches_v2', 'attachments', 'data', 'text']","['searches_v2', 'attachments', 'data']",['text'],list,string,logged_information/search/your_search_history.json
+people_and_friends.json,name,"['people_interactions_v2', 'entries', 'data', 'name']","['people_interactions_v2', 'entries']","['data', 'name']",list,string,logged_information/activity_messages/people_and_friends.json
+people_and_friends.json,uri,"['people_interactions_v2', 'entries', 'data', 'uri']","['people_interactions_v2', 'entries']","['data', 'uri']",list,string,logged_information/activity_messages/people_and_friends.json
+your_comments_in_groups.json,timestamp,"['group_comments_v2', 'data', 'comment', 'timestamp']","['group_comments_v2', 'data']","['comment', 'timestamp']",list,number,your_activity_across_facebook/groups/your_comments_in_groups.json
+your_comments_in_groups.json,comment,"['group_comments_v2', 'data', 'comment', 'comment']","['group_comments_v2', 'data']","['comment', 'comment']",list,string,your_activity_across_facebook/groups/your_comments_in_groups.json
+your_comments_in_groups.json,author,"['group_comments_v2', 'data', 'comment', 'author']","['group_comments_v2', 'data']","['comment', 'author']",list,string,your_activity_across_facebook/groups/your_comments_in_groups.json
+your_comments_in_groups.json,group,"['group_comments_v2', 'data', 'comment', 'group']","['group_comments_v2', 'data']","['comment', 'group']",list,string,your_activity_across_facebook/groups/your_comments_in_groups.json
+recently_viewed.json,timestamp,"['recently_viewed', 'children', 'entries', 'timestamp']","['recently_viewed', 'children', 'entries']",['timestamp'],list,number,logged_information/your_interactions_on_facebook/recently_viewed.json
+recently_visited.json,name,"['visited_things_v2', 'entries', 'data', 'name']","['visited_things_v2', 'entries']","['data', 'name']",list,string,logged_information/your_interactions_on_facebook/recently_visited.json
+recently_visited.json,uri,"['visited_things_v2', 'entries', 'data', 'uri']","['visited_things_v2', 'entries']","['data', 'uri']",list,string,logged_information/your_interactions_on_facebook/recently_visited.json
+comments.json,timestamp,"['comments_v2', 'data', 'comment', 'timestamp']","['comments_v2', 'data']","['comment', 'timestamp']",list,number,your_activity_across_facebook/comments_and_reactions/comments.json
+comments.json,comment,"['comments_v2', 'data', 'comment', 'comment']","['comments_v2', 'data']","['comment', 'comment']",list,string,your_activity_across_facebook/comments_and_reactions/comments.json
+comments.json,author,"['comments_v2', 'data', 'comment', 'author']","['comments_v2', 'data']","['comment', 'author']",list,string,your_activity_across_facebook/comments_and_reactions/comments.json
+your_posts__check_ins__photos_and_videos_1.json,url,"['attachments', 'data', 'external_context', 'url']","['attachments', 'data']","['external_context', 'url']",list,string,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
+0.json,upload_ip,"['photos', 'media_metadata', 'photo_metadata', 'exif_data', 'upload_ip']","['photos', 'media_metadata', 'photo_metadata', 'exif_data']",['upload_ip'],list,string,your_activity_across_facebook/posts/album/0.json
+0.json,upload_ip,"['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data', 'upload_ip']","['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data']",['upload_ip'],list,string,your_activity_across_facebook/posts/album/0.json
+1.json,upload_ip,"['photos', 'media_metadata', 'photo_metadata', 'exif_data', 'upload_ip']","['photos', 'media_metadata', 'photo_metadata', 'exif_data']",['upload_ip'],list,string,your_activity_across_facebook/posts/album/1.json
+1.json,upload_ip,"['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data', 'upload_ip']","['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data']",['upload_ip'],list,string,your_activity_across_facebook/posts/album/1.json
+1.json,taken_timestamp,"['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data', 'taken_timestamp']","['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data']",['taken_timestamp'],list,number,your_activity_across_facebook/posts/album/1.json
+2.json,upload_ip,"['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data', 'upload_ip']","['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data']",['upload_ip'],list,string,your_activity_across_facebook/posts/album/2.json
+2.json,taken_timestamp,"['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data', 'taken_timestamp']","['cover_photo', 'media_metadata', 'photo_metadata', 'exif_data']",['taken_timestamp'],list,number,your_activity_across_facebook/posts/album/2.json
+polls_you_voted_on.json,question,"['poll_votes_v2', 'attachments', 'data', 'poll', 'question']","['poll_votes_v2', 'attachments', 'data']","['poll', 'question']",list,string,your_activity_across_facebook/polls/polls_you_voted_on.json
+language_and_locale.json,value,"['language_and_locale_v2', 'children', 'entries', 'data', 'value']","['language_and_locale_v2', 'children', 'entries']","['data', 'value']",list,string,preferences/preferences/language_and_locale.json
+profile_update_history.json,uri,"['profile_updates_v2', 'attachments', 'data', 'media', 'uri']","['profile_updates_v2', 'attachments', 'data']","['media', 'uri']",list,string,personal_information/profile_information/profile_update_history.json
+profile_update_history.json,creation_timestamp,"['profile_updates_v2', 'attachments', 'data', 'media', 'creation_timestamp']","['profile_updates_v2', 'attachments', 'data']","['media', 'creation_timestamp']",list,number,personal_information/profile_information/profile_update_history.json
+profile_update_history.json,title,"['profile_updates_v2', 'attachments', 'data', 'media', 'title']","['profile_updates_v2', 'attachments', 'data']","['media', 'title']",list,string,personal_information/profile_information/profile_update_history.json
+recently_viewed.json,name,"['recently_viewed', 'children', 'entries', 'data', 'name']","['recently_viewed', 'children', 'entries']","['data', 'name']",list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+recently_viewed.json,uri,"['recently_viewed', 'children', 'entries', 'data', 'uri']","['recently_viewed', 'children', 'entries']","['data', 'uri']",list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+recently_viewed.json,watch_time,"['recently_viewed', 'children', 'entries', 'data', 'watch_time']","['recently_viewed', 'children', 'entries']","['data', 'watch_time']",list,string,logged_information/your_interactions_on_facebook/recently_viewed.json
+polls_you_voted_on.json,option,"['poll_votes_v2', 'attachments', 'data', 'poll', 'options', 'option']","['poll_votes_v2', 'attachments', 'data', 'poll', 'options']",['option'],list,string,your_activity_across_facebook/polls/polls_you_voted_on.json
+polls_you_voted_on.json,voted,"['poll_votes_v2', 'attachments', 'data', 'poll', 'options', 'voted']","['poll_votes_v2', 'attachments', 'data', 'poll', 'options']",['voted'],list,boolean,your_activity_across_facebook/polls/polls_you_voted_on.json

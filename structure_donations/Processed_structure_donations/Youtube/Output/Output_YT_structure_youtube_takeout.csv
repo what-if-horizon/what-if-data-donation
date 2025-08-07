@@ -1,13 +1,13 @@
-variable,value,path_1,path_2,path_3,path_4,json_name,row_path,col_path_1,col_path_1_LIST,col_path_2,col_path_2_LIST,col_path_3,col_path_3_LIST,data_type
-history/search-history.json,"{'header': 'string', 'title': 'string', 'titleUrl': 'string', 'time': 'string', 'products': ['string'], 'activityControls': ['string']}",history,Missing,Missing,Missing,search-history.json,header,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/search-history.json,"{'header': 'string', 'title': 'string', 'titleUrl': 'string', 'time': 'string', 'products': ['string'], 'activityControls': ['string']}",history,Missing,Missing,Missing,search-history.json,title,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/search-history.json,"{'header': 'string', 'title': 'string', 'titleUrl': 'string', 'time': 'string', 'products': ['string'], 'activityControls': ['string']}",history,Missing,Missing,Missing,search-history.json,titleUrl,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/search-history.json,"{'header': 'string', 'title': 'string', 'titleUrl': 'string', 'time': 'string', 'products': ['string'], 'activityControls': ['string']}",history,Missing,Missing,Missing,search-history.json,time,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/search-history.json,"{'header': 'string', 'title': 'string', 'titleUrl': 'string', 'time': 'string', 'products': ['string'], 'activityControls': ['string']}",history,Missing,Missing,Missing,search-history.json,products,Missing,LIST,Missing,MISSING,Missing,MISSING,string
-history/search-history.json,"{'header': 'string', 'title': 'string', 'titleUrl': 'string', 'time': 'string', 'products': ['string'], 'activityControls': ['string']}",history,Missing,Missing,Missing,search-history.json,activityControls,Missing,LIST,Missing,MISSING,Missing,MISSING,string
-history/watch-history.json,"{'header': 'string', 'title': 'string', 'time': 'string', 'products': ['string'], 'details': [{'name': 'string'}], 'activityControls': ['string']}",history,Missing,Missing,Missing,watch-history.json,header,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/watch-history.json,"{'header': 'string', 'title': 'string', 'time': 'string', 'products': ['string'], 'details': [{'name': 'string'}], 'activityControls': ['string']}",history,Missing,Missing,Missing,watch-history.json,title,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/watch-history.json,"{'header': 'string', 'title': 'string', 'time': 'string', 'products': ['string'], 'details': [{'name': 'string'}], 'activityControls': ['string']}",history,Missing,Missing,Missing,watch-history.json,time,Missing,NO LIST,Missing,MISSING,Missing,MISSING,string
-history/watch-history.json,"{'header': 'string', 'title': 'string', 'time': 'string', 'products': ['string'], 'details': [{'name': 'string'}], 'activityControls': ['string']}",history,Missing,Missing,Missing,watch-history.json,products,Missing,LIST,Missing,MISSING,Missing,MISSING,string
-history/watch-history.json,"{'header': 'string', 'title': 'string', 'time': 'string', 'products': ['string'], 'details': [{'name': 'string'}], 'activityControls': ['string']}",history,Missing,Missing,Missing,watch-history.json,details,name,LIST,Missing,NO LIST,Missing,MISSING,string
-history/watch-history.json,"{'header': 'string', 'title': 'string', 'time': 'string', 'products': ['string'], 'details': [{'name': 'string'}], 'activityControls': ['string']}",history,Missing,Missing,Missing,watch-history.json,activityControls,Missing,LIST,Missing,MISSING,Missing,MISSING,string
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+search-history.json,header,['header'],[],['header'],list,string,history/search-history.json
+search-history.json,title,['title'],[],['title'],list,string,history/search-history.json
+search-history.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,history/search-history.json
+search-history.json,time,['time'],[],['time'],list,string,history/search-history.json
+search-history.json,products,['products'],[],['products'],list,string,history/search-history.json
+search-history.json,activityControls,['activityControls'],[],['activityControls'],list,string,history/search-history.json
+watch-history.json,header,['header'],[],['header'],list,string,history/watch-history.json
+watch-history.json,title,['title'],[],['title'],list,string,history/watch-history.json
+watch-history.json,time,['time'],[],['time'],list,string,history/watch-history.json
+watch-history.json,products,['products'],[],['products'],list,string,history/watch-history.json
+watch-history.json,activityControls,['activityControls'],[],['activityControls'],list,string,history/watch-history.json
+watch-history.json,name,"['details', 'name']",['details'],['name'],list,string,history/watch-history.json

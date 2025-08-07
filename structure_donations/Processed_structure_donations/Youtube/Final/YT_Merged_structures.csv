@@ -1,0 +1,80 @@
+json_name,id,column_name,path,list_path,subfield_path,var_type,data_type,file_path,duplicate_flag
+kijkgeschiedenis.json,kijkgeschiedenis:header,header,['header'],[],['header'],list,string,geschiedenis/kijkgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:title,title,['title'],[],['title'],list,string,geschiedenis/kijkgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,geschiedenis/kijkgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:time,time,['time'],[],['time'],list,string,geschiedenis/kijkgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:products,products,['products'],[],['products'],list,string,geschiedenis/kijkgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,geschiedenis/kijkgeschiedenis.json,No
+zoekgeschiedenis.json,zoekgeschiedenis:header,header,['header'],[],['header'],list,string,geschiedenis/zoekgeschiedenis.json,No
+zoekgeschiedenis.json,zoekgeschiedenis:title,title,['title'],[],['title'],list,string,geschiedenis/zoekgeschiedenis.json,No
+zoekgeschiedenis.json,zoekgeschiedenis:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,geschiedenis/zoekgeschiedenis.json,No
+zoekgeschiedenis.json,zoekgeschiedenis:time,time,['time'],[],['time'],list,string,geschiedenis/zoekgeschiedenis.json,No
+zoekgeschiedenis.json,zoekgeschiedenis:products,products,['products'],[],['products'],list,string,geschiedenis/zoekgeschiedenis.json,No
+zoekgeschiedenis.json,zoekgeschiedenis:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,geschiedenis/zoekgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:name,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,geschiedenis/kijkgeschiedenis.json,No
+kijkgeschiedenis.json,kijkgeschiedenis:url,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,geschiedenis/kijkgeschiedenis.json,No
+watch-history.json,watch-history:header,header,['header'],[],['header'],list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:title,title,['title'],[],['title'],list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:time,time,['time'],[],['time'],list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:products,products,['products'],[],['products'],list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,youtube_takeout/history/watch-history.json,Yes
+search-history.json,search-history:header,header,['header'],[],['header'],list,string,youtube_takeout/history/search-history.json,Yes
+search-history.json,search-history:title,title,['title'],[],['title'],list,string,youtube_takeout/history/search-history.json,Yes
+search-history.json,search-history:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,youtube_takeout/history/search-history.json,Yes
+search-history.json,search-history:time,time,['time'],[],['time'],list,string,youtube_takeout/history/search-history.json,Yes
+search-history.json,search-history:products,products,['products'],[],['products'],list,string,youtube_takeout/history/search-history.json,Yes
+search-history.json,search-history:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,youtube_takeout/history/search-history.json,Yes
+watch-history.json,watch-history:details:name,name,"['details', 'name']",['details'],['name'],list,string,youtube_takeout/history/watch-history.json,Yes
+istoricul căutărilor.json,istoricul căutărilor:header,header,['header'],[],['header'],list,string,istoric/istoricul căutărilor.json,No
+istoricul căutărilor.json,istoricul căutărilor:title,title,['title'],[],['title'],list,string,istoric/istoricul căutărilor.json,No
+istoricul căutărilor.json,istoricul căutărilor:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,istoric/istoricul căutărilor.json,No
+istoricul căutărilor.json,istoricul căutărilor:time,time,['time'],[],['time'],list,string,istoric/istoricul căutărilor.json,No
+istoricul căutărilor.json,istoricul căutărilor:products,products,['products'],[],['products'],list,string,istoric/istoricul căutărilor.json,No
+istoricul căutărilor.json,istoricul căutărilor:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,istoric/istoricul căutărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:header,header,['header'],[],['header'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:title,title,['title'],[],['title'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:time,time,['time'],[],['time'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:products,products,['products'],[],['products'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:name,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,istoric/istoricul-vizionărilor.json,No
+istoricul-vizionărilor.json,istoricul-vizionărilor:url,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,istoric/istoricul-vizionărilor.json,No
+paieškos istorija.json,paieškos istorija:header,header,['header'],[],['header'],list,string,istorija/paieškos istorija.json,No
+paieškos istorija.json,paieškos istorija:title,title,['title'],[],['title'],list,string,istorija/paieškos istorija.json,No
+paieškos istorija.json,paieškos istorija:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,istorija/paieškos istorija.json,No
+paieškos istorija.json,paieškos istorija:time,time,['time'],[],['time'],list,string,istorija/paieškos istorija.json,No
+paieškos istorija.json,paieškos istorija:products,products,['products'],[],['products'],list,string,istorija/paieškos istorija.json,No
+paieškos istorija.json,paieškos istorija:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,istorija/paieškos istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:header,header,['header'],[],['header'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:title,title,['title'],[],['title'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:time,time,['time'],[],['time'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:products,products,['products'],[],['products'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:name,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,istorija/žiūrėjimo istorija.json,No
+žiūrėjimo istorija.json,žiūrėjimo istorija:url,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,istorija/žiūrėjimo istorija.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:header,header,['header'],[],['header'],list,string,historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:title,title,['title'],[],['title'],list,string,historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:time,time,['time'],[],['time'],list,string,historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:products,products,['products'],[],['products'],list,string,historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,historial/historial-de-búsqueda.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:header,header,['header'],[],['header'],list,string,historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:title,title,['title'],[],['title'],list,string,historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:time,time,['time'],[],['time'],list,string,historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:products,products,['products'],[],['products'],list,string,historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:name,name,"['details', 'name']",['details'],['name'],list,string,historial/historial-de-reproducciones.json,No
+search-history.json,search-history:header,header,['header'],[],['header'],list,string,history/search-history.json,Yes
+search-history.json,search-history:title,title,['title'],[],['title'],list,string,history/search-history.json,Yes
+search-history.json,search-history:titleUrl,titleUrl,['titleUrl'],[],['titleUrl'],list,string,history/search-history.json,Yes
+search-history.json,search-history:time,time,['time'],[],['time'],list,string,history/search-history.json,Yes
+search-history.json,search-history:products,products,['products'],[],['products'],list,string,history/search-history.json,Yes
+search-history.json,search-history:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,history/search-history.json,Yes
+watch-history.json,watch-history:header,header,['header'],[],['header'],list,string,history/watch-history.json,Yes
+watch-history.json,watch-history:title,title,['title'],[],['title'],list,string,history/watch-history.json,Yes
+watch-history.json,watch-history:time,time,['time'],[],['time'],list,string,history/watch-history.json,Yes
+watch-history.json,watch-history:products,products,['products'],[],['products'],list,string,history/watch-history.json,Yes
+watch-history.json,watch-history:activityControls,activityControls,['activityControls'],[],['activityControls'],list,string,history/watch-history.json,Yes
+watch-history.json,watch-history:details:name,name,"['details', 'name']",['details'],['name'],list,string,history/watch-history.json,Yes
