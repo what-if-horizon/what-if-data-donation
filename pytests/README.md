@@ -49,35 +49,41 @@ Finally, you can use `--list-tables` to print a list of all table ids (and sizes
 
 ```{sh}
 $ python pytests/create_scenario.py --help
-usage: create_scenario.py [-h] [--list-tables]
-                          {tiktok,facebook,tiktok,twitter,youtube} inputfile [tables ...]
+usage: create_scenario.py [-h] [--list-tables] [--format {json,html,md}] {tiktok,facebook,instagram,twitter,youtube} inputfile outputfile [tables ...]
 
-Create scenario json files for takeout unit tests You can use this helper script to create
-a json file with some or all tables from an input file. This json file can then be edited
-and/or placed in pytests/scenarios to be included as a unit test. If the input file is not
-included in the repository, it will be skiped with a warning if it doesn't exist. If also
-adding the test file to the repo, please be **very careful** to check it for personal data
-(IP addresses, usernames, email addresses, phone numbers etc) before committing!
+Create scenario json files for takeout unit tests You can use this helper script to create a json file with some or all tables from an input file. This json file can then be edited and/or placed in
+pytests/scenarios to be included as a unit test. If the input file is not included in the repository, it will be skiped with a warning if it doesn't exist. If also adding the test file to the repo,
+please be **very careful** to check it for personal data (IP addresses, usernames, email addresses, phone numbers etc) before committing!
 
 positional arguments:
-  {tiktok,facebook,tiktok,twitter,youtube}
+  {tiktok,facebook,instagram,twitter,youtube}
   inputfile             The path or name of the donation file (i.e. .zip or .json)
-  tables                Specify table ids to extract (default extracts all tables)
+  outputfile            The path or name of the output file (i.e. .json, .html, .md), or '-' to print to stdout
+  tables                Specify table ids to extract (default: extracts all tables)
 
 options:
   -h, --help            show this help message and exit
-  --list-tables         List only existing table ids and size instead
+  --list-tables, -l     List only existing table ids and size instead
+  --format {json,html,md}, -f {json,html,md}
+                        Use this format (default: from outfile extension)
 ```
 
 Example usage:
-List all table ids in the user_datapytests/scenarios/**/*PRIVATE.json_tiktok.json input file:
+List all table ids in the pytests/public_testfiles/X_public_test_files.zip input file:
 ```{sh}
-$ python pytests/create_scenario.py tiktok pytests/public_testfiles/user_data_tiktok.json --list-tables
+$ python pytests/create_scenario.py twitter pytests/public_testfiles/X_public_test_files.zip - --list-tables
 ```
-Extract all or some tables into a scenario:
+Extract all or some tables from a file into a scenario file `/tmp/scenario-output.json`:
 ```{sh}
-$ python pytests/create_scenario.py tiktok pytests/public_testfiles/user_data_tiktok.json > /tmp/scenario.json
-$ python pytests/create_scenario.py tiktok pytests/public_testfiles/user_data_tiktok.json activity_summary follower_list > /tmp/scenario2.json
+$ python pytests/create_scenario.py twitter pytests/public_testfiles/X_public_test_files.zip /tmp/scenario-output.json
+$ python pytests/create_scenario.py twitter pytests/public_testfiles/X_public_test_files.zip /tmp/scenario-output.json account ageinfo
+```
+
+Print a table to screen using a markdown format, or save as an html file to view (e.g. for bigger tables):
+
+```{sh}
+$ python pytests/create_scenario.py twitter pytests/public_testfiles/X_public_test_files.zip - account --format md
+$ python pytests/create_scenario.py twitter pytests/public_testfiles/X_public_test_files.zip /tmp/test.html account --format html
 ```
 
 ## Workflow for doing the unit tests
