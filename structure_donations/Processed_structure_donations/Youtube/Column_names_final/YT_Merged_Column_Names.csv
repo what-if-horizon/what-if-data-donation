@@ -84,3 +84,39 @@ kanaal.csv,Kanaalzichtbaarheid,kanaal:Kanaalzichtbaarheid
 abonnementen.csv,Kanaal-ID,abonnementen:Kanaal-ID
 abonnementen.csv,Kanaal-URL,abonnementen:Kanaal-URL
 abonnementen.csv,Kanaaltitel,abonnementen:Kanaaltitel
+channel URL configs.csv,Channel Vanity URL 2 Name,channel_URL_configs:Channel_Vanity_URL_2_Name
+video recordings.csv,Video ID,video_recordings:Video_ID
+video recordings.csv,Video Recording Altitude,video_recordings:Video_Recording_Altitude
+video recordings.csv,Video Recording Latitude,video_recordings:Video_Recording_Latitude
+video recordings.csv,Video Recording Longitude,video_recordings:Video_Recording_Longitude
+videos.csv,Video ID,videos:Video_ID
+videos.csv,Approx Duration (ms),videos:Approx_Duration_(ms)
+videos.csv,Video Audio Language,videos:Video_Audio_Language
+videos.csv,Video Category,videos:Video_Category
+videos.csv,Video Description (Original),videos:Video_Description_(Original)
+videos.csv,Channel ID,videos:Channel_ID
+videos.csv,Video Title (Original),videos:Video_Title_(Original)
+videos.csv,Privacy,videos:Privacy
+videos.csv,Video State,videos:Video_State
+videos.csv,Video Create Timestamp,videos:Video_Create_Timestamp
+videos.csv,Video Publish Timestamp,videos:Video_Publish_Timestamp
+comments.csv,Comment ID,comments:Comment_ID
+comments.csv,Channel ID,comments:Channel_ID
+comments.csv,Comment Create Timestamp,comments:Comment_Create_Timestamp
+comments.csv,Price,comments:Price
+comments.csv,Video ID,comments:Video_ID
+comments.csv,Comment Text,comments:Comment_Text
+Favorites-videos.csv,Video ID,Favorites-videos:Video_ID
+Favorites-videos.csv,Playlist Video Creation Timestamp,Favorites-videos:Playlist_Video_Creation_Timestamp
+Watch later-videos.csv,Video ID,Watch_later-videos:Video_ID
+Watch later-videos.csv,Playlist Video Creation Timestamp,Watch_later-videos:Playlist_Video_Creation_Timestamp
+crochet-videos.csv,Video ID,crochet-videos:Video_ID
+crochet-videos.csv,Playlist Video Creation Timestamp,crochet-videos:Playlist_Video_Creation_Timestamp
+playlists.csv,Playlist ID,playlists:Playlist_ID
+playlists.csv,Add new videos to top,playlists:Add_new_videos_to_top
+playlists.csv,Playlist Title (Original),playlists:Playlist_Title_(Original)
+playlists.csv,Playlist Title (Original) Language,playlists:Playlist_Title_(Original)_Language
+playlists.csv,Playlist Create Timestamp,playlists:Playlist_Create_Timestamp
+playlists.csv,Playlist Update Timestamp,playlists:Playlist_Update_Timestamp
+playlists.csv,Playlist Video Order,playlists:Playlist_Video_Order
+playlists.csv,Playlist Visibility,playlists:Playlist_Visibility

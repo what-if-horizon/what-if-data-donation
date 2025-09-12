@@ -1,0 +1,54 @@
+File_name,Column_names
+channel URL configs.csv,Channel ID
+channel URL configs.csv,Channel Vanity URL 1 Name
+channel URL configs.csv,Channel Vanity URL 2 Name
+channel community moderation settings.csv,Channel ID
+channel feature data.csv,Channel ID
+channel feature data.csv,Channel Auto Moderation in Live Chat
+channel feature data.csv,Video Default Allowed Comments Type
+channel feature data.csv,Video Default Targeted Audience
+channel feature data.csv,Video Default License
+channel feature data.csv,Video Default Location Latitude
+channel feature data.csv,Video Default Location Longitude
+channel page settings.csv,Channel ID
+channel.csv,Channel ID
+channel.csv,Channel Title (Original)
+channel.csv,Channel Visibility
+video recordings.csv,Video ID
+video recordings.csv,Video Recording Altitude
+video recordings.csv,Video Recording Latitude
+video recordings.csv,Video Recording Longitude
+videos.csv,Video ID
+videos.csv,Approx Duration (ms)
+videos.csv,Video Audio Language
+videos.csv,Video Category
+videos.csv,Video Description (Original)
+videos.csv,Channel ID
+videos.csv,Video Title (Original)
+videos.csv,Privacy
+videos.csv,Video State
+videos.csv,Video Create Timestamp
+videos.csv,Video Publish Timestamp
+comments.csv,Comment ID
+comments.csv,Channel ID
+comments.csv,Comment Create Timestamp
+comments.csv,Price
+comments.csv,Video ID
+comments.csv,Comment Text
+subscriptions.csv,Channel Id
+subscriptions.csv,Channel Url
+subscriptions.csv,Channel Title
+Favorites-videos.csv,Video ID
+Favorites-videos.csv,Playlist Video Creation Timestamp
+Watch later-videos.csv,Video ID
+Watch later-videos.csv,Playlist Video Creation Timestamp
+crochet-videos.csv,Video ID
+crochet-videos.csv,Playlist Video Creation Timestamp
+playlists.csv,Playlist ID
+playlists.csv,Add new videos to top
+playlists.csv,Playlist Title (Original)
+playlists.csv,Playlist Title (Original) Language
+playlists.csv,Playlist Create Timestamp
+playlists.csv,Playlist Update Timestamp
+playlists.csv,Playlist Video Order
+playlists.csv,Playlist Visibility
