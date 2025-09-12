@@ -1,14 +1,8 @@
 File_name,Column_names,id
 channel URL configs.csv,Channel ID,channel_URL_configs:Channel_ID
 channel URL configs.csv,Channel Vanity URL 1 Name,channel_URL_configs:Channel_Vanity_URL_1_Name
-subscriptions.csv,Channel Id,subscriptions:Channel_Id
-subscriptions.csv,Channel Url,subscriptions:Channel_Url
-subscriptions.csv,Channel Title,subscriptions:Channel_Title
+channel URL configs.csv,Channel Vanity URL 2 Name,channel_URL_configs:Channel_Vanity_URL_2_Name
 channel community moderation settings.csv,Channel ID,channel_community_moderation_settings:Channel_ID
-channel.csv,Channel ID,channel:Channel_ID
-channel.csv,Channel Title (Original),channel:Channel_Title_(Original)
-channel.csv,Channel Visibility,channel:Channel_Visibility
-channel page settings.csv,Channel ID,channel_page_settings:Channel_ID
 channel feature data.csv,Channel ID,channel_feature_data:Channel_ID
 channel feature data.csv,Channel Auto Moderation in Live Chat,channel_feature_data:Channel_Auto_Moderation_in_Live_Chat
 channel feature data.csv,Video Default Allowed Comments Type,channel_feature_data:Video_Default_Allowed_Comments_Type
@@ -16,6 +10,48 @@ channel feature data.csv,Video Default Targeted Audience,channel_feature_data:Vi
 channel feature data.csv,Video Default License,channel_feature_data:Video_Default_License
 channel feature data.csv,Video Default Location Latitude,channel_feature_data:Video_Default_Location_Latitude
 channel feature data.csv,Video Default Location Longitude,channel_feature_data:Video_Default_Location_Longitude
+channel page settings.csv,Channel ID,channel_page_settings:Channel_ID
+channel.csv,Channel ID,channel:Channel_ID
+channel.csv,Channel Title (Original),channel:Channel_Title_(Original)
+channel.csv,Channel Visibility,channel:Channel_Visibility
+video recordings.csv,Video ID,video_recordings:Video_ID
+video recordings.csv,Video Recording Altitude,video_recordings:Video_Recording_Altitude
+video recordings.csv,Video Recording Latitude,video_recordings:Video_Recording_Latitude
+video recordings.csv,Video Recording Longitude,video_recordings:Video_Recording_Longitude
+videos.csv,Video ID,videos:Video_ID
+videos.csv,Approx Duration (ms),videos:Approx_Duration_(ms)
+videos.csv,Video Audio Language,videos:Video_Audio_Language
+videos.csv,Video Category,videos:Video_Category
+videos.csv,Video Description (Original),videos:Video_Description_(Original)
+videos.csv,Channel ID,videos:Channel_ID
+videos.csv,Video Title (Original),videos:Video_Title_(Original)
+videos.csv,Privacy,videos:Privacy
+videos.csv,Video State,videos:Video_State
+videos.csv,Video Create Timestamp,videos:Video_Create_Timestamp
+videos.csv,Video Publish Timestamp,videos:Video_Publish_Timestamp
+comments.csv,Comment ID,comments:Comment_ID
+comments.csv,Channel ID,comments:Channel_ID
+comments.csv,Comment Create Timestamp,comments:Comment_Create_Timestamp
+comments.csv,Price,comments:Price
+comments.csv,Video ID,comments:Video_ID
+comments.csv,Comment Text,comments:Comment_Text
+subscriptions.csv,Channel Id,subscriptions:Channel_Id
+subscriptions.csv,Channel Url,subscriptions:Channel_Url
+subscriptions.csv,Channel Title,subscriptions:Channel_Title
+Favorites-videos.csv,Video ID,Favorites-videos:Video_ID
+Favorites-videos.csv,Playlist Video Creation Timestamp,Favorites-videos:Playlist_Video_Creation_Timestamp
+Watch later-videos.csv,Video ID,Watch_later-videos:Video_ID
+Watch later-videos.csv,Playlist Video Creation Timestamp,Watch_later-videos:Playlist_Video_Creation_Timestamp
+crochet-videos.csv,Video ID,crochet-videos:Video_ID
+crochet-videos.csv,Playlist Video Creation Timestamp,crochet-videos:Playlist_Video_Creation_Timestamp
+playlists.csv,Playlist ID,playlists:Playlist_ID
+playlists.csv,Add new videos to top,playlists:Add_new_videos_to_top
+playlists.csv,Playlist Title (Original),playlists:Playlist_Title_(Original)
+playlists.csv,Playlist Title (Original) Language,playlists:Playlist_Title_(Original)_Language
+playlists.csv,Playlist Create Timestamp,playlists:Playlist_Create_Timestamp
+playlists.csv,Playlist Update Timestamp,playlists:Playlist_Update_Timestamp
+playlists.csv,Playlist Video Order,playlists:Playlist_Video_Order
+playlists.csv,Playlist Visibility,playlists:Playlist_Visibility
 canal.csv,ID-ul canalului,canal:ID-ul_canalului
 canal.csv,Titlul canalului (original),canal:Titlul_canalului_(original)
 canal.csv,Vizibilitatea canalului,canal:Vizibilitatea_canalului
@@ -67,6 +103,51 @@ datos de la función del canal.csv,Audiencia objetivo predeterminada del vídeo,
 datos de la función del canal.csv,Licencia del vídeo predeterminada,datos_de_la_función_del_canal:Licencia_del_vídeo_predeterminada
 datos de la función del canal.csv,Latitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Latitud_de_la_ubicación_predeterminada_del_vídeo
 datos de la función del canal.csv,Longitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Longitud_de_la_ubicación_predeterminada_del_vídeo
+Ajustes de moderación de la comunidad del canal.csv,ID de canal,Ajustes_de_moderación_de_la_comunidad_del_canal:ID_de_canal
+configuraciones de la URL del canal.csv,Nombre de la URL mnemónica del canal (2),configuraciones_de_la_URL_del_canal:Nombre_de_la_URL_mnemónica_del_canal_(2)
+configuración de la página del canal.csv,ID de canal,configuración_de_la_página_del_canal:ID_de_canal
+datos de la función del canal.csv,ID de canal,datos_de_la_función_del_canal:ID_de_canal
+datos de la función del canal.csv,Moderación automática del canal en el chat en directo,datos_de_la_función_del_canal:Moderación_automática_del_canal_en_el_chat_en_directo
+datos de la función del canal.csv,Tipo de comentarios permitidos de forma predeterminada en el vídeo,datos_de_la_función_del_canal:Tipo_de_comentarios_permitidos_de_forma_predeterminada_en_el_vídeo
+datos de la función del canal.csv,Audiencia objetivo predeterminada del vídeo,datos_de_la_función_del_canal:Audiencia_objetivo_predeterminada_del_vídeo
+datos de la función del canal.csv,Licencia del vídeo predeterminada,datos_de_la_función_del_canal:Licencia_del_vídeo_predeterminada
+datos de la función del canal.csv,Latitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Latitud_de_la_ubicación_predeterminada_del_vídeo
+datos de la función del canal.csv,Longitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Longitud_de_la_ubicación_predeterminada_del_vídeo
+grabaciones de vídeo.csv,ID de vídeo,grabaciones_de_vídeo:ID_de_vídeo
+grabaciones de vídeo.csv,Altitud de grabación del vídeo,grabaciones_de_vídeo:Altitud_de_grabación_del_vídeo
+grabaciones de vídeo.csv,Latitud de grabación del vídeo,grabaciones_de_vídeo:Latitud_de_grabación_del_vídeo
+grabaciones de vídeo.csv,Longitud de grabación del vídeo,grabaciones_de_vídeo:Longitud_de_grabación_del_vídeo
+vídeos.csv,ID de vídeo,vídeos:ID_de_vídeo
+vídeos.csv,Duración aproximada (ms),vídeos:Duración_aproximada_(ms)
+vídeos.csv,Idioma del audio del vídeo,vídeos:Idioma_del_audio_del_vídeo
+vídeos.csv,Categoría del vídeo,vídeos:Categoría_del_vídeo
+vídeos.csv,Descripción del vídeo (original),vídeos:Descripción_del_vídeo_(original)
+vídeos.csv,ID de canal,vídeos:ID_de_canal
+vídeos.csv,Título del vídeo (original),vídeos:Título_del_vídeo_(original)
+vídeos.csv,Privacidad,vídeos:Privacidad
+vídeos.csv,Estado del vídeo,vídeos:Estado_del_vídeo
+vídeos.csv,Marca de tiempo de creación del vídeo,vídeos:Marca_de_tiempo_de_creación_del_vídeo
+vídeos.csv,Marca de tiempo de publicación del vídeo,vídeos:Marca_de_tiempo_de_publicación_del_vídeo
+comentarios.csv,ID de comentario,comentarios:ID_de_comentario
+comentarios.csv,ID de canal,comentarios:ID_de_canal
+comentarios.csv,Marca de tiempo de creación del comentario,comentarios:Marca_de_tiempo_de_creación_del_comentario
+comentarios.csv,Precio,comentarios:Precio
+comentarios.csv,ID de vídeo,comentarios:ID_de_vídeo
+comentarios.csv,Texto del comentario,comentarios:Texto_del_comentario
+Favorites-vídeos.csv,ID de vídeo,Favorites-vídeos:ID_de_vídeo
+Favorites-vídeos.csv,Marca de tiempo de creación de la lista de reproducción de vídeos,Favorites-vídeos:Marca_de_tiempo_de_creación_de_la_lista_de_reproducción_de_vídeos
+Listas de reproducción.csv,ID de lista de reproducción,Listas_de_reproducción:ID_de_lista_de_reproducción
+Listas de reproducción.csv,Añadir vídeos nuevos al principio,Listas_de_reproducción:Añadir_vídeos_nuevos_al_principio
+Listas de reproducción.csv,Título de la lista de reproducción (original),Listas_de_reproducción:Título_de_la_lista_de_reproducción_(original)
+Listas de reproducción.csv,Idioma del título de la lista de reproducción (original),Listas_de_reproducción:Idioma_del_título_de_la_lista_de_reproducción_(original)
+Listas de reproducción.csv,Marca de tiempo de creación de la lista de reproducción,Listas_de_reproducción:Marca_de_tiempo_de_creación_de_la_lista_de_reproducción
+Listas de reproducción.csv,Marca de tiempo de actualización de la lista de reproducción,Listas_de_reproducción:Marca_de_tiempo_de_actualización_de_la_lista_de_reproducción
+Listas de reproducción.csv,Orden de vídeos de lista de reproducción,Listas_de_reproducción:Orden_de_vídeos_de_lista_de_reproducción
+Listas de reproducción.csv,Visibilidad de la lista de reproducción,Listas_de_reproducción:Visibilidad_de_la_lista_de_reproducción
+Watch later-vídeos.csv,ID de vídeo,Watch_later-vídeos:ID_de_vídeo
+Watch later-vídeos.csv,Marca de tiempo de creación de la lista de reproducción de vídeos,Watch_later-vídeos:Marca_de_tiempo_de_creación_de_la_lista_de_reproducción_de_vídeos
+crochet-vídeos.csv,ID de vídeo,crochet-vídeos:ID_de_vídeo
+crochet-vídeos.csv,Marca de tiempo de creación de la lista de reproducción de vídeos,crochet-vídeos:Marca_de_tiempo_de_creación_de_la_lista_de_reproducción_de_vídeos
 URL-configuraties van kanaal.csv,Kanaal-ID,URL-configuraties_van_kanaal:Kanaal-ID
 URL-configuraties van kanaal.csv,Naam van vanity-URL 1 voor kanaal,URL-configuraties_van_kanaal:Naam_van_vanity-URL_1_voor_kanaal
 gegevens voor kanaalfunctie.csv,Kanaal-ID,gegevens_voor_kanaalfunctie:Kanaal-ID
@@ -84,39 +165,3 @@ kanaal.csv,Kanaalzichtbaarheid,kanaal:Kanaalzichtbaarheid
 abonnementen.csv,Kanaal-ID,abonnementen:Kanaal-ID
 abonnementen.csv,Kanaal-URL,abonnementen:Kanaal-URL
 abonnementen.csv,Kanaaltitel,abonnementen:Kanaaltitel
-channel URL configs.csv,Channel Vanity URL 2 Name,channel_URL_configs:Channel_Vanity_URL_2_Name
-video recordings.csv,Video ID,video_recordings:Video_ID
-video recordings.csv,Video Recording Altitude,video_recordings:Video_Recording_Altitude
-video recordings.csv,Video Recording Latitude,video_recordings:Video_Recording_Latitude
-video recordings.csv,Video Recording Longitude,video_recordings:Video_Recording_Longitude
-videos.csv,Video ID,videos:Video_ID
-videos.csv,Approx Duration (ms),videos:Approx_Duration_(ms)
-videos.csv,Video Audio Language,videos:Video_Audio_Language
-videos.csv,Video Category,videos:Video_Category
-videos.csv,Video Description (Original),videos:Video_Description_(Original)
-videos.csv,Channel ID,videos:Channel_ID
-videos.csv,Video Title (Original),videos:Video_Title_(Original)
-videos.csv,Privacy,videos:Privacy
-videos.csv,Video State,videos:Video_State
-videos.csv,Video Create Timestamp,videos:Video_Create_Timestamp
-videos.csv,Video Publish Timestamp,videos:Video_Publish_Timestamp
-comments.csv,Comment ID,comments:Comment_ID
-comments.csv,Channel ID,comments:Channel_ID
-comments.csv,Comment Create Timestamp,comments:Comment_Create_Timestamp
-comments.csv,Price,comments:Price
-comments.csv,Video ID,comments:Video_ID
-comments.csv,Comment Text,comments:Comment_Text
-Favorites-videos.csv,Video ID,Favorites-videos:Video_ID
-Favorites-videos.csv,Playlist Video Creation Timestamp,Favorites-videos:Playlist_Video_Creation_Timestamp
-Watch later-videos.csv,Video ID,Watch_later-videos:Video_ID
-Watch later-videos.csv,Playlist Video Creation Timestamp,Watch_later-videos:Playlist_Video_Creation_Timestamp
-crochet-videos.csv,Video ID,crochet-videos:Video_ID
-crochet-videos.csv,Playlist Video Creation Timestamp,crochet-videos:Playlist_Video_Creation_Timestamp
-playlists.csv,Playlist ID,playlists:Playlist_ID
-playlists.csv,Add new videos to top,playlists:Add_new_videos_to_top
-playlists.csv,Playlist Title (Original),playlists:Playlist_Title_(Original)
-playlists.csv,Playlist Title (Original) Language,playlists:Playlist_Title_(Original)_Language
-playlists.csv,Playlist Create Timestamp,playlists:Playlist_Create_Timestamp
-playlists.csv,Playlist Update Timestamp,playlists:Playlist_Update_Timestamp
-playlists.csv,Playlist Video Order,playlists:Playlist_Video_Order
-playlists.csv,Playlist Visibility,playlists:Playlist_Visibility

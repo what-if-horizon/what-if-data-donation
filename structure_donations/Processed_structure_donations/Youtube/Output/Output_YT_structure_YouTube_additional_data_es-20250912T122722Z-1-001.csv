@@ -1,0 +1,17 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+historial-de-búsqueda.json,header,['header'],[],['header'],list,string,historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,title,['title'],[],['title'],list,string,historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,description,['description'],[],['description'],list,string,historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,time,['time'],[],['time'],list,string,historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,products,['products'],[],['products'],list,string,historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,activityControls,['activityControls'],[],['activityControls'],list,string,historial/historial-de-búsqueda.json
+historial-de-reproducciones.json,header,['header'],[],['header'],list,string,historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,title,['title'],[],['title'],list,string,historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,time,['time'],[],['time'],list,string,historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,products,['products'],[],['products'],list,string,historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,activityControls,['activityControls'],[],['activityControls'],list,string,historial/historial-de-reproducciones.json
+historial-de-búsqueda.json,name,"['details', 'name']",['details'],['name'],list,string,historial/historial-de-búsqueda.json
+historial-de-reproducciones.json,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,historial/historial-de-reproducciones.json
