@@ -1,0 +1,54 @@
+File_name,Column_names
+Ajustes de moderación de la comunidad del canal.csv,ID de canal
+canal.csv,ID de canal
+canal.csv,Título del canal (original)
+canal.csv,Visibilidad del canal
+configuraciones de la URL del canal.csv,ID de canal
+configuraciones de la URL del canal.csv,Nombre de la URL mnemónica del canal (1)
+configuraciones de la URL del canal.csv,Nombre de la URL mnemónica del canal (2)
+configuración de la página del canal.csv,ID de canal
+datos de la función del canal.csv,ID de canal
+datos de la función del canal.csv,Moderación automática del canal en el chat en directo
+datos de la función del canal.csv,Tipo de comentarios permitidos de forma predeterminada en el vídeo
+datos de la función del canal.csv,Audiencia objetivo predeterminada del vídeo
+datos de la función del canal.csv,Licencia del vídeo predeterminada
+datos de la función del canal.csv,Latitud de la ubicación predeterminada del vídeo
+datos de la función del canal.csv,Longitud de la ubicación predeterminada del vídeo
+grabaciones de vídeo.csv,ID de vídeo
+grabaciones de vídeo.csv,Altitud de grabación del vídeo
+grabaciones de vídeo.csv,Latitud de grabación del vídeo
+grabaciones de vídeo.csv,Longitud de grabación del vídeo
+vídeos.csv,ID de vídeo
+vídeos.csv,Duración aproximada (ms)
+vídeos.csv,Idioma del audio del vídeo
+vídeos.csv,Categoría del vídeo
+vídeos.csv,Descripción del vídeo (original)
+vídeos.csv,ID de canal
+vídeos.csv,Título del vídeo (original)
+vídeos.csv,Privacidad
+vídeos.csv,Estado del vídeo
+vídeos.csv,Marca de tiempo de creación del vídeo
+vídeos.csv,Marca de tiempo de publicación del vídeo
+comentarios.csv,ID de comentario
+comentarios.csv,ID de canal
+comentarios.csv,Marca de tiempo de creación del comentario
+comentarios.csv,Precio
+comentarios.csv,ID de vídeo
+comentarios.csv,Texto del comentario
+suscripciones.csv,ID del canal
+suscripciones.csv,URL del canal
+suscripciones.csv,Título del canal
+Favorites-vídeos.csv,ID de vídeo
+Favorites-vídeos.csv,Marca de tiempo de creación de la lista de reproducción de vídeos
+Listas de reproducción.csv,ID de lista de reproducción
+Listas de reproducción.csv,Añadir vídeos nuevos al principio
+Listas de reproducción.csv,Título de la lista de reproducción (original)
+Listas de reproducción.csv,Idioma del título de la lista de reproducción (original)
+Listas de reproducción.csv,Marca de tiempo de creación de la lista de reproducción
+Listas de reproducción.csv,Marca de tiempo de actualización de la lista de reproducción
+Listas de reproducción.csv,Orden de vídeos de lista de reproducción
+Listas de reproducción.csv,Visibilidad de la lista de reproducción
+Watch later-vídeos.csv,ID de vídeo
+Watch later-vídeos.csv,Marca de tiempo de creación de la lista de reproducción de vídeos
+crochet-vídeos.csv,ID de vídeo
+crochet-vídeos.csv,Marca de tiempo de creación de la lista de reproducción de vídeos
