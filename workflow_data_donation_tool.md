@@ -5,7 +5,7 @@
 This data donation tool in an extension of the Feldspar repository which can be implemented in the Eyra environment to collect data donations. The aim of this extension in to collect data donations with the highest standards for data privacy while reducing the risk of omitted variables or unnecessary data loss as much as possible. The workflow of this tool consists of four parts: 1. Data structure collection, 2.Processing of data structures, 3. Variable selection by researchers, and 4. Implementation of data donation tool. In short, the idea behind this tool is to obtain the data structures of social media takeouts to specifically inform the data donation tool running on the participant's local machine which data should be collected from their social media takeout. In this way, we avoid collecting highly personal or sensitive data. In this workflow description we will go trough the rationale behind each step, how to perform the step and how to asses the step in case of problems during the data collection. 
 
 ![Workflow](workflow.png)
-![Git](git_reposiyory_layout.png)
+![Git](git_repository_layout.png)
 
 ### 1. Data structure collection
 #### The rationale
@@ -57,7 +57,25 @@ The python script [TO BE DETERMINED] deselects the rows without an ID as this in
 
 #### The code
 
-## The Implementation Phase
+## The Data Collection
+During the data collection, the data donation tool needs to be updated after each batch of data donations has been received. This updating entails three main steps: 1. updating the  <platform>_Merged_Structures_Reduced.csv and 2. Rerun the generate_entries.py and 3. performing an end-to-end integration test.
+
+### 1. Updating the  <<platform>>_Merged_Structures_Reduced.csv
+
+![workflow_updating](workflow_updating.png)
+
+1. Do an anti-join of <platform>_Merged_Structures_t+1.csv with <platform>_Merged_Structures_t.csv to obtain a data frame only including the new rows named <platform>_Merged_Structures_new_t+1.csv 
+2. Do an an anti-join of <platform>_Merged_Structures_new_t+1.csv with <platform>_Merged_Structures_Reduced.csv to obtain a data frame with the variables which weren't selected in the previous iteration
+3. Select the variables you wish to collect and look for IDs that need to be merged. Save the result as <platform>_Merged_Structures_Reduced_new_t+1.csv
+4. Append <platform>_Merged_Structures_Reduced_new_t+1.csv to <platform>_Merged_Structures_Reduced_t+1.csv
+
+### 2. Rerun the generate_entries.py
+![Workflow](workflow.png)
+
+### 3. Perform an end-to-end integration test
+![Workflow testing](workflow_testing.png)
+For a full explanation on how to run the end-to-end integration test, please click [here.](https://github.com/what-if-horizon/what-if-data-donation/blob/master/pytests/README.md)
+
 
 
 
