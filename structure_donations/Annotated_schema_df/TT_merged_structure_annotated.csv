@@ -1,4 +1,4 @@
-﻿id,column_name,path,list_path,subfield_path,var_type,data_type,json_name,duplicate_flag,keep_id,,,,,,,,,,
+﻿id,column_name,path,list_path,subfield_path,var_type,data_type,json_name,duplicate_flag,keepID,,,,,,,,,,
 Activity:Activity Summary:ActivitySummaryMap:note,note,"['Activity', 'Activity Summary', 'ActivitySummaryMap', 'note']",nan,"['Activity', 'Activity Summary', 'ActivitySummaryMap', 'note']",static,string,,No,,,,,,,,,,,
 Your Activity:Activity Summary:ActivitySummaryMap:note,note,"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'note']",nan,"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'note']",static,string,,No,,,,,,,,,,,
 Activity:Activity Summary:ActivitySummaryMap:videosCommentedOnSinceAccountRegistration,videosCommentedOnSinceAccountRegistration,"['Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosCommentedOnSinceAccountRegistration']",nan,"['Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosCommentedOnSinceAccountRegistration']",static,number,,No,Activity:Activity Summary:ActivitySummaryMap:videosCommentedOnSinceAccountRegistration,,,,,,,,,,
@@ -997,4 +997,5 @@ Your Activity:Share History:ShareHistoryList,ShareHistoryList,"['Your Activity',
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
 ,,,,,,,,,,,,,,,,,,,
+
 ,,,,,,,,,,,,,,,,,,,
