@@ -10,7 +10,7 @@ def create_donation_flow(file_input: list[str]):
     tables = []
     for entry in IG_ENTRIES:
         try:
-            df = create_entry_df(file_input, entry)
+            df = create_entry_df(file_input, entry, search_subfolders=True)
             if not df.empty:
                 tables.append(donation_table(name=entry.table, df=df, title={"en": entry.table}))
         except Exception as e:

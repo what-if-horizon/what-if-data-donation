@@ -39,18 +39,24 @@ def get_list(d: dict, *keys):
     return val if isinstance(val, list) else []
 
 
-def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None = None) -> pd.DataFrame:
+def create_entry_df(
+    file_input: list[str], entry: Entry, json_root: str | None = None, search_subfolders=False
+) -> pd.DataFrame:
+
     if entry.filename:
+        filenames = [("*/" if search_subfolders else "/") + str(entry.filename)]
         if entry.filename.endswith(".js"):
-            data = read_js(file_input, ["/" + entry.filename])
+            data = read_js(file_input, filenames)
         else:
-            data = read_json(file_input, ["/" + str(entry.filename)])
+            data = read_json(file_input, filenames)
     else:
         with open(file_input[0], "r", encoding="utf-8") as f:
             data = [json.load(f)]
     if json_root:
         data = [d[json_root] for d in data]
     all_records = []
+    if isinstance(data, dict):
+        data = [data]
     for item in data:
         base_row = {}
         for colname, path in entry.static_fields.items():
