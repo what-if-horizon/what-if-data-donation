@@ -117,8 +117,8 @@ const note = (): Translatable => {
 
 const placeholder = (): Translatable => {
   return new TextBundle()
-    .add('en', 'E.g. data.zip')
-    .add('de', 'Z.B. data.zip')
-    .add('it', 'Esempio: data.zip')
-    .add('nl', 'Voorbeeld: data.zip')
+    .add('en', 'E.g. data.zip or data.json')
+    .add('de', 'Z.B. data.zip or data.json')
+    .add('it', 'Esempio: data.zip or data.json')
+    .add('nl', 'Voorbeeld: data.zip or data.json')
 }
