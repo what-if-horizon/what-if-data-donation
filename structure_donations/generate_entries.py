@@ -39,11 +39,23 @@ def extract_entry(filename: str | None, table: str, schema_group: pd.DataFrame) 
     entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
 
     def get_path(value):
-        # This can be removed if {list,subfield}_path is guaranteed to be a tuple
-        value = json.loads(value)
-        if isinstance(value, list):
-            return tuple(value)
-        return value
+        # If value is NaN (from Pandas) or empty string, return empty tuple
+        if pd.isna(value) or value == '':
+            return ()
+
+        # Sometimes the CSV contains 'nan' as string
+        if isinstance(value, str) and value.lower() == 'nan':
+            return ()
+
+        try:
+            parsed = json.loads(value)
+        except json.JSONDecodeError:
+            # If JSON parsing fails, treat as a single string
+            return (value,) if isinstance(value, str) else ()
+
+        if isinstance(parsed, list):
+            return tuple(parsed)
+        return (parsed,)
 
     for _, row in schema_group.iterrows():
         colname = row["column_name"]
@@ -79,9 +91,10 @@ def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
 # %%
 BASE_PATH = Path.cwd() / "structure_donations" / "Processed_structure_donations"
 infiles = dict(
-    TIKTOK=BASE_PATH / "TikTok/Final/Merged_structures_TT.csv",
-    X=BASE_PATH / "Twitter/Final/Merged_structures_X.csv",
-    IG=BASE_PATH / "Instagram/Final/Merged_structures_IG.csv",
+    TIKTOK=BASE_PATH / "TikTok/Final/TT_Merged_structures.csv",
+    X=BASE_PATH / "Twitter/Final/X_Merged_structures.csv",
+    IG=BASE_PATH / "Instagram/Final/IG_Merged_structures.csv",
+    FB=BASE_PATH / "Facebook/Final/FB_Merged_structures.csv",
 )
 
 
