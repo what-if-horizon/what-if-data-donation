@@ -8,6 +8,7 @@ import port.donation_flows.facebook as facebook
 import port.donation_flows.instagram as instagram
 import port.donation_flows.tiktok as tiktok
 import port.donation_flows.twitter as twitter
+import port.donation_flows.youtube as youtube
 import port.helpers.port_helpers as ph
 
 logger = logging.getLogger(__name__)
@@ -46,6 +47,8 @@ def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptCo
         return twitter.create_donation_flow(file_input)
     if platform == "Tiktok":
         return tiktok.create_donation_flow(file_input)
+    if platform == "Youtube":
+        return youtube.create_donation_flow(file_input)
     raise ValueError(f"Unknown platform: {platform}")
 
 
@@ -66,6 +69,7 @@ def ask_platform():
         title=props.Translatable({"en": "Platform", "nl": "Platform"}),
         description=props.Translatable({"en": "", "nl": ""}),
         items=[
+            props.RadioItem(id=5, value="Youtube"),
             props.RadioItem(id=4, value="Instagram"),
             props.RadioItem(id=2, value="Tiktok"),
             props.RadioItem(id=3, value="Facebook"),
