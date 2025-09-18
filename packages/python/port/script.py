@@ -22,7 +22,12 @@ def process(session_id: int, platform: str | None):
     while True:
         logger.info("Prompt for file for %s", platform)
 
-        file_prompt = ph.generate_file_prompt("application/zip")
+        if platform.lower() in ("tiktok", "tt"):
+            extensions_arg = "application/json"
+        else:
+            extensions_arg = "application/zip"
+        
+        file_prompt = ph.generate_file_prompt(extensions_arg)
         file_result = yield ph.render_page(platform_file_header(platform), file_prompt)
 
         if file_result.__type__ == "PayloadString":
