@@ -1,0 +1,54 @@
+File_name,Column_names
+canal.csv,ID-ul canalului
+canal.csv,Titlul canalului (original)
+canal.csv,Vizibilitatea canalului
+configurații pentru adresa URL a canalului.csv,ID-ul canalului
+configurații pentru adresa URL a canalului.csv,Numele adresei URL personalizate a canalului 1
+configurații pentru adresa URL a canalului.csv,Numele adresei URL personalizate a canalului 2
+date despre funcțiile canalului.csv,ID-ul canalului
+date despre funcțiile canalului.csv,Moderare automată a canalului în chatul live
+date despre funcțiile canalului.csv,Tipul prestabilit de comentarii permise ale videoclipului
+date despre funcțiile canalului.csv,Publicul vizat prestabilit al videoclipului
+date despre funcțiile canalului.csv,Licența prestabilită a videoclipului
+date despre funcțiile canalului.csv,Latitudinea prestabilită a videoclipului
+date despre funcțiile canalului.csv,Longitudinea prestabilită a videoclipului
+setări de moderare a comunității canalului.csv,ID-ul canalului
+setările paginii de canal.csv,ID-ul canalului
+înregistrări video.csv,ID-ul videoclipului
+înregistrări video.csv,Altitudinea de înregistrare a videoclipului
+înregistrări video.csv,Latitudinea de înregistrare a videoclipului
+înregistrări video.csv,Longitudinea de înregistrare a videoclipului
+videoclipuri.csv,ID-ul videoclipului
+videoclipuri.csv,Durată aproximativă (ms)
+videoclipuri.csv,Limba conținutului audio din videoclip
+videoclipuri.csv,Categorie de videoclipuri
+videoclipuri.csv,Descrierea videoclipului (original)
+videoclipuri.csv,ID-ul canalului
+videoclipuri.csv,Titlul videoclipului (original)
+videoclipuri.csv,Confidențialitate
+videoclipuri.csv,Starea videoclipului
+videoclipuri.csv,Marcajul temporal de creare a videoclipului
+videoclipuri.csv,Marcajul temporal de publicare a videoclipului
+comentarii.csv,ID-ul comentariului
+comentarii.csv,ID-ul canalului
+comentarii.csv,Marcajul temporal de creare a comentariului
+comentarii.csv,Preț
+comentarii.csv,ID-ul videoclipului
+comentarii.csv,Textul comentariului
+abonamente.csv,ID-ul canalului
+abonamente.csv,Adresa URL a canalului
+abonamente.csv,Titlul canalului
+Favorites-videoclipuri.csv,ID-ul videoclipului
+Favorites-videoclipuri.csv,Marcaj temporal de creare a videoclipului din playlist
+Watch later-videoclipuri.csv,ID-ul videoclipului
+Watch later-videoclipuri.csv,Marcaj temporal de creare a videoclipului din playlist
+crochet-videoclipuri.csv,ID-ul videoclipului
+crochet-videoclipuri.csv,Marcaj temporal de creare a videoclipului din playlist
+playlisturi.csv,ID-ul playlistului
+playlisturi.csv,Adaugă videoclipuri noi în partea de sus
+playlisturi.csv,Titlul playlistului (original)
+playlisturi.csv,Limba titlului playlistului (original)
+playlisturi.csv,Playlistul creează marcaj temporal
+playlisturi.csv,Playlistul actualizează marcajul temporal
+playlisturi.csv,Ordinea videoclipurilor în playlist
+playlisturi.csv,Vizibilitatea playlistului
