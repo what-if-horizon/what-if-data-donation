@@ -27,7 +27,7 @@ According to the [include GDPR on informed consent], we need to inform the parti
 To obtain the full JSON path, a python script has been created for each platform separately as the JSON structure of each platform is different with its own challenges and quirks. Also, due to the deeply nested structures most existing libraries to extract JSON paths do not work. The processing output is a CSV file named [<platform>_Merged_Structures.csv](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Processed_structure_donations) with the following columns:
 - json_name: Name of the JSON file in which the JSON path can be found
 - id: Unique ID for each data field. 
-    - The IDs are generated using the first folder name of teh file path or the first key of the JSON path, adding an extra key, starting at the lowest level, until an ID has been generated that is ID in the <platform>_Merged_Structures.csv
+    - See below for more detail on the construction of the IDs
     - Note that due to slight differences in the JSON paths, identical data fields can have different IDs and hence need to be modified by hand
 - column_name: The name of the lowest level key in the JSON path
 - path: The full JSON path
@@ -36,6 +36,27 @@ To obtain the full JSON path, a python script has been created for each platform
 - var_type: Describes whether the variable is included in a list ('list') or is a regular variable ('static')
 - file_path: Certain data takeouts are zipfiles consisting of a nested folder structure. The path to the JSON files are specified in this column. 
 - duplicate_flag: In case there is an ID that is duplicated due to JSON paths containing identical keys but different structures as in one case parts of the data can be enlisted whereas in other cases the data is not. When a duplicate ID is found, this ID is marked as 'Yes'
+
+##### ID creation
+###### Instagram
+The ID for Facebook initially consist of the folder name in which the JSON is stored, the name of the json and the column name. In case this does not result into a unique ID, in the following iterations (max 4), json keys are added from lowest to highest. If again this does not result in a unique ID, the folder one level higher is added to the ID as well. In other words the most minimal ID consist of lowest folder name + json name + column name. The maximum ID consist of the second lowest folder + lowest folder name + json name + key[1,2,3] + column name.
+
+###### Facebook
+The ID for Facebook initially consist of the folder name in which the JSON is stored, the name of the json and the column name. In case this does not result into a unique ID, in the following iterations (max 6), json keys are added from lowest to highest. If again this does not result in a unique ID, the folder up until 3 levels higher is added to the ID as well. In other words the most minimal ID consist of lowest folder name + json name + column name. The maximum ID consist of the second lowest folder[1,2,3] + lowest folder name + json name + key[1,2,3] + column name.
+
+##### TikTok
+The ID for TikTok initially consist of the highest level key in combination with the lowest level key. If this does not result in an unique ID, more keys are added until the maximum number of keys present in the JSON is reached or a unique ID has been established. 
+
+
+##### Twitter
+The ID for Twitter initially consist of the name of the java script file combined with the name of the lowest level key. In case this does not result in an unique ID, more keys are added from low to high until the maximum number of keys has been reached or an unique ID has been created.
+
+##### Youtube 
+###### JSON
+The ID for the Youtube JSONs initially consist of the name of the java script file combined with the name of the lowest level key. In case this does not result in an unique ID, more keys are added from low to high until the maximum number of keys has been reached or an unique ID has been created.
+###### CSV
+The ID for the Youtube CSV consist of the name of the CSV and the column name. 
+
 
 #### The code
 The jupyter notebooks to generate the <platform>_Merged_Structures.csv can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Parser_structures_to_schema_df) in the GIT repository. After loading the data structures, the code flattens the JSON while taking into account and labeling the enlisted JSON paths. This is done for each data structure independently after which the CSVs containing the flattened JSON files are merged and the IDs are generated. 
@@ -46,10 +67,7 @@ The jupyter notebooks to generate the <platform>_Merged_Structures.csv can be fo
 As explained above only relevant non highly personal data should be collected. The decision of which variables to collect should be made by the researcher
 
 #### The strategy
-The researcher creates an extra column in the <platform>_Merged_Structures.csv and only pastes the ID in that column in case she wishes to collect that variable. In case she finds different IDs pointing at the same data, she decides on the final ID and replaces the original ID. It is highly important that the row is kept with the new ID as the differing JSON path is important to maintain as to collect the variable correctly. The annotated <platform>_Merged_Structures.csv can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Annotated_schema_df) 
-
-#### The code 
-The python script [TO BE DETERMINED] deselects the rows without an ID as this indicates that the variable should not be collected. The <platform>_Merged_Structures_Reduced.csv is saved here [NOT READY]
+The researcher creates an extra column in the <platform>_Merged_Structures.csv and only pastes the ID in that column in case she wishes to collect that variable. In case she finds different IDs pointing at the same data, she decides on the final ID and replaces the original ID. It is highly important that the row is kept with the new ID as the differing JSON path is important to maintain as to collect the variable correctly. The annotated <platform>_Merged_Structures_Annotated.csv can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Annotated_schema_df) 
 
 
 ### 4. Implementation of data donation tool
@@ -60,16 +78,15 @@ The python script [TO BE DETERMINED] deselects the rows without an ID as this in
 #### The code
 
 ## The Data Collection
-During the data collection, the data donation tool needs to be updated after each batch of data donations has been received. This updating entails three main steps: 1. updating the  <platform>_Merged_Structures_Reduced.csv and 2. Rerun the generate_entries.py and 3. performing an end-to-end integration test.
+During the data collection, the data donation tool needs to be updated after each batch of data donations has been received. This updating entails three main steps: 1. updating the  <platform>_Merged_Structures_Annotated.csv and 2. Rerun the generate_entries.py and 3. performing an end-to-end integration test.
 
-### 1. Updating the  <<platform>>_Merged_Structures_Reduced.csv
+### 1. Updating the  <<platform>>_Merged_Structures_Annotated.csv
 
-![workflow_updating](workflow_updating.png)
 
-1. Do an anti-join of <platform>_Merged_Structures_t+1.csv with <platform>_Merged_Structures_t.csv to obtain a data frame only including the new rows named <platform>_Merged_Structures_new_t+1.csv 
-2. Do an an anti-join of <platform>_Merged_Structures_new_t+1.csv with <platform>_Merged_Structures_Reduced.csv to obtain a data frame with the variables which weren't selected in the previous iteration
-3. Select the variables you wish to collect and look for IDs that need to be merged. Save the result as <platform>_Merged_Structures_Reduced_new_t+1.csv
-4. Append <platform>_Merged_Structures_Reduced_new_t+1.csv to <platform>_Merged_Structures_Reduced_t+1.csv
+1. Do an anti-join to indicate the new rows
+2. Add a time stamp to indicate the new rows
+3. Annotate the new rows
+4. Save as  <<platform>>_Merged_Structures_Annotated.csv
 
 ### 2. Rerun the generate_entries.py
 ![Workflow](workflow.png)
