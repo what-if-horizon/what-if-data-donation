@@ -1,0 +1,17 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+kijkgeschiedenis.json,header,['header'],[],['header'],list,string,geschiedenis/kijkgeschiedenis.json
+kijkgeschiedenis.json,title,['title'],[],['title'],list,string,geschiedenis/kijkgeschiedenis.json
+kijkgeschiedenis.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,geschiedenis/kijkgeschiedenis.json
+kijkgeschiedenis.json,time,['time'],[],['time'],list,string,geschiedenis/kijkgeschiedenis.json
+kijkgeschiedenis.json,products,['products'],[],['products'],list,string,geschiedenis/kijkgeschiedenis.json
+kijkgeschiedenis.json,activityControls,['activityControls'],[],['activityControls'],list,string,geschiedenis/kijkgeschiedenis.json
+zoekgeschiedenis.json,header,['header'],[],['header'],list,string,geschiedenis/zoekgeschiedenis.json
+zoekgeschiedenis.json,title,['title'],[],['title'],list,string,geschiedenis/zoekgeschiedenis.json
+zoekgeschiedenis.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,geschiedenis/zoekgeschiedenis.json
+zoekgeschiedenis.json,description,['description'],[],['description'],list,string,geschiedenis/zoekgeschiedenis.json
+zoekgeschiedenis.json,time,['time'],[],['time'],list,string,geschiedenis/zoekgeschiedenis.json
+zoekgeschiedenis.json,products,['products'],[],['products'],list,string,geschiedenis/zoekgeschiedenis.json
+zoekgeschiedenis.json,activityControls,['activityControls'],[],['activityControls'],list,string,geschiedenis/zoekgeschiedenis.json
+kijkgeschiedenis.json,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,geschiedenis/kijkgeschiedenis.json
+kijkgeschiedenis.json,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,geschiedenis/kijkgeschiedenis.json
+zoekgeschiedenis.json,name,"['details', 'name']",['details'],['name'],list,string,geschiedenis/zoekgeschiedenis.json

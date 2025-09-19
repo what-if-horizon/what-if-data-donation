@@ -1,0 +1,50 @@
+File_name,Column_names
+kanalas.csv,Kanalo ID
+kanalas.csv,Kanalo pavadinimas (pradinis)
+kanalas.csv,Kanalo matomumas
+kanalo URL konfigūracijos.csv,Kanalo ID
+kanalo URL konfigūracijos.csv,1 kanalo reklaminio URL pavadinimas
+kanalo URL konfigūracijos.csv,2 kanalo reklaminio URL pavadinimas
+kanalo bendruomenės moderavimo nustatymai.csv,Kanalo ID
+kanalo funkcijų duomenys.csv,Kanalo ID
+kanalo funkcijų duomenys.csv,Automatinis kanalo moderavimas tiesioginiame pokalbyje
+kanalo funkcijų duomenys.csv,Numatytasis vaizdo įrašo leidžiamų komentarų tipas
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo tikslinė auditorija
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo licencija
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo vietovės platuma
+kanalo funkcijų duomenys.csv,Numatytoji vaizdo įrašo vietovės ilguma
+kanalo puslapio nustatymai.csv,Kanalo ID
+vaizdo įrašai.csv,Vaizdo įrašo ID
+vaizdo įrašai.csv,Apytikrė trukmė (ms)
+vaizdo įrašai.csv,Vaizdo įrašo garso takelio kalba
+vaizdo įrašai.csv,Vaizdo įrašo kategorija
+vaizdo įrašai.csv,Vaizdo įrašo aprašas (originalas)
+vaizdo įrašai.csv,Kanalo ID
+vaizdo įrašai.csv,Vaizdo įrašo pavadinimas (originalas)
+vaizdo įrašai.csv,Privatumas
+vaizdo įrašai.csv,Vaizdo įrašo būsena
+vaizdo įrašai.csv,Vaizdo įrašo sukūrimo laiko žymė
+vaizdo įrašai.csv,Vaizdo įrašo paskelbimo laiko žymė
+komentarai.csv,Komentaro ID
+komentarai.csv,Kanalo ID
+komentarai.csv,Komentaro sukūrimo laiko žymė
+komentarai.csv,Kaina
+komentarai.csv,Vaizdo įrašo ID
+komentarai.csv,Komentuoti tekstą
+prenumeratos.csv,Kanalo ID
+prenumeratos.csv,Kanalo URL
+prenumeratos.csv,Kanalo pavadinimas
+Favorites-videos.csv,Vaizdo įrašo ID
+Favorites-videos.csv,Grojaraščio vaizdo įrašo sukūrimo laiko žymė
+Watch later-videos.csv,Vaizdo įrašo ID
+Watch later-videos.csv,Grojaraščio vaizdo įrašo sukūrimo laiko žymė
+crochet-videos.csv,Vaizdo įrašo ID
+crochet-videos.csv,Grojaraščio vaizdo įrašo sukūrimo laiko žymė
+grojaraščiai.csv,Grojaraščio ID
+grojaraščiai.csv,Pridėti naujus vaizdo įrašus viršuje
+grojaraščiai.csv,Grojaraščio pavadinimas (originalas)
+grojaraščiai.csv,Grojaraščio pavadinimo (originalo) kalba
+grojaraščiai.csv,Grojaraščio sukūrimo laiko žymė
+grojaraščiai.csv,Grojaraščio atnaujinimo laiko žymė
+grojaraščiai.csv,Grojaraščio vaizdo įrašų tvarka
+grojaraščiai.csv,Grojaraščio matomumas
