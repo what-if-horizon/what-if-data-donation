@@ -1,11 +1,14 @@
-import logging
 import json
-import pandas as pd
+import logging
 
-from port.helpers.Structure_extractor_libraries.FB_get_json_structure import infer_placeholder, simplify_json_structure, structure_from_zip
+import pandas as pd
 from port.helpers.donation_flow import donation_flow, donation_table
-from port.helpers.donation_flow import donation_flow, donation_table
-from port.helpers.parsers import create_entry_df
+from port.helpers.parsers import create_entry_df, create_table
+from port.helpers.Structure_extractor_libraries.FB_get_json_structure import (
+    infer_placeholder,
+    simplify_json_structure,
+    structure_from_zip,
+)
 
 
 def create_donation_flow(file_input: list[str]):
@@ -14,24 +17,24 @@ def create_donation_flow(file_input: list[str]):
 
     tables = []
     # --- normal donation tables ---
-    for entry in FB_ENTRIES:
+    for key, entries in FB_ENTRIES.items():
         try:
-            df = create_entry_df(file_input, entry, search_subfolders=True)
+            df = create_table(file_input, entries, search_subfolders=True)
             if not df.empty:
-                tables.append(donation_table(name=entry.table, df=df, title={"en": entry.table}))
+                tables.append(donation_table(name=key, df=df, title={"en": key}))
         except Exception as e:
-            logging.exception(f"Error in {entry.table}")
+            logging.exception(f"Error in {key}")
 
     # --- structure table ---
     zip_path = file_input[0]
     placeholder_json = structure_from_zip(zip_path)
-    df_placeholder = pd.DataFrame([{"Data Structure": "Anonymized", "Placeholder for research purpose": placeholder_json}])
-
-    tables.append(
-        donation_table(name="placeholder", df=df_placeholder, title={"en": "Placeholders"})
+    df_placeholder = pd.DataFrame(
+        [{"Data Structure": "Anonymized", "Placeholder for research purpose": placeholder_json}]
     )
 
-    # --- donation flow ---         
+    tables.append(donation_table(name="placeholder", df=df_placeholder, title={"en": "Placeholders"}))
+
+    # --- donation flow ---
     if tables:
         return donation_flow(id="facebook", tables=tables)
     else:

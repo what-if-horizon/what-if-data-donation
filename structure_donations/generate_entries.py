@@ -66,7 +66,7 @@ def extract_entry(filename: str | None, table: str, schema_group: pd.DataFrame) 
     return entry
 
 
-def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
+def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
     # Columns used by the extraction
     # keepID - (only) used as a filter
     # file_path - which file to find in the zip (for all formats except TT, which is a single file)
@@ -79,6 +79,9 @@ def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
     def tablename(json_name):
         return json_name.replace(".json", "").replace(".js", "").replace("_", " ").title()
 
+    def tablename_from_id(id):
+        return tablename(id.split(":")[0])
+
     schema_df = pd.read_csv(infile)
     schema_df.columns = schema_df.columns.str.strip()
     schema_df = schema_df[(schema_df["keepID"].notna()) & (schema_df["keepID"] != "")]
@@ -87,20 +90,26 @@ def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
         if "variable" in schema_df:
             schema_df.rename(columns={"variable": "file_path"}, inplace=True)  # Temporary measure for X
         else:
-            schema_df["file_path"] = None  # For TT
+            schema_df["file_path"] = ""  # For TT
     if "table_name" not in schema_df:
-        schema_df["table_name"] = schema_df["json_name"].map(tablename)
+        # Remporary measure until table names are properly integrated
+        if platform == "TIKTOK":
+            schema_df["table_name"] = schema_df["id"].map(tablename_from_id)
+        else:
+            schema_df["table_name"] = schema_df["json_name"].map(tablename)
 
     for table_name, table_rows in schema_df.groupby("table_name"):
         for file_path, group in table_rows.groupby("file_path"):
             assert isinstance(table_name, str)
             assert isinstance(file_path, str)
+            if platform == "TIKTOK":
+                file_path = None
             yield extract_entry(file_path, table_name, group)
 
 
-def extract_entries_as_dict(infile: Path) -> dict[str, list[Entry]]:
+def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry]]:
     result: dict[str, list[Entry]] = {}
-    for e in extract_entries_from_csv(infile):
+    for e in extract_entries_from_csv(infile, platform=platform):
         result.setdefault(e.table, []).append(e)
     return result
 
@@ -108,9 +117,10 @@ def extract_entries_as_dict(infile: Path) -> dict[str, list[Entry]]:
 # %%
 BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_schema_df"
 infiles = dict(
-    # TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
+    TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
     X=BASE_PATH / "X_merged_structure_annotated.csv",
     IG=BASE_PATH / "IG_merged_structure_annotated.csv",
+    FB=BASE_PATH / "FB_merged_structure_annotated.csv",
 )
 
 
@@ -121,7 +131,7 @@ def write_entries_dict(outfile):
 
     for name, infile in infiles.items():
         lines.append(f"{name}_ENTRIES: dict[str, list[Entry]] = {{\n")
-        all_entries = extract_entries_as_dict(infile)
+        all_entries = extract_entries_as_dict(infile, platform=name)
         for table, entries in all_entries.items():
             lines.append(f"    {repr(table)}: [\n")
             for entry in entries:
