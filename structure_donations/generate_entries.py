@@ -77,7 +77,7 @@ def extract_entries_from_csv(infile: Path) -> Iterable[Entry]:
     # column_name - name of the resulting column
 
     def tablename(json_name):
-        return json_name.replace(".json", "").replace("_", " ").title()
+        return json_name.replace(".json", "").replace(".js", "").replace("_", " ").title()
 
     schema_df = pd.read_csv(infile)
     schema_df.columns = schema_df.columns.str.strip()
@@ -109,9 +109,8 @@ def extract_entries_as_dict(infile: Path) -> dict[str, list[Entry]]:
 BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_schema_df"
 infiles = dict(
     # TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
-    # X=BASE_PATH / "X_merged_structure_annotated.csv",
-    IG=BASE_PATH
-    / "IG_merged_structure_annotated.csv",
+    X=BASE_PATH / "X_merged_structure_annotated.csv",
+    IG=BASE_PATH / "IG_merged_structure_annotated.csv",
 )
 
 

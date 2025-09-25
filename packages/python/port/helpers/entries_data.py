@@ -10,6 +10,132 @@ which will use the Merged_structures_*.csv to determine the required entries.
 
 from port.helpers.parsers import Entry
 
+X_ENTRIES: dict[str, list[Entry]] = {
+    'Account-Label.Js': [
+        Entry(table='Account-Label.Js', filename='data/account-label.js', static_fields={'accountLabel': ('accountLabel',)}, list_blocks={}),
+    ],
+    'Account-Suspension.Js': [
+        Entry(table='Account-Suspension.Js', filename='data/account-suspension.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Account.Js': [
+        Entry(table='Account.Js', filename='data/account.js', static_fields={'accountId': ('account', 'accountId'), 'createdAt': ('account', 'createdAt')}, list_blocks={}),
+    ],
+    'Ad-Engagements.Js': [
+        Entry(table='Ad-Engagements.Js', filename='data/ad-engagements.js', static_fields={'displayLocation': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'displayLocation'), 'tweetId': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'tweetId'), 'tweetText': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'tweetText'), 'advertiserName': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'advertiserInfo', 'advertiserName'), 'screenName': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'publisherInfo', 'screenName'), 'targetingType': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria', 'targetingType'), 'targetingValue': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria', 'targetingValue'), 'impressionTime': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'impressionTime'), 'engagementTime': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes', 'engagementTime'), 'engagementType': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes', 'engagementType'), 'trendId': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'trendId'), 'name': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'name'), 'description': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'description'), 'publisherName': ('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'publisherInfo', 'publisherName')}, list_blocks={('ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo'): {'mediaUrls': ('mediaUrls',), 'urls': ('urls',)}}),
+    ],
+    'Ad-Impressions.Js': [
+        Entry(table='Ad-Impressions.Js', filename='data/ad-impressions.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Ad-Mobile-Conversions-Attributed.Js': [
+        Entry(table='Ad-Mobile-Conversions-Attributed.Js', filename='data/ad-mobile-conversions-attributed.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Ad-Mobile-Conversions-Unattributed.Js': [
+        Entry(table='Ad-Mobile-Conversions-Unattributed.Js', filename='data/ad-mobile-conversions-unattributed.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Ad-Online-Conversions-Attributed.Js': [
+        Entry(table='Ad-Online-Conversions-Attributed.Js', filename='data/ad-online-conversions-attributed.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Ad-Online-Conversions-Unattributed.Js': [
+        Entry(table='Ad-Online-Conversions-Unattributed.Js', filename='data/ad-online-conversions-unattributed.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Article-Metadata.Js': [
+        Entry(table='Article-Metadata.Js', filename='data/article-metadata.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Article.Js': [
+        Entry(table='Article.Js', filename='data/article.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Block.Js': [
+        Entry(table='Block.Js', filename='data/block.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Community-Note-Batsignal.Js': [
+        Entry(table='Community-Note-Batsignal.Js', filename='data/community-note-batsignal.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Community-Note-Rating.Js': [
+        Entry(table='Community-Note-Rating.Js', filename='data/community-note-rating.js', static_fields={'noteId': ('communityNoteRating', 'noteId'), 'helpfulnessLevel': ('communityNoteRating', 'helpfulnessLevel'), 'createdAt': ('communityNoteRating', 'createdAt'), 'userId': ('communityNoteRating', 'userId')}, list_blocks={('communityNoteRating',): {'helpfulTags': ('helpfulTags',)}}),
+    ],
+    'Community-Note-Tombstone.Js': [
+        Entry(table='Community-Note-Tombstone.Js', filename='data/community-note-tombstone.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Community-Note.Js': [
+        Entry(table='Community-Note.Js', filename='data/community-note.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Community-Tweet.Js': [
+        Entry(table='Community-Tweet.Js', filename='data/community-tweet.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Follower.Js': [
+        Entry(table='Follower.Js', filename='data/follower.js', static_fields={'accountId': ('follower', 'accountId'), 'userLink': ('follower', 'userLink')}, list_blocks={}),
+    ],
+    'Following.Js': [
+        Entry(table='Following.Js', filename='data/following.js', static_fields={'accountId': ('following', 'accountId'), 'userLink': ('following', 'userLink')}, list_blocks={}),
+    ],
+    'Grok-Chat-Item.Js': [
+        Entry(table='Grok-Chat-Item.Js', filename='data/grok-chat-item.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Like.Js': [
+        Entry(table='Like.Js', filename='data/like.js', static_fields={'tweetId': ('like', 'tweetId'), 'fullText': ('like', 'fullText'), 'expandedUrl': ('like', 'expandedUrl')}, list_blocks={}),
+    ],
+    'Lists-Created.Js': [
+        Entry(table='Lists-Created.Js', filename='data/lists-created.js', static_fields={'No data': ('No data',), 'url': ('userListInfo', 'url')}, list_blocks={}),
+    ],
+    'Lists-Member.Js': [
+        Entry(table='Lists-Member.Js', filename='data/lists-member.js', static_fields={'No data': ('No data',), 'url': ('userListInfo', 'url')}, list_blocks={}),
+    ],
+    'Lists-Subscribed.Js': [
+        Entry(table='Lists-Subscribed.Js', filename='data/lists-subscribed.js', static_fields={'No data': ('No data',), 'url': ('userListInfo', 'url')}, list_blocks={}),
+    ],
+    'Manifest.Js': [
+        Entry(table='Manifest.Js', filename='data/manifest.js', static_fields={'generationDate': ('archiveInfo', 'generationDate')}, list_blocks={}),
+    ],
+    'Moment.Js': [
+        Entry(table='Moment.Js', filename='data/moment.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Mute.Js': [
+        Entry(table='Mute.Js', filename='data/mute.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Note-Tweet.Js': [
+        Entry(table='Note-Tweet.Js', filename='data/note-tweet.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Personalization.Js': [
+        Entry(table='Personalization.Js', filename='data/personalization.js', static_fields={'language': ('p13nData', 'demographics', 'languages', 'language'), 'isDisabled': ('p13nData', 'interests', 'interests', 'isDisabled'), 'gender': ('p13nData', 'demographics', 'genderInfo', 'gender'), 'name': ('p13nData', 'interests', 'interests', 'name'), 'numAudiences': ('p13nData', 'interests', 'audienceAndAdvertisers', 'numAudiences'), 'birthDate': ('p13nData', 'inferredAgeInfo', 'birthDate')}, list_blocks={('p13nData', 'interests', 'audienceAndAdvertisers'): {'lookalikeAdvertisers': ('lookalikeAdvertisers',), 'advertisers': ('advertisers',)}, ('p13nData', 'interests'): {'shows': ('shows',)}, ('p13nData', 'inferredAgeInfo'): {'age': ('age',)}}),
+    ],
+    'Professional-Data.Js': [
+        Entry(table='Professional-Data.Js', filename='data/professional-data.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Protected-History.Js': [
+        Entry(table='Protected-History.Js', filename='data/protected-history.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Reply-Prompt.Js': [
+        Entry(table='Reply-Prompt.Js', filename='data/reply-prompt.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Saved-Search.Js': [
+        Entry(table='Saved-Search.Js', filename='data/saved-search.js', static_fields={'savedSearchId': ('savedSearch', 'savedSearchId'), 'query': ('savedSearch', 'query')}, list_blocks={}),
+    ],
+    'Smartblock.Js': [
+        Entry(table='Smartblock.Js', filename='data/smartblock.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Spaces-Metadata.Js': [
+        Entry(table='Spaces-Metadata.Js', filename='data/spaces-metadata.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Tweet-Headers.Js': [
+        Entry(table='Tweet-Headers.Js', filename='data/tweet-headers.js', static_fields={'user_id': ('tweet', 'user_id')}, list_blocks={}),
+    ],
+    'Tweetdeck.Js': [
+        Entry(table='Tweetdeck.Js', filename='data/tweetdeck.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Tweets.Js': [
+        Entry(table='Tweets.Js', filename='data/tweets.js', static_fields={'editableUntil': ('tweet', 'edit_info', 'initial', 'editableUntil'), 'editsRemaining': ('tweet', 'edit_info', 'initial', 'editsRemaining'), 'isEditEligible': ('tweet', 'edit_info', 'initial', 'isEditEligible'), 'retweeted': ('tweet', 'retweeted'), 'source': ('tweet', 'source'), 'url': ('tweet', 'entities', 'urls', 'url'), 'expanded_url': ('tweet', 'entities', 'urls', 'expanded_url'), 'display_url': ('tweet', 'entities', 'urls', 'display_url'), 'favorite_count': ('tweet', 'favorite_count'), 'id_str': ('tweet', 'entities', 'user_mentions', 'id_str'), 'truncated': ('tweet', 'truncated'), 'retweet_count': ('tweet', 'retweet_count'), 'id': ('tweet', 'entities', 'user_mentions', 'id'), 'possibly_sensitive': ('tweet', 'possibly_sensitive'), 'created_at': ('tweet', 'created_at'), 'favorited': ('tweet', 'favorited'), 'full_text': ('tweet', 'full_text'), 'lang': ('tweet', 'lang'), 'name': ('tweet', 'entities', 'user_mentions', 'name'), 'screen_name': ('tweet', 'entities', 'user_mentions', 'screen_name'), 'in_reply_to_status_id_str': ('tweet', 'in_reply_to_status_id_str'), 'in_reply_to_user_id': ('tweet', 'in_reply_to_user_id'), 'in_reply_to_status_id': ('tweet', 'in_reply_to_status_id'), 'in_reply_to_screen_name': ('tweet', 'in_reply_to_screen_name'), 'in_reply_to_user_id_str': ('tweet', 'in_reply_to_user_id_str'), 'text': ('tweet', 'entities', 'hashtags', 'text'), 'media_url_https': ('tweet', 'entities', 'media', 'media_url_https'), 'source_status_id_str': ('tweet', 'entities', 'media', 'source_status_id_str')}, list_blocks={('tweet', 'edit_info', 'initial'): {'editTweetIds': ('editTweetIds',)}, ('tweet', 'entities', 'urls'): {'indices': ('indices',)}, ('tweet',): {'display_text_range': ('display_text_range',)}, ('tweet', 'entities', 'user_mentions'): {'indices': ('indices',)}, ('tweet', 'entities', 'hashtags'): {'indices': ('indices',)}}),
+    ],
+    'User-Link-Clicks.Js': [
+        Entry(table='User-Link-Clicks.Js', filename='data/user-link-clicks.js', static_fields={'No data': ('No data',)}, list_blocks={}),
+    ],
+    'Verified-Organization.Js': [
+        Entry(table='Verified-Organization.Js', filename='data/verified-organization.js', static_fields={'verifiedOrganization': ('verifiedOrganization',)}, list_blocks={}),
+    ],
+    'Verified.Js': [
+        Entry(table='Verified.Js', filename='data/verified.js', static_fields={'verified': ('verified', 'verified')}, list_blocks={}),
+    ],
+}
+
 IG_ENTRIES: dict[str, list[Entry]] = {
     'Ads About Meta': [
         Entry(table='Ads About Meta', filename='ads_information/instagram_ads_and_businesses/ads_about_meta.json', static_fields={'media': ('media',), 'fbid': ('fbid',), 'ent_name': ('ent_name',)}, list_blocks={('label_values',): {'ent_field_name': ('ent_field_name',), 'label': ('label',), 'value': ('value',), 'timestamp_value': ('timestamp_value',)}}),
