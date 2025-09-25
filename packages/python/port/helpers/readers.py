@@ -59,7 +59,7 @@ def read_binary(file_input: list[str], file_paths: list[str]):
             if file_content is not None:
                 return file_content
 
-    raise ValueError("No file found with paths: " + str(file_paths))
+    raise FileNotFoundError("No file found with paths: " + str(file_paths))
 
 
 def read_text(file_input: list[str], file_paths: list[str], encoding: str = "utf-8") -> str:

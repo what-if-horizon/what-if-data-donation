@@ -1,4 +1,5 @@
 import json
+import logging
 from typing import Annotated, NamedTuple, TypeAlias
 
 import pandas as pd
@@ -39,26 +40,34 @@ def get_list(d: dict, *keys):
     return val if isinstance(val, list) else []
 
 
+def read_file(file_input: list[str], filename: str | None, search_subfolders=False):
+    """Read the entry file from the input files"""
+    if not filename:
+        with open(file_input[0], "r", encoding="utf-8") as f:
+            return [json.load(f)]
+    # Read js or json file as required
+    filenames = [("*/" if search_subfolders else "/") + str(filename)]
+    if filename.endswith(".js"):
+        return read_js(file_input, filenames)
+    else:
+        return read_json(file_input, filenames)
+
+
 def create_entry_df(
     file_input: list[str], entry: Entry, json_root: str | None = None, search_subfolders=False
-) -> pd.DataFrame:
-
-    if entry.filename:
-        filenames = [("*/" if search_subfolders else "/") + str(entry.filename)]
-        if entry.filename.endswith(".js"):
-            data = read_js(file_input, filenames)
-        else:
-            data = read_json(file_input, filenames)
-    else:
-        with open(file_input[0], "r", encoding="utf-8") as f:
-            data = [json.load(f)]
+) -> pd.DataFrame | None:
+    try:
+        data = read_file(file_input, entry.filename, search_subfolders=search_subfolders)
+    except FileNotFoundError as e:
+        logging.error(f"{entry.table}: Cannot find file {entry.filename} ({e})")
+        return None
     if json_root:
         data = [d[json_root] for d in data]
     all_records = []
     if isinstance(data, dict):
         data = [data]
     for item in data:
-        base_row = {}
+        base_row = {"file": entry.filename}
         for colname, path in entry.static_fields.items():
             base_row[colname] = get_in(item, *path)
         if not entry.list_blocks:
@@ -75,3 +84,20 @@ def create_entry_df(
                     row[colname] = get_in(item, *path)
                 all_records.append(row)
     return pd.DataFrame(all_records)
+
+
+def create_table(
+    file_input: list[str], entries: list[Entry], json_root: str | None = None, search_subfolders=False
+) -> pd.DataFrame:
+    tables = [
+        create_entry_df(file_input, entry, json_root=json_root, search_subfolders=search_subfolders)
+        for entry in entries
+    ]
+    tables = [t for t in tables if t is not None]
+    if tables:
+        result = pd.concat(tables, ignore_index=True)
+        if len(tables) == 1:
+            result.drop("file", axis=1, inplace=True)
+        return result
+    else:
+        return pd.DataFrame()
