@@ -1,14 +1,9 @@
-import json
 import logging
 
 import pandas as pd
 from port.helpers.donation_flow import donation_flow, donation_table
-from port.helpers.parsers import create_entry_df, create_table
-from port.helpers.Structure_extractor_libraries.IG_get_json_structure import (
-    infer_placeholder,
-    simplify_json_structure,
-    structure_from_zip,
-)
+from port.helpers.parsers import create_table
+from port.helpers.Structure_extractor_libraries.IG_get_json_structure import structure_from_zip
 
 
 def create_donation_flow(file_input: list[str]):

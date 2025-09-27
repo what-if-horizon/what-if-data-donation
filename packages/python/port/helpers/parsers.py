@@ -1,6 +1,6 @@
 import json
 import logging
-from typing import Annotated, NamedTuple, TypeAlias
+from typing import Annotated, Iterable, NamedTuple, TypeAlias
 
 import pandas as pd
 from port.helpers.readers import read_js, read_json
@@ -33,6 +33,31 @@ def get_in(d: dict, *keys):
         else:
             return None
     return d
+
+
+def find_entries(d: dict, keys: tuple[str, ...]) -> Iterable[dict]:
+    """Recursively traverse the json dictionary d with the keys, yielding the entries
+    if there are no keys, return d
+    If d is a dict, find the first key and recurse
+    if it is a list, iterate over the list and recurse
+    """
+    print(f"**** get_in(d, keys={keys}) ****")
+    print("d:", json.dumps(d, indent=2))
+    if not keys:
+        yield d
+        return
+    # Just like in the prolog days!
+    first_key, remaining_keys = keys[0], keys[1:]
+    if not (e := d.get(first_key)):
+        return
+    if isinstance(e, dict):
+        yield from find_entries(e, remaining_keys)
+    elif isinstance(e, list):
+        for element in e:
+            yield from find_entries(element, remaining_keys)
+    else:
+        # We were looking for a list, but found a scalar. What to do?
+        raise ValueError(f"Find_entries value for {first_key} was {repr(e)}, expected a list or dict")
 
 
 def get_list(d: dict, *keys):
@@ -71,19 +96,21 @@ def create_entry_df(
         for colname, path in entry.static_fields.items():
             base_row[colname] = get_in(item, *path)
         if not entry.list_blocks:
-            # WvA: Should we not also return base_row if no entries found for list_blocks?
             all_records.append(base_row)
             continue
-
         for list_path, columns in entry.list_blocks.items():
-            items = get_list(item, *list_path)
-            for item in items:
-                row = base_row.copy()
-                row["__source_list__"] = list_path[-1]
-                for colname, path in sorted(columns.items()):
-                    row[colname] = get_in(item, *path)
-                all_records.append(row)
+            for row in resolve_list_block(item, list_path, columns):
+                combined_row = base_row.copy() | row
+                all_records.append(combined_row)
     return pd.DataFrame(all_records)
+
+
+def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
+    for element in find_entries(item, list_path):
+        row = dict(__source_list__=list_path[-1])
+        for colname, path in sorted(columns.items()):
+            row[colname] = get_in(element, *path)
+        yield row
 
 
 def create_table(
@@ -96,7 +123,7 @@ def create_table(
     tables = [t for t in tables if t is not None]
     if tables:
         result = pd.concat(tables, ignore_index=True)
-        if len(tables) == 1:
+        if len(tables) == 1 and not result.empty:
             result.drop("file", axis=1, inplace=True)
         return result
     else:
