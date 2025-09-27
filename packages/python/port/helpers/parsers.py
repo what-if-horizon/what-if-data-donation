@@ -41,8 +41,6 @@ def find_entries(d: dict, keys: tuple[str, ...]) -> Iterable[dict]:
     If d is a dict, find the first key and recurse
     if it is a list, iterate over the list and recurse
     """
-    print(f"**** get_in(d, keys={keys}) ****")
-    print("d:", json.dumps(d, indent=2))
     if not keys:
         yield d
         return
