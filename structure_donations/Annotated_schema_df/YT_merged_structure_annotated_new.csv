@@ -1,0 +1,129 @@
+﻿json_name,id,column_name,path,list_path,subfield_path,var_type,data_type,file_path,duplicate_flag,keepID
+istoricul căutărilor.json,istoricul căutărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul căutărilor.json,No,search-history:header
+istoricul căutărilor.json,istoricul căutărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul căutărilor.json,No,search-history:title
+istoricul căutărilor.json,istoricul căutărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul căutărilor.json,No,search-history:titleUrl
+istoricul căutărilor.json,istoricul căutărilor:description,description,"[""description""]",[],"[""description""]",list,string,istoric/istoricul căutărilor.json,No,search-history:description
+istoricul căutărilor.json,istoricul căutărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul căutărilor.json,No,search-history:time
+istoricul căutărilor.json,istoricul căutărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul căutărilor.json,No,search-history:products
+istoricul căutărilor.json,istoricul căutărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul căutărilor.json,No,search-history:activityControls
+istoricul-vizionărilor.json,istoricul-vizionărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:header
+istoricul-vizionărilor.json,istoricul-vizionărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:title
+istoricul-vizionărilor.json,istoricul-vizionărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:titleUrl
+istoricul-vizionărilor.json,istoricul-vizionărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:time
+istoricul-vizionărilor.json,istoricul-vizionărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:products
+istoricul-vizionărilor.json,istoricul-vizionărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:activityControls
+istoricul căutărilor.json,istoricul căutărilor:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,istoric/istoricul căutărilor.json,No,search-history:name
+istoricul-vizionărilor.json,istoricul-vizionărilor:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:subtitles:name
+istoricul-vizionărilor.json,istoricul-vizionărilor:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:subtitles:url
+kijkgeschiedenis.json,kijkgeschiedenis:header,header,"[""header""]",[],"[""header""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:header
+kijkgeschiedenis.json,kijkgeschiedenis:title,title,"[""title""]",[],"[""title""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:title
+kijkgeschiedenis.json,kijkgeschiedenis:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:titleUrl
+kijkgeschiedenis.json,kijkgeschiedenis:time,time,"[""time""]",[],"[""time""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:time
+kijkgeschiedenis.json,kijkgeschiedenis:products,products,"[""products""]",[],"[""products""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:products
+kijkgeschiedenis.json,kijkgeschiedenis:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:activityControls
+zoekgeschiedenis.json,zoekgeschiedenis:header,header,"[""header""]",[],"[""header""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:header
+zoekgeschiedenis.json,zoekgeschiedenis:title,title,"[""title""]",[],"[""title""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:title
+zoekgeschiedenis.json,zoekgeschiedenis:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:titleUrl
+zoekgeschiedenis.json,zoekgeschiedenis:time,time,"[""time""]",[],"[""time""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:time
+zoekgeschiedenis.json,zoekgeschiedenis:products,products,"[""products""]",[],"[""products""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:products
+zoekgeschiedenis.json,zoekgeschiedenis:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:activityControls
+kijkgeschiedenis.json,kijkgeschiedenis:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:subtitles:name
+kijkgeschiedenis.json,kijkgeschiedenis:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,geschiedenis/kijkgeschiedenis.json,No,watch-history:subtitles:url
+watch-history.json,watch-history:header,header,"[""header""]",[],"[""header""]",list,string,youtube_takeout/history/watch-history.json,Yes,watch-history:header
+watch-history.json,watch-history:title,title,"[""title""]",[],"[""title""]",list,string,youtube_takeout/history/watch-history.json,Yes,watch-history:title
+watch-history.json,watch-history:time,time,"[""time""]",[],"[""time""]",list,string,youtube_takeout/history/watch-history.json,Yes,watch-history:time
+watch-history.json,watch-history:products,products,"[""products""]",[],"[""products""]",list,string,youtube_takeout/history/watch-history.json,Yes,watch-history:products
+watch-history.json,watch-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,youtube_takeout/history/watch-history.json,Yes,watch-history:activityControls
+search-history.json,search-history:header,header,"[""header""]",[],"[""header""]",list,string,youtube_takeout/history/search-history.json,Yes,search-history:header
+search-history.json,search-history:title,title,"[""title""]",[],"[""title""]",list,string,youtube_takeout/history/search-history.json,Yes,search-history:title
+search-history.json,search-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,youtube_takeout/history/search-history.json,Yes,search-history:titleUrl
+search-history.json,search-history:time,time,"[""time""]",[],"[""time""]",list,string,youtube_takeout/history/search-history.json,Yes,search-history:time
+search-history.json,search-history:products,products,"[""products""]",[],"[""products""]",list,string,youtube_takeout/history/search-history.json,Yes,search-history:products
+search-history.json,search-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,youtube_takeout/history/search-history.json,Yes,search-history:activityControls
+watch-history.json,watch-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,youtube_takeout/history/watch-history.json,Yes,watch-history:details:name
+historial-de-búsqueda.json,historial-de-búsqueda:header,header,"[""header""]",[],"[""header""]",list,string,historial/historial-de-búsqueda.json,No,search-history:header
+historial-de-búsqueda.json,historial-de-búsqueda:title,title,"[""title""]",[],"[""title""]",list,string,historial/historial-de-búsqueda.json,No,search-history:title
+historial-de-búsqueda.json,historial-de-búsqueda:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,historial/historial-de-búsqueda.json,No,search-history:titleUrl
+historial-de-búsqueda.json,historial-de-búsqueda:description,description,"[""description""]",[],"[""description""]",list,string,historial/historial-de-búsqueda.json,No,search-history:description
+historial-de-búsqueda.json,historial-de-búsqueda:time,time,"[""time""]",[],"[""time""]",list,string,historial/historial-de-búsqueda.json,No,search-history:time
+historial-de-búsqueda.json,historial-de-búsqueda:products,products,"[""products""]",[],"[""products""]",list,string,historial/historial-de-búsqueda.json,No,search-history:products
+historial-de-búsqueda.json,historial-de-búsqueda:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,historial/historial-de-búsqueda.json,No,search-history:activityControls
+historial-de-reproducciones.json,historial-de-reproducciones:header,header,"[""header""]",[],"[""header""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:header
+historial-de-reproducciones.json,historial-de-reproducciones:title,title,"[""title""]",[],"[""title""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:title
+historial-de-reproducciones.json,historial-de-reproducciones:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:titleUrl
+historial-de-reproducciones.json,historial-de-reproducciones:time,time,"[""time""]",[],"[""time""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:time
+historial-de-reproducciones.json,historial-de-reproducciones:products,products,"[""products""]",[],"[""products""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:products
+historial-de-reproducciones.json,historial-de-reproducciones:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:activityControls
+historial-de-búsqueda.json,historial-de-búsqueda:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,historial/historial-de-búsqueda.json,No,search-history:name
+historial-de-reproducciones.json,historial-de-reproducciones:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:subtitles:name
+historial-de-reproducciones.json,historial-de-reproducciones:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:url
+istoricul căutărilor.json,istoricul căutărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul căutărilor.json,No,search-history:header
+istoricul căutărilor.json,istoricul căutărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul căutărilor.json,No,search-history:title
+istoricul căutărilor.json,istoricul căutărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul căutărilor.json,No,search-history:titleUrl
+istoricul căutărilor.json,istoricul căutărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul căutărilor.json,No,search-history:time
+istoricul căutărilor.json,istoricul căutărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul căutărilor.json,No,search-history:products
+istoricul căutărilor.json,istoricul căutărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul căutărilor.json,No,search-history:activityControls
+istoricul-vizionărilor.json,istoricul-vizionărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:header
+istoricul-vizionărilor.json,istoricul-vizionărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:title
+istoricul-vizionărilor.json,istoricul-vizionărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:titleUrl
+istoricul-vizionărilor.json,istoricul-vizionărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:time
+istoricul-vizionărilor.json,istoricul-vizionărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:products
+istoricul-vizionărilor.json,istoricul-vizionărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:activityControls
+istoricul-vizionărilor.json,istoricul-vizionărilor:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:subtitles:name
+istoricul-vizionărilor.json,istoricul-vizionărilor:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,istoric/istoricul-vizionărilor.json,No,watch-history:subtitles:url
+search-history.json,search-history:header,header,"[""header""]",[],"[""header""]",list,string,history/search-history.json,Yes,search-history:header
+search-history.json,search-history:title,title,"[""title""]",[],"[""title""]",list,string,history/search-history.json,Yes,search-history:title
+search-history.json,search-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,history/search-history.json,Yes,search-history:titleUrl
+search-history.json,search-history:description,description,"[""description""]",[],"[""description""]",list,string,history/search-history.json,No,search-history:description
+search-history.json,search-history:time,time,"[""time""]",[],"[""time""]",list,string,history/search-history.json,Yes,search-history:time
+search-history.json,search-history:products,products,"[""products""]",[],"[""products""]",list,string,history/search-history.json,Yes,search-history:products
+search-history.json,search-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,history/search-history.json,Yes,search-history:activityControls
+watch-history.json,watch-history:header,header,"[""header""]",[],"[""header""]",list,string,history/watch-history.json,Yes,watch-history:header
+watch-history.json,watch-history:title,title,"[""title""]",[],"[""title""]",list,string,history/watch-history.json,Yes,watch-history:title
+watch-history.json,watch-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,history/watch-history.json,No,watch-history:titleUrl
+watch-history.json,watch-history:time,time,"[""time""]",[],"[""time""]",list,string,history/watch-history.json,Yes,watch-history:time
+watch-history.json,watch-history:products,products,"[""products""]",[],"[""products""]",list,string,history/watch-history.json,Yes,watch-history:products
+watch-history.json,watch-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,history/watch-history.json,Yes,watch-history:activityControls
+search-history.json,search-history:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,history/search-history.json,No,search-history:name
+watch-history.json,watch-history:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,history/watch-history.json,No,watch-history:subtitles:name
+watch-history.json,watch-history:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,history/watch-history.json,No,watch-history:url
+paieškos istorija.json,paieškos istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/paieškos istorija.json,No,search-history:header
+paieškos istorija.json,paieškos istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/paieškos istorija.json,No,search-history:title
+paieškos istorija.json,paieškos istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/paieškos istorija.json,No,search-history:titleUrl
+paieškos istorija.json,paieškos istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/paieškos istorija.json,No,search-history:time
+paieškos istorija.json,paieškos istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/paieškos istorija.json,No,search-history:products
+paieškos istorija.json,paieškos istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/paieškos istorija.json,No,search-history:activityControls
+žiūrėjimo istorija.json,žiūrėjimo istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:header
+žiūrėjimo istorija.json,žiūrėjimo istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:title
+žiūrėjimo istorija.json,žiūrėjimo istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:titleUrl
+žiūrėjimo istorija.json,žiūrėjimo istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:time
+žiūrėjimo istorija.json,žiūrėjimo istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:products
+žiūrėjimo istorija.json,žiūrėjimo istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:activityControls
+žiūrėjimo istorija.json,žiūrėjimo istorija:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:subtitles:name
+žiūrėjimo istorija.json,žiūrėjimo istorija:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:subtitles:url
+paieškos istorija.json,paieškos istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/paieškos istorija.json,No,search-history:header
+paieškos istorija.json,paieškos istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/paieškos istorija.json,No,search-history:title
+paieškos istorija.json,paieškos istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/paieškos istorija.json,No,search-history:titleUrl
+paieškos istorija.json,paieškos istorija:description,description,"[""description""]",[],"[""description""]",list,string,istorija/paieškos istorija.json,No,search-history:description
+paieškos istorija.json,paieškos istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/paieškos istorija.json,No,search-history:time
+paieškos istorija.json,paieškos istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/paieškos istorija.json,No,search-history:products
+paieškos istorija.json,paieškos istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/paieškos istorija.json,No,search-history:activityControls
+žiūrėjimo istorija.json,žiūrėjimo istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:header
+žiūrėjimo istorija.json,žiūrėjimo istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:title
+žiūrėjimo istorija.json,žiūrėjimo istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:titleUrl
+žiūrėjimo istorija.json,žiūrėjimo istorija:description,description,"[""description""]",[],"[""description""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:description
+žiūrėjimo istorija.json,žiūrėjimo istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:time
+žiūrėjimo istorija.json,žiūrėjimo istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:products
+žiūrėjimo istorija.json,žiūrėjimo istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:activityControls
+paieškos istorija.json,paieškos istorija:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,istorija/paieškos istorija.json,No,search-history:name
+žiūrėjimo istorija.json,žiūrėjimo istorija:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,istorija/žiūrėjimo istorija.json,No,watch-history:details:name
+historial-de-búsqueda.json,historial-de-búsqueda:header,header,"[""header""]",[],"[""header""]",list,string,historial/historial-de-búsqueda.json,No,search-history:header
+historial-de-búsqueda.json,historial-de-búsqueda:title,title,"[""title""]",[],"[""title""]",list,string,historial/historial-de-búsqueda.json,No,search-history:title
+historial-de-búsqueda.json,historial-de-búsqueda:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,historial/historial-de-búsqueda.json,No,search-history:titleUrl
+historial-de-búsqueda.json,historial-de-búsqueda:time,time,"[""time""]",[],"[""time""]",list,string,historial/historial-de-búsqueda.json,No,search-history:time
+historial-de-búsqueda.json,historial-de-búsqueda:products,products,"[""products""]",[],"[""products""]",list,string,historial/historial-de-búsqueda.json,No,search-history:products
+historial-de-búsqueda.json,historial-de-búsqueda:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,historial/historial-de-búsqueda.json,No,search-history:activityControls
+historial-de-reproducciones.json,historial-de-reproducciones:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,historial/historial-de-reproducciones.json,No,watch-history:details:name
+watch-history.json,watch-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,history/watch-history.json,Yes,watch-history:details:name
+zoekgeschiedenis.json,zoekgeschiedenis:description,description,"[""description""]",[],"[""description""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:description
+zoekgeschiedenis.json,zoekgeschiedenis:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,geschiedenis/zoekgeschiedenis.json,No,search-history:name
