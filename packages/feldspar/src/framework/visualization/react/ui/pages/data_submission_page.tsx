@@ -12,6 +12,7 @@ import { createPromptFactoriesWithDefaults, PromptContext } from "../prompts/fac
 type Props = Weak<PropsUIPageDataSubmission> & ReactFactoryContext;
 
 export const DataSubmissionPage = (props: Props): JSX.Element => {
+  console.log('[BSC] this is the sumbition page')
   const { title } = prepareCopy(props);
   const { locale } = props;
   const promptFactories = createPromptFactoriesWithDefaults(

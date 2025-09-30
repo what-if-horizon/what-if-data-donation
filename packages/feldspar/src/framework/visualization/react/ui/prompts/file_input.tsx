@@ -20,6 +20,7 @@ export const FileInput = (props: Props): JSX.Element => {
   const { description, note, placeholder, extensions, selectButton, continueButton } = prepareCopy(props)
 
   function handleClick (): void {
+    
     input.current?.click()
   }
 

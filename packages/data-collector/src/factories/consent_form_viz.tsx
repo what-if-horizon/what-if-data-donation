@@ -5,6 +5,7 @@ import { PropsUIPromptConsentFormViz } from "../components/consent_form_viz/type
 export class ConsentFormVizFactory implements PromptFactory {
   create(body: unknown, context: ReactFactoryContext) {
     if (this.isBody(body)) {
+      console.log('[BSC] From body', {...context})
       return <ConsentFormViz {...body} {...context} />;
     }
     return null;

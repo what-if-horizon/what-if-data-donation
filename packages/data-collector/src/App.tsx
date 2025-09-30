@@ -4,7 +4,7 @@ import { FileInputMultipleFactory } from "./components/file_input_multiple/facto
 import { ErrorPageFactory } from "./components/error_page/factory"
 import { QuestionnaireFactory } from "./components/questionnaire/factory"
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <ScriptHostComponent
@@ -23,6 +23,8 @@ function App() {
       />
     </div>
   );
+
 }
+
 
 export default App;

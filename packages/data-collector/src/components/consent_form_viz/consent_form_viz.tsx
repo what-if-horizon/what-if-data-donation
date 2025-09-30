@@ -29,6 +29,8 @@ export const ConsentFormViz = (props: Props): JSX.Element => {
   const [isDonating, setIsDonating] = useState(false)
 
   useEffect(() => {
+    console.log('[BSC] - Tables loaded in the state',props.tables)
+    console.log('[BSC] - Processed loaded in the state',parseTables(props.tables))
     setTables(parseTables(props.tables))
   }, [props.tables])
 
@@ -114,6 +116,8 @@ export const ConsentFormViz = (props: Props): JSX.Element => {
   function handleDonate(): void {
     setIsDonating(true)
     const value = serializeConsentData()
+    console.log('[BSC] - This happens on donation: ', value)
+
     resolve?.({ __type__: "PayloadJSON", "value": value })
   }
 
@@ -134,6 +138,19 @@ export const ConsentFormViz = (props: Props): JSX.Element => {
   function serializeTable({ id, head, body: { rows } }: PropsUITable): any {
     const data = rows.map((row) => serializeRow(row, head))
     return { [id]: data }
+  }
+
+  function downloadTablesAsJSON(): void {
+    const json = serializeConsentData(); // reuse your serialization logic
+    const blob = new Blob([json], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "consent_tables.json"; // name of the file
+    link.click();
+
+    URL.revokeObjectURL(url);
   }
 
   function serializeRow(row: PropsUITableRow, head: PropsUITableHead): any {
@@ -168,6 +185,11 @@ export const ConsentFormViz = (props: Props): JSX.Element => {
               spinning={isDonating}
             />
             <LabelButton label={cancelButton} onClick={handleCancel} color="text-grey1" />
+            <PrimaryButton
+              label="Download JSON"
+              onClick={downloadTablesAsJSON}
+              color="bg-red-500 text-black"
+            />
           </div>
         </div>
       </div>
