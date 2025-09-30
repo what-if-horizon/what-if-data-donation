@@ -623,3 +623,250 @@ FB_ENTRIES: dict[str, list[Entry]] = {
     ],
 }
 
+YT_ENTRIES: dict[str, list[Entry]] = {
+    'Historial-De-BúSqueda': [
+        Entry(table='Historial-De-BúSqueda', filename='historial/historial-de-búsqueda.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'description': ('description',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'Historial-De-Búsqueda': [
+        Entry(table='Historial-De-Búsqueda', filename='historial/historial-de-búsqueda.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}}),
+    ],
+    'Historial-De-Reproducciones': [
+        Entry(table='Historial-De-Reproducciones', filename='historial/historial-de-reproducciones.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('subtitles',): {'name': ('name',), 'url': ('url',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'Istoricul CăUtăRilor': [
+        Entry(table='Istoricul CăUtăRilor', filename='istoric/istoricul căutărilor.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'description': ('description',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'Istoricul Căutărilor': [
+        Entry(table='Istoricul Căutărilor', filename='istoric/istoricul căutărilor.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}}),
+    ],
+    'Istoricul-VizionăRilor': [
+        Entry(table='Istoricul-VizionăRilor', filename='istoric/istoricul-vizionărilor.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('subtitles',): {'name': ('name',), 'url': ('url',)}}),
+    ],
+    'Istoricul-Vizionărilor': [
+        Entry(table='Istoricul-Vizionărilor', filename='istoric/istoricul-vizionărilor.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('subtitles',): {'name': ('name',), 'url': ('url',)}}),
+    ],
+    'Kijkgeschiedenis': [
+        Entry(table='Kijkgeschiedenis', filename='geschiedenis/kijkgeschiedenis.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('subtitles',): {'name': ('name',), 'url': ('url',)}}),
+    ],
+    'PaiešKos Istorija': [
+        Entry(table='PaiešKos Istorija', filename='istorija/paieškos istorija.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'description': ('description',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'Paieškos Istorija': [
+        Entry(table='Paieškos Istorija', filename='istorija/paieškos istorija.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}}),
+    ],
+    'Search-History': [
+        Entry(table='Search-History', filename='history/search-history.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'description': ('description',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('details',): {'name': ('name',)}}),
+        Entry(table='Search-History', filename='youtube_takeout/history/search-history.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}}),
+    ],
+    'Watch-History': [
+        Entry(table='Watch-History', filename='history/watch-history.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('subtitles',): {'name': ('name',), 'url': ('url',)}, ('details',): {'name': ('name',)}}),
+        Entry(table='Watch-History', filename='youtube_takeout/history/watch-history.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'Zoekgeschiedenis': [
+        Entry(table='Zoekgeschiedenis', filename='geschiedenis/zoekgeschiedenis.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',), 'description': ('description',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'ŽIūRėJimo Istorija': [
+        Entry(table='ŽIūRėJimo Istorija', filename='istorija/žiūrėjimo istorija.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'description': ('description',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('details',): {'name': ('name',)}}),
+    ],
+    'Žiūrėjimo Istorija': [
+        Entry(table='Žiūrėjimo Istorija', filename='istorija/žiūrėjimo istorija.json', static_fields={}, list_blocks={(): {'header': ('header',), 'title': ('title',), 'titleUrl': ('titleUrl',), 'time': ('time',), 'products': ('products',), 'activityControls': ('activityControls',)}, ('subtitles',): {'name': ('name',), 'url': ('url',)}}),
+    ],
+}
+
+YT_CSV_ENTRIES: dict[str, list[Entry]] = {
+    'Ajustes_de_moderación_de_la_comunidad_del_canal': [
+        Entry(table='Ajustes_de_moderación_de_la_comunidad_del_canal', filename='Ajustes de moderación de la comunidad del canal.csv', static_fields={'ID de canal': ('ID de canal',)}, list_blocks={}),
+    ],
+    'Ajustes_de_moderación_de_la_comunidad_del_canal': [
+        Entry(table='Ajustes_de_moderación_de_la_comunidad_del_canal', filename='Ajustes de moderación de la comunidad del canal.csv', static_fields={'ID de canal': ('ID de canal',)}, list_blocks={}),
+    ],
+    'Favorites-videoclipuri': [
+        Entry(table='Favorites-videoclipuri', filename='Favorites-videoclipuri.csv', static_fields={'ID-ul videoclipului': ('ID-ul videoclipului',), 'Marcaj temporal de creare a videoclipului din playlist': ('Marcaj temporal de creare a videoclipului din playlist',)}, list_blocks={}),
+    ],
+    'Favorites-videos': [
+        Entry(table='Favorites-videos', filename='Favorites-videos.csv', static_fields={'Video ID': ('Video ID',), 'Playlist Video Creation Timestamp': ('Playlist Video Creation Timestamp',), 'Vaizdo įrašo ID': ('Vaizdo įrašo ID',), 'Grojaraščio vaizdo įrašo sukūrimo laiko žymė': ('Grojaraščio vaizdo įrašo sukūrimo laiko žymė',)}, list_blocks={}),
+    ],
+    'Favorites-vídeos': [
+        Entry(table='Favorites-vídeos', filename='Favorites-vídeos.csv', static_fields={'ID de vídeo': ('ID de vídeo',), 'Marca de tiempo de creación de la lista de reproducción de vídeos': ('Marca de tiempo de creación de la lista de reproducción de vídeos',)}, list_blocks={}),
+    ],
+    'Listas_de_reproducción': [
+        Entry(table='Listas_de_reproducción', filename='Listas de reproducción.csv', static_fields={'ID de lista de reproducción': ('ID de lista de reproducción',), 'Añadir vídeos nuevos al principio': ('Añadir vídeos nuevos al principio',), 'Título de la lista de reproducción (original)': ('Título de la lista de reproducción (original)',), 'Idioma del título de la lista de reproducción (original)': ('Idioma del título de la lista de reproducción (original)',), 'Marca de tiempo de creación de la lista de reproducción': ('Marca de tiempo de creación de la lista de reproducción',), 'Marca de tiempo de actualización de la lista de reproducción': ('Marca de tiempo de actualización de la lista de reproducción',), 'Orden de vídeos de lista de reproducción': ('Orden de vídeos de lista de reproducción',), 'Visibilidad de la lista de reproducción': ('Visibilidad de la lista de reproducción',)}, list_blocks={}),
+    ],
+    'URL-configuraties_van_kanaal': [
+        Entry(table='URL-configuraties_van_kanaal', filename='URL-configuraties van kanaal.csv', static_fields={'Kanaal-ID': ('Kanaal-ID',), 'Naam van vanity-URL 1 voor kanaal': ('Naam van vanity-URL 1 voor kanaal',), 'Naam van vanity-URL 2 voor kanaal': ('Naam van vanity-URL 2 voor kanaal',)}, list_blocks={}),
+    ],
+    'Video_s_in_Favorites': [
+        Entry(table='Video_s_in_Favorites', filename='Video_s in Favorites.csv', static_fields={'Video-ID': ('Video-ID',), 'Tijdstempel voor het maken van een playlistvideo': ('Tijdstempel voor het maken van een playlistvideo',)}, list_blocks={}),
+    ],
+    'Video_s_in_Watch_later': [
+        Entry(table='Video_s_in_Watch_later', filename='Video_s in Watch later.csv', static_fields={'Video-ID': ('Video-ID',), 'Tijdstempel voor het maken van een playlistvideo': ('Tijdstempel voor het maken van een playlistvideo',)}, list_blocks={}),
+    ],
+    'Video_s_in_crochet': [
+        Entry(table='Video_s_in_crochet', filename='Video_s in crochet.csv', static_fields={'Video-ID': ('Video-ID',), 'Tijdstempel voor het maken van een playlistvideo': ('Tijdstempel voor het maken van een playlistvideo',)}, list_blocks={}),
+    ],
+    'Watch_later-videoclipuri': [
+        Entry(table='Watch_later-videoclipuri', filename='Watch later-videoclipuri.csv', static_fields={'ID-ul videoclipului': ('ID-ul videoclipului',), 'Marcaj temporal de creare a videoclipului din playlist': ('Marcaj temporal de creare a videoclipului din playlist',)}, list_blocks={}),
+    ],
+    'Watch_later-videos': [
+        Entry(table='Watch_later-videos', filename='Watch later-videos.csv', static_fields={'Video ID': ('Video ID',), 'Playlist Video Creation Timestamp': ('Playlist Video Creation Timestamp',), 'Vaizdo įrašo ID': ('Vaizdo įrašo ID',), 'Grojaraščio vaizdo įrašo sukūrimo laiko žymė': ('Grojaraščio vaizdo įrašo sukūrimo laiko žymė',)}, list_blocks={}),
+    ],
+    'Watch_later-vídeos': [
+        Entry(table='Watch_later-vídeos', filename='Watch later-vídeos.csv', static_fields={'ID de vídeo': ('ID de vídeo',), 'Marca de tiempo de creación de la lista de reproducción de vídeos': ('Marca de tiempo de creación de la lista de reproducción de vídeos',)}, list_blocks={}),
+    ],
+    'abonamente': [
+        Entry(table='abonamente', filename='abonamente.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',), 'Adresa URL a canalului': ('Adresa URL a canalului',), 'Titlul canalului': ('Titlul canalului',)}, list_blocks={}),
+    ],
+    'abonnementen': [
+        Entry(table='abonnementen', filename='abonnementen.csv', static_fields={'Kanaal-ID': ('Kanaal-ID',), 'Kanaal-URL': ('Kanaal-URL',), 'Kanaaltitel': ('Kanaaltitel',)}, list_blocks={}),
+    ],
+    'canal': [
+        Entry(table='canal', filename='canal.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',), 'Titlul canalului (original)': ('Titlul canalului (original)',), 'Vizibilitatea canalului': ('Vizibilitatea canalului',), 'ID de canal': ('ID de canal',), 'Título del canal (original)': ('Título del canal (original)',), 'Visibilidad del canal': ('Visibilidad del canal',)}, list_blocks={}),
+    ],
+    'channel': [
+        Entry(table='channel', filename='channel.csv', static_fields={'Channel ID': ('Channel ID',), 'Channel Title (Original)': ('Channel Title (Original)',), 'Channel Visibility': ('Channel Visibility',)}, list_blocks={}),
+    ],
+    'channel_URL_configs': [
+        Entry(table='channel_URL_configs', filename='channel URL configs.csv', static_fields={'Channel ID': ('Channel ID',), 'Channel Vanity URL 1 Name': ('Channel Vanity URL 1 Name',), 'Channel Vanity URL 2 Name': ('Channel Vanity URL 2 Name',)}, list_blocks={}),
+    ],
+    'channel_community_moderation_settings': [
+        Entry(table='channel_community_moderation_settings', filename='channel community moderation settings.csv', static_fields={'Channel ID': ('Channel ID',)}, list_blocks={}),
+    ],
+    'channel_feature_data': [
+        Entry(table='channel_feature_data', filename='channel feature data.csv', static_fields={'Channel ID': ('Channel ID',), 'Channel Auto Moderation in Live Chat': ('Channel Auto Moderation in Live Chat',), 'Video Default Allowed Comments Type': ('Video Default Allowed Comments Type',), 'Video Default Targeted Audience': ('Video Default Targeted Audience',), 'Video Default License': ('Video Default License',)}, list_blocks={}),
+    ],
+    'channel_page_settings': [
+        Entry(table='channel_page_settings', filename='channel page settings.csv', static_fields={'Channel ID': ('Channel ID',)}, list_blocks={}),
+    ],
+    'comentarii': [
+        Entry(table='comentarii', filename='comentarii.csv', static_fields={'ID-ul comentariului': ('ID-ul comentariului',), 'ID-ul canalului': ('ID-ul canalului',), 'Marcajul temporal de creare a comentariului': ('Marcajul temporal de creare a comentariului',), 'Preț': ('Preț',), 'ID-ul videoclipului': ('ID-ul videoclipului',), 'Textul comentariului': ('Textul comentariului',)}, list_blocks={}),
+    ],
+    'comentarios': [
+        Entry(table='comentarios', filename='comentarios.csv', static_fields={'ID de comentario': ('ID de comentario',), 'ID de canal': ('ID de canal',), 'Marca de tiempo de creación del comentario': ('Marca de tiempo de creación del comentario',), 'Precio': ('Precio',), 'ID de vídeo': ('ID de vídeo',), 'Texto del comentario': ('Texto del comentario',)}, list_blocks={}),
+    ],
+    'comments': [
+        Entry(table='comments', filename='comments.csv', static_fields={'Comment ID': ('Comment ID',), 'Channel ID': ('Channel ID',), 'Comment Create Timestamp': ('Comment Create Timestamp',), 'Price': ('Price',), 'Video ID': ('Video ID',), 'Comment Text': ('Comment Text',)}, list_blocks={}),
+    ],
+    'configuraciones_de_la_URL_del_canal': [
+        Entry(table='configuraciones_de_la_URL_del_canal', filename='configuraciones de la URL del canal.csv', static_fields={'ID de canal': ('ID de canal',), 'Nombre de la URL mnemónica del canal (1)': ('Nombre de la URL mnemónica del canal (1)',), 'Nombre de la URL mnemónica del canal (2)': ('Nombre de la URL mnemónica del canal (2)',)}, list_blocks={}),
+    ],
+    'configuración_de_la_página_del_canal': [
+        Entry(table='configuración_de_la_página_del_canal', filename='configuración de la página del canal.csv', static_fields={'ID de canal': ('ID de canal',)}, list_blocks={}),
+    ],
+    'configuración_de_la_página_del_canal': [
+        Entry(table='configuración_de_la_página_del_canal', filename='configuración de la página del canal.csv', static_fields={'ID de canal': ('ID de canal',)}, list_blocks={}),
+    ],
+    'configurații_pentru_adresa_URL_a_canalului': [
+        Entry(table='configurații_pentru_adresa_URL_a_canalului', filename='configurații pentru adresa URL a canalului.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',), 'Numele adresei URL personalizate a canalului 1': ('Numele adresei URL personalizate a canalului 1',), 'Numele adresei URL personalizate a canalului 2': ('Numele adresei URL personalizate a canalului 2',)}, list_blocks={}),
+    ],
+    'configurații_pentru_adresa_URL_a_canalului': [
+        Entry(table='configurații_pentru_adresa_URL_a_canalului', filename='configurații pentru adresa URL a canalului.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',), 'Numele adresei URL personalizate a canalului 1': ('Numele adresei URL personalizate a canalului 1',)}, list_blocks={}),
+    ],
+    'crochet-videoclipuri': [
+        Entry(table='crochet-videoclipuri', filename='crochet-videoclipuri.csv', static_fields={'ID-ul videoclipului': ('ID-ul videoclipului',), 'Marcaj temporal de creare a videoclipului din playlist': ('Marcaj temporal de creare a videoclipului din playlist',)}, list_blocks={}),
+    ],
+    'crochet-videos': [
+        Entry(table='crochet-videos', filename='crochet-videos.csv', static_fields={'Video ID': ('Video ID',), 'Playlist Video Creation Timestamp': ('Playlist Video Creation Timestamp',), 'Vaizdo įrašo ID': ('Vaizdo įrašo ID',), 'Grojaraščio vaizdo įrašo sukūrimo laiko žymė': ('Grojaraščio vaizdo įrašo sukūrimo laiko žymė',)}, list_blocks={}),
+    ],
+    'crochet-vídeos': [
+        Entry(table='crochet-vídeos', filename='crochet-vídeos.csv', static_fields={'ID de vídeo': ('ID de vídeo',), 'Marca de tiempo de creación de la lista de reproducción de vídeos': ('Marca de tiempo de creación de la lista de reproducción de vídeos',)}, list_blocks={}),
+    ],
+    'date_despre_funcțiile_canalului': [
+        Entry(table='date_despre_funcțiile_canalului', filename='date despre funcțiile canalului.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',), 'Moderare automată a canalului în chatul live': ('Moderare automată a canalului în chatul live',), 'Tipul prestabilit de comentarii permise ale videoclipului': ('Tipul prestabilit de comentarii permise ale videoclipului',), 'Publicul vizat prestabilit al videoclipului': ('Publicul vizat prestabilit al videoclipului',), 'Licența prestabilită a videoclipului': ('Licența prestabilită a videoclipului',)}, list_blocks={}),
+    ],
+    'date_despre_funcțiile_canalului': [
+        Entry(table='date_despre_funcțiile_canalului', filename='date despre funcțiile canalului.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',), 'Moderare automată a canalului în chatul live': ('Moderare automată a canalului în chatul live',), 'Tipul prestabilit de comentarii permise ale videoclipului': ('Tipul prestabilit de comentarii permise ale videoclipului',), 'Publicul vizat prestabilit al videoclipului': ('Publicul vizat prestabilit al videoclipului',), 'Licența prestabilită a videoclipului': ('Licența prestabilită a videoclipului',)}, list_blocks={}),
+    ],
+    'datos_de_la_función_del_canal': [
+        Entry(table='datos_de_la_función_del_canal', filename='datos de la función del canal.csv', static_fields={'ID de canal': ('ID de canal',), 'Moderación automática del canal en el chat en directo': ('Moderación automática del canal en el chat en directo',), 'Tipo de comentarios permitidos de forma predeterminada en el vídeo': ('Tipo de comentarios permitidos de forma predeterminada en el vídeo',), 'Audiencia objetivo predeterminada del vídeo': ('Audiencia objetivo predeterminada del vídeo',), 'Licencia del vídeo predeterminada': ('Licencia del vídeo predeterminada',)}, list_blocks={}),
+    ],
+    'datos_de_la_función_del_canal': [
+        Entry(table='datos_de_la_función_del_canal', filename='datos de la función del canal.csv', static_fields={'ID de canal': ('ID de canal',), 'Moderación automática del canal en el chat en directo': ('Moderación automática del canal en el chat en directo',), 'Tipo de comentarios permitidos de forma predeterminada en el vídeo': ('Tipo de comentarios permitidos de forma predeterminada en el vídeo',), 'Audiencia objetivo predeterminada del vídeo': ('Audiencia objetivo predeterminada del vídeo',), 'Licencia del vídeo predeterminada': ('Licencia del vídeo predeterminada',)}, list_blocks={}),
+    ],
+    'gegevens_voor_kanaalfunctie': [
+        Entry(table='gegevens_voor_kanaalfunctie', filename='gegevens voor kanaalfunctie.csv', static_fields={'Kanaal-ID': ('Kanaal-ID',), 'Automatische moderatie in livechat van kanaal': ('Automatische moderatie in livechat van kanaal',), 'Standaard toegestane reactietype van video': ('Standaard toegestane reactietype van video',), 'Standaard doelgroep van video': ('Standaard doelgroep van video',), 'Standaardlicentie van video': ('Standaardlicentie van video',), 'Automatische moderatie in live chat van kanaal': ('Automatische moderatie in live chat van kanaal',)}, list_blocks={}),
+    ],
+    'grojaraščiai': [
+        Entry(table='grojaraščiai', filename='grojaraščiai.csv', static_fields={'Grojaraščio ID': ('Grojaraščio ID',), 'Pridėti naujus vaizdo įrašus viršuje': ('Pridėti naujus vaizdo įrašus viršuje',), 'Grojaraščio pavadinimas (originalas)': ('Grojaraščio pavadinimas (originalas)',), 'Grojaraščio pavadinimo (originalo) kalba': ('Grojaraščio pavadinimo (originalo) kalba',), 'Grojaraščio sukūrimo laiko žymė': ('Grojaraščio sukūrimo laiko žymė',), 'Grojaraščio atnaujinimo laiko žymė': ('Grojaraščio atnaujinimo laiko žymė',), 'Grojaraščio vaizdo įrašų tvarka': ('Grojaraščio vaizdo įrašų tvarka',), 'Grojaraščio matomumas': ('Grojaraščio matomumas',)}, list_blocks={}),
+    ],
+    'instellingen_voor_het_beheer_van_je_kanaalcommu': [
+        Entry(table='instellingen_voor_het_beheer_van_je_kanaalcommu', filename='instellingen voor het beheer van je kanaalcommu.csv', static_fields={'Kanaal-ID': ('Kanaal-ID',)}, list_blocks={}),
+    ],
+    'instellingen_voor_kanaalpagina': [
+        Entry(table='instellingen_voor_kanaalpagina', filename='instellingen voor kanaalpagina.csv', static_fields={'Kanaal-ID': ('Kanaal-ID',)}, list_blocks={}),
+    ],
+    'kanaal': [
+        Entry(table='kanaal', filename='kanaal.csv', static_fields={'Kanaal-ID': ('Kanaal-ID',), '(Originele) kanaaltitel': ('(Originele) kanaaltitel',), 'Kanaalzichtbaarheid': ('Kanaalzichtbaarheid',)}, list_blocks={}),
+    ],
+    'kanalas': [
+        Entry(table='kanalas', filename='kanalas.csv', static_fields={'Kanalo ID': ('Kanalo ID',), 'Kanalo pavadinimas (pradinis)': ('Kanalo pavadinimas (pradinis)',), 'Kanalo matomumas': ('Kanalo matomumas',)}, list_blocks={}),
+    ],
+    'kanalo_URL_konfigūracijos': [
+        Entry(table='kanalo_URL_konfigūracijos', filename='kanalo URL konfigūracijos.csv', static_fields={'Kanalo ID': ('Kanalo ID',), '1 kanalo reklaminio URL pavadinimas': ('1 kanalo reklaminio URL pavadinimas',), '2 kanalo reklaminio URL pavadinimas': ('2 kanalo reklaminio URL pavadinimas',)}, list_blocks={}),
+    ],
+    'kanalo_URL_konfigūracijos': [
+        Entry(table='kanalo_URL_konfigūracijos', filename='kanalo URL konfigūracijos.csv', static_fields={'Kanalo ID': ('Kanalo ID',), '1 kanalo reklaminio URL pavadinimas': ('1 kanalo reklaminio URL pavadinimas',)}, list_blocks={}),
+    ],
+    'kanalo_bendruomenės_moderavimo_nustatymai': [
+        Entry(table='kanalo_bendruomenės_moderavimo_nustatymai', filename='kanalo bendruomenės moderavimo nustatymai.csv', static_fields={'Kanalo ID': ('Kanalo ID',)}, list_blocks={}),
+    ],
+    'kanalo_bendruomenės_moderavimo_nustatymai': [
+        Entry(table='kanalo_bendruomenės_moderavimo_nustatymai', filename='kanalo bendruomenės moderavimo nustatymai.csv', static_fields={'Kanalo ID': ('Kanalo ID',)}, list_blocks={}),
+    ],
+    'kanalo_funkcijų_duomenys': [
+        Entry(table='kanalo_funkcijų_duomenys', filename='kanalo funkcijų duomenys.csv', static_fields={'Kanalo ID': ('Kanalo ID',), 'Automatinis kanalo moderavimas tiesioginiame pokalbyje': ('Automatinis kanalo moderavimas tiesioginiame pokalbyje',), 'Numatytasis vaizdo įrašo leidžiamų komentarų tipas': ('Numatytasis vaizdo įrašo leidžiamų komentarų tipas',), 'Numatytoji vaizdo įrašo tikslinė auditorija': ('Numatytoji vaizdo įrašo tikslinė auditorija',), 'Numatytoji vaizdo įrašo licencija': ('Numatytoji vaizdo įrašo licencija',)}, list_blocks={}),
+    ],
+    'kanalo_funkcijų_duomenys': [
+        Entry(table='kanalo_funkcijų_duomenys', filename='kanalo funkcijų duomenys.csv', static_fields={'Kanalo ID': ('Kanalo ID',), 'Automatinis kanalo moderavimas tiesioginiame pokalbyje': ('Automatinis kanalo moderavimas tiesioginiame pokalbyje',), 'Numatytasis vaizdo įrašo leidžiamų komentarų tipas': ('Numatytasis vaizdo įrašo leidžiamų komentarų tipas',), 'Numatytoji vaizdo įrašo tikslinė auditorija': ('Numatytoji vaizdo įrašo tikslinė auditorija',), 'Numatytoji vaizdo įrašo licencija': ('Numatytoji vaizdo įrašo licencija',)}, list_blocks={}),
+    ],
+    'kanalo_puslapio_nustatymai': [
+        Entry(table='kanalo_puslapio_nustatymai', filename='kanalo puslapio nustatymai.csv', static_fields={'Kanalo ID': ('Kanalo ID',)}, list_blocks={}),
+    ],
+    'komentarai': [
+        Entry(table='komentarai', filename='komentarai.csv', static_fields={'Komentaro ID': ('Komentaro ID',), 'Kanalo ID': ('Kanalo ID',), 'Komentaro sukūrimo laiko žymė': ('Komentaro sukūrimo laiko žymė',), 'Kaina': ('Kaina',), 'Vaizdo įrašo ID': ('Vaizdo įrašo ID',), 'Komentuoti tekstą': ('Komentuoti tekstą',)}, list_blocks={}),
+    ],
+    'playlists': [
+        Entry(table='playlists', filename='playlists.csv', static_fields={'Playlist ID': ('Playlist ID',), 'Add new videos to top': ('Add new videos to top',), 'Playlist Title (Original)': ('Playlist Title (Original)',), 'Playlist Title (Original) Language': ('Playlist Title (Original) Language',), 'Playlist Create Timestamp': ('Playlist Create Timestamp',), 'Playlist Update Timestamp': ('Playlist Update Timestamp',), 'Playlist Video Order': ('Playlist Video Order',), 'Playlist Visibility': ('Playlist Visibility',), 'Playlist-ID': ('Playlist-ID',), "Nieuwe video's bovenaan toevoegen": ("Nieuwe video's bovenaan toevoegen",), 'Playlist-titel (Origineel)': ('Playlist-titel (Origineel)',), '(Originele) taal van playlist-titel': ('(Originele) taal van playlist-titel',), 'Playlist tijdstempel maken': ('Playlist tijdstempel maken',), 'Playlist tijdstempel updaten': ('Playlist tijdstempel updaten',), 'Videovolgorde playlist': ('Videovolgorde playlist',), 'Zichtbaarheid van playlist': ('Zichtbaarheid van playlist',)}, list_blocks={}),
+    ],
+    'playlisturi': [
+        Entry(table='playlisturi', filename='playlisturi.csv', static_fields={'ID-ul playlistului': ('ID-ul playlistului',), 'Adaugă videoclipuri noi în partea de sus': ('Adaugă videoclipuri noi în partea de sus',), 'Titlul playlistului (original)': ('Titlul playlistului (original)',), 'Limba titlului playlistului (original)': ('Limba titlului playlistului (original)',), 'Playlistul creează marcaj temporal': ('Playlistul creează marcaj temporal',), 'Playlistul actualizează marcajul temporal': ('Playlistul actualizează marcajul temporal',), 'Ordinea videoclipurilor în playlist': ('Ordinea videoclipurilor în playlist',), 'Vizibilitatea playlistului': ('Vizibilitatea playlistului',)}, list_blocks={}),
+    ],
+    'prenumeratos': [
+        Entry(table='prenumeratos', filename='prenumeratos.csv', static_fields={'Kanalo ID': ('Kanalo ID',), 'Kanalo URL': ('Kanalo URL',), 'Kanalo pavadinimas': ('Kanalo pavadinimas',)}, list_blocks={}),
+    ],
+    'reacties': [
+        Entry(table='reacties', filename='reacties.csv', static_fields={'Reactie-ID': ('Reactie-ID',), 'Kanaal-ID': ('Kanaal-ID',), 'Aanmaaktijdstempel reactie': ('Aanmaaktijdstempel reactie',), 'Prijs': ('Prijs',), 'Video-ID': ('Video-ID',), 'Reactietekst': ('Reactietekst',)}, list_blocks={}),
+    ],
+    'setări_de_moderare_a_comunității_canalului': [
+        Entry(table='setări_de_moderare_a_comunității_canalului', filename='setări de moderare a comunității canalului.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',)}, list_blocks={}),
+    ],
+    'setările_paginii_de_canal': [
+        Entry(table='setările_paginii_de_canal', filename='setările paginii de canal.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',)}, list_blocks={}),
+    ],
+    'setări_de_moderare_a_comunității_canalului': [
+        Entry(table='setări_de_moderare_a_comunității_canalului', filename='setări de moderare a comunității canalului.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',)}, list_blocks={}),
+    ],
+    'setările_paginii_de_canal': [
+        Entry(table='setările_paginii_de_canal', filename='setările paginii de canal.csv', static_fields={'ID-ul canalului': ('ID-ul canalului',)}, list_blocks={}),
+    ],
+    'subscriptions': [
+        Entry(table='subscriptions', filename='subscriptions.csv', static_fields={'Channel Id': ('Channel Id',), 'Channel Url': ('Channel Url',), 'Channel Title': ('Channel Title',)}, list_blocks={}),
+    ],
+    'suscripciones': [
+        Entry(table='suscripciones', filename='suscripciones.csv', static_fields={'ID del canal': ('ID del canal',), 'URL del canal': ('URL del canal',), 'Título del canal': ('Título del canal',)}, list_blocks={}),
+    ],
+    'vaizdo_įrašai': [
+        Entry(table='vaizdo_įrašai', filename='vaizdo įrašai.csv', static_fields={'Vaizdo įrašo ID': ('Vaizdo įrašo ID',), 'Apytikrė trukmė (ms)': ('Apytikrė trukmė (ms)',), 'Vaizdo įrašo garso takelio kalba': ('Vaizdo įrašo garso takelio kalba',), 'Vaizdo įrašo kategorija': ('Vaizdo įrašo kategorija',), 'Vaizdo įrašo aprašas (originalas)': ('Vaizdo įrašo aprašas (originalas)',), 'Kanalo ID': ('Kanalo ID',), 'Vaizdo įrašo pavadinimas (originalas)': ('Vaizdo įrašo pavadinimas (originalas)',), 'Privatumas': ('Privatumas',), 'Vaizdo įrašo būsena': ('Vaizdo įrašo būsena',), 'Vaizdo įrašo sukūrimo laiko žymė': ('Vaizdo įrašo sukūrimo laiko žymė',), 'Vaizdo įrašo paskelbimo laiko žymė': ('Vaizdo įrašo paskelbimo laiko žymė',)}, list_blocks={}),
+    ],
+    'video_s': [
+        Entry(table='video_s', filename='video_s.csv', static_fields={'Video-ID': ('Video-ID',), 'Geschatte duur (ms)': ('Geschatte duur (ms)',), 'Audiotaal van video': ('Audiotaal van video',), 'Videocategorie': ('Videocategorie',), 'Videobeschrijving (origineel)': ('Videobeschrijving (origineel)',), 'Kanaal-ID': ('Kanaal-ID',), 'Videotitel (origineel)': ('Videotitel (origineel)',), 'Privacy': ('Privacy',), 'Videostatus': ('Videostatus',), 'Tijdstempel aanmaaktijd video': ('Tijdstempel aanmaaktijd video',), 'Tijdstempel publicatietijd video': ('Tijdstempel publicatietijd video',)}, list_blocks={}),
+    ],
+    'videoclipuri': [
+        Entry(table='videoclipuri', filename='videoclipuri.csv', static_fields={'ID-ul videoclipului': ('ID-ul videoclipului',), 'Durată aproximativă (ms)': ('Durată aproximativă (ms)',), 'Limba conținutului audio din videoclip': ('Limba conținutului audio din videoclip',), 'Categorie de videoclipuri': ('Categorie de videoclipuri',), 'Descrierea videoclipului (original)': ('Descrierea videoclipului (original)',), 'ID-ul canalului': ('ID-ul canalului',), 'Titlul videoclipului (original)': ('Titlul videoclipului (original)',), 'Confidențialitate': ('Confidențialitate',), 'Starea videoclipului': ('Starea videoclipului',), 'Marcajul temporal de creare a videoclipului': ('Marcajul temporal de creare a videoclipului',), 'Marcajul temporal de publicare a videoclipului': ('Marcajul temporal de publicare a videoclipului',)}, list_blocks={}),
+    ],
+    'videos': [
+        Entry(table='videos', filename='videos.csv', static_fields={'Video ID': ('Video ID',), 'Approx Duration (ms)': ('Approx Duration (ms)',), 'Video Audio Language': ('Video Audio Language',), 'Video Category': ('Video Category',), 'Video Description (Original)': ('Video Description (Original)',), 'Channel ID': ('Channel ID',), 'Video Title (Original)': ('Video Title (Original)',), 'Privacy': ('Privacy',), 'Video State': ('Video State',), 'Video Create Timestamp': ('Video Create Timestamp',), 'Video Publish Timestamp': ('Video Publish Timestamp',)}, list_blocks={}),
+    ],
+    'vídeos': [
+        Entry(table='vídeos', filename='vídeos.csv', static_fields={'ID de vídeo': ('ID de vídeo',), 'Duración aproximada (ms)': ('Duración aproximada (ms)',), 'Idioma del audio del vídeo': ('Idioma del audio del vídeo',), 'Categoría del vídeo': ('Categoría del vídeo',), 'Descripción del vídeo (original)': ('Descripción del vídeo (original)',), 'ID de canal': ('ID de canal',), 'Título del vídeo (original)': ('Título del vídeo (original)',), 'Privacidad': ('Privacidad',), 'Estado del vídeo': ('Estado del vídeo',), 'Marca de tiempo de creación del vídeo': ('Marca de tiempo de creación del vídeo',), 'Marca de tiempo de publicación del vídeo': ('Marca de tiempo de publicación del vídeo',)}, list_blocks={}),
+    ],
+}

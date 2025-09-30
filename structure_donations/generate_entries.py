@@ -114,6 +114,34 @@ def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry
     return result
 
 
+# --- Functions to create CSV entries for YT
+def extract_csv_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entry:
+    """Generate an Entry object for CSV files (columns become static fields)."""
+    entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
+    for _, row in schema_group.iterrows():
+        colname = row["Column_names"]
+        entry.static_fields[colname] = (colname,)
+    return entry
+
+def extract_csv_entries(schema_file: Path) -> Iterable[Entry]:
+    """Generate Entry objects from CSV schema."""
+    df = pd.read_csv(schema_file)
+    df.columns = df.columns.str.strip()
+    df = df[df["keepID"].notna() & (df["keepID"] != "")]
+    df["table_name"] = df["id"].apply(lambda x: x.split(":")[0])
+
+    for table_name, table_rows in df.groupby("table_name"):
+        for file_name, group in table_rows.groupby("File_name"):
+            yield extract_csv_entry(file_name, table_name, group)
+
+def csv_entries_as_dict(schema_file: Path) -> dict[str, list[Entry]]:
+    """Return dictionary table_name -> list[Entry] objects for CSV files."""
+    result: dict[str, list[Entry]] = {}
+    for e in extract_csv_entries(schema_file):
+        result.setdefault(e.table, []).append(e)
+    return result
+# --- 
+
 # %%
 BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_schema_df"
 infiles = dict(
@@ -121,6 +149,7 @@ infiles = dict(
     X=BASE_PATH / "X_merged_structure_annotated.csv",
     IG=BASE_PATH / "IG_merged_structure_annotated.csv",
     FB=BASE_PATH / "FB_merged_structure_annotated.csv",
+    YT=BASE_PATH / "YT_merged_structure_annotated.csv",
 )
 
 
@@ -138,6 +167,17 @@ def write_entries_dict(outfile):
                 lines.append(f"        {repr(entry)},\n")
             lines.append("    ],\n")
         lines.append("}\n\n")
+    
+    CSV_SCHEMA = BASE_PATH / "YT_merged_column_names_annotated_new.csv"
+    csv_entries = csv_entries_as_dict(CSV_SCHEMA)
+
+    lines.append("YT_CSV_ENTRIES: dict[str, list[Entry]] = {\n")
+    for table, entries in csv_entries.items():
+        lines.append(f"    {repr(table)}: [\n")
+        for entry in entries:
+            lines.append(f"        {repr(entry)},\n")
+        lines.append("    ],\n")
+    lines.append("}\n")
 
     print(f"Writing output to {outfile}")
     with open(outfile, "w") as f:

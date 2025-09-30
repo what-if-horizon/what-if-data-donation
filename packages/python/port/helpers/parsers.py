@@ -3,7 +3,9 @@ import logging
 from typing import Annotated, Iterable, NamedTuple, TypeAlias
 
 import pandas as pd
-from port.helpers.readers import read_js, read_json
+import os
+import zipfile
+from port.helpers.readers import read_js, read_json, read_csv
 
 Columns: TypeAlias = Annotated[
     dict[str, tuple[str, ...]],
@@ -119,6 +121,8 @@ def create_entry_df(
 
 
 def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
+    if not list_path:
+        return  # Nothing to iterate
     for element in find_entries(item, list_path):
         row = dict(__source_list__=list_path[-1])
         for colname, path in sorted(columns.items()):
@@ -141,3 +145,67 @@ def create_table(
         return result
     else:
         return pd.DataFrame()
+    
+# --- Preparing parser for Youtube csv ---
+def read_csv_from_file_input(file_input: list[str], csv_filename: str) -> pd.DataFrame:
+    """
+    Reads a CSV file from a zip inside file_input.
+
+    Args:
+        file_input (list[str]): List of file paths, including the zip file.
+        csv_filename (str): Name of the CSV file inside the zip.
+
+    Returns:
+        pd.DataFrame: The loaded DataFrame.
+    """
+    filenames = [
+        csv_filename,          # root
+        f"*/{csv_filename}",   # one folder deep
+        f"{csv_filename}"
+    ]
+
+    for path in file_input:
+        if path.endswith('.zip'):
+            with zipfile.ZipFile(path, 'r') as zip_ref:
+                for name in zip_ref.namelist():
+                    if name.endswith(tuple(filenames)):  
+                        with zip_ref.open(name) as f:
+                            try:
+                                return pd.read_csv(f, encoding='utf-8')
+                            except UnicodeDecodeError:
+                                f.seek(0)
+                                return pd.read_csv(f, encoding='latin1') 
+    raise FileNotFoundError(f"{filenames} not found in ZIP files: {file_input}")
+
+def create_csv_table(file_input: list[str], entries: list[Entry]) -> pd.DataFrame:
+    all_tables = []
+
+    for entry in entries:
+        try:
+            df = read_csv_from_file_input(file_input, entry.filename)
+        except FileNotFoundError:
+            logging.warning(f"CSV not found: {entry.filename}")
+            continue
+
+        logging.error(f"[CSV DEBUG] Raw headers: {[repr(c) for c in df.columns]}")
+
+        expected_columns = list(entry.static_fields.keys())
+
+        logging.error(f"[CSV DEBUG] Raw schema: {[repr(c) for c in expected_columns]}")
+        
+        existing_columns = [col for col in expected_columns if col in df.columns]
+
+        logging.error(f"[CSV DEBUG] Raw schema: {existing_columns}")
+
+        df = df[existing_columns]
+
+        logging.error(f"[CSV DEBUG] Raw schema: {df}")
+
+        all_tables.append(df)
+
+    if all_tables:
+        return pd.concat(all_tables, ignore_index=True)
+    return pd.DataFrame()
+
+
+
