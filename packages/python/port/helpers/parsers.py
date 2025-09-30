@@ -13,7 +13,10 @@ Columns: TypeAlias = Annotated[
 
 class Entry(NamedTuple):
     table: Annotated[str, "ID of the table to generate"]
-    filename: Annotated[str | None, "Filename from which to get information (or None for single-file donations)"]
+    filename: Annotated[
+        str | None,
+        "Filename from which to get information (or None for single-file donations)",
+    ]
     static_fields: Annotated[
         Columns,
         "A list of paths within the file that each gives a single values for each file."
@@ -55,7 +58,9 @@ def find_entries(d: dict, keys: tuple[str, ...]) -> Iterable[dict]:
             yield from find_entries(element, remaining_keys)
     else:
         # We were looking for a list, but found a scalar. What to do?
-        raise ValueError(f"Find_entries value for {first_key} was {repr(e)}, expected a list or dict")
+        raise ValueError(
+            f"Find_entries value for {first_key} was {repr(e)}, expected a list or dict"
+        )
 
 
 def get_list(d: dict, *keys):
@@ -69,7 +74,7 @@ def read_file(file_input: list[str], filename: str | None, search_subfolders=Fal
         with open(file_input[0], "r", encoding="utf-8") as f:
             return [json.load(f)]
     # Read js or json file as required
-    filenames = [("*/" if search_subfolders else "/") + str(filename)]
+    filenames = [str(filename) if search_subfolders else "/" + str(filename)]
     if filename.endswith(".js"):
         return read_js(file_input, filenames)
     else:
@@ -77,10 +82,15 @@ def read_file(file_input: list[str], filename: str | None, search_subfolders=Fal
 
 
 def create_entry_df(
-    file_input: list[str], entry: Entry, json_root: str | None = None, search_subfolders=False
+    file_input: list[str],
+    entry: Entry,
+    json_root: str | None = None,
+    search_subfolders=False,
 ) -> pd.DataFrame | None:
     try:
-        data = read_file(file_input, entry.filename, search_subfolders=search_subfolders)
+        data = read_file(
+            file_input, entry.filename, search_subfolders=search_subfolders
+        )
     except FileNotFoundError as e:
         logging.error(f"{entry.table}: Cannot find file {entry.filename} ({e})")
         return None
@@ -112,10 +122,15 @@ def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
 
 
 def create_table(
-    file_input: list[str], entries: list[Entry], json_root: str | None = None, search_subfolders=False
+    file_input: list[str],
+    entries: list[Entry],
+    json_root: str | None = None,
+    search_subfolders=False,
 ) -> pd.DataFrame:
     tables = [
-        create_entry_df(file_input, entry, json_root=json_root, search_subfolders=search_subfolders)
+        create_entry_df(
+            file_input, entry, json_root=json_root, search_subfolders=search_subfolders
+        )
         for entry in entries
     ]
     tables = [t for t in tables if t is not None]

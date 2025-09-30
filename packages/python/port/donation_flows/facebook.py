@@ -3,7 +3,9 @@ import logging
 import pandas as pd
 from port.helpers.donation_flow import donation_flow, donation_table
 from port.helpers.parsers import create_table
-from port.helpers.Structure_extractor_libraries.FB_get_json_structure import structure_from_zip
+from port.helpers.Structure_extractor_libraries.FB_get_json_structure import (
+    structure_from_zip,
+)
 
 
 def create_donation_flow(file_input: list[str]):
@@ -24,10 +26,19 @@ def create_donation_flow(file_input: list[str]):
     zip_path = file_input[0]
     placeholder_json = structure_from_zip(zip_path)
     df_placeholder = pd.DataFrame(
-        [{"Data Structure": "Anonymized", "Placeholder for research purpose": placeholder_json}]
+        [
+            {
+                "Data Structure": "Anonymized",
+                "Placeholder for research purpose": placeholder_json,
+            }
+        ]
     )
 
-    tables.append(donation_table(name="placeholder", df=df_placeholder, title={"en": "Placeholders"}))
+    tables.append(
+        donation_table(
+            name="placeholder", df=df_placeholder, title={"en": "Placeholders"}
+        )
+    )
 
     # --- donation flow ---
     if tables:
