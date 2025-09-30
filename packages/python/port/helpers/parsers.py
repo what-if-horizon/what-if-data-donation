@@ -1,3 +1,4 @@
+from itertools import product
 import json
 import logging
 from typing import Annotated, Iterable, NamedTuple, TypeAlias
@@ -13,7 +14,10 @@ Columns: TypeAlias = Annotated[
 
 class Entry(NamedTuple):
     table: Annotated[str, "ID of the table to generate"]
-    filename: Annotated[str | None, "Filename from which to get information (or None for single-file donations)"]
+    filename: Annotated[
+        str | None,
+        "Filename from which to get information (or None for single-file donations)",
+    ]
     static_fields: Annotated[
         Columns,
         "A list of paths within the file that each gives a single values for each file."
@@ -54,8 +58,10 @@ def find_entries(d: dict, keys: tuple[str, ...]) -> Iterable[dict]:
         for element in e:
             yield from find_entries(element, remaining_keys)
     else:
+        yield e
+
         # We were looking for a list, but found a scalar. What to do?
-        raise ValueError(f"Find_entries value for {first_key} was {repr(e)}, expected a list or dict")
+        # raise ValueError(f"Find_entries value for {first_key} was {repr(e)}, expected a list or dict")
 
 
 def get_list(d: dict, *keys):
@@ -77,10 +83,15 @@ def read_file(file_input: list[str], filename: str | None, search_subfolders=Fal
 
 
 def create_entry_df(
-    file_input: list[str], entry: Entry, json_root: str | None = None, search_subfolders=False
+    file_input: list[str],
+    entry: Entry,
+    json_root: str | None = None,
+    search_subfolders=False,
 ) -> pd.DataFrame | None:
     try:
-        data = read_file(file_input, entry.filename, search_subfolders=search_subfolders)
+        data = read_file(
+            file_input, entry.filename, search_subfolders=search_subfolders
+        )
     except FileNotFoundError as e:
         logging.error(f"{entry.table}: Cannot find file {entry.filename} ({e})")
         return None
@@ -106,16 +117,29 @@ def create_entry_df(
 def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
     for element in find_entries(item, list_path):
         row = dict(__source_list__=list_path[-1])
-        for colname, path in sorted(columns.items()):
-            row[colname] = get_in(element, *path)
-        yield row
+        # find the values for each column
+        # Note: if the column is a path that contains lists, this might result in multiple values
+        # So we take the outer product of all lists of values
+        colnames = sorted(columns.keys())
+        values = [list(find_entries(element, columns[colname])) for colname in colnames]
+        for sublist in product(*values):
+            yield row | {colname: value for (colname, value) in zip(colnames, sublist)}
+        # for colname, path in sorted(columns.items()):
+        # print(element, path, "->", list(find_entries(element, path)))
+        #    row[colname] = get_in(element, *path)
+        # yield row
 
 
 def create_table(
-    file_input: list[str], entries: list[Entry], json_root: str | None = None, search_subfolders=False
+    file_input: list[str],
+    entries: list[Entry],
+    json_root: str | None = None,
+    search_subfolders=False,
 ) -> pd.DataFrame:
     tables = [
-        create_entry_df(file_input, entry, json_root=json_root, search_subfolders=search_subfolders)
+        create_entry_df(
+            file_input, entry, json_root=json_root, search_subfolders=search_subfolders
+        )
         for entry in entries
     ]
     tables = [t for t in tables if t is not None]
