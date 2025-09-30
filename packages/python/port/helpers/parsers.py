@@ -68,29 +68,34 @@ def get_list(d: dict, *keys):
     return val if isinstance(val, list) else []
 
 
-def read_file(file_input: list[str], filename: str | None, search_subfolders=False):
+def read_file(file_input: list[str], filename: str | None):
     """Read the entry file from the input files"""
+
+    print(file_input)
+
     if not filename:
         with open(file_input[0], "r", encoding="utf-8") as f:
             return [json.load(f)]
-    # Read js or json file as required
-    filenames = [("*" if search_subfolders else "") + str(filename)]
+
+    # Always allow both root and recursive matches
+    filenames = [
+        filename,          # root
+        f"*/{filename}",   # one folder deep
+        f"{filename}"
+    ]
+
     if filename.endswith(".js"):
         return read_js(file_input, filenames)
     else:
         return read_json(file_input, filenames)
+    
 
 
 def create_entry_df(
-    file_input: list[str],
-    entry: Entry,
-    json_root: str | None = None,
-    search_subfolders=False,
+    file_input: list[str], entry: Entry, json_root: str | None = None
 ) -> pd.DataFrame | None:
     try:
-        data = read_file(
-            file_input, entry.filename, search_subfolders=search_subfolders
-        )
+        data = read_file(file_input, entry.filename)
     except FileNotFoundError as e:
         logging.error(f"{entry.table}: Cannot find file {entry.filename} ({e})")
         return None
@@ -122,15 +127,10 @@ def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
 
 
 def create_table(
-    file_input: list[str],
-    entries: list[Entry],
-    json_root: str | None = None,
-    search_subfolders=False,
+    file_input: list[str], entries: list[Entry], json_root: str | None = None
 ) -> pd.DataFrame:
     tables = [
-        create_entry_df(
-            file_input, entry, json_root=json_root, search_subfolders=search_subfolders
-        )
+        create_entry_df(file_input, entry, json_root=json_root)
         for entry in entries
     ]
     tables = [t for t in tables if t is not None]
