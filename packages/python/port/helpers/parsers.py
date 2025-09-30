@@ -74,7 +74,7 @@ def read_file(file_input: list[str], filename: str | None, search_subfolders=Fal
         with open(file_input[0], "r", encoding="utf-8") as f:
             return [json.load(f)]
     # Read js or json file as required
-    filenames = [str(filename) if search_subfolders else "/" + str(filename)]
+    filenames = [("*" if search_subfolders else "") + str(filename)]
     if filename.endswith(".js"):
         return read_js(file_input, filenames)
     else:
