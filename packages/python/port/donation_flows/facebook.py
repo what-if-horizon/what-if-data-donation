@@ -14,7 +14,7 @@ def create_donation_flow(file_input: list[str]):
     # --- normal donation tables ---
     for key, entries in FB_ENTRIES.items():
         try:
-            df = create_table(file_input, entries, search_subfolders=True)
+            df = create_table(file_input, entries)
             if not df.empty:
                 tables.append(donation_table(name=key, df=df, title={"en": key}))
         except Exception as e:
