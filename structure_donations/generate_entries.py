@@ -5,6 +5,7 @@
 
 import argparse
 import json
+from copy import deepcopy
 from pathlib import Path
 from typing import Iterable
 
@@ -111,6 +112,49 @@ def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry
     result: dict[str, list[Entry]] = {}
     for e in extract_entries_from_csv(infile, platform=platform):
         result.setdefault(e.table, []).append(e)
+
+    new_result: dict[str, list[Entry]] = {}
+    for table, entries in result.items():
+        merged = [merge_listblocks(e) for e in entries]
+        if any(x != y for (x, y) in zip(entries, merged)):
+            new_result[f"{table} (Original)"] = entries
+            new_result[f"{table} (Merged)"] = [merge_listblocks(e) for e in entries]
+        else:
+            new_result[f"{table} (Unchanged)"] = entries
+
+    return new_result
+
+
+def merge_listblocks(entry: Entry):
+    result = deepcopy(entry)
+    for list_path, columns in entry.list_blocks.items():
+        # is there a list_block whose path is a prefix of this block?
+        for i in range(1, len(list_path)):
+            prefix, suffix = list_path[:i], list_path[i:]
+            if prefix in result.list_blocks:
+                # Yes, so we can merge with that list_block
+                target = result.list_blocks[prefix]
+                # Merge by append the remainder of the list_path to the column_paths
+                # and adding to the target list_block
+                for colname, colpath in columns.items():
+                    if colname in target.keys():
+                        colname = ".".join(suffix + (colname,))
+                    target[colname] = suffix + colpath
+                # we can now drop this list block
+                del result.list_blocks[list_path]
+                break
+    if entry.list_blocks != result.list_blocks:
+
+        def pprint(list_blocks: dict[tuple[str, ...], dict[str, tuple[str, ...]]]):
+            lines = []
+            for list_path, columns in list_blocks.items():
+                columns = ", ".join(f"{colname}: [{'::'.join(colpath)}]" for colname, colpath in columns.items())
+                lines.append(f" - list_path: [{'::'.join(list_path)}], column(s): {columns}")
+            return "\n".join(lines)
+
+        print(f"## [{entry.table}] Merged list blocks ##")
+        print(f"Original:\n{pprint(entry.list_blocks)}")
+        print(f"Merged:\n{pprint(result.list_blocks)} \n")
     return result
 
 
