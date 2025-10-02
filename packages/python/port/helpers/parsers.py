@@ -145,7 +145,7 @@ def extract_columns(element, columns: Columns) -> Iterable[dict]:
             # Recursively extract columns for that prefix
             # and yield all combinations of leaf rows and child rows
             for child_row in extract_columns(child, columns):
-                yielded = True
+                yielded_children = True
                 yield from (leaf_row | child_row for leaf_row in leaf_rows)
 
     # If we never yield any children, just yield the leaf_rows
