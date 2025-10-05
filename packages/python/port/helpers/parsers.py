@@ -114,14 +114,6 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
     return pd.DataFrame(all_records)
 
 
-list_block = {
-    "label": ("label",),
-    "ent_field_name": ("ent_field_name",),
-    "dict.label": ("dict", "label"),
-    "value": ("dict", "value"),
-}
-
-
 def extract_columns(element, columns: Columns) -> Iterable[dict]:
     # First, create 'base rows' for all leaf nodes, i.e. columns without a path of length one
     # Separate columns by path_prefix
@@ -131,6 +123,10 @@ def extract_columns(element, columns: Columns) -> Iterable[dict]:
     values = {k: v for (k, v) in values.items() if v}
     # Leaf rows are the product of all (non-empty) values --> single row if all values are scalar
     leaf_rows = [dict(zip(values.keys(), sublist)) for sublist in itertools.product(*values.values())]
+    # Remove empty leaf rows. However, if there are no leaf rows, insert a single empty one
+    leaf_rows = [x for x in leaf_rows if x]
+    if not leaf_rows:
+        leaf_rows = [{}]
 
     # Now, find out all unique prefixes for columns with a longer path
     columns_by_prefix: dict[JsonPath, Columns] = {}  # {prefix: Columns}
@@ -145,19 +141,21 @@ def extract_columns(element, columns: Columns) -> Iterable[dict]:
             # Recursively extract columns for that prefix
             # and yield all combinations of leaf rows and child rows
             for child_row in extract_columns(child, columns):
-                yielded_children = True
-                yield from (leaf_row | child_row for leaf_row in leaf_rows)
+                if child_row:
+                    yielded_children = True
+                    yield from (leaf_row | child_row for leaf_row in leaf_rows)
 
     # If we never yield any children, just yield the leaf_rows
     if not yielded_children:
-        yield from leaf_rows
+        if leaf_rows != [{}]:
+            yield from leaf_rows
 
 
 def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
     if not list_path:
         return  # Nothing to iterate
     for element in find_entries(item, list_path):
-        base_row = dict(__source_list__=list_path[-1])
+        base_row = dict(__source_list__=".".join(list_path))
 
         for row in extract_columns(element, columns):
             yield base_row | row
