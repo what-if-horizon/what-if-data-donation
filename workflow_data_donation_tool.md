@@ -9,19 +9,18 @@ This data donation tool in an extension of the Feldspar repository which can be 
 
 ### 1. Data structure collection
 #### The rationale
-Social media takeout data contains highly sensitive and private data. Think about IP addresses, contact details and photos. Moreover, according to the article 5(1)(c) form the GDPR, which states: “Personal data shall be adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed (‘data minimisation’).”, only data that will be of use for achieving the goal of the project should be collected. To do so, we need the exact variable names and as most data takeouts are provided in JSON format, the exact json paths to these variables,  to only collect data we intent to collect. Unfortunately, the social media takeout formats and structures are not consistent over time and location. Hence, we need to collect a representative sample of these social media structures to properly select the variables we intend to collect and avoid unintentionally omitted variables. 
+Social media takeout data contains highly sensitive and private data. Think about IP addresses, contact details and photos. Moreover, according to the article 5(1)(c) of the GDPR, which states: “Personal data shall be adequate, relevant and limited to what is necessary in relation to the purposes for which they are processed (‘data minimisation’).”, on other words, only data that will be of use for achieving the goal of the project should be collected. To do so, we need the exact variable names and as most data takeouts are provided in JSON format, the exact json paths to these variables,  to only collect data we intent to collect. Unfortunately, the social media takeout formats and structures are not consistent over time, location and platform. Hence, we need to collect a representative sample of these social media structures to properly select the variables we intend to collect and avoid unintentionally omitted variables. 
 
 #### The strategy 
-The strategy to collect the social media data takeout structures is rather simple. When participants upload their social media data takeout in the donation tool, all keys in te case of JSON and all column names in the case of CSVs are saved with the values masked through replacing the real data with a string specifying the data type (eg. 'string', 'boolean'). These data structures can then be used to inform the data donation tool for the next iteration of collecting data using the tool. When there are no data structures available yet, we propose to run a test round with a small but representative sample of participants to obtain these structures. During the data collection process, the data structures should be used to update the tool with the latests variables and paths. In the future, we hope that each data donation study will make the data structures publically available to support new studies. 
+The strategy to collect the social media data takeout structures is rather simple. When participants upload their social media data takeout in the donation tool, all keys in te case of JSON and all column names in the case of CSVs are saved with the values masked through replacing the real data with a string specifying the data type (eg. 'string', 'boolean'). These data structures are then used to inform the data donation tool for the next iteration of collecting data using the tool. When there are no data structures available yet, we run a test round with a small but representative sample of participants to obtain these structures. During the data collection process, the data structures should be used to update the tool with the latests variables and paths. In the future, we hope that each data donation study will make the data structures publicly available to support new studies. 
 
 #### The code
 The python code which does the masking of real values in the social media can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Structure_extractor_libraries) in the GIT repository. There is a specific script for each of the social media platforms. The code recursively loops through all JSON files in the zip file (in case of multi-document takeouts) and consequently trough all values in the JSON, replacing them with a string indicating the data type.
 
-**TODO: Integrate the scripts into the donation flow!**
 
 ### 2. Processing of data structures
 #### The rationale
-According to the [include GDPR on informed consent], we need to inform the participants clearly on what data they will be donating. As JSON files are not easily interpretable by humans, the data should be transformed to a more easily readable tabular format. To do so we need to obtain the full JSON path to each lowest level key to be able to transform the data to tabular format. Also, as only necessary and non highly sensitive or private data should be selected, the researcher needs to make decisions on exactly which data to obtain and which data to exclude. Due to differences in data takeout structures, the JSON paths might differ slightly but point to the same data. Therefore, we generate IDs for each data field that are easy to interpret for researchers. Using the IDs the researcher decides what data to collect.
+To comply with rules on informed consent we need to inform the participants clearly on what data they will be donating. As JSON files are not easily interpretable by humans, the data should be transformed to a more easily readable tabular format. To do so we need to obtain the full JSON path to each lowest level key to be able to transform the data to tabular format. Also, as only necessary and non highly sensitive or private data should be selected, the researcher needs to make decisions on exactly which data to obtain and which data to exclude. Due to differences in data takeout structures, the JSON paths might differ slightly but point to the same data. Therefore, we generate IDs for each data field that are easy to interpret for researchers. Using the IDs the researcher decides what data to collect.
 
 #### The strategy
 To obtain the full JSON path, a python script has been created for each platform separately as the JSON structure of each platform is different with its own challenges and quirks. Also, due to the deeply nested structures most existing libraries to extract JSON paths do not work. The processing output is a CSV file named [<platform>_Merged_Structures.csv](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Processed_structure_donations) with the following columns:
@@ -35,39 +34,39 @@ To obtain the full JSON path, a python script has been created for each platform
 - subfield_path: In case of a static path, this column contains the full JSON path. In case a list is included in the JSON path, the part of the JSON path enlisted is stored here. 
 - var_type: Describes whether the variable is included in a list ('list') or is a regular variable ('static')
 - file_path: Certain data takeouts are zipfiles consisting of a nested folder structure. The path to the JSON files are specified in this column. 
-- duplicate_flag: In case there is an ID that is duplicated due to JSON paths containing identical keys but different structures as in one case parts of the data can be enlisted whereas in other cases the data is not. When a duplicate ID is found, this ID is marked as 'Yes'
+- duplicate_flag: In case there is an ID that is duplicated due to JSON paths containing keys holding identical information but different json paths. For example parts of the data can be enlisted whereas in other cases the data is not. When a duplicate ID is found, this ID is marked as 'Yes'
 
 ##### ID creation
 ###### Instagram
-The ID for Facebook initially consist of the folder name in which the JSON is stored, the name of the json and the column name. In case this does not result into a unique ID, in the following iterations (max 4), json keys are added from lowest to highest. If again this does not result in a unique ID, the folder one level higher is added to the ID as well. In other words the most minimal ID consist of lowest folder name + json name + column name. The maximum ID consist of the second lowest folder + lowest folder name + json name + key[1,2,3] + column name.
+The ID for Instagram initially consist of the folder name in which the JSON is stored, the name of the json and the column name. In case this does not result into a unique ID, in the following iterations (max 4), json keys are added starting at the deepest level. If again this does not result in a unique ID, the folder one level higher is added to the ID as well. In other words the most minimal ID consist of lowest folder name + json name + column name. The maximum ID consist of the second lowest folder + lowest folder name + json name + key[1,2,3] + column name.
 
 ###### Facebook
-The ID for Facebook initially consist of the folder name in which the JSON is stored, the name of the json and the column name. In case this does not result into a unique ID, in the following iterations (max 6), json keys are added from lowest to highest. If again this does not result in a unique ID, the folder up until 3 levels higher is added to the ID as well. In other words the most minimal ID consist of lowest folder name + json name + column name. The maximum ID consist of the second lowest folder[1,2,3] + lowest folder name + json name + key[1,2,3] + column name.
+The ID for Facebook initially consist of the folder name in which the JSON is stored, the name of the json and the column name. In case this does not result into a unique ID, in the following iterations (max 6), json keys are added starting at the deepest level. If again this does not result in a unique ID, the folder up until 3 levels higher is added to the ID as well. In other words the most minimal ID consist of lowest folder name + json name + column name. The maximum ID consist of the second lowest folder[1,2,3] + lowest folder name + json name + key[1,2,3] + column name.
 
 ##### TikTok
 The ID for TikTok initially consist of the highest level key in combination with the lowest level key. If this does not result in an unique ID, more keys are added until the maximum number of keys present in the JSON is reached or a unique ID has been established. 
 
 
 ##### Twitter
-The ID for Twitter initially consist of the name of the java script file combined with the name of the lowest level key. In case this does not result in an unique ID, more keys are added from low to high until the maximum number of keys has been reached or an unique ID has been created.
+The ID for Twitter initially consist of the name of the Java script file combined with the name of the lowest level key. In case this does not result in an unique ID, more keys are added starting at the deepest level until the maximum number of keys has been reached or an unique ID has been created.
 
 ##### Youtube 
 ###### JSON
-The ID for the Youtube JSONs initially consist of the name of the java script file combined with the name of the lowest level key. In case this does not result in an unique ID, more keys are added from low to high until the maximum number of keys has been reached or an unique ID has been created.
+The ID for the Youtube JSONs initially consist of the name of the Java script file combined with the name of the lowest level key. In case this does not result in an unique ID, more keys are added starting at the deepest level until the maximum number of keys has been reached or an unique ID has been created.
 ###### CSV
 The ID for the Youtube CSV consist of the name of the CSV and the column name. 
 
 
 #### The code
-The jupyter notebooks to generate the <platform>_Merged_Structures.csv can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Parser_structures_to_schema_df) in the GIT repository. After loading the data structures, the code flattens the JSON while taking into account and labeling the enlisted JSON paths. This is done for each data structure independently after which the CSVs containing the flattened JSON files are merged and the IDs are generated. 
+The jupyter notebooks to generate the <'platform'>_Merged_Structures.csv can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Parser_structures_to_schema_df) in the GIT repository. After loading the data structures, the code flattens the JSON while taking into account and labeling the enlisted JSON paths. This is done for each data structure independently after which the CSVs containing the flattened JSON files are merged and the IDs are generated. 
 
 
 ### 3. Variable selection by researchers
 #### The rationale 
-As explained above only relevant non highly personal data should be collected. The decision of which variables to collect should be made by the researcher
+As explained above only relevant non highly personal data should be collected. The decision of which variables to collect should be made by the researcher.
 
 #### The strategy
-The researcher creates an extra column in the <platform>_Merged_Structures.csv and only pastes the ID in that column in case she wishes to collect that variable. In case she finds different IDs pointing at the same data, she decides on the final ID and replaces the original ID. It is highly important that the row is kept with the new ID as the differing JSON path is important to maintain as to collect the variable correctly. The annotated <platform>_Merged_Structures_Annotated.csv can be found [here](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Annotated_schema_df) 
+The researcher creates an extra column in the <'platform'>_Merged_Structures.csv and only pastes the ID in that column in case she wishes to collect that variable. In case she finds different IDs pointing at the same data, she decides on the final ID and replaces the original ID. It is highly important that the row is kept with the new ID as the differing JSON path is important to maintain as to collect the variable correctly. The annotated <'platform'>_Merged_Structures_Annotated.csv can be found [here.](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Annotated_schema_df) 
 
 
 ### 4. Implementation of data donation tool
@@ -78,12 +77,12 @@ The researcher creates an extra column in the <platform>_Merged_Structures.csv a
 #### The code
 
 ## The Data Collection
-During the data collection, the data donation tool needs to be updated after each batch of data donations has been received. This updating entails three main steps: 1. updating the  <platform>_Merged_Structures_Annotated.csv and 2. Rerun the generate_entries.py and 3. performing an end-to-end integration test.
+During the data collection, the data donation tool needs to be updated after each newly received batch of data donation This updating entails three main steps: 1. updating the  <platform>_Merged_Structures_Annotated.csv; 2. Rerun the generate_entries.py and 3. performing an end-to-end integration test.
 
 ### 1. Updating the  <'platform'>_Merged_Structures_Annotated.csv
 
 The code to do the following steps can be found [here.](https://github.com/what-if-horizon/what-if-data-donation/blob/master/structure_donations/Updating_merged_structures/Updating_merged_structures_annotated.ipynb)
-1. Do an anti-join to indicate the new rows
+1. Do an anti-join between the <'platform'>_Merged_Structures_Annotated.csv and the newly generated <'platform'>_Merged_Structures.csv to indicate the new rows
 2. Add a time stamp to indicate the new rows
 3. Annotate the new rows
 4. Save as  <'platform'>_Merged_Structures_Annotated.csv
