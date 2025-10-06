@@ -2,10 +2,10 @@
 
 ## Workflow Data Donation Tool
 
-This data donation tool in an extension of the Feldspar repository which can be implemented in the Eyra environment to collect data donations. The aim of this extension in to collect data donations with the highest standards for data privacy while reducing the risk of omitted variables or unnecessary data loss as much as possible. The workflow of this tool consists of four parts: 1. Data structure collection, 2.Processing of data structures, 3. Variable selection by researchers, and 4. Implementation of data donation tool. In short, the idea behind this tool is to obtain the data structures of social media takeouts to specifically inform the data donation tool running on the participant's local machine which data should be collected from their social media takeout. In this way, we avoid collecting highly personal or sensitive data. In this workflow description we will go trough the rationale behind each step, how to perform the step and how to asses the step in case of problems during the data collection. 
+This data donation tool in an extension of the Feldspar repository which can be implemented in the Eyra environment to collect data donations. The aim of this extension in to collect data donations with the highest standards for data privacy while reducing the risk of omitted variables or unnecessary data loss as much as possible. The workflow of this tool consists of four parts: 1. Data structure collection, 2.Processing of data structures, 3. Variable selection by researchers, and 4. Implementation of data donation tool. In short, the idea behind this tool is to obtain the data structures of social media takeouts to specifically inform the data donation tool running on the participant's local machine which data should be collected from their social media takeout. In this way, we avoid collecting highly personal, sensitive or unnecessary data. In this workflow description we will go trough the rationale behind each step, how to perform the step and how to asses the step in case of problems during the data collection. 
 
-![Workflow](workflow.png)
-![Git](git_repository_layout.png)
+![Workflow](workflow_visuals/workflow.png)
+![Git](workflow_visuals/git_repository.png)
 
 ### 1. Data structure collection
 #### The rationale
@@ -80,19 +80,21 @@ The researcher creates an extra column in the <platform>_Merged_Structures.csv a
 ## The Data Collection
 During the data collection, the data donation tool needs to be updated after each batch of data donations has been received. This updating entails three main steps: 1. updating the  <platform>_Merged_Structures_Annotated.csv and 2. Rerun the generate_entries.py and 3. performing an end-to-end integration test.
 
-### 1. Updating the  <<platform>>_Merged_Structures_Annotated.csv
+### 1. Updating the  <'platform'>_Merged_Structures_Annotated.csv
 
-
+The code to do the following steps can be found [here.](https://github.com/what-if-horizon/what-if-data-donation/blob/master/structure_donations/Updating_merged_structures/Updating_merged_structures_annotated.ipynb)
 1. Do an anti-join to indicate the new rows
 2. Add a time stamp to indicate the new rows
 3. Annotate the new rows
-4. Save as  <<platform>>_Merged_Structures_Annotated.csv
+4. Save as  <'platform'>_Merged_Structures_Annotated.csv
+
+![Updating](workflow_visuals/updating.png)
 
 ### 2. Rerun the generate_entries.py
-![Workflow](workflow.png)
+![Workflow](workflow_visuals/workflow.png)
 
 ### 3. Perform an end-to-end integration test
-![Workflow testing](workflow_testing.png)
+![Workflow testing](workflow_visuals/testing_tool.png)
 For a full explanation on how to run the end-to-end integration test, please click [here.](https://github.com/what-if-horizon/what-if-data-donation/blob/master/pytests/README.md)
 
 
