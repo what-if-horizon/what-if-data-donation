@@ -1,567 +1,567 @@
-json_name,column_name,path,list_path,subfield_path,var_type,data_type
-manifest.js,accountId,"['userInfo', 'accountId']",,"['userInfo', 'accountId']",static,string
-manifest.js,userName,"['userInfo', 'userName']",,"['userInfo', 'userName']",static,string
-manifest.js,displayName,"['userInfo', 'displayName']",,"['userInfo', 'displayName']",static,string
-manifest.js,sizeBytes,"['archiveInfo', 'sizeBytes']",,"['archiveInfo', 'sizeBytes']",static,string
-manifest.js,generationDate,"['archiveInfo', 'generationDate']",,"['archiveInfo', 'generationDate']",static,string
-manifest.js,isPartialArchive,"['archiveInfo', 'isPartialArchive']",,"['archiveInfo', 'isPartialArchive']",static,boolean
-manifest.js,maxPartSizeBytes,"['archiveInfo', 'maxPartSizeBytes']",,"['archiveInfo', 'maxPartSizeBytes']",static,string
-manifest.js,fileName,"['readmeInfo', 'fileName']",,"['readmeInfo', 'fileName']",static,string
-manifest.js,directory,"['readmeInfo', 'directory']",,"['readmeInfo', 'directory']",static,string
-manifest.js,name,"['readmeInfo', 'name']",,"['readmeInfo', 'name']",static,string
-account-creation-ip.js,accountId,"['accountCreationIp', 'accountId']",,"['accountCreationIp', 'accountId']",static,string
-account-creation-ip.js,userCreationIp,"['accountCreationIp', 'userCreationIp']",,"['accountCreationIp', 'userCreationIp']",static,string
-account-timezone.js,accountId,"['accountTimezone', 'accountId']",,"['accountTimezone', 'accountId']",static,string
-account.js,email,"['account', 'email']",,"['account', 'email']",static,string
-account.js,createdVia,"['account', 'createdVia']",,"['account', 'createdVia']",static,string
-account.js,username,"['account', 'username']",,"['account', 'username']",static,string
-account.js,accountId,"['account', 'accountId']",,"['account', 'accountId']",static,string
-account.js,createdAt,"['account', 'createdAt']",,"['account', 'createdAt']",static,string
-account.js,accountDisplayName,"['account', 'accountDisplayName']",,"['account', 'accountDisplayName']",static,string
-ads-revenue-sharing.js,payoutHistory,"['adsRevenueSharing', 'payoutHistory']",,"['adsRevenueSharing', 'payoutHistory']",static,array
-connected-application.js,name,"['connectedApplication', 'name']",,"['connectedApplication', 'name']",static,string
-connected-application.js,description,"['connectedApplication', 'description']",,"['connectedApplication', 'description']",static,string
-connected-application.js,permissions,"['connectedApplication', 'permissions']",,"['connectedApplication', 'permissions']",static,string
-connected-application.js,approvedAt,"['connectedApplication', 'approvedAt']",,"['connectedApplication', 'approvedAt']",static,string
-connected-application.js,id,"['connectedApplication', 'id']",,"['connectedApplication', 'id']",static,string
-direct-message-group-headers.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string
-direct-messages-group.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string
-key-registry.js,userId,"['keyRegistryData', 'userId']",,"['keyRegistryData', 'userId']",static,string
-periscope-account-information.js,displayName,"['periscopeAccountInformation', 'displayName']",,"['periscopeAccountInformation', 'displayName']",static,string
-periscope-account-information.js,digitsId,"['periscopeAccountInformation', 'digitsId']",,"['periscopeAccountInformation', 'digitsId']",static,string
-periscope-account-information.js,username,"['periscopeAccountInformation', 'username']",,"['periscopeAccountInformation', 'username']",static,string
-periscope-account-information.js,twitterId,"['periscopeAccountInformation', 'twitterId']",,"['periscopeAccountInformation', 'twitterId']",static,string
-periscope-account-information.js,id,"['periscopeAccountInformation', 'id']",,"['periscopeAccountInformation', 'id']",static,string
-periscope-account-information.js,twitterScreenName,"['periscopeAccountInformation', 'twitterScreenName']",,"['periscopeAccountInformation', 'twitterScreenName']",static,string
-periscope-account-information.js,isTwitterUser,"['periscopeAccountInformation', 'isTwitterUser']",,"['periscopeAccountInformation', 'isTwitterUser']",static,boolean
-periscope-account-information.js,createdAt,"['periscopeAccountInformation', 'createdAt']",,"['periscopeAccountInformation', 'createdAt']",static,string
-periscope-profile-description.js,bio,"['periscopeProfileDescription', 'bio']",,"['periscopeProfileDescription', 'bio']",static,string
-personalization.js,locationHistory,"['p13nData', 'locationHistory']",,"['p13nData', 'locationHistory']",static,array
-profile.js,avatarMediaUrl,"['profile', 'avatarMediaUrl']",,"['profile', 'avatarMediaUrl']",static,string
-profile.js,headerMediaUrl,"['profile', 'headerMediaUrl']",,"['profile', 'headerMediaUrl']",static,string
-screen-name-change.js,accountId,"['screenNameChange', 'accountId']",,"['screenNameChange', 'accountId']",static,string
-verified.js,accountId,"['verified', 'accountId']",,"['verified', 'accountId']",static,string
-verified.js,verified,"['verified', 'verified']",,"['verified', 'verified']",static,boolean
-community-note-rating.js,noteId,"['communityNoteRating', 'noteId']",,"['communityNoteRating', 'noteId']",static,string
-community-note-rating.js,helpfulnessLevel,"['communityNoteRating', 'helpfulnessLevel']",,"['communityNoteRating', 'helpfulnessLevel']",static,string
-community-note-rating.js,createdAt,"['communityNoteRating', 'createdAt']",,"['communityNoteRating', 'createdAt']",static,string
-community-note-rating.js,userId,"['communityNoteRating', 'userId']",,"['communityNoteRating', 'userId']",static,string
-community-note-rating.js,helpfulTags,"['communityNoteRating', 'helpfulTags']",,"['communityNoteRating', 'helpfulTags']",static,string
-device-token.js,clientApplicationId,"['deviceToken', 'clientApplicationId']",,"['deviceToken', 'clientApplicationId']",static,string
-device-token.js,token,"['deviceToken', 'token']",,"['deviceToken', 'token']",static,string
-device-token.js,createdAt,"['deviceToken', 'createdAt']",,"['deviceToken', 'createdAt']",static,string
-device-token.js,lastSeenAt,"['deviceToken', 'lastSeenAt']",,"['deviceToken', 'lastSeenAt']",static,string
-device-token.js,clientApplicationName,"['deviceToken', 'clientApplicationName']",,"['deviceToken', 'clientApplicationName']",static,string
-direct-message-headers.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string
-direct-messages.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string
-follower.js,accountId,"['follower', 'accountId']",,"['follower', 'accountId']",static,string
-follower.js,userLink,"['follower', 'userLink']",,"['follower', 'userLink']",static,string
-following.js,accountId,"['following', 'accountId']",,"['following', 'accountId']",static,string
-following.js,userLink,"['following', 'userLink']",,"['following', 'userLink']",static,string
-ip-audit.js,accountId,"['ipAudit', 'accountId']",,"['ipAudit', 'accountId']",static,string
-ip-audit.js,createdAt,"['ipAudit', 'createdAt']",,"['ipAudit', 'createdAt']",static,string
-ip-audit.js,loginIp,"['ipAudit', 'loginIp']",,"['ipAudit', 'loginIp']",static,string
-ip-audit.js,loginPortNumber,"['ipAudit', 'loginPortNumber']",,"['ipAudit', 'loginPortNumber']",static,string
-like.js,tweetId,"['like', 'tweetId']",,"['like', 'tweetId']",static,string
-like.js,fullText,"['like', 'fullText']",,"['like', 'fullText']",static,string
-like.js,expandedUrl,"['like', 'expandedUrl']",,"['like', 'expandedUrl']",static,string
-tweet-headers.js,tweet_id,"['tweet', 'tweet_id']",,"['tweet', 'tweet_id']",static,string
-tweet-headers.js,user_id,"['tweet', 'user_id']",,"['tweet', 'user_id']",static,string
-tweet-headers.js,created_at,"['tweet', 'created_at']",,"['tweet', 'created_at']",static,string
-tweets.js,retweeted,"['tweet', 'retweeted']",,"['tweet', 'retweeted']",static,boolean
-tweets.js,source,"['tweet', 'source']",,"['tweet', 'source']",static,string
-tweets.js,display_text_range,"['tweet', 'display_text_range']",,"['tweet', 'display_text_range']",static,string
-tweets.js,favorite_count,"['tweet', 'favorite_count']",,"['tweet', 'favorite_count']",static,string
-tweets.js,id_str,"['tweet', 'id_str']",,"['tweet', 'id_str']",static,string
-tweets.js,truncated,"['tweet', 'truncated']",,"['tweet', 'truncated']",static,boolean
-tweets.js,retweet_count,"['tweet', 'retweet_count']",,"['tweet', 'retweet_count']",static,string
-tweets.js,id,"['tweet', 'id']",,"['tweet', 'id']",static,string
-tweets.js,possibly_sensitive,"['tweet', 'possibly_sensitive']",,"['tweet', 'possibly_sensitive']",static,boolean
-tweets.js,created_at,"['tweet', 'created_at']",,"['tweet', 'created_at']",static,string
-tweets.js,favorited,"['tweet', 'favorited']",,"['tweet', 'favorited']",static,boolean
-tweets.js,full_text,"['tweet', 'full_text']",,"['tweet', 'full_text']",static,string
-tweets.js,lang,"['tweet', 'lang']",,"['tweet', 'lang']",static,string
-tweets.js,in_reply_to_status_id_str,"['tweet', 'in_reply_to_status_id_str']",,"['tweet', 'in_reply_to_status_id_str']",static,string
-tweets.js,in_reply_to_user_id,"['tweet', 'in_reply_to_user_id']",,"['tweet', 'in_reply_to_user_id']",static,string
-tweets.js,in_reply_to_status_id,"['tweet', 'in_reply_to_status_id']",,"['tweet', 'in_reply_to_status_id']",static,string
-tweets.js,in_reply_to_screen_name,"['tweet', 'in_reply_to_screen_name']",,"['tweet', 'in_reply_to_screen_name']",static,string
-tweets.js,in_reply_to_user_id_str,"['tweet', 'in_reply_to_user_id_str']",,"['tweet', 'in_reply_to_user_id_str']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'communityTweet', 'mediaDirectory']",,"['dataTypes', 'communityTweet', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'communityTweetMedia', 'mediaDirectory']",,"['dataTypes', 'communityTweetMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'deletedTweets', 'mediaDirectory']",,"['dataTypes', 'deletedTweets', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'deletedTweetsMedia', 'mediaDirectory']",,"['dataTypes', 'deletedTweetsMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'directMessages', 'mediaDirectory']",,"['dataTypes', 'directMessages', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'directMessagesGroup', 'mediaDirectory']",,"['dataTypes', 'directMessagesGroup', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'directMessagesGroupMedia', 'mediaDirectory']",,"['dataTypes', 'directMessagesGroupMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'directMessagesMedia', 'mediaDirectory']",,"['dataTypes', 'directMessagesMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'grokChatMedia', 'mediaDirectory']",,"['dataTypes', 'grokChatMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'moment', 'mediaDirectory']",,"['dataTypes', 'moment', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'momentsMedia', 'mediaDirectory']",,"['dataTypes', 'momentsMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'momentsTweetsMedia', 'mediaDirectory']",,"['dataTypes', 'momentsTweetsMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'profile', 'mediaDirectory']",,"['dataTypes', 'profile', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'profileMedia', 'mediaDirectory']",,"['dataTypes', 'profileMedia', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'tweets', 'mediaDirectory']",,"['dataTypes', 'tweets', 'mediaDirectory']",static,string
-manifest.js,mediaDirectory,"['dataTypes', 'tweetsMedia', 'mediaDirectory']",,"['dataTypes', 'tweetsMedia', 'mediaDirectory']",static,string
-ageinfo.js,age,"['ageMeta', 'ageInfo', 'age']",,"['ageMeta', 'ageInfo', 'age']",static,string
-ageinfo.js,birthDate,"['ageMeta', 'ageInfo', 'birthDate']",,"['ageMeta', 'ageInfo', 'birthDate']",static,string
-connected-application.js,name,"['connectedApplication', 'organization', 'name']",,"['connectedApplication', 'organization', 'name']",static,string
-connected-application.js,url,"['connectedApplication', 'organization', 'url']",,"['connectedApplication', 'organization', 'url']",static,string
-key-registry.js,deRegisteredDeviceMetadataList,"['keyRegistryData', 'deregisteredDevices', 'deRegisteredDeviceMetadataList']",,"['keyRegistryData', 'deregisteredDevices', 'deRegisteredDeviceMetadataList']",static,array
-personalization.js,partnerInterests,"['p13nData', 'interests', 'partnerInterests']",,"['p13nData', 'interests', 'partnerInterests']",static,array
-personalization.js,shows,"['p13nData', 'interests', 'shows']",,"['p13nData', 'interests', 'shows']",static,string
-personalization.js,age,"['p13nData', 'inferredAgeInfo', 'age']",,"['p13nData', 'inferredAgeInfo', 'age']",static,string
-personalization.js,birthDate,"['p13nData', 'inferredAgeInfo', 'birthDate']",,"['p13nData', 'inferredAgeInfo', 'birthDate']",static,string
-profile.js,bio,"['profile', 'description', 'bio']",,"['profile', 'description', 'bio']",static,string
-profile.js,website,"['profile', 'description', 'website']",,"['profile', 'description', 'website']",static,string
-profile.js,location,"['profile', 'description', 'location']",,"['profile', 'description', 'location']",static,string
-screen-name-change.js,changedAt,"['screenNameChange', 'screenNameChange', 'changedAt']",,"['screenNameChange', 'screenNameChange', 'changedAt']",static,string
-screen-name-change.js,changedFrom,"['screenNameChange', 'screenNameChange', 'changedFrom']",,"['screenNameChange', 'screenNameChange', 'changedFrom']",static,string
-screen-name-change.js,changedTo,"['screenNameChange', 'screenNameChange', 'changedTo']",,"['screenNameChange', 'screenNameChange', 'changedTo']",static,string
-tweets.js,hashtags,"['tweet', 'entities', 'hashtags']",,"['tweet', 'entities', 'hashtags']",static,array
-tweets.js,symbols,"['tweet', 'entities', 'symbols']",,"['tweet', 'entities', 'symbols']",static,array
-tweets.js,user_mentions,"['tweet', 'entities', 'user_mentions']",,"['tweet', 'entities', 'user_mentions']",static,array
-tweets.js,urls,"['tweet', 'entities', 'urls']",,"['tweet', 'entities', 'urls']",static,array
-personalization.js,gender,"['p13nData', 'demographics', 'genderInfo', 'gender']",,"['p13nData', 'demographics', 'genderInfo', 'gender']",static,string
-personalization.js,lookalikeAdvertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'lookalikeAdvertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'lookalikeAdvertisers']",static,string
-personalization.js,advertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'advertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'advertisers']",static,array
-personalization.js,doNotReachAdvertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'doNotReachAdvertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'doNotReachAdvertisers']",static,array
-personalization.js,catalogAudienceAdvertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'catalogAudienceAdvertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'catalogAudienceAdvertisers']",static,array
-personalization.js,numAudiences,"['p13nData', 'interests', 'audienceAndAdvertisers', 'numAudiences']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'numAudiences']",static,string
-tweets.js,editTweetIds,"['tweet', 'edit_info', 'initial', 'editTweetIds']",,"['tweet', 'edit_info', 'initial', 'editTweetIds']",static,string
-tweets.js,editableUntil,"['tweet', 'edit_info', 'initial', 'editableUntil']",,"['tweet', 'edit_info', 'initial', 'editableUntil']",static,string
-tweets.js,editsRemaining,"['tweet', 'edit_info', 'initial', 'editsRemaining']",,"['tweet', 'edit_info', 'initial', 'editsRemaining']",static,string
-tweets.js,isEditEligible,"['tweet', 'edit_info', 'initial', 'isEditEligible']",,"['tweet', 'edit_info', 'initial', 'isEditEligible']",static,boolean
-manifest.js,fileName,"['dataTypes', 'account', 'files', 'fileName']","['dataTypes', 'account', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'account', 'files', 'globalName']","['dataTypes', 'account', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'account', 'files', 'count']","['dataTypes', 'account', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'accountCreationIp', 'files', 'fileName']","['dataTypes', 'accountCreationIp', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'accountCreationIp', 'files', 'globalName']","['dataTypes', 'accountCreationIp', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'accountCreationIp', 'files', 'count']","['dataTypes', 'accountCreationIp', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'accountLabel', 'files', 'fileName']","['dataTypes', 'accountLabel', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'accountLabel', 'files', 'globalName']","['dataTypes', 'accountLabel', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'accountLabel', 'files', 'count']","['dataTypes', 'accountLabel', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'accountSuspension', 'files', 'fileName']","['dataTypes', 'accountSuspension', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'accountSuspension', 'files', 'globalName']","['dataTypes', 'accountSuspension', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'accountSuspension', 'files', 'count']","['dataTypes', 'accountSuspension', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'accountTimezone', 'files', 'fileName']","['dataTypes', 'accountTimezone', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'accountTimezone', 'files', 'globalName']","['dataTypes', 'accountTimezone', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'accountTimezone', 'files', 'count']","['dataTypes', 'accountTimezone', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adEngagements', 'files', 'fileName']","['dataTypes', 'adEngagements', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adEngagements', 'files', 'globalName']","['dataTypes', 'adEngagements', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adEngagements', 'files', 'count']","['dataTypes', 'adEngagements', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adImpressions', 'files', 'fileName']","['dataTypes', 'adImpressions', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adImpressions', 'files', 'globalName']","['dataTypes', 'adImpressions', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adImpressions', 'files', 'count']","['dataTypes', 'adImpressions', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adMobileConversionsAttributed', 'files', 'fileName']","['dataTypes', 'adMobileConversionsAttributed', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adMobileConversionsAttributed', 'files', 'globalName']","['dataTypes', 'adMobileConversionsAttributed', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adMobileConversionsAttributed', 'files', 'count']","['dataTypes', 'adMobileConversionsAttributed', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adMobileConversionsUnattributed', 'files', 'fileName']","['dataTypes', 'adMobileConversionsUnattributed', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adMobileConversionsUnattributed', 'files', 'globalName']","['dataTypes', 'adMobileConversionsUnattributed', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adMobileConversionsUnattributed', 'files', 'count']","['dataTypes', 'adMobileConversionsUnattributed', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adOnlineConversionsAttributed', 'files', 'fileName']","['dataTypes', 'adOnlineConversionsAttributed', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adOnlineConversionsAttributed', 'files', 'globalName']","['dataTypes', 'adOnlineConversionsAttributed', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adOnlineConversionsAttributed', 'files', 'count']","['dataTypes', 'adOnlineConversionsAttributed', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adOnlineConversionsUnattributed', 'files', 'fileName']","['dataTypes', 'adOnlineConversionsUnattributed', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adOnlineConversionsUnattributed', 'files', 'globalName']","['dataTypes', 'adOnlineConversionsUnattributed', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adOnlineConversionsUnattributed', 'files', 'count']","['dataTypes', 'adOnlineConversionsUnattributed', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'adsRevenueSharing', 'files', 'fileName']","['dataTypes', 'adsRevenueSharing', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'adsRevenueSharing', 'files', 'globalName']","['dataTypes', 'adsRevenueSharing', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'adsRevenueSharing', 'files', 'count']","['dataTypes', 'adsRevenueSharing', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'ageinfo', 'files', 'fileName']","['dataTypes', 'ageinfo', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'ageinfo', 'files', 'globalName']","['dataTypes', 'ageinfo', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'ageinfo', 'files', 'count']","['dataTypes', 'ageinfo', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'app', 'files', 'fileName']","['dataTypes', 'app', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'app', 'files', 'globalName']","['dataTypes', 'app', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'app', 'files', 'count']","['dataTypes', 'app', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'article', 'files', 'fileName']","['dataTypes', 'article', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'article', 'files', 'globalName']","['dataTypes', 'article', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'article', 'files', 'count']","['dataTypes', 'article', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'articleMetadata', 'files', 'fileName']","['dataTypes', 'articleMetadata', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'articleMetadata', 'files', 'globalName']","['dataTypes', 'articleMetadata', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'articleMetadata', 'files', 'count']","['dataTypes', 'articleMetadata', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'audioVideoCallsInDm', 'files', 'fileName']","['dataTypes', 'audioVideoCallsInDm', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'audioVideoCallsInDm', 'files', 'globalName']","['dataTypes', 'audioVideoCallsInDm', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'audioVideoCallsInDm', 'files', 'count']","['dataTypes', 'audioVideoCallsInDm', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files', 'fileName']","['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files', 'globalName']","['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files', 'count']","['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'block', 'files', 'fileName']","['dataTypes', 'block', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'block', 'files', 'globalName']","['dataTypes', 'block', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'block', 'files', 'count']","['dataTypes', 'block', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'branchLinks', 'files', 'fileName']","['dataTypes', 'branchLinks', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'branchLinks', 'files', 'globalName']","['dataTypes', 'branchLinks', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'branchLinks', 'files', 'count']","['dataTypes', 'branchLinks', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'catalogItem', 'files', 'fileName']","['dataTypes', 'catalogItem', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'catalogItem', 'files', 'globalName']","['dataTypes', 'catalogItem', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'catalogItem', 'files', 'count']","['dataTypes', 'catalogItem', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'commerceCatalog', 'files', 'fileName']","['dataTypes', 'commerceCatalog', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'commerceCatalog', 'files', 'globalName']","['dataTypes', 'commerceCatalog', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'commerceCatalog', 'files', 'count']","['dataTypes', 'commerceCatalog', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'communityNote', 'files', 'fileName']","['dataTypes', 'communityNote', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'communityNote', 'files', 'globalName']","['dataTypes', 'communityNote', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'communityNote', 'files', 'count']","['dataTypes', 'communityNote', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'communityNoteBatsignal', 'files', 'fileName']","['dataTypes', 'communityNoteBatsignal', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'communityNoteBatsignal', 'files', 'globalName']","['dataTypes', 'communityNoteBatsignal', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'communityNoteBatsignal', 'files', 'count']","['dataTypes', 'communityNoteBatsignal', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'communityNoteRating', 'files', 'fileName']","['dataTypes', 'communityNoteRating', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'communityNoteRating', 'files', 'globalName']","['dataTypes', 'communityNoteRating', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'communityNoteRating', 'files', 'count']","['dataTypes', 'communityNoteRating', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'communityNoteTombstone', 'files', 'fileName']","['dataTypes', 'communityNoteTombstone', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'communityNoteTombstone', 'files', 'globalName']","['dataTypes', 'communityNoteTombstone', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'communityNoteTombstone', 'files', 'count']","['dataTypes', 'communityNoteTombstone', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'communityTweet', 'files', 'fileName']","['dataTypes', 'communityTweet', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'communityTweet', 'files', 'globalName']","['dataTypes', 'communityTweet', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'communityTweet', 'files', 'count']","['dataTypes', 'communityTweet', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'connectedApplication', 'files', 'fileName']","['dataTypes', 'connectedApplication', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'connectedApplication', 'files', 'globalName']","['dataTypes', 'connectedApplication', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'connectedApplication', 'files', 'count']","['dataTypes', 'connectedApplication', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'contact', 'files', 'fileName']","['dataTypes', 'contact', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'contact', 'files', 'globalName']","['dataTypes', 'contact', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'contact', 'files', 'count']","['dataTypes', 'contact', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'deletedNoteTweet', 'files', 'fileName']","['dataTypes', 'deletedNoteTweet', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'deletedNoteTweet', 'files', 'globalName']","['dataTypes', 'deletedNoteTweet', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'deletedNoteTweet', 'files', 'count']","['dataTypes', 'deletedNoteTweet', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'deletedTweetHeaders', 'files', 'fileName']","['dataTypes', 'deletedTweetHeaders', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'deletedTweetHeaders', 'files', 'globalName']","['dataTypes', 'deletedTweetHeaders', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'deletedTweetHeaders', 'files', 'count']","['dataTypes', 'deletedTweetHeaders', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'deletedTweets', 'files', 'fileName']","['dataTypes', 'deletedTweets', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'deletedTweets', 'files', 'globalName']","['dataTypes', 'deletedTweets', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'deletedTweets', 'files', 'count']","['dataTypes', 'deletedTweets', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'deviceToken', 'files', 'fileName']","['dataTypes', 'deviceToken', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'deviceToken', 'files', 'globalName']","['dataTypes', 'deviceToken', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'deviceToken', 'files', 'count']","['dataTypes', 'deviceToken', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'directMessageGroupHeaders', 'files', 'fileName']","['dataTypes', 'directMessageGroupHeaders', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'directMessageGroupHeaders', 'files', 'globalName']","['dataTypes', 'directMessageGroupHeaders', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'directMessageGroupHeaders', 'files', 'count']","['dataTypes', 'directMessageGroupHeaders', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'directMessageHeaders', 'files', 'fileName']","['dataTypes', 'directMessageHeaders', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'directMessageHeaders', 'files', 'globalName']","['dataTypes', 'directMessageHeaders', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'directMessageHeaders', 'files', 'count']","['dataTypes', 'directMessageHeaders', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'directMessageMute', 'files', 'fileName']","['dataTypes', 'directMessageMute', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'directMessageMute', 'files', 'globalName']","['dataTypes', 'directMessageMute', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'directMessageMute', 'files', 'count']","['dataTypes', 'directMessageMute', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'directMessages', 'files', 'fileName']","['dataTypes', 'directMessages', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'directMessages', 'files', 'globalName']","['dataTypes', 'directMessages', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'directMessages', 'files', 'count']","['dataTypes', 'directMessages', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'directMessagesGroup', 'files', 'fileName']","['dataTypes', 'directMessagesGroup', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'directMessagesGroup', 'files', 'globalName']","['dataTypes', 'directMessagesGroup', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'directMessagesGroup', 'files', 'count']","['dataTypes', 'directMessagesGroup', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'emailAddressChange', 'files', 'fileName']","['dataTypes', 'emailAddressChange', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'emailAddressChange', 'files', 'globalName']","['dataTypes', 'emailAddressChange', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'emailAddressChange', 'files', 'count']","['dataTypes', 'emailAddressChange', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'expandedProfile', 'files', 'fileName']","['dataTypes', 'expandedProfile', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'expandedProfile', 'files', 'globalName']","['dataTypes', 'expandedProfile', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'expandedProfile', 'files', 'count']","['dataTypes', 'expandedProfile', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'follower', 'files', 'fileName']","['dataTypes', 'follower', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'follower', 'files', 'globalName']","['dataTypes', 'follower', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'follower', 'files', 'count']","['dataTypes', 'follower', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'following', 'files', 'fileName']","['dataTypes', 'following', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'following', 'files', 'globalName']","['dataTypes', 'following', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'following', 'files', 'count']","['dataTypes', 'following', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'grokChatItem', 'files', 'fileName']","['dataTypes', 'grokChatItem', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'grokChatItem', 'files', 'globalName']","['dataTypes', 'grokChatItem', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'grokChatItem', 'files', 'count']","['dataTypes', 'grokChatItem', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'ipAudit', 'files', 'fileName']","['dataTypes', 'ipAudit', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'ipAudit', 'files', 'globalName']","['dataTypes', 'ipAudit', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'ipAudit', 'files', 'count']","['dataTypes', 'ipAudit', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'keyRegistry', 'files', 'fileName']","['dataTypes', 'keyRegistry', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'keyRegistry', 'files', 'globalName']","['dataTypes', 'keyRegistry', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'keyRegistry', 'files', 'count']","['dataTypes', 'keyRegistry', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'like', 'files', 'fileName']","['dataTypes', 'like', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'like', 'files', 'globalName']","['dataTypes', 'like', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'like', 'files', 'count']","['dataTypes', 'like', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'listsCreated', 'files', 'fileName']","['dataTypes', 'listsCreated', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'listsCreated', 'files', 'globalName']","['dataTypes', 'listsCreated', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'listsCreated', 'files', 'count']","['dataTypes', 'listsCreated', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'listsMember', 'files', 'fileName']","['dataTypes', 'listsMember', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'listsMember', 'files', 'globalName']","['dataTypes', 'listsMember', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'listsMember', 'files', 'count']","['dataTypes', 'listsMember', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'listsSubscribed', 'files', 'fileName']","['dataTypes', 'listsSubscribed', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'listsSubscribed', 'files', 'globalName']","['dataTypes', 'listsSubscribed', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'listsSubscribed', 'files', 'count']","['dataTypes', 'listsSubscribed', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'moment', 'files', 'fileName']","['dataTypes', 'moment', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'moment', 'files', 'globalName']","['dataTypes', 'moment', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'moment', 'files', 'count']","['dataTypes', 'moment', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'mute', 'files', 'fileName']","['dataTypes', 'mute', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'mute', 'files', 'globalName']","['dataTypes', 'mute', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'mute', 'files', 'count']","['dataTypes', 'mute', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'niDevices', 'files', 'fileName']","['dataTypes', 'niDevices', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'niDevices', 'files', 'globalName']","['dataTypes', 'niDevices', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'niDevices', 'files', 'count']","['dataTypes', 'niDevices', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'noteTweet', 'files', 'fileName']","['dataTypes', 'noteTweet', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'noteTweet', 'files', 'globalName']","['dataTypes', 'noteTweet', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'noteTweet', 'files', 'count']","['dataTypes', 'noteTweet', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeAccountInformation', 'files', 'fileName']","['dataTypes', 'periscopeAccountInformation', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeAccountInformation', 'files', 'globalName']","['dataTypes', 'periscopeAccountInformation', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeAccountInformation', 'files', 'count']","['dataTypes', 'periscopeAccountInformation', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeBanInformation', 'files', 'fileName']","['dataTypes', 'periscopeBanInformation', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeBanInformation', 'files', 'globalName']","['dataTypes', 'periscopeBanInformation', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeBanInformation', 'files', 'count']","['dataTypes', 'periscopeBanInformation', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeBroadcastMetadata', 'files', 'fileName']","['dataTypes', 'periscopeBroadcastMetadata', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeBroadcastMetadata', 'files', 'globalName']","['dataTypes', 'periscopeBroadcastMetadata', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeBroadcastMetadata', 'files', 'count']","['dataTypes', 'periscopeBroadcastMetadata', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeCommentsMadeByUser', 'files', 'fileName']","['dataTypes', 'periscopeCommentsMadeByUser', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeCommentsMadeByUser', 'files', 'globalName']","['dataTypes', 'periscopeCommentsMadeByUser', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeCommentsMadeByUser', 'files', 'count']","['dataTypes', 'periscopeCommentsMadeByUser', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeExpiredBroadcasts', 'files', 'fileName']","['dataTypes', 'periscopeExpiredBroadcasts', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeExpiredBroadcasts', 'files', 'globalName']","['dataTypes', 'periscopeExpiredBroadcasts', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeExpiredBroadcasts', 'files', 'count']","['dataTypes', 'periscopeExpiredBroadcasts', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeFollowers', 'files', 'fileName']","['dataTypes', 'periscopeFollowers', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeFollowers', 'files', 'globalName']","['dataTypes', 'periscopeFollowers', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeFollowers', 'files', 'count']","['dataTypes', 'periscopeFollowers', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'periscopeProfileDescription', 'files', 'fileName']","['dataTypes', 'periscopeProfileDescription', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'periscopeProfileDescription', 'files', 'globalName']","['dataTypes', 'periscopeProfileDescription', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'periscopeProfileDescription', 'files', 'count']","['dataTypes', 'periscopeProfileDescription', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'personalization', 'files', 'fileName']","['dataTypes', 'personalization', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'personalization', 'files', 'globalName']","['dataTypes', 'personalization', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'personalization', 'files', 'count']","['dataTypes', 'personalization', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'phoneNumber', 'files', 'fileName']","['dataTypes', 'phoneNumber', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'phoneNumber', 'files', 'globalName']","['dataTypes', 'phoneNumber', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'phoneNumber', 'files', 'count']","['dataTypes', 'phoneNumber', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'productDrop', 'files', 'fileName']","['dataTypes', 'productDrop', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'productDrop', 'files', 'globalName']","['dataTypes', 'productDrop', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'productDrop', 'files', 'count']","['dataTypes', 'productDrop', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'productSet', 'files', 'fileName']","['dataTypes', 'productSet', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'productSet', 'files', 'globalName']","['dataTypes', 'productSet', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'productSet', 'files', 'count']","['dataTypes', 'productSet', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'professionalData', 'files', 'fileName']","['dataTypes', 'professionalData', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'professionalData', 'files', 'globalName']","['dataTypes', 'professionalData', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'professionalData', 'files', 'count']","['dataTypes', 'professionalData', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'profile', 'files', 'fileName']","['dataTypes', 'profile', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'profile', 'files', 'globalName']","['dataTypes', 'profile', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'profile', 'files', 'count']","['dataTypes', 'profile', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'protectedHistory', 'files', 'fileName']","['dataTypes', 'protectedHistory', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'protectedHistory', 'files', 'globalName']","['dataTypes', 'protectedHistory', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'protectedHistory', 'files', 'count']","['dataTypes', 'protectedHistory', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'replyPrompt', 'files', 'fileName']","['dataTypes', 'replyPrompt', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'replyPrompt', 'files', 'globalName']","['dataTypes', 'replyPrompt', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'replyPrompt', 'files', 'count']","['dataTypes', 'replyPrompt', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'savedSearch', 'files', 'fileName']","['dataTypes', 'savedSearch', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'savedSearch', 'files', 'globalName']","['dataTypes', 'savedSearch', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'savedSearch', 'files', 'count']","['dataTypes', 'savedSearch', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'screenNameChange', 'files', 'fileName']","['dataTypes', 'screenNameChange', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'screenNameChange', 'files', 'globalName']","['dataTypes', 'screenNameChange', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'screenNameChange', 'files', 'count']","['dataTypes', 'screenNameChange', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'shopModule', 'files', 'fileName']","['dataTypes', 'shopModule', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'shopModule', 'files', 'globalName']","['dataTypes', 'shopModule', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'shopModule', 'files', 'count']","['dataTypes', 'shopModule', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'shopifyAccount', 'files', 'fileName']","['dataTypes', 'shopifyAccount', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'shopifyAccount', 'files', 'globalName']","['dataTypes', 'shopifyAccount', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'shopifyAccount', 'files', 'count']","['dataTypes', 'shopifyAccount', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'smartblock', 'files', 'fileName']","['dataTypes', 'smartblock', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'smartblock', 'files', 'globalName']","['dataTypes', 'smartblock', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'smartblock', 'files', 'count']","['dataTypes', 'smartblock', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'spacesMetadata', 'files', 'fileName']","['dataTypes', 'spacesMetadata', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'spacesMetadata', 'files', 'globalName']","['dataTypes', 'spacesMetadata', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'spacesMetadata', 'files', 'count']","['dataTypes', 'spacesMetadata', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'sso', 'files', 'fileName']","['dataTypes', 'sso', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'sso', 'files', 'globalName']","['dataTypes', 'sso', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'sso', 'files', 'count']","['dataTypes', 'sso', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'tweetHeaders', 'files', 'fileName']","['dataTypes', 'tweetHeaders', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'tweetHeaders', 'files', 'globalName']","['dataTypes', 'tweetHeaders', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'tweetHeaders', 'files', 'count']","['dataTypes', 'tweetHeaders', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'tweetdeck', 'files', 'fileName']","['dataTypes', 'tweetdeck', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'tweetdeck', 'files', 'globalName']","['dataTypes', 'tweetdeck', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'tweetdeck', 'files', 'count']","['dataTypes', 'tweetdeck', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'tweets', 'files', 'fileName']","['dataTypes', 'tweets', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'tweets', 'files', 'globalName']","['dataTypes', 'tweets', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'tweets', 'files', 'count']","['dataTypes', 'tweets', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'twitterShop', 'files', 'fileName']","['dataTypes', 'twitterShop', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'twitterShop', 'files', 'globalName']","['dataTypes', 'twitterShop', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'twitterShop', 'files', 'count']","['dataTypes', 'twitterShop', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'userLinkClicks', 'files', 'fileName']","['dataTypes', 'userLinkClicks', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'userLinkClicks', 'files', 'globalName']","['dataTypes', 'userLinkClicks', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'userLinkClicks', 'files', 'count']","['dataTypes', 'userLinkClicks', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'verified', 'files', 'fileName']","['dataTypes', 'verified', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'verified', 'files', 'globalName']","['dataTypes', 'verified', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'verified', 'files', 'count']","['dataTypes', 'verified', 'files']",['count'],list,string
-manifest.js,fileName,"['dataTypes', 'verifiedOrganization', 'files', 'fileName']","['dataTypes', 'verifiedOrganization', 'files']",['fileName'],list,string
-manifest.js,globalName,"['dataTypes', 'verifiedOrganization', 'files', 'globalName']","['dataTypes', 'verifiedOrganization', 'files']",['globalName'],list,string
-manifest.js,count,"['dataTypes', 'verifiedOrganization', 'files', 'count']","['dataTypes', 'verifiedOrganization', 'files']",['count'],list,string
-direct-message-group-headers.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string
-direct-message-group-headers.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string
-direct-message-group-headers.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string
-direct-message-group-headers.js,initiatingUserId,"['dmConversation', 'messages', 'joinConversation', 'initiatingUserId']","['dmConversation', 'messages']","['joinConversation', 'initiatingUserId']",list,string
-direct-message-group-headers.js,participantsSnapshot,"['dmConversation', 'messages', 'joinConversation', 'participantsSnapshot']","['dmConversation', 'messages']","['joinConversation', 'participantsSnapshot']",list,string
-direct-message-group-headers.js,createdAt,"['dmConversation', 'messages', 'joinConversation', 'createdAt']","['dmConversation', 'messages']","['joinConversation', 'createdAt']",list,string
-direct-messages-group.js,reactions,"['dmConversation', 'messages', 'messageCreate', 'reactions']","['dmConversation', 'messages']","['messageCreate', 'reactions']",list,array
-direct-messages-group.js,text,"['dmConversation', 'messages', 'messageCreate', 'text']","['dmConversation', 'messages']","['messageCreate', 'text']",list,string
-direct-messages-group.js,mediaUrls,"['dmConversation', 'messages', 'messageCreate', 'mediaUrls']","['dmConversation', 'messages']","['messageCreate', 'mediaUrls']",list,array
-direct-messages-group.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string
-direct-messages-group.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string
-direct-messages-group.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string
-direct-messages-group.js,editHistory,"['dmConversation', 'messages', 'messageCreate', 'editHistory']","['dmConversation', 'messages']","['messageCreate', 'editHistory']",list,array
-direct-messages-group.js,urls,"['dmConversation', 'messages', 'messageCreate', 'urls']","['dmConversation', 'messages']","['messageCreate', 'urls']",list,array
-direct-messages-group.js,initiatingUserId,"['dmConversation', 'messages', 'joinConversation', 'initiatingUserId']","['dmConversation', 'messages']","['joinConversation', 'initiatingUserId']",list,string
-direct-messages-group.js,participantsSnapshot,"['dmConversation', 'messages', 'joinConversation', 'participantsSnapshot']","['dmConversation', 'messages']","['joinConversation', 'participantsSnapshot']",list,string
-direct-messages-group.js,createdAt,"['dmConversation', 'messages', 'joinConversation', 'createdAt']","['dmConversation', 'messages']","['joinConversation', 'createdAt']",list,string
-key-registry.js,userAgent,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'userAgent']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['userAgent'],list,string
-key-registry.js,registrationToken,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'registrationToken']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['registrationToken'],list,string
-key-registry.js,identityKey,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'identityKey']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['identityKey'],list,string
-key-registry.js,createdAt,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'createdAt']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['createdAt'],list,string
-key-registry.js,deviceId,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'deviceId']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['deviceId'],list,string
-personalization.js,language,"['p13nData', 'demographics', 'languages', 'language']","['p13nData', 'demographics', 'languages']",['language'],list,string
-personalization.js,isDisabled,"['p13nData', 'demographics', 'languages', 'isDisabled']","['p13nData', 'demographics', 'languages']",['isDisabled'],list,boolean
-personalization.js,name,"['p13nData', 'interests', 'interests', 'name']","['p13nData', 'interests', 'interests']",['name'],list,string
-personalization.js,isDisabled,"['p13nData', 'interests', 'interests', 'isDisabled']","['p13nData', 'interests', 'interests']",['isDisabled'],list,boolean
-direct-message-headers.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string
-direct-message-headers.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string
-direct-message-headers.js,recipientId,"['dmConversation', 'messages', 'messageCreate', 'recipientId']","['dmConversation', 'messages']","['messageCreate', 'recipientId']",list,string
-direct-message-headers.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string
-direct-messages.js,recipientId,"['dmConversation', 'messages', 'messageCreate', 'recipientId']","['dmConversation', 'messages']","['messageCreate', 'recipientId']",list,string
-direct-messages.js,reactions,"['dmConversation', 'messages', 'messageCreate', 'reactions']","['dmConversation', 'messages']","['messageCreate', 'reactions']",list,array
-direct-messages.js,urls,"['dmConversation', 'messages', 'messageCreate', 'urls']","['dmConversation', 'messages']","['messageCreate', 'urls']",list,array
-direct-messages.js,text,"['dmConversation', 'messages', 'messageCreate', 'text']","['dmConversation', 'messages']","['messageCreate', 'text']",list,string
-direct-messages.js,mediaUrls,"['dmConversation', 'messages', 'messageCreate', 'mediaUrls']","['dmConversation', 'messages']","['messageCreate', 'mediaUrls']",list,array
-direct-messages.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string
-direct-messages.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string
-direct-messages.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string
-direct-messages.js,editHistory,"['dmConversation', 'messages', 'messageCreate', 'editHistory']","['dmConversation', 'messages']","['messageCreate', 'editHistory']",list,array
-direct-messages.js,mediaUrls,"['dmConversation', 'messages', 'messageCreate', 'mediaUrls']","['dmConversation', 'messages']","['messageCreate', 'mediaUrls']",list,string
-tweets.js,url,"['tweet', 'entities', 'urls', 'url']","['tweet', 'entities', 'urls']",['url'],list,string
-tweets.js,expanded_url,"['tweet', 'entities', 'urls', 'expanded_url']","['tweet', 'entities', 'urls']",['expanded_url'],list,string
-tweets.js,display_url,"['tweet', 'entities', 'urls', 'display_url']","['tweet', 'entities', 'urls']",['display_url'],list,string
-tweets.js,indices,"['tweet', 'entities', 'urls', 'indices']","['tweet', 'entities', 'urls']",['indices'],list,string
-tweets.js,name,"['tweet', 'entities', 'user_mentions', 'name']","['tweet', 'entities', 'user_mentions']",['name'],list,string
-tweets.js,screen_name,"['tweet', 'entities', 'user_mentions', 'screen_name']","['tweet', 'entities', 'user_mentions']",['screen_name'],list,string
-tweets.js,indices,"['tweet', 'entities', 'user_mentions', 'indices']","['tweet', 'entities', 'user_mentions']",['indices'],list,string
-tweets.js,id_str,"['tweet', 'entities', 'user_mentions', 'id_str']","['tweet', 'entities', 'user_mentions']",['id_str'],list,string
-tweets.js,id,"['tweet', 'entities', 'user_mentions', 'id']","['tweet', 'entities', 'user_mentions']",['id'],list,string
-tweets.js,text,"['tweet', 'entities', 'hashtags', 'text']","['tweet', 'entities', 'hashtags']",['text'],list,string
-tweets.js,indices,"['tweet', 'entities', 'hashtags', 'indices']","['tweet', 'entities', 'hashtags']",['indices'],list,string
-tweets.js,expanded_url,"['tweet', 'entities', 'media', 'expanded_url']","['tweet', 'entities', 'media']",['expanded_url'],list,string
-tweets.js,indices,"['tweet', 'entities', 'media', 'indices']","['tweet', 'entities', 'media']",['indices'],list,string
-tweets.js,url,"['tweet', 'entities', 'media', 'url']","['tweet', 'entities', 'media']",['url'],list,string
-tweets.js,media_url,"['tweet', 'entities', 'media', 'media_url']","['tweet', 'entities', 'media']",['media_url'],list,string
-tweets.js,id_str,"['tweet', 'entities', 'media', 'id_str']","['tweet', 'entities', 'media']",['id_str'],list,string
-tweets.js,id,"['tweet', 'entities', 'media', 'id']","['tweet', 'entities', 'media']",['id'],list,string
-tweets.js,media_url_https,"['tweet', 'entities', 'media', 'media_url_https']","['tweet', 'entities', 'media']",['media_url_https'],list,string
-tweets.js,type,"['tweet', 'entities', 'media', 'type']","['tweet', 'entities', 'media']",['type'],list,string
-tweets.js,display_url,"['tweet', 'entities', 'media', 'display_url']","['tweet', 'entities', 'media']",['display_url'],list,string
-tweets.js,expanded_url,"['tweet', 'extended_entities', 'media', 'expanded_url']","['tweet', 'extended_entities', 'media']",['expanded_url'],list,string
-tweets.js,indices,"['tweet', 'extended_entities', 'media', 'indices']","['tweet', 'extended_entities', 'media']",['indices'],list,string
-tweets.js,url,"['tweet', 'extended_entities', 'media', 'url']","['tweet', 'extended_entities', 'media']",['url'],list,string
-tweets.js,media_url,"['tweet', 'extended_entities', 'media', 'media_url']","['tweet', 'extended_entities', 'media']",['media_url'],list,string
-tweets.js,id_str,"['tweet', 'extended_entities', 'media', 'id_str']","['tweet', 'extended_entities', 'media']",['id_str'],list,string
-tweets.js,id,"['tweet', 'extended_entities', 'media', 'id']","['tweet', 'extended_entities', 'media']",['id'],list,string
-tweets.js,media_url_https,"['tweet', 'extended_entities', 'media', 'media_url_https']","['tweet', 'extended_entities', 'media']",['media_url_https'],list,string
-tweets.js,type,"['tweet', 'extended_entities', 'media', 'type']","['tweet', 'extended_entities', 'media']",['type'],list,string
-tweets.js,display_url,"['tweet', 'extended_entities', 'media', 'display_url']","['tweet', 'extended_entities', 'media']",['display_url'],list,string
-tweets.js,source_status_id,"['tweet', 'entities', 'media', 'source_status_id']","['tweet', 'entities', 'media']",['source_status_id'],list,string
-tweets.js,source_user_id,"['tweet', 'entities', 'media', 'source_user_id']","['tweet', 'entities', 'media']",['source_user_id'],list,string
-tweets.js,source_user_id_str,"['tweet', 'entities', 'media', 'source_user_id_str']","['tweet', 'entities', 'media']",['source_user_id_str'],list,string
-tweets.js,source_status_id_str,"['tweet', 'entities', 'media', 'source_status_id_str']","['tweet', 'entities', 'media']",['source_status_id_str'],list,string
-tweets.js,source_status_id,"['tweet', 'extended_entities', 'media', 'source_status_id']","['tweet', 'extended_entities', 'media']",['source_status_id'],list,string
-tweets.js,source_user_id,"['tweet', 'extended_entities', 'media', 'source_user_id']","['tweet', 'extended_entities', 'media']",['source_user_id'],list,string
-tweets.js,source_user_id_str,"['tweet', 'extended_entities', 'media', 'source_user_id_str']","['tweet', 'extended_entities', 'media']",['source_user_id_str'],list,string
-tweets.js,source_status_id_str,"['tweet', 'extended_entities', 'media', 'source_status_id_str']","['tweet', 'extended_entities', 'media']",['source_status_id_str'],list,string
-direct-messages-group.js,url,"['dmConversation', 'messages', 'messageCreate', 'urls', 'url']","['dmConversation', 'messages', 'messageCreate', 'urls']",['url'],list,string
-direct-messages-group.js,expanded,"['dmConversation', 'messages', 'messageCreate', 'urls', 'expanded']","['dmConversation', 'messages', 'messageCreate', 'urls']",['expanded'],list,string
-direct-messages-group.js,display,"['dmConversation', 'messages', 'messageCreate', 'urls', 'display']","['dmConversation', 'messages', 'messageCreate', 'urls']",['display'],list,string
-direct-messages-group.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'senderId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['senderId'],list,string
-direct-messages-group.js,reactionKey,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'reactionKey']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['reactionKey'],list,string
-direct-messages-group.js,eventId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'eventId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['eventId'],list,string
-direct-messages-group.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'createdAt']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['createdAt'],list,string
-direct-messages.js,url,"['dmConversation', 'messages', 'messageCreate', 'urls', 'url']","['dmConversation', 'messages', 'messageCreate', 'urls']",['url'],list,string
-direct-messages.js,expanded,"['dmConversation', 'messages', 'messageCreate', 'urls', 'expanded']","['dmConversation', 'messages', 'messageCreate', 'urls']",['expanded'],list,string
-direct-messages.js,display,"['dmConversation', 'messages', 'messageCreate', 'urls', 'display']","['dmConversation', 'messages', 'messageCreate', 'urls']",['display'],list,string
-direct-messages.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'senderId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['senderId'],list,string
-direct-messages.js,reactionKey,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'reactionKey']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['reactionKey'],list,string
-direct-messages.js,eventId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'eventId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['eventId'],list,string
-direct-messages.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'createdAt']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['createdAt'],list,string
-ad-engagements.js,displayLocation,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'displayLocation']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'displayLocation']",list,string
-ad-engagements.js,impressionTime,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'impressionTime']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'impressionTime']",list,string
-ad-engagements.js,engagementTime,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes', 'engagementTime']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes']",['engagementTime'],list,string
-ad-engagements.js,engagementType,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes', 'engagementType']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes']",['engagementType'],list,string
-tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'small', 'w']","['tweet', 'entities', 'media']","['sizes', 'small', 'w']",list,string
-tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'small', 'h']","['tweet', 'entities', 'media']","['sizes', 'small', 'h']",list,string
-tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'small', 'resize']","['tweet', 'entities', 'media']","['sizes', 'small', 'resize']",list,string
-tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'large', 'w']","['tweet', 'entities', 'media']","['sizes', 'large', 'w']",list,string
-tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'large', 'h']","['tweet', 'entities', 'media']","['sizes', 'large', 'h']",list,string
-tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'large', 'resize']","['tweet', 'entities', 'media']","['sizes', 'large', 'resize']",list,string
-tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'medium', 'w']","['tweet', 'entities', 'media']","['sizes', 'medium', 'w']",list,string
-tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'medium', 'h']","['tweet', 'entities', 'media']","['sizes', 'medium', 'h']",list,string
-tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'medium', 'resize']","['tweet', 'entities', 'media']","['sizes', 'medium', 'resize']",list,string
-tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'thumb', 'w']","['tweet', 'entities', 'media']","['sizes', 'thumb', 'w']",list,string
-tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'thumb', 'h']","['tweet', 'entities', 'media']","['sizes', 'thumb', 'h']",list,string
-tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'thumb', 'resize']","['tweet', 'entities', 'media']","['sizes', 'thumb', 'resize']",list,string
-tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'small', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'small', 'w']",list,string
-tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'small', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'small', 'h']",list,string
-tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'small', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'small', 'resize']",list,string
-tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'large', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'large', 'w']",list,string
-tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'large', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'large', 'h']",list,string
-tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'large', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'large', 'resize']",list,string
-tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'medium', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'medium', 'w']",list,string
-tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'medium', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'medium', 'h']",list,string
-tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'medium', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'medium', 'resize']",list,string
-tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'thumb', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'thumb', 'w']",list,string
-tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'thumb', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'thumb', 'h']",list,string
-tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'thumb', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'thumb', 'resize']",list,string
-ad-engagements.js,osType,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'deviceInfo', 'osType']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'deviceInfo', 'osType']",list,string
-ad-engagements.js,deviceId,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'deviceInfo', 'deviceId']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'deviceInfo', 'deviceId']",list,string
-ad-engagements.js,tweetId,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'tweetId']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'tweetId']",list,string
-ad-engagements.js,tweetText,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'tweetText']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'tweetText']",list,string
-ad-engagements.js,urls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'urls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'urls']",list,array
-ad-engagements.js,mediaUrls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'mediaUrls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'mediaUrls']",list,string
-ad-engagements.js,advertiserName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'advertiserInfo', 'advertiserName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'advertiserInfo', 'advertiserName']",list,string
-ad-engagements.js,screenName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'advertiserInfo', 'screenName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'advertiserInfo', 'screenName']",list,string
-ad-engagements.js,targetingType,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria', 'targetingType']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria']",['targetingType'],list,string
-ad-engagements.js,targetingValue,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria', 'targetingValue']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria']",['targetingValue'],list,string
-ad-engagements.js,trendId,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'trendId']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTrendInfo', 'trendId']",list,string
-ad-engagements.js,name,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'name']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTrendInfo', 'name']",list,string
-ad-engagements.js,description,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'description']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTrendInfo', 'description']",list,string
-ad-engagements.js,urls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'urls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'urls']",list,string
-ad-engagements.js,mediaUrls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'mediaUrls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'mediaUrls']",list,array
-ad-engagements.js,publisherName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'publisherInfo', 'publisherName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'publisherInfo', 'publisherName']",list,string
-ad-engagements.js,screenName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'publisherInfo', 'screenName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'publisherInfo', 'screenName']",list,string
-account-suspension.js,nan,nan,nan,nan,skip,nan
-ad-impressions.js,nan,nan,nan,nan,skip,nan
-ad-mobile-conversions-attributed.js,nan,nan,nan,nan,skip,nan
-ad-mobile-conversions-unattributed.js,nan,nan,nan,nan,skip,nan
-ad-online-conversions-attributed.js,nan,nan,nan,nan,skip,nan
-ad-online-conversions-unattributed.js,nan,nan,nan,nan,skip,nan
-app.js,nan,nan,nan,nan,skip,nan
-article-metadata.js,nan,nan,nan,nan,skip,nan
-article.js,nan,nan,nan,nan,skip,nan
-audio-video-calls-in-dm-recipient-sessions.js,nan,nan,nan,nan,skip,nan
-audio-video-calls-in-dm.js,nan,nan,nan,nan,skip,nan
-block.js,nan,nan,nan,nan,skip,nan
-branch-links.js,nan,nan,nan,nan,skip,nan
-catalog-item.js,nan,nan,nan,nan,skip,nan
-commerce-catalog.js,nan,nan,nan,nan,skip,nan
-community-note-batsignal.js,nan,nan,nan,nan,skip,nan
-community-note-tombstone.js,nan,nan,nan,nan,skip,nan
-community-note.js,nan,nan,nan,nan,skip,nan
-community-tweet.js,nan,nan,nan,nan,skip,nan
-contact.js,nan,nan,nan,nan,skip,nan
-deleted-note-tweet.js,nan,nan,nan,nan,skip,nan
-deleted-tweet-headers.js,nan,nan,nan,nan,skip,nan
-deleted-tweets.js,nan,nan,nan,nan,skip,nan
-direct-message-mute.js,nan,nan,nan,nan,skip,nan
-email-address-change.js,nan,nan,nan,nan,skip,nan
-grok-chat-item.js,nan,nan,nan,nan,skip,nan
-lists-created.js,nan,nan,nan,nan,skip,nan
-lists-member.js,nan,nan,nan,nan,skip,nan
-lists-subscribed.js,nan,nan,nan,nan,skip,nan
-moment.js,nan,nan,nan,nan,skip,nan
-mute.js,nan,nan,nan,nan,skip,nan
-ni-devices.js,nan,nan,nan,nan,skip,nan
-note-tweet.js,nan,nan,nan,nan,skip,nan
-periscope-broadcast-metadata.js,nan,nan,nan,nan,skip,nan
-periscope-comments-made-by-user.js,nan,nan,nan,nan,skip,nan
-periscope-expired-broadcasts.js,nan,nan,nan,nan,skip,nan
-periscope-followers.js,nan,nan,nan,nan,skip,nan
-phone-number.js,nan,nan,nan,nan,skip,nan
-product-drop.js,nan,nan,nan,nan,skip,nan
-product-set.js,nan,nan,nan,nan,skip,nan
-professional-data.js,nan,nan,nan,nan,skip,nan
-protected-history.js,nan,nan,nan,nan,skip,nan
-reply-prompt.js,nan,nan,nan,nan,skip,nan
-saved-search.js,nan,nan,nan,nan,skip,nan
-shop-module.js,nan,nan,nan,nan,skip,nan
-shopify-account.js,nan,nan,nan,nan,skip,nan
-smartblock.js,nan,nan,nan,nan,skip,nan
-spaces-metadata.js,nan,nan,nan,nan,skip,nan
-sso.js,nan,nan,nan,nan,skip,nan
-tweetdeck.js,nan,nan,nan,nan,skip,nan
-twitter-shop.js,nan,nan,nan,nan,skip,nan
-user-link-clicks.js,nan,nan,nan,nan,skip,nan
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+manifest.js,accountId,"['userInfo', 'accountId']",,"['userInfo', 'accountId']",static,string,data/manifest.js
+manifest.js,userName,"['userInfo', 'userName']",,"['userInfo', 'userName']",static,string,data/manifest.js
+manifest.js,displayName,"['userInfo', 'displayName']",,"['userInfo', 'displayName']",static,string,data/manifest.js
+manifest.js,sizeBytes,"['archiveInfo', 'sizeBytes']",,"['archiveInfo', 'sizeBytes']",static,string,data/manifest.js
+manifest.js,generationDate,"['archiveInfo', 'generationDate']",,"['archiveInfo', 'generationDate']",static,string,data/manifest.js
+manifest.js,isPartialArchive,"['archiveInfo', 'isPartialArchive']",,"['archiveInfo', 'isPartialArchive']",static,boolean,data/manifest.js
+manifest.js,maxPartSizeBytes,"['archiveInfo', 'maxPartSizeBytes']",,"['archiveInfo', 'maxPartSizeBytes']",static,string,data/manifest.js
+manifest.js,fileName,"['readmeInfo', 'fileName']",,"['readmeInfo', 'fileName']",static,string,data/manifest.js
+manifest.js,directory,"['readmeInfo', 'directory']",,"['readmeInfo', 'directory']",static,string,data/manifest.js
+manifest.js,name,"['readmeInfo', 'name']",,"['readmeInfo', 'name']",static,string,data/manifest.js
+account-creation-ip.js,accountId,"['accountCreationIp', 'accountId']",,"['accountCreationIp', 'accountId']",static,string,data/account-creation-ip.js
+account-creation-ip.js,userCreationIp,"['accountCreationIp', 'userCreationIp']",,"['accountCreationIp', 'userCreationIp']",static,string,data/account-creation-ip.js
+account-timezone.js,accountId,"['accountTimezone', 'accountId']",,"['accountTimezone', 'accountId']",static,string,data/account-timezone.js
+account.js,email,"['account', 'email']",,"['account', 'email']",static,string,data/account.js
+account.js,createdVia,"['account', 'createdVia']",,"['account', 'createdVia']",static,string,data/account.js
+account.js,username,"['account', 'username']",,"['account', 'username']",static,string,data/account.js
+account.js,accountId,"['account', 'accountId']",,"['account', 'accountId']",static,string,data/account.js
+account.js,createdAt,"['account', 'createdAt']",,"['account', 'createdAt']",static,string,data/account.js
+account.js,accountDisplayName,"['account', 'accountDisplayName']",,"['account', 'accountDisplayName']",static,string,data/account.js
+ads-revenue-sharing.js,payoutHistory,"['adsRevenueSharing', 'payoutHistory']",,"['adsRevenueSharing', 'payoutHistory']",static,array,data/ads-revenue-sharing.js
+connected-application.js,name,"['connectedApplication', 'name']",,"['connectedApplication', 'name']",static,string,data/connected-application.js
+connected-application.js,description,"['connectedApplication', 'description']",,"['connectedApplication', 'description']",static,string,data/connected-application.js
+connected-application.js,permissions,"['connectedApplication', 'permissions']",,"['connectedApplication', 'permissions']",static,string,data/connected-application.js
+connected-application.js,approvedAt,"['connectedApplication', 'approvedAt']",,"['connectedApplication', 'approvedAt']",static,string,data/connected-application.js
+connected-application.js,id,"['connectedApplication', 'id']",,"['connectedApplication', 'id']",static,string,data/connected-application.js
+direct-message-group-headers.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string,data/direct-message-group-headers.js
+direct-messages-group.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string,data/direct-messages-group.js
+key-registry.js,userId,"['keyRegistryData', 'userId']",,"['keyRegistryData', 'userId']",static,string,data/key-registry.js
+periscope-account-information.js,displayName,"['periscopeAccountInformation', 'displayName']",,"['periscopeAccountInformation', 'displayName']",static,string,data/periscope-account-information.js
+periscope-account-information.js,digitsId,"['periscopeAccountInformation', 'digitsId']",,"['periscopeAccountInformation', 'digitsId']",static,string,data/periscope-account-information.js
+periscope-account-information.js,username,"['periscopeAccountInformation', 'username']",,"['periscopeAccountInformation', 'username']",static,string,data/periscope-account-information.js
+periscope-account-information.js,twitterId,"['periscopeAccountInformation', 'twitterId']",,"['periscopeAccountInformation', 'twitterId']",static,string,data/periscope-account-information.js
+periscope-account-information.js,id,"['periscopeAccountInformation', 'id']",,"['periscopeAccountInformation', 'id']",static,string,data/periscope-account-information.js
+periscope-account-information.js,twitterScreenName,"['periscopeAccountInformation', 'twitterScreenName']",,"['periscopeAccountInformation', 'twitterScreenName']",static,string,data/periscope-account-information.js
+periscope-account-information.js,isTwitterUser,"['periscopeAccountInformation', 'isTwitterUser']",,"['periscopeAccountInformation', 'isTwitterUser']",static,boolean,data/periscope-account-information.js
+periscope-account-information.js,createdAt,"['periscopeAccountInformation', 'createdAt']",,"['periscopeAccountInformation', 'createdAt']",static,string,data/periscope-account-information.js
+periscope-profile-description.js,bio,"['periscopeProfileDescription', 'bio']",,"['periscopeProfileDescription', 'bio']",static,string,data/periscope-profile-description.js
+personalization.js,locationHistory,"['p13nData', 'locationHistory']",,"['p13nData', 'locationHistory']",static,array,data/personalization.js
+profile.js,avatarMediaUrl,"['profile', 'avatarMediaUrl']",,"['profile', 'avatarMediaUrl']",static,string,data/profile.js
+profile.js,headerMediaUrl,"['profile', 'headerMediaUrl']",,"['profile', 'headerMediaUrl']",static,string,data/profile.js
+screen-name-change.js,accountId,"['screenNameChange', 'accountId']",,"['screenNameChange', 'accountId']",static,string,data/screen-name-change.js
+verified.js,accountId,"['verified', 'accountId']",,"['verified', 'accountId']",static,string,data/verified.js
+verified.js,verified,"['verified', 'verified']",,"['verified', 'verified']",static,boolean,data/verified.js
+community-note-rating.js,noteId,"['communityNoteRating', 'noteId']",,"['communityNoteRating', 'noteId']",static,string,data/community-note-rating.js
+community-note-rating.js,helpfulnessLevel,"['communityNoteRating', 'helpfulnessLevel']",,"['communityNoteRating', 'helpfulnessLevel']",static,string,data/community-note-rating.js
+community-note-rating.js,createdAt,"['communityNoteRating', 'createdAt']",,"['communityNoteRating', 'createdAt']",static,string,data/community-note-rating.js
+community-note-rating.js,userId,"['communityNoteRating', 'userId']",,"['communityNoteRating', 'userId']",static,string,data/community-note-rating.js
+community-note-rating.js,helpfulTags,"['communityNoteRating', 'helpfulTags']",,"['communityNoteRating', 'helpfulTags']",static,string,data/community-note-rating.js
+device-token.js,clientApplicationId,"['deviceToken', 'clientApplicationId']",,"['deviceToken', 'clientApplicationId']",static,string,data/device-token.js
+device-token.js,token,"['deviceToken', 'token']",,"['deviceToken', 'token']",static,string,data/device-token.js
+device-token.js,createdAt,"['deviceToken', 'createdAt']",,"['deviceToken', 'createdAt']",static,string,data/device-token.js
+device-token.js,lastSeenAt,"['deviceToken', 'lastSeenAt']",,"['deviceToken', 'lastSeenAt']",static,string,data/device-token.js
+device-token.js,clientApplicationName,"['deviceToken', 'clientApplicationName']",,"['deviceToken', 'clientApplicationName']",static,string,data/device-token.js
+direct-message-headers.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string,data/direct-message-headers.js
+direct-messages.js,conversationId,"['dmConversation', 'conversationId']",,"['dmConversation', 'conversationId']",static,string,data/direct-messages.js
+follower.js,accountId,"['follower', 'accountId']",,"['follower', 'accountId']",static,string,data/follower.js
+follower.js,userLink,"['follower', 'userLink']",,"['follower', 'userLink']",static,string,data/follower.js
+following.js,accountId,"['following', 'accountId']",,"['following', 'accountId']",static,string,data/following.js
+following.js,userLink,"['following', 'userLink']",,"['following', 'userLink']",static,string,data/following.js
+ip-audit.js,accountId,"['ipAudit', 'accountId']",,"['ipAudit', 'accountId']",static,string,data/ip-audit.js
+ip-audit.js,createdAt,"['ipAudit', 'createdAt']",,"['ipAudit', 'createdAt']",static,string,data/ip-audit.js
+ip-audit.js,loginIp,"['ipAudit', 'loginIp']",,"['ipAudit', 'loginIp']",static,string,data/ip-audit.js
+ip-audit.js,loginPortNumber,"['ipAudit', 'loginPortNumber']",,"['ipAudit', 'loginPortNumber']",static,string,data/ip-audit.js
+like.js,tweetId,"['like', 'tweetId']",,"['like', 'tweetId']",static,string,data/like.js
+like.js,fullText,"['like', 'fullText']",,"['like', 'fullText']",static,string,data/like.js
+like.js,expandedUrl,"['like', 'expandedUrl']",,"['like', 'expandedUrl']",static,string,data/like.js
+tweet-headers.js,tweet_id,"['tweet', 'tweet_id']",,"['tweet', 'tweet_id']",static,string,data/tweet-headers.js
+tweet-headers.js,user_id,"['tweet', 'user_id']",,"['tweet', 'user_id']",static,string,data/tweet-headers.js
+tweet-headers.js,created_at,"['tweet', 'created_at']",,"['tweet', 'created_at']",static,string,data/tweet-headers.js
+tweets.js,retweeted,"['tweet', 'retweeted']",,"['tweet', 'retweeted']",static,boolean,data/tweets.js
+tweets.js,source,"['tweet', 'source']",,"['tweet', 'source']",static,string,data/tweets.js
+tweets.js,display_text_range,"['tweet', 'display_text_range']",,"['tweet', 'display_text_range']",static,string,data/tweets.js
+tweets.js,favorite_count,"['tweet', 'favorite_count']",,"['tweet', 'favorite_count']",static,string,data/tweets.js
+tweets.js,id_str,"['tweet', 'id_str']",,"['tweet', 'id_str']",static,string,data/tweets.js
+tweets.js,truncated,"['tweet', 'truncated']",,"['tweet', 'truncated']",static,boolean,data/tweets.js
+tweets.js,retweet_count,"['tweet', 'retweet_count']",,"['tweet', 'retweet_count']",static,string,data/tweets.js
+tweets.js,id,"['tweet', 'id']",,"['tweet', 'id']",static,string,data/tweets.js
+tweets.js,possibly_sensitive,"['tweet', 'possibly_sensitive']",,"['tweet', 'possibly_sensitive']",static,boolean,data/tweets.js
+tweets.js,created_at,"['tweet', 'created_at']",,"['tweet', 'created_at']",static,string,data/tweets.js
+tweets.js,favorited,"['tweet', 'favorited']",,"['tweet', 'favorited']",static,boolean,data/tweets.js
+tweets.js,full_text,"['tweet', 'full_text']",,"['tweet', 'full_text']",static,string,data/tweets.js
+tweets.js,lang,"['tweet', 'lang']",,"['tweet', 'lang']",static,string,data/tweets.js
+tweets.js,in_reply_to_status_id_str,"['tweet', 'in_reply_to_status_id_str']",,"['tweet', 'in_reply_to_status_id_str']",static,string,data/tweets.js
+tweets.js,in_reply_to_user_id,"['tweet', 'in_reply_to_user_id']",,"['tweet', 'in_reply_to_user_id']",static,string,data/tweets.js
+tweets.js,in_reply_to_status_id,"['tweet', 'in_reply_to_status_id']",,"['tweet', 'in_reply_to_status_id']",static,string,data/tweets.js
+tweets.js,in_reply_to_screen_name,"['tweet', 'in_reply_to_screen_name']",,"['tweet', 'in_reply_to_screen_name']",static,string,data/tweets.js
+tweets.js,in_reply_to_user_id_str,"['tweet', 'in_reply_to_user_id_str']",,"['tweet', 'in_reply_to_user_id_str']",static,string,data/tweets.js
+manifest.js,mediaDirectory,"['dataTypes', 'communityTweet', 'mediaDirectory']",,"['dataTypes', 'communityTweet', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'communityTweetMedia', 'mediaDirectory']",,"['dataTypes', 'communityTweetMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'deletedTweets', 'mediaDirectory']",,"['dataTypes', 'deletedTweets', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'deletedTweetsMedia', 'mediaDirectory']",,"['dataTypes', 'deletedTweetsMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'directMessages', 'mediaDirectory']",,"['dataTypes', 'directMessages', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'directMessagesGroup', 'mediaDirectory']",,"['dataTypes', 'directMessagesGroup', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'directMessagesGroupMedia', 'mediaDirectory']",,"['dataTypes', 'directMessagesGroupMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'directMessagesMedia', 'mediaDirectory']",,"['dataTypes', 'directMessagesMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'grokChatMedia', 'mediaDirectory']",,"['dataTypes', 'grokChatMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'moment', 'mediaDirectory']",,"['dataTypes', 'moment', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'momentsMedia', 'mediaDirectory']",,"['dataTypes', 'momentsMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'momentsTweetsMedia', 'mediaDirectory']",,"['dataTypes', 'momentsTweetsMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'profile', 'mediaDirectory']",,"['dataTypes', 'profile', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'profileMedia', 'mediaDirectory']",,"['dataTypes', 'profileMedia', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'tweets', 'mediaDirectory']",,"['dataTypes', 'tweets', 'mediaDirectory']",static,string,data/manifest.js
+manifest.js,mediaDirectory,"['dataTypes', 'tweetsMedia', 'mediaDirectory']",,"['dataTypes', 'tweetsMedia', 'mediaDirectory']",static,string,data/manifest.js
+ageinfo.js,age,"['ageMeta', 'ageInfo', 'age']",,"['ageMeta', 'ageInfo', 'age']",static,string,data/ageinfo.js
+ageinfo.js,birthDate,"['ageMeta', 'ageInfo', 'birthDate']",,"['ageMeta', 'ageInfo', 'birthDate']",static,string,data/ageinfo.js
+connected-application.js,name,"['connectedApplication', 'organization', 'name']",,"['connectedApplication', 'organization', 'name']",static,string,data/connected-application.js
+connected-application.js,url,"['connectedApplication', 'organization', 'url']",,"['connectedApplication', 'organization', 'url']",static,string,data/connected-application.js
+key-registry.js,deRegisteredDeviceMetadataList,"['keyRegistryData', 'deregisteredDevices', 'deRegisteredDeviceMetadataList']",,"['keyRegistryData', 'deregisteredDevices', 'deRegisteredDeviceMetadataList']",static,array,data/key-registry.js
+personalization.js,partnerInterests,"['p13nData', 'interests', 'partnerInterests']",,"['p13nData', 'interests', 'partnerInterests']",static,array,data/personalization.js
+personalization.js,shows,"['p13nData', 'interests', 'shows']",,"['p13nData', 'interests', 'shows']",static,string,data/personalization.js
+personalization.js,age,"['p13nData', 'inferredAgeInfo', 'age']",,"['p13nData', 'inferredAgeInfo', 'age']",static,string,data/personalization.js
+personalization.js,birthDate,"['p13nData', 'inferredAgeInfo', 'birthDate']",,"['p13nData', 'inferredAgeInfo', 'birthDate']",static,string,data/personalization.js
+profile.js,bio,"['profile', 'description', 'bio']",,"['profile', 'description', 'bio']",static,string,data/profile.js
+profile.js,website,"['profile', 'description', 'website']",,"['profile', 'description', 'website']",static,string,data/profile.js
+profile.js,location,"['profile', 'description', 'location']",,"['profile', 'description', 'location']",static,string,data/profile.js
+screen-name-change.js,changedAt,"['screenNameChange', 'screenNameChange', 'changedAt']",,"['screenNameChange', 'screenNameChange', 'changedAt']",static,string,data/screen-name-change.js
+screen-name-change.js,changedFrom,"['screenNameChange', 'screenNameChange', 'changedFrom']",,"['screenNameChange', 'screenNameChange', 'changedFrom']",static,string,data/screen-name-change.js
+screen-name-change.js,changedTo,"['screenNameChange', 'screenNameChange', 'changedTo']",,"['screenNameChange', 'screenNameChange', 'changedTo']",static,string,data/screen-name-change.js
+tweets.js,hashtags,"['tweet', 'entities', 'hashtags']",,"['tweet', 'entities', 'hashtags']",static,array,data/tweets.js
+tweets.js,symbols,"['tweet', 'entities', 'symbols']",,"['tweet', 'entities', 'symbols']",static,array,data/tweets.js
+tweets.js,user_mentions,"['tweet', 'entities', 'user_mentions']",,"['tweet', 'entities', 'user_mentions']",static,array,data/tweets.js
+tweets.js,urls,"['tweet', 'entities', 'urls']",,"['tweet', 'entities', 'urls']",static,array,data/tweets.js
+personalization.js,gender,"['p13nData', 'demographics', 'genderInfo', 'gender']",,"['p13nData', 'demographics', 'genderInfo', 'gender']",static,string,data/personalization.js
+personalization.js,lookalikeAdvertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'lookalikeAdvertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'lookalikeAdvertisers']",static,string,data/personalization.js
+personalization.js,advertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'advertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'advertisers']",static,array,data/personalization.js
+personalization.js,doNotReachAdvertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'doNotReachAdvertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'doNotReachAdvertisers']",static,array,data/personalization.js
+personalization.js,catalogAudienceAdvertisers,"['p13nData', 'interests', 'audienceAndAdvertisers', 'catalogAudienceAdvertisers']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'catalogAudienceAdvertisers']",static,array,data/personalization.js
+personalization.js,numAudiences,"['p13nData', 'interests', 'audienceAndAdvertisers', 'numAudiences']",,"['p13nData', 'interests', 'audienceAndAdvertisers', 'numAudiences']",static,string,data/personalization.js
+tweets.js,editTweetIds,"['tweet', 'edit_info', 'initial', 'editTweetIds']",,"['tweet', 'edit_info', 'initial', 'editTweetIds']",static,string,data/tweets.js
+tweets.js,editableUntil,"['tweet', 'edit_info', 'initial', 'editableUntil']",,"['tweet', 'edit_info', 'initial', 'editableUntil']",static,string,data/tweets.js
+tweets.js,editsRemaining,"['tweet', 'edit_info', 'initial', 'editsRemaining']",,"['tweet', 'edit_info', 'initial', 'editsRemaining']",static,string,data/tweets.js
+tweets.js,isEditEligible,"['tweet', 'edit_info', 'initial', 'isEditEligible']",,"['tweet', 'edit_info', 'initial', 'isEditEligible']",static,boolean,data/tweets.js
+manifest.js,fileName,"['dataTypes', 'account', 'files', 'fileName']","['dataTypes', 'account', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'account', 'files', 'globalName']","['dataTypes', 'account', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'account', 'files', 'count']","['dataTypes', 'account', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'accountCreationIp', 'files', 'fileName']","['dataTypes', 'accountCreationIp', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'accountCreationIp', 'files', 'globalName']","['dataTypes', 'accountCreationIp', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'accountCreationIp', 'files', 'count']","['dataTypes', 'accountCreationIp', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'accountLabel', 'files', 'fileName']","['dataTypes', 'accountLabel', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'accountLabel', 'files', 'globalName']","['dataTypes', 'accountLabel', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'accountLabel', 'files', 'count']","['dataTypes', 'accountLabel', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'accountSuspension', 'files', 'fileName']","['dataTypes', 'accountSuspension', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'accountSuspension', 'files', 'globalName']","['dataTypes', 'accountSuspension', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'accountSuspension', 'files', 'count']","['dataTypes', 'accountSuspension', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'accountTimezone', 'files', 'fileName']","['dataTypes', 'accountTimezone', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'accountTimezone', 'files', 'globalName']","['dataTypes', 'accountTimezone', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'accountTimezone', 'files', 'count']","['dataTypes', 'accountTimezone', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adEngagements', 'files', 'fileName']","['dataTypes', 'adEngagements', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adEngagements', 'files', 'globalName']","['dataTypes', 'adEngagements', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adEngagements', 'files', 'count']","['dataTypes', 'adEngagements', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adImpressions', 'files', 'fileName']","['dataTypes', 'adImpressions', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adImpressions', 'files', 'globalName']","['dataTypes', 'adImpressions', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adImpressions', 'files', 'count']","['dataTypes', 'adImpressions', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adMobileConversionsAttributed', 'files', 'fileName']","['dataTypes', 'adMobileConversionsAttributed', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adMobileConversionsAttributed', 'files', 'globalName']","['dataTypes', 'adMobileConversionsAttributed', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adMobileConversionsAttributed', 'files', 'count']","['dataTypes', 'adMobileConversionsAttributed', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adMobileConversionsUnattributed', 'files', 'fileName']","['dataTypes', 'adMobileConversionsUnattributed', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adMobileConversionsUnattributed', 'files', 'globalName']","['dataTypes', 'adMobileConversionsUnattributed', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adMobileConversionsUnattributed', 'files', 'count']","['dataTypes', 'adMobileConversionsUnattributed', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adOnlineConversionsAttributed', 'files', 'fileName']","['dataTypes', 'adOnlineConversionsAttributed', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adOnlineConversionsAttributed', 'files', 'globalName']","['dataTypes', 'adOnlineConversionsAttributed', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adOnlineConversionsAttributed', 'files', 'count']","['dataTypes', 'adOnlineConversionsAttributed', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adOnlineConversionsUnattributed', 'files', 'fileName']","['dataTypes', 'adOnlineConversionsUnattributed', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adOnlineConversionsUnattributed', 'files', 'globalName']","['dataTypes', 'adOnlineConversionsUnattributed', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adOnlineConversionsUnattributed', 'files', 'count']","['dataTypes', 'adOnlineConversionsUnattributed', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'adsRevenueSharing', 'files', 'fileName']","['dataTypes', 'adsRevenueSharing', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'adsRevenueSharing', 'files', 'globalName']","['dataTypes', 'adsRevenueSharing', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'adsRevenueSharing', 'files', 'count']","['dataTypes', 'adsRevenueSharing', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'ageinfo', 'files', 'fileName']","['dataTypes', 'ageinfo', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'ageinfo', 'files', 'globalName']","['dataTypes', 'ageinfo', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'ageinfo', 'files', 'count']","['dataTypes', 'ageinfo', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'app', 'files', 'fileName']","['dataTypes', 'app', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'app', 'files', 'globalName']","['dataTypes', 'app', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'app', 'files', 'count']","['dataTypes', 'app', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'article', 'files', 'fileName']","['dataTypes', 'article', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'article', 'files', 'globalName']","['dataTypes', 'article', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'article', 'files', 'count']","['dataTypes', 'article', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'articleMetadata', 'files', 'fileName']","['dataTypes', 'articleMetadata', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'articleMetadata', 'files', 'globalName']","['dataTypes', 'articleMetadata', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'articleMetadata', 'files', 'count']","['dataTypes', 'articleMetadata', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'audioVideoCallsInDm', 'files', 'fileName']","['dataTypes', 'audioVideoCallsInDm', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'audioVideoCallsInDm', 'files', 'globalName']","['dataTypes', 'audioVideoCallsInDm', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'audioVideoCallsInDm', 'files', 'count']","['dataTypes', 'audioVideoCallsInDm', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files', 'fileName']","['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files', 'globalName']","['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files', 'count']","['dataTypes', 'audioVideoCallsInDmRecipientSessions', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'block', 'files', 'fileName']","['dataTypes', 'block', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'block', 'files', 'globalName']","['dataTypes', 'block', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'block', 'files', 'count']","['dataTypes', 'block', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'branchLinks', 'files', 'fileName']","['dataTypes', 'branchLinks', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'branchLinks', 'files', 'globalName']","['dataTypes', 'branchLinks', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'branchLinks', 'files', 'count']","['dataTypes', 'branchLinks', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'catalogItem', 'files', 'fileName']","['dataTypes', 'catalogItem', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'catalogItem', 'files', 'globalName']","['dataTypes', 'catalogItem', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'catalogItem', 'files', 'count']","['dataTypes', 'catalogItem', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'commerceCatalog', 'files', 'fileName']","['dataTypes', 'commerceCatalog', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'commerceCatalog', 'files', 'globalName']","['dataTypes', 'commerceCatalog', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'commerceCatalog', 'files', 'count']","['dataTypes', 'commerceCatalog', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'communityNote', 'files', 'fileName']","['dataTypes', 'communityNote', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'communityNote', 'files', 'globalName']","['dataTypes', 'communityNote', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'communityNote', 'files', 'count']","['dataTypes', 'communityNote', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'communityNoteBatsignal', 'files', 'fileName']","['dataTypes', 'communityNoteBatsignal', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'communityNoteBatsignal', 'files', 'globalName']","['dataTypes', 'communityNoteBatsignal', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'communityNoteBatsignal', 'files', 'count']","['dataTypes', 'communityNoteBatsignal', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'communityNoteRating', 'files', 'fileName']","['dataTypes', 'communityNoteRating', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'communityNoteRating', 'files', 'globalName']","['dataTypes', 'communityNoteRating', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'communityNoteRating', 'files', 'count']","['dataTypes', 'communityNoteRating', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'communityNoteTombstone', 'files', 'fileName']","['dataTypes', 'communityNoteTombstone', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'communityNoteTombstone', 'files', 'globalName']","['dataTypes', 'communityNoteTombstone', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'communityNoteTombstone', 'files', 'count']","['dataTypes', 'communityNoteTombstone', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'communityTweet', 'files', 'fileName']","['dataTypes', 'communityTweet', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'communityTweet', 'files', 'globalName']","['dataTypes', 'communityTweet', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'communityTweet', 'files', 'count']","['dataTypes', 'communityTweet', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'connectedApplication', 'files', 'fileName']","['dataTypes', 'connectedApplication', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'connectedApplication', 'files', 'globalName']","['dataTypes', 'connectedApplication', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'connectedApplication', 'files', 'count']","['dataTypes', 'connectedApplication', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'contact', 'files', 'fileName']","['dataTypes', 'contact', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'contact', 'files', 'globalName']","['dataTypes', 'contact', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'contact', 'files', 'count']","['dataTypes', 'contact', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'deletedNoteTweet', 'files', 'fileName']","['dataTypes', 'deletedNoteTweet', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'deletedNoteTweet', 'files', 'globalName']","['dataTypes', 'deletedNoteTweet', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'deletedNoteTweet', 'files', 'count']","['dataTypes', 'deletedNoteTweet', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'deletedTweetHeaders', 'files', 'fileName']","['dataTypes', 'deletedTweetHeaders', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'deletedTweetHeaders', 'files', 'globalName']","['dataTypes', 'deletedTweetHeaders', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'deletedTweetHeaders', 'files', 'count']","['dataTypes', 'deletedTweetHeaders', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'deletedTweets', 'files', 'fileName']","['dataTypes', 'deletedTweets', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'deletedTweets', 'files', 'globalName']","['dataTypes', 'deletedTweets', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'deletedTweets', 'files', 'count']","['dataTypes', 'deletedTweets', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'deviceToken', 'files', 'fileName']","['dataTypes', 'deviceToken', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'deviceToken', 'files', 'globalName']","['dataTypes', 'deviceToken', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'deviceToken', 'files', 'count']","['dataTypes', 'deviceToken', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'directMessageGroupHeaders', 'files', 'fileName']","['dataTypes', 'directMessageGroupHeaders', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'directMessageGroupHeaders', 'files', 'globalName']","['dataTypes', 'directMessageGroupHeaders', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'directMessageGroupHeaders', 'files', 'count']","['dataTypes', 'directMessageGroupHeaders', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'directMessageHeaders', 'files', 'fileName']","['dataTypes', 'directMessageHeaders', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'directMessageHeaders', 'files', 'globalName']","['dataTypes', 'directMessageHeaders', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'directMessageHeaders', 'files', 'count']","['dataTypes', 'directMessageHeaders', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'directMessageMute', 'files', 'fileName']","['dataTypes', 'directMessageMute', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'directMessageMute', 'files', 'globalName']","['dataTypes', 'directMessageMute', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'directMessageMute', 'files', 'count']","['dataTypes', 'directMessageMute', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'directMessages', 'files', 'fileName']","['dataTypes', 'directMessages', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'directMessages', 'files', 'globalName']","['dataTypes', 'directMessages', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'directMessages', 'files', 'count']","['dataTypes', 'directMessages', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'directMessagesGroup', 'files', 'fileName']","['dataTypes', 'directMessagesGroup', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'directMessagesGroup', 'files', 'globalName']","['dataTypes', 'directMessagesGroup', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'directMessagesGroup', 'files', 'count']","['dataTypes', 'directMessagesGroup', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'emailAddressChange', 'files', 'fileName']","['dataTypes', 'emailAddressChange', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'emailAddressChange', 'files', 'globalName']","['dataTypes', 'emailAddressChange', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'emailAddressChange', 'files', 'count']","['dataTypes', 'emailAddressChange', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'expandedProfile', 'files', 'fileName']","['dataTypes', 'expandedProfile', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'expandedProfile', 'files', 'globalName']","['dataTypes', 'expandedProfile', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'expandedProfile', 'files', 'count']","['dataTypes', 'expandedProfile', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'follower', 'files', 'fileName']","['dataTypes', 'follower', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'follower', 'files', 'globalName']","['dataTypes', 'follower', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'follower', 'files', 'count']","['dataTypes', 'follower', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'following', 'files', 'fileName']","['dataTypes', 'following', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'following', 'files', 'globalName']","['dataTypes', 'following', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'following', 'files', 'count']","['dataTypes', 'following', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'grokChatItem', 'files', 'fileName']","['dataTypes', 'grokChatItem', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'grokChatItem', 'files', 'globalName']","['dataTypes', 'grokChatItem', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'grokChatItem', 'files', 'count']","['dataTypes', 'grokChatItem', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'ipAudit', 'files', 'fileName']","['dataTypes', 'ipAudit', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'ipAudit', 'files', 'globalName']","['dataTypes', 'ipAudit', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'ipAudit', 'files', 'count']","['dataTypes', 'ipAudit', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'keyRegistry', 'files', 'fileName']","['dataTypes', 'keyRegistry', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'keyRegistry', 'files', 'globalName']","['dataTypes', 'keyRegistry', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'keyRegistry', 'files', 'count']","['dataTypes', 'keyRegistry', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'like', 'files', 'fileName']","['dataTypes', 'like', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'like', 'files', 'globalName']","['dataTypes', 'like', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'like', 'files', 'count']","['dataTypes', 'like', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'listsCreated', 'files', 'fileName']","['dataTypes', 'listsCreated', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'listsCreated', 'files', 'globalName']","['dataTypes', 'listsCreated', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'listsCreated', 'files', 'count']","['dataTypes', 'listsCreated', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'listsMember', 'files', 'fileName']","['dataTypes', 'listsMember', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'listsMember', 'files', 'globalName']","['dataTypes', 'listsMember', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'listsMember', 'files', 'count']","['dataTypes', 'listsMember', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'listsSubscribed', 'files', 'fileName']","['dataTypes', 'listsSubscribed', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'listsSubscribed', 'files', 'globalName']","['dataTypes', 'listsSubscribed', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'listsSubscribed', 'files', 'count']","['dataTypes', 'listsSubscribed', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'moment', 'files', 'fileName']","['dataTypes', 'moment', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'moment', 'files', 'globalName']","['dataTypes', 'moment', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'moment', 'files', 'count']","['dataTypes', 'moment', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'mute', 'files', 'fileName']","['dataTypes', 'mute', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'mute', 'files', 'globalName']","['dataTypes', 'mute', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'mute', 'files', 'count']","['dataTypes', 'mute', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'niDevices', 'files', 'fileName']","['dataTypes', 'niDevices', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'niDevices', 'files', 'globalName']","['dataTypes', 'niDevices', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'niDevices', 'files', 'count']","['dataTypes', 'niDevices', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'noteTweet', 'files', 'fileName']","['dataTypes', 'noteTweet', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'noteTweet', 'files', 'globalName']","['dataTypes', 'noteTweet', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'noteTweet', 'files', 'count']","['dataTypes', 'noteTweet', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeAccountInformation', 'files', 'fileName']","['dataTypes', 'periscopeAccountInformation', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeAccountInformation', 'files', 'globalName']","['dataTypes', 'periscopeAccountInformation', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeAccountInformation', 'files', 'count']","['dataTypes', 'periscopeAccountInformation', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeBanInformation', 'files', 'fileName']","['dataTypes', 'periscopeBanInformation', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeBanInformation', 'files', 'globalName']","['dataTypes', 'periscopeBanInformation', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeBanInformation', 'files', 'count']","['dataTypes', 'periscopeBanInformation', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeBroadcastMetadata', 'files', 'fileName']","['dataTypes', 'periscopeBroadcastMetadata', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeBroadcastMetadata', 'files', 'globalName']","['dataTypes', 'periscopeBroadcastMetadata', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeBroadcastMetadata', 'files', 'count']","['dataTypes', 'periscopeBroadcastMetadata', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeCommentsMadeByUser', 'files', 'fileName']","['dataTypes', 'periscopeCommentsMadeByUser', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeCommentsMadeByUser', 'files', 'globalName']","['dataTypes', 'periscopeCommentsMadeByUser', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeCommentsMadeByUser', 'files', 'count']","['dataTypes', 'periscopeCommentsMadeByUser', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeExpiredBroadcasts', 'files', 'fileName']","['dataTypes', 'periscopeExpiredBroadcasts', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeExpiredBroadcasts', 'files', 'globalName']","['dataTypes', 'periscopeExpiredBroadcasts', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeExpiredBroadcasts', 'files', 'count']","['dataTypes', 'periscopeExpiredBroadcasts', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeFollowers', 'files', 'fileName']","['dataTypes', 'periscopeFollowers', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeFollowers', 'files', 'globalName']","['dataTypes', 'periscopeFollowers', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeFollowers', 'files', 'count']","['dataTypes', 'periscopeFollowers', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'periscopeProfileDescription', 'files', 'fileName']","['dataTypes', 'periscopeProfileDescription', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'periscopeProfileDescription', 'files', 'globalName']","['dataTypes', 'periscopeProfileDescription', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'periscopeProfileDescription', 'files', 'count']","['dataTypes', 'periscopeProfileDescription', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'personalization', 'files', 'fileName']","['dataTypes', 'personalization', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'personalization', 'files', 'globalName']","['dataTypes', 'personalization', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'personalization', 'files', 'count']","['dataTypes', 'personalization', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'phoneNumber', 'files', 'fileName']","['dataTypes', 'phoneNumber', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'phoneNumber', 'files', 'globalName']","['dataTypes', 'phoneNumber', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'phoneNumber', 'files', 'count']","['dataTypes', 'phoneNumber', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'productDrop', 'files', 'fileName']","['dataTypes', 'productDrop', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'productDrop', 'files', 'globalName']","['dataTypes', 'productDrop', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'productDrop', 'files', 'count']","['dataTypes', 'productDrop', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'productSet', 'files', 'fileName']","['dataTypes', 'productSet', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'productSet', 'files', 'globalName']","['dataTypes', 'productSet', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'productSet', 'files', 'count']","['dataTypes', 'productSet', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'professionalData', 'files', 'fileName']","['dataTypes', 'professionalData', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'professionalData', 'files', 'globalName']","['dataTypes', 'professionalData', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'professionalData', 'files', 'count']","['dataTypes', 'professionalData', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'profile', 'files', 'fileName']","['dataTypes', 'profile', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'profile', 'files', 'globalName']","['dataTypes', 'profile', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'profile', 'files', 'count']","['dataTypes', 'profile', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'protectedHistory', 'files', 'fileName']","['dataTypes', 'protectedHistory', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'protectedHistory', 'files', 'globalName']","['dataTypes', 'protectedHistory', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'protectedHistory', 'files', 'count']","['dataTypes', 'protectedHistory', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'replyPrompt', 'files', 'fileName']","['dataTypes', 'replyPrompt', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'replyPrompt', 'files', 'globalName']","['dataTypes', 'replyPrompt', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'replyPrompt', 'files', 'count']","['dataTypes', 'replyPrompt', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'savedSearch', 'files', 'fileName']","['dataTypes', 'savedSearch', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'savedSearch', 'files', 'globalName']","['dataTypes', 'savedSearch', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'savedSearch', 'files', 'count']","['dataTypes', 'savedSearch', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'screenNameChange', 'files', 'fileName']","['dataTypes', 'screenNameChange', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'screenNameChange', 'files', 'globalName']","['dataTypes', 'screenNameChange', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'screenNameChange', 'files', 'count']","['dataTypes', 'screenNameChange', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'shopModule', 'files', 'fileName']","['dataTypes', 'shopModule', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'shopModule', 'files', 'globalName']","['dataTypes', 'shopModule', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'shopModule', 'files', 'count']","['dataTypes', 'shopModule', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'shopifyAccount', 'files', 'fileName']","['dataTypes', 'shopifyAccount', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'shopifyAccount', 'files', 'globalName']","['dataTypes', 'shopifyAccount', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'shopifyAccount', 'files', 'count']","['dataTypes', 'shopifyAccount', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'smartblock', 'files', 'fileName']","['dataTypes', 'smartblock', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'smartblock', 'files', 'globalName']","['dataTypes', 'smartblock', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'smartblock', 'files', 'count']","['dataTypes', 'smartblock', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'spacesMetadata', 'files', 'fileName']","['dataTypes', 'spacesMetadata', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'spacesMetadata', 'files', 'globalName']","['dataTypes', 'spacesMetadata', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'spacesMetadata', 'files', 'count']","['dataTypes', 'spacesMetadata', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'sso', 'files', 'fileName']","['dataTypes', 'sso', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'sso', 'files', 'globalName']","['dataTypes', 'sso', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'sso', 'files', 'count']","['dataTypes', 'sso', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'tweetHeaders', 'files', 'fileName']","['dataTypes', 'tweetHeaders', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'tweetHeaders', 'files', 'globalName']","['dataTypes', 'tweetHeaders', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'tweetHeaders', 'files', 'count']","['dataTypes', 'tweetHeaders', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'tweetdeck', 'files', 'fileName']","['dataTypes', 'tweetdeck', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'tweetdeck', 'files', 'globalName']","['dataTypes', 'tweetdeck', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'tweetdeck', 'files', 'count']","['dataTypes', 'tweetdeck', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'tweets', 'files', 'fileName']","['dataTypes', 'tweets', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'tweets', 'files', 'globalName']","['dataTypes', 'tweets', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'tweets', 'files', 'count']","['dataTypes', 'tweets', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'twitterShop', 'files', 'fileName']","['dataTypes', 'twitterShop', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'twitterShop', 'files', 'globalName']","['dataTypes', 'twitterShop', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'twitterShop', 'files', 'count']","['dataTypes', 'twitterShop', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'userLinkClicks', 'files', 'fileName']","['dataTypes', 'userLinkClicks', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'userLinkClicks', 'files', 'globalName']","['dataTypes', 'userLinkClicks', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'userLinkClicks', 'files', 'count']","['dataTypes', 'userLinkClicks', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'verified', 'files', 'fileName']","['dataTypes', 'verified', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'verified', 'files', 'globalName']","['dataTypes', 'verified', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'verified', 'files', 'count']","['dataTypes', 'verified', 'files']",['count'],list,string,data/manifest.js
+manifest.js,fileName,"['dataTypes', 'verifiedOrganization', 'files', 'fileName']","['dataTypes', 'verifiedOrganization', 'files']",['fileName'],list,string,data/manifest.js
+manifest.js,globalName,"['dataTypes', 'verifiedOrganization', 'files', 'globalName']","['dataTypes', 'verifiedOrganization', 'files']",['globalName'],list,string,data/manifest.js
+manifest.js,count,"['dataTypes', 'verifiedOrganization', 'files', 'count']","['dataTypes', 'verifiedOrganization', 'files']",['count'],list,string,data/manifest.js
+direct-message-group-headers.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string,data/direct-message-group-headers.js
+direct-message-group-headers.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string,data/direct-message-group-headers.js
+direct-message-group-headers.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string,data/direct-message-group-headers.js
+direct-message-group-headers.js,initiatingUserId,"['dmConversation', 'messages', 'joinConversation', 'initiatingUserId']","['dmConversation', 'messages']","['joinConversation', 'initiatingUserId']",list,string,data/direct-message-group-headers.js
+direct-message-group-headers.js,participantsSnapshot,"['dmConversation', 'messages', 'joinConversation', 'participantsSnapshot']","['dmConversation', 'messages']","['joinConversation', 'participantsSnapshot']",list,string,data/direct-message-group-headers.js
+direct-message-group-headers.js,createdAt,"['dmConversation', 'messages', 'joinConversation', 'createdAt']","['dmConversation', 'messages']","['joinConversation', 'createdAt']",list,string,data/direct-message-group-headers.js
+direct-messages-group.js,reactions,"['dmConversation', 'messages', 'messageCreate', 'reactions']","['dmConversation', 'messages']","['messageCreate', 'reactions']",list,array,data/direct-messages-group.js
+direct-messages-group.js,text,"['dmConversation', 'messages', 'messageCreate', 'text']","['dmConversation', 'messages']","['messageCreate', 'text']",list,string,data/direct-messages-group.js
+direct-messages-group.js,mediaUrls,"['dmConversation', 'messages', 'messageCreate', 'mediaUrls']","['dmConversation', 'messages']","['messageCreate', 'mediaUrls']",list,array,data/direct-messages-group.js
+direct-messages-group.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string,data/direct-messages-group.js
+direct-messages-group.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string,data/direct-messages-group.js
+direct-messages-group.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string,data/direct-messages-group.js
+direct-messages-group.js,editHistory,"['dmConversation', 'messages', 'messageCreate', 'editHistory']","['dmConversation', 'messages']","['messageCreate', 'editHistory']",list,array,data/direct-messages-group.js
+direct-messages-group.js,urls,"['dmConversation', 'messages', 'messageCreate', 'urls']","['dmConversation', 'messages']","['messageCreate', 'urls']",list,array,data/direct-messages-group.js
+direct-messages-group.js,initiatingUserId,"['dmConversation', 'messages', 'joinConversation', 'initiatingUserId']","['dmConversation', 'messages']","['joinConversation', 'initiatingUserId']",list,string,data/direct-messages-group.js
+direct-messages-group.js,participantsSnapshot,"['dmConversation', 'messages', 'joinConversation', 'participantsSnapshot']","['dmConversation', 'messages']","['joinConversation', 'participantsSnapshot']",list,string,data/direct-messages-group.js
+direct-messages-group.js,createdAt,"['dmConversation', 'messages', 'joinConversation', 'createdAt']","['dmConversation', 'messages']","['joinConversation', 'createdAt']",list,string,data/direct-messages-group.js
+key-registry.js,userAgent,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'userAgent']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['userAgent'],list,string,data/key-registry.js
+key-registry.js,registrationToken,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'registrationToken']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['registrationToken'],list,string,data/key-registry.js
+key-registry.js,identityKey,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'identityKey']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['identityKey'],list,string,data/key-registry.js
+key-registry.js,createdAt,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'createdAt']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['createdAt'],list,string,data/key-registry.js
+key-registry.js,deviceId,"['keyRegistryData', 'registeredDevices', 'deviceMetadataList', 'deviceId']","['keyRegistryData', 'registeredDevices', 'deviceMetadataList']",['deviceId'],list,string,data/key-registry.js
+personalization.js,language,"['p13nData', 'demographics', 'languages', 'language']","['p13nData', 'demographics', 'languages']",['language'],list,string,data/personalization.js
+personalization.js,isDisabled,"['p13nData', 'demographics', 'languages', 'isDisabled']","['p13nData', 'demographics', 'languages']",['isDisabled'],list,boolean,data/personalization.js
+personalization.js,name,"['p13nData', 'interests', 'interests', 'name']","['p13nData', 'interests', 'interests']",['name'],list,string,data/personalization.js
+personalization.js,isDisabled,"['p13nData', 'interests', 'interests', 'isDisabled']","['p13nData', 'interests', 'interests']",['isDisabled'],list,boolean,data/personalization.js
+direct-message-headers.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string,data/direct-message-headers.js
+direct-message-headers.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string,data/direct-message-headers.js
+direct-message-headers.js,recipientId,"['dmConversation', 'messages', 'messageCreate', 'recipientId']","['dmConversation', 'messages']","['messageCreate', 'recipientId']",list,string,data/direct-message-headers.js
+direct-message-headers.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string,data/direct-message-headers.js
+direct-messages.js,recipientId,"['dmConversation', 'messages', 'messageCreate', 'recipientId']","['dmConversation', 'messages']","['messageCreate', 'recipientId']",list,string,data/direct-messages.js
+direct-messages.js,reactions,"['dmConversation', 'messages', 'messageCreate', 'reactions']","['dmConversation', 'messages']","['messageCreate', 'reactions']",list,array,data/direct-messages.js
+direct-messages.js,urls,"['dmConversation', 'messages', 'messageCreate', 'urls']","['dmConversation', 'messages']","['messageCreate', 'urls']",list,array,data/direct-messages.js
+direct-messages.js,text,"['dmConversation', 'messages', 'messageCreate', 'text']","['dmConversation', 'messages']","['messageCreate', 'text']",list,string,data/direct-messages.js
+direct-messages.js,mediaUrls,"['dmConversation', 'messages', 'messageCreate', 'mediaUrls']","['dmConversation', 'messages']","['messageCreate', 'mediaUrls']",list,array,data/direct-messages.js
+direct-messages.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'senderId']","['dmConversation', 'messages']","['messageCreate', 'senderId']",list,string,data/direct-messages.js
+direct-messages.js,id,"['dmConversation', 'messages', 'messageCreate', 'id']","['dmConversation', 'messages']","['messageCreate', 'id']",list,string,data/direct-messages.js
+direct-messages.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'createdAt']","['dmConversation', 'messages']","['messageCreate', 'createdAt']",list,string,data/direct-messages.js
+direct-messages.js,editHistory,"['dmConversation', 'messages', 'messageCreate', 'editHistory']","['dmConversation', 'messages']","['messageCreate', 'editHistory']",list,array,data/direct-messages.js
+direct-messages.js,mediaUrls,"['dmConversation', 'messages', 'messageCreate', 'mediaUrls']","['dmConversation', 'messages']","['messageCreate', 'mediaUrls']",list,string,data/direct-messages.js
+tweets.js,url,"['tweet', 'entities', 'urls', 'url']","['tweet', 'entities', 'urls']",['url'],list,string,data/tweets.js
+tweets.js,expanded_url,"['tweet', 'entities', 'urls', 'expanded_url']","['tweet', 'entities', 'urls']",['expanded_url'],list,string,data/tweets.js
+tweets.js,display_url,"['tweet', 'entities', 'urls', 'display_url']","['tweet', 'entities', 'urls']",['display_url'],list,string,data/tweets.js
+tweets.js,indices,"['tweet', 'entities', 'urls', 'indices']","['tweet', 'entities', 'urls']",['indices'],list,string,data/tweets.js
+tweets.js,name,"['tweet', 'entities', 'user_mentions', 'name']","['tweet', 'entities', 'user_mentions']",['name'],list,string,data/tweets.js
+tweets.js,screen_name,"['tweet', 'entities', 'user_mentions', 'screen_name']","['tweet', 'entities', 'user_mentions']",['screen_name'],list,string,data/tweets.js
+tweets.js,indices,"['tweet', 'entities', 'user_mentions', 'indices']","['tweet', 'entities', 'user_mentions']",['indices'],list,string,data/tweets.js
+tweets.js,id_str,"['tweet', 'entities', 'user_mentions', 'id_str']","['tweet', 'entities', 'user_mentions']",['id_str'],list,string,data/tweets.js
+tweets.js,id,"['tweet', 'entities', 'user_mentions', 'id']","['tweet', 'entities', 'user_mentions']",['id'],list,string,data/tweets.js
+tweets.js,text,"['tweet', 'entities', 'hashtags', 'text']","['tweet', 'entities', 'hashtags']",['text'],list,string,data/tweets.js
+tweets.js,indices,"['tweet', 'entities', 'hashtags', 'indices']","['tweet', 'entities', 'hashtags']",['indices'],list,string,data/tweets.js
+tweets.js,expanded_url,"['tweet', 'entities', 'media', 'expanded_url']","['tweet', 'entities', 'media']",['expanded_url'],list,string,data/tweets.js
+tweets.js,indices,"['tweet', 'entities', 'media', 'indices']","['tweet', 'entities', 'media']",['indices'],list,string,data/tweets.js
+tweets.js,url,"['tweet', 'entities', 'media', 'url']","['tweet', 'entities', 'media']",['url'],list,string,data/tweets.js
+tweets.js,media_url,"['tweet', 'entities', 'media', 'media_url']","['tweet', 'entities', 'media']",['media_url'],list,string,data/tweets.js
+tweets.js,id_str,"['tweet', 'entities', 'media', 'id_str']","['tweet', 'entities', 'media']",['id_str'],list,string,data/tweets.js
+tweets.js,id,"['tweet', 'entities', 'media', 'id']","['tweet', 'entities', 'media']",['id'],list,string,data/tweets.js
+tweets.js,media_url_https,"['tweet', 'entities', 'media', 'media_url_https']","['tweet', 'entities', 'media']",['media_url_https'],list,string,data/tweets.js
+tweets.js,type,"['tweet', 'entities', 'media', 'type']","['tweet', 'entities', 'media']",['type'],list,string,data/tweets.js
+tweets.js,display_url,"['tweet', 'entities', 'media', 'display_url']","['tweet', 'entities', 'media']",['display_url'],list,string,data/tweets.js
+tweets.js,expanded_url,"['tweet', 'extended_entities', 'media', 'expanded_url']","['tweet', 'extended_entities', 'media']",['expanded_url'],list,string,data/tweets.js
+tweets.js,indices,"['tweet', 'extended_entities', 'media', 'indices']","['tweet', 'extended_entities', 'media']",['indices'],list,string,data/tweets.js
+tweets.js,url,"['tweet', 'extended_entities', 'media', 'url']","['tweet', 'extended_entities', 'media']",['url'],list,string,data/tweets.js
+tweets.js,media_url,"['tweet', 'extended_entities', 'media', 'media_url']","['tweet', 'extended_entities', 'media']",['media_url'],list,string,data/tweets.js
+tweets.js,id_str,"['tweet', 'extended_entities', 'media', 'id_str']","['tweet', 'extended_entities', 'media']",['id_str'],list,string,data/tweets.js
+tweets.js,id,"['tweet', 'extended_entities', 'media', 'id']","['tweet', 'extended_entities', 'media']",['id'],list,string,data/tweets.js
+tweets.js,media_url_https,"['tweet', 'extended_entities', 'media', 'media_url_https']","['tweet', 'extended_entities', 'media']",['media_url_https'],list,string,data/tweets.js
+tweets.js,type,"['tweet', 'extended_entities', 'media', 'type']","['tweet', 'extended_entities', 'media']",['type'],list,string,data/tweets.js
+tweets.js,display_url,"['tweet', 'extended_entities', 'media', 'display_url']","['tweet', 'extended_entities', 'media']",['display_url'],list,string,data/tweets.js
+tweets.js,source_status_id,"['tweet', 'entities', 'media', 'source_status_id']","['tweet', 'entities', 'media']",['source_status_id'],list,string,data/tweets.js
+tweets.js,source_user_id,"['tweet', 'entities', 'media', 'source_user_id']","['tweet', 'entities', 'media']",['source_user_id'],list,string,data/tweets.js
+tweets.js,source_user_id_str,"['tweet', 'entities', 'media', 'source_user_id_str']","['tweet', 'entities', 'media']",['source_user_id_str'],list,string,data/tweets.js
+tweets.js,source_status_id_str,"['tweet', 'entities', 'media', 'source_status_id_str']","['tweet', 'entities', 'media']",['source_status_id_str'],list,string,data/tweets.js
+tweets.js,source_status_id,"['tweet', 'extended_entities', 'media', 'source_status_id']","['tweet', 'extended_entities', 'media']",['source_status_id'],list,string,data/tweets.js
+tweets.js,source_user_id,"['tweet', 'extended_entities', 'media', 'source_user_id']","['tweet', 'extended_entities', 'media']",['source_user_id'],list,string,data/tweets.js
+tweets.js,source_user_id_str,"['tweet', 'extended_entities', 'media', 'source_user_id_str']","['tweet', 'extended_entities', 'media']",['source_user_id_str'],list,string,data/tweets.js
+tweets.js,source_status_id_str,"['tweet', 'extended_entities', 'media', 'source_status_id_str']","['tweet', 'extended_entities', 'media']",['source_status_id_str'],list,string,data/tweets.js
+direct-messages-group.js,url,"['dmConversation', 'messages', 'messageCreate', 'urls', 'url']","['dmConversation', 'messages', 'messageCreate', 'urls']",['url'],list,string,data/direct-messages-group.js
+direct-messages-group.js,expanded,"['dmConversation', 'messages', 'messageCreate', 'urls', 'expanded']","['dmConversation', 'messages', 'messageCreate', 'urls']",['expanded'],list,string,data/direct-messages-group.js
+direct-messages-group.js,display,"['dmConversation', 'messages', 'messageCreate', 'urls', 'display']","['dmConversation', 'messages', 'messageCreate', 'urls']",['display'],list,string,data/direct-messages-group.js
+direct-messages-group.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'senderId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['senderId'],list,string,data/direct-messages-group.js
+direct-messages-group.js,reactionKey,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'reactionKey']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['reactionKey'],list,string,data/direct-messages-group.js
+direct-messages-group.js,eventId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'eventId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['eventId'],list,string,data/direct-messages-group.js
+direct-messages-group.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'createdAt']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['createdAt'],list,string,data/direct-messages-group.js
+direct-messages.js,url,"['dmConversation', 'messages', 'messageCreate', 'urls', 'url']","['dmConversation', 'messages', 'messageCreate', 'urls']",['url'],list,string,data/direct-messages.js
+direct-messages.js,expanded,"['dmConversation', 'messages', 'messageCreate', 'urls', 'expanded']","['dmConversation', 'messages', 'messageCreate', 'urls']",['expanded'],list,string,data/direct-messages.js
+direct-messages.js,display,"['dmConversation', 'messages', 'messageCreate', 'urls', 'display']","['dmConversation', 'messages', 'messageCreate', 'urls']",['display'],list,string,data/direct-messages.js
+direct-messages.js,senderId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'senderId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['senderId'],list,string,data/direct-messages.js
+direct-messages.js,reactionKey,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'reactionKey']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['reactionKey'],list,string,data/direct-messages.js
+direct-messages.js,eventId,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'eventId']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['eventId'],list,string,data/direct-messages.js
+direct-messages.js,createdAt,"['dmConversation', 'messages', 'messageCreate', 'reactions', 'createdAt']","['dmConversation', 'messages', 'messageCreate', 'reactions']",['createdAt'],list,string,data/direct-messages.js
+ad-engagements.js,displayLocation,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'displayLocation']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'displayLocation']",list,string,data/ad-engagements.js
+ad-engagements.js,impressionTime,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'impressionTime']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'impressionTime']",list,string,data/ad-engagements.js
+ad-engagements.js,engagementTime,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes', 'engagementTime']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes']",['engagementTime'],list,string,data/ad-engagements.js
+ad-engagements.js,engagementType,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes', 'engagementType']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'engagementAttributes']",['engagementType'],list,string,data/ad-engagements.js
+tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'small', 'w']","['tweet', 'entities', 'media']","['sizes', 'small', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'small', 'h']","['tweet', 'entities', 'media']","['sizes', 'small', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'small', 'resize']","['tweet', 'entities', 'media']","['sizes', 'small', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'large', 'w']","['tweet', 'entities', 'media']","['sizes', 'large', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'large', 'h']","['tweet', 'entities', 'media']","['sizes', 'large', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'large', 'resize']","['tweet', 'entities', 'media']","['sizes', 'large', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'medium', 'w']","['tweet', 'entities', 'media']","['sizes', 'medium', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'medium', 'h']","['tweet', 'entities', 'media']","['sizes', 'medium', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'medium', 'resize']","['tweet', 'entities', 'media']","['sizes', 'medium', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'entities', 'media', 'sizes', 'thumb', 'w']","['tweet', 'entities', 'media']","['sizes', 'thumb', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'entities', 'media', 'sizes', 'thumb', 'h']","['tweet', 'entities', 'media']","['sizes', 'thumb', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'entities', 'media', 'sizes', 'thumb', 'resize']","['tweet', 'entities', 'media']","['sizes', 'thumb', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'small', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'small', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'small', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'small', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'small', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'small', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'large', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'large', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'large', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'large', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'large', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'large', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'medium', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'medium', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'medium', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'medium', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'medium', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'medium', 'resize']",list,string,data/tweets.js
+tweets.js,w,"['tweet', 'extended_entities', 'media', 'sizes', 'thumb', 'w']","['tweet', 'extended_entities', 'media']","['sizes', 'thumb', 'w']",list,string,data/tweets.js
+tweets.js,h,"['tweet', 'extended_entities', 'media', 'sizes', 'thumb', 'h']","['tweet', 'extended_entities', 'media']","['sizes', 'thumb', 'h']",list,string,data/tweets.js
+tweets.js,resize,"['tweet', 'extended_entities', 'media', 'sizes', 'thumb', 'resize']","['tweet', 'extended_entities', 'media']","['sizes', 'thumb', 'resize']",list,string,data/tweets.js
+ad-engagements.js,osType,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'deviceInfo', 'osType']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'deviceInfo', 'osType']",list,string,data/ad-engagements.js
+ad-engagements.js,deviceId,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'deviceInfo', 'deviceId']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'deviceInfo', 'deviceId']",list,string,data/ad-engagements.js
+ad-engagements.js,tweetId,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'tweetId']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'tweetId']",list,string,data/ad-engagements.js
+ad-engagements.js,tweetText,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'tweetText']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'tweetText']",list,string,data/ad-engagements.js
+ad-engagements.js,urls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'urls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'urls']",list,array,data/ad-engagements.js
+ad-engagements.js,mediaUrls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'mediaUrls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'mediaUrls']",list,string,data/ad-engagements.js
+ad-engagements.js,advertiserName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'advertiserInfo', 'advertiserName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'advertiserInfo', 'advertiserName']",list,string,data/ad-engagements.js
+ad-engagements.js,screenName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'advertiserInfo', 'screenName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'advertiserInfo', 'screenName']",list,string,data/ad-engagements.js
+ad-engagements.js,targetingType,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria', 'targetingType']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria']",['targetingType'],list,string,data/ad-engagements.js
+ad-engagements.js,targetingValue,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria', 'targetingValue']","['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'matchedTargetingCriteria']",['targetingValue'],list,string,data/ad-engagements.js
+ad-engagements.js,trendId,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'trendId']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTrendInfo', 'trendId']",list,string,data/ad-engagements.js
+ad-engagements.js,name,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'name']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTrendInfo', 'name']",list,string,data/ad-engagements.js
+ad-engagements.js,description,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTrendInfo', 'description']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTrendInfo', 'description']",list,string,data/ad-engagements.js
+ad-engagements.js,urls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'urls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'urls']",list,string,data/ad-engagements.js
+ad-engagements.js,mediaUrls,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'promotedTweetInfo', 'mediaUrls']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'promotedTweetInfo', 'mediaUrls']",list,array,data/ad-engagements.js
+ad-engagements.js,publisherName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'publisherInfo', 'publisherName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'publisherInfo', 'publisherName']",list,string,data/ad-engagements.js
+ad-engagements.js,screenName,"['ad', 'adsUserData', 'adEngagements', 'engagements', 'impressionAttributes', 'publisherInfo', 'screenName']","['ad', 'adsUserData', 'adEngagements', 'engagements']","['impressionAttributes', 'publisherInfo', 'screenName']",list,string,data/ad-engagements.js
+account-suspension.js,nan,nan,nan,nan,skip,nan,data/account-suspension.js
+ad-impressions.js,nan,nan,nan,nan,skip,nan,data/ad-impressions.js
+ad-mobile-conversions-attributed.js,nan,nan,nan,nan,skip,nan,data/ad-mobile-conversions-attributed.js
+ad-mobile-conversions-unattributed.js,nan,nan,nan,nan,skip,nan,data/ad-mobile-conversions-unattributed.js
+ad-online-conversions-attributed.js,nan,nan,nan,nan,skip,nan,data/ad-online-conversions-attributed.js
+ad-online-conversions-unattributed.js,nan,nan,nan,nan,skip,nan,data/ad-online-conversions-unattributed.js
+app.js,nan,nan,nan,nan,skip,nan,data/app.js
+article-metadata.js,nan,nan,nan,nan,skip,nan,data/article-metadata.js
+article.js,nan,nan,nan,nan,skip,nan,data/article.js
+audio-video-calls-in-dm-recipient-sessions.js,nan,nan,nan,nan,skip,nan,data/audio-video-calls-in-dm-recipient-sessions.js
+audio-video-calls-in-dm.js,nan,nan,nan,nan,skip,nan,data/audio-video-calls-in-dm.js
+block.js,nan,nan,nan,nan,skip,nan,data/block.js
+branch-links.js,nan,nan,nan,nan,skip,nan,data/branch-links.js
+catalog-item.js,nan,nan,nan,nan,skip,nan,data/catalog-item.js
+commerce-catalog.js,nan,nan,nan,nan,skip,nan,data/commerce-catalog.js
+community-note-batsignal.js,nan,nan,nan,nan,skip,nan,data/community-note-batsignal.js
+community-note-tombstone.js,nan,nan,nan,nan,skip,nan,data/community-note-tombstone.js
+community-note.js,nan,nan,nan,nan,skip,nan,data/community-note.js
+community-tweet.js,nan,nan,nan,nan,skip,nan,data/community-tweet.js
+contact.js,nan,nan,nan,nan,skip,nan,data/contact.js
+deleted-note-tweet.js,nan,nan,nan,nan,skip,nan,data/deleted-note-tweet.js
+deleted-tweet-headers.js,nan,nan,nan,nan,skip,nan,data/deleted-tweet-headers.js
+deleted-tweets.js,nan,nan,nan,nan,skip,nan,data/deleted-tweets.js
+direct-message-mute.js,nan,nan,nan,nan,skip,nan,data/direct-message-mute.js
+email-address-change.js,nan,nan,nan,nan,skip,nan,data/email-address-change.js
+grok-chat-item.js,nan,nan,nan,nan,skip,nan,data/grok-chat-item.js
+lists-created.js,nan,nan,nan,nan,skip,nan,data/lists-created.js
+lists-member.js,nan,nan,nan,nan,skip,nan,data/lists-member.js
+lists-subscribed.js,nan,nan,nan,nan,skip,nan,data/lists-subscribed.js
+moment.js,nan,nan,nan,nan,skip,nan,data/moment.js
+mute.js,nan,nan,nan,nan,skip,nan,data/mute.js
+ni-devices.js,nan,nan,nan,nan,skip,nan,data/ni-devices.js
+note-tweet.js,nan,nan,nan,nan,skip,nan,data/note-tweet.js
+periscope-broadcast-metadata.js,nan,nan,nan,nan,skip,nan,data/periscope-broadcast-metadata.js
+periscope-comments-made-by-user.js,nan,nan,nan,nan,skip,nan,data/periscope-comments-made-by-user.js
+periscope-expired-broadcasts.js,nan,nan,nan,nan,skip,nan,data/periscope-expired-broadcasts.js
+periscope-followers.js,nan,nan,nan,nan,skip,nan,data/periscope-followers.js
+phone-number.js,nan,nan,nan,nan,skip,nan,data/phone-number.js
+product-drop.js,nan,nan,nan,nan,skip,nan,data/product-drop.js
+product-set.js,nan,nan,nan,nan,skip,nan,data/product-set.js
+professional-data.js,nan,nan,nan,nan,skip,nan,data/professional-data.js
+protected-history.js,nan,nan,nan,nan,skip,nan,data/protected-history.js
+reply-prompt.js,nan,nan,nan,nan,skip,nan,data/reply-prompt.js
+saved-search.js,nan,nan,nan,nan,skip,nan,data/saved-search.js
+shop-module.js,nan,nan,nan,nan,skip,nan,data/shop-module.js
+shopify-account.js,nan,nan,nan,nan,skip,nan,data/shopify-account.js
+smartblock.js,nan,nan,nan,nan,skip,nan,data/smartblock.js
+spaces-metadata.js,nan,nan,nan,nan,skip,nan,data/spaces-metadata.js
+sso.js,nan,nan,nan,nan,skip,nan,data/sso.js
+tweetdeck.js,nan,nan,nan,nan,skip,nan,data/tweetdeck.js
+twitter-shop.js,nan,nan,nan,nan,skip,nan,data/twitter-shop.js
+user-link-clicks.js,nan,nan,nan,nan,skip,nan,data/user-link-clicks.js
