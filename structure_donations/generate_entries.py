@@ -87,8 +87,8 @@ def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
     schema_df = schema_df[(schema_df["keepID"].notna()) & (schema_df["keepID"] != "")]
 
     if "file_path" not in schema_df:
-        if "variable" in schema_df:
-            schema_df.rename(columns={"variable": "file_path"}, inplace=True)  # Temporary measure for X
+        if "json_name.1" in schema_df:
+            schema_df.rename(columns={"json_name.1": "file_path"}, inplace=True)  # Temporary measure for X
         else:
             schema_df["file_path"] = ""  # For TT
     if "table_name" not in schema_df:

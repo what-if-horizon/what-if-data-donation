@@ -12,7 +12,7 @@ JsonPath: TypeAlias = Annotated[tuple[str, ...], "A tuple correspondiong to a js
 
 Columns: TypeAlias = Annotated[
     dict[str, JsonPath],
-    "A collection of columns, where each columns maps a column name to a json path to find the values for that column",
+    "A collection of columns, where each column maps a name to a json path for that value",
 ]
 
 
@@ -24,17 +24,18 @@ class Entry(NamedTuple):
     ]
     static_fields: Annotated[
         Columns,
-        "A list of paths within the file that each gives a single values for each file."
+        "A list of paths within the file that each gives a single value for each file."
         "Will be repeated in the resulting table if needed",
     ]
     list_blocks: Annotated[
         dict[JsonPath, Columns],
-        "A dict of rowpath: columns items that define a list of objects and the element to extract from each object"
+        "A dict of rowpath: columns items that define a list of objects and the elements to extract from each object."
         "This will result in one row for each entry in the list, and one column for each item in the values",
     ]
 
 
 def get_in(d: dict, *keys):
+    """Safely get nested dict values."""
     for key in keys:
         if isinstance(d, dict):
             d = d.get(key)
@@ -44,135 +45,189 @@ def get_in(d: dict, *keys):
 
 
 def find_entries(d: dict, keys: JsonPath) -> Iterable[dict]:
-    """Recursively traverse the json dictionary d with the keys, yielding the entries
-    if there are no keys, return d
-    If d is a dict, find the first key and recurse
-    if it is a list, iterate over the list and recurse
-    """
+    """Recursively traverse the json dictionary `d` with the given path `keys`."""
     if not keys:
         yield d
         return
-    # Just like in the prolog days!
+
     first_key, remaining_keys = keys[0], keys[1:]
-    if not (e := d.get(first_key)):
+    if not isinstance(d, dict) or first_key not in d:
         return
+
+    e = d[first_key]
     if isinstance(e, dict):
         yield from find_entries(e, remaining_keys)
     elif isinstance(e, list):
         for element in e:
             yield from find_entries(element, remaining_keys)
     else:
-        yield e
+        # Only yield if this is a terminal value
+        if not remaining_keys:
+            yield e
 
 
 def get_list(d: dict, *keys):
+    """Return the value at the given keys if it's a list, else []."""
     val = get_in(d, *keys)
     return val if isinstance(val, list) else []
 
 
 def read_file(file_input: list[str], filename: str | None):
-    """Read the entry file from the input files"""
-
-    print(file_input)
-
+    """Read the entry file from the input files."""
     if not filename:
         with open(file_input[0], "r", encoding="utf-8") as f:
             return [json.load(f)]
 
-    # Always allow both root and recursive matches
-    filenames = [filename, f"*/{filename}", f"{filename}"]  # root  # one folder deep
-
+    filenames = [filename, f"*/{filename}", f"{filename}"]
     if filename.endswith(".js"):
         return read_js(file_input, filenames)
     else:
         return read_json(file_input, filenames)
+        
+
+#  --- STEP 1: Build Block Tree ---
+
+def build_block_tree(list_blocks: dict[JsonPath, Columns]) -> dict:
+    """Build a nested dictionary tree representing list_blocks, including root-level lists."""
+    tree = {"columns": {}, "children": {}}
+    for path, cols in list_blocks.items():
+        current = tree
+        for part in path:
+            current = current["children"].setdefault((part,), {"columns": {}, "children": {}})
+        current["columns"] = cols
+    return tree
 
 
+# ----------------------------------------------------------------------
+#  STEP 2: Unified Recursive Extractor
+# ----------------------------------------------------------------------
+def extract_rows(item, block_tree, context=None, path_prefix=()):
+    """
+    Recursively extract rows from nested lists/dicts.
+    - Produces one row per object in nested lists.
+    - Preserves static fields from context.
+    - Keeps empty dicts and lists as {} instead of null.
+    """
+    if context is None:
+        context = {}
+    rows = []
+
+    base = context.copy()
+
+    # Extract current-level columns
+    local_cols = block_tree.get("columns", {})
+    for colname, path in local_cols.items():
+        val = get_in(item, *path)
+        full_colname = ".".join(path_prefix + (colname,))
+
+        if isinstance(val, dict):
+            if val:
+                # Flatten dict recursively
+                for k, v in val.items():
+                    base[f"{full_colname}.{k}"] = v
+            else:
+                base[full_colname] = {}  # empty dict
+        elif isinstance(val, list):
+            if val and all(isinstance(v, dict) for v in val):
+                # Flatten each dict in the list
+                list_rows = []
+                for d in val:
+                    list_rows.extend(extract_rows(d, {"columns": {}, "children": {}}, context=base, path_prefix=path_prefix + (colname,)))
+                if list_rows:
+                    rows.extend(list_rows)
+                else:
+                    # List was empty, yield base with empty object
+                    base[full_colname] = [{}]
+                    rows.append(base)
+                continue
+            elif val:
+                base[full_colname] = val
+            else:
+                base[full_colname] = []  # empty list
+        else:
+            base[full_colname] = val
+
+    # Process children recursively
+    # Process children recursively
+    children = block_tree.get("children", {})
+    if children:
+        has_data = False
+        for (list_name,), sub_tree in children.items():
+            sub_item = get_in(item, list_name)
+
+            if isinstance(sub_item, list):
+                # Normal case: iterate over list elements
+                has_data = True
+                for element in sub_item:
+                    new_prefix = path_prefix + (list_name,)
+                    sub_rows = extract_rows(element, sub_tree, context=base, path_prefix=new_prefix)
+                    rows.extend(sub_rows)
+
+            elif isinstance(sub_item, dict):
+                # NEW: also recurse into dict containers
+                has_data = True
+                new_prefix = path_prefix + (list_name,)
+                sub_rows = extract_rows(sub_item, sub_tree, context=base, path_prefix=new_prefix)
+                rows.extend(sub_rows)
+
+        # If no children found or list/dict empty, yield the current row
+        if not has_data and not rows:
+            rows.append(base)
+    else:
+        if not rows:
+            rows.append(base)
+
+    return rows
+
+
+# ----------------------------------------------------------------------
+#  STEP 3: Integrate into create_entry_df
+# ----------------------------------------------------------------------
 def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None = None) -> pd.DataFrame | None:
+    """Create a dataframe for a single entry."""
     try:
         data = read_file(file_input, entry.filename)
     except FileNotFoundError as e:
         logging.error(f"{entry.table}: Cannot find file {entry.filename} ({e})")
         return None
+
     if json_root:
         data = [d[json_root] for d in data]
-    all_records = []
     if isinstance(data, dict):
         data = [data]
+
+    block_tree = build_block_tree(entry.list_blocks)
+    all_records = []
+
     for item in data:
-        base_row = {"file": entry.filename}
+        # Gather static (file-level) fields
+        base_context = {"file": entry.filename}
         for colname, path in entry.static_fields.items():
-            base_row[colname] = get_in(item, *path)
-        if not entry.list_blocks:
-            all_records.append(base_row)
-            continue
-        for list_path, columns in entry.list_blocks.items():
-            print(f"list_path: {list_path}\nitem: {item}\ncolumns:{columns}")
-            for row in resolve_list_block(item, list_path, columns):
-                combined_row = base_row.copy() | row
-                all_records.append(combined_row)
+            base_context[colname] = get_in(item, *path)
+
+        # Extract rows recursively
+        if entry.list_blocks:
+            for row in extract_rows(item, block_tree, context=base_context):
+                all_records.append(row)
+        else:
+            all_records.append(base_context)
+
+    if not all_records:
+        return None
     return pd.DataFrame(all_records)
-
-
-list_block = {
-    "label": ("label",),
-    "ent_field_name": ("ent_field_name",),
-    "dict.label": ("dict", "label"),
-    "value": ("dict", "value"),
-}
-
-
-def extract_columns(element, columns: Columns) -> Iterable[dict]:
-    # First, create 'base rows' for all leaf nodes, i.e. columns without a path of length one
-    # Separate columns by path_prefix
-    leaf_columns = {colname: path for (colname, path) in columns.items() if len(path) == 1}
-    values = {colname: list(find_entries(element, leaf_columns[colname])) for colname in leaf_columns}
-    # Drop empty values
-    values = {k: v for (k, v) in values.items() if v}
-    # Leaf rows are the product of all (non-empty) values --> single row if all values are scalar
-    leaf_rows = [dict(zip(values.keys(), sublist)) for sublist in itertools.product(*values.values())]
-
-    # Now, find out all unique prefixes for columns with a longer path
-    columns_by_prefix: dict[JsonPath, Columns] = {}  # {prefix: Columns}
-    for colname, path in columns.items():
-        if len(path) > 1:
-            columns_by_prefix.setdefault(path[:1], {})[colname] = path[1:]
-    # Iterate over all prefixes
-    yielded_children = False
-    for prefix, columns in columns_by_prefix.items():
-        # Find all elements correspondiong to the prefix
-        for child in find_entries(element, prefix):
-            # Recursively extract columns for that prefix
-            # and yield all combinations of leaf rows and child rows
-            for child_row in extract_columns(child, columns):
-                yielded_children = True
-                yield from (leaf_row | child_row for leaf_row in leaf_rows)
-
-    # If we never yield any children, just yield the leaf_rows
-    if not yielded_children:
-        yield from leaf_rows
-
-
-def resolve_list_block(item, list_path: tuple[str, ...], columns: Columns):
-    if not list_path:
-        return  # Nothing to iterate
-    for element in find_entries(item, list_path):
-        base_row = dict(__source_list__=list_path[-1])
-
-        for row in extract_columns(element, columns):
-            yield base_row | row
 
 
 def create_table(file_input: list[str], entries: list[Entry], json_root: str | None = None) -> pd.DataFrame:
     tables = [create_entry_df(file_input, entry, json_root=json_root) for entry in entries]
     tables = [t for t in tables if t is not None]
-    if tables:
-        result = pd.concat(tables, ignore_index=True)
-        if len(tables) == 1 and not result.empty:
-            result.drop("file", axis=1, inplace=True)
-        return result
-    else:
+    if not tables:
         return pd.DataFrame()
+
+    result = pd.concat(tables, ignore_index=True)
+    if len(tables) == 1 and not result.empty:
+        result.drop("file", axis=1, inplace=True)
+    return result
+
 
 
 # --- Preparing parser for Youtube csv ---
