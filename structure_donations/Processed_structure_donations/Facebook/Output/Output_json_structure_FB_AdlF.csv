@@ -153,21 +153,9 @@ profile_information.json,other_names,"['profile_v2', 'other_names']",,"['profile
 profile_information.json,work_experiences,"['profile_v2', 'work_experiences']",,"['profile_v2', 'work_experiences']",static,array,personal_information/profile_information/profile_information.json
 profile_information.json,registration_timestamp,"['profile_v2', 'registration_timestamp']",,"['profile_v2', 'registration_timestamp']",static,number,personal_information/profile_information/profile_information.json
 profile_information.json,profile_uri,"['profile_v2', 'profile_uri']",,"['profile_v2', 'profile_uri']",static,string,personal_information/profile_information/profile_information.json
-primary_location.json,zipcode,"['primary_location_v2', 'zipcode']",,"['primary_location_v2', 'zipcode']",static,string,logged_information/location/primary_location.json
 primary_public_location.json,city,"['primary_public_location_v2', 'city']",,"['primary_public_location_v2', 'city']",static,string,logged_information/location/primary_public_location.json
 primary_public_location.json,region,"['primary_public_location_v2', 'region']",,"['primary_public_location_v2', 'region']",static,string,logged_information/location/primary_public_location.json
 primary_public_location.json,country,"['primary_public_location_v2', 'country']",,"['primary_public_location_v2', 'country']",static,string,logged_information/location/primary_public_location.json
-autofill_information.json,CITY,"['autofill_information_v2', 'CITY']",,"['autofill_information_v2', 'CITY']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,COUNTRY,"['autofill_information_v2', 'COUNTRY']",,"['autofill_information_v2', 'COUNTRY']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,EMAIL,"['autofill_information_v2', 'EMAIL']",,"['autofill_information_v2', 'EMAIL']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,PHONE,"['autofill_information_v2', 'PHONE']",,"['autofill_information_v2', 'PHONE']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,GENDER,"['autofill_information_v2', 'GENDER']",,"['autofill_information_v2', 'GENDER']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,SLIDER,"['autofill_information_v2', 'SLIDER']",,"['autofill_information_v2', 'SLIDER']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,FIRST_NAME,"['autofill_information_v2', 'FIRST_NAME']",,"['autofill_information_v2', 'FIRST_NAME']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,LAST_NAME,"['autofill_information_v2', 'LAST_NAME']",,"['autofill_information_v2', 'LAST_NAME']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,FULL_NAME,"['autofill_information_v2', 'FULL_NAME']",,"['autofill_information_v2', 'FULL_NAME']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,WORK_EMAIL,"['autofill_information_v2', 'WORK_EMAIL']",,"['autofill_information_v2', 'WORK_EMAIL']",static,string,your_facebook_activity/messages/autofill_information.json
-autofill_information.json,WORK_PHONE,"['autofill_information_v2', 'WORK_PHONE']",,"['autofill_information_v2', 'WORK_PHONE']",static,string,your_facebook_activity/messages/autofill_information.json
 payment_history.json,preferred_currency,"['payments_v2', 'preferred_currency']",,"['payments_v2', 'preferred_currency']",static,string,your_facebook_activity/facebook_payments/payment_history.json
 payment_history.json,payments,"['payments_v2', 'payments']",,"['payments_v2', 'payments']",static,array,your_facebook_activity/facebook_payments/payment_history.json
 0.json,uri,"['cover_photo', 'uri']",,"['cover_photo', 'uri']",static,string,your_facebook_activity/posts/album/0.json
@@ -185,20 +173,10 @@ payment_history.json,payments,"['payments_v2', 'payments']",,"['payments_v2', 'p
 3.json,description,"['cover_photo', 'description']",,"['cover_photo', 'description']",static,string,your_facebook_activity/posts/album/3.json
 voting_location.json,voting_location,"['voting_location_v2', 'voting_location']",,"['voting_location_v2', 'voting_location']",static,string,your_facebook_activity/voting/voting_location.json
 voting_reminders.json,voting_reminders,"['voting_reminders_v2', 'voting_reminders']",,"['voting_reminders_v2', 'voting_reminders']",static,string,your_facebook_activity/voting/voting_reminders.json
-browser_cookies.json,Nf-T********************,"['datr_stats_v2', 'Nf-T********************']",,"['datr_stats_v2', 'Nf-T********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,yLaM********************,"['datr_stats_v2', 'yLaM********************']",,"['datr_stats_v2', 'yLaM********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,F_DI********************,"['datr_stats_v2', 'F_DI********************']",,"['datr_stats_v2', 'F_DI********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,Qrjl********************,"['datr_stats_v2', 'Qrjl********************']",,"['datr_stats_v2', 'Qrjl********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,eAJa********************,"['datr_stats_v2', 'eAJa********************']",,"['datr_stats_v2', 'eAJa********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,iDMA********************,"['datr_stats_v2', 'iDMA********************']",,"['datr_stats_v2', 'iDMA********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,S3EK********************,"['datr_stats_v2', 'S3EK********************']",,"['datr_stats_v2', 'S3EK********************']",static,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,4KuC********************,"['datr_stats_v2', '4KuC********************']",,"['datr_stats_v2', '4KuC********************']",static,number,security_and_login_information/browser_cookies.json
 profile_information.json,full_name,"['profile_v2', 'name', 'full_name']",,"['profile_v2', 'name', 'full_name']",static,string,personal_information/profile_information/profile_information.json
 profile_information.json,first_name,"['profile_v2', 'name', 'first_name']",,"['profile_v2', 'name', 'first_name']",static,string,personal_information/profile_information/profile_information.json
 profile_information.json,middle_name,"['profile_v2', 'name', 'middle_name']",,"['profile_v2', 'name', 'middle_name']",static,string,personal_information/profile_information/profile_information.json
 profile_information.json,last_name,"['profile_v2', 'name', 'last_name']",,"['profile_v2', 'name', 'last_name']",static,string,personal_information/profile_information/profile_information.json
-profile_information.json,emails,"['profile_v2', 'emails', 'emails']",,"['profile_v2', 'emails', 'emails']",static,string,personal_information/profile_information/profile_information.json
-profile_information.json,previous_emails,"['profile_v2', 'emails', 'previous_emails']",,"['profile_v2', 'emails', 'previous_emails']",static,string,personal_information/profile_information/profile_information.json
 profile_information.json,pending_emails,"['profile_v2', 'emails', 'pending_emails']",,"['profile_v2', 'emails', 'pending_emails']",static,array,personal_information/profile_information/profile_information.json
 profile_information.json,ad_account_emails,"['profile_v2', 'emails', 'ad_account_emails']",,"['profile_v2', 'emails', 'ad_account_emails']",static,array,personal_information/profile_information/profile_information.json
 profile_information.json,year,"['profile_v2', 'birthday', 'year']",,"['profile_v2', 'birthday', 'year']",static,number,personal_information/profile_information/profile_information.json
@@ -315,6 +293,7 @@ ads_about_meta.json,value,"['label_values', 'value']",['label_values'],['value']
 your_privacy_jurisdiction.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,logged_information/location/your_privacy_jurisdiction.json
 device_location.json,spn,"['phone_number_location_v2', 'spn']",['phone_number_location_v2'],['spn'],list,string,logged_information/location/device_location.json
 device_location.json,country_code,"['phone_number_location_v2', 'country_code']",['phone_number_location_v2'],['country_code'],list,string,logged_information/location/device_location.json
+primary_location.json,zipcode,"['primary_location_v2', 'zipcode']","['primary_location_v2', 'zipcode']",[],list,string,logged_information/location/primary_location.json
 consents.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,logged_information/other_logged_information/consents.json
 your_notifications_tab_activity.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,logged_information/notifications/your_notifications_tab_activity.json
 your_notifications_tab_activity.json,timestamp_value,"['label_values', 'timestamp_value']",['label_values'],['timestamp_value'],list,number,logged_information/notifications/your_notifications_tab_activity.json
@@ -375,6 +354,17 @@ your_messenger_app_install_information.json,label,"['label_values', 'label']",['
 your_messenger_app_install_information.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/messages/your_messenger_app_install_information.json
 messenger_ui_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/messages/messenger_ui_settings.json
 messenger_ui_settings.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/messages/messenger_ui_settings.json
+autofill_information.json,CITY,"['autofill_information_v2', 'CITY']","['autofill_information_v2', 'CITY']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,COUNTRY,"['autofill_information_v2', 'COUNTRY']","['autofill_information_v2', 'COUNTRY']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,EMAIL,"['autofill_information_v2', 'EMAIL']","['autofill_information_v2', 'EMAIL']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,PHONE,"['autofill_information_v2', 'PHONE']","['autofill_information_v2', 'PHONE']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,GENDER,"['autofill_information_v2', 'GENDER']","['autofill_information_v2', 'GENDER']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,SLIDER,"['autofill_information_v2', 'SLIDER']","['autofill_information_v2', 'SLIDER']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,FIRST_NAME,"['autofill_information_v2', 'FIRST_NAME']","['autofill_information_v2', 'FIRST_NAME']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,LAST_NAME,"['autofill_information_v2', 'LAST_NAME']","['autofill_information_v2', 'LAST_NAME']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,FULL_NAME,"['autofill_information_v2', 'FULL_NAME']","['autofill_information_v2', 'FULL_NAME']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,WORK_EMAIL,"['autofill_information_v2', 'WORK_EMAIL']","['autofill_information_v2', 'WORK_EMAIL']",[],list,string,your_facebook_activity/messages/autofill_information.json
+autofill_information.json,WORK_PHONE,"['autofill_information_v2', 'WORK_PHONE']","['autofill_information_v2', 'WORK_PHONE']",[],list,string,your_facebook_activity/messages/autofill_information.json
 notification_tab_display_information.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/navigation_bar/notification_tab_display_information.json
 notification_tab_display_information.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/navigation_bar/notification_tab_display_information.json
 your_tab_notifications.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/navigation_bar/your_tab_notifications.json
@@ -458,6 +448,14 @@ ip_address_activity.json,ip,"['used_ip_address_v2', 'ip']",['used_ip_address_v2'
 ip_address_activity.json,action,"['used_ip_address_v2', 'action']",['used_ip_address_v2'],['action'],list,string,security_and_login_information/ip_address_activity.json
 ip_address_activity.json,timestamp,"['used_ip_address_v2', 'timestamp']",['used_ip_address_v2'],['timestamp'],list,number,security_and_login_information/ip_address_activity.json
 ip_address_activity.json,user_agent,"['used_ip_address_v2', 'user_agent']",['used_ip_address_v2'],['user_agent'],list,string,security_and_login_information/ip_address_activity.json
+browser_cookies.json,Nf-T********************,"['datr_stats_v2', 'Nf-T********************']","['datr_stats_v2', 'Nf-T********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,yLaM********************,"['datr_stats_v2', 'yLaM********************']","['datr_stats_v2', 'yLaM********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,F_DI********************,"['datr_stats_v2', 'F_DI********************']","['datr_stats_v2', 'F_DI********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,Qrjl********************,"['datr_stats_v2', 'Qrjl********************']","['datr_stats_v2', 'Qrjl********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,eAJa********************,"['datr_stats_v2', 'eAJa********************']","['datr_stats_v2', 'eAJa********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,iDMA********************,"['datr_stats_v2', 'iDMA********************']","['datr_stats_v2', 'iDMA********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,S3EK********************,"['datr_stats_v2', 'S3EK********************']","['datr_stats_v2', 'S3EK********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,4KuC********************,"['datr_stats_v2', '4KuC********************']","['datr_stats_v2', '4KuC********************']",[],list,number,security_and_login_information/browser_cookies.json
 record_details.json,event,"['admin_records_v2', 'event']",['admin_records_v2'],['event'],list,string,security_and_login_information/record_details.json
 mobile_devices.json,type,"['devices_v2', 'type']",['devices_v2'],['type'],list,string,security_and_login_information/mobile_devices.json
 mobile_devices.json,os,"['devices_v2', 'os']",['devices_v2'],['os'],list,string,security_and_login_information/mobile_devices.json
@@ -552,6 +550,8 @@ device_login_cookies.json,timestamp_value,"['label_values', 'timestamp_value']",
 likes_and_reactions.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
 likes_and_reactions.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
 device_navigation_bar_information.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/navigation_bar/device_navigation_bar_information.json
+profile_information.json,emails,"['profile_v2', 'emails', 'emails']","['profile_v2', 'emails', 'emails']",[],list,string,personal_information/profile_information/profile_information.json
+profile_information.json,previous_emails,"['profile_v2', 'emails', 'previous_emails']","['profile_v2', 'emails', 'previous_emails']",[],list,string,personal_information/profile_information/profile_information.json
 profile_information.json,name,"['profile_v2', 'family_members', 'name']","['profile_v2', 'family_members']",['name'],list,string,personal_information/profile_information/profile_information.json
 profile_information.json,relation,"['profile_v2', 'family_members', 'relation']","['profile_v2', 'family_members']",['relation'],list,string,personal_information/profile_information/profile_information.json
 profile_information.json,timestamp,"['profile_v2', 'family_members', 'timestamp']","['profile_v2', 'family_members']",['timestamp'],list,number,personal_information/profile_information/profile_information.json
