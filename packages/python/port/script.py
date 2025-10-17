@@ -26,7 +26,7 @@ def process(session_id: int, platform: str | None):
             extensions_arg = "application/json"
         else:
             extensions_arg = "application/zip"
-        
+
         file_prompt = ph.generate_file_prompt(extensions_arg)
         file_result = yield ph.render_page(platform_file_header(platform), file_prompt)
 
@@ -57,17 +57,24 @@ def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptCo
     raise ValueError(f"Unknown platform: {platform}")
 
 
+
 def platform_file_header(platform: str):
-    return props.Translatable({"en": f"Select the {platform} data file", "nl": f"Selecteer het {platform} databestand"})
+    return props.Translatable({"en": f"Select the {platform} data file",
+                               "nl": f"Selecteer het {platform} databestand",
+                               "es": f"Selecciona el archivo de datos de {platform}"})
 
 
 def platform_data_header(platform: str):
-    return props.Translatable({"en": f"Review the {platform} data", "nl": f"Controleer de {platform} data"})
+    return props.Translatable({"en": f"Review the {platform} data",
+                               "nl": f"Controleer de {platform} data",
+                               "es": f"Revisa los datos de {platform}"})
 
 
 def ask_platform():
     title = props.Translatable(
-        {"en": "Select import script to test", "nl": "Selecteer het import script dat je wilt testen"}
+        {"en": "Select import script to test",
+         "nl": "Selecteer het import script dat je wilt testen",
+         "es": "Selecciona el script de importación para probar"}
     )
 
     platform_buttons = props.PropsUIPromptRadioInput(

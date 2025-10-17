@@ -140,10 +140,10 @@ def csv_entries_as_dict(schema_file: Path) -> dict[str, list[Entry]]:
     for e in extract_csv_entries(schema_file):
         result.setdefault(e.table, []).append(e)
     return result
-# --- 
+# ---
 
 # %%
-BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_schema_df"
+BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_Merged_Structures"
 infiles = dict(
     TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
     X=BASE_PATH / "X_merged_structure_annotated.csv",
@@ -167,7 +167,7 @@ def write_entries_dict(outfile):
                 lines.append(f"        {repr(entry)},\n")
             lines.append("    ],\n")
         lines.append("}\n\n")
-    
+
     CSV_SCHEMA = BASE_PATH / "YT_merged_column_names_annotated_new.csv"
     csv_entries = csv_entries_as_dict(CSV_SCHEMA)
 
