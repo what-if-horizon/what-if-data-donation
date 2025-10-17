@@ -34,7 +34,7 @@ def process(session_id: int, platform: str | None):
             review_data_prompt = donation_flow([file_result.value], platform)
             print(review_data_prompt)
             yield ph.render_page(platform_data_header(platform), review_data_prompt)
-
+            break
         else:
             logger.info("Skipped at file selection ending flow")
             break
