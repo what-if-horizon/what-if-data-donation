@@ -103,13 +103,12 @@ def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
             schema_df["table_name"] = schema_df["json_name"].map(tablename)
 
     for table_name, table_rows in schema_df.groupby("table_name"):
-        for file_path, group in table_rows.groupby("file_path"):
-            assert isinstance(table_name, str)
-            assert isinstance(file_path, str)
-            if platform == "TIKTOK":
-                file_path = None
-            yield extract_entry(file_path, table_name, group)
-
+        if platform == "TIKTOK":
+            # Treat all TikTok rows as a single file group
+            yield extract_entry(None, table_name, table_rows)
+        else:
+            for file_path, group in table_rows.groupby("file_path"):
+                yield extract_entry(file_path, table_name, group)
 
 def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry]]:
     result: dict[str, list[Entry]] = {}
