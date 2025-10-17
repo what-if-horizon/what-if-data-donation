@@ -101,6 +101,38 @@ your_transaction_survey_information.json,fbid,['fbid'],,['fbid'],static,string,y
 your_transaction_survey_information.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/facebook_marketplace/your_transaction_survey_information.json
 messenger_active_status_settings.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/messenger_active_status_settings.json
 messenger_active_status_settings.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/messages/messenger_active_status_settings.json
+your_recent_reported_conversions.json,fbid,['fbid'],,['fbid'],static,string,ads_information/your_recent_reported_conversions.json
+your_recent_reported_conversions.json,ent_name,['ent_name'],,['ent_name'],static,string,ads_information/your_recent_reported_conversions.json
+device_login_cookies.json,fbid,['fbid'],,['fbid'],static,string,security_and_login_information/device_login_cookies.json
+device_login_cookies.json,ent_name,['ent_name'],,['ent_name'],static,string,security_and_login_information/device_login_cookies.json
+emails_we_sent_you.json,title,['title'],,['title'],static,string,personal_information/other_personal_information/emails_we_sent_you.json
+emails_we_sent_you.json,timestamp,['timestamp'],,['timestamp'],static,number,personal_information/other_personal_information/emails_we_sent_you.json
+emails_we_sent_you.json,fbid,['fbid'],,['fbid'],static,string,personal_information/other_personal_information/emails_we_sent_you.json
+emails_we_sent_you.json,ent_name,['ent_name'],,['ent_name'],static,string,personal_information/other_personal_information/emails_we_sent_you.json
+likes_and_reactions.json,timestamp,['timestamp'],,['timestamp'],static,number,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
+likes_and_reactions.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
+likes_and_reactions.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
+your_page_or_groups_badges.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/facebook_gaming/your_page_or_groups_badges.json
+your_page_or_groups_badges.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/facebook_gaming/your_page_or_groups_badges.json
+your_posts__check_ins__photos_and_videos_1.json,timestamp,['timestamp'],,['timestamp'],static,number,your_facebook_activity/posts/your_posts__check_ins__photos_and_videos_1.json
+your_posts__check_ins__photos_and_videos_1.json,title,['title'],,['title'],static,string,your_facebook_activity/posts/your_posts__check_ins__photos_and_videos_1.json
+likes_and_reactions_1.json,timestamp,['timestamp'],,['timestamp'],static,number,your_facebook_activity/comments_and_reactions/likes_and_reactions_1.json
+likes_and_reactions_1.json,title,['title'],,['title'],static,string,your_facebook_activity/comments_and_reactions/likes_and_reactions_1.json
+your_contributions.json,title,['title'],,['title'],static,string,your_facebook_activity/groups/your_contributions.json
+your_contributions.json,timestamp,['timestamp'],,['timestamp'],static,number,your_facebook_activity/groups/your_contributions.json
+your_contributions.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/groups/your_contributions.json
+your_contributions.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/groups/your_contributions.json
+content_sharing_links_you_have_created.json,timestamp,['timestamp'],,['timestamp'],static,number,your_facebook_activity/posts/content_sharing_links_you_have_created.json
+content_sharing_links_you_have_created.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/posts/content_sharing_links_you_have_created.json
+content_sharing_links_you_have_created.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/posts/content_sharing_links_you_have_created.json
+navigation_bar_shortcut_history.json,timestamp,['timestamp'],,['timestamp'],static,number,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
+navigation_bar_shortcut_history.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
+navigation_bar_shortcut_history.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
+your_ownership_of_digital_items.json,timestamp,['timestamp'],,['timestamp'],static,number,logged_information/other_logged_information/your_ownership_of_digital_items.json
+your_ownership_of_digital_items.json,fbid,['fbid'],,['fbid'],static,string,logged_information/other_logged_information/your_ownership_of_digital_items.json
+your_ownership_of_digital_items.json,ent_name,['ent_name'],,['ent_name'],static,string,logged_information/other_logged_information/your_ownership_of_digital_items.json
+facebook_new_user_guide.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/other_activity/facebook_new_user_guide.json
+facebook_new_user_guide.json,ent_name,['ent_name'],,['ent_name'],static,string,your_facebook_activity/other_activity/facebook_new_user_guide.json
 profile_information.json,registration_timestamp,"['profile_v2', 'registration_timestamp']",,"['profile_v2', 'registration_timestamp']",static,number,personal_information/profile_information/profile_information.json
 profile_information.json,profile_uri,"['profile_v2', 'profile_uri']",,"['profile_v2', 'profile_uri']",static,string,personal_information/profile_information/profile_information.json
 voting_location.json,voting_location,"['voting_location_v2', 'voting_location']",,"['voting_location_v2', 'voting_location']",static,string,your_facebook_activity/voting/voting_location.json
@@ -166,47 +198,15 @@ your_messenger_app_install_information.json,media,['media'],['media'],[],list,ar
 your_transaction_survey_information.json,media,['media'],['media'],[],list,array,your_facebook_activity/facebook_marketplace/your_transaction_survey_information.json
 messenger_active_status_settings.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/messenger_active_status_settings.json
 your_recent_reported_conversions.json,media,['media'],['media'],[],list,array,ads_information/your_recent_reported_conversions.json
-your_recent_reported_conversions.json,fbid,['fbid'],[],['fbid'],list,string,ads_information/your_recent_reported_conversions.json
-your_recent_reported_conversions.json,ent_name,['ent_name'],[],['ent_name'],list,string,ads_information/your_recent_reported_conversions.json
 device_login_cookies.json,media,['media'],['media'],[],list,array,security_and_login_information/device_login_cookies.json
-device_login_cookies.json,fbid,['fbid'],[],['fbid'],list,string,security_and_login_information/device_login_cookies.json
-device_login_cookies.json,ent_name,['ent_name'],[],['ent_name'],list,string,security_and_login_information/device_login_cookies.json
-emails_we_sent_you.json,title,['title'],[],['title'],list,string,personal_information/other_personal_information/emails_we_sent_you.json
-emails_we_sent_you.json,timestamp,['timestamp'],[],['timestamp'],list,number,personal_information/other_personal_information/emails_we_sent_you.json
 emails_we_sent_you.json,media,['media'],['media'],[],list,array,personal_information/other_personal_information/emails_we_sent_you.json
-emails_we_sent_you.json,fbid,['fbid'],[],['fbid'],list,string,personal_information/other_personal_information/emails_we_sent_you.json
-emails_we_sent_you.json,ent_name,['ent_name'],[],['ent_name'],list,string,personal_information/other_personal_information/emails_we_sent_you.json
-likes_and_reactions.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
 likes_and_reactions.json,media,['media'],['media'],[],list,array,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
-likes_and_reactions.json,fbid,['fbid'],[],['fbid'],list,string,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
-likes_and_reactions.json,ent_name,['ent_name'],[],['ent_name'],list,string,your_facebook_activity/comments_and_reactions/likes_and_reactions.json
 your_page_or_groups_badges.json,media,['media'],['media'],[],list,array,your_facebook_activity/facebook_gaming/your_page_or_groups_badges.json
-your_page_or_groups_badges.json,fbid,['fbid'],[],['fbid'],list,string,your_facebook_activity/facebook_gaming/your_page_or_groups_badges.json
-your_page_or_groups_badges.json,ent_name,['ent_name'],[],['ent_name'],list,string,your_facebook_activity/facebook_gaming/your_page_or_groups_badges.json
-your_posts__check_ins__photos_and_videos_1.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_facebook_activity/posts/your_posts__check_ins__photos_and_videos_1.json
-your_posts__check_ins__photos_and_videos_1.json,title,['title'],[],['title'],list,string,your_facebook_activity/posts/your_posts__check_ins__photos_and_videos_1.json
-likes_and_reactions_1.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_facebook_activity/comments_and_reactions/likes_and_reactions_1.json
-likes_and_reactions_1.json,title,['title'],[],['title'],list,string,your_facebook_activity/comments_and_reactions/likes_and_reactions_1.json
-your_contributions.json,title,['title'],[],['title'],list,string,your_facebook_activity/groups/your_contributions.json
-your_contributions.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_facebook_activity/groups/your_contributions.json
 your_contributions.json,media,['media'],['media'],[],list,array,your_facebook_activity/groups/your_contributions.json
-your_contributions.json,fbid,['fbid'],[],['fbid'],list,string,your_facebook_activity/groups/your_contributions.json
-your_contributions.json,ent_name,['ent_name'],[],['ent_name'],list,string,your_facebook_activity/groups/your_contributions.json
-content_sharing_links_you_have_created.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_facebook_activity/posts/content_sharing_links_you_have_created.json
 content_sharing_links_you_have_created.json,media,['media'],['media'],[],list,array,your_facebook_activity/posts/content_sharing_links_you_have_created.json
-content_sharing_links_you_have_created.json,fbid,['fbid'],[],['fbid'],list,string,your_facebook_activity/posts/content_sharing_links_you_have_created.json
-content_sharing_links_you_have_created.json,ent_name,['ent_name'],[],['ent_name'],list,string,your_facebook_activity/posts/content_sharing_links_you_have_created.json
-navigation_bar_shortcut_history.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
 navigation_bar_shortcut_history.json,media,['media'],['media'],[],list,array,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
-navigation_bar_shortcut_history.json,fbid,['fbid'],[],['fbid'],list,string,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
-navigation_bar_shortcut_history.json,ent_name,['ent_name'],[],['ent_name'],list,string,your_facebook_activity/navigation_bar/navigation_bar_shortcut_history.json
-your_ownership_of_digital_items.json,timestamp,['timestamp'],[],['timestamp'],list,number,logged_information/other_logged_information/your_ownership_of_digital_items.json
 your_ownership_of_digital_items.json,media,['media'],['media'],[],list,array,logged_information/other_logged_information/your_ownership_of_digital_items.json
-your_ownership_of_digital_items.json,fbid,['fbid'],[],['fbid'],list,string,logged_information/other_logged_information/your_ownership_of_digital_items.json
-your_ownership_of_digital_items.json,ent_name,['ent_name'],[],['ent_name'],list,string,logged_information/other_logged_information/your_ownership_of_digital_items.json
 facebook_new_user_guide.json,media,['media'],['media'],[],list,array,your_facebook_activity/other_activity/facebook_new_user_guide.json
-facebook_new_user_guide.json,fbid,['fbid'],[],['fbid'],list,string,your_facebook_activity/other_activity/facebook_new_user_guide.json
-facebook_new_user_guide.json,ent_name,['ent_name'],[],['ent_name'],list,string,your_facebook_activity/other_activity/facebook_new_user_guide.json
 two-factor_authentication.json,ent_field_name,"['label_values', 'ent_field_name']",['label_values'],['ent_field_name'],list,string,security_and_login_information/two-factor_authentication.json
 two-factor_authentication.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,security_and_login_information/two-factor_authentication.json
 two-factor_authentication.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,security_and_login_information/two-factor_authentication.json

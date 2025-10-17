@@ -58,6 +58,12 @@ message_2.json,title,['title'],,['title'],static,string,your_activity_across_fac
 message_2.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
 message_2.json,thread_path,['thread_path'],,['thread_path'],static,string,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
 message_2.json,magic_words,['magic_words'],,['magic_words'],static,array,your_activity_across_facebook/messages/inbox/albabayesquer_10153387279834544/message_2.json
+navigation_bar_activity.json,media,['media'],,['media'],static,array,your_activity_across_facebook/navigation_bar/navigation_bar_activity.json
+your_device_push_settings.json,media,['media'],,['media'],static,array,preferences/preferences/your_device_push_settings.json
+your_posts__check_ins__photos_and_videos_1.json,timestamp,['timestamp'],,['timestamp'],static,number,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
+your_posts__check_ins__photos_and_videos_1.json,title,['title'],,['title'],static,string,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
+likes_and_reactions_1.json,timestamp,['timestamp'],,['timestamp'],static,number,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
+likes_and_reactions_1.json,title,['title'],,['title'],static,string,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
 message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_activity_across_facebook/messages/inbox/username/message_1.json
 message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_activity_across_facebook/messages/inbox/username/message_1.json
 message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_activity_across_facebook/messages/archived_threads/username/message_1.json
@@ -107,12 +113,6 @@ profile_information.json,name,"['profile_v2', 'hometown', 'name']",,"['profile_v
 profile_information.json,timestamp,"['profile_v2', 'hometown', 'timestamp']",,"['profile_v2', 'hometown', 'timestamp']",static,number,personal_information/profile_information/profile_information.json
 profile_information.json,blood_donor_status,"['profile_v2', 'blood_info', 'blood_donor_status']",,"['profile_v2', 'blood_info', 'blood_donor_status']",static,string,personal_information/profile_information/profile_information.json
 other_categories_used_to_reach_you.json,bcts,['bcts'],['bcts'],[],list,string,ads_information/other_categories_used_to_reach_you.json
-navigation_bar_activity.json,media,['media'],[],['media'],list,array,your_activity_across_facebook/navigation_bar/navigation_bar_activity.json
-your_device_push_settings.json,media,['media'],[],['media'],list,array,preferences/preferences/your_device_push_settings.json
-your_posts__check_ins__photos_and_videos_1.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
-your_posts__check_ins__photos_and_videos_1.json,title,['title'],[],['title'],list,string,your_activity_across_facebook/posts/your_posts__check_ins__photos_and_videos_1.json
-likes_and_reactions_1.json,timestamp,['timestamp'],[],['timestamp'],list,number,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
-likes_and_reactions_1.json,title,['title'],[],['title'],list,string,your_activity_across_facebook/comments_and_reactions/likes_and_reactions_1.json
 message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
 message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_activity_across_facebook/messages/inbox/username/message_1.json
 message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_activity_across_facebook/messages/inbox/username/message_1.json

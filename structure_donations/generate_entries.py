@@ -23,33 +23,21 @@ which will use the Merged_structures_*.csv to determine the required entries.
 
 
 def extract_entry(filename: str | None, table: str, schema_group: pd.DataFrame) -> Entry:
-    """Generate an Entry for a group of rows from the structure csv file
-
-    Each entry represents a table that should be generated in the donation flow,
-    with static_fields (one value for the whole table) and list_blocks (generating rows)
-
-    Args:
-        filename (str): the name of the file from which to extract the information
-        table (str): a descriptive name for this table
-        schema_group (pd.DataFrame): the Pandas group in the structure dataframe
-
-    Returns:
-        Entry: a single Entry object
-    """
+    """Generate an Entry for a group of rows from the structure csv file"""
     entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
-
     def get_path(value):
-        # Deal with .-separated paths
+        if pd.isna(value) or value is None or value == "":
+            return tuple()
+        value = str(value)
         if "[" not in value:
             return tuple(value.split("."))
-        # Convert ' into " (workaround for #86)
         value = value.replace("'", '"')
         value = json.loads(value)
         if isinstance(value, list):
             return tuple(value)
         assert isinstance(value, tuple)
         return value
-
+    
     for _, row in schema_group.iterrows():
         colname = row["column_name"]
         subfield_path = get_path(row["subfield_path"])
@@ -60,10 +48,26 @@ def extract_entry(filename: str | None, table: str, schema_group: pd.DataFrame) 
                 entry.static_fields[colname] = subfield_path
             case "list":
                 list_path = get_path(row["list_path"])
+                # :adhesive_bandage: SAFEGUARD: only check when list_path is not empty
+                if list_path:
+                    # Skip self-referential definitions
+                    if subfield_path and subfield_path == (list_path[-1],):
+                        print(f":warning: Skipping self-referential path in {table}: list_path={list_path}, subfield_path={subfield_path}, col={colname}")
+                        continue
+                    # Skip redundant nested patterns like ('media', 'media')
+                    if list_path[-1] in subfield_path:
+                        print(f":warning: Skipping redundant nested path in {table}: list_path={list_path}, subfield_path={subfield_path}, col={colname}")
+                        continue
                 entry.list_blocks.setdefault(list_path, {})[colname] = subfield_path
             case _:
                 raise ValueError(f"Unknown var_type: {row['var_type']}")
     return entry
+
+
+
+
+
+
 
 
 def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
@@ -143,7 +147,7 @@ def csv_entries_as_dict(schema_file: Path) -> dict[str, list[Entry]]:
 # --- 
 
 # %%
-BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_schema_df"
+BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_Merged_Structures"
 infiles = dict(
     TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
     X=BASE_PATH / "X_merged_structure_annotated.csv",
@@ -168,7 +172,7 @@ def write_entries_dict(outfile):
             lines.append("    ],\n")
         lines.append("}\n\n")
     
-    CSV_SCHEMA = BASE_PATH / "YT_merged_column_names_annotated_new.csv"
+    CSV_SCHEMA = BASE_PATH / "YT_merged_column_names_annotated.csv"
     csv_entries = csv_entries_as_dict(CSV_SCHEMA)
 
     lines.append("YT_CSV_ENTRIES: dict[str, list[Entry]] = {\n")
