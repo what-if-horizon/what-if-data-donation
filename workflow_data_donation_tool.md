@@ -1,3 +1,5 @@
+<div align="justify">
+ 
 # How to use and implement this human in the loop data donation tool
 This data donation tool is an extension of the Feldspar repository, designed for integration into the Eyra environment to facilitate the collection of data donations. The goal of this extension is to collect data donations according to the highest standards of data privacy, while minimizing the risk of omitted variables and unnecessary data loss.
 
@@ -166,7 +168,7 @@ Rerun the [generate_entries.py](https://github.com/what-if-horizon/what-if-data-
 python3 structure_donations/generate_entries.py
 ```
 
-
+</div>
 
 
 
