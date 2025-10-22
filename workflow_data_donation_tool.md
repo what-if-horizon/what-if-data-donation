@@ -1,5 +1,11 @@
-# How to use and implement this data donation tool
-This data donation tool in an extension of the Feldspar repository which can be implemented in the Eyra environment to collect data donations. The aim of this extension in to collect data donations with the highest standards for data privacy while reducing the risk of omitted variables or unnecessary data loss as much as possible. This documentation serves as a step-by-step guide to first understand the rationale and the strategy behind each component of the tool and consequently lays out how to use and update the tool when in production
+# How to use and implement this human in the loop data donation tool
+This data donation tool is an extension of the Feldspar repository, designed for integration into the Eyra environment to facilitate the collection of data donations. The goal of this extension is to collect data donations according to the highest standards of data privacy, while minimizing the risk of omitted variables and unnecessary data loss.
+
+This documentation serves as a step-by-step guide to: 1) Explain the rationale and strategy behind each component of the tool, and 2) Describe how to use and update the tool during production.
+
+In essence, this workflow enables researchers to start from real, anonymized data downloaded from social media platforms and automatically generate the Python code needed to parse and structure that data. This approach greatly reduces manual work and minimizes errors that typically arise from inconsistencies in the data structures and field names provided by different platforms.
+
+The documentation is organized as follows: First, we describe each component of the tool — from anonymizing raw data to generating the final tables — including the expected inputs and outputs, a brief conceptual explanation, and the code to be executed. Then, we explain how to update the tool with additional anonymized data, allowing researchers to expand or adjust the parsing logic with minimal manual coding.
 
 ## Workflow Data Donation Tool
 
@@ -92,14 +98,28 @@ python3 structure_donations/updating_annotations.py
 - **Output**: Data donations flattened into multiple interpretable tables 
 
 #### The Rationale
-To make the data interpretable for the participants and give them a fair opportunity to opt out of the data they do not wish to donate, the JSONs need to be flattened into tables.
+To make the data interpretable for participants — and to give them a fair opportunity to opt out of specific information — the raw JSON files provided by platforms must be flattened into tabular form.
 
+While Port (Boeschoten et al., 2023) in conjunttion with Next defines the overall architecture of the Data Donation Tool, researchers are responsible for writing a Python script that specifies which data to extract and how to parse it for each platform and language analyzed.
+
+This process is challenging and time-consuming because of the extensive variation in data structures across and within social media companies. Folder names, JSON file names, internal paths, and key names all vary inconsistently — introducing substantial complexity and risk of error.
+
+To address this, we developed a method to automatically generate the necessary parsing logic. The approach relies on a CSV file describing the structure of each platform’s data and uses it to generate Python objects that contain detailed parsing instructions for each JSON file (or for tabular data, in the case of TikTok).
+
+This modular approach significantly reduces manual coding effort, minimizes structural errors across platforms, and ensures reproducibility in how data is parsed and flattened.
 
 #### The Strategy
-The variables with an ID in the 'KeepID' column in the `[<'platform'>_Merged_Structures_Annotated.csv](https://github.com/what-if-horizon/what-if-data-donation/tree/master/structure_donations/Annotated_schema_df) are standardised and wrangled into a script which serves as input for the user interface and generates the tables. 
+1) **Entry Generation** – We use the script generate_entries.py to generate what we call entries. The input to this script is the annotated merged structure CSV file for a given platform (e.g., Facebook_Merged_Structures_Annotated.csv). Variables marked with an ID in the KeepID column are selected as those to be retained.
+The CSV includes information about the data’s nested structure — specifying both the containing file and the exact path to each target variable within it.
+
+2) **Entry Creation** – The script processes this information to create Entry objects. Each Entry defines the properties of every variable to extract, its path within the original JSON file, and the name of the resulting table. These entries are automatically saved in the file entries_data.py.
+
+3) **Data Extraction and Table Generation** – The generated entries are then imported into the platform-specific donation flow scripts (e.g., facebook.py, tiktok.py).
+These scripts orchestrate the entire process — locating the data files, applying the parsing logic described by each Entry, and constructing the final interpretable tables for donation.
 
 #### The Code
-The annotated merged structure CSVs are used as input to run the [generate_entries.py](https://github.com/what-if-horizon/what-if-data-donation/blob/master/structure_donations/generate_entries.py) (structure_donations/generate_entries.py) which outputs the entries_data.py. Only variables specified in the 'KeepID' column are included.  This entries_data.py script serves as input for the [donation flow scripts](https://github.com/what-if-horizon/what-if-data-donation/tree/master/packages/python/port/donation_flows) which flatten the JSONs into tables and provide these tables to the participants in the user interface. 
+The annotated merged structure CSVs are used as input to run the [generate_entries.py](https://github.com/what-if-horizon/what-if-data-donation/blob/master/structure_donations/generate_entries.py) (structure_donations/generate_entries.py) which outputs the entries_data.py. Only variables specified in the 'KeepID' column are included.  This entries_data.py script serves as input for the [donation flow scripts](https://github.com/what-if-horizon/what-if-data-donation/tree/master/packages/python/port/donation_flows) which flatten the JSONs into tables and provide these tables to the participants in the user interface. To generate these entries, just run the following code:
+
 ```
 python3 structure_donations/generate_entries.py
 ```
