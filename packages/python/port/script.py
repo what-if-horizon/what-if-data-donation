@@ -1,3 +1,4 @@
+import json
 import logging
 import zipfile
 from typing import Any, Generator, TypedDict
@@ -15,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 def process(session_id: int, platform: str | None):
-    if platform is None or platform == '':
+    if platform is None or platform == "":
         p = yield ask_platform()
         platform = p.value
 
@@ -31,9 +32,17 @@ def process(session_id: int, platform: str | None):
         file_result = yield ph.render_page(platform_file_header(platform), file_prompt)
 
         if file_result.__type__ == "PayloadString":
+            # TODO: Validate the file and ask to retry if needed!
+
             review_data_prompt = donation_flow([file_result.value], platform)
-            print(review_data_prompt)
-            yield ph.render_page(platform_data_header(platform), review_data_prompt)
+            result = yield ph.render_page(platform_data_header(platform), review_data_prompt)
+            if result.__type__ == "PayloadJSON":
+                reviewed_data = result.value
+                yield ph.donate(f"{session_id}", reviewed_data)
+            elif result.__type__ == "PayloadFalse":
+                value = json.dumps('{"status" : "data_submission declined"}')
+                yield ph.donate(f"{session_id}", value)
+
             break
         else:
             logger.info("Skipped at file selection ending flow")
@@ -57,24 +66,33 @@ def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptCo
     raise ValueError(f"Unknown platform: {platform}")
 
 
-
 def platform_file_header(platform: str):
-    return props.Translatable({"en": f"Select the {platform} data file",
-                               "nl": f"Selecteer het {platform} databestand",
-                               "es": f"Selecciona el archivo de datos de {platform}"})
+    return props.Translatable(
+        {
+            "en": f"Select the {platform} data file",
+            "nl": f"Selecteer het {platform} databestand",
+            "es": f"Selecciona el archivo de datos de {platform}",
+        }
+    )
 
 
 def platform_data_header(platform: str):
-    return props.Translatable({"en": f"Review the {platform} data",
-                               "nl": f"Controleer de {platform} data",
-                               "es": f"Revisa los datos de {platform}"})
+    return props.Translatable(
+        {
+            "en": f"Review the {platform} data",
+            "nl": f"Controleer de {platform} data",
+            "es": f"Revisa los datos de {platform}",
+        }
+    )
 
 
 def ask_platform():
     title = props.Translatable(
-        {"en": "Select import script to test",
-         "nl": "Selecteer het import script dat je wilt testen",
-         "es": "Selecciona el script de importación para probar"}
+        {
+            "en": "Select import script to test",
+            "nl": "Selecteer het import script dat je wilt testen",
+            "es": "Selecciona el script de importación para probar",
+        }
     )
 
     platform_buttons = props.PropsUIPromptRadioInput(
