@@ -1,7 +1,7 @@
 <div align="justify">
  
 # How to use and implement this human in the loop data donation tool
-This data donation tool is an extension of the Feldspar repository, designed for integration into the Eyra environment to facilitate the collection of data donations. The goal of this extension is to collect data donations according to the highest standards of data privacy, while minimizing the risk of omitted variables and unnecessary data loss.
+This data donation tool is an extension of the Feldspar repository, designed for integration into the Eyra environment to facilitate the collection of data donations. The goal of this extension is to collect data donations according to the highest standards of data privacy, while minimizing the risk of omitted variables and unnecessary data loss. We depart from the code [Next and Port did X] to add a workflow that minimizes manual work for researchers and reduces even more the likelihood of data loss.   
 
 This documentation serves as a step-by-step guide to: 1) Explain the rationale and strategy behind each component of the tool, and 2) Describe how to use and update the tool during production.
 
