@@ -18,6 +18,8 @@ locations_of_interest.json,media,['media'],,['media'],static,array,personal_info
 locations_of_interest.json,fbid,['fbid'],,['fbid'],static,string,personal_information/information_about_you/locations_of_interest.json
 in-app_browser_autofill_settings.json,media,['media'],,['media'],static,array,personal_information/autofill_information/in-app_browser_autofill_settings.json
 in-app_browser_autofill_settings.json,fbid,['fbid'],,['fbid'],static,string,personal_information/autofill_information/in-app_browser_autofill_settings.json
+followers_1.json,title,['title'],,['title'],static,string,connections/followers_and_following/followers_1.json
+followers_1.json,media_list_data,['media_list_data'],,['media_list_data'],static,array,connections/followers_and_following/followers_1.json
 message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/message_requests/username/message_1.json
 message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/message_requests/username/message_1.json
 secret_conversations.json,calls,"['ig_secret_conversations', 'calls']",,"['ig_secret_conversations', 'calls']",static,array,your_instagram_activity/messages/secret_conversations.json
@@ -42,8 +44,9 @@ autofill_information.json,postal_code,"['ig_autofill_data', 'postal_code']",,"['
 autofill_information.json,email,"['ig_autofill_data', 'email']",,"['ig_autofill_data', 'email']",static,string,personal_information/autofill_information/autofill_information.json
 autofill_information.json,family_name,"['ig_autofill_data', 'family_name']",,"['ig_autofill_data', 'family_name']",static,string,personal_information/autofill_information/autofill_information.json
 autofill_information.json,given_name,"['ig_autofill_data', 'given_name']",,"['ig_autofill_data', 'given_name']",static,string,personal_information/autofill_information/autofill_information.json
-followers_1.json,title,['title'],[],['title'],list,string,connections/followers_and_following/followers_1.json
-followers_1.json,media_list_data,['media_list_data'],[],['media_list_data'],list,array,connections/followers_and_following/followers_1.json
+post_comments_1.json,value,"['string_map_data', 'Comment', 'value']",,"['string_map_data', 'Comment', 'value']",static,string,your_instagram_activity/comments/post_comments_1.json
+post_comments_1.json,value,"['string_map_data', 'Media Owner', 'value']",,"['string_map_data', 'Media Owner', 'value']",static,string,your_instagram_activity/comments/post_comments_1.json
+post_comments_1.json,timestamp,"['string_map_data', 'Time', 'timestamp']",,"['string_map_data', 'Time', 'timestamp']",static,number,your_instagram_activity/comments/post_comments_1.json
 message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
 message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
 message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
@@ -157,9 +160,6 @@ stories.json,source_app,"['ig_stories', 'cross_post_source', 'source_app']",['ig
 your_activity_off_meta_technologies.json,id,"['apps_and_websites_off_meta_activity', 'events', 'id']","['apps_and_websites_off_meta_activity', 'events']",['id'],list,number,apps_and_websites_off_of_instagram/apps_and_websites/your_activity_off_meta_technologies.json
 your_activity_off_meta_technologies.json,type,"['apps_and_websites_off_meta_activity', 'events', 'type']","['apps_and_websites_off_meta_activity', 'events']",['type'],list,string,apps_and_websites_off_of_instagram/apps_and_websites/your_activity_off_meta_technologies.json
 your_activity_off_meta_technologies.json,timestamp,"['apps_and_websites_off_meta_activity', 'events', 'timestamp']","['apps_and_websites_off_meta_activity', 'events']",['timestamp'],list,number,apps_and_websites_off_of_instagram/apps_and_websites/your_activity_off_meta_technologies.json
-post_comments_1.json,value,"['string_map_data', 'Comment', 'value']",[],"['string_map_data', 'Comment', 'value']",list,string,your_instagram_activity/comments/post_comments_1.json
-post_comments_1.json,value,"['string_map_data', 'Media Owner', 'value']",[],"['string_map_data', 'Media Owner', 'value']",list,string,your_instagram_activity/comments/post_comments_1.json
-post_comments_1.json,timestamp,"['string_map_data', 'Time', 'timestamp']",[],"['string_map_data', 'Time', 'timestamp']",list,number,your_instagram_activity/comments/post_comments_1.json
 your_muted_story_teaser_creators.json,href,"['subscriptions_muted_story_teaser_creators', 'string_map_data', 'Muted Creators', 'href']",['subscriptions_muted_story_teaser_creators'],"['string_map_data', 'Muted Creators', 'href']",list,string,your_instagram_activity/subscriptions/your_muted_story_teaser_creators.json
 your_muted_story_teaser_creators.json,value,"['subscriptions_muted_story_teaser_creators', 'string_map_data', 'Muted Creators', 'value']",['subscriptions_muted_story_teaser_creators'],"['string_map_data', 'Muted Creators', 'value']",list,string,your_instagram_activity/subscriptions/your_muted_story_teaser_creators.json
 your_muted_story_teaser_creators.json,timestamp,"['subscriptions_muted_story_teaser_creators', 'string_map_data', 'Muted Creators', 'timestamp']",['subscriptions_muted_story_teaser_creators'],"['string_map_data', 'Muted Creators', 'timestamp']",list,number,your_instagram_activity/subscriptions/your_muted_story_teaser_creators.json

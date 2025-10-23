@@ -14,9 +14,9 @@ def create_donation_flow(file_input: list[str]):
     # --- normal donation tables ---
     for key, entries in TIKTOK_ENTRIES.items():
         try:
-            df = create_table(file_input, entries, json_root="Activity")
+            df = create_table(file_input, entries)
             if not df.empty:
-                tables.append(donation_table(name=key, df=df, title={"en": key}))
+                tables.append(donation_table(name=key, df=df, title={"en": key, "es": key}))
         except Exception as e:
             print(f"Error in {key}:", e)
 
@@ -27,7 +27,7 @@ def create_donation_flow(file_input: list[str]):
         [{"Data Structure": "Anonymized", "Placeholder for research purpose": placeholder_json}]
     )
 
-    tables.append(donation_table(name="placeholder", df=df_placeholder, title={"en": "Placeholders"}))
+    tables.append(donation_table(name="placeholder", df=df_placeholder, title={"en": "Placeholders", "es": "Estructura de datos"}))
 
     # --- donation flow ---
     if tables:

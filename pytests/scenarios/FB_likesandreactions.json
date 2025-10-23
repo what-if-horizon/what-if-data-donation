@@ -1,0 +1,103 @@
+{
+    "input_file": "pytests/public_testfiles/FB_public_test_file.zip",
+    "platform": "facebook",
+    "expected_output": [
+        {
+            "id": "Likes And Reactions",
+            "data_frame": {
+                "columns": [
+                    "timestamp",
+                    "media",
+                    "fbid",
+                    "ent_name",
+                    "label_values.label",
+                    "label_values.value",
+                    "label_values.ent_field_name",
+                    "label_values.href",
+                    "label_values.title",
+                    "label_values.dict.title",
+                    "label_values.dict.dict.ent_field_name",
+                    "label_values.dict.dict.label",
+                    "label_values.dict.dict.value"
+                ],
+                "data": [
+                    [
+                        1728204035,
+                        [],
+                        "1",
+                        null,
+                        "Reaction",
+                        "Like",
+                        null,
+                        null,
+                        null,
+                        NaN,
+                        NaN,
+                        NaN,
+                        NaN
+                    ],
+                    [
+                        1728204035,
+                        [],
+                        "1",
+                        null,
+                        "URL",
+                        "https://www.facebook.com/events////",
+                        null,
+                        "https://www.facebook.com/events////",
+                        null,
+                        NaN,
+                        NaN,
+                        NaN,
+                        NaN
+                    ],
+                    [
+                        1728204035,
+                        [],
+                        "1",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "Group",
+                        "",
+                        NaN,
+                        "Name",
+                        "blaa"
+                    ],
+                    [
+                        1728204035,
+                        [],
+                        "1",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "Group",
+                        "",
+                        NaN,
+                        "Start time",
+                        null
+                    ],
+                    [
+                        1728204035,
+                        [],
+                        "1",
+                        null,
+                        null,
+                        null,
+                        null,
+                        null,
+                        "Author",
+                        "",
+                        NaN,
+                        "Name",
+                        "bla"
+                    ]
+                ]
+            }
+        }
+    ]
+}
