@@ -1,0 +1,79 @@
+{
+    "input_file": "pytests/public_testfiles/FB_public_test_file.zip",
+    "platform": "facebook",
+    "expected_output": [
+        {
+            "id": "Time Spent On Facebook",
+            "data_frame": {
+                "columns": [
+                    "timestamp",
+                    "media",
+                    "fbid",
+                    "ent_name",
+                    "label_values.label",
+                    "label_values.ent_field_name",
+                    "label_values.timestamp_value",
+                    "label_values.vec.dict.label",
+                    "label_values.vec.dict.timestamp_value"
+                ],
+                "data": [
+                    [
+                        1739734481,
+                        [],
+                        "1",
+                        null,
+                        "Intervals",
+                        null,
+                        NaN,
+                        "Start time",
+                        17397460.0
+                    ],
+                    [
+                        1739734481,
+                        [],
+                        "1",
+                        null,
+                        "Intervals",
+                        null,
+                        NaN,
+                        "End time",
+                        1734594.0
+                    ],
+                    [
+                        1739734481,
+                        [],
+                        "1",
+                        null,
+                        "Intervals",
+                        null,
+                        NaN,
+                        "Start time",
+                        1741827.0
+                    ],
+                    [
+                        1739734481,
+                        [],
+                        "1",
+                        null,
+                        "Intervals",
+                        null,
+                        NaN,
+                        "End time",
+                        1739189.0
+                    ],
+                    [
+                        1739734481,
+                        [],
+                        "1",
+                        null,
+                        "Update time",
+                        null,
+                        172190.0,
+                        NaN,
+                        NaN
+                    ]
+                ]
+            }
+        }
+    ]
+}

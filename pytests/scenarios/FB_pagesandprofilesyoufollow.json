@@ -1,0 +1,23 @@
+{
+    "input_file": "pytests/public_testfiles/FB_public_test_file.zip",
+    "platform": "facebook",
+    "expected_output": [
+        {
+            "id": "Pages And Profiles You Follow",
+            "data_frame": {
+                "columns": [
+                    "pages_followed_v2.timestamp",
+                    "pages_followed_v2.title",
+                    "pages_followed_v2.data.name"
+                ],
+                "data": [
+                    [
+                        1451355,
+                        "bla",
+                        "pla"
+                    ]
+                ]
+            }
+        }
+    ]
+}
