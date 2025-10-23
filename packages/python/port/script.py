@@ -11,6 +11,7 @@ import port.donation_flows.tiktok as tiktok
 import port.donation_flows.twitter as twitter
 import port.donation_flows.youtube as youtube
 import port.helpers.port_helpers as ph
+from port.api import d3i_props
 
 logger = logging.getLogger(__name__)
 
@@ -19,6 +20,7 @@ def process(session_id: int, platform: str | None):
     if platform is None or platform == "":
         p = yield ask_platform()
         platform = p.value
+        assert isinstance(platform, str)
 
     while True:
         logger.info("Prompt for file for %s", platform)
@@ -35,6 +37,10 @@ def process(session_id: int, platform: str | None):
             # TODO: Validate the file and ask to retry if needed!
 
             review_data_prompt = donation_flow([file_result.value], platform)
+            # WvA I think donation flow should just never return None instead?
+            if not review_data_prompt:
+                logger.info("No donation flow received")
+                break
             result = yield ph.render_page(platform_data_header(platform), review_data_prompt)
             if result.__type__ == "PayloadJSON":
                 reviewed_data = result.value
@@ -49,10 +55,11 @@ def process(session_id: int, platform: str | None):
             break
 
     yield ph.exit(0, "Success")
-    yield ph.render_end_page()
+    # WvA This doesn't seem to exist and the example script doesn't have it anymore, so I commented it out
+    # yield ph.render_end_page()
 
 
-def donation_flow(file_input: list[str], platform: str) -> props.PropsUIPromptConsentForm:
+def donation_flow(file_input: list[str], platform: str) -> d3i_props.PropsUIPromptConsentFormViz | None:
     if platform == "Instagram":
         return instagram.create_donation_flow(file_input)
     if platform == "Facebook":

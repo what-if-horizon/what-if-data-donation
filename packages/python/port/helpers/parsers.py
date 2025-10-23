@@ -283,6 +283,7 @@ def create_csv_table(file_input: list[str], entries: list[Entry]) -> pd.DataFram
     all_tables = []
 
     for entry in entries:
+        assert entry.filename is not None
         try:
             df = read_csv_from_file_input(file_input, entry.filename)
         except FileNotFoundError:
