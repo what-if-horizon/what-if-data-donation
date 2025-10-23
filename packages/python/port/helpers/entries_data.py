@@ -202,6 +202,9 @@ IG_ENTRIES: dict[str, list[Entry]] = {
     'Following Hashtags': [
         Entry(table='Following Hashtags', filename='connections/followers_and_following/following_hashtags.json', static_fields={}, list_blocks={('relationships_following_hashtags',): {'title': ('title',), 'media_list_data': ('media_list_data',)}, ('relationships_following_hashtags', 'string_list_data'): {'href': ('href',), 'value': ('value',), 'timestamp': ('timestamp',)}}),
     ],
+    'Instagram Signup Details': [
+        Entry(table='Instagram Signup Details', filename='security_and_login_information/login_and_profile_creation/instagram_signup_details.json', static_fields={}, list_blocks={('account_history_registration_info',): {'timestamp': ('string_map_data', 'Time', 'timestamp')}}),
+    ],
     'Liked Comments': [
         Entry(table='Liked Comments', filename='your_instagram_activity/likes/liked_comments.json', static_fields={}, list_blocks={('likes_comment_likes',): {'title': ('title',)}, ('likes_comment_likes', 'string_list_data'): {'href': ('href',), 'value': ('value',), 'timestamp': ('timestamp',)}}),
     ],

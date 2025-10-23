@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional, TypedDict, Union, Any
+from typing import Any, Optional, TypedDict, Union
 
 import pandas as pd
 
@@ -14,6 +14,7 @@ class Translations(TypedDict):
 
     en: str
     nl: str
+    es: str
 
 
 @dataclass
@@ -114,9 +115,7 @@ class PropsUIPromptConsentFormTable:
         dict["description"] = self.description.toDict()
         dict["data_frame"] = self.data_frame.to_json()
         if self.headers:
-            dict["headers"] = {
-                key: value.toDict() for key, value in self.headers.items()
-            }
+            dict["headers"] = {key: value.toDict() for key, value in self.headers.items()}
         return dict
 
 
