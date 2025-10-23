@@ -104,10 +104,10 @@ def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
     for table_name, table_rows in schema_df.groupby("table_name"):
         if platform == "TIKTOK":
             # Treat all TikTok rows as a single file group
-            yield extract_entry(None, table_name, table_rows)
+            yield extract_entry(None, str(table_name), table_rows)
         else:
             for file_path, group in table_rows.groupby("file_path"):
-                yield extract_entry(file_path, table_name, group)
+                yield extract_entry(str(file_path), str(table_name), group)
 
 
 def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry]]:
@@ -136,7 +136,7 @@ def extract_csv_entries(schema_file: Path) -> Iterable[Entry]:
 
     for table_name, table_rows in df.groupby("table_name"):
         for file_name, group in table_rows.groupby("File_name"):
-            yield extract_csv_entry(file_name, table_name, group)
+            yield extract_csv_entry(str(file_name), str(table_name), group)
 
 
 def csv_entries_as_dict(schema_file: Path) -> dict[str, list[Entry]]:

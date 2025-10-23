@@ -1,0 +1,93 @@
+{
+    "input_file": "pytests/public_testfiles/IG_public_test_file.zip",
+    "platform": "instagram",
+    "expected_output": [
+        {
+            "id": "Stories",
+            "data_frame": {
+                "columns": [
+                    "ig_stories.uri",
+                    "ig_stories.creation_timestamp",
+                    "ig_stories.title",
+                    "ig_stories.dubbing_info",
+                    "ig_stories.media_variants",
+                    "ig_stories.backup_uri",
+                    "ig_stories.source_app",
+                    "ig_stories.music_genre",
+                    "ig_stories.media_metadata.video_metadata.exif_data.date_time_digitized",
+                    "ig_stories.media_metadata.video_metadata.exif_data.date_time_original",
+                    "ig_stories.media_metadata.video_metadata.exif_data.source_type",
+                    "ig_stories.media_metadata.photo_metadata.exif_data.source_type",
+                    "ig_stories.media_metadata.photo_metadata.exif_data.date_time_digitized",
+                    "ig_stories.media_metadata.photo_metadata.exif_data.date_time_original"
+                ],
+                "data": [
+                    [
+                        "media/stories.mp4",
+                        1711876312,
+                        "",
+                        [],
+                        [],
+                        null,
+                        "FB",
+                        null,
+                        NaN,
+                        "000",
+                        "4",
+                        NaN,
+                        NaN,
+                        NaN
+                    ],
+                    [
+                        "media/storie",
+                        1710192630,
+                        "",
+                        null,
+                        null,
+                        null,
+                        "FB",
+                        null,
+                        NaN,
+                        NaN,
+                        NaN,
+                        "reel_reshare",
+                        NaN,
+                        NaN
+                    ],
+                    [
+                        "media/st",
+                        1709930454,
+                        "",
+                        null,
+                        null,
+                        null,
+                        "FB",
+                        null,
+                        NaN,
+                        NaN,
+                        NaN,
+                        "",
+                        NaN,
+                        NaN
+                    ],
+                    [
+                        "media/stories",
+                        1709469341,
+                        "",
+                        [],
+                        [],
+                        null,
+                        "FB",
+                        null,
+                        NaN,
+                        null,
+                        "4",
+                        NaN,
+                        NaN,
+                        NaN
+                    ]
+                ]
+            }
+        }
+    ]
+}

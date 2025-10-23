@@ -1,0 +1,60 @@
+{
+    "input_file": "pytests/public_testfiles/TT_user_data_tiktok.json",
+    "platform": "tiktok",
+    "expected_output": [
+        {
+            "id": "Comment",
+            "data_frame": {
+                "columns": [
+                    "CommentsList",
+                    "Comment.Comments.CommentsList.url",
+                    "Comment.Comments.CommentsList.photo",
+                    "Comment.Comments.CommentsList.date",
+                    "Comment.Comments.CommentsList.comment"
+                ],
+                "data": [
+                    [
+                        [
+                            {
+                                "date": "2024-11-24 08:55:16",
+                                "comment": "so cute \ud83e\udd7a",
+                                "photo": "N/A",
+                                "url": ""
+                            },
+                            {
+                                "date": "2024-11-20 15:23:50",
+                                "comment": "beautiful",
+                                "photo": "N/A",
+                                "url": ""
+                            }
+                        ],
+                        "",
+                        "N/A",
+                        "2024-11-24 08:55:16",
+                        "so cute \ud83e\udd7a"
+                    ],
+                    [
+                        [
+                            {
+                                "date": "2024-11-24 08:55:16",
+                                "comment": "so cute \ud83e\udd7a",
+                                "photo": "N/A",
+                                "url": ""
+                            },
+                            {
+                                "date": "2024-11-20 15:23:50",
+                                "comment": "beautiful",
+                                "photo": "N/A",
+                                "url": ""
+                            }
+                        ],
+                        "",
+                        "N/A",
+                        "2024-11-20 15:23:50",
+                        "beautiful"
+                    ]
+                ]
+            }
+        }
+    ]
+}

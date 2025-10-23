@@ -1,0 +1,38 @@
+{
+    "input_file": "pytests/public_testfiles/IG_public_test_file.zip",
+    "platform": "instagram",
+    "expected_output": [
+        {
+            "id": "Saved Posts",
+            "data_frame": {
+                "columns": [
+                    "saved_saved_media.title",
+                    "saved_saved_media.href",
+                    "saved_saved_media.timestamp"
+                ],
+                "data": [
+                    [
+                        "",
+                        "https://www.instag",
+                        1739314547
+                    ],
+                    [
+                        "",
+                        "https://www.instagram.com",
+                        1737844898
+                    ],
+                    [
+                        "",
+                        "https://www.instagram.com/",
+                        1737372679
+                    ],
+                    [
+                        "",
+                        "https://www.instagram.com/",
+                        1737372291
+                    ]
+                ]
+            }
+        }
+    ]
+}
