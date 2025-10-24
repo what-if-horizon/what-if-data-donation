@@ -53,10 +53,9 @@ class Entry(NamedTuple):
         "A list of paths within the file that each gives a single value for each file."
         "Will be repeated in the resulting table if needed",
     ]
-    list_blocks: Annotated[
-        dict[JsonPath, Columns],
-        "A dict of rowpath: columns items that define a list of objects and the elements to extract from each object."
-        "This will result in one row for each entry in the list, and one column for each item in the values",
+    tree: Annotated[
+        Node,
+        "A recursive tree structure that indicates which columns to extract from which paths in the (json) tree",
     ]
 
 
@@ -112,20 +111,8 @@ def read_file(file_input: list[str], filename: str | None):
         return read_json(file_input, filenames)
 
 
-#  --- STEP 1: Build Block Tree ---
-def build_block_tree(list_blocks: dict[JsonPath, Columns]) -> Node:
-    """Build a nested dictionary tree representing list_blocks, including root-level lists."""
-    root = Node.empty()
-    for path, cols in list_blocks.items():
-        current = root
-        for part in path:
-            current = current.children.setdefault(part, Node.empty())
-        current.columns.update(cols)
-    return root
-
-
 # ----------------------------------------------------------------------
-#  STEP 2: Unified Recursive Extractor
+#  Unified Recursive Extractor
 # ----------------------------------------------------------------------
 def extract_rows(item, node: Node, context=None, path_prefix=()):
     """
@@ -202,9 +189,6 @@ def extract_rows(item, node: Node, context=None, path_prefix=()):
     return rows
 
 
-# ----------------------------------------------------------------------
-#  STEP 3: Integrate into create_entry_df
-# ----------------------------------------------------------------------
 def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None = None) -> pd.DataFrame | None:
     """Create a dataframe for a single entry."""
     try:
@@ -218,7 +202,6 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
     if isinstance(data, dict):
         data = [data]
 
-    block_tree = build_block_tree(entry.list_blocks)
     all_records = []
 
     for item in data:
@@ -228,10 +211,11 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
             base_context[colname] = get_in(item, *path)
 
         # Extract rows recursively
-        if entry.list_blocks:
-            for row in extract_rows(item, block_tree, context=base_context):
-                all_records.append(row)
-        else:
+        had_rows = False
+        for row in extract_rows(item, entry.tree, context=base_context):
+            all_records.append(row)
+            had_rows = True
+        if not had_rows:
             all_records.append(base_context)
 
     if not all_records:

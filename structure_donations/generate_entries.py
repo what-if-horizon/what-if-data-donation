@@ -5,11 +5,13 @@
 
 import argparse
 import json
+import math
 from pathlib import Path
-from typing import Iterable
+from typing import Iterable, Literal, NamedTuple
 
+import numpy as np
 import pandas as pd
-from port.helpers.parsers import Entry  # type: ignore
+from port.helpers.parsers import Entry, JsonPath, Node  # type: ignore
 
 DOCSTRING = """
 Donation file structure data for takeout flows
@@ -22,50 +24,69 @@ which will use the Merged_structures_*.csv to determine the required entries.
 """
 
 
-def extract_entry(filename: str | None, table: str, schema_group: pd.DataFrame) -> Entry:
+class FieldSpec(NamedTuple):
+    column_name: str
+    var_type: Literal["skip", "static", "list"]
+    subfield_path: JsonPath
+    list_path: JsonPath
+
+    @classmethod
+    def from_row(cls, row):
+        def get_path(value):
+            if pd.isna(value) or value is None or value == "":
+                return tuple()
+            value = str(value)
+            if "[" not in value:
+                return tuple(value.split("."))
+            value = value.replace("'", '"')
+            value = json.loads(value)
+            if isinstance(value, list):
+                return tuple(value)
+            assert isinstance(value, tuple)
+            return value
+
+        assert row["var_type"] in ["skip", "static", "list"]
+        return FieldSpec(
+            column_name=row["column_name"],
+            var_type=row["var_type"],
+            subfield_path=get_path(row["subfield_path"]),
+            list_path=get_path(row["list_path"]),
+        )
+
+
+def extract_entry(filename: str | None, table: str, fields: list[FieldSpec]) -> Entry:
     """Generate an Entry for a group of rows from the structure csv file"""
-    entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
+    entry = Entry(filename=filename, table=table, tree=Node.empty(), static_fields={})
 
-    def get_path(value):
-        if pd.isna(value) or value is None or value == "":
-            return tuple()
-        value = str(value)
-        if "[" not in value:
-            return tuple(value.split("."))
-        value = value.replace("'", '"')
-        value = json.loads(value)
-        if isinstance(value, list):
-            return tuple(value)
-        assert isinstance(value, tuple)
-        return value
-
-    for _, row in schema_group.iterrows():
-        colname = row["column_name"]
-        subfield_path = get_path(row["subfield_path"])
-        match row["var_type"]:
+    for field in fields:
+        colname = field.column_name
+        match field.var_type:
             case "skip":
                 continue
             case "static":
-                entry.static_fields[colname] = subfield_path
+                entry.static_fields[colname] = field.subfield_path
             case "list":
-                list_path = get_path(row["list_path"])
-                # :adhesive_bandage: SAFEGUARD: only check when list_path is not empty
-                if list_path:
+                # SAFEGUARD: only check when list_path is not empty
+                if field.list_path:
+                    # WvA: I think the next check also catches this, and it is never triggered, so we can remove it?
                     # Skip self-referential definitions
-                    if subfield_path and subfield_path == (list_path[-1],):
-                        print(
-                            f":warning: Skipping self-referential path in {table}: list_path={list_path}, subfield_path={subfield_path}, col={colname}"
+                    # if field.subfield_path and field.subfield_path == (field.list_path[-1],):
+                    #    print(
+                    #        f":warning: Skipping self-referential path in {table}: list_path={field.list_path}, subfield_path={field.subfield_path}, col={colname}"
+                    #    )
+                    #    raise Exception("!")
+                    #    continue
+                    # Check for redundant nested patterns like ('media', 'media')
+                    if field.list_path[-1] in field.subfield_path:
+                        raise ValueError(
+                            f"Redundant nested path in {table}: list_path={field.list_path}, subfield_path={field.subfield_path}, col={colname}"
                         )
-                        continue
-                    # Skip redundant nested patterns like ('media', 'media')
-                    if list_path[-1] in subfield_path:
-                        print(
-                            f":warning: Skipping redundant nested path in {table}: list_path={list_path}, subfield_path={subfield_path}, col={colname}"
-                        )
-                        continue
-                entry.list_blocks.setdefault(list_path, {})[colname] = subfield_path
+                current = entry.tree
+                for path in field.list_path:
+                    current = current.children.setdefault(path, Node.empty())
+                current.columns[colname] = field.subfield_path
             case _:
-                raise ValueError(f"Unknown var_type: {row['var_type']}")
+                raise ValueError(f"Unknown var_type: {field.var_type}")
     return entry
 
 
@@ -102,12 +123,15 @@ def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
             schema_df["table_name"] = schema_df["json_name"].map(tablename)
 
     for table_name, table_rows in schema_df.groupby("table_name"):
+
         if platform == "TIKTOK":
+            fields = [FieldSpec.from_row(row) for _, row in table_rows.iterrows()]
             # Treat all TikTok rows as a single file group
-            yield extract_entry(None, str(table_name), table_rows)
+            yield extract_entry(None, str(table_name), fields)
         else:
             for file_path, group in table_rows.groupby("file_path"):
-                yield extract_entry(str(file_path), str(table_name), group)
+                fields = [FieldSpec.from_row(row) for _, row in group.iterrows()]
+                yield extract_entry(str(file_path), str(table_name), fields)
 
 
 def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry]]:
@@ -120,7 +144,7 @@ def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry
 # --- Functions to create CSV entries for YT
 def extract_csv_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entry:
     """Generate an Entry object for CSV files (columns become static fields)."""
-    entry = Entry(filename=filename, table=table, list_blocks={}, static_fields={})
+    entry = Entry(filename=filename, table=table, tree=Node.empty(), static_fields={})
     for _, row in schema_group.iterrows():
         colname = row["Column_names"]
         entry.static_fields[colname] = (colname,)
@@ -163,7 +187,7 @@ infiles = dict(
 def write_entries_dict(outfile):
     lines = []
     lines.append(f'"""\n{DOCSTRING.strip()}\n"""\n\n')
-    lines.append("from port.helpers.parsers import Entry\n\n")
+    lines.append("from port.helpers.parsers import Entry, Node\n\n")
 
     for name, infile in infiles.items():
         lines.append(f"{name}_ENTRIES: dict[str, list[Entry]] = {{\n")
