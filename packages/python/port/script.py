@@ -16,6 +16,15 @@ from port.api import d3i_props
 logger = logging.getLogger(__name__)
 
 
+RETRY_HEADER = props.Translatable(
+    {
+        "en": "Try again",
+        "nl": "Probeer opnieuw",
+        "es": "Intente de nuevo",
+    }
+)
+
+
 def process(session_id: int, platform: str | None):
     if platform is None or platform == "":
         p = yield ask_platform()
@@ -34,22 +43,38 @@ def process(session_id: int, platform: str | None):
         file_result = yield ph.render_page(platform_file_header(platform), file_prompt)
 
         if file_result.__type__ == "PayloadString":
-            # TODO: Validate the file and ask to retry if needed!
+            is_data_valid = is_valid(file_result.value, platform)
+            if is_data_valid:
+                # Good, proceed with donation
+                review_data_prompt = donation_flow([file_result.value], platform)
+                # WvA I think donation flow should just never return None instead?
+                if not review_data_prompt:
+                    logger.info("No donation flow received")
+                    break
+                result = yield ph.render_page(
+                    platform_data_header(platform),
+                    review_data_prompt,
+                )
+                if result.__type__ == "PayloadJSON":
+                    reviewed_data = result.value
+                    yield ph.donate(f"{session_id}", reviewed_data)
+                elif result.__type__ == "PayloadFalse":
+                    value = json.dumps('{"status" : "data_submission declined"}')
+                    yield ph.donate(f"{session_id}", value)
 
-            review_data_prompt = donation_flow([file_result.value], platform)
-            # WvA I think donation flow should just never return None instead?
-            if not review_data_prompt:
-                logger.info("No donation flow received")
                 break
-            result = yield ph.render_page(platform_data_header(platform), review_data_prompt)
-            if result.__type__ == "PayloadJSON":
-                reviewed_data = result.value
-                yield ph.donate(f"{session_id}", reviewed_data)
-            elif result.__type__ == "PayloadFalse":
-                value = json.dumps('{"status" : "data_submission declined"}')
-                yield ph.donate(f"{session_id}", value)
+            else:
+                # Invalid file, allow retry
+                retry_prompt = ph.generate_retry_prompt(platform)
+                retry_prompt_result = yield ph.render_page(RETRY_HEADER, retry_prompt)
 
-            break
+                # The participant wants to retry: start from the beginning
+                if retry_prompt_result.__type__ == "PayloadTrue":
+                    continue
+                # The participant does not want to retry or pressed skip
+                else:
+                    break
+
         else:
             logger.info("Skipped at file selection ending flow")
             break
@@ -57,6 +82,20 @@ def process(session_id: int, platform: str | None):
     yield ph.exit(0, "Success")
     # WvA This doesn't seem to exist and the example script doesn't have it anymore, so I commented it out
     # yield ph.render_end_page()
+
+
+def is_valid(file_input: str, platform: str) -> bool:
+    if platform == "Instagram":
+        return instagram.is_data_valid(file_input)
+    if platform == "Facebook":
+        return facebook.is_data_valid(file_input)
+    if platform == "Twitter":
+        return twitter.is_data_valid(file_input)
+    if platform == "Tiktok":
+        return tiktok.is_data_valid(file_input)
+    if platform == "Youtube":
+        return youtube.is_data_valid(file_input)
+    raise ValueError(f"Unknown platform: {platform}")
 
 
 def donation_flow(file_input: list[str], platform: str) -> d3i_props.PropsUIPromptConsentFormViz | None:
@@ -103,7 +142,13 @@ def ask_platform():
     )
 
     platform_buttons = props.PropsUIPromptRadioInput(
-        title=props.Translatable({"en": "Platform", "nl": "Platform", "es": "Platform"}),
+        title=props.Translatable(
+            {
+                "en": "Platform",
+                "nl": "Platform",
+                "es": "Platform",
+            }
+        ),
         description=props.Translatable({"en": "", "nl": "", "es": ""}),
         items=[
             props.RadioItem(id=5, value="Youtube"),

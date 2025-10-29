@@ -33,6 +33,18 @@ def find_file_in_zip(zip_filepath: str, file_paths: list[str]):
             return file_content
 
 
+def has_file_in_zip(zip_filepath: str, pattern: str = "*.json"):
+    try:
+        with zipfile.ZipFile(zip_filepath, "r") as zip_ref:
+            for file in zip_ref.namelist():
+                if fnmatch.fnmatch(file, pattern):
+                    return True
+        return False
+    except Exception as e:
+        logging.error(f"Could not parse zip file {zip_filepath}: {e}")
+        return False
+
+
 def read_binary(file_input: list[str], file_paths: list[str]):
     """
     Reads a binary file from a list of file paths.
@@ -62,7 +74,11 @@ def read_binary(file_input: list[str], file_paths: list[str]):
     raise FileNotFoundError("No file found with paths: " + str(file_paths))
 
 
-def read_text(file_input: list[str], file_paths: list[str], encoding: str = "utf-8") -> str:
+def read_text(
+    file_input: list[str],
+    file_paths: list[str],
+    encoding: str = "utf-8",
+) -> str:
     """
     Reads a text file from a list of file paths.
 
@@ -105,7 +121,12 @@ def read_json(file_input: list[str], file_paths: list[str]) -> JSON:
     return result
 
 
-def read_csv(file_input: list[str], file_paths: list[str], encoding: str = "utf-8", **kwargs) -> pd.DataFrame:
+def read_csv(
+    file_input: list[str],
+    file_paths: list[str],
+    encoding: str = "utf-8",
+    **kwargs,
+) -> pd.DataFrame:
     """
     Reads a CSV file from a list of file paths.
 

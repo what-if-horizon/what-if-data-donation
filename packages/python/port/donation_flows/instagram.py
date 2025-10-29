@@ -3,7 +3,12 @@ import logging
 import pandas as pd
 from port.helpers.donation_flow import donation_flow, donation_table
 from port.helpers.parsers import create_table
+from port.helpers.readers import has_file_in_zip
 from port.helpers.Structure_extractor_libraries.IG_get_json_structure import structure_from_zip
+
+
+def is_data_valid(file_input: str) -> bool:
+    return has_file_in_zip(file_input, "*.json")
 
 
 def create_donation_flow(file_input: list[str]):
@@ -18,20 +23,25 @@ def create_donation_flow(file_input: list[str]):
             if not df.empty:
                 tables.append(donation_table(name=key, df=df, title={"en": key, "nl": key, "es": key}))
         except Exception as e:
-            logging.exception(f"Error in {key}")
+            logging.exception(f"Error in {key}: {e}")
 
     # --- structure table ---
     zip_path = file_input[0]
     placeholder_json = structure_from_zip(zip_path)
     df_placeholder = pd.DataFrame(
-        [{"Data Structure": "Anonymized", "Placeholder for research purpose": placeholder_json}]
+        [
+            {
+                "Data Structure": "Anonymized",
+                "Placeholder for research purpose": placeholder_json,
+            }
+        ]
     )
 
     tables.append(
         donation_table(
             name="placeholder",
             df=df_placeholder,
-            title={"en": "Placeholders", "nl": "Gegevensstructuur", "es": "Estructura de datos"},
+            title={"en": "Placeholders", "es": "Estructura de datos", "nl": "Gegevensstructuur"},
         )
     )
 
