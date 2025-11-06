@@ -46,12 +46,19 @@ for i in range(max_columns):
 
 def loading_data(data):
 
+   
+    try:
+        with open(data, 'r') as file:
+            data = json.load(file)
+            if isinstance(data, str):
+                data = json.loads(data)
+    except:
+        print('JSON loading failed')
 
-    with open(data, 'r') as file:
-        data = json.load(file)
-
-    print(type(data))
-
+   
+    
+    if len(data) == 0:
+        print('JSON is empty')
 
 
     df = pd.DataFrame()
@@ -495,7 +502,13 @@ for file in input_directory.iterdir():
         print("--------------------------------------------------------------------------------------")
         time = datetime.datetime.now()
         print(f"{time} START PROCESSING:", file.name)
-        result = structure_donations(file, max_columns)
+        
+        try:
+            result = structure_donations(file, max_columns)
+        except Exception as e:
+            print(f"Error in processing {file}: {e}")
+            continue
+
         print(f"{time} FINISH PROCESSING:", file.name)
         print("--------------------------------------------------------------------------------------")
         del result

@@ -1,0 +1,15 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+historial-de-búsqueda.json,header,['header'],[],['header'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,title,['title'],[],['title'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,time,['time'],[],['time'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,products,['products'],[],['products'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json
+historial-de-búsqueda.json,activityControls,['activityControls'],[],['activityControls'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json
+historial-de-reproducciones.json,header,['header'],[],['header'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,title,['title'],[],['title'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,time,['time'],[],['time'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,products,['products'],[],['products'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,activityControls,['activityControls'],[],['activityControls'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json

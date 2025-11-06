@@ -1,0 +1,17 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+historial de cerques.json,header,['header'],[],['header'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de cerques.json,title,['title'],[],['title'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de cerques.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de cerques.json,description,['description'],[],['description'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de cerques.json,time,['time'],[],['time'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de cerques.json,products,['products'],[],['products'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de cerques.json,activityControls,['activityControls'],[],['activityControls'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de visualitzacions.json,header,['header'],[],['header'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de visualitzacions.json,title,['title'],[],['title'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de visualitzacions.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de visualitzacions.json,time,['time'],[],['time'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de visualitzacions.json,products,['products'],[],['products'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de visualitzacions.json,activityControls,['activityControls'],[],['activityControls'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de cerques.json,name,"['details', 'name']",['details'],['name'],list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json
+historial de visualitzacions.json,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json
+historial de visualitzacions.json,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json

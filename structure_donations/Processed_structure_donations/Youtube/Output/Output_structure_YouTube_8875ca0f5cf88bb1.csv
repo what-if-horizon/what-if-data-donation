@@ -1,0 +1,23 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+cases_metadata.json,folderName,['folderName'],,['folderName'],static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/cases_metadata.json
+cases_metadata.json,caseIds,['caseIds'],,['caseIds'],static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/cases_metadata.json
+cases_set_0.json,caseId,"['caseMetadata', 'caseId']",,"['caseMetadata', 'caseId']",static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,createTimeMicros,"['caseMetadata', 'createTimeMicros']",,"['caseMetadata', 'createTimeMicros']",static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+historial-de-reproducciones.json,header,['header'],[],['header'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,title,['title'],[],['title'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,time,['time'],[],['time'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,products,['products'],[],['products'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,activityControls,['activityControls'],[],['activityControls'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+historial-de-reproducciones.json,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json
+cases_set_0.json,actualSendTimeMicros,"['caseCommunication', 'content', 'email', 'actualSendTimeMicros']",['caseCommunication'],"['content', 'email', 'actualSendTimeMicros']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,createTimeMicros,"['caseCommunication', 'content', 'email', 'createTimeMicros']",['caseCommunication'],"['content', 'email', 'createTimeMicros']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,deliveredToAlias,"['caseCommunication', 'content', 'email', 'deliveredToAlias']",['caseCommunication'],"['content', 'email', 'deliveredToAlias']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,emailDirection,"['caseCommunication', 'content', 'email', 'emailDirection']",['caseCommunication'],"['content', 'email', 'emailDirection']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,fromEmailAddress,"['caseCommunication', 'content', 'email', 'fromEmailAddress']",['caseCommunication'],"['content', 'email', 'fromEmailAddress']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,htmlContent,"['caseCommunication', 'content', 'email', 'htmlContent']",['caseCommunication'],"['content', 'email', 'htmlContent']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,plaintextContent,"['caseCommunication', 'content', 'email', 'plaintextContent']",['caseCommunication'],"['content', 'email', 'plaintextContent']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,receiveTimeMicros,"['caseCommunication', 'content', 'email', 'receiveTimeMicros']",['caseCommunication'],"['content', 'email', 'receiveTimeMicros']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,subject,"['caseCommunication', 'content', 'email', 'subject']",['caseCommunication'],"['content', 'email', 'subject']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
+cases_set_0.json,toEmailAddress,"['caseCommunication', 'content', 'email', 'toEmailAddress']",['caseCommunication'],"['content', 'email', 'toEmailAddress']",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json
