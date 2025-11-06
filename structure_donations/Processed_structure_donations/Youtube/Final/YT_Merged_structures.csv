@@ -1,129 +1,89 @@
 json_name,id,column_name,path,list_path,subfield_path,var_type,data_type,file_path,duplicate_flag
-istoricul căutărilor.json,istoricul căutărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:description,description,"[""description""]",[],"[""description""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,istoric/istoricul-vizionărilor.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:header,header,"[""header""]",[],"[""header""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:title,title,"[""title""]",[],"[""title""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:time,time,"[""time""]",[],"[""time""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:products,products,"[""products""]",[],"[""products""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:header,header,"[""header""]",[],"[""header""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:title,title,"[""title""]",[],"[""title""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:time,time,"[""time""]",[],"[""time""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:products,products,"[""products""]",[],"[""products""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-kijkgeschiedenis.json,kijkgeschiedenis:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,geschiedenis/kijkgeschiedenis.json,No
-watch-history.json,watch-history:header,header,"[""header""]",[],"[""header""]",list,string,youtube_takeout/history/watch-history.json,Yes
-watch-history.json,watch-history:title,title,"[""title""]",[],"[""title""]",list,string,youtube_takeout/history/watch-history.json,Yes
-watch-history.json,watch-history:time,time,"[""time""]",[],"[""time""]",list,string,youtube_takeout/history/watch-history.json,Yes
-watch-history.json,watch-history:products,products,"[""products""]",[],"[""products""]",list,string,youtube_takeout/history/watch-history.json,Yes
-watch-history.json,watch-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,youtube_takeout/history/watch-history.json,Yes
+historial de cerques.json,historial de cerques:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de cerques.json,historial de cerques:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de cerques.json,historial de cerques:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de cerques.json,historial de cerques:description,description,"[""description""]",[],"[""description""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de cerques.json,historial de cerques:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de cerques.json,historial de cerques:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de cerques.json,historial de cerques:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de visualitzacions.json,historial de visualitzacions:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de visualitzacions.json,historial de visualitzacions:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de visualitzacions.json,historial de visualitzacions:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de visualitzacions.json,historial de visualitzacions:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de visualitzacions.json,historial de visualitzacions:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de visualitzacions.json,historial de visualitzacions:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de cerques.json,historial de cerques:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de cerques.json,No
+historial de visualitzacions.json,historial de visualitzacions:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial de visualitzacions.json,historial de visualitzacions:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,Takeout/YouTube i YouTube Music/historial/historial de visualitzacions.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:description,description,"[""description""]",[],"[""description""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-búsqueda.json,historial-de-búsqueda:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-búsqueda.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+search-history.json,search-history:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes
+search-history.json,search-history:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes
+search-history.json,search-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes
+search-history.json,search-history:description,description,"[""description""]",[],"[""description""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,No
+search-history.json,search-history:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes
+search-history.json,search-history:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes
+search-history.json,search-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes
+watch-history.json,watch-history:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes
+watch-history.json,watch-history:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes
+watch-history.json,watch-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,No
+watch-history.json,watch-history:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes
+watch-history.json,watch-history:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes
+watch-history.json,watch-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes
+search-history.json,search-history:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,No
+watch-history.json,watch-history:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,No
+watch-history.json,watch-history:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,No
+cases_metadata.json,cases_metadata:folderName,folderName,"[""folderName""]",nan,"[""folderName""]",static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/cases_metadata.json,No
+cases_metadata.json,cases_metadata:caseIds,caseIds,"[""caseIds""]",nan,"[""caseIds""]",static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/cases_metadata.json,No
+cases_set_0.json,cases_set_0:caseId,caseId,"[""caseMetadata"", ""caseId""]",nan,"[""caseMetadata"", ""caseId""]",static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:caseMetadata:createTimeMicros,createTimeMicros,"[""caseMetadata"", ""createTimeMicros""]",nan,"[""caseMetadata"", ""createTimeMicros""]",static,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:actualSendTimeMicros,actualSendTimeMicros,"[""caseCommunication"", ""content"", ""email"", ""actualSendTimeMicros""]","[""caseCommunication""]","[""content"", ""email"", ""actualSendTimeMicros""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:email:createTimeMicros,createTimeMicros,"[""caseCommunication"", ""content"", ""email"", ""createTimeMicros""]","[""caseCommunication""]","[""content"", ""email"", ""createTimeMicros""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:deliveredToAlias,deliveredToAlias,"[""caseCommunication"", ""content"", ""email"", ""deliveredToAlias""]","[""caseCommunication""]","[""content"", ""email"", ""deliveredToAlias""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:emailDirection,emailDirection,"[""caseCommunication"", ""content"", ""email"", ""emailDirection""]","[""caseCommunication""]","[""content"", ""email"", ""emailDirection""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:fromEmailAddress,fromEmailAddress,"[""caseCommunication"", ""content"", ""email"", ""fromEmailAddress""]","[""caseCommunication""]","[""content"", ""email"", ""fromEmailAddress""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:htmlContent,htmlContent,"[""caseCommunication"", ""content"", ""email"", ""htmlContent""]","[""caseCommunication""]","[""content"", ""email"", ""htmlContent""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:plaintextContent,plaintextContent,"[""caseCommunication"", ""content"", ""email"", ""plaintextContent""]","[""caseCommunication""]","[""content"", ""email"", ""plaintextContent""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:receiveTimeMicros,receiveTimeMicros,"[""caseCommunication"", ""content"", ""email"", ""receiveTimeMicros""]","[""caseCommunication""]","[""content"", ""email"", ""receiveTimeMicros""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:subject,subject,"[""caseCommunication"", ""content"", ""email"", ""subject""]","[""caseCommunication""]","[""content"", ""email"", ""subject""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
+cases_set_0.json,cases_set_0:toEmailAddress,toEmailAddress,"[""caseCommunication"", ""content"", ""email"", ""toEmailAddress""]","[""caseCommunication""]","[""content"", ""email"", ""toEmailAddress""]",list,string,Takeout/YouTube y YouTube Music/support issues/SupportCases/CasesSet_0/cases_set_0.json,No
 search-history.json,search-history:header,header,"[""header""]",[],"[""header""]",list,string,youtube_takeout/history/search-history.json,Yes
 search-history.json,search-history:title,title,"[""title""]",[],"[""title""]",list,string,youtube_takeout/history/search-history.json,Yes
 search-history.json,search-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,youtube_takeout/history/search-history.json,Yes
 search-history.json,search-history:time,time,"[""time""]",[],"[""time""]",list,string,youtube_takeout/history/search-history.json,Yes
 search-history.json,search-history:products,products,"[""products""]",[],"[""products""]",list,string,youtube_takeout/history/search-history.json,Yes
 search-history.json,search-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,youtube_takeout/history/search-history.json,Yes
-watch-history.json,watch-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,youtube_takeout/history/watch-history.json,Yes
-historial-de-búsqueda.json,historial-de-búsqueda:header,header,"[""header""]",[],"[""header""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:title,title,"[""title""]",[],"[""title""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:description,description,"[""description""]",[],"[""description""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:time,time,"[""time""]",[],"[""time""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:products,products,"[""products""]",[],"[""products""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:header,header,"[""header""]",[],"[""header""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:title,title,"[""title""]",[],"[""title""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:time,time,"[""time""]",[],"[""time""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:products,products,"[""products""]",[],"[""products""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,historial/historial-de-reproducciones.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,historial/historial-de-reproducciones.json,No
-istoricul căutărilor.json,istoricul căutărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul căutărilor.json,istoricul căutărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul căutărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:time,time,"[""time""]",[],"[""time""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:products,products,"[""products""]",[],"[""products""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,istoric/istoricul-vizionărilor.json,No
-istoricul-vizionărilor.json,istoricul-vizionărilor:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,istoric/istoricul-vizionărilor.json,No
-search-history.json,search-history:header,header,"[""header""]",[],"[""header""]",list,string,history/search-history.json,Yes
-search-history.json,search-history:title,title,"[""title""]",[],"[""title""]",list,string,history/search-history.json,Yes
-search-history.json,search-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,history/search-history.json,Yes
-search-history.json,search-history:description,description,"[""description""]",[],"[""description""]",list,string,history/search-history.json,No
-search-history.json,search-history:time,time,"[""time""]",[],"[""time""]",list,string,history/search-history.json,Yes
-search-history.json,search-history:products,products,"[""products""]",[],"[""products""]",list,string,history/search-history.json,Yes
-search-history.json,search-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,history/search-history.json,Yes
-watch-history.json,watch-history:header,header,"[""header""]",[],"[""header""]",list,string,history/watch-history.json,Yes
-watch-history.json,watch-history:title,title,"[""title""]",[],"[""title""]",list,string,history/watch-history.json,Yes
-watch-history.json,watch-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,history/watch-history.json,No
-watch-history.json,watch-history:time,time,"[""time""]",[],"[""time""]",list,string,history/watch-history.json,Yes
-watch-history.json,watch-history:products,products,"[""products""]",[],"[""products""]",list,string,history/watch-history.json,Yes
-watch-history.json,watch-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,history/watch-history.json,Yes
-search-history.json,search-history:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,history/search-history.json,No
-watch-history.json,watch-history:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,history/watch-history.json,No
-watch-history.json,watch-history:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,history/watch-history.json,No
-paieškos istorija.json,paieškos istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/paieškos istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,istorija/žiūrėjimo istorija.json,No
-paieškos istorija.json,paieškos istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:description,description,"[""description""]",[],"[""description""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/paieškos istorija.json,No
-paieškos istorija.json,paieškos istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/paieškos istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:header,header,"[""header""]",[],"[""header""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:title,title,"[""title""]",[],"[""title""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:description,description,"[""description""]",[],"[""description""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:time,time,"[""time""]",[],"[""time""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:products,products,"[""products""]",[],"[""products""]",list,string,istorija/žiūrėjimo istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,istorija/žiūrėjimo istorija.json,No
-paieškos istorija.json,paieškos istorija:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,istorija/paieškos istorija.json,No
-žiūrėjimo istorija.json,žiūrėjimo istorija:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,istorija/žiūrėjimo istorija.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:header,header,"[""header""]",[],"[""header""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:title,title,"[""title""]",[],"[""title""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:time,time,"[""time""]",[],"[""time""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:products,products,"[""products""]",[],"[""products""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-búsqueda.json,historial-de-búsqueda:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,historial/historial-de-búsqueda.json,No
-historial-de-reproducciones.json,historial-de-reproducciones:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,historial/historial-de-reproducciones.json,No
-watch-history.json,watch-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,history/watch-history.json,Yes
-zoekgeschiedenis.json,zoekgeschiedenis:description,description,"[""description""]",[],"[""description""]",list,string,geschiedenis/zoekgeschiedenis.json,No
-zoekgeschiedenis.json,zoekgeschiedenis:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,geschiedenis/zoekgeschiedenis.json,No
+watch-history.json,watch-history:header,header,"[""header""]",[],"[""header""]",list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:title,title,"[""title""]",[],"[""title""]",list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:time,time,"[""time""]",[],"[""time""]",list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:products,products,"[""products""]",[],"[""products""]",list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,youtube_takeout/history/watch-history.json,Yes
+watch-history.json,watch-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,youtube_takeout/history/watch-history.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:description,description,"[""description""]",[],"[""description""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial-de-reproducciones.json,historial-de-reproducciones:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.json,No
+historial de búsquedas.json,historial de búsquedas:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de búsquedas.json,No
+historial de búsquedas.json,historial de búsquedas:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de búsquedas.json,No
+historial de búsquedas.json,historial de búsquedas:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de búsquedas.json,No
+historial de búsquedas.json,historial de búsquedas:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de búsquedas.json,No
+historial de búsquedas.json,historial de búsquedas:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de búsquedas.json,No
+historial de búsquedas.json,historial de búsquedas:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de búsquedas.json,No
+historial de reproducciones.json,historial de reproducciones:header,header,"[""header""]",[],"[""header""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No
+historial de reproducciones.json,historial de reproducciones:title,title,"[""title""]",[],"[""title""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No
+historial de reproducciones.json,historial de reproducciones:time,time,"[""time""]",[],"[""time""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No
+historial de reproducciones.json,historial de reproducciones:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No
+historial de reproducciones.json,historial de reproducciones:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No
+historial de reproducciones.json,historial de reproducciones:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No

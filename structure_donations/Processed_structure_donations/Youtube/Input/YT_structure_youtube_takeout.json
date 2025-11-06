@@ -1,0 +1,34 @@
+{
+  "history/search-history.json": [
+    {
+      "header": "string",
+      "title": "string",
+      "titleUrl": "string",
+      "time": "string",
+      "products": [
+        "string"
+      ],
+      "activityControls": [
+        "string"
+      ]
+    }
+  ],
+  "history/watch-history.json": [
+    {
+      "header": "string",
+      "title": "string",
+      "time": "string",
+      "products": [
+        "string"
+      ],
+      "details": [
+        {
+          "name": "string"
+        }
+      ],
+      "activityControls": [
+        "string"
+      ]
+    }
+  ]
+}

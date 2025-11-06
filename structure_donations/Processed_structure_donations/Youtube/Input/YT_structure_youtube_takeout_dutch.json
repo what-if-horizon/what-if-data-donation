@@ -1,0 +1,36 @@
+{
+  "geschiedenis/kijkgeschiedenis.json": [
+    {
+      "header": "string",
+      "title": "string",
+      "titleUrl": "string",
+      "subtitles": [
+        {
+          "name": "string",
+          "url": "string"
+        }
+      ],
+      "time": "string",
+      "products": [
+        "string"
+      ],
+      "activityControls": [
+        "string"
+      ]
+    }
+  ],
+  "geschiedenis/zoekgeschiedenis.json": [
+    {
+      "header": "string",
+      "title": "string",
+      "titleUrl": "string",
+      "time": "string",
+      "products": [
+        "string"
+      ],
+      "activityControls": [
+        "string"
+      ]
+    }
+  ]
+}

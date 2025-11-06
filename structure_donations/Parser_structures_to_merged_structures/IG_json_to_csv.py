@@ -11,6 +11,13 @@ import datetime
 import warnings
 warnings.filterwarnings("ignore")
 
+import os, psutil, time
+
+def mem(label=""):
+    p = psutil.Process(os.getpid())
+    print(f"[{label}] RSS={p.memory_info().rss/1e6:.1f} MB")
+
+
 time = datetime.datetime.now()
 print(f'{time} START PROCESSING JSONS INSTAGRAM')
 
@@ -43,12 +50,23 @@ for i in range(max_columns):
 def loading_data(data):
 
 
-    with open(data, 'r') as file:
-        data = json.load(file)
+    try:
+        with open(data, 'r') as file:
+            data = json.load(file)
+            if isinstance(data, str):
+                data = json.loads(data)
+    except:
+        print('JSON loading failed')
+
+   
+    
+    if len(data) == 0:
+        print('JSON is empty')
 
 
     df = pd.DataFrame()
     df['col_path_0_values'] = data
+    del data
     df['json_name'] = df.index
     df['json_name'] = df['json_name'].str.rsplit("/", n=1).str[-1]
     df['file_path'] = df.index
@@ -194,21 +212,41 @@ def flatten_json(df):
         new_rows.clear()
 
 
-
-
-
-
     df = df.replace(r'^\s*$', np.nan, regex=True)
+
+   
+    df = df.reset_index(drop=True)  # ensure clean indexing
+    df_copy = df.astype(str)
+    unique_idx = df_copy.drop_duplicates().index  # get unique row indices
+    df = df.loc[unique_idx].reset_index(drop=True)  # keep original data types
+    print('length start', len(df))
+    
     df_red = df.drop(columns=[col for col in df.columns if col.endswith("_LIST")])
 
     df_red['last_valid_index'] = df_red.apply(pd.Series.last_valid_index, axis=1)
     df_red = df_red.drop(columns=[col for col in df.columns if col.endswith("values")])
+    
 
 
+    
+    
     col_path = [f"col_path_{i}" for i in range(1, max_columns)]
     col_path = col_path + ['json_name'] + ['file_path'] 
+  
     df = pd.merge(df, df_red, on = col_path, how='left')
 
+    
+    
+    df = df.reset_index(drop=True)  # ensure clean indexing
+    df_copy = df.astype(str) # normalize strings
+    unique_idx = df_copy.drop_duplicates().index  # get unique row indices
+    df = df.loc[unique_idx].reset_index(drop=True) 
+   
+    print('final:', len(df))
+
+   
+   
+    mem('after merge df_red')
 
     return(df)
 
@@ -413,7 +451,7 @@ def clean_and_store(df, df_no_data, file_name):
     # Save the DataFrame 
     df.to_csv(f"{output_directory}/Output_" + file_name + '.csv', index=False)
 
-    return df
+    
 
 
 ######################### 
@@ -449,6 +487,9 @@ def structure_donations(data, col_path, max_columns):
     print('FINISH: clean_and_store()')
 
     del df,df_no_data, data
+    gc.collect()
+    
+
 
 
 
@@ -468,7 +509,14 @@ for file in input_directory.iterdir():
         print("--------------------------------------------------------------------------------------")
         time = datetime.datetime.now()
         print(f"{time} START PROCESSING:", file.name)
-        result = structure_donations(file, col_path, max_columns)
+        
+        try:
+            result = structure_donations(file, col_path, max_columns)
+        except Exception as e:
+            print(f"Error in processing {file}: {e}")
+            continue
+
+        time = datetime.datetime.now()
         print(f"{time} FINISH PROCESSING:", file.name)
         print("--------------------------------------------------------------------------------------")
         del result
