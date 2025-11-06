@@ -5,7 +5,6 @@ import os
 import glob
 from datetime import datetime
 
-#main_path = "/home/rvissche/Nextcloud/What-If/what-if-data-donation/what-if-data-donation/structure_donations/"
 
 main_path = Path.cwd()
 main_path = Path(f'{main_path}/structure_donations/') 

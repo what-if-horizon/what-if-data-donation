@@ -66,6 +66,7 @@ def loading_data(data):
 
     df = pd.DataFrame()
     df['col_path_0_values'] = data
+    
     del data
     df['json_name'] = df.index
     df['json_name'] = df['json_name'].str.rsplit("/", n=1).str[-1]
@@ -87,7 +88,7 @@ def loading_data(data):
     df.reset_index(inplace = True)
     df = df.drop('index', axis = 1)
 
-
+    
 
     for i in range(1,max_columns):   
         df[f'col_path_{i}'] = ''
@@ -101,6 +102,8 @@ def loading_data(data):
 
     df_no_data = df.loc[index_list]
     df = df.drop(index_list)
+
+  
 
 
 
@@ -157,6 +160,7 @@ def flatten_json(df):
 
 
     df = pd.concat([df, pd.DataFrame(new_rows)], ignore_index=True)
+    
 
     new_rows.clear()
 
@@ -211,43 +215,25 @@ def flatten_json(df):
         df = pd.concat([df, pd.DataFrame(new_rows)], ignore_index=True)
         new_rows.clear()
 
-
+    
+   
     df = df.replace(r'^\s*$', np.nan, regex=True)
 
-   
-    df = df.reset_index(drop=True)  # ensure clean indexing
-    df_copy = df.astype(str)
-    unique_idx = df_copy.drop_duplicates().index  # get unique row indices
-    df = df.loc[unique_idx].reset_index(drop=True)  # keep original data types
-    print('length start', len(df))
     
+    df = df.reset_index(drop=True)  # ensure clean indexing
+    unique_idx = df.astype(str).drop_duplicates().index  # get unique row indices
+    df = df.loc[unique_idx].reset_index(drop=True) 
+    
+
+
     df_red = df.drop(columns=[col for col in df.columns if col.endswith("_LIST")])
 
     df_red['last_valid_index'] = df_red.apply(pd.Series.last_valid_index, axis=1)
-    df_red = df_red.drop(columns=[col for col in df.columns if col.endswith("values")])
-    
-
 
     
-    
-    col_path = [f"col_path_{i}" for i in range(1, max_columns)]
-    col_path = col_path + ['json_name'] + ['file_path'] 
-  
-    df = pd.merge(df, df_red, on = col_path, how='left')
-
-    
-    
-    df = df.reset_index(drop=True)  # ensure clean indexing
-    df_copy = df.astype(str) # normalize strings
-    unique_idx = df_copy.drop_duplicates().index  # get unique row indices
-    df = df.loc[unique_idx].reset_index(drop=True) 
-   
-    print('final:', len(df))
+    df = df.join(df_red['last_valid_index'])
 
    
-   
-    mem('after merge df_red')
-
     return(df)
 
 

@@ -60,6 +60,12 @@ structure_donations/Processed_structure_donations/Instagram/Raw
 structure_donations/Processed_structure_donations/Youtube/Raw
 structure_donations/Processed_structure_donations/Twitter/Raw
 
+structure_donations/Processed_structure_donations/TikTok/Input_test
+structure_donations/Processed_structure_donations/Facebook/Input_test
+structure_donations/Processed_structure_donations/Instagram/Input_test
+structure_donations/Processed_structure_donations/Youtube/Input_test
+structure_donations/Processed_structure_donations/Twitter/Input_test
+
 /pytests/private_testfiles
 pytests/scenarios/*PRIVATE.json
 

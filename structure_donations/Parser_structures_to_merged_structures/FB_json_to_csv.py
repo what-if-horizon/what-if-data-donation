@@ -229,16 +229,19 @@ def flatten_json(df):
 
 
     df = df.replace(r'^\s*$', np.nan, regex=True)
+    
+    df = df.reset_index(drop=True)  # ensure clean indexing
+    unique_idx = df.astype(str).drop_duplicates().index  # get unique row indices
+    df = df.loc[unique_idx].reset_index(drop=True) 
+    
+
+
     df_red = df.drop(columns=[col for col in df.columns if col.endswith("_LIST")])
 
     df_red['last_valid_index'] = df_red.apply(pd.Series.last_valid_index, axis=1)
-    df_red = df_red.drop(columns=[col for col in df.columns if col.endswith("values")])
 
-
-    col_path = [f"col_path_{i}" for i in range(1, max_columns)]
-    col_path = col_path + ['json_name'] + ['file_path'] 
-    df = pd.merge(df, df_red, on = col_path, how='left')
-
+    
+    df = df.join(df_red['last_valid_index'])
 
     return(df)
 
