@@ -1,4 +1,4 @@
-File_name,Column_names,id,keepID,date_added
+﻿File_name,Column_names,id,keepID,date_added
 channel URL configs.csv,Channel ID,channel_URL_configs:Channel_ID,channel_URL_configs:Channel_ID,pre-trial
 channel URL configs.csv,Channel Vanity URL 1 Name,channel_URL_configs:Channel_Vanity_URL_1_Name,channel_URL_configs:Channel_Vanity_URL_1_Name,pre-trial
 channel URL configs.csv,Channel Vanity URL 2 Name,channel_URL_configs:Channel_Vanity_URL_2_Name,channel_URL_configs:Channel_Vanity_URL_2_Name,pre-trial
@@ -14,7 +14,7 @@ channel page settings.csv,Channel ID,channel_page_settings:Channel_ID,channel_pa
 channel.csv,Channel ID,channel:Channel_ID,channel:Channel_ID,pre-trial
 channel.csv,Channel Title (Original),channel:Channel_Title_(Original),channel:Channel_Title_(Original),pre-trial
 channel.csv,Channel Visibility,channel:Channel_Visibility,channel:Channel_Visibility,pre-trial
-video recordings.csv,Video ID,video_recordings:Video_ID,,pre-trial
+video recordings.csv,Video ID,video_recordings:Video_ID,video_recordings:Video_ID,pre-trial
 video recordings.csv,Video Recording Altitude,video_recordings:Video_Recording_Altitude,,pre-trial
 video recordings.csv,Video Recording Latitude,video_recordings:Video_Recording_Latitude,,pre-trial
 video recordings.csv,Video Recording Longitude,video_recordings:Video_Recording_Longitude,,pre-trial
@@ -115,7 +115,7 @@ date despre funcțiile canalului.csv,Latitudinea prestabilită a videoclipului,
 date despre funcțiile canalului.csv,Longitudinea prestabilită a videoclipului,date_despre_funcțiile_canalului:Longitudinea_prestabilită_a_videoclipului,,pre-trial
 setări de moderare a comunității canalului.csv,ID-ul canalului,setări_de_moderare_a_comunității_canalului:ID-ul_canalului,channel_community_moderation_settings:Channel_ID,pre-trial
 setările paginii de canal.csv,ID-ul canalului,setările_paginii_de_canal:ID-ul_canalului,channel_page_settings:Channel_ID,pre-trial
-înregistrări video.csv,ID-ul videoclipului,înregistrări_video:ID-ul_videoclipului,,pre-trial
+înregistrări video.csv,ID-ul videoclipului,înregistrări_video:ID-ul_videoclipului,video_recordings:Video_ID,pre-trial
 înregistrări video.csv,Altitudinea de înregistrare a videoclipului,înregistrări_video:Altitudinea_de_înregistrare_a_videoclipului,,pre-trial
 înregistrări video.csv,Latitudinea de înregistrare a videoclipului,înregistrări_video:Latitudinea_de_înregistrare_a_videoclipului,,pre-trial
 înregistrări video.csv,Longitudinea de înregistrare a videoclipului,înregistrări_video:Longitudinea_de_înregistrare_a_videoclipului,,pre-trial
@@ -165,7 +165,7 @@ instellingen voor kanaalpagina.csv,Kanaal-ID,instellingen_voor_kanaalpagina:Kana
 kanaal.csv,Kanaal-ID,kanaal:Kanaal-ID,channel:Channel_ID,pre-trial
 kanaal.csv,(Originele) kanaaltitel,kanaal:(Originele)_kanaaltitel,channel:Channel_Title_(Original),pre-trial
 kanaal.csv,Kanaalzichtbaarheid,kanaal:Kanaalzichtbaarheid,channel:Channel_Visibility,pre-trial
-video-opnamen.csv,Video-ID,video-opnamen:Video-ID,,pre-trial
+video-opnamen.csv,Video-ID,video-opnamen:Video-ID,video_recordings:Video_ID,pre-trial
 video-opnamen.csv,Hoogte van video-opname,video-opnamen:Hoogte_van_video-opname,,pre-trial
 video-opnamen.csv,Latitude van video-opname,video-opnamen:Latitude_van_video-opname,,pre-trial
 video-opnamen.csv,Longitude van video-opname,video-opnamen:Longitude_van_video-opname,,pre-trial
@@ -255,7 +255,7 @@ datos de la función del canal.csv,Audiencia objetivo predeterminada del vídeo
 datos de la función del canal.csv,Licencia del vídeo predeterminada,datos_de_la_función_del_canal:Licencia_del_vídeo_predeterminada,channel_feature_data:Video_Default_License,pre-trial
 datos de la función del canal.csv,Latitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Latitud_de_la_ubicación_predeterminada_del_vídeo,,pre-trial
 datos de la función del canal.csv,Longitud de la ubicación predeterminada del vídeo,datos_de_la_función_del_canal:Longitud_de_la_ubicación_predeterminada_del_vídeo,,pre-trial
-grabaciones de vídeo.csv,ID de vídeo,grabaciones_de_vídeo:ID_de_vídeo,,pre-trial
+grabaciones de vídeo.csv,ID de vídeo,grabaciones_de_vídeo:ID_de_vídeo,video_recordings:Video_ID,pre-trial
 grabaciones de vídeo.csv,Altitud de grabación del vídeo,grabaciones_de_vídeo:Altitud_de_grabación_del_vídeo,,pre-trial
 grabaciones de vídeo.csv,Latitud de grabación del vídeo,grabaciones_de_vídeo:Latitud_de_grabación_del_vídeo,,pre-trial
 grabaciones de vídeo.csv,Longitud de grabación del vídeo,grabaciones_de_vídeo:Longitud_de_grabación_del_vídeo,,pre-trial
