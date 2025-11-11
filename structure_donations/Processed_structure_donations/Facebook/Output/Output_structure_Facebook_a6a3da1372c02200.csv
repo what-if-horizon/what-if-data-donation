@@ -1,10 +1,4 @@
 json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
-message_1.json,title,['title'],,['title'],static,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_facebook_activity/messages/inbox/username/message_1.json
 messaging_settings.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/messaging_settings.json
 messenger_active_status_settings.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/messenger_active_status_settings.json
 your_messenger_app_install_information.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/your_messenger_app_install_information.json
@@ -15,16 +9,11 @@ ai_conversations.json,timestamp,['timestamp'],,['timestamp'],static,number,your_
 ai_conversations.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/ai_conversations.json
 messenger_active_status_platform_settings.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/messenger_active_status_platform_settings.json
 messenger_ui_settings.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/messages/messenger_ui_settings.json
+message_1.json,title,['title'],,['title'],static,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_facebook_activity/$USERNAME/message_1.json
 your_settings_for_groups_tab.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/groups/your_settings_for_groups_tab.json
-28755855394058281.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/28755855394058281.json
-8371780976198573.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-23895009813477178.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-6284274048277091.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/6284274048277091.json
-9007013149377526.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/9007013149377526.json
-6679116718866996.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6773328709390841.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-5878593635582336.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/5878593635582336.json
-6369490153157393.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/6369490153157393.json
+$USERNAME.json,thread_name,['thread_name'],,['thread_name'],static,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
 audio_comment_tooltip_views.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/comments_and_reactions/audio_comment_tooltip_views.json
 your_comment_active_days.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/comments_and_reactions/your_comment_active_days.json
 your_received_shared_album_invites.json,fbid,['fbid'],,['fbid'],static,string,your_facebook_activity/posts/your_received_shared_album_invites.json
@@ -98,10 +87,10 @@ your_media_permissions.json,fbid,['fbid'],,['fbid'],static,string,personal_infor
 your_account_password_information.json,fbid,['fbid'],,['fbid'],static,string,personal_information/facebook_accounts_center/your_account_password_information.json
 permissions_you_have_granted_to_apps.json,fbid,['fbid'],,['fbid'],static,string,apps_and_websites_off_of_facebook/permissions_you_have_granted_to_apps.json
 people_you_may_know.json,fbid,['fbid'],,['fbid'],static,string,connections/friends/people_you_may_know.json
-message_1.json,uri,"['image', 'uri']",,"['image', 'uri']",static,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['image', 'creation_timestamp']",,"['image', 'creation_timestamp']",static,number,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_facebook_activity/messages/inbox/username/message_1.json
+message_1.json,uri,"['image', 'uri']",,"['image', 'uri']",static,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['image', 'creation_timestamp']",,"['image', 'creation_timestamp']",static,number,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_facebook_activity/$USERNAME/message_1.json
 gaming_profile.json,player_name,"['facebook_gaming_profile_v2', 'player_name']",,"['facebook_gaming_profile_v2', 'player_name']",static,string,your_facebook_activity/facebook_gaming/gaming_profile.json
 voting_reminders.json,voting_reminders,"['voting_reminders_v2', 'voting_reminders']",,"['voting_reminders_v2', 'voting_reminders']",static,string,your_facebook_activity/voting/voting_reminders.json
 voting_location.json,voting_location,"['voting_location_v2', 'voting_location']",,"['voting_location_v2', 'voting_location']",static,string,your_facebook_activity/voting/voting_location.json
@@ -160,8 +149,6 @@ profile_information.json,name,"['profile_v2', 'current_city', 'name']",,"['profi
 profile_information.json,timestamp,"['profile_v2', 'current_city', 'timestamp']",,"['profile_v2', 'current_city', 'timestamp']",static,number,personal_information/profile_information/profile_information.json
 profile_information.json,name,"['profile_v2', 'hometown', 'name']",,"['profile_v2', 'hometown', 'name']",static,string,personal_information/profile_information/profile_information.json
 profile_information.json,timestamp,"['profile_v2', 'hometown', 'timestamp']",,"['profile_v2', 'hometown', 'timestamp']",static,number,personal_information/profile_information/profile_information.json
-message_1.json,magic_words,['magic_words'],['magic_words'],[],list,array,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,magic_words,['magic_words'],['magic_words'],[],list,array,your_facebook_activity/messages/inbox/username/message_1.json
 messaging_settings.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/messaging_settings.json
 messenger_active_status_settings.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/messenger_active_status_settings.json
 your_messenger_app_install_information.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/your_messenger_app_install_information.json
@@ -170,9 +157,9 @@ your_chat_settings_on_web.json,media,['media'],['media'],[],list,array,your_face
 ai_conversations.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/ai_conversations.json
 messenger_active_status_platform_settings.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/messenger_active_status_platform_settings.json
 messenger_ui_settings.json,media,['media'],['media'],[],list,array,your_facebook_activity/messages/messenger_ui_settings.json
+message_1.json,magic_words,['magic_words'],['magic_words'],[],list,array,your_facebook_activity/$USERNAME/message_1.json
 your_settings_for_groups_tab.json,media,['media'],['media'],[],list,array,your_facebook_activity/groups/your_settings_for_groups_tab.json
-5878593635582336.json,messages,['messages'],['messages'],[],list,array,your_facebook_activity/groups/your_group_messages/5878593635582336.json
-6369490153157393.json,messages,['messages'],['messages'],[],list,array,your_facebook_activity/groups/your_group_messages/6369490153157393.json
+$USERNAME.json,messages,['messages'],['messages'],[],list,array,your_facebook_activity/groups/your_group_messages/$USERNAME.json
 audio_comment_tooltip_views.json,media,['media'],['media'],[],list,array,your_facebook_activity/comments_and_reactions/audio_comment_tooltip_views.json
 your_comment_active_days.json,media,['media'],['media'],[],list,array,your_facebook_activity/comments_and_reactions/your_comment_active_days.json
 your_received_shared_album_invites.json,media,['media'],['media'],[],list,array,your_facebook_activity/posts/your_received_shared_album_invites.json
@@ -373,20 +360,6 @@ suggested_friends.json,media,['media'],['media'],[],list,array,connections/frien
 suggested_friends.json,fbid,['fbid'],[],['fbid'],list,string,connections/friends/suggested_friends.json
 your_post_audiences.json,media,['media'],['media'],[],list,array,connections/friends/your_post_audiences.json
 your_post_audiences.json,fbid,['fbid'],[],['fbid'],list,string,connections/friends/your_post_audiences.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,is_taken_down,"['messages', 'is_taken_down']",['messages'],['is_taken_down'],list,boolean,your_facebook_activity/messages/inbox/username/message_1.json
 messaging_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/messages/messaging_settings.json
 messaging_settings.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/messages/messaging_settings.json
 messenger_active_status_settings.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/messages/messenger_active_status_settings.json
@@ -421,6 +394,14 @@ autofill_information.json,LAST_NAME,"['autofill_information_v2', 'LAST_NAME']","
 autofill_information.json,FULL_NAME,"['autofill_information_v2', 'FULL_NAME']","['autofill_information_v2', 'FULL_NAME']",[],list,string,your_facebook_activity/messages/autofill_information.json
 autofill_information.json,WORK_EMAIL,"['autofill_information_v2', 'WORK_EMAIL']","['autofill_information_v2', 'WORK_EMAIL']",[],list,string,your_facebook_activity/messages/autofill_information.json
 autofill_information.json,WORK_PHONE,"['autofill_information_v2', 'WORK_PHONE']","['autofill_information_v2', 'WORK_PHONE']",[],list,string,your_facebook_activity/messages/autofill_information.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,is_taken_down,"['messages', 'is_taken_down']",['messages'],['is_taken_down'],list,boolean,your_facebook_activity/$USERNAME/message_1.json
 your_settings_for_groups_tab.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/groups/your_settings_for_groups_tab.json
 your_settings_for_groups_tab.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/groups/your_settings_for_groups_tab.json
 your_settings_for_groups_tab.json,dict,"['label_values', 'dict']","['label_values', 'dict']",[],list,array,your_facebook_activity/groups/your_settings_for_groups_tab.json
@@ -440,45 +421,12 @@ your_badges.json,Dice Dreamsâ¢ Trading Group,"['group_badges_v2', 'Dice Drea
 your_badges.json,"Activa't, tu pots!!!","['group_badges_v2', ""Activa't, tu pots!!!""]","['group_badges_v2', ""Activa't, tu pots!!!""]",[],list,string,your_facebook_activity/groups/your_badges.json
 your_badges.json,PeÃ±a 1X2 UOC-CAUOC,"['group_badges_v2', 'PeÃ±a 1X2 UOC-CAUOC']","['group_badges_v2', 'PeÃ±a 1X2 UOC-CAUOC']",[],list,string,your_facebook_activity/groups/your_badges.json
 your_badges.json,Guanya a Internet (amb o sense referits),"['group_badges_v2', 'Guanya a Internet (amb o sense referits)']","['group_badges_v2', 'Guanya a Internet (amb o sense referits)']",[],list,string,your_facebook_activity/groups/your_badges.json
-28755855394058281.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/28755855394058281.json
-28755855394058281.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/28755855394058281.json
-28755855394058281.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/groups/your_group_messages/28755855394058281.json
-28755855394058281.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/28755855394058281.json
-28755855394058281.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/28755855394058281.json
-8371780976198573.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-23895009813477178.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-23895009813477178.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-23895009813477178.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-23895009813477178.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-23895009813477178.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-23895009813477178.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/groups/your_group_messages/23895009813477178.json
-6284274048277091.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/6284274048277091.json
-6284274048277091.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/6284274048277091.json
-6284274048277091.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/6284274048277091.json
-6284274048277091.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/6284274048277091.json
-6284274048277091.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/6284274048277091.json
-9007013149377526.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/9007013149377526.json
-9007013149377526.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/9007013149377526.json
-9007013149377526.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/9007013149377526.json
-9007013149377526.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/9007013149377526.json
-9007013149377526.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/9007013149377526.json
-6679116718866996.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6679116718866996.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6679116718866996.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6679116718866996.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6679116718866996.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6679116718866996.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/groups/your_group_messages/6679116718866996.json
-6773328709390841.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-6773328709390841.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-6773328709390841.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-6773328709390841.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-6773328709390841.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-6773328709390841.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/groups/your_group_messages/6773328709390841.json
+$USERNAME.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,is_unsent,"['messages', 'is_unsent']",['messages'],['is_unsent'],list,boolean,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
 audio_comment_tooltip_views.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/comments_and_reactions/audio_comment_tooltip_views.json
 audio_comment_tooltip_views.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,your_facebook_activity/comments_and_reactions/audio_comment_tooltip_views.json
 your_comment_active_days.json,label,"['label_values', 'label']",['label_values'],['label'],list,string,your_facebook_activity/comments_and_reactions/your_comment_active_days.json
@@ -672,33 +620,7 @@ account_activity.json,site_name,"['account_activity_v2', 'site_name']",['account
 account_activity.json,port,"['account_activity_v2', 'port']",['account_activity_v2'],['port'],list,number,security_and_login_information/account_activity.json
 login_protection_data.json,name,"['login_protection_data_v2', 'name']",['login_protection_data_v2'],['name'],list,string,security_and_login_information/login_protection_data.json
 record_details.json,event,"['admin_records_v2', 'event']",['admin_records_v2'],['event'],list,string,security_and_login_information/record_details.json
-browser_cookies.json,AzVT********************,"['datr_stats_v2', 'AzVT********************']","['datr_stats_v2', 'AzVT********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,e-P_********************,"['datr_stats_v2', 'e-P_********************']","['datr_stats_v2', 'e-P_********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,qXhY********************,"['datr_stats_v2', 'qXhY********************']","['datr_stats_v2', 'qXhY********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,UFT5********************,"['datr_stats_v2', 'UFT5********************']","['datr_stats_v2', 'UFT5********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,1Xew********************,"['datr_stats_v2', '1Xew********************']","['datr_stats_v2', '1Xew********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,r5RZ********************,"['datr_stats_v2', 'r5RZ********************']","['datr_stats_v2', 'r5RZ********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,EEoW********************,"['datr_stats_v2', 'EEoW********************']","['datr_stats_v2', 'EEoW********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,k_C_********************,"['datr_stats_v2', 'k_C_********************']","['datr_stats_v2', 'k_C_********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,rToW********************,"['datr_stats_v2', 'rToW********************']","['datr_stats_v2', 'rToW********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,w9XF********************,"['datr_stats_v2', 'w9XF********************']","['datr_stats_v2', 'w9XF********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,EjH2********************,"['datr_stats_v2', 'EjH2********************']","['datr_stats_v2', 'EjH2********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,xuD_********************,"['datr_stats_v2', 'xuD_********************']","['datr_stats_v2', 'xuD_********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,eN__********************,"['datr_stats_v2', 'eN__********************']","['datr_stats_v2', 'eN__********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,7N3_********************,"['datr_stats_v2', '7N3_********************']","['datr_stats_v2', '7N3_********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,z1NA********************,"['datr_stats_v2', 'z1NA********************']","['datr_stats_v2', 'z1NA********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,i3v-********************,"['datr_stats_v2', 'i3v-********************']","['datr_stats_v2', 'i3v-********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,ZwrK********************,"['datr_stats_v2', 'ZwrK********************']","['datr_stats_v2', 'ZwrK********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,2zhb********************,"['datr_stats_v2', '2zhb********************']","['datr_stats_v2', '2zhb********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,nfVd********************,"['datr_stats_v2', 'nfVd********************']","['datr_stats_v2', 'nfVd********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,tiWR********************,"['datr_stats_v2', 'tiWR********************']","['datr_stats_v2', 'tiWR********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,kpVm********************,"['datr_stats_v2', 'kpVm********************']","['datr_stats_v2', 'kpVm********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,I1YF********************,"['datr_stats_v2', 'I1YF********************']","['datr_stats_v2', 'I1YF********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,flNA********************,"['datr_stats_v2', 'flNA********************']","['datr_stats_v2', 'flNA********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,1shT********************,"['datr_stats_v2', '1shT********************']","['datr_stats_v2', '1shT********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,yvtV********************,"['datr_stats_v2', 'yvtV********************']","['datr_stats_v2', 'yvtV********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,b8I8********************,"['datr_stats_v2', 'b8I8********************']","['datr_stats_v2', 'b8I8********************']",[],list,number,security_and_login_information/browser_cookies.json
-browser_cookies.json,-sE8********************,"['datr_stats_v2', '-sE8********************']","['datr_stats_v2', '-sE8********************']",[],list,number,security_and_login_information/browser_cookies.json
+browser_cookies.json,$COOKIES,"['datr_stats_v2', '$COOKIES']","['datr_stats_v2', '$COOKIES']",[],list,number,security_and_login_information/browser_cookies.json
 logins_and_logouts.json,action,"['account_accesses_v2', 'action']",['account_accesses_v2'],['action'],list,string,security_and_login_information/logins_and_logouts.json
 logins_and_logouts.json,timestamp,"['account_accesses_v2', 'timestamp']",['account_accesses_v2'],['timestamp'],list,number,security_and_login_information/logins_and_logouts.json
 logins_and_logouts.json,site,"['account_accesses_v2', 'site']",['account_accesses_v2'],['site'],list,string,security_and_login_information/logins_and_logouts.json
@@ -952,25 +874,6 @@ your_post_audiences.json,label,"['label_values', 'label']",['label_values'],['la
 your_post_audiences.json,value,"['label_values', 'value']",['label_values'],['value'],list,string,connections/friends/your_post_audiences.json
 your_post_audiences.json,dict,"['label_values', 'dict']","['label_values', 'dict']",[],list,array,connections/friends/your_post_audiences.json
 your_post_audiences.json,title,"['label_values', 'title']",['label_values'],['title'],list,string,connections/friends/your_post_audiences.json
-message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,uri,"['messages', 'sticker', 'uri']",['messages'],"['sticker', 'uri']",list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,ai_stickers,"['messages', 'sticker', 'ai_stickers']","['messages', 'sticker', 'ai_stickers']",[],list,array,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_facebook_activity/messages/e2ee_cutover/username/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'gifs', 'uri']","['messages', 'gifs']",['uri'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'sticker', 'uri']",['messages'],"['sticker', 'uri']",list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,ai_stickers,"['messages', 'sticker', 'ai_stickers']","['messages', 'sticker', 'ai_stickers']",[],list,array,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'videos', 'uri']","['messages', 'videos']",['uri'],list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'videos', 'creation_timestamp']","['messages', 'videos']",['creation_timestamp'],list,number,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,bumped_message,"['messages', 'bumped_message_metadata', 'bumped_message']",['messages'],"['bumped_message_metadata', 'bumped_message']",list,string,your_facebook_activity/messages/inbox/username/message_1.json
-message_1.json,is_bumped,"['messages', 'bumped_message_metadata', 'is_bumped']",['messages'],"['bumped_message_metadata', 'is_bumped']",list,boolean,your_facebook_activity/messages/inbox/username/message_1.json
 ai_conversations.json,label,"['label_values', 'dict', 'label']","['label_values', 'dict']",['label'],list,string,your_facebook_activity/messages/ai_conversations.json
 ai_conversations.json,value,"['label_values', 'dict', 'value']","['label_values', 'dict']",['value'],list,string,your_facebook_activity/messages/ai_conversations.json
 ai_conversations.json,href,"['label_values', 'dict', 'href']","['label_values', 'dict']",['href'],list,string,your_facebook_activity/messages/ai_conversations.json
@@ -981,22 +884,33 @@ secret_conversations.json,device_model,"['secret_conversations_v2', 'armadillo_d
 secret_conversations.json,device_os_version,"['secret_conversations_v2', 'armadillo_devices', 'device_os_version']","['secret_conversations_v2', 'armadillo_devices']",['device_os_version'],list,string,your_facebook_activity/messages/secret_conversations.json
 secret_conversations.json,last_connected_ip,"['secret_conversations_v2', 'armadillo_devices', 'last_connected_ip']","['secret_conversations_v2', 'armadillo_devices']",['last_connected_ip'],list,string,your_facebook_activity/messages/secret_conversations.json
 secret_conversations.json,last_active_time,"['secret_conversations_v2', 'armadillo_devices', 'last_active_time']","['secret_conversations_v2', 'armadillo_devices']",['last_active_time'],list,number,your_facebook_activity/messages/secret_conversations.json
+message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'sticker', 'uri']",['messages'],"['sticker', 'uri']",list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,ai_stickers,"['messages', 'sticker', 'ai_stickers']","['messages', 'sticker', 'ai_stickers']",[],list,array,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'gifs', 'uri']","['messages', 'gifs']",['uri'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'videos', 'uri']","['messages', 'videos']",['uri'],list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['messages', 'videos', 'creation_timestamp']","['messages', 'videos']",['creation_timestamp'],list,number,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,bumped_message,"['messages', 'bumped_message_metadata', 'bumped_message']",['messages'],"['bumped_message_metadata', 'bumped_message']",list,string,your_facebook_activity/$USERNAME/message_1.json
+message_1.json,is_bumped,"['messages', 'bumped_message_metadata', 'is_bumped']",['messages'],"['bumped_message_metadata', 'is_bumped']",list,boolean,your_facebook_activity/$USERNAME/message_1.json
 group_posts_and_comments.json,post,"['group_posts_v2', 'data', 'post']","['group_posts_v2', 'data']",['post'],list,string,your_facebook_activity/groups/group_posts_and_comments.json
 your_group_membership_activity.json,name,"['groups_joined_v2', 'data', 'name']","['groups_joined_v2', 'data']",['name'],list,string,your_facebook_activity/groups/your_group_membership_activity.json
 your_pending_posts_in_groups.json,post,"['pending_posts_v2', 'data', 'post']","['pending_posts_v2', 'data']",['post'],list,string,your_facebook_activity/groups/your_pending_posts_in_groups.json
 your_answers_to_membership_questions.json,answers,"['group_membership_questions_answers_v2', 'group_answers', 'answers']","['group_membership_questions_answers_v2', 'group_answers', 'answers']",[],list,array,your_facebook_activity/groups/your_answers_to_membership_questions.json
 your_answers_to_membership_questions.json,rules_agreement,"['group_membership_questions_answers_v2', 'group_answers', 'rules_agreement']","['group_membership_questions_answers_v2', 'group_answers']",['rules_agreement'],list,boolean,your_facebook_activity/groups/your_answers_to_membership_questions.json
 your_answers_to_membership_questions.json,group_name,"['group_membership_questions_answers_v2', 'group_answers', 'group_name']","['group_membership_questions_answers_v2', 'group_answers']",['group_name'],list,string,your_facebook_activity/groups/your_answers_to_membership_questions.json
-8371780976198573.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,uri,"['messages', 'videos', 'uri']","['messages', 'videos']",['uri'],list,string,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-8371780976198573.json,creation_timestamp,"['messages', 'videos', 'creation_timestamp']","['messages', 'videos']",['creation_timestamp'],list,number,your_facebook_activity/groups/your_group_messages/8371780976198573.json
-6773328709390841.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_facebook_activity/groups/your_group_messages/6773328709390841.json
-6773328709390841.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_facebook_activity/groups/your_group_messages/6773328709390841.json
+$USERNAME.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,uri,"['messages', 'videos', 'uri']","['messages', 'videos']",['uri'],list,string,your_facebook_activity/groups/your_group_messages/$USERNAME.json
+$USERNAME.json,creation_timestamp,"['messages', 'videos', 'creation_timestamp']","['messages', 'videos']",['creation_timestamp'],list,number,your_facebook_activity/groups/your_group_messages/$USERNAME.json
 trash.json,update_timestamp,"['trash_v2', 'data', 'update_timestamp']","['trash_v2', 'data']",['update_timestamp'],list,number,your_facebook_activity/posts/trash.json
 gaming_tab_notifications.json,label,"['label_values', 'dict', 'label']","['label_values', 'dict']",['label'],list,string,your_facebook_activity/facebook_gaming/gaming_tab_notifications.json
 gaming_tab_notifications.json,timestamp_value,"['label_values', 'dict', 'timestamp_value']","['label_values', 'dict']",['timestamp_value'],list,number,your_facebook_activity/facebook_gaming/gaming_tab_notifications.json

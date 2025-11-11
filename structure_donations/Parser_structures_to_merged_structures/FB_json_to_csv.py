@@ -8,6 +8,7 @@ import ast
 import gc
 import datetime
 import warnings
+import re
 warnings.filterwarnings("ignore")
 
 
@@ -69,21 +70,21 @@ def loading_data(data):
     df['file_path'] = df.index
     df['file_path'] = df['file_path'].str.replace('^facebook-[^/]+/', '', regex=True)
 
-    df['file_path'] = df['file_path'].str.replace(
-    r'(.*/messages/[^/]+/)[^/]+(/message_1\.json)', 
-    r'\1username\2',
-    regex=True)
+    #df['file_path'] = df['file_path'].str.replace(
+    #r'(.*/messages/[^/]+/)[^/]+(/message_1\.json)', 
+    #r'\1username\2',
+    #regex=True)
 
 
 
 
     #Filter rows ending with 'message_1.json' and limit to 5 per group
-    filtered = df[df['file_path'].str.endswith('message_1.json')]
-    limited = filtered.groupby('file_path').head(5)
-    unfiltered = df[~df['file_path'].str.endswith('message_1.json')]
+    #filtered = df[df['file_path'].str.endswith('message_1.json')]
+    #limited = filtered.groupby('file_path').head(5)
+    #unfiltered = df[~df['file_path'].str.endswith('message_1.json')]
 
     # Combine both
-    df = pd.concat([limited, unfiltered]).reset_index(drop=True)
+    #df = pd.concat([limited, unfiltered]).reset_index(drop=True)
 
 
 
@@ -237,10 +238,7 @@ def flatten_json(df):
 
 
     df_red = df.drop(columns=[col for col in df.columns if col.endswith("_LIST")])
-
     df_red['last_valid_index'] = df_red.apply(pd.Series.last_valid_index, axis=1)
-
-    
     df = df.join(df_red['last_valid_index'])
 
     return(df)
@@ -439,12 +437,38 @@ def clean_and_store(df, df_no_data, file_name):
     file_name: The filename of data structure that is being processed
     """
 
+    # Replace (group) message IDs
+    replacement = "$USERNAME"
+    pattern = r"[0-9]{11,}(?=\.json)"
+    pattern1 = r"/.*?_[0-9]{10,}/"
+    pattern2 = r"/[0-9]{10,}/"
+    replacement1 = "/$USERNAME/"
+    df['file_path'] =  (df['file_path']
+                        .str.replace(pattern, replacement, regex = True)
+                        .str.replace(pattern1, replacement1, regex = True)
+                        .str.replace(pattern2, replacement1, regex = True))
+    df['json_name'] =  df['json_name'].str.replace(pattern, replacement, regex = True)
+
+
+    # Replace browser cookies
+    columns = ['column_name', 'path', 'list_path', 'subfield_path']
+
+    for col in columns: 
+        for idx, row in df.iterrows():
+            pattern = r".+\*{10,}"
+            replacement = "$COOKIES"
+            path = row[col]
+            if isinstance(path, list):
+                path = [re.sub(pattern, replacement, item) for item in path]
+            else:
+                path = str(path)
+                path = re.sub(pattern, replacement, path)
+                
+            df.at[idx, col] = path
 
 
 
     df = pd.concat([df, df_no_data], ignore_index=True)
-
-
     df = df[['json_name','column_name', 'path', 'list_path', 'subfield_path', 'var_type', 'data_type', 'file_path']]
     df = df.astype(str)
     df = df.drop_duplicates()

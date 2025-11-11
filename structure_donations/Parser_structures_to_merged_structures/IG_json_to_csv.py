@@ -72,8 +72,8 @@ def loading_data(data):
     df['json_name'] = df['json_name'].str.rsplit("/", n=1).str[-1]
     df['file_path'] = df.index
     df['file_path'] = df['file_path'].str.replace('^instagram-[^/]+/', '', regex=True)
-    df['file_path'] = df['file_path'].str.replace(r'message_requests/.*?/message_1\.json', r'message_requests/username/message_1.json', regex=True)
-    df['file_path'] = df['file_path'].str.replace(r'(inbox/)[^/]+(?=/message_1\.json)', r'\1username', regex=True)
+    #df['file_path'] = df['file_path'].str.replace(r'message_requests/.*?/message_1\.json', r'message_requests/username/message_1.json', regex=True)
+    #df['file_path'] = df['file_path'].str.replace(r'(inbox/)[^/]+(?=/message_1\.json)', r'\1username', regex=True)
 
     df['col_path_0_LIST'] = ''
 
@@ -423,9 +423,15 @@ def clean_and_store(df, df_no_data, file_name):
     file_name: The filename of data structure that is being processed
     """
 
+    # Replacing usernames with username to not explode due to unusable messages column
+    #our_instagram_activity/messages/message_requests/$USERNAME/message_1.json
 
-
-    #df=  df[df['col_path_1'] != 'Direct Message']
+    pattern1 = r"/.*?_[0-9]{10,}/"
+    pattern2 = r"/[0-9]{10,}/"
+    replacement = "/$USERNAME/"
+    df['file_path'] =  (df['file_path']
+                        .str.replace(pattern1, replacement, regex = True)
+                        .str.replace(pattern2, replacement, regex = True))
 
     df = pd.concat([df, df_no_data], ignore_index=True)
 

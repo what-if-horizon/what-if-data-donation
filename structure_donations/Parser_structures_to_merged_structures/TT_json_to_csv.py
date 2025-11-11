@@ -404,9 +404,23 @@ def clean_and_store(df, file_name):
 
 
 
-    df=  df[df['col_path_0'] != 'Direct Message']
+    #df=  df[df['col_path_0'] != 'Direct Message']
 
+    # Replace browser cookies
+    
+    def replace_numbers(idx, col):
+        pattern =  r"\b\d{11,}\b"  # 11+ digits surrounded by word boundaries
+        replacement = "$NUMBER"
+        path = [re.sub(pattern, replacement, str(item)) for item in row[col]]
+        path = [re.sub(pattern, replacement, item) for item in path]
+        df.at[idx, col] = path
 
+    columns = ['path', 'list_path', 'subfield_path']
+
+    for col in columns: 
+        for idx, row in df.iterrows():
+            replace_numbers(idx, col)
+        
 
     df = df[['column_name', 'path', 'list_path', 'subfield_path', 'var_type', 'data_type']]
 
