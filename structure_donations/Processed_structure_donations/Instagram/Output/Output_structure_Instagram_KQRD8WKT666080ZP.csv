@@ -1,51 +1,17 @@
 json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-replies_1.json,messages,['messages'],,['messages'],static,array,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-replies_1.json,messages,['messages'],,['messages'],static,array,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-replies_1.json,messages,['messages'],,['messages'],static,array,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
+message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+replies_1.json,messages,['messages'],,['messages'],static,array,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,title,['title'],,['title'],static,string,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/$USERNAME/replies_1.json
 subscription_for_no_ads.json,media,['media'],,['media'],static,array,ads_information/instagram_ads_and_businesses/subscription_for_no_ads.json
 subscription_for_no_ads.json,fbid,['fbid'],,['fbid'],static,string,ads_information/instagram_ads_and_businesses/subscription_for_no_ads.json
 ad_preferences.json,media,['media'],,['media'],static,array,ads_information/instagram_ads_and_businesses/ad_preferences.json
@@ -58,28 +24,10 @@ your_link_history_settings.json,timestamp,['timestamp'],,['timestamp'],static,nu
 your_link_history_settings.json,media,['media'],,['media'],static,array,logged_information/link_history/your_link_history_settings.json
 your_link_history_settings.json,fbid,['fbid'],,['fbid'],static,string,logged_information/link_history/your_link_history_settings.json
 secret_conversations.json,calls,"['ig_secret_conversations', 'calls']",,"['ig_secret_conversations', 'calls']",static,array,your_instagram_activity/messages/secret_conversations.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-replies_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-replies_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-replies_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
+message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/$USERNAME/message_1.json
+replies_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/$USERNAME/replies_1.json
 autofill_information.json,tel,"['ig_autofill_data', 'tel']",,"['ig_autofill_data', 'tel']",static,string,personal_information/autofill_information/autofill_information.json
 autofill_information.json,tel_country_code,"['ig_autofill_data', 'tel_country_code']",,"['ig_autofill_data', 'tel_country_code']",static,string,personal_information/autofill_information/autofill_information.json
 autofill_information.json,tel_national,"['ig_autofill_data', 'tel_national']",,"['ig_autofill_data', 'tel_national']",static,string,personal_information/autofill_information/autofill_information.json
@@ -110,66 +58,22 @@ link_history.json,media,['media'],[],['media'],list,array,logged_information/lin
 link_history.json,fbid,['fbid'],[],['fbid'],list,string,logged_information/link_history/link_history.json
 reported_conversations.json,timestamp,"['ig_reported_conversations', 'timestamp']",['ig_reported_conversations'],['timestamp'],list,number,your_instagram_activity/messages/reported_conversations.json
 reported_conversations.json,is_reporter,"['ig_reported_conversations', 'is_reporter']",['ig_reported_conversations'],['is_reporter'],list,boolean,your_instagram_activity/messages/reported_conversations.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-replies_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,reply_content,"['replies', 'reply_content']",['replies'],['reply_content'],list,string,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,original_message_sender,"['replies', 'original_message_sender']",['replies'],['original_message_sender'],list,string,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-replies_1.json,timestamp_ms,"['replies', 'timestamp_ms']",['replies'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/camaleongirl_8735632503184474/replies_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-replies_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,reply_content,"['replies', 'reply_content']",['replies'],['reply_content'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,original_message_sender,"['replies', 'original_message_sender']",['replies'],['original_message_sender'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-replies_1.json,timestamp_ms,"['replies', 'timestamp_ms']",['replies'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/replies_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-replies_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,reply_content,"['replies', 'reply_content']",['replies'],['reply_content'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,original_message_sender,"['replies', 'original_message_sender']",['replies'],['original_message_sender'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
-replies_1.json,timestamp_ms,"['replies', 'timestamp_ms']",['replies'],['timestamp_ms'],list,number,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/replies_1.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+replies_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,reply_content,"['replies', 'reply_content']",['replies'],['reply_content'],list,string,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,original_message_sender,"['replies', 'original_message_sender']",['replies'],['original_message_sender'],list,string,your_instagram_activity/$USERNAME/replies_1.json
+replies_1.json,timestamp_ms,"['replies', 'timestamp_ms']",['replies'],['timestamp_ms'],list,number,your_instagram_activity/$USERNAME/replies_1.json
 avatar_items.json,item,"['ig_avatar_marketplace_avatar_items', 'item']",['ig_avatar_marketplace_avatar_items'],['item'],list,string,your_instagram_activity/avatars_store/avatar_items.json
 avatar_items.json,type,"['ig_avatar_marketplace_avatar_items', 'type']",['ig_avatar_marketplace_avatar_items'],['type'],list,string,your_instagram_activity/avatars_store/avatar_items.json
 avatar_items.json,acquisition_time,"['ig_avatar_marketplace_avatar_items', 'acquisition_time']",['ig_avatar_marketplace_avatar_items'],['acquisition_time'],list,number,your_instagram_activity/avatars_store/avatar_items.json
@@ -300,50 +204,24 @@ secret_conversations.json,device_model,"['ig_secret_conversations', 'armadillo_d
 secret_conversations.json,device_os_version,"['ig_secret_conversations', 'armadillo_devices', 'device_os_version']","['ig_secret_conversations', 'armadillo_devices']",['device_os_version'],list,string,your_instagram_activity/messages/secret_conversations.json
 secret_conversations.json,last_connected_ip,"['ig_secret_conversations', 'armadillo_devices', 'last_connected_ip']","['ig_secret_conversations', 'armadillo_devices']",['last_connected_ip'],list,string,your_instagram_activity/messages/secret_conversations.json
 secret_conversations.json,last_active_time,"['ig_secret_conversations', 'armadillo_devices', 'last_active_time']","['ig_secret_conversations', 'armadillo_devices']",['last_active_time'],list,number,your_instagram_activity/messages/secret_conversations.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,timestamp,"['messages', 'reactions', 'timestamp']","['messages', 'reactions']",['timestamp'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'gifs', 'uri']","['messages', 'gifs']",['uri'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'audio_files', 'uri']","['messages', 'audio_files']",['uri'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'audio_files', 'creation_timestamp']","['messages', 'audio_files']",['creation_timestamp'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,profile_share_username,"['messages', 'share', 'profile_share_username']",['messages'],"['share', 'profile_share_username']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,profile_share_name,"['messages', 'share', 'profile_share_name']",['messages'],"['share', 'profile_share_name']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,uri,"['messages', 'videos', 'uri']","['messages', 'videos']",['uri'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'videos', 'creation_timestamp']","['messages', 'videos']",['creation_timestamp'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,media,"['messages', 'share', 'media']",['messages'],"['share', 'media']",list,array,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/chismeexpress_9924732027550560/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/messages/broadcast/hellonews_8305155682870916/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/broadcast/spadioseguro_8917856638253280/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/messages/broadcast/petitcomitecontenidoexclusivo_7307663842609997/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/messages/broadcast/yoneysgordifamily_6479543318759957/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/messages/broadcast/mapiojedachannel_6674746672581296/message_1.json
-message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
-message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/broadcast/elchisme_6240889375947291/message_1.json
+message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,timestamp,"['messages', 'reactions', 'timestamp']","['messages', 'reactions']",['timestamp'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'gifs', 'uri']","['messages', 'gifs']",['uri'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'audio_files', 'uri']","['messages', 'audio_files']",['uri'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['messages', 'audio_files', 'creation_timestamp']","['messages', 'audio_files']",['creation_timestamp'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,profile_share_username,"['messages', 'share', 'profile_share_username']",['messages'],"['share', 'profile_share_username']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,profile_share_name,"['messages', 'share', 'profile_share_name']",['messages'],"['share', 'profile_share_name']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,uri,"['messages', 'videos', 'uri']","['messages', 'videos']",['uri'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['messages', 'videos', 'creation_timestamp']","['messages', 'videos']",['creation_timestamp'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,media,"['messages', 'share', 'media']",['messages'],"['share', 'media']",list,array,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,reaction,"['messages', 'reactions', 'reaction']","['messages', 'reactions']",['reaction'],list,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
+message_1.json,actor,"['messages', 'reactions', 'actor']","['messages', 'reactions']",['actor'],list,string,your_instagram_activity/messages/inbox/$USERNAME/message_1.json
 hype.json,uri,"['comments_story_comments', 'media_list_data', 'uri']","['comments_story_comments', 'media_list_data']",['uri'],list,string,your_instagram_activity/comments/hype.json
 avatar_story_reactions.json,href,"['story_activities_avatar_quick_reactions', 'string_list_data', 'href']","['story_activities_avatar_quick_reactions', 'string_list_data']",['href'],list,string,your_instagram_activity/story_interactions/avatar_story_reactions.json
 avatar_story_reactions.json,value,"['story_activities_avatar_quick_reactions', 'string_list_data', 'value']","['story_activities_avatar_quick_reactions', 'string_list_data']",['value'],list,string,your_instagram_activity/story_interactions/avatar_story_reactions.json

@@ -1,13 +1,9 @@
 json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,is_pending,['is_pending'],,['is_pending'],static,boolean,your_instagram_activity/messages/message_requests/username/message_1.json
+message_1.json,title,['title'],,['title'],static,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_still_participant,['is_still_participant'],,['is_still_participant'],static,boolean,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,thread_path,['thread_path'],,['thread_path'],static,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,magic_words,['magic_words'],,['magic_words'],static,array,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_pending,['is_pending'],,['is_pending'],static,boolean,your_instagram_activity/$USERNAME/message_1.json
 other_categories_used_to_reach_you.json,media,['media'],,['media'],static,array,ads_information/instagram_ads_and_businesses/other_categories_used_to_reach_you.json
 other_categories_used_to_reach_you.json,fbid,['fbid'],,['fbid'],static,string,ads_information/instagram_ads_and_businesses/other_categories_used_to_reach_you.json
 subscription_for_no_ads.json,media,['media'],,['media'],static,array,ads_information/instagram_ads_and_businesses/subscription_for_no_ads.json
@@ -20,8 +16,8 @@ locations_of_interest.json,fbid,['fbid'],,['fbid'],static,string,personal_inform
 your_link_history_settings.json,timestamp,['timestamp'],,['timestamp'],static,number,logged_information/link_history/your_link_history_settings.json
 your_link_history_settings.json,media,['media'],,['media'],static,array,logged_information/link_history/your_link_history_settings.json
 your_link_history_settings.json,fbid,['fbid'],,['fbid'],static,string,logged_information/link_history/your_link_history_settings.json
-message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/messages/message_requests/username/message_1.json
+message_1.json,mode,"['joinable_mode', 'mode']",,"['joinable_mode', 'mode']",static,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,link,"['joinable_mode', 'link']",,"['joinable_mode', 'link']",static,string,your_instagram_activity/$USERNAME/message_1.json
 autofill_information.json,tel,"['ig_autofill_data', 'tel']",,"['ig_autofill_data', 'tel']",static,string,personal_information/autofill_information/autofill_information.json
 autofill_information.json,tel_country_code,"['ig_autofill_data', 'tel_country_code']",,"['ig_autofill_data', 'tel_country_code']",static,string,personal_information/autofill_information/autofill_information.json
 autofill_information.json,tel_national,"['ig_autofill_data', 'tel_national']",,"['ig_autofill_data', 'tel_national']",static,string,personal_information/autofill_information/autofill_information.json
@@ -48,18 +44,12 @@ link_history.json,media,['media'],[],['media'],list,array,logged_information/lin
 link_history.json,fbid,['fbid'],[],['fbid'],list,string,logged_information/link_history/link_history.json
 followers_1.json,title,['title'],[],['title'],list,string,connections/followers_and_following/followers_1.json
 followers_1.json,media_list_data,['media_list_data'],[],['media_list_data'],list,array,connections/followers_and_following/followers_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/messages/message_requests/username/message_1.json
+message_1.json,name,"['participants', 'name']",['participants'],['name'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,sender_name,"['messages', 'sender_name']",['messages'],['sender_name'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,timestamp_ms,"['messages', 'timestamp_ms']",['messages'],['timestamp_ms'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_geoblocked_for_viewer,"['messages', 'is_geoblocked_for_viewer']",['messages'],['is_geoblocked_for_viewer'],list,boolean,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,is_unsent_image_by_messenger_kid_parent,"['messages', 'is_unsent_image_by_messenger_kid_parent']",['messages'],['is_unsent_image_by_messenger_kid_parent'],list,boolean,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,content,"['messages', 'content']",['messages'],['content'],list,string,your_instagram_activity/$USERNAME/message_1.json
 eligibility.json,title,"['monetization_eligibility', 'title']",['monetization_eligibility'],['title'],list,string,your_instagram_activity/monetization/eligibility.json
 saved_collections.json,title,"['saved_saved_collections', 'title']",['saved_saved_collections'],['title'],list,string,your_instagram_activity/saved/saved_collections.json
 saved_posts.json,title,"['saved_saved_media', 'title']",['saved_saved_media'],['title'],list,string,your_instagram_activity/saved/saved_posts.json
@@ -128,13 +118,11 @@ link_history.json,value,"['label_values', 'value']",['label_values'],['value'],l
 followers_1.json,href,"['string_list_data', 'href']",['string_list_data'],['href'],list,string,connections/followers_and_following/followers_1.json
 followers_1.json,value,"['string_list_data', 'value']",['string_list_data'],['value'],list,string,connections/followers_and_following/followers_1.json
 followers_1.json,timestamp,"['string_list_data', 'timestamp']",['string_list_data'],['timestamp'],list,number,connections/followers_and_following/followers_1.json
-message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/messages/inbox/username/message_1.json
-message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/messages/message_requests/username/message_1.json
-message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/messages/message_requests/username/message_1.json
+message_1.json,uri,"['messages', 'photos', 'uri']","['messages', 'photos']",['uri'],list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,creation_timestamp,"['messages', 'photos', 'creation_timestamp']","['messages', 'photos']",['creation_timestamp'],list,number,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,link,"['messages', 'share', 'link']",['messages'],"['share', 'link']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,share_text,"['messages', 'share', 'share_text']",['messages'],"['share', 'share_text']",list,string,your_instagram_activity/$USERNAME/message_1.json
+message_1.json,original_content_owner,"['messages', 'share', 'original_content_owner']",['messages'],"['share', 'original_content_owner']",list,string,your_instagram_activity/$USERNAME/message_1.json
 polls.json,value,"['story_activities_polls', 'string_list_data', 'value']","['story_activities_polls', 'string_list_data']",['value'],list,string,your_instagram_activity/story_interactions/polls.json
 polls.json,timestamp,"['story_activities_polls', 'string_list_data', 'timestamp']","['story_activities_polls', 'string_list_data']",['timestamp'],list,number,your_instagram_activity/story_interactions/polls.json
 quizzes.json,value,"['story_activities_quizzes', 'string_list_data', 'value']","['story_activities_quizzes', 'string_list_data']",['value'],list,string,your_instagram_activity/story_interactions/quizzes.json
