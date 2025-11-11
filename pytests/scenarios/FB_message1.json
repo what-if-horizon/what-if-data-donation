@@ -1,0 +1,37 @@
+{
+    "input_file": "pytests/public_testfiles/FB_public_test_file.zip",
+    "platform": "facebook",
+    "expected_output": [
+        {
+            "id": "Message 1",
+            "data_frame": {
+                "columns": [
+                    "title",
+                    "is_still_participant",
+                    "thread_path",
+                    "magic_words"
+                ],
+                "data": [
+                    [
+                        "Main chat",
+                        true,
+                        "inbox/path",
+                        []
+                    ],
+                    [
+                        "test",
+                        true,
+                        "inbox/bsc",
+                        []
+                    ],
+                    [
+                        "Riddles in the dark",
+                        true,
+                        "inbox/path",
+                        []
+                    ]
+                ]
+            }
+        }
+    ]
+}
