@@ -1,0 +1,19 @@
+json_name,column_name,path,list_path,subfield_path,var_type,data_type,file_path
+search-history.json,header,['header'],[],['header'],list,string,youtube_takeout/history/search-history.json
+search-history.json,title,['title'],[],['title'],list,string,youtube_takeout/history/search-history.json
+search-history.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,youtube_takeout/history/search-history.json
+search-history.json,time,['time'],[],['time'],list,string,youtube_takeout/history/search-history.json
+search-history.json,products,['products'],[],['products'],list,string,youtube_takeout/history/search-history.json
+search-history.json,activityControls,['activityControls'],[],['activityControls'],list,string,youtube_takeout/history/search-history.json
+search-history.json,description,['description'],[],['description'],list,string,youtube_takeout/history/search-history.json
+watch-history.json,header,['header'],[],['header'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,title,['title'],[],['title'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,time,['time'],[],['time'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,products,['products'],[],['products'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,activityControls,['activityControls'],[],['activityControls'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,titleUrl,['titleUrl'],[],['titleUrl'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,description,['description'],[],['description'],list,string,youtube_takeout/history/watch-history.json
+search-history.json,name,"['details', 'name']",['details'],['name'],list,string,youtube_takeout/history/search-history.json
+watch-history.json,name,"['details', 'name']",['details'],['name'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,name,"['subtitles', 'name']",['subtitles'],['name'],list,string,youtube_takeout/history/watch-history.json
+watch-history.json,url,"['subtitles', 'url']",['subtitles'],['url'],list,string,youtube_takeout/history/watch-history.json

@@ -1,4 +1,4 @@
-﻿File_name,Column_names,id,keepID,date_added
+File_name,Column_names,id,keepID,date_added
 channel URL configs.csv,Channel ID,channel_URL_configs:Channel_ID,channel_URL_configs:Channel_ID,pre-trial
 channel URL configs.csv,Channel Vanity URL 1 Name,channel_URL_configs:Channel_Vanity_URL_1_Name,channel_URL_configs:Channel_Vanity_URL_1_Name,pre-trial
 channel URL configs.csv,Channel Vanity URL 2 Name,channel_URL_configs:Channel_Vanity_URL_2_Name,channel_URL_configs:Channel_Vanity_URL_2_Name,pre-trial

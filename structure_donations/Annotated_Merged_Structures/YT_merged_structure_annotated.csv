@@ -1,4 +1,4 @@
-﻿json_name,id,column_name,path,list_path,subfield_path,var_type,data_type,file_path,duplicate_flag,keepID,date_added
+json_name,id,column_name,path,list_path,subfield_path,var_type,data_type,file_path,duplicate_flag,keepID,date_added
 istoricul căutărilor.json,istoricul căutărilor:header,header,"[""header""]",[],"[""header""]",list,string,istoric/istoricul căutărilor.json,No,search-history:header,pre-trial
 istoricul căutărilor.json,istoricul căutărilor:title,title,"[""title""]",[],"[""title""]",list,string,istoric/istoricul căutărilor.json,No,search-history:title,pre-trial
 istoricul căutărilor.json,istoricul căutărilor:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,istoric/istoricul căutărilor.json,No,search-history:titleUrl,pre-trial
@@ -654,3 +654,14 @@ historial de reproducciones.json,historial de reproducciones:time,time,"[""time"
 historial de reproducciones.json,historial de reproducciones:products,products,"[""products""]",[],"[""products""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No,watch-history:products,
 historial de reproducciones.json,historial de reproducciones:activityControls,activityControls,"[""activityControls""]",[],"[""activityControls""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No,watch-history:activityControls,
 historial de reproducciones.json,historial de reproducciones:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube y YouTube Music/historial de videos/historial de reproducciones.json,No,watch-history:details:name,
+search-history.json,search-history:description,description,"[""description""]",[],"[""description""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes,,
+watch-history.json,watch-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes,,
+search-history.json,search-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,Takeout/YouTube and YouTube Music/history/search-history.json,Yes,,
+watch-history.json,watch-history:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes,,
+watch-history.json,watch-history:subtitles:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,Takeout/YouTube and YouTube Music/history/watch-history.json,Yes,,
+search-history.json,search-history:description,description,"[""description""]",[],"[""description""]",list,string,youtube_takeout/history/search-history.json,Yes,,
+watch-history.json,watch-history:titleUrl,titleUrl,"[""titleUrl""]",[],"[""titleUrl""]",list,string,youtube_takeout/history/watch-history.json,Yes,,
+watch-history.json,watch-history:description,description,"[""description""]",[],"[""description""]",list,string,youtube_takeout/history/watch-history.json,No,,
+search-history.json,search-history:details:name,name,"[""details"", ""name""]","[""details""]","[""name""]",list,string,youtube_takeout/history/search-history.json,Yes,,
+watch-history.json,watch-history:subtitles:name,name,"[""subtitles"", ""name""]","[""subtitles""]","[""name""]",list,string,youtube_takeout/history/watch-history.json,Yes,,
+watch-history.json,watch-history:subtitles:url,url,"[""subtitles"", ""url""]","[""subtitles""]","[""url""]",list,string,youtube_takeout/history/watch-history.json,Yes,,

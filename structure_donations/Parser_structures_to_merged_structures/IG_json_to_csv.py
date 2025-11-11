@@ -13,9 +13,7 @@ warnings.filterwarnings("ignore")
 
 import os, psutil, time
 
-def mem(label=""):
-    p = psutil.Process(os.getpid())
-    print(f"[{label}] RSS={p.memory_info().rss/1e6:.1f} MB")
+
 
 
 time = datetime.datetime.now()
