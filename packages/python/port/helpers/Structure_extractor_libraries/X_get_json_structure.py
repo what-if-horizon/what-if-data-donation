@@ -1,12 +1,11 @@
-
-
 """
 The purpose of this python script is to obtain the data structures of the donated data takeouts.
 All 'real' data is removed and replaced with the data type.
-In this way, we obtain the data structure without collecting any personal data 
+In this way, we obtain the data structure without collecting any personal data
 """
+
 #############################################################################
-# Import libraries                                                 
+# Import libraries
 #############################################################################
 
 import zipfile
@@ -15,12 +14,13 @@ import os
 import re
 
 ##############################################################################
-# Infer the data type  
-# -- Change the value into a string stating the data type   
+# Infer the data type
+# -- Change the value into a string stating the data type
 # -- If the value is None, None is returned
 # -- If the data type is not one of the data types specified in this function,
-#       'unknown is returned                                      
+#       'unknown is returned
 ###############################################################################
+
 
 def infer_placeholder(value):
     if isinstance(value, str):
@@ -38,9 +38,11 @@ def infer_placeholder(value):
     else:
         return "unknown"
 
+
 #############################################################################################
-# Function to iterate over all dictionaries and list to apply the infer_placeholder function 
+# Function to iterate over all dictionaries and list to apply the infer_placeholder function
 #############################################################################################
+
 
 def simplify_json_structure(data):
     # If the data is a dictionary...
@@ -51,7 +53,7 @@ def simplify_json_structure(data):
         return {k: simplify_json_structure(v) for k, v in data.items()}
 
     # If the data is a list...
-    
+
     elif isinstance(data, list):
         if len(data) > 0:
             # Map each item in the list through this function
@@ -68,24 +70,24 @@ def simplify_json_structure(data):
     else:
         return infer_placeholder(data)
 
+
 ################################################
 # Extract the json from the JavaScript wrapper #
 ################################################
 def extract_json_from_js(js_content):
- 
-   
-    index = js_content.find('=')
-    data =  js_content[index + 1:]
-    
+
+    index = js_content.find("=")
+    data = js_content[index + 1 :]
+
     try:
         data = json.loads(data)
     except:
-        print('Not loaded:', data)
-    #print(data)
+        print("Not loaded:", data)
+    # print(data)
     if isinstance(data, list):
         if len(data) == 1 and isinstance(data[0], dict):
             return data[0]  # single dictionary in a list
-        
+
         elif all(isinstance(item, dict) for item in data):
             return data  # list of dictionaries
         else:
@@ -94,11 +96,6 @@ def extract_json_from_js(js_content):
         return data  # already a dictionary
     else:
         return None
-    
-
-
-
-
 
 
 ##############################################################################
@@ -116,13 +113,15 @@ def extract_json_from_js(js_content):
 def structure_from_zip(zip_path):
     output_structure = {}
 
-    with zipfile.ZipFile(zip_path, 'r') as z:
+    with zipfile.ZipFile(zip_path, "r") as z:
         for file_info in z.infolist():
             # Split the path into parts
-            path_parts = file_info.filename.split('/')
+            path_parts = file_info.filename.split("/")
 
             # Process only files where 'data' is in the second position
-            if file_info.is_dir() or len(path_parts) < 2 or path_parts[0] != 'data':
+            if file_info.is_dir() or len(path_parts) < 2 or path_parts[0] != "data":
+
+                print("Skip ", file_info, path_parts)
                 continue
 
             with z.open(file_info.filename) as f:
@@ -143,18 +142,17 @@ def structure_from_zip(zip_path):
 
                 content = None
 
-                if file_info.filename.endswith('.js'):
+                if file_info.filename.endswith(".js"):
                     content = extract_json_from_js(content_str)
                 else:
                     continue  # Skip unknown file types
-
+                print("!!!!", content)
                 placeholder_content = simplify_json_structure(content)
 
                 if placeholder_content == ["array"]:
-                     output_structure[file_info.filename] = "No data"
-                        
+                    output_structure[file_info.filename] = "No data"
+
                 else:
                     output_structure[file_info.filename] = placeholder_content
 
-   
     return json.dumps(output_structure, indent=2, ensure_ascii=False)
