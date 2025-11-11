@@ -108,6 +108,7 @@ def extract_entries_from_csv(infile: Path, platform: str) -> Iterable[Entry]:
 
     schema_df = pd.read_csv(infile)
     schema_df.columns = schema_df.columns.str.strip()
+    print("!!!", infile)
     schema_df = schema_df[(schema_df["keepID"].notna()) & (schema_df["keepID"] != "")]
 
     if "file_path" not in schema_df:
@@ -176,11 +177,11 @@ def csv_entries_as_dict(schema_file: Path) -> dict[str, list[Entry]]:
 # %%
 BASE_PATH = Path.cwd() / "structure_donations" / "Annotated_Merged_Structures"
 infiles = dict(
-    TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
-    X=BASE_PATH / "X_merged_structure_annotated.csv",
-    IG=BASE_PATH / "IG_merged_structure_annotated.csv",
+    # TIKTOK=BASE_PATH / "TT_merged_structure_annotated.csv",
+    # X=BASE_PATH / "X_merged_structure_annotated.csv",
+    # IG=BASE_PATH / "IG_merged_structure_annotated.csv",
     FB=BASE_PATH / "FB_merged_structure_annotated.csv",
-    YT=BASE_PATH / "YT_merged_structure_annotated.csv",
+    # YT=BASE_PATH / "YT_merged_structure_annotated.csv",
 )
 
 
@@ -200,7 +201,7 @@ def write_entries_dict(outfile):
         lines.append("}\n\n")
 
     CSV_SCHEMA = BASE_PATH / "YT_merged_column_names_annotated.csv"
-    csv_entries = csv_entries_as_dict(CSV_SCHEMA)
+    csv_entries = {}  # csv_entries_as_dict(CSV_SCHEMA)
 
     lines.append("YT_CSV_ENTRIES: dict[str, list[Entry]] = {\n")
     for table, entries in csv_entries.items():
