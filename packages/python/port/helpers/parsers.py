@@ -2,6 +2,7 @@ import itertools
 import json
 import logging
 import os
+import re
 import zipfile
 from typing import Annotated, Any, Iterable, NamedTuple, TypeAlias
 
@@ -104,11 +105,25 @@ def read_file(file_input: list[str], filename: str | None):
         with open(file_input[0], "r", encoding="utf-8") as f:
             return [json.load(f)]
 
+    if filename and "$USERNAME" in filename:
+        data = list(read_pattern(file_input, filename))
+        if not data:
+            raise FileNotFoundError(f"Cannot find a file matching {filename}")
+        return data
+
     filenames = [filename, f"*/{filename}", f"{filename}"]
     if filename.endswith(".js"):
         return read_js(file_input, filenames)
     else:
         return read_json(file_input, filenames)
+
+
+def read_pattern(file_input: list[str], filename: str):
+    pattern = re.compile(re.escape(filename).replace(r"\$USERNAME", r"([^/]+_)?\d{10,}"))
+    with zipfile.ZipFile(file_input[0], "r") as zip_ref:
+        for file in zip_ref.namelist():
+            if pattern.match(file):
+                yield read_file(file_input, file)
 
 
 # ----------------------------------------------------------------------
