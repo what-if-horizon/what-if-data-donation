@@ -1,11 +1,6 @@
-import port.api.props as props
 import port.api.d3i_props as d3i_props
-
-from port.api.commands import (
-    CommandSystemDonate,
-    CommandUIRender,
-    CommandSystemExit,
-)
+import port.api.props as props
+from port.api.commands import CommandSystemDonate, CommandSystemExit, CommandUIRender
 
 
 def render_page(
@@ -18,7 +13,7 @@ def render_page(
         | d3i_props.PropsUIPromptFileInputMultiple
         | d3i_props.PropsUIPromptQuestionnaire
         | props.PropsUIPromptConfirm
-    )
+    ),
 ) -> CommandUIRender:
     """
     Renders the UI components for a donation page.
@@ -61,22 +56,21 @@ def generate_retry_prompt(platform_name: str) -> props.PropsUIPromptConfirm:
         props.PropsUIPromptConfirm: A confirmation prompt object containing
         the message, and labels for the "OK" (try again) and "Cancel" (continue) buttons.
     """
-    text = props.Translatable({
-        "en": f"Unfortunately, we cannot process your {platform_name} file. Continue, if you are sure that you selected the right file. Try again to select a different file.",
-        "nl": f"Helaas, kunnen we uw {platform_name} bestand niet verwerken. Weet u zeker dat u het juiste bestand heeft gekozen? Ga dan verder. Probeer opnieuw als u een ander bestand wilt kiezen."
-    })
-    ok = props.Translatable({
-        "en": "Try again",
-        "nl": "Probeer opnieuw"
-    })
-    cancel = props.Translatable({
-        "en": "Continue",
-        "nl": "Verder"
-    })
+    text = props.Translatable(
+        {
+            "en": f"Unfortunately, we cannot process your {platform_name} file. Try again to select a different file or cancel to return to the menu.",
+            "nl": f"Helaas, kunnen we uw {platform_name} bestand niet verwerken. Probeer het opnieuw als u een ander bestand wilt kiezen, of annuleer of terug te gaan naar het menu.",
+            "es": f"Lamentablemente, no podemos procesar su archivo de {platform_name}. Intente de nuevo para seleccionar un archivo diferente o cancele para volver al menú.",
+        }
+    )
+    ok = props.Translatable({"en": "Try again", "nl": "Opnieuw proberen", "es": "Intentar de nuevo"})
+    cancel = props.Translatable({"en": "Cancel", "nl": "Annuleren", "es": "Cancelar"})
     return props.PropsUIPromptConfirm(text, ok, cancel)
 
 
-def generate_file_prompt(extensions: str, multiple: bool = False) -> props.PropsUIPromptFileInput | d3i_props.PropsUIPromptFileInputMultiple:
+def generate_file_prompt(
+    extensions: str, multiple: bool = False
+) -> props.PropsUIPromptFileInput | d3i_props.PropsUIPromptFileInputMultiple:
     """
     Generates a file input prompt for selecting file(s) for a platform.
     This function creates a bilingual (English and Dutch) file input prompt
@@ -99,10 +93,12 @@ def generate_file_prompt(extensions: str, multiple: bool = False) -> props.Props
             allowed file extensions. If multiple=True, returns a
             PropsUIPromptFileInputMultiple object for selecting multiple files.
     """
-    description = props.Translatable({
-        "en": "Please follow the download instructions and choose the file that you stored on your device.",
-        "nl": "Volg de download instructies en kies het bestand dat u opgeslagen heeft op uw apparaat.",
-    })
+    description = props.Translatable(
+        {
+            "en": "Please follow the download instructions and choose the file that you stored on your device.",
+            "nl": "Volg de download instructies en kies het bestand dat u opgeslagen heeft op uw apparaat.",
+        }
+    )
     if multiple:
         return d3i_props.PropsUIPromptFileInputMultiple(description, extensions)
 
@@ -110,8 +106,7 @@ def generate_file_prompt(extensions: str, multiple: bool = False) -> props.Props
 
 
 def generate_review_data_prompt(
-        description: props.Translatable,
-        table_list: list[d3i_props.PropsUIPromptConsentFormTableViz]
+    description: props.Translatable, table_list: list[d3i_props.PropsUIPromptConsentFormTableViz]
 ) -> d3i_props.PropsUIPromptConsentFormViz:
     """
     Generates a data review form with a list of tables and a description, including default donate question and button.
@@ -126,21 +121,14 @@ def generate_review_data_prompt(
         props.PropsUIPromptConsentForm: A structured consent form object containing the provided table list, description,
         and default values for donate question and button.
     """
-    donate_question = props.Translatable({
-       "en": "Do you want to share this data for research?",
-       "nl": "Wilt u deze gegevens delen voor onderzoek?"
-    })
+    donate_question = props.Translatable(
+        {"en": "Do you want to share this data for research?", "nl": "Wilt u deze gegevens delen voor onderzoek?"}
+    )
 
-    donate_button = props.Translatable({
-       "en": "Yes, share for research",
-       "nl": "Ja, deel voor onderzoek"
-    })
+    donate_button = props.Translatable({"en": "Yes, share for research", "nl": "Ja, deel voor onderzoek"})
 
     return d3i_props.PropsUIPromptConsentFormViz(
-       tables=table_list,
-       description=description,
-       donate_question=donate_question,
-       donate_button=donate_button
+        tables=table_list, description=description, donate_question=donate_question, donate_button=donate_button
     )
 
 
@@ -181,9 +169,7 @@ def exit(code: int, info: str) -> CommandSystemExit:
 
 
 def generate_radio_prompt(
-        title: props.Translatable,
-        description: props.Translatable,
-        items: list[str]
+    title: props.Translatable, description: props.Translatable, items: list[str]
 ) -> props.PropsUIPromptRadioInput:
     """
     General purpose prompt selection menu
@@ -215,21 +201,18 @@ def generate_questionnaire() -> d3i_props.PropsUIPromptQuestionnaire:
     questionnaire_description = props.Translatable(
         translations={
             "en": "Customer Satisfaction Survey for our Online Store",
-            "nl": "Klanttevredenheidsonderzoek voor onze Online Winkel"
+            "nl": "Klanttevredenheidsonderzoek voor onze Online Winkel",
         }
     )
 
     open_question = props.Translatable(
-        translations={
-            "en": "How can we improve our services?",
-            "nl": "Hoe kunnen we onze diensten verbeteren?"
-        }
+        translations={"en": "How can we improve our services?", "nl": "Hoe kunnen we onze diensten verbeteren?"}
     )
 
     mc_question = props.Translatable(
         translations={
             "en": "How would you rate your overall experience?",
-            "nl": "Hoe zou u uw algemene ervaring beoordelen?"
+            "nl": "Hoe zou u uw algemene ervaring beoordelen?",
         }
     )
 
@@ -238,13 +221,13 @@ def generate_questionnaire() -> d3i_props.PropsUIPromptQuestionnaire:
         props.Translatable(translations={"en": "Good", "nl": "Goed"}),
         props.Translatable(translations={"en": "Average", "nl": "Gemiddeld"}),
         props.Translatable(translations={"en": "Poor", "nl": "Slecht"}),
-        props.Translatable(translations={"en": "Very Poor", "nl": "Zeer slecht"})
+        props.Translatable(translations={"en": "Very Poor", "nl": "Zeer slecht"}),
     ]
 
     checkbox_question = props.Translatable(
         translations={
             "en": "Which of our products have you purchased? (Select all that apply)",
-            "nl": "Welke van onze producten heeft u gekocht? (Selecteer alle toepasselijke)"
+            "nl": "Welke van onze producten heeft u gekocht? (Selecteer alle toepasselijke)",
         }
     )
 
@@ -253,31 +236,18 @@ def generate_questionnaire() -> d3i_props.PropsUIPromptQuestionnaire:
         props.Translatable(translations={"en": "Clothing", "nl": "Kleding"}),
         props.Translatable(translations={"en": "Home Goods", "nl": "Huishoudelijke artikelen"}),
         props.Translatable(translations={"en": "Books", "nl": "Boeken"}),
-        props.Translatable(translations={"en": "Food Items", "nl": "Voedingsproducten"})
+        props.Translatable(translations={"en": "Food Items", "nl": "Voedingsproducten"}),
     ]
 
-    open_ended_question = d3i_props.PropsUIQuestionOpen(
-        id=1,
-        question=open_question
-    )
+    open_ended_question = d3i_props.PropsUIQuestionOpen(id=1, question=open_question)
 
-    multiple_choice_question = d3i_props.PropsUIQuestionMultipleChoice(
-        id=2,
-        question=mc_question,
-        choices=mc_choices
-    )
+    multiple_choice_question = d3i_props.PropsUIQuestionMultipleChoice(id=2, question=mc_question, choices=mc_choices)
 
     checkbox_question_obj = d3i_props.PropsUIQuestionMultipleChoiceCheckbox(
-        id=3,
-        question=checkbox_question,
-        choices=checkbox_choices
+        id=3, question=checkbox_question, choices=checkbox_choices
     )
 
     return d3i_props.PropsUIPromptQuestionnaire(
         description=questionnaire_description,
-        questions=[
-            multiple_choice_question,
-            checkbox_question_obj,
-            open_ended_question
-        ]
+        questions=[multiple_choice_question, checkbox_question_obj, open_ended_question],
     )
