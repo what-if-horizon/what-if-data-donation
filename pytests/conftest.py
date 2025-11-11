@@ -1,7 +1,11 @@
+import functools
+import importlib
 import json
 import logging
 from pathlib import Path
 from typing import NamedTuple
+
+from pytest import fixture
 
 FOLDER_SCENARIOS = Path.cwd() / "pytests" / "scenarios"
 TESTFILES = Path.cwd() / "pytests" / "testfiles"
@@ -13,6 +17,16 @@ class Scenario(NamedTuple):
     id: str
     columns: list[str]
     data: list[list[str | int | float]]
+
+
+def inputfiles():
+    return dict(
+        Tiktok="pytests/public_testfiles/TT_user_data_tiktok.json",
+        Twitter="pytests/public_testfiles/X_public_test_files.zip",
+        Facebook="pytests/public_testfiles/FB_public_test_file.zip",
+        Instagram="pytests/public_testfiles/IG_public_test_file.zip",
+        Youtube="pytests/public_testfiles/YT_public_test_file.zip",
+    )
 
 
 def get_scenario_files():
@@ -50,11 +64,24 @@ def get_scenarios():
             id = output["id"]
             df = output["data_frame"]
             yield f"{fname}::{id}", Scenario(
-                input=Path(d["input_file"]), platform=d["platform"], id=id, columns=df["columns"], data=df["data"]
+                input=Path(d["input_file"]),
+                platform=d["platform"],
+                id=id,
+                columns=df["columns"],
+                data=df["data"],
             )
 
 
 def pytest_generate_tests(metafunc):
     scenarios = dict(get_scenarios())
     if "scenario" in metafunc.fixturenames:
-        metafunc.parametrize("scenario", list(scenarios.values()), ids=list(scenarios.keys()))
+        metafunc.parametrize(
+            "scenario", list(scenarios.values()), ids=list(scenarios.keys())
+        )
+
+
+@functools.lru_cache()
+def get_tables(platform, input):
+    flow_module = importlib.import_module(f"port.donation_flows.{platform}")
+    flow = flow_module.create_donation_flow([str(input)])
+    return {table.id: table for table in flow.tables}

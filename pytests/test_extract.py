@@ -4,15 +4,8 @@ import logging
 import warnings
 
 import numpy as np
-from conftest import Scenario
+from conftest import Scenario, get_tables
 from pandas import DataFrame
-
-
-@functools.lru_cache()
-def get_tables(platform, input):
-    flow_module = importlib.import_module(f"port.donation_flows.{platform}")
-    flow = flow_module.create_donation_flow([str(input)])
-    return {table.id: table for table in flow.tables}
 
 
 def test_extract_table(scenario: Scenario):
@@ -20,7 +13,9 @@ def test_extract_table(scenario: Scenario):
         warnings.warn(f"Cannot find file {scenario.input}, skipping test")
         return
     tables = get_tables(scenario.platform, scenario.input)
-    assert scenario.id in tables, f"No table {scenario.id} (tables: {list(tables.keys())})"
+    assert (
+        scenario.id in tables
+    ), f"No table {scenario.id} (tables: {list(tables.keys())})"
     df: DataFrame = tables[scenario.id].data_frame
     assert set(df.columns) == set(scenario.columns)
     assert len(df) == len(scenario.data)
@@ -32,4 +27,6 @@ def test_extract_table(scenario: Scenario):
             # and need to check for float first to avoid an error from isnan
             if all(isinstance(x, float) and np.isnan(x) for x in (found, expected)):
                 continue
-            assert found == expected, f"Row {i} column {j}:{col} mismatch: expected {expected!r}, found {found!r}"
+            assert (
+                found == expected
+            ), f"Row {i} column {j}:{col} mismatch: expected {expected!r}, found {found!r}"
