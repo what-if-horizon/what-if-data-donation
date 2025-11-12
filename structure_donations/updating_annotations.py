@@ -32,14 +32,14 @@ for file in os.listdir(folder_annotated):
 
 
 
-dfs_annotated.keys()
+
+
+
 
 
 ######################################### 
 # Loading the (new) merged structures   #
 #########################################
-
-
 
 
 dfs_new = {}
@@ -71,11 +71,14 @@ dict_dfs = {
 
 }
 
+print("Keys in dfs_annotated:", dfs_annotated.keys())
+
 for k,v in dict_dfs.items():
 
-    dfs_annotated[f'{k}'] = dfs_annotated[k].loc[:, ~dfs_annotated[k].columns.str.startswith('Unnamed')]
+   
 
-    print(k)
+    dfs_annotated[k] = dfs_annotated[k].loc[:, ~dfs_annotated[k].columns.str.startswith('Unnamed')]
+   
 
     merge_cols = list(dfs_annotated[k].columns)
 
@@ -87,12 +90,15 @@ for k,v in dict_dfs.items():
         merge_cols.remove('date_added')
 
 
-    new_rows_dict[f'{v}_new'] = dfs_new[v].merge(dfs_annotated[k], how="left", on = merge_cols, indicator=True).query('_merge == "left_only"').drop(columns=["_merge"])
+    new_rows_dict[f'{v}_new'] = (dfs_new[v]
+                                 .merge(dfs_annotated[k], how="left", on = merge_cols, indicator=True)
+                                 .query('_merge == "left_only"')
+                                 .drop(columns=["_merge"]))
 
     date_col = 'date_added'
 
-    if date_col not in new_rows_dict[f'{v}_new'].columns:
-        new_rows_dict[f'{v}_new'][date_col] = datetime.now().strftime("%Y-%m-%d")
+    #if date_col not in new_rows_dict[f'{v}_new'].columns:
+    new_rows_dict[f'{v}_new'][date_col] = datetime.now().strftime("%Y-%m-%d")
 
 
 ############################################################# 
@@ -114,9 +120,8 @@ for k,v in dict_dfs.items():
 # Save annotated merged structures   #
 ######################################
 
-
-# Assume dfs_dict is your dictionary of DataFrames
 for key, df in dfs_annotated.items():
+
     # Create a filename from the key
     filename = f"{key}.csv"
     path = os.path.join(folder_annotated, filename)

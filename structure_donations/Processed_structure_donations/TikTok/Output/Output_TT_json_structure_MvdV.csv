@@ -1,0 +1,123 @@
+column_name,path,list_path,subfield_path,var_type,data_type
+AdInterestCategories,"['Ads and data', 'Ad Interests', 'AdInterestCategories']",[],"['Ads and data', 'Ad Interests', 'AdInterestCategories']",static,string
+ResponsesList,"['Ads and data', 'Instant Form Ads Responses', 'ResponsesList']",[],"['Ads and data', 'Instant Form Ads Responses', 'ResponsesList']",static,object
+OffTikTokActivityDataList,"['Ads and data', 'Off TikTok Activity', 'OffTikTokActivityDataList']",[],"['Ads and data', 'Off TikTok Activity', 'OffTikTokActivityDataList']",static,object
+App,"['App Settings', 'Block List', 'App']",[],"['App Settings', 'Block List', 'App']",static,number
+BlockList,"['App Settings', 'Block List', 'BlockList']",[],"['App Settings', 'Block List', 'BlockList']",static,object
+App,"['App Settings', 'Settings', 'App']",[],"['App Settings', 'Settings', 'App']",static,number
+App,"['Comment', 'Comments', 'App']",[],"['Comment', 'Comments', 'App']",static,number
+CommentsList,"['Comment', 'Comments', 'CommentsList']",[],"['Comment', 'Comments', 'CommentsList']",static,object
+TransactionsList,"['Income Plus Wallet Transactions', 'Transaction History', 'TransactionsList']",[],"['Income Plus Wallet Transactions', 'Transaction History', 'TransactionsList']",static,object
+ReviewsList,"['Location Review', 'Location Reviews', 'ReviewsList']",[],"['Location Review', 'Location Reviews', 'ReviewsList']",static,object
+VideoList,"['Post', 'Posts', 'VideoList']",[],"['Post', 'Posts', 'VideoList']",static,object
+PostList,"['Post', 'Recently Deleted Posts', 'PostList']",[],"['Post', 'Recently Deleted Posts', 'PostList']",static,object
+CreateDate,"['Profile', 'AI-Moji', 'CreateDate']",[],"['Profile', 'AI-Moji', 'CreateDate']",static,string
+AIMojiList,"['Profile', 'AI-Moji', 'AIMojiList']",[],"['Profile', 'AI-Moji', 'AIMojiList']",static,object
+PhoneNumber,"['Profile', 'Autofill', 'PhoneNumber']",[],"['Profile', 'Autofill', 'PhoneNumber']",static,string
+Email,"['Profile', 'Autofill', 'Email']",[],"['Profile', 'Autofill', 'Email']",static,string
+FirstName,"['Profile', 'Autofill', 'FirstName']",[],"['Profile', 'Autofill', 'FirstName']",static,string
+LastName,"['Profile', 'Autofill', 'LastName']",[],"['Profile', 'Autofill', 'LastName']",static,string
+Address,"['Profile', 'Autofill', 'Address']",[],"['Profile', 'Autofill', 'Address']",static,string
+ZipCode,"['Profile', 'Autofill', 'ZipCode']",[],"['Profile', 'Autofill', 'ZipCode']",static,string
+Unit,"['Profile', 'Autofill', 'Unit']",[],"['Profile', 'Autofill', 'Unit']",static,string
+City,"['Profile', 'Autofill', 'City']",[],"['Profile', 'Autofill', 'City']",static,string
+State,"['Profile', 'Autofill', 'State']",[],"['Profile', 'Autofill', 'State']",static,string
+Country,"['Profile', 'Autofill', 'Country']",[],"['Profile', 'Autofill', 'Country']",static,string
+App,"['Profile', 'Profile Info', 'App']",[],"['Profile', 'Profile Info', 'App']",static,number
+CommunicationHistories,"['TikTok Shop', 'Communication With Shops', 'CommunicationHistories']",[],"['TikTok Shop', 'Communication With Shops', 'CommunicationHistories']",static,object
+PayCard,"['TikTok Shop', 'Current Payment Information', 'PayCard']",[],"['TikTok Shop', 'Current Payment Information', 'PayCard']",static,object
+CustomerSupportHistories,"['TikTok Shop', 'Customer Support History', 'CustomerSupportHistories']",[],"['TikTok Shop', 'Customer Support History', 'CustomerSupportHistories']",static,object
+OrderDisputeHistories,"['TikTok Shop', 'Order Dispute History', 'OrderDisputeHistories']",[],"['TikTok Shop', 'Order Dispute History', 'OrderDisputeHistories']",static,object
+OrderHistories,"['TikTok Shop', 'Order History', 'OrderHistories']",[],"['TikTok Shop', 'Order History', 'OrderHistories']",static,object
+ProductBrowsingHistories,"['TikTok Shop', 'Product Browsing History', 'ProductBrowsingHistories']",[],"['TikTok Shop', 'Product Browsing History', 'ProductBrowsingHistories']",static,object
+ProductReviewHistories,"['TikTok Shop', 'Product Reviews', 'ProductReviewHistories']",[],"['TikTok Shop', 'Product Reviews', 'ProductReviewHistories']",static,object
+ReturnAndRefundHistories,"['TikTok Shop', 'Returns and Refunds History', 'ReturnAndRefundHistories']",[],"['TikTok Shop', 'Returns and Refunds History', 'ReturnAndRefundHistories']",static,object
+SavedAddress,"['TikTok Shop', 'Saved Address Information', 'SavedAddress']",[],"['TikTok Shop', 'Saved Address Information', 'SavedAddress']",static,object
+ShoppingCart,"['TikTok Shop', 'Shopping Cart List', 'ShoppingCart']",[],"['TikTok Shop', 'Shopping Cart List', 'ShoppingCart']",static,object
+Vouchers,"['TikTok Shop', 'Vouchers', 'Vouchers']",[],"['TikTok Shop', 'Vouchers', 'Vouchers']",static,object
+GoLiveList,"['Tiktok Live', 'Go Live History', 'GoLiveList']",[],"['Tiktok Live', 'Go Live History', 'GoLiveList']",static,object
+MostRecentModificationTimeInApp,"['Tiktok Live', 'Watch Live Settings', 'MostRecentModificationTimeInApp']",[],"['Tiktok Live', 'Watch Live Settings', 'MostRecentModificationTimeInApp']",static,string
+MostRecentModificationTimeInWeb,"['Tiktok Live', 'Watch Live Settings', 'MostRecentModificationTimeInWeb']",[],"['Tiktok Live', 'Watch Live Settings', 'MostRecentModificationTimeInWeb']",static,string
+FavoriteEffectsList,"['Your Activity', 'Favorite Effects', 'FavoriteEffectsList']",[],"['Your Activity', 'Favorite Effects', 'FavoriteEffectsList']",static,object
+FavoriteHashtagList,"['Your Activity', 'Favorite Hashtags', 'FavoriteHashtagList']",[],"['Your Activity', 'Favorite Hashtags', 'FavoriteHashtagList']",static,object
+FavoriteSoundList,"['Your Activity', 'Favorite Sounds', 'FavoriteSoundList']",[],"['Your Activity', 'Favorite Sounds', 'FavoriteSoundList']",static,object
+App,"['Your Activity', 'Favorite Videos', 'App']",[],"['Your Activity', 'Favorite Videos', 'App']",static,number
+FavoriteVideoList,"['Your Activity', 'Favorite Videos', 'FavoriteVideoList']",[],"['Your Activity', 'Favorite Videos', 'FavoriteVideoList']",static,object
+App,"['Your Activity', 'Follower', 'App']",[],"['Your Activity', 'Follower', 'App']",static,number
+IsFastLane,"['Your Activity', 'Follower', 'IsFastLane']",[],"['Your Activity', 'Follower', 'IsFastLane']",static,boolean
+FansList,"['Your Activity', 'Follower', 'FansList']",[],"['Your Activity', 'Follower', 'FansList']",static,object
+App,"['Your Activity', 'Following', 'App']",[],"['Your Activity', 'Following', 'App']",static,number
+IsFastLane,"['Your Activity', 'Following', 'IsFastLane']",[],"['Your Activity', 'Following', 'IsFastLane']",static,boolean
+Following,"['Your Activity', 'Following', 'Following']",[],"['Your Activity', 'Following', 'Following']",static,object
+HashtagList,"['Your Activity', 'Hashtag', 'HashtagList']",[],"['Your Activity', 'Hashtag', 'HashtagList']",static,object
+App,"['Your Activity', 'Like List', 'App']",[],"['Your Activity', 'Like List', 'App']",static,number
+ItemFavoriteList,"['Your Activity', 'Like List', 'ItemFavoriteList']",[],"['Your Activity', 'Like List', 'ItemFavoriteList']",static,object
+LoginHistoryList,"['Your Activity', 'Login History', 'LoginHistoryList']",[],"['Your Activity', 'Login History', 'LoginHistoryList']",static,object
+ShareHistoryList,"['Your Activity', 'Share History', 'ShareHistoryList']",[],"['Your Activity', 'Share History', 'ShareHistoryList']",static,object
+Allow DownLoad,"['App Settings', 'Settings', 'SettingsMap', 'Allow DownLoad']",[],"['App Settings', 'Settings', 'SettingsMap', 'Allow DownLoad']",static,string
+Allow Others to Find Me,"['App Settings', 'Settings', 'SettingsMap', 'Allow Others to Find Me']",[],"['App Settings', 'Settings', 'SettingsMap', 'Allow Others to Find Me']",static,string
+App Language,"['App Settings', 'Settings', 'SettingsMap', 'App Language']",[],"['App Settings', 'Settings', 'SettingsMap', 'App Language']",static,string
+Filter Comments,"['App Settings', 'Settings', 'SettingsMap', 'Filter Comments']",[],"['App Settings', 'Settings', 'SettingsMap', 'Filter Comments']",static,string
+Interests,"['App Settings', 'Settings', 'SettingsMap', 'Interests']",[],"['App Settings', 'Settings', 'SettingsMap', 'Interests']",static,string
+Private Account,"['App Settings', 'Settings', 'SettingsMap', 'Private Account']",[],"['App Settings', 'Settings', 'SettingsMap', 'Private Account']",static,string
+Suggest your account to Facebook friends,"['App Settings', 'Settings', 'SettingsMap', 'Suggest your account to Facebook friends']",[],"['App Settings', 'Settings', 'SettingsMap', 'Suggest your account to Facebook friends']",static,string
+Suggest your account to contacts,"['App Settings', 'Settings', 'SettingsMap', 'Suggest your account to contacts']",[],"['App Settings', 'Settings', 'SettingsMap', 'Suggest your account to contacts']",static,string
+Suggest your account to people who open or send links to you,"['App Settings', 'Settings', 'SettingsMap', 'Suggest your account to people who open or send links to you']",[],"['App Settings', 'Settings', 'SettingsMap', 'Suggest your account to people who open or send links to you']",static,string
+Web Language,"['App Settings', 'Settings', 'SettingsMap', 'Web Language']",[],"['App Settings', 'Settings', 'SettingsMap', 'Web Language']",static,string
+Who Can Duet With Me,"['App Settings', 'Settings', 'SettingsMap', 'Who Can Duet With Me']",[],"['App Settings', 'Settings', 'SettingsMap', 'Who Can Duet With Me']",static,string
+Who Can Post Comments,"['App Settings', 'Settings', 'SettingsMap', 'Who Can Post Comments']",[],"['App Settings', 'Settings', 'SettingsMap', 'Who Can Post Comments']",static,string
+Who Can Send Me Message,"['App Settings', 'Settings', 'SettingsMap', 'Who Can Send Me Message']",[],"['App Settings', 'Settings', 'SettingsMap', 'Who Can Send Me Message']",static,string
+Who Can Stitch with your videos,"['App Settings', 'Settings', 'SettingsMap', 'Who Can Stitch with your videos']",[],"['App Settings', 'Settings', 'SettingsMap', 'Who Can Stitch with your videos']",static,string
+Who Can View Videos I Liked,"['App Settings', 'Settings', 'SettingsMap', 'Who Can View Videos I Liked']",[],"['App Settings', 'Settings', 'SettingsMap', 'Who Can View Videos I Liked']",static,string
+bioDescription,"['Profile', 'Profile Info', 'ProfileMap', 'bioDescription']",[],"['Profile', 'Profile Info', 'ProfileMap', 'bioDescription']",static,string
+birthDate,"['Profile', 'Profile Info', 'ProfileMap', 'birthDate']",[],"['Profile', 'Profile Info', 'ProfileMap', 'birthDate']",static,string
+emailAddress,"['Profile', 'Profile Info', 'ProfileMap', 'emailAddress']",[],"['Profile', 'Profile Info', 'ProfileMap', 'emailAddress']",static,string
+likesReceived,"['Profile', 'Profile Info', 'ProfileMap', 'likesReceived']",[],"['Profile', 'Profile Info', 'ProfileMap', 'likesReceived']",static,string
+profilePhoto,"['Profile', 'Profile Info', 'ProfileMap', 'profilePhoto']",[],"['Profile', 'Profile Info', 'ProfileMap', 'profilePhoto']",static,string
+profileVideo,"['Profile', 'Profile Info', 'ProfileMap', 'profileVideo']",[],"['Profile', 'Profile Info', 'ProfileMap', 'profileVideo']",static,string
+telephoneNumber,"['Profile', 'Profile Info', 'ProfileMap', 'telephoneNumber']",[],"['Profile', 'Profile Info', 'ProfileMap', 'telephoneNumber']",static,string
+userName,"['Profile', 'Profile Info', 'ProfileMap', 'userName']",[],"['Profile', 'Profile Info', 'ProfileMap', 'userName']",static,string
+Allow agencies to find and invite you,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow agencies to find and invite you']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow agencies to find and invite you']",static,string
+Allow others to invite you to co-host in LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow others to invite you to co-host in LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow others to invite you to co-host in LIVE']",static,string
+Allow people to send and receive comments during your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow people to send and receive comments during your LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow people to send and receive comments during your LIVE']",static,string
+Allow suggested LIVE hosts to invite you to co-host in LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow suggested LIVE hosts to invite you to co-host in LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow suggested LIVE hosts to invite you to co-host in LIVE']",static,string
+Allow viewers to request to go LIVE with you,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow viewers to request to go LIVE with you']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow viewers to request to go LIVE with you']",static,string
+Allow viewers to see and send questions and answers in your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow viewers to see and send questions and answers in your LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow viewers to see and send questions and answers in your LIVE']",static,string
+Allow viewers to send you gifts during your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow viewers to send you gifts during your LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Allow viewers to send you gifts during your LIVE']",static,string
+Hide comments that contain the following keywords from your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide comments that contain the following keywords from your LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide comments that contain the following keywords from your LIVE']",static,array
+Hide potential spam or offensive comments from your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide potential spam or offensive comments from your LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Hide potential spam or offensive comments from your LIVE']",static,string
+People you assigned to moderate your LIVE,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'People you assigned to moderate your LIVE']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'People you assigned to moderate your LIVE']",static,array
+Show your username and gift information in features with ranking lists,"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Show your username and gift information in features with ranking lists']",[],"['Tiktok Live', 'Go Live Settings', 'SettingsMap', 'Show your username and gift information in features with ranking lists']",static,string
+app,"['Tiktok Live', 'Watch Live Settings', 'WatchLiveSettingsMap', 'app']",[],"['Tiktok Live', 'Watch Live Settings', 'WatchLiveSettingsMap', 'app']",static,string
+web,"['Tiktok Live', 'Watch Live Settings', 'WatchLiveSettingsMap', 'web']",[],"['Tiktok Live', 'Watch Live Settings', 'WatchLiveSettingsMap', 'web']",static,string
+note,"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'note']",[],"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'note']",static,string
+videosCommentedOnSinceAccountRegistration,"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosCommentedOnSinceAccountRegistration']",[],"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosCommentedOnSinceAccountRegistration']",static,number
+videosSharedSinceAccountRegistration,"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosSharedSinceAccountRegistration']",[],"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosSharedSinceAccountRegistration']",static,number
+videosWatchedToTheEndSinceAccountRegistration,"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosWatchedToTheEndSinceAccountRegistration']",[],"['Your Activity', 'Activity Summary', 'ActivitySummaryMap', 'videosWatchedToTheEndSinceAccountRegistration']",static,number
+Date,"['Your Activity', 'Most Recent Location Data', 'LocationData', 'Date']",[],"['Your Activity', 'Most Recent Location Data', 'LocationData', 'Date']",static,string
+GpsData,"['Your Activity', 'Most Recent Location Data', 'LocationData', 'GpsData']",[],"['Your Activity', 'Most Recent Location Data', 'LocationData', 'GpsData']",static,string
+LastRegion,"['Your Activity', 'Most Recent Location Data', 'LocationData', 'LastRegion']",[],"['Your Activity', 'Most Recent Location Data', 'LocationData', 'LastRegion']",static,string
+SendGifts,"['Your Activity', 'Purchases', 'SendGifts', 'SendGifts']",[],"['Your Activity', 'Purchases', 'SendGifts', 'SendGifts']",static,object
+BuyGifts,"['Your Activity', 'Purchases', 'BuyGifts', 'BuyGifts']",[],"['Your Activity', 'Purchases', 'BuyGifts', 'BuyGifts']",static,object
+Keyword filters for videos in Following feed,"['App Settings', 'Settings', 'SettingsMap', 'Content Preferences', 'Keyword filters for videos in Following feed']",[],"['App Settings', 'Settings', 'SettingsMap', 'Content Preferences', 'Keyword filters for videos in Following feed']",static,object
+Keyword filters for videos in For You feed,"['App Settings', 'Settings', 'SettingsMap', 'Content Preferences', 'Keyword filters for videos in For You feed']",[],"['App Settings', 'Settings', 'SettingsMap', 'Content Preferences', 'Keyword filters for videos in For You feed']",static,object
+Video Languages Preferences,"['App Settings', 'Settings', 'SettingsMap', 'Content Preferences', 'Video Languages Preferences']",[],"['App Settings', 'Settings', 'SettingsMap', 'Content Preferences', 'Video Languages Preferences']",static,object
+Desktop notification,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'Desktop notification']",[],"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'Desktop notification']",static,string
+New Comments on My Video,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",[],"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Comments on My Video']",static,string
+New Fans,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Fans']",[],"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Fans']",static,string
+New Likes on My Video,"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",[],"['App Settings', 'Settings', 'SettingsMap', 'Push Notification', 'New Likes on My Video']",static,string
+Date,"['Your Activity', 'Searches', 'SearchList', 'Date']","['Your Activity', 'Searches', 'SearchList']",['Date'],list,string
+SearchTerm,"['Your Activity', 'Searches', 'SearchList', 'SearchTerm']","['Your Activity', 'Searches', 'SearchList']",['SearchTerm'],list,string
+Resolution,"['Your Activity', 'Status', 'Status List', 'Resolution']","['Your Activity', 'Status', 'Status List']",['Resolution'],list,string
+App Version,"['Your Activity', 'Status', 'Status List', 'App Version']","['Your Activity', 'Status', 'Status List']",['App Version'],list,string
+IDFA,"['Your Activity', 'Status', 'Status List', 'IDFA']","['Your Activity', 'Status', 'Status List']",['IDFA'],list,string
+GAID,"['Your Activity', 'Status', 'Status List', 'GAID']","['Your Activity', 'Status', 'Status List']",['GAID'],list,string
+Android ID,"['Your Activity', 'Status', 'Status List', 'Android ID']","['Your Activity', 'Status', 'Status List']",['Android ID'],list,string
+IDFV,"['Your Activity', 'Status', 'Status List', 'IDFV']","['Your Activity', 'Status', 'Status List']",['IDFV'],list,string
+Web ID,"['Your Activity', 'Status', 'Status List', 'Web ID']","['Your Activity', 'Status', 'Status List']",['Web ID'],list,string
+Date,"['Your Activity', 'Watch History', 'VideoList', 'Date']","['Your Activity', 'Watch History', 'VideoList']",['Date'],list,string
+Link,"['Your Activity', 'Watch History', 'VideoList', 'Link']","['Your Activity', 'Watch History', 'VideoList']",['Link'],list,string
+Description,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Description']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Description'],list,string
+Name,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Name']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Name'],list,string
+Platform,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Platform']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Platform'],list,string
+Profile Photo,"['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo', 'Profile Photo']","['Profile', 'Profile Info', 'ProfileMap', 'PlatformInfo']",['Profile Photo'],list,string
