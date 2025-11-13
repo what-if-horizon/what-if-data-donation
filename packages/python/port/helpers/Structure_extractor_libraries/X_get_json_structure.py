@@ -8,10 +8,10 @@ In this way, we obtain the data structure without collecting any personal data
 # Import libraries
 #############################################################################
 
-import zipfile
 import json
 import os
 import re
+import zipfile
 
 ##############################################################################
 # Infer the data type
@@ -146,7 +146,6 @@ def structure_from_zip(zip_path):
                     content = extract_json_from_js(content_str)
                 else:
                     continue  # Skip unknown file types
-                print("!!!!", content)
                 placeholder_content = simplify_json_structure(content)
 
                 if placeholder_content == ["array"]:
