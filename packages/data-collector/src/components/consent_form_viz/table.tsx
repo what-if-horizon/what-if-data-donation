@@ -1,26 +1,25 @@
-import { 
-    useEffect,
-    useLayoutEffect,
-    useMemo,
-    useRef,
-    useState,
-    ReactNode, 
-    Dispatch, 
-    SetStateAction 
+import TextBundle, {
+  Translator,
+} from '@eyra/feldspar'
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState
 } from 'react'
 import Highlighter from 'react-highlight-words'
-import { 
-    TableWithContext, 
-} from './types'
-import UndoSvg from './assets/images/undo.svg'
 import DeleteSvg from './assets/images/delete.svg'
-import { Pagination } from './pagination'
-import TextBundle from '@eyra/feldspar'
-import { 
-    Translator,
-} from '@eyra/feldspar'
+import UndoSvg from './assets/images/undo.svg'
 import { CheckBox } from "./check_box"
-import { PropsUITableRow } from "./types"
+import { Pagination } from './pagination'
+import {
+  PropsUITableRow,
+  TableWithContext,
+} from './types'
 
 
 export interface Props {
@@ -76,7 +75,7 @@ export const Table = ({
 
   useEffect(() => {
     // rm tooltip on scroll
-    function rmTooltip (): void {
+    function rmTooltip(): void {
       setTooltip((tooltip: Tooltip) => (tooltip.show ? { ...tooltip, show: false } : tooltip))
     }
     window.addEventListener('scroll', rmTooltip)
@@ -91,7 +90,7 @@ export const Table = ({
       return
     }
 
-    function responsiveHeight (): void {
+    function responsiveHeight(): void {
       if (ref.current == null || innerRef.current == null) return
       ref.current.style.gridTemplateRows = `${innerRef.current.scrollHeight}px`
     }
@@ -110,7 +109,7 @@ export const Table = ({
     return items
   }, [table, page, pageSize])
 
-  function renderHeaderCell (value: string, i: number): JSX.Element {
+  function renderHeaderCell(value: string, i: number): JSX.Element {
     return (
       <th key={`header ${i}`}>
         <div className={`text-left ${cellClass}`}>
@@ -120,7 +119,7 @@ export const Table = ({
     )
   }
 
-  function renderRow (item: PropsUITableRow | null, i: number): JSX.Element | null {
+  function renderRow(item: PropsUITableRow | null, i: number): JSX.Element | null {
     if (item == null && i >= unfilteredRows) return null
     if (item == null) {
       return (
@@ -155,7 +154,7 @@ export const Table = ({
     )
   }
 
-  function toggleSelected (id: string): void {
+  function toggleSelected(id: string): void {
     if (selected.has(id)) {
       selected.delete(id)
     } else {
@@ -164,7 +163,7 @@ export const Table = ({
     setSelected(new Set(selected))
   }
 
-  function toggleSelectAll (): void {
+  function toggleSelectAll(): void {
     if (selected.size === table.body.rows.length) {
       setSelected(new Set())
     } else {
@@ -213,18 +212,17 @@ export const Table = ({
                     hidden={!table.deleteOption}
                     onClick={() => handleDelete?.(Array.from(selected))}
                   />
-                  )
+                )
                 : (
                   <IconButton icon={UndoSvg} label={text.undo} color='text-primary' onClick={() => handleUndo?.()} />
-                  )}
+                )}
             </div>
             <Pagination page={page} setPage={setPage} nPages={nPages} />
           </div>
         </div>
         <div
-          className={`${
-            tooltip.show ? '' : 'invisible'
-          } break-all fixed bg-[#222a] -translate-x-2 -translate-y-2 p-2  rounded text-white backdrop-blur-[2px] z-20 max-w-[20rem] pointer-events-none overflow-auto font-table-row`}
+          className={`${tooltip.show ? '' : 'invisible'
+            } break-all fixed bg-[#222a] -translate-x-2 -translate-y-2 p-2  rounded text-white backdrop-blur-[2px] z-20 max-w-[20rem] pointer-events-none overflow-auto font-table-row`}
           style={{ left: tooltip.x, top: tooltip.y } as any}
         >
           {tooltip.content}
@@ -234,7 +232,7 @@ export const Table = ({
   )
 }
 
-function Cell ({
+function Cell({
   cell,
   search,
   cellClass,
@@ -259,7 +257,7 @@ function Cell ({
     setOverflows(textRef.current.scrollWidth > textRef.current.clientWidth)
   }, [textRef])
 
-  function onSetTooltip (): void {
+  function onSetTooltip(): void {
     if (isUrl) return
     if (textRef.current == null) return
     if (!overflows) return
@@ -283,7 +281,7 @@ function Cell ({
     })
   }
 
-  function onRmTooltip (): void {
+  function onRmTooltip(): void {
     setTooltip((tooltip: Tooltip) => (tooltip.show ? { ...tooltip, show: false } : tooltip))
   }
 
@@ -305,7 +303,7 @@ function Cell ({
                 highlightClassName='bg-tertiary rounded-sm'
               />
             </a>
-            )
+          )
           : (
             <Highlighter
               searchWords={searchWords}
@@ -313,14 +311,14 @@ function Cell ({
               textToHighlight={cell}
               highlightClassName='bg-tertiary rounded-sm'
             />
-            )}
+          )}
       </div>
       {overflows && !isUrl && <TooltipIcon />}
     </div>
   )
 }
 
-function TooltipIcon (): JSX.Element {
+function TooltipIcon(): JSX.Element {
   return (
     <svg
       className='w-3 h-3 mb-1 text-gray-800 dark:text-white'
@@ -340,7 +338,7 @@ function TooltipIcon (): JSX.Element {
   )
 }
 
-function IconButton (props: {
+function IconButton(props: {
   icon: string
   label: string
   onClick: () => void
@@ -352,9 +350,8 @@ function IconButton (props: {
   const disabled = props.disabled ?? false
   return (
     <div
-      className={`flex items-center gap-2 cursor-pointer  ${props.color} animate-fadeIn md:text-button ${
-        disabled ? 'opacity-50' : ''
-      }`}
+      className={`flex items-center gap-2 cursor-pointer  ${props.color} animate-fadeIn md:text-button ${disabled ? 'opacity-50' : ''
+        }`}
       onClick={() => !disabled && props.onClick()}
     >
       <img src={props.icon} className='w-7 h-7 ml-1 md:w-9 md:h-9 md:ml-0 -translate-x-[3px]' />
@@ -363,7 +360,7 @@ function IconButton (props: {
   )
 }
 
-function getTranslations (locale: string): Record<string, string> {
+function getTranslations(locale: string): Record<string, string> {
   const translated: Record<string, string> = {}
   for (const [key, value] of Object.entries(translations)) {
     translated[key] = Translator.translate(value, locale)
@@ -372,6 +369,6 @@ function getTranslations (locale: string): Record<string, string> {
 }
 
 const translations = {
-  delete: new TextBundle().add('en', 'Delete').add('nl', 'Verwijder'),
-  undo: new TextBundle().add('en', 'Undo').add('nl', 'Herstel')
+  delete: new TextBundle().add('en', 'Delete').add('nl', 'Verwijder').add('es', 'Eliminar'),
+  undo: new TextBundle().add('en', 'Undo').add('nl', 'Herstel').add('es', 'Deshacer')
 }
