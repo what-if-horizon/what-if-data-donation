@@ -117,7 +117,6 @@ def read_json(file_input: list[str], file_paths: list[str]) -> JSON:
     t = time.time()
     text_content = read_text(file_input, file_paths)
     result = json.loads(text_content)
-    print(f"Parsed {file_paths} in {time.time() - t:1.2f}s")
     return result
 
 

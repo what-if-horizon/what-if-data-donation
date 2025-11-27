@@ -9,6 +9,7 @@ In this way, we obtain the data structure without collecting any personal data
 #############################################################################
 
 import json
+import logging
 import os
 import re
 import zipfile
@@ -120,8 +121,7 @@ def structure_from_zip(zip_path):
 
             # Process only files where 'data' is in the second position
             if file_info.is_dir() or len(path_parts) < 2 or path_parts[0] != "data":
-
-                print("Skip ", file_info, path_parts)
+                # logging.info(f"Skip {file_info}: {path_parts}")
                 continue
 
             with z.open(file_info.filename) as f:

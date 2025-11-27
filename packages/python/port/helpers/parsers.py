@@ -146,32 +146,15 @@ def extract_rows(item, node: Node, context=None, path_prefix=()):
     for colname, path in node.columns.items():
         val = get_in(item, *path)
         full_colname = ".".join(path_prefix + (colname,))
-
-        # WvA: Why are column values sometimes dicts/lists? Do we have an example?
         if isinstance(val, dict):
-            if val:
-                # Flatten dict recursively
-                for k, v in val.items():
-                    base[f"{full_colname}.{k}"] = v
-            else:
-                base[full_colname] = {}  # empty dict
+            base[full_colname] = json.dumps(val) if val else {}
         elif isinstance(val, list):
-            if val and all(isinstance(v, dict) for v in val):
-                # Flatten each dict in the list
-                list_rows = []
-                for d in val:
-                    list_rows += extract_rows(d, Node.empty(), context=base, path_prefix=path_prefix + (colname,))
-                if list_rows:
-                    rows += list_rows
-                else:
-                    # List was empty, yield base with empty object
-                    base[full_colname] = [{}]
-                    rows.append(base)
-                continue
-            elif val:
-                base[full_colname] = val
+            if not val:
+                base[full_colname] = []
+            elif len(val) == 1:
+                base[full_colname] = val[0]
             else:
-                base[full_colname] = []  # empty list
+                base[full_colname] = json.dumps(val)
         else:
             base[full_colname] = val
 
@@ -209,7 +192,7 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
     try:
         data = read_file(file_input, entry.filename)
     except FileNotFoundError as e:
-        logging.error(f"{entry.table}: Cannot find file {entry.filename} ({e})")
+        # logging.warning(f"{entry.table}: Cannot find file {entry.filename} ({e})")
         return None
 
     if json_root:
@@ -223,7 +206,10 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
         # Gather static (file-level) fields
         base_context = {"file": entry.filename}
         for colname, path in entry.static_fields.items():
-            base_context[colname] = get_in(item, *path)
+            val = get_in(item, *path)
+            if isinstance(val, (list, dict)):
+                val = json.dumps(val)
+            base_context[colname] = val
 
         # Extract rows recursively
         had_rows = False

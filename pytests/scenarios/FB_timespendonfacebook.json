@@ -7,7 +7,6 @@
             "data_frame": {
                 "columns": [
                     "timestamp",
-                    "media",
                     "fbid",
                     "ent_name",
                     "label_values.label",
@@ -19,7 +18,6 @@
                 "data": [
                     [
                         1739734481,
-                        [],
                         "1",
                         null,
                         "Intervals",
@@ -30,7 +28,6 @@
                     ],
                     [
                         1739734481,
-                        [],
                         "1",
                         null,
                         "Intervals",
@@ -41,7 +38,6 @@
                     ],
                     [
                         1739734481,
-                        [],
                         "1",
                         null,
                         "Intervals",
@@ -52,7 +48,6 @@
                     ],
                     [
                         1739734481,
-                        [],
                         "1",
                         null,
                         "Intervals",
@@ -63,7 +58,6 @@
                     ],
                     [
                         1739734481,
-                        [],
                         "1",
                         null,
                         "Update time",

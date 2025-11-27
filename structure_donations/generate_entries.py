@@ -24,9 +24,23 @@ which will use the Merged_structures_*.csv to determine the required entries.
 """
 
 
+TEMP_KEEP_ARRAY_IDS = {
+    "Tiktok Live:Go Live Settings:SettingsMap:Hide comments that contain the following keywords from your LIVE",
+    "Tiktok Live:Go Live Settings:SettingsMap:People you assigned to moderate your LIVE",
+    "Tiktok Live:Go Live History:GoLiveList",
+    "Your Activity:Favorite Hashtags:FavoriteHashtagList",
+    "App Settings:Settings:SettingsMap:Content Preferences:Keyword filters for videos in Following feed",
+    "App Settings:Settings:SettingsMap:Content Preferences:Keyword filters for videos in For You feed",
+    "Your Activity:Favorite Collection:FavoriteCollectionList",
+    "followers_and_following:following_hashtags:media_list_data",
+    "messages:ai_conversations:dict:vec",
+}
+
+
 class FieldSpec(NamedTuple):
     column_name: str
     var_type: Literal["skip", "static", "list"]
+    data_type: Literal["array", "boolean", "number", "string", "object", "nan", "keeparray"]
     subfield_path: JsonPath
     list_path: JsonPath
 
@@ -46,9 +60,25 @@ class FieldSpec(NamedTuple):
             return value
 
         assert row["var_type"] in ["skip", "static", "list"]
+        if row["keepID"] in TEMP_KEEP_ARRAY_IDS:
+            print("!!!!", row["keepID"])
+            data_type = "keeparray"
+            TEMP_KEEP_ARRAY_IDS.remove(row["keepID"])
+        else:
+            data_type = "nan" if pd.isna(row["data_type"]) else row["data_type"]
+        assert data_type in [
+            "array",
+            "number",
+            "boolean",
+            "string",
+            "object",
+            "nan",
+            "keeparray",
+        ], f'Unexpected value for row["data_type"]: {data_type!r}'
         return FieldSpec(
             column_name=row["column_name"],
             var_type=row["var_type"],
+            data_type=data_type,
             subfield_path=get_path(row["subfield_path"]),
             list_path=get_path(row["list_path"]),
         )
@@ -59,6 +89,9 @@ def extract_entry(filename: str | None, table: str, fields: list[FieldSpec]) -> 
     entry = Entry(filename=filename, table=table, tree=Node.empty(), static_fields={})
 
     for field in fields:
+        if field.data_type not in ("boolean", "number", "string", "keeparray"):
+            continue
+
         colname = field.column_name
         match field.var_type:
             case "skip":
@@ -68,14 +101,6 @@ def extract_entry(filename: str | None, table: str, fields: list[FieldSpec]) -> 
             case "list":
                 # SAFEGUARD: only check when list_path is not empty
                 if field.list_path:
-                    # WvA: I think the next check also catches this, and it is never triggered, so we can remove it?
-                    # Skip self-referential definitions
-                    # if field.subfield_path and field.subfield_path == (field.list_path[-1],):
-                    #    print(
-                    #        f":warning: Skipping self-referential path in {table}: list_path={field.list_path}, subfield_path={field.subfield_path}, col={colname}"
-                    #    )
-                    #    raise Exception("!")
-                    #    continue
                     # Check for redundant nested patterns like ('media', 'media')
                     if field.list_path[-1] in field.subfield_path:
                         raise ValueError(
@@ -87,6 +112,7 @@ def extract_entry(filename: str | None, table: str, fields: list[FieldSpec]) -> 
                 current.columns[colname] = field.subfield_path
             case _:
                 raise ValueError(f"Unknown var_type: {field.var_type}")
+
     return entry
 
 

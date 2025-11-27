@@ -7,7 +7,6 @@
             "data_frame": {
                 "columns": [
                     "timestamp",
-                    "media",
                     "fbid",
                     "ent_name",
                     "label_values.label",
@@ -23,7 +22,6 @@
                 "data": [
                     [
                         1728204035,
-                        [],
                         "1",
                         null,
                         "Reaction",
@@ -38,7 +36,6 @@
                     ],
                     [
                         1728204035,
-                        [],
                         "1",
                         null,
                         "URL",
@@ -53,7 +50,6 @@
                     ],
                     [
                         1728204035,
-                        [],
                         "1",
                         null,
                         null,
@@ -68,7 +64,6 @@
                     ],
                     [
                         1728204035,
-                        [],
                         "1",
                         null,
                         null,
@@ -83,7 +78,6 @@
                     ],
                     [
                         1728204035,
-                        [],
                         "1",
                         null,
                         null,

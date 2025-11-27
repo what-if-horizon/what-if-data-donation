@@ -447,7 +447,17 @@
         "Allow Others to Find Me": "Disabled",
         "App Language": "English",
         "Content Preferences": {
-          "Keyword filters for videos in Following feed": null,
+          "Keyword filters for videos in Following feed": [
+            {
+              "label": "This is nonsense data"
+            },
+            {
+              "label": "To test extracting objects"
+            },
+            {
+              "label": "This does not represent actual data, please remove if we ever find data with ths object!"
+            }
+          ],
           "Keyword filters for videos in For You feed": null,
           "Video Languages Preferences": null
         },
