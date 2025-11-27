@@ -23,7 +23,9 @@ To generate this file, please run structure/flow_generation/generate_entries.py
 which will use the Merged_structures_*.csv to determine the required entries.
 """
 
-
+# Temporary set of IDs for which we want to keep arrays
+# These are array fields without any children, so we keep the top level array field
+# This should be changed in the CSV, but for now this is a quick fix
 TEMP_KEEP_ARRAY_IDS = {
     "Tiktok Live:Go Live Settings:SettingsMap:Hide comments that contain the following keywords from your LIVE",
     "Tiktok Live:Go Live Settings:SettingsMap:People you assigned to moderate your LIVE",
@@ -61,7 +63,6 @@ class FieldSpec(NamedTuple):
 
         assert row["var_type"] in ["skip", "static", "list"]
         if row["keepID"] in TEMP_KEEP_ARRAY_IDS:
-            print("!!!!", row["keepID"])
             data_type = "keeparray"
             TEMP_KEEP_ARRAY_IDS.remove(row["keepID"])
         else:
@@ -86,7 +87,7 @@ class FieldSpec(NamedTuple):
 
 def extract_entry(filename: str | None, table: str, fields: list[FieldSpec]) -> Entry:
     """Generate an Entry for a group of rows from the structure csv file"""
-    entry = Entry(filename=filename, table=table, tree=Node.empty(), static_fields={})
+    entry = Entry(filename=filename, table=table, tree=Node.empty())
 
     for field in fields:
         if field.data_type not in ("boolean", "number", "string", "keeparray"):
@@ -97,7 +98,9 @@ def extract_entry(filename: str | None, table: str, fields: list[FieldSpec]) -> 
             case "skip":
                 continue
             case "static":
-                entry.static_fields[colname] = field.subfield_path
+                # Static fields are/were top level fields that had to be repeated for every row
+                # They were treated differently in the old parser, but now we can just add them to the tree
+                entry.tree.columns[colname] = field.subfield_path
             case "list":
                 # SAFEGUARD: only check when list_path is not empty
                 if field.list_path:
@@ -170,10 +173,11 @@ def extract_entries_as_dict(infile: Path, platform: str) -> dict[str, list[Entry
 # --- Functions to create CSV entries for YT
 def extract_csv_entry(filename: str, table: str, schema_group: pd.DataFrame) -> Entry:
     """Generate an Entry object for CSV files (columns become static fields)."""
-    entry = Entry(filename=filename, table=table, tree=Node.empty(), static_fields={})
+    entry = Entry(filename=filename, table=table, tree=Node.empty())
     for _, row in schema_group.iterrows():
         colname = row["Column_names"]
-        entry.static_fields[colname] = (colname,)
+        entry.tree.columns[colname] = (colname,)
+
     return entry
 
 

@@ -1,0 +1,53 @@
+{
+    "input_file": "pytests/public_testfiles/YT_public_test_file.zip",
+    "platform": "youtube",
+    "expected_output": [
+        {
+            "id": "Listas_de_reproduccio\u0301n",
+            "data_frame": {
+                "columns": [
+                    "ID de lista de reproducci\u00f3n",
+                    "A\u00f1adir v\u00eddeos nuevos al principio",
+                    "T\u00edtulo de la lista de reproducci\u00f3n (original)",
+                    "Idioma del t\u00edtulo de la lista de reproducci\u00f3n (original)",
+                    "Marca de tiempo de creaci\u00f3n de la lista de reproducci\u00f3n",
+                    "Marca de tiempo de actualizaci\u00f3n de la lista de reproducci\u00f3n",
+                    "Orden de v\u00eddeos de lista de reproducci\u00f3n",
+                    "Visibilidad de la lista de reproducci\u00f3n"
+                ],
+                "data": [
+                    [
+                        1,
+                        "Falso",
+                        "test",
+                        NaN,
+                        "202+00:00",
+                        "2024-0500:00",
+                        "Manual",
+                        "Oculta"
+                    ],
+                    [
+                        2,
+                        "Falso",
+                        "bsc",
+                        NaN,
+                        "200:00",
+                        "20235:00+00:00",
+                        "Manual",
+                        "Privada"
+                    ],
+                    [
+                        3,
+                        "Falso",
+                        "Watch later",
+                        "en_US",
+                        "20100:00",
+                        "2021-11-07T03:14:00+00:00",
+                        "Manual",
+                        "Privada"
+                    ]
+                ]
+            }
+        }
+    ]
+}

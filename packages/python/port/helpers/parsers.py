@@ -3,6 +3,7 @@ import json
 import logging
 import os
 import re
+import unicodedata
 import zipfile
 from typing import Annotated, Any, Iterable, NamedTuple, TypeAlias
 
@@ -48,11 +49,6 @@ class Entry(NamedTuple):
     filename: Annotated[
         str | None,
         "Filename from which to get information (or None for single-file donations)",
-    ]
-    static_fields: Annotated[
-        Columns,
-        "A list of paths within the file that each gives a single value for each file."
-        "Will be repeated in the resulting table if needed",
     ]
     tree: Annotated[
         Node,
@@ -203,13 +199,7 @@ def create_entry_df(file_input: list[str], entry: Entry, json_root: str | None =
     all_records = []
 
     for item in data:
-        # Gather static (file-level) fields
         base_context = {"file": entry.filename}
-        for colname, path in entry.static_fields.items():
-            val = get_in(item, *path)
-            if isinstance(val, (list, dict)):
-                val = json.dumps(val)
-            base_context[colname] = val
 
         # Extract rows recursively
         had_rows = False
@@ -248,20 +238,21 @@ def read_csv_from_file_input(file_input: list[str], csv_filename: str) -> pd.Dat
     Returns:
         pd.DataFrame: The loaded DataFrame.
     """
-    filenames = [csv_filename, f"*/{csv_filename}", f"{csv_filename}"]  # root  # one folder deep
+    # Normalize filename to NFC form to handle different representations of accented letters
+    filename = unicodedata.normalize("NFC", csv_filename)
 
     for path in file_input:
         if path.endswith(".zip"):
             with zipfile.ZipFile(path, "r") as zip_ref:
                 for name in zip_ref.namelist():
-                    if name.endswith(tuple(filenames)):
+                    if unicodedata.normalize("NFC", name).endswith(filename):
                         with zip_ref.open(name) as f:
                             try:
                                 return pd.read_csv(f, encoding="utf-8")
                             except UnicodeDecodeError:
                                 f.seek(0)
                                 return pd.read_csv(f, encoding="latin1")
-    raise FileNotFoundError(f"{filenames} not found in ZIP files: {file_input}")
+    raise FileNotFoundError(f"{filename} not found in ZIP files: {file_input}")
 
 
 def create_csv_table(file_input: list[str], entries: list[Entry]) -> pd.DataFrame:
@@ -277,7 +268,7 @@ def create_csv_table(file_input: list[str], entries: list[Entry]) -> pd.DataFram
 
         logging.error(f"[CSV DEBUG] Raw headers: {[repr(c) for c in df.columns]}")
 
-        expected_columns = list(entry.static_fields.keys())
+        expected_columns = list(entry.tree.columns.keys())
 
         logging.error(f"[CSV DEBUG] Raw schema: {[repr(c) for c in expected_columns]}")
 
