@@ -5,8 +5,17 @@ Next is a software as a service platform developed by [Eyra](https://eyra.co/) t
 
 ## Documentation
 
-This repository is based on the [original data donation repository published by d3i](https://github.com/d3i-infra/data-donation-task). 
-Please see that repository, and esepecially their [documentation](https://d3i-infra.github.io/data-donation-task/) for general information about the data donation task and software. 
+Because we are extracting fields from five platforms in five different languages, we decided to introduce a declarative 'Entry' to represent a table to be extracted. 
+Each entry represents a tree of fields to be extracted from a target json structure and converted into a tabular form.
+See [parsers.py](https://github.com/what-if-horizon/what-if-data-donation/blob/master/packages/python/port/helpers/parsers.py) for the Entry class definition 
+and especially the `extract_rows` method that is responsible for extracting the tabular values from the json tree. 
+All platforms are essentially thin wrappers around a call to that function for each entry. 
+
+Entries are generated automatically and placed in [entries_data.py](https://github.com/what-if-horizon/what-if-data-donation/blob/master/packages/python/port/helpers/entries_data.py).
+For an overview of the generation process, see the [workflow documentation](https://github.com/what-if-horizon/what-if-data-donation/blob/master/workflow_data_donation_tool.md).
+
+Note: This repository is based on the [original data donation repository published by d3i](https://github.com/d3i-infra/data-donation-task). 
+Please see that repository, and especially their [documentation](https://d3i-infra.github.io/data-donation-task/) for general information about the data donation task and software. 
 
 ## Installation and local testing
 
