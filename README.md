@@ -14,6 +14,15 @@ All platforms are essentially thin wrappers around a call to that function for e
 Entries are generated automatically and placed in [entries_data.py](https://github.com/what-if-horizon/what-if-data-donation/blob/master/packages/python/port/helpers/entries_data.py).
 For an overview of the generation process, see the [workflow documentation](https://github.com/what-if-horizon/what-if-data-donation/blob/master/workflow_data_donation_tool.md).
 
+There are also limited unit/integration tests, especially a number of [scenarios](https://github.com/what-if-horizon/what-if-data-donation/tree/master/pytests/scenarios) 
+based on completely anonymized [public test files](https://github.com/what-if-horizon/what-if-data-donation/tree/master/pytests/public_testfiles). To run the tests:
+
+```{sh}
+python -m venv .venv
+.venv/bin/pip install -e.[dev]
+.venv/bin/pytest
+```
+
 Note: This repository is based on the [original data donation repository published by d3i](https://github.com/d3i-infra/data-donation-task). 
 Please see that repository, and especially their [documentation](https://d3i-infra.github.io/data-donation-task/) for general information about the data donation task and software. 
 
@@ -46,3 +55,7 @@ If the installation went correctly you should be greeted with a mock data donati
 For detailed installation instructions see the [documentation](https://d3i-infra.github.io/data-donation-task/).
 
  citation details in the [`CITATION.cff`](CITATION.cff) file.
+
+## Building the release files
+
+After installing the dependencies as above, run `npm run release` to build a release file for each platform. 
