@@ -52,9 +52,6 @@ In order to start a local instance of the data donation task go through the foll
 3. You can now go to the browser: [`http://localhost:3000`](http://localhost:3000).
 
 If the installation went correctly you should be greeted with a mock data donation study. 
-For detailed installation instructions see the [documentation](https://d3i-infra.github.io/data-donation-task/).
-
- citation details in the [`CITATION.cff`](CITATION.cff) file.
 
 ## Building the release files
 
