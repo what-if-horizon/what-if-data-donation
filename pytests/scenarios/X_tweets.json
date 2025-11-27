@@ -43,10 +43,7 @@
                     [
                         false,
                         "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
-                        [
-                            "0",
-                            "266"
-                        ],
+                        "[\"0\", \"266\"]",
                         "0",
                         "18923188976",
                         false,
@@ -62,19 +59,14 @@
                         null,
                         null,
                         null,
-                        [
-                            "189288976"
-                        ],
+                        "[\"189288976\"]",
                         "2025-02-20T13:35:53.000Z",
                         "5",
                         true,
                         "https://t.co/t8bxYt",
                         "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5478",
                         "papers.ssrn.com/sol3/papers.cf\u2026",
-                        [
-                            "243",
-                            "266"
-                        ],
+                        "[\"243\", \"266\"]",
                         NaN,
                         NaN,
                         NaN,
@@ -85,10 +77,7 @@
                     [
                         false,
                         "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
-                        [
-                            "0",
-                            "144"
-                        ],
+                        "[\"0\", \"144\"]",
                         "0",
                         "15625472009217",
                         false,
@@ -104,9 +93,7 @@
                         null,
                         null,
                         null,
-                        [
-                            "15629217"
-                        ],
+                        "[\"15629217\"]",
                         "2022-08-24T20:17:29.308Z",
                         "5",
                         false,
@@ -117,20 +104,14 @@
                         [],
                         "bla",
                         "ebla",
-                        [
-                            "3",
-                            "19"
-                        ],
+                        "[\"3\", \"19\"]",
                         "831171319296",
                         "880171319296"
                     ],
                     [
                         false,
                         "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
-                        [
-                            "0",
-                            "144"
-                        ],
+                        "[\"0\", \"144\"]",
                         "0",
                         "15625472009217",
                         false,
@@ -146,9 +127,7 @@
                         null,
                         null,
                         null,
-                        [
-                            "15629217"
-                        ],
+                        "[\"15629217\"]",
                         "2022-08-24T20:17:29.308Z",
                         "5",
                         false,
@@ -159,20 +138,14 @@
                         [],
                         "Testtt",
                         "TF",
-                        [
-                            "115",
-                            "120"
-                        ],
+                        "[\"115\", \"120\"]",
                         "1339879",
                         "13879"
                     ],
                     [
                         false,
                         "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
-                        [
-                            "0",
-                            "266"
-                        ],
+                        "[\"0\", \"266\"]",
                         "0",
                         "18923188976",
                         false,
@@ -188,19 +161,14 @@
                         null,
                         null,
                         null,
-                        [
-                            "189288976"
-                        ],
+                        "[\"189288976\"]",
                         "2025-02-20T13:35:53.000Z",
                         "5",
                         true,
                         "https://t.co/t8bxYt",
                         "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5478",
                         "papers.ssrn.com/sol3/papers.cf\u2026",
-                        [
-                            "243",
-                            "266"
-                        ],
+                        "[\"243\", \"266\"]",
                         NaN,
                         NaN,
                         NaN,
@@ -211,10 +179,7 @@
                     [
                         false,
                         "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
-                        [
-                            "0",
-                            "144"
-                        ],
+                        "[\"0\", \"144\"]",
                         "0",
                         "15625472009217",
                         false,
@@ -230,9 +195,7 @@
                         null,
                         null,
                         null,
-                        [
-                            "15629217"
-                        ],
+                        "[\"15629217\"]",
                         "2022-08-24T20:17:29.308Z",
                         "5",
                         false,
@@ -243,20 +206,14 @@
                         [],
                         "bla",
                         "ebla",
-                        [
-                            "3",
-                            "19"
-                        ],
+                        "[\"3\", \"19\"]",
                         "831171319296",
                         "880171319296"
                     ],
                     [
                         false,
                         "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
-                        [
-                            "0",
-                            "144"
-                        ],
+                        "[\"0\", \"144\"]",
                         "0",
                         "15625472009217",
                         false,
@@ -272,9 +229,7 @@
                         null,
                         null,
                         null,
-                        [
-                            "15629217"
-                        ],
+                        "[\"15629217\"]",
                         "2022-08-24T20:17:29.308Z",
                         "5",
                         false,
@@ -285,10 +240,7 @@
                         [],
                         "Testtt",
                         "TF",
-                        [
-                            "115",
-                            "120"
-                        ],
+                        "[\"115\", \"120\"]",
                         "1339879",
                         "13879"
                     ]

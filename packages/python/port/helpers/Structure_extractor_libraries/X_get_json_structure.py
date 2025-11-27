@@ -14,6 +14,8 @@ import os
 import re
 import zipfile
 
+from numpy import isin
+
 ##############################################################################
 # Infer the data type
 # -- Change the value into a string stating the data type
@@ -80,11 +82,11 @@ def extract_json_from_js(js_content):
     index = js_content.find("=")
     data = js_content[index + 1 :]
 
-    try:
-        data = json.loads(data)
-    except:
-        print("Not loaded:", data)
-    # print(data)
+    if isinstance(data, str):
+        try:
+            data = json.loads(data)
+        except Exception:
+            logging.exception("Failed to parse JSON content")
     if isinstance(data, list):
         if len(data) == 1 and isinstance(data[0], dict):
             return data[0]  # single dictionary in a list

@@ -19,42 +19,24 @@
                         "Has visto ",
                         "https://www.youtube.co",
                         "20",
-                        [
-                            "YouTube"
-                        ],
-                        [
-                            "Actividad en la Web y en Aplicaciones",
-                            "Historial de reproducciones de YouTube",
-                            "Historial de b\u00fasqueda de YouTube"
-                        ]
+                        "YouTube",
+                        "[\"Actividad en la Web y en Aplicaciones\", \"Historial de reproducciones de YouTube\", \"Historial de b\\u00fasqueda de YouTube\"]"
                     ],
                     [
                         "YouTube",
                         "Has visto ",
                         "https://www.you",
                         "2025-08-04T09:41:24.721Z",
-                        [
-                            "YouTube"
-                        ],
-                        [
-                            "Actividad en la Web y en Aplicaciones",
-                            "Historial de reproducciones de YouTube",
-                            "Historial de b\u00fasqueda de YouTube"
-                        ]
+                        "YouTube",
+                        "[\"Actividad en la Web y en Aplicaciones\", \"Historial de reproducciones de YouTube\", \"Historial de b\\u00fasqueda de YouTube\"]"
                     ],
                     [
                         "YouTube",
                         "Has visto bla",
                         "https://www.youtube",
                         "2025-08-03T22:03:13.397Z",
-                        [
-                            "YouTube"
-                        ],
-                        [
-                            "Actividad en ",
-                            "Historial",
-                            "Historial de b\u00fasqueda de YouTube"
-                        ]
+                        "YouTube",
+                        "[\"Actividad en \", \"Historial\", \"Historial de b\\u00fasqueda de YouTube\"]"
                     ]
                 ]
             }
