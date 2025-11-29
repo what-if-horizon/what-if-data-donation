@@ -1,24 +1,23 @@
-import {
+import TextBundle, {
+  BodyLarge,
   LabelButton,
   PrimaryButton,
-  BodyLarge,
-  Translator,
   ReactFactoryContext,
+  Translator,
 } from "@eyra/feldspar";
-import TextBundle from "@eyra/feldspar";
+import _ from "lodash";
+import { useCallback, useEffect, useState } from "react";
+import { TableContainer } from "./table_container";
 import {
-  TableWithContext,
-  TableContext,
+  PropsUIPromptConsentFormTableViz,
+  PropsUIPromptConsentFormViz,
   PropsUITable,
   PropsUITableBody,
   PropsUITableHead,
-  PropsUIPromptConsentFormViz,
-  PropsUIPromptConsentFormTableViz,
   PropsUITableRow,
+  TableContext,
+  TableWithContext,
 } from "./types";
-import { useCallback, useEffect, useState } from "react";
-import _ from "lodash";
-import { TableContainer } from "./table_container";
 
 type Props = PropsUIPromptConsentFormViz & ReactFactoryContext;
 
@@ -140,13 +139,14 @@ export const ConsentFormViz = (props: Props): JSX.Element => {
     return JSON.stringify(array);
   }
 
+
   function serializeTables(): any[] {
     return tables.map((table) => serializeTable(table));
   }
 
-  function serializeTable({ id, head, body: { rows } }: PropsUITable): any {
-    const data = rows.map((row) => serializeRow(row, head));
-    return { [id]: data };
+  function serializeTable({ id, head, body: { rows }, deletedRowCount }: TableWithContext): any {
+    const data = rows.map((row) => serializeRow(row, head))
+    return { [id]: data, "deleted row count": deletedRowCount.toString() }
   }
 
   function serializeRow(row: PropsUITableRow, head: PropsUITableHead): any {

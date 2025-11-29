@@ -58,13 +58,13 @@ def generate_retry_prompt(platform_name: str) -> props.PropsUIPromptConfirm:
     """
     text = props.Translatable(
         {
-            "en": f"Unfortunately, we cannot process your {platform_name} file. Try again to select a different file or cancel to return to the menu.",
-            "nl": f"Helaas, kunnen we uw {platform_name} bestand niet verwerken. Probeer het opnieuw als u een ander bestand wilt kiezen, of annuleer of terug te gaan naar het menu.",
-            "es": f"Lamentablemente, no podemos procesar su archivo de {platform_name}. Intente de nuevo para seleccionar un archivo diferente o cancele para volver al menú.",
+            "en": f"Unfortunately, we cannot process your {platform_name} file. Try again to select a different file",
+            "nl": f"Helaas, kunnen we uw {platform_name} bestand niet verwerken. Probeer het opnieuw als u een ander bestand wilt kiezen",
+            "es": f"Lamentablemente, no podemos procesar su archivo de {platform_name}. Intente de nuevo para seleccionar un archivo diferente",
         }
     )
     ok = props.Translatable({"en": "Try again", "nl": "Opnieuw proberen", "es": "Intentar de nuevo"})
-    cancel = props.Translatable({"en": "Cancel", "nl": "Annuleren", "es": "Cancelar"})
+    cancel = props.Translatable({"en": "", "nl": "Annuleen", "es": ""})
     return props.PropsUIPromptConfirm(text, ok, cancel)
 
 

@@ -72,6 +72,7 @@ def process(session_id: int, platform: str | None):
                 if retry_prompt_result.__type__ == "PayloadTrue":
                     continue
                 # The participant does not want to retry or pressed skip
+                # WvA: Since we removed the cancel button, this else is redundant?
                 else:
                     break
 
@@ -80,8 +81,6 @@ def process(session_id: int, platform: str | None):
             break
 
     yield ph.exit(0, "Success")
-    # WvA This doesn't seem to exist and the example script doesn't have it anymore, so I commented it out
-    # yield ph.render_end_page()
 
 
 def is_valid(file_input: str, platform: str) -> bool:
