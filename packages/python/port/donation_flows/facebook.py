@@ -24,11 +24,7 @@ def create_donation_flow(file_input: list[str]):
         try:
             df = create_table(file_input, entries)
             if not df.empty:
-                tables.append(
-                    donation_table(
-                        name=key, df=df, title={"en": key, "nl": key, "es": key}
-                    )
-                )
+                tables.append(donation_table(name=key, df=df, title={"en": key, "nl": key, "es": key}))
         except Exception as e:
             logging.exception(f"Error in {key}")
 
@@ -38,8 +34,7 @@ def create_donation_flow(file_input: list[str]):
     df_placeholder = pd.DataFrame(
         [
             {
-                "Data Structure": "Anonymized",
-                "Placeholder for research purpose": placeholder_json,
+                "Anonymized data structure": placeholder_json,
             }
         ]
     )

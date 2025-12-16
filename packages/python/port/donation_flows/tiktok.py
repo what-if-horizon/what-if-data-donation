@@ -38,8 +38,7 @@ def create_donation_flow(file_input: list[str]):
     df_placeholder = pd.DataFrame(
         [
             {
-                "Data Structure": "Anonymized",
-                "Placeholder for research purpose": placeholder_json,
+                "Anonymized data structure": placeholder_json,
             }
         ]
     )
@@ -48,7 +47,7 @@ def create_donation_flow(file_input: list[str]):
         donation_table(
             name="placeholder",
             df=df_placeholder,
-            title={"en": "Placeholders", "es": "Estructura de datos", "nl": "Gegevensstructuur"},
+            title={"en": "Data structure", "es": "Estructura de datos", "nl": "Gegevensstructuur"},
         )
     )
 
