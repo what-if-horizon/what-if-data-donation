@@ -35,7 +35,7 @@ def process(session_id: int, platform: str | None):
         logger.info("Prompt for file for %s", platform)
 
         if platform.lower() in ("tiktok", "tt"):
-            extensions_arg = "application/json"
+            extensions_arg = "application/json, application/zip"
         else:
             extensions_arg = "application/zip"
 

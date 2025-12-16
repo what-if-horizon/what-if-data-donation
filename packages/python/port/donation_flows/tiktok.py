@@ -1,16 +1,16 @@
 import json
 import logging
+
 import pandas as pd
 from port.helpers.donation_flow import donation_flow, donation_table
-from port.helpers.parsers import create_table
+from port.helpers.parsers import create_table, read_file
 from port.helpers.Structure_extractor_libraries.TT_get_json_structure import structure_from_json_file
 
 
 def is_data_valid(file_input: str) -> bool:
     try:
-        with open(file_input) as f:
-            content = json.load(f)
-            return isinstance(content, dict)
+        content = read_file([file_input], None)
+        return isinstance(content, list) and len(content) == 1 and isinstance(content[0], dict)
     except Exception as e:
         logging.error(f"Error on reading file {file_input}: {e}")
         return False

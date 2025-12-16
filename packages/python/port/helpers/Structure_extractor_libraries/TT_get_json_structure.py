@@ -1,23 +1,25 @@
-
 """
 The purpose of this python script is to obtain the data structures of the donated data takeouts.
 All 'real' data is removed and replaced with the data type.
-In this way, we obtain the data structure without collecting any personal data 
+In this way, we obtain the data structure without collecting any personal data
 """
+
 #############################################################################
-# Import libraries                                                 
+# Import libraries
 #############################################################################
 
 import json
 
+from port.helpers.parsers import read_file
 
 ##############################################################################
-# Infer the data type  
-# -- Change the value into a string stating the data type   
+# Infer the data type
+# -- Change the value into a string stating the data type
 # -- If the value is None, None is returned
 # -- If the data type is not one of the data types specified in this function,
-#       'unknown is returned                                      
+#       'unknown is returned
 ###############################################################################
+
 
 def infer_placeholder(value):
     if isinstance(value, str):
@@ -35,9 +37,11 @@ def infer_placeholder(value):
     else:
         return "unknown"
 
+
 #############################################################################################
-# Function to iterate over all dictionaries and list to apply the infer_placeholder function 
+# Function to iterate over all dictionaries and list to apply the infer_placeholder function
 #############################################################################################
+
 
 def simplify_json_structure(data):
     # If the data is a dictionary...
@@ -48,7 +52,7 @@ def simplify_json_structure(data):
         return {k: simplify_json_structure(v) for k, v in data.items()}
 
     # If the data is a list...
-    
+
     elif isinstance(data, list):
         if len(data) > 0:
             # Map each item in the list through this function
@@ -65,8 +69,9 @@ def simplify_json_structure(data):
     else:
         return infer_placeholder(data)
 
+
 #####################################################
-# Execute the simplify_json_structure() function   
+# Execute the simplify_json_structure() function
 # -- Remove any white spaces from the json_path
 # -- Load the JSON
 # -- Apply the simplify_json_structure()
@@ -74,13 +79,13 @@ def simplify_json_structure(data):
 # -- Return the JSON
 #####################################################
 
+
 def structure_from_json_file(json_path):
     json_path = json_path.strip()
 
     try:
-        with open(json_path, 'r') as f:
-            content = json.load(f)
-            placeholder_content = simplify_json_structure(content)
+        content = read_file([json_path], None)
+        placeholder_content = simplify_json_structure(content)
     except json.JSONDecodeError:
         print(f"Error: Could not decode JSON from {json_path}")
         return None

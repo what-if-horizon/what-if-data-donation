@@ -98,6 +98,16 @@ def get_list(d: dict, *keys):
 def read_file(file_input: list[str], filename: str | None):
     """Read the entry file from the input files."""
     if not filename:
+        # This is for tiktok. The file can be either a single json file or a zip with a json inside
+        if file_input[0].endswith(".zip"):
+            with zipfile.ZipFile(file_input[0], "r") as zip_ref:
+                json_files = [name for name in zip_ref.namelist() if name.endswith(".json")]
+                if len(json_files) == 0:
+                    raise FileNotFoundError("No JSON file found in the ZIP archive.")
+                elif len(json_files) > 1:
+                    raise ValueError("Multiple JSON files found in the ZIP archive.")
+                with zip_ref.open(json_files[0]) as f:
+                    return [json.load(f)]
         with open(file_input[0], "r", encoding="utf-8") as f:
             return [json.load(f)]
 
