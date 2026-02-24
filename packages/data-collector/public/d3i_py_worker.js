@@ -9,12 +9,15 @@ onmessage = (event) => {
       });
       break;
 
-    case "firstRunCycle":
+    case "firstRunCycle": {
+      const platform = event.data.platform;
+      const pyPlatform = (platform && platform !== "undefined") ? `"${platform}"` : "None";
       pyScript = self.pyodide.runPython(
-        `port.start(${event.data.sessionId},"${event.data.platform}")`,
+        `port.start(${event.data.sessionId},${pyPlatform})`,
       );
       runCycle(null);
       break;
+    }
 
     case "nextRunCycle":
       const { response } = event.data;

@@ -27,8 +27,13 @@ interface PendingDonation {
 
 export class LiveBridge implements Bridge {
   port: MessagePort
-  static initialized = false
   private pendingDonations: Map<string, PendingDonation> = new Map()
+
+  // Tracks the single active bridge so we can update its port when the host
+  // re-initializes the MessageChannel. This replaces the old `static initialized`
+  // boolean, which was correct for preventing double-init but prevented the port
+  // update needed to fix the Firefox channel-mismatch bug (see updatePort below).
+  static currentBridge: LiveBridge | null = null
 
   constructor(port: MessagePort) {
     this.port = port
@@ -44,6 +49,31 @@ export class LiveBridge implements Bridge {
       }
     }
   }
+
+  // feldspar_app.js calls setupChannel() for both the iframe `onload` event and
+  // the `app-loaded` postMessage. The guard there only blocks `onload` from
+  // replacing an existing channel — `app-loaded` has no guard. In Firefox,
+  // `onload` fires (creating Channel A, which LiveBridge receives) BEFORE
+  // `app-loaded` is delivered to the host. When `app-loaded` then arrives it
+  // replaces `this.channel` with Channel B and sends a second `live-init` with
+  // port2_B. With the old `static initialized` flag that message was ignored,
+  // leaving LiveBridge on port2_A while the host used Channel B. Every call to
+  // sendDonateResponse() then posted to port1_B → port2_B (no listener) → hang.
+  //
+  // Fix: accept the new port when a subsequent `live-init` arrives and update
+  // the response listener. Any donations waiting on the old port are failed
+  // immediately — they would have hung forever anyway.
+  updatePort(newPort: MessagePort): void {
+    this.log('info', 'Host re-initialized MessageChannel — updating port')
+    this.port = newPort
+    this.setupResponseListener()
+    for (const [key, pending] of this.pendingDonations) {
+      this.log('error', `Failing pending donation ${key}: channel replaced by host`)
+      pending.resolve({ success: false, key, status: 0, error: 'Channel re-initialized by host' })
+    }
+    this.pendingDonations.clear()
+  }
+
   private handleDonateResponse(response: DonateResponse): void {
     const pending = this.pendingDonations.get(response.key)
 
@@ -82,13 +112,21 @@ export class LiveBridge implements Bridge {
   static create(window: Window, callback: (bridge: Bridge, locale: string) => void): void {
     window.addEventListener('message', (event) => {
       console.log('MESSAGE RECEIVED', event)
-      // Ensure initialization happens only once
-      if (event.data.action === 'live-init' && !LiveBridge.initialized) {
-        LiveBridge.initialized = true
-        const bridge = new LiveBridge(event.ports[0])
+      if (event.data.action === 'live-init') {
+        const newPort = event.ports[0]
         const locale = event.data.locale
-        console.log('LOCALE', locale)
-        callback(bridge, locale)
+
+        if (LiveBridge.currentBridge === null) {
+          // First live-init: create the bridge and start the application.
+          console.log('LOCALE', locale)
+          const bridge = new LiveBridge(newPort)
+          LiveBridge.currentBridge = bridge
+          callback(bridge, locale)
+        } else {
+          // Subsequent live-init: host replaced its MessageChannel.
+          // Update the existing bridge's port instead of ignoring the message.
+          LiveBridge.currentBridge.updatePort(newPort)
+        }
       }
     })
   }
